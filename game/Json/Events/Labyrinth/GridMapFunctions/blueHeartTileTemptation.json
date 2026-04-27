@@ -1,0 +1,422 @@
+{
+  "name": "BlueHeartTile",
+  "CardType": "Event",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [ ""],
+  "Speakers": [
+                {
+                  "name": "Beris",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                }
+              ],
+  "EventText": [
+                  {
+                      "NameOfScene": "BlueHeart",
+                      "theScene": [
+                                    "SpawnGridNPC", "BlueHeartTrapDormant", "Here",
+                                    "RemoveGridNPC", "Current",
+                                    "As you step onto the tile inlaid with a blue heart, a cool blue flash of magic fills your vision!",
+                                    "The blinding flare only lasts for a moment, but when you can see again, you find a shimmering barrier has surrounded the area around you in a spacious square, divided in two by an equally transparent wall.",
+                                    "DisplayCharacters",
+                                      "1",
+                                        "EndLoop",
+                                    "JumpToScene", "PostIntro"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "BlueHeartAlt",
+                            "theScene": [
+                                            "SpawnGridNPC", "BlueHeartTrapDormant", "Here",
+                                            "RemoveGridNPC", "Current",
+                                            "The tile flares up with a glowing blue heart on its center, the cool blue flash of magic blinding you for a moment! When you can see again, you find a shimmering barrier has surrounded the area around you in a spacious square, divided in two by an equally transparent wall.",
+                                            "DisplayCharacters",
+                                              "1",
+                                                "EndLoop",
+                                           "JumpToScene", "PostIntro"
+                                      ]
+                        },
+                  {
+                      "NameOfScene": "PostIntro",
+                      "theScene": [    "SetProgress", "0", "SetChoice", "1", "",
+                                      "ChangeImageLayer", "Clothing", "Beris", "",
+                                      "ChangeImageLayer", "Expression", "Beris", "Frown",
+                                      "Beris casually stands on the other side of the translucent wall, her now naked body on total display, every bit of her toned form and supple curves there for you to gaze at while she glares at you grumpily for a moment before letting out an annoyed sigh.",
+                                      "ChangeImageLayer", "Expression", "Beris", "FrownAngry",
+                                      "Slightly parting her long smooth legs, she reaches one arm behind her back and stretches alluringly, striking a seductive pose that shows off her pert, lightly bouncing breasts along with her toned, eye-catching midriff... But despite her body language, the frowning stare she's giving you is anything but seductive.",
+                                      "ChangeImageLayer", "Expression", "Beris", "TchAtYou",
+                                      "Speaks",
+                                      "Hey, you perverted bastard. Hurry the fuck up and jack off while you leer at me.",
+                                      "ChangeImageLayer", "Expression", "Beris", "Shy",
+                                      "Her abrasive words clash with the tempting atmosphere of her brazen nude posing, and she growls under her breath in frustration at your nonplussed reaction before striding towards the wall with a hint of hesitant bashfulness.",
+                                      "ChangeImageLayer", "Expression", "Beris", "Tch", "ChangeImageLayer", "Face", "Beris", "Blush", "DamagePlayerFromMonster", "Beris", "Scalding Taunt",
+                                      "But bracing herself, she teasingly squishes her soft tits against the transparent window, showing off her smooth supple skin, steamily imprinting her powerful abs and toned thighs against the wall while setting her long nailed hands on either side of her head. Alluringly rubbing her slender, fit frame against the barrier in slow circles, she glares at you with a light flush.[DamageToPlayer]",
+                                      "ChangeImageLayer", "Expression", "Beris", "FrownAngry",
+                                      "Speaks",
+                                      "Come the fuck on already and masturbate! Or are you too much of a fucking limp-dicked piece of trash to get off when a nude woman is right in front of you?! I'm putting on a fucking show and everything!",
+                                      "ChangeImageLayer", "Expression", "Beris", "Tch", "DamagePlayerFromMonster", "Beris", "Scalding Taunt",
+                                      "Her crass, demanding words hang in the air while her warm breath and scalding- hellhound body lewdly steam up the transparent wall she's grinding her slender form against, leaving wet imprints across it as she moves, slightly slicking her soft chest and toned muscles.[DamageToPlayer]",
+                                      "IfPlayerOrgasm", "TooHornyToRefuse",
+                                      "Menu",
+                                        "Start masturbating.",
+                                        "No!",
+                                        "...I miss Ceris.",
+                                      "EndLoop"
+                                ]
+                  },
+
+
+                          {
+                            "NameOfScene": "TooHornyToRefuse",
+                            "theScene": ["With your mind already spinning with dizzying arousal, there's no way you can even think of refusing Beris' brazen offer!",
+                                         "JumpToScene", "Start masturbating."
+                                      ]
+                          },
+                          {
+                              "NameOfScene": "No!",
+                              "theScene": [
+                                             "Beris glares at you with a low frustrated growl at your reaction.",
+                                             "Speaks",
+                                             "Seriously?! The hell is wrong with you- gah {i}fuck-{/i} fine!",
+                                             "JumpToScene", "OralTemptPhase"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "...I miss Ceris.",
+                              "theScene": ["ChangeImageLayer", "Expression", "Beris", "Flustered",
+                                          "Beris balks in shock at your reaction.",
+                                           "Speaks",
+                                           "Wha-",
+                                           "ChangeImageLayer", "Expression", "Beris", "Frown",
+                                           "Speaks",
+                                           "Oh fuck {i}you!{/i} I'll show you I can be more seductive than my bitch whore of a sister!",
+                                           "GetEventAndChangeProgress", "BerisCombatEvents", "1",
+                                           "JumpToScene", "OralTemptPhase"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Start masturbating.",
+                              "theScene": [
+                                              "ChangeImageLayer", "Expression", "Beris", "Shy",
+                                              "Spurred on by Beris' abrasive yet seductive attempt to entice you, you decide to take her up on her offer, pulling out your stiffening erection to start rubbing it to the alluring sight of the hellhound's steam-slicked body rubbing back and forth against the transparent window.",
+                                              "She averts her eyes from your own brazen display with a breathy eep that further fogs up the window, a hint of shyness showing in her movements as her curved hips keep sensually swaying against the clear wall, her abs leaving imprints in the warm condensation while her slick breasts slowly slide side to side against the magical glass.",
+                                              "Speaks",
+                                              "Finally... Fucking perv... ",
+                                              "ChangeImageLayer", "Expression", "Beris", "TchAtYou",
+                                              "Her eyes dart to your rigid cock as you stroke it to her lewd show,  then move straight back to your eyes, her gyrating body movements briefly pausing as she glares at you challengingly.",
+                                              "Speaks",
+                                              "Hey, dipshit, fucking stroke faster or this is gonna take goddess-damned forever-",
+                                              "ChangeImageLayer", "Expression", "Beris", "Shy",
+                                              "She cuts her tirade short and glances away again awkwardly, mumbling.",
+                                              "Speaks",
+                                              "Uh-... I-I guess I should escalate the show then too...",
+
+                                              "Without waiting for a response, she gently pivots her body to the side, emphasizing her long smooth leg and curved hip pressing against the magic window, rocking her waist in slow circles while her hand teasingly trails along the wall until it's above her head. Keeping the sultry posture, she lets the steam slowly build up on the upper half of the glass, her face momentarily turned away from you.",
+                                              "ChangeImageLayer", "Expression", "Beris", "HornyBiteLip",
+                                              "You hear her let out a hot sigh as she pulls her waist away from the glass, leaving only a silhouette of her slender body visible through the steamy window. Her hands slide over her obscured curves, gently squeezing her pert bust before running over her firm abs and soft butt, giving you plenty to ogle at and masturbate to.",
+                                              "ChangeImageLayer", "Expression", "Beris", "Horny",
+                                              "Wordlessly, she pivots again, smushing her toned ass against the window, the soft skin clearing away the steam as she rubs her desirable butt against the magic wall, her skin visibly dripping with a mix of sweat and slickening warm fog, her thighs noticeably drenched by her drooling pussy that becomes visible as she bends lower then sways and shakes her hips left and right for you.",
+                                              "Pleasure slowly swells in your hips with each pump of your shaft as you watch Beris' steamy show, your cock twitching excitedly as you see her slip two long-nailed fingers down to lightly caress and tease her pussy, hesitating a moment before spreading her drooling lips, brazenly showing off her lewd opening before the window fogs up again from her warm body.",
+                                              "ChangeImageLayer", "Expression", "Beris", "HornyBiteLip",
+                                              "Beris stands back up straight, turning towards the misted window again, her hands trailing up and down her veiled, fit curves, playing with her pert breasts and wet pussy, the obscene sounds of her fondling making your length twitch with excitement as you and the hellhound masturbate together.",
+                                              "ChangeImageLayer", "Expression", "Beris", "Shy",
+                                              "Seeing you fap to her in earnest, she shyly steps forward, pressing her slender form against the window again while she touches herself, the cleared steam showing off her slick, heated skin, her breasts squishing alluringly against the glass and in-between her fingers when she presses her cheek against the glass to bashfully look at you directly.",
+                                              "Speaks",
+                                              "H-Hey... H-Hurry the fuck up and cum already... th-this is getting really embarrassing...",
+                                              "Her hornily flustered demeanor sends a slight shock through you that almost makes you go over the edge, and you redouble your stroking while she spreads her legs and shows off her drenched pussy again, sweat lewdly trailing down her trim abs and soft tits as she gazes at you and starts to lightly finger herself.",
+                                              "ChangeImageLayer", "Expression", "Beris", "Horny",
+                                              "Speaks",
+                                              "Come on, we can climax together... Y-You bastard...",
+                                              "You both pick up the pace at her suggestion, your heads fogged up with lust, and she leans back slightly to give you a better view of her gushing pussy as she fucks it with her fingers, her other hand toying with one of her soft tits while she gasps and pants with pleasure, her eyes drifting down to stare at your throbbing cock as you pump it in a daze.",
+                                              "PlayerOrgasm", "1",
+                                              "ChangeImageLayer", "Expression", "Beris", "Bliss",
+                                              "Your moans and gasps intermingle as you lose yourselves to your indulgent shared masturbation, Beris' fit body trembling as she gets closer to the edge, your warmly pulsing body throbbing with pleasure with every stroke of your cock, until you both cry out in bliss, your dick spurting long ropes of seed over the magical glass while her pussy gushes lewdly shortly after, both of your bodies tensing in ecstasy for a long moment...",
+                                              "ChangeImageLayer", "Expression", "Beris", "Horny",
+                                              "Slowly and gradually, you both slump to the ground with long heavy breaths as you recover from your simultaneous climax. Beris bounces back rather quickly, standing back up straight with a stretch, shyly looking away from you.",
+                                              "ChangeImageLayer", "Expression", "Beris", "Shy",
+                                              "Speaks",
+                                              "Al-Alright, th-there... My temptation worked... N-Now we can fucking get back to the actual labyrinth... D-Don't step on one of these stupid tiles again...",
+                                              "She says the last part with no small measure of flushing embarrassment and arousal...",
+                                              "ChangeSensitivity", "Sex", "1",
+                                              "ChangeSensitivity", "Seduction", "5",
+                                              "JumpToScene", "PostLewd"
+                                        ]
+                          },
+
+
+
+                          {
+                              "NameOfScene": "OralTemptPhase",
+                              "theScene": [
+                                            "With a pissed off grumble, she slowly slides down the 'glass' while keeping her slender form pushed against it, her clawed nails, soft breasts, and firm abs trailing against the wall while she lewdly spreads her long legs to the side, effortlessly performing a showy squat.",
+                                            "ChangeImageLayer", "Expression", "Beris", "Shy",
+                                            "Speaks",
+                                            "Here's a goddess-damned temptation for you. I'll give your stupid dick an amazingly hot and steamy blowjob.",
+                                            "ChangeImageLayer", "Expression", "Beris", "FrownAngry",
+                                            "Speaks",
+                                            "But that's {i}all{/i} you're fucking getting!",
+                                            "ChangeImageLayer", "Expression", "Beris", "TchAtYou", "DamagePlayerFromMonster", "Beris", "Scalding Taunt",
+                                            "The hellhound woman continues to glare at you as she aligns her mouth with a small but noticeable circular hole in the magical wall, her piercing gaze remaining fixed on you while she firmly presses her palms and fingers against the wall, invitingly opening her warm mouth, temptingly showing off her tongue while she glares up at you.[DamageToPlayer]",
+                                            "Speaks",
+                                            "Sho hurrey the fuckh up ahn sthick it in alreahdy!", "DamagePlayerFromMonster", "Beris", "Scalding Taunt",
+                                            "She talks a bit messily, her tongue obscenely hanging out while her fiery eyes bore into you as she 'begs' for your cock, her soft lips and tongue moving temptingly as she huffs and rants, her warm breath slightly steaming up the magical wall.[DamageToPlayer]",
+                                            "IfPlayerOrgasm", "TooHornyToRefuse2",
+                                            "Menu",
+                                              "Stick your dick in the hole.",
+                                              "Still no.",
+                                            "EndLoop"
+                                        ]
+                          },
+                                {
+                                  "NameOfScene": "TooHornyToRefuse2",
+                                  "theScene": ["With your mind already spinning with dizzying arousal, there's no way you can even think of refusing Beris oral offer!",
+                                               "JumpToScene", "Stick your dick in the hole."
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "Still no.",
+                                  "theScene": [ "You try to ignore Beris' sloppy and irate oral offer, but her lewdly posed, fully nude body and eagerly challenging glare prove a rather tempting proposition, amplified by a strange, subtle charming magical pulse emanating from the transparent wall...",
+                                                "StatCheck",
+                                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Oral", "25", "1",
+                                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Oral", "50", "1",
+                                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Oral", "75", "1",
+                                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Oral", "100", "2",
+                                                "ChangeStatCheckDifficulty", "IfHasPerk", "Overheat", "10",
+                                                "Temptation",
+                                                "10",
+                                                "TemptPass",
+                                                "Fail",
+                                                "TemptFail"
+                                            ]
+                                },
+
+                                      {
+                                        "NameOfScene": "TemptFail",
+                                        "theScene": ["JumpToScene", "Stick your dick in the hole."
+                                                  ]
+                                      },
+                                {
+                                    "NameOfScene": "Stick your dick in the hole.",
+                                    "theScene": [   "ChangeImageLayer", "Expression", "Beris", "FrownAngry",
+                                                    "Eagerly, you deftly free your length, shoving it into the hole and Beris' lewdly open mouth, and she firmly seals her warm lips around it as you hit the back of her tight throat, her eyes glaring up at you in mild annoyance while her tongue rolls along the underside of your twitching shaft.",
+                                                    "Speaks",
+                                                    "Mphg- Fucki-mn-ng final-nmmph-ly- Hmph-",
+                                                    "ChangeImageLayer", "Expression", "Beris", "Sneer",
+                                                    "She skillfully slides her soft lips up and down your entire length, lightly flicking her tongue along it before firmly sucking on your tip with a continued annoyed leer, your erection throbbing in delight inside her hot mouth as she slowly engulfs your dick back down to its base, pushing her pert tits back against the transparent, slightly steamed up wall when she leans forward.",
+                                                    "Speaks",
+                                                    "Mpphh- Nao-! Hurrey the fuck- mph-! up ahn-slck-gulp- cum alrheady-!",
+                                                    "ChangeImageLayer", "Expression", "Beris", "TchAtYou",
+                                                    "Despite her angry gaze and crass words, she energetically bobs her head along your shaft to urge you along, turning her neck slightly so your dick bulges out her cheek while she intently sucks and licks your twitching dick inside her steamy mouth, her tail lightly wagging all the while, the heat of her body fogging up the magic window slightly, the imprints of her soft lips and pert tits clearing it away with her movements.",
+                                                    "Speaks",
+                                                    "Mlk- come ohn- mphm- you fucking perv- Mmmmnnn! A bashtard like {i}you-{/i} mpphg- can't have mngph- much endurance! Slhk-",
+                                                    "ChangeImageLayer", "Expression", "Beris", "FrownAngry",
+                                                    "She keeps her fiery gaze locked on you as she badmouths you, and when you still don't cum yet, she sends a grumbling vibration through your length, scooting her whole body forward, pressing her pert chest against the wall without pulling away before only moving her head to suck along your shaft, thoroughly deepthroating your throbbing erection with tightly sucking pumps of her mouth.",
+                                                    "ChangeImageLayer", "Expression", "Beris", "Sneer",
+                                                    "You gasp and tense up at her sudden aggressiveness as she roughly and sloppily sucks along your dick. Owing to her powerful back and forth movements, you feel a jolt of added pleasure whenever your cock intermittently hits the back of her throat, the hellhound woman showing little issue in taking your entire length deep into her mouth at a rapid toe-curling pace, melty waves of hot pleasure burning through your waist.",
+                                                    "Speaks",
+                                                    "Sh-sherioushly- c-cum already nmm- you fucking- mpgh! Asshole!",
+                                                    "Moans slip from your lips as her hot mouth roughly works to milk your length, her agitated trash talking sending tingly vibrations through your shaft as she throatfucks it with surprising care and skill, using her body and hands to brace herself against the wall while she sucks and licks along your twitching, pulsing length, her tail swishing behind her and her scathingly hostile lustful gaze staying trained on you.",
+                                                    "ChangeImageLayer", "Expression", "Beris", "FrownAngry",
+                                                    "Speaks",
+                                                    "Mpphg- Fuck's sake- mphphh- at least {i}thrust{/i} you limp-dicked-piece-of-MPMhhh?!",
+                                                    "ChangeImageLayer", "Expression", "Beris", "Horny",
+                                                    "Beris lets out a noise of surprise as you feel your restraint well-timedly snap from the hellish heat permeating your loins, prompting you to eagerly fuck her face with wild thrusts that leave the flushing blue-tinged hellhound stunned at the base of the magic window, her soft lips and fit body leaving lewd imprints on the lightly steamed 'glass' as her rocking body smushes against it from your energetic humping.",
+                                                    "Speaks",
+                                                    "Mmmphk- Mmmngph-!♥ Nmm!",
+                                                    "ChangeImageLayer", "Expression", "Beris", "TchAtYou",
+                                                    "But as you continue to plow the hellhound's crass mouth, she growls and retaliates, an aggressive rumble running through your entire length as she meets your intense thrusts with receptive, sloppy sucking movements of her warm welcoming mouth, her teasing tongue running along the underside of your twitching erection while she glares up at you.",
+                                                    "Speaks",
+                                                    "Fuckin- Hmppm-! Cum- slk- you- Mph- bastard-!",
+                                                    "ChangeImageLayer", "Expression", "Beris", "Horny", "PlayerOrgasm", "1",
+                                                    "Her rough deepthroating pumps, your frantic face-fucking, and her crass taunting complaints reverberating through your loins combine to finally push you over the edge with one last throat-filling impact, Beris letting out a dazed, shivering moan and rubbing her toned, slender body against the steamy wall as she feels you pour a hot load of cum down her throat.",
+                                                    "ChangeImageLayer", "Face", "Beris", "BlushHeavy",
+                                                    "Gasping heavily to catch your breath, you tremble in post-orgasmic pleasure as she thoughtlessly gulps down your seed in a haze, her throat contracting around your sensitive dick. Her half-lidded, hazy eyes show a glazed expression as she bobs along your length, working to milk out every drop she can before snapping back to her senses and hastily pulling away, licking her lips and wiping her mouth with a nailed hand.",
+                                                    "ChangeImageLayer", "Expression", "Beris", "Tch",
+                                                    "Speaks",
+                                                    "Ugh- That was- uh- Gr-Gross- ...Fucking hell, that took you long enough... finally we can get back to the actual chase...",
+                                                    "Grumbling with a heavy blush, Beris stands up with a long sigh and unintentionally showy stretch as she works her muscles after keeping her crouched pose and using her neck like she did. Her face is set in a mask of annoyance over what just happened, but her show of dissatisfaction is belied by the unconscious wagging of her tail.",
+                                                    "ChangeSensitivity", "Sex", "1",
+                                                    "ChangeSensitivity", "Seduction", "1",
+                                                    "ChangeFetish", "Oral", "5",
+                                                    "JumpToScene", "PostLewd"
+                                              ]
+                                },
+                                {
+                                  "NameOfScene": "TemptPass",
+                                  "theScene": ["ChangeImageLayer", "Expression", "Beris", "Scowl",
+                                                "As you refute her offer again, Beris retracts her tongue and scowls at you, indignantly pressing herself tighter to the wall.",
+                                                "Speaks",
+                                                "What!?! Fuck's sake! I'm not gonna fucking bite! Piece of sh- Grrr-! FINE!",
+                                                "ChangeImageLayer", "Expression", "Beris", "FrownAngry",
+                                                "Her frustrations reaching a peak, the blue-tinged hellhound woman abruptly stands up straight before heel-turning and bending over, pressing her firm, rounded butt against the transparent wall, glaring back at you as she teasingly rubs her warm skin in slow tempting sways and her tail flicks invitingly.",
+                                                "Speaks",
+                                                "If you're going to be {i}this{/i} fucking {i}stubborn{/i} about getting seduced, I'll let you fuck me!",
+                                                "ChangeImageLayer", "Expression", "Beris", "Sneer", "DamagePlayerFromMonster", "Beris", "Scalding Taunt",
+                                                "The hole in the magic wall slides up to align with her pussy, her long nailed hands reaching back to alluringly spread her drooling hole for you, a heavy blush spreading over her angry, frustrated face, her leering fiery sapphire eyes piercing into you, challenging you to stick it in.[DamageToPlayer]",
+                                                "Speaks",
+                                                "So {i}hurry{/i} up! I doubt you'll even fucking {i}last{/i} very long!",
+                                                "DamagePlayerFromMonster", "Beris", "Scalding Taunt",
+                                                "Beris huffs, a scowl still plastered on her seething face, her canine ears twitching as she rubs her curved hips against the increasingly steamy wall, leaving a slight imprint of her soft ass on it as she tries to coax you into sex amid her harsh words.[DamageToPlayer]",
+                                                "IfPlayerOrgasm", "TooHornyToRefuse3",
+                                                "Menu",
+                                                  "Fuck the crass woman through the wall!",
+                                                  "I refuse.",
+                                                "EndLoop"
+                                            ]
+                                },
+                                    {
+                                      "NameOfScene": "TooHornyToRefuse3",
+                                      "theScene": ["With your mind already spinning with dizzying arousal, there's no way you can even think of refusing Beris' tempting offer to fuck her!",
+                                                   "JumpToScene", "Fuck the crass woman through the wall!"
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "I refuse.",
+                                      "theScene": [ "You try to ignore the tempting sight of Beris' supple ass rubbing against the magic window and the alluring promise of her drooling pussy spread wide to eagerly welcome you, but the steam-slicked window seems to enchantingly enhance the hellhound's sultry tease...",
+                                                    "StatCheck",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "1",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "1",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "1",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "2",
+                                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Overheat", "10",
+                                                    "Temptation",
+                                                    "15",
+                                                    "TemptPass2",
+                                                    "Fail",
+                                                    "TemptFail2"
+                                                ]
+                                    },
+                                                      {
+                                                        "NameOfScene": "TemptPass2",
+                                                        "theScene": [ "ChangeImageLayer", "Expression", "Beris", "Scowl",
+                                                                      "Once more, you firmly turn down Beris' offer, and she almost instantly heel-turns in a fit of rage, standing up fully straight again as she slams her upper body against the window with a vibrating impact, her cheek squished against it as she scowls at you, vengefully baring her teeth.",
+                                                                      "Speaks",
+                                                                      "WHAT?! I GO THROUGH ALL THAT SHIT AND YOU STILL FUCKING TURN IT DOWN?! YOU BASTARD, I'LL-!",
+                                                                      "DisplayCharacters",
+                                                                          "EndLoop",
+                                                                      "There's a flash of blue light, and she is cut off mid-foul-mouthed tirade as both she and the magical barrier vanish, sending the fuming hellhound back to where she previously was...",
+                                                                        "You're pretty sure she's going to be trying much harder to beat you if she catches you.",
+                                                                      "GetEventAndChangeProgress", "BerisCombatEvents", "15"
+                                                                  ]
+                                                      },
+                                          {
+                                            "NameOfScene": "TemptFail2",
+                                            "theScene": ["JumpToScene", "Fuck the crass woman through the wall!"
+                                                      ]
+                                          },
+
+                                    {
+                                        "NameOfScene": "Fuck the crass woman through the wall!",
+                                        "theScene": [
+                                                        "ChangeImageLayer", "Expression", "Beris", "Tch",
+                                                        "Eagerly, you stride towards the wall, pulling your stiffening length free from its tight confines, and carefully line it up with the hole in the wall and Beris' spread pussy while she watches with a sideways glance, her sizable tail lightly swaying in anticipation.",
+                                                        "ChangeImageLayer", "Expression", "Beris", "Horny",
+                                                        "She lets out a sighing pleasured gasp as your tip slowly slides inside her while her fingers keep her pussy spread open for you, her hot steamy insides gradually engulfing your entire dick, sinking inch after inch of your cock into the delightful hellish confines.",
+                                                        "Until you're eventually hilted in the wall and her squeezing, massaging hole. Growling happily, she lets her hands slowly slide away to brace herself on the opposite wall, which slides up to her as if in reaction to her movements.",
+                                                        "ChangeImageLayer", "Expression", "Beris", "TchAtYou",
+                                                        "Speaks",
+                                                        "F-Finally, took you fucking long enough...",
+                                                        "Beris grumbles under her breath while she gently rocks her curved hips, making you moan in bliss as you savor the feeling of her tight, molten pussy squeezing and massaging your entire length with the slow motions of her fit waist, treating you to the sight of her soft butt rubbing against the lightly fogged up magical window.",
+                                                        "ChangeImageLayer", "Expression", "Beris", "Smugger",
+                                                        "Gingerly, you set your hands against the wall to brace yourself, only to tense up with another moan as Beris catches you by surprise with powerful swings of her hips, each impact of her fit, shapely rear making the steamy window vibrate and shake slightly, pleasure shooting through your entire waist with each hilting stroke.",
+                                                        "Beris lets out a cocky laugh as she pauses the wild bouncing of her hips to teasingly grind against the wall, gyrating her well-defined hips in swaying circles while her finely muscled pussy works to milk your twitching cock, warm heat spreading through your lower body as ecstasy sparks through your waist with each massaging squeeze of her tight hole.",
+                                                        "Speaks",
+                                                        "Haha- A bastard like you won't last long like this!",
+                                                        "ChangeImageLayer", "Expression", "Beris", "Horny",
+                                                        "Finally getting a grip amid the warm pleasure washing through your hips in constant pulses, you catch the crass woman off-guard by pulling your waist away and thrusting back into her as she starts to swing her shapely hips again. Tensing up, she lets out a low pleasured moan of surprise, her hot breath fogging up the wall opposite of you as you fuck her in return.",
+                                                        "ChangeImageLayer", "Expression", "Beris", "Shy",
+                                                        "Speaks",
+                                                        "Wh- Mmmm! Hey-! Y-You fucker- Yo-You're not supposed to move!",
+                                                        "ChangeImageLayer", "Expression", "Beris", "Smug", "ChangeImageLayer", "Face", "Beris", "BlushHeavy",
+                                                        "With a competitive growl, she resumes shaking her waist while keeping herself firmly pressed against the adjoining wall, your mind blanking out with each forceful meeting of your hips, both of the rooms rapidly filling with steamy, naughty heat while you fuck each other, hellish pleasure thrumming into you with every thrust.",
+                                                        "ChangeImageLayer", "Expression", "Beris", "Horny",
+                                                        "Soon, both of you are gasping and panting with animalistic arousal as you thrust and grind against each other, only the thin fogged up magic barrier stopping you from going down on each other entirely, her squeezing pussy clamping down tighter with each  passing moment while its clinging walls eagerly share their insatiable warmth with your throbbing, pleasure-drunk cock, her body tensing in delight every time you strike her deepest parts.",
+                                                        "ChangeImageLayer", "Expression", "Beris", "HornyBiteLip",
+                                                        "Speaks",
+                                                        "F-Fucking- Hahh-♥ Hell- Y-You were supposed to have fucking- Mnng-♥ cum by now!",
+                                                        "Your thoughts feel lost in the steamy heat permeating the barrier, your bodies slick with sweat and condensation as you rub and press against the window in a fucking frenzy, Beris' confident voice getting sloppier with each passing moment while euphoric pleasure cascades through your waists with each swing of your hips.",
+                                                        "ChangeImageLayer", "Expression", "Beris", "Horny",
+                                                        "Speaks",
+                                                        "C-Come on already- Haaaa-♥ J-Just cum inside-♥ Mmmm!♥ G-Give me a thick fucking load of cum-♥",
+                                                        "PlayerOrgasm","1", "ChangeImageLayer", "Expression", "Beris", "Orgasm",
+                                                        "Her shivering, needy voice urges you on as you thrust harder and faster in her tensing pussy, her body freezing up, her sloppy moans intensifying with each deep impact and ultimately apexing when you slam your hips into hers, the bestial monster girl letting out a loud climactic howl as you fill her with your hot seed, both of you tensing up in shared shivering bliss.",
+                                                        "ChangeImageLayer", "Expression", "Beris", "Horny",
+                                                        "Reveling in the feeling of your spilling cock firmly ensconsed in Beris' hungry pussy, you take a few extra moments to bask in the afterglow, then slowly, you both come down from your mutual pleasure high, your length sliding free from her greedy slit as you each slowly slump to the ground, gasping, the warm sex-scented air mixing with the hot hellhound-infused heat pulsing through you, leaving you already wanting more.",
+                                                        "ChangeImageLayer", "Expression", "Beris", "Flustered",
+                                                        "Beris quickly snaps out of her orgasm-drunk stupor, her ears and tail tensing in shock as she recovers her wits and looks away from you grouchily.",
+                                                        "ChangeImageLayer", "Expression", "Beris", "Shy",
+                                                        "Speaks",
+                                                        "I-I fucking won that!",
+                                                        "ChangeSensitivity", "Sex", "5",
+                                                        "ChangeSensitivity", "Seduction", "5",
+                                                        "ChangeFetish", "Sex", "5",
+                                                        "JumpToScene", "PostLewd"
+                                                  ]
+                                    },
+
+
+
+
+                          {
+                              "NameOfScene": "PostLewd",
+                              "theScene": [
+                                              "DisplayCharacters",
+                                              "EndLoop",
+                                              "There's an abrupt flash of blue light again as Beris and the magical barrier vanish in a stylish flare, sending the hellhound woman back to wherever she previously was.",
+                                              "CallSceneThenReturn",  "FixSpirit"
+
+                                        ]
+                          },
+                          {
+                            "NameOfScene": "FixSpirit",
+                            "theScene": [
+                                            "IfPlayerSpiritGone", "Give1Spirit"
+                                      ]
+                          },
+                                {
+                                  "NameOfScene": "Give1Spirit",
+                                  "theScene": [
+                                                  "SetSpirit", "1",
+                                                  "Despite being completely spent, something from that encounter leaves you oddly energized..."
+                                            ]
+                                },
+                          {
+                              "NameOfScene": "Nothing",
+                              "theScene": [
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "BlueHeartTimer",
+                              "theScene": [ "IfChoice", "1", "TimerEnd", "Nothing",
+                                            "ChangeProgress", "1",
+                                            "IfProgressEqualsOrGreater", "8", "ActiveTimerUp"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "ActiveTimerUp",
+                                      "theScene": ["SetProgress", "0",
+                                                    "SetChoice", "1", "TimerEnd"
+                                                ]
+                                  },
+                          {
+                              "NameOfScene": "CheckTimerEndOnTile",
+                              "theScene": [
+                                            "IfChoice", "1", "TimerEnd", "SwapTile"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "SwapTile",
+                                    "theScene": [
+                                                  "SpawnGridNPC", "BlueHeartTrap", "Here",
+                                                  "RemoveGridNPC", "Current"
+                                              ]
+                                },
+                  {
+                      "NameOfScene": "EventBreak",
+                      "theScene": [
+                                      "Evento broko"
+                                ]
+                  }
+              ]
+}

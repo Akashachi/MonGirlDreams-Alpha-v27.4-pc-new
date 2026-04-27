@@ -1,0 +1,38 @@
+{
+    "name": "Gilded Goddess Iabel",
+    "CardType": "Event",
+    "CardLimit": "5",
+    "Description": "Iabel is hounding you through the labyrinthine pathways, set on coiling around you and mesmerizing you into her eager servant and acolyte.\n\n{i}There’s a small note on the page mentioning that unlike the regular Labyrinth challenge, the hellhounds won't get stronger in the course of your exploration, since their lustful inner flames have time to abate from one encounter to the next.{/i}",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Iabel",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Fight",
+                        "theScene": [
+                                        "DisplayCharacters",
+                                            "1",
+                                          "EndLoop",
+                                          "ChangeBG", "LabyrinthIabel.png",
+                                          "GetEventAndSetProgress", "IabelPower", "0",
+                                          "GetEventAndSetChoice", "IabelCombatEvents", "8", "",
+                                          "ChangeImageLayer", "Expression", "Iabel", "LipLick",
+                                          "As you stride through the dark hallways of the Labyrinth, you hear a hissing purr behind you while a towering wall of purple flames suddenly blocks the path ahead of you! Wheeling around, you come face to face with Iabel who greedily licks her plush lips while her hair snakes glare intently at you.",
+                                          "Speaks",
+                                          "There you are, human. Ready to worship me?♥",
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Iabel",
+                                          "StartCombat",
+                                          "ChangeBG", "Labyrinth.png",
+                                          "With the regal serpentine hellhound dealt with, the flames flicker and vanish, leaving you free to proceed..."
+                                  ]
+                    }
+                ]
+}

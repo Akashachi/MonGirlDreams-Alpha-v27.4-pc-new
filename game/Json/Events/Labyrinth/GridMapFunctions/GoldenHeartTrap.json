@@ -1,0 +1,310 @@
+{
+  "name": "GoldenHeartTile",
+  "CardType": "Event",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [ ""],
+  "Speakers": [
+                {
+                  "name": "Iabel",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                }
+              ],
+  "EventText": [
+                  {
+                      "NameOfScene": "GoldenTile",
+                      "theScene": [
+                                    "SpawnGridNPC", "GoldenHeartTrapDormant", "Here",
+                                    "RemoveGridNPC", "Current",
+                                      "As you step onto the tile inlaid with a gleaming golden heart, there's a stunning flash of arcane light-!",
+                                     "JumpToScene", "PostIntro"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "GoldenTile2",
+                            "theScene": [
+                                          "SpawnGridNPC", "GoldenHeartTrapDormant2", "Here",
+                                          "RemoveGridNPC", "Current",
+                                            "As you step onto the tile inlaid with a gleaming golden heart, there's a stunning flash of arcane light-!",
+                                           "JumpToScene", "PostIntro"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "GoldenTile3",
+                            "theScene": [
+                                          "SpawnGridNPC", "GoldenHeartTrapDormant3", "Here",
+                                          "RemoveGridNPC", "Current",
+                                            "As you step onto the tile inlaid with a gleaming golden heart, there's a stunning flash of arcane light-!",
+                                           "JumpToScene", "PostIntro"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "GoldenHeartProjectile",
+                            "theScene": [
+                                          "RemoveGridNPC", "Current",
+                                          "As the mystical gilded hearts drift into you, there's a dazzling flash of arcane light amid a head-spinning rush of dizzying euphoria-!",
+                                           "JumpToScene", "PostIntro"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "GoldenTileAlt",
+                            "theScene": [
+                                          "SpawnGridNPC", "GoldenHeartTrapDormant", "Here",
+                                          "RemoveGridNPC", "Current",
+                                            "The tile flares up with a gleaming golden heart on its center, dazing you with a stunning flash of arcane light-!",
+                                           "JumpToScene", "PostIntro"
+                                      ]
+                        },
+                  {
+                      "NameOfScene": "PostIntro",
+                      "theScene": [    "SetProgress", "0", "SetChoice", "1", "",
+                                      "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "Iabel", "Kiss",
+                                      "DamagePlayerFromMonster", "Iabel", "Golden Marking",
+                                      "SwapLineIf", "Random",
+                                        "And before you can get your bearings, Iabel is already lunging forward, peppering you with warm, luxurious smooches, coiling and rubbing her hourglass curves against you, massaging you with her plump tits and wide hips while coating your hapless face in gilded lipstick marks.[DamageToPlayer]",
+                                        "And just as your vision starts to clear, Iabel is already upon you, pampering you with soft seductive kisses along your neck before showering your face in gilded affection, her plump lips coating you in kiss marks until your head spins with heavenly bliss.[DamageToPlayer]",
+                                        "And before the blinding flash of light clears, you hear a sultry hiss then feel Iabel's curvy body pressing against you, her plump lips locking with yours for a moment, the regal serpentine woman smearing her gilded lipstick across your mouth before she moves on to layering your stunned face in affectionate, marking smooches.[DamageToPlayer]",
+                                        "And while you're still blinded, you feel a powerful serpentine tail wrap around your waist and yank you forward, making you stumble right into Iabel's luxurious body! While you're still processing the pillowy impact of your head against her indulgently plush cleavage, your face is lifted up to be showered in gilded kisses from the serpent woman's plump lips, leaving you shivering in delight.[DamageToPlayer]",
+                                      "EndLoop",
+                                      "CallSceneThenReturn", "InfatuationRefresher",
+                                      "IfHasPerk", "Gilded Coating", "GildedTrigger",
+                                      "ChangeImageLayer", "Expression", "Iabel", "Wink",
+                                      "CallSceneThenReturn", "KissStack",
+                                      "The fresh layer of lipstick radiates warmly against your skin, and Iabel gives one of your ears a nibbling parting smooch before she deftly slithers away from you as quickly as she darted in, letting you gaze upon her wide swaying hips and plump ass for a fleeting moment before another flare of shining magic teleports her away, leaving her haughty laughter hanging in the air.",
+                                      "DisplayCharacters",
+                                          "EndLoop"
+                                  ]
+                  },
+
+
+                      {
+                        "NameOfScene": "KissStack",
+                        "theScene": [
+                                      "IfHasPerk", "Gilded Markings", "GildedCoating",
+                                      "IfHasPerk", "Gilded Mark", "GildedMarks",
+                                      "GivePerkQuietly", "Gilded Mark"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "GildedMarks",
+                              "theScene": [ "RemovePerkQuietly", "Gilded Mark",
+                                            "GivePerkQuietly", "Gilded Markings"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "GildedCoating",
+                              "theScene": [ "RemovePerkQuietly", "Gilded Markings",
+                                            "GivePerkQuietly", "Gilded Coating"
+                                        ]
+                            },
+                      {
+                        "NameOfScene": "InfatuationRefresher",
+                        "theScene": [
+                                      "IfHasPerk", "Gilded Infatuation", "InfatBoost",
+                                      "IfHasPerk", "Gilded Captivation", "CapBoost",
+                                      "IfHasPerk", "Gilded Enchantment", "EnchantBoost"
+                                  ]
+                      },
+                              {
+                                "NameOfScene": "InfatBoost",
+                                "theScene": [
+                                              "ChangePerkDuration", "Gilded Infatuation", "3"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "CapBoost",
+                                "theScene": [
+                                              "ChangePerkDuration", "Gilded Captivation", "3"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "EnchantBoost",
+                                "theScene": [
+                                              "ChangePerkDuration", "Gilded Enchantment", "3"
+                                          ]
+                              },
+
+
+                      {
+                        "NameOfScene": "InfatuationStack",
+                        "theScene": [
+                                      "IfHasPerk", "Gilded Enchantment", "Nothing",
+                                      "IfHasPerk", "Gilded Captivation", "GildedEnchantment",
+                                      "IfHasPerk", "Gilded Infatuation", "GildedCaptivation",
+                                      "GivePerkQuietly", "Gilded Infatuation"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "GildedCaptivation",
+                              "theScene": [ "RemovePerkQuietly", "Gilded Infatuation",
+                                            "GivePerkQuietly", "Gilded Captivation"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "GildedEnchantment",
+                              "theScene": [ "RemovePerkQuietly", "Gilded Captivation",
+                                            "GivePerkQuietly", "Gilded Enchantment"
+                                        ]
+                            },
+                    {
+                      "NameOfScene": "GildedTrigger",
+                      "theScene": [
+                                    "IfHasPerk", "Gilded Enchantment", "IkuIkuIku",
+                                    "RemovePerkQuietly", "Gilded Coating",
+                                    "CallSceneThenReturn", "InfatuationStack",
+                                    "ChangeImageLayer", "Expression", "Iabel", "Oral",
+                                    "DamagePlayerFromMonster", "Iabel", "GildedDetonation",
+                                    "SwapLineIf", "Perk",
+                                     "Gilded Enchantment",  "While you're left worshipfully kiss-drunk, swaying in an eager daze, Iabel presses her plump, divine lips to yours, deeply and passionately making out with you, letting her long tongue stir up your obedient mouth while the golden lipstick marks covering your face suddenly all hotly pulse with enchanting magic, laying ethereal smooches all over your face as you feel adoring love swell up in your core.[DamageToPlayer]",
+                                     "Gilded Captivation",  "While you're left kiss-drunk, swaying in a hopeless daze, Iabel presses her perfectly plush lips to yours, deeply and passionately making out with you, letting her long tongue stir up your mouth into submission while the golden lipstick marks covering your face suddenly all hotly pulse with enchanting magic, laying ethereal smooches all over your face as you feel complete captivation swell in your core.[DamageToPlayer]",
+                                     "Gilded Infatuation",  "While you're left kiss-drunk, swaying in a daze, Iabel presses her plush lips to yours, deeply and passionately making out with you, letting her long tongue stir up your mouth while the golden lipstick marks covering your face suddenly all hotly pulse with enchanting magic, laying ethereal smooches all over your face as you feel affectionate desire swell up in your core.[DamageToPlayer]",
+                                    "EndLoop",
+                                    "DamagePlayerFromMonster", "Iabel", "GildedDetonation",
+                                    "SwapLineIf", "Perk",
+                                     "Gilded Enchantment",  "You can only tremble against your goddess' perfect hourglass curves while every lipstick stain coating you gives you tantalizing phantom smooches with, letting you eagerly embrace the sensations of their enthralling charms pouring into your increasingly obedient, horny mind. Ultimately, with a final resonating surge, they vanish, and Iabel breaks the intoxicating kiss with a wet sigh, your tongue feeling completely melted under her care.[DamageToPlayer]",
+                                     "Gilded Captivation",  "You can only twitch against Iabel's divine hourglass curves while every lipstick stain coating you gives you tantalizing phantom smooches, leaving you helpless to stop them from pouring their captivating charms into your increasingly pliable, horny mind. Ultimately, with a final resonating surge, they vanish, and Iabel breaks the intoxicating kiss with a wet sigh, your tongue feeling completely melted under her care.[DamageToPlayer]",
+                                     "Gilded Infatuation",  "You can only twitch against Iabel's glamourous hourglass curves while every lipstick stain coating you gives you tantalizing phantom smooches, leaving you helpless to stop them from pouring their tempting charms into your increasingly horny mind. Ultimately, with a final resonating surge, they vanish, and Iabel breaks the deep kiss with a wet sigh, your tongue feeling completely melted under her care.[DamageToPlayer]",
+                                    "EndLoop",
+                                    "IfPlayerOrgasm", "GildedKissClimax",
+                                    "ChangeImageLayer", "Expression", "Wink",
+                                    "The alluring serpent woman slips away from you with a haughty laugh, giving you a fleeting moment to gaze upon her wide swaying hips and plump ass, leaving you with some teasing words before she vanishes in a flash of warm golden light.",
+                                    "Speaks",
+                                    "SwapLineIf", "Random",
+                                      "Auhuhu~♥ Try not to get {i}too{/i} kiss-drunk.♥",
+                                      "Ufuhu~♥ I bet you already want more.♥ Don't be shy, trigger the trap all you want.♥",
+                                      "Uhuhu~♥ Oh my,♥ you're completely smitten with me now.♥",
+                                      "Mfhfh~♥ I'll pamper you until I'm all you can think of.♥",
+                                    "EndLoop",
+                                    "DisplayCharacters",
+                                      "EndLoop"
+                                ]
+                    },
+                                {
+                                  "NameOfScene": "GildedKissClimax",
+                                  "theScene": [
+                                                "PlayerOrgasm", "1",
+                                                "ChangeImageLayer", "Expression", "LipLick",
+                                                "CallSceneThenReturn", "KissStack",
+                                                "SwapLineIf", "Random",
+                                                  "With you obviously teetering on the brink of climax, Iabel hisses in delight, rubbing her heavy tits against your chest while pulling you into another deep, mind-numbing kiss, one of her elegant hands slipping down to lovingly pump your leaking manhood, leaving you mewling in captivation as she milks out thick ropes of cum from your aching balls, the sensation of her tongue dominating your mouth and leaving your eyes rolling.",
+                                                  "While you pant and gasp with need in Iabel's embrace, she purrs sweetly, then peppers you with a fresh coating of lipstick kisses, each smack of her plump lips sending a resonating jolt of charming bliss right into your spinning mind.|n|Your manhood eagerly throbs and twitches in total obedience to the divine pleasure, which peaks with Iabel simply trailing a long, grazing nail along the underside of your dick, coaxing out a thick load from her divine feather-light touch.",
+                                                  "Iabel rubs her plush tits and wide hips against your side, trailing lipstick-staining kisses along your shoulder and neck while your body shivers in melty pleasure, every indulgent smooch washing through your senses like a hot wave.|n|Until her soft lips press against your cheek, then move to your sensitive ear which she kisses, nibbles, and licks lovingly until your senses go completely blank with ecstasy and your untouched erection spurts a thick load into the air.",
+                                                "EndLoop",
+                                                "The alluring serpent woman slips away from you with a haughty laugh, giving you a fleeting moment to gaze upon her wide swaying hips and plump ass, leaving you with some teasing words before she vanishes in a flash of warm golden light.",
+                                                "Speaks",
+                                                "SwapLineIf", "Random",
+                                                  "Auhuhu~♥ Try not to get {i}too{/i} kiss-drunk.♥",
+                                                  "Ufuhu~♥ I bet you already want more.♥ Don't be shy, trigger the trap all you want.♥",
+                                                  "Uhuhu~♥ Oh my,♥ you're completely smitten with me now.♥",
+                                                  "Mfhfh~♥ I'll pamper you until I'm all you can think of.♥",
+                                                "EndLoop",
+                                                "DisplayCharacters",
+                                                  "EndLoop",
+                                                "ChangeSensitivity", "Seduction", "5",
+                                                "ChangeSensitivity", "Magic", "5",
+                                                "ChangeFetish", "Kissing", "5",
+                                                "CallSceneThenReturn",  "FixSpirit"
+                                            ]
+                                },
+
+                              {
+                                "NameOfScene": "IkuIkuIku",
+                                "theScene": [
+                                              "With you completely kiss-marked and utterly infatuated with your serpentine goddess, Iabel lets out a seductive purr, draping her arms over you as she speaks, her plump lips level with your enchanted gaze, the languid pursing and curving of her mouth accentuating every word she speaks, melting into your captivated senses like gospel.",
+                                              "Speaks",
+                                              "SwapLineIf", "Random",
+                                                "Ufuhu~♥ Looks like you're ready to devote yourself to me.♥ I shall kiss you into total surrender.♥",
+                                                "Auhuhu~♥ Time to eat you up.♥ Until all that's left is an infatuated servant.♥",
+                                                "Mfhfh~♥ I suppose I should finish you off now.♥ Don't bother trying to escape.♥",
+                                              "EndLoop",
+                                              "GetEventAndSetChoice", "IabelCombatEvents", "10", "AltIntro",
+                                              "CombatEncounter",
+                                                  "RunningWontSkipEvent",
+                                                  "Iabel",
+                                                  "ApplyStance", "Making Out",
+                                              "StartCombat",
+                                              "IfRanAway", "RanFromIabel",
+                                              "CallEventAndSceneThenReturn", "IabelCombatEvents", "UpdatePower"
+                                          ]
+                              },
+                                    {
+                                        "NameOfScene": "RanFromIabel",
+                                        "theScene": [
+                                                        "As you make your escape from Iabel, you can hear her let out a haunting, haughty laugh that echoes in your mind along with fantasies of her swaying body and plump, gilded lips, noting a faint flash of light behind you returning her to wherever she previously was...",
+                                                        "GetEventAndChangeProgress", "IabelPower", "2"
+                                                  ]
+                                    },
+
+                            {
+                              "NameOfScene": "FixSpirit",
+                              "theScene": [
+                                              "IfPlayerSpiritGone", "Give1Spirit"
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "Give1Spirit",
+                                    "theScene": [
+                                                    "SetSpirit", "1",
+                                                    "Despite being completely spent, something from that encounter leaves you oddly energized..."
+                                              ]
+                                  },
+                            {
+                                "NameOfScene": "GoldenHeartTimer",
+                                "theScene": ["IfChoice", "1", "TimerEnd", "Nothing",
+                                              "ChangeProgress", "1",
+                                              "IfProgressEqualsOrGreater", "10", "ActiveTimerUp"
+                                          ]
+                            },
+                                    {
+                                        "NameOfScene": "ActiveTimerUp",
+                                        "theScene": ["SetProgress", "0",
+                                                      "SetChoice", "1", "TimerEnd"
+                                                  ]
+                                    },
+                            {
+                                "NameOfScene": "CheckTimerEndOnTile",
+                                "theScene": [
+                                              "IfChoice", "1", "TimerEnd", "SwapTile"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "SwapTile",
+                                      "theScene": [
+                                                    "SpawnGridNPC", "GoldenHeartTrap", "Here",
+                                                    "RemoveGridNPC", "Current"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "SwapTile2",
+                                      "theScene": [
+                                                    "SpawnGridNPC", "GoldenHeartTrapTrove2", "Here",
+                                                    "RemoveGridNPC", "Current"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "SwapTile3",
+                                      "theScene": [
+                                                    "SpawnGridNPC", "GoldenHeartTrapTrove3", "Here",
+                                                    "RemoveGridNPC", "Current"
+                                                ]
+                                  },
+
+
+                        {
+                            "NameOfScene": "Nothing",
+                            "theScene": [
+                                      ]
+                        },
+
+                  {
+                      "NameOfScene": "EventBreak",
+                      "theScene": [
+                                      "Evento broko"
+                                ]
+                  }
+              ]
+}

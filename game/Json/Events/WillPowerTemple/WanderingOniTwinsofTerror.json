@@ -1,0 +1,52 @@
+{
+    "name": "Wandering Oni Twins of Terror",
+    "CardType": "Event",
+    "CardLimit": "1",
+    "Description": "The dreaded oni sisters Himika and Mizuko, who share the role of one of the Demon Queen's commanders, patrol the hallways of this place together...",
+    "requires": [ "Sigil Of Will-Power"],
+    "requiresEvent": [
+                {
+                    "NameOfEvent": "The Terrifying Oni Twins",
+                    "Progress": "0",
+                    "ChoiceNumber": "1",
+                    "Choice": "ClearedLabyMatch"
+                }
+            ],
+    "Speakers": [
+                  {
+                    "name": "Mizuko",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Himika",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Fight both!",
+                        "theScene": [   "GetEventAndSetChoice", "Will-Power Final Boss", "5", "", 
+                                        "ChangeBG", "templeMainHall.png",
+                                          "In an instant, from the featureless black corridors of the Umbral Labyrinth, you suddenly find yourself in the open arena-like depths of the Temple, the familiar ring adorned on either side with a telltale pair of large pillars, one red, one blue.",
+                                          "DisplayCharacters",
+                                                "1",
+                                                "2",
+                                              "EndLoop",
+
+                                          "ChangeImageLayer", "Expression", "Himika", "Cocky", "ChangeImageLayer", "Expression", "Mizuko", "Smug",
+                                          "Himika and Mizuko are imposingly standing in the center of the arena, having clearly been awaiting your arrival. Judging by their horny, hungry expressions, they definitely aren't interested in talking, and so you immediately prepare yourself for battle as the door slams shut behind you!",
+
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Mizuko",
+                                            "Himika",
+                                          "StartCombat",
+                                          "ChangeBG",  "Labyrinth.png",
+                                          "With Mizuko and Himika's climactic defeats, you're free to resume your adventure and keep exploring the dark halls of the Labyrinth..."
+                                  ]
+                    }
+                ]
+}

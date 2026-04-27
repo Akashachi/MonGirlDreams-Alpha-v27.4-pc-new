@@ -1,0 +1,382 @@
+{
+    "name": "ApartmentsTrialFloor4",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Imp",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }  
+                ],
+    "EventText": [
+                   
+                     {
+                      "NameOfScene": "StartEvent",
+                      "theScene": [ "AllowInventory",
+                                     
+                                    "Stepping into the fourth floor of Adventure Apartments, you find yourself in a long hallway that curves from one side of the building to the other in an S shape, lined with apartment doors and windows on both sides. An intricately ornate and detailed carpet runs the length of the corridor, depicting a colorful tapestry of sea life, with fish, coral, and seaweed coiling outwards from four regal merfolk women, one in each corner.",
+                                    "JumpToScene", "EntryWayMenu"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "EntryWayMenu",
+                      "theScene": [   "AllowInventory",
+                                        "Menu",                                                                                  
+                                          "Check one of the doors.",  
+                                          "Inspect the carpet.",
+                                          "Stop and think...",
+                                          "Go to another floor.",
+                                        "EndLoop"
+                                ]
+                    },    
+                            {
+                            "NameOfScene": "Stop and think...",
+                            "theScene": [    
+                                            "JumpToEventThenScene", "ApartmentsTrialThinking", "Floor4Think"
+                                        ]
+                            },
+                            {
+                            "NameOfScene": "Go to another floor.",
+                            "theScene": [    
+                                            "Menu",    
+                                                "Go to the first floor.",                                    
+                                                "Go to the second floor.",
+                                                "Go to the third floor.",
+                                                "Go to the fifth floor.",
+                                                "Go to the sixth floor.",                                                
+                                                "Stay here.",
+                                            "EndLoop"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "Stay here.",
+                                        "theScene": [  
+                                                   "JumpToScene", "EntryWayMenu"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the first floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEventThenScene", "ApartmentsTrialFloor1", "EnterFromOtherFloor"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the second floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor2"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the third floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor3"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the fifth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor5"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the sixth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor6"
+                                                ]
+                                    },
+                            {
+                            "NameOfScene": "Check one of the doors.",
+                            "theScene": [    
+                                            "As you inspect the doors, you notice that there are fewer of them than on other floors, partly owing to the unusual floor plan, but also probably and simply due to the apartments being larger, this particular floor being perhaps intended for wealthier residents. The rooms' numbering is also somewhat strange, possibly as a result of some esoteric process of architectural and administrative logic that you can only guess at...",
+                                            "JumpToScene", "DoorsMenu"
+                                        ]
+                            },
+
+                            {
+                            "NameOfScene": "DoorsMenu",
+                            "theScene": [    "SetChoice", "1", "", 
+                                            "Menu",                                          
+                                                "Check door 401",
+                                                "Check door 402",
+                                                "Check door 407",
+                                                "Check door 409",
+                                                "Check door 410",
+                                                "Nevermind.",
+                                            "EndLoop"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "Nevermind.",
+                                        "theScene": [  
+                                                   "JumpToScene", "EntryWayMenu"
+                                                ]
+                                    },
+                            {
+                                "NameOfScene": "Check door 401",
+                                "theScene": [  
+                                            "Menu",                                          
+                                                "Open door 401.",
+                                                "Knock on door 401.",
+                                                "Check another door.",
+                                            "EndLoop"
+                                ]
+                            }, 
+                                    {
+                                        "NameOfScene": "Knock on door 401.",
+                                        "theScene": [  "IfChoice", "1", "KnockedTwice", "Room401ThreeKnocked",
+                                                    "IfChoice", "1", "KnockedOnce", "Room401TwiceKnocked",
+                                                    "SetChoice", "1", "KnockedOnce",
+                                                    "You knock on the wooden door, then wait... But nothing happens.",
+                                                    "JumpToScene", "Check door 401"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "Room401TwiceKnocked",
+                                                "theScene": [     
+                                                            "SetChoice", "1", "KnockedTwice",
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 401"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Room401ThreeKnocked",
+                                                "theScene": [     
+                                                            "SetChoice", "1", "",
+                                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "DoorKnockTraps", "MonsterKnockPunishment",
+                                                            "JumpToScene", "Check door 401"
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Open door 401.",
+                                        "theScene": [  
+                                                    "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                    "JumpToScene", "Check door 401"
+                                        ]
+                                    }, 
+                            {
+                                "NameOfScene": "Check door 402",
+                                "theScene": [  
+                                            "Menu",                                          
+                                                "Open door 402.",
+                                                "Knock on door 402.",
+                                                "Check another door.",
+                                            "EndLoop"
+                                ]
+                            }, 
+                                    {
+                                        "NameOfScene": "Knock on door 402.",
+                                        "theScene": [    
+                                                    "IfChoice", "1", "KnockedOnce", "Room402TwiceKnocked",
+                                                    "SetChoice", "1", "KnockedOnce",
+                                                    "You knock on the wooden door, then wait... But nothing happens.",
+                                                    "JumpToScene", "Check door 402"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "Room402TwiceKnocked",
+                                                "theScene": [ "SetChoice", "1", "",
+                                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "DoorKnockTraps", "DeeperKnockPunishment",
+                                                            "JumpToScene", "DoorsMenu" 
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Open door 402.",
+                                        "theScene": [  
+                                                    "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                    "JumpToScene", "Check door 402"
+                                        ]
+                                    }, 
+                            {
+                                "NameOfScene": "Check door 407",
+                                "theScene": [  
+                                            "Menu",                                          
+                                                "Open door 407.",
+                                                "Knock on door 407.",
+                                                "Check another door.",
+                                            "EndLoop"
+                                ]
+                            },
+                                    {
+                                        "NameOfScene": "Check another door.",
+                                        "theScene": [  
+                                                     "JumpToScene", "DoorsMenu"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Knock on door 407.",
+                                        "theScene": ["GetEventAndIfChoice", "ApartmentsTrialFloor3", "2", "", "Teehee",
+                                                     "IfChoice", "1", "KnockedTwice", "WellNowitLocked",
+                                                     "IfChoice", "1", "KnockedOnce", "KnockTracker2",
+                                                     "SetChoice", "1", "KnockedOnce",
+                                                     "You knock on the wooden door, then wait... But nothing happens.",
+                                                     "JumpToScene", "Check door 407"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "KnockTracker2",
+                                                "theScene": [  
+                                                            "SetChoice", "1", "KnockedTwice",
+                                                            "You knock on the wooden door again, and you hear a metallic click!",
+                                                            "JumpToScene", "Check door 407"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Teehee",
+                                                "theScene": [   "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "DoorKnockTraps", "AphroKnockPunishment",
+                                                            "JumpToScene", "Check door 407"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "WellNowitLocked",
+                                                "theScene": [  "SetChoice", "1", "",
+                                                             "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "DoorKnockTraps", "AphroKnockPunishment",
+                                                            "JumpToScene", "Check door 407"
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Open door 407.",
+                                        "theScene": [  
+                                                    "IfChoice", "1", "KnockedTwice", "OpenDoor407",
+                                                    "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                     "JumpToScene", "Check door 407"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "OpenDoor407",
+                                                "theScene": [  "SetChoice", "1", "", "IfChoice", "2", "FinalLetterGet", "OpenDoor407Again",
+                                                            "You turn the handle, and to your surprise, while the door itself refuses to budge, a letter whirrs out of the mail slot in response to your actions!",
+                                                            "Perplexed, you pause for a few seconds, waiting to see if something else is going to happen, but with the door remaining impervious to further attempts to open it, and with the message continuing to stick out of the mail slot plainly for you to pick up, you curiously do so and open the slightly weighty envelope to find the usual letter, along with an unmarked key this time!",
+                                                            "As you could expect, the note itself describes another riddle, which reads as follows:\n\n{i}With your mind sharp and the puzzles solved, only one task remains: search for the peak of power where the final constellation shines, awaiting your arrival. Seek its gaze and find the finale!{/i}",
+                                                            "You pocket the key and keep the note so you can check it later in case you forget its contents, and return your attention to the hallway. Just one step left!",
+                                                            "SetChoice", "2", "FinalLetterGet",
+                                                            "JumpToScene", "EntryWayMenu"
+                                                ]
+                                            },
+                                                    {
+                                                        "NameOfScene": "OpenDoor407Again",
+                                                        "theScene": [
+                                                                    "You try to open the door again, and find that your attempt yields naught but the defiant rattle of the doorknob against your twisting, pulling, and pushing. You're beginning to strongly suspect that the door is a dummy one, and that there isn't actually anything behind it except the delivery mechanism for the letter that you already have...",
+                                                                    "JumpToScene", "EntryWayMenu"
+                                                        ]
+                                                    },
+
+                            {
+                                "NameOfScene": "Check door 409",
+                                "theScene": [  
+                                            "Menu",                                          
+                                                "Open door 409.",
+                                                "Knock on door 409.",
+                                                "Check another door.",
+                                            "EndLoop"
+                                ]
+                            }, 
+                                    {
+                                        "NameOfScene": "Knock on door 409.",
+                                        "theScene": [   
+                                                    "JumpToEventThenScene", "Malicia's Domain", "KnockingStart" 
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Open door 409.",
+                                        "theScene": [  
+                                                    "JumpToEventThenScene", "Malicia's Domain", "EnterStart" 
+                                        ]
+                                    }, 
+                            {
+                                "NameOfScene": "Check door 410",
+                                "theScene": [  
+                                            "Menu",                                          
+                                                "Open door 410.",
+                                                "Knock on door 410.",
+                                                "Check another door.",
+                                            "EndLoop"
+                                ]
+                            }, 
+                                    {
+                                        "NameOfScene": "Knock on door 410.",
+                                        "theScene": [   "StoreCurrentEventSpotSkippingLines", "3",
+                                                    "JumpToEventThenScene", "DoorKnockTraps", "MagicKnockPunishment",
+                                                    "JumpToScene", "DoorsMenu" 
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Open door 410.",
+                                        "theScene": [  
+                                                    "StoreCurrentEventSpotSkippingLines", "3",
+                                                    "JumpToEventThenScene", "Heather's Bed Temptation", "EventStart",
+                                                    "JumpToScene", "Check door 410"
+                                        ]
+                                    }, 
+                            
+ 
+
+                             {
+                                "NameOfScene": "Inspect the carpet.",
+                                "theScene": [  
+                                            "The carpet runs the length of the fourth floor's hallway, depicting a colorful tapestry of sea life in an artistic pattern of intermixing fish, coral, and seaweed, the parade of underwater flora and fauna spiraling and flowing in a way that draws your gaze to four prominent merfolk women, one in each corner of the carpet.",
+                                            "GetEventAndIfChoice", "ApartmentsTrialFloor3", "2", "GotLetterClue", "CarpetMenu",
+                                            "JumpToScene", "EntryWayMenu"                                          
+
+                                ]
+                            },
+                                    {
+                                        "NameOfScene": "CarpetMenu",
+                                        "theScene": [   "SetChoice", "3", "CheckedCarpet",
+                                                        "Menu",                                          
+                                                            "Check the Merfolk of The North",
+                                                            "Check the Merfolk of The East",
+                                                            "Check the Merfolk of The South",
+                                                            "Check the Merfolk of The West",
+                                                            "Nevermind.",
+                                                        "EndLoop"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "Check the Merfolk of The North",
+                                                "theScene": [  
+                                                                "Looking at the Queen of the North, you find a short-haired woman with her arms daintily folded over her ample, seashell-covered chest. She is primly holding a book in an elegant reading posture, though her bespectacled eyes are restfully closed with a serene smile on her oval-shaped face to match, making her feel calm and composed. You also notice an arrow on her book's cover, which is pointing in the direction of room 402.",
+                                                                "Checking the carpet's underside as per the riddle's instruction of 'turning over the seabed', you find an embroidered note that reads as follows: {i}I am the most buxom of us Sisters. The Queen of the East tells only lies. The Queen of the West's actions are always true. The Queen of the South is a harlot. You must knock five times to open the door leading to your final prize.{/i}",
+                                                                "JumpToScene", "CarpetMenu"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Check the Merfolk of The East",
+                                                "theScene": [  
+                                                                "Looking at the Queen of the East, you see that she is a long-haired beauty, her flowing hair drifting somewhat messily along her sleek tail. She proudly holds a scepter in one hand, while the other points towards room 409. Her lips are curled into a small, superior smile, and her bust is modest, covered by a single shell. ...It also appears that someone has stomped on this carpet corner a few times, leaving it slightly scuffed...",
+                                                                "Checking the carpet's underside as per the riddle's instruction of 'turning over the seabed', you find an embroidered note that reads as follows: {i}Of all the Queens, I am the best fighter. The Queen of the North speaks one truth. The Queen of the West doesn't bite. The Queen of the South doesn't know I cut my hair. The number of the first riddle shows your goal. The dragon depicted on the fifth floor awaits you there. You need not knock.{/i}",
+                                                                "JumpToScene", "CarpetMenu"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Check the Merfolk of The South",
+                                                "theScene": [  
+                                                                "Looking at the Queen of the South, you see a regal-looking, mature fish woman lounging on a throne of coral, her heavy breasts artistically obscured with bubbles and far too small seashells. She gazes forward with deep blue eyes, a time-worn nacre crown sits atop her head, and her curly hair spills down along her back. One of her hands is thrusted to her side in a clenched fist, making it look as though it should be holding something.",
+                                                                "Checking the carpet's underside as per the riddle's instruction of 'turning over the seabed', you find an embroidered note that reads as follows: {i}I am the eldest Queen. My Sister to the East has the longest hair. My Sister to the West is the strongest fighter of us four. My Sister to the North wishes she was me. To reach your prize in this game, you must knock twice.{/i}",
+                                                                "JumpToScene", "CarpetMenu"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Check the Merfolk of The West",
+                                                "theScene": [  
+                                                                "Looking at the Queen of the West, you behold a slender, athletic woman with sizable breasts covered by two seashells, leaning against a rock with one hand flourishingly wielding a trident while the other points at room 407. She gives a big smile with razor-sharp shark teeth, while her very lengthy hair messily cascades over her drenched form, giving her a fierce, powerful appearance.",
+                                                                "Checking the carpet's underside as per the riddle's instruction of 'turning over the seabed', you find an embroidered note that reads as follows: {i}I stole the Queen of the South's trident. The Queen of the East has the smallest bust and speaks two truths. The Queen of the North likes me the least. The room you seek is 401. You must knock three times.{/i}",
+                                                                "JumpToScene", "CarpetMenu"
+                                                ]
+                                            },
+                   
+
+                    {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [   "event broke."
+                                ]
+                    }
+                ]
+}

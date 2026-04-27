@@ -1,0 +1,641 @@
+{
+  "name": "AmyCombatEvents",
+  "CardType": "",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [ ""],
+  "Speakers": [
+                {
+                  "name": "Amy",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                }
+              ],
+  "EventText": [
+              {
+                "NameOfScene": "You're mean.",
+                "theScene": [
+                              "ChangeProgress", "1",
+                              "IfProgressEqualsOrGreater", "3", "RunsAway"
+                          ]
+              },
+                      {
+                        "NameOfScene": "RunsAway",
+                        "theScene": [ "ChangeImageLayer", "Expression", "Shriek", "ChangeImageLayer", "Tail",  "Smash",
+                                      "Amy lets out a howl of rage as you inflict pain on her a third time, the purple on her body turns to a boiling red crimson and she slams her now brightly glowing tail into the ground, and with a resounding crack the entire tunnel if flooded with blinding light and ringing sound, that leaves you crying out in panic as you're rendered temporarily deaf and blind.",
+                                      "ClearMonsterEncounter",
+                                      "By the time it clears up you realize Amy's run away... You think you {i}may{/i} have pissed her off...",
+                                      "GetEventAndSetChoice", "AmyAndPerpetua", "1", "MeanToAmy"
+                                  ]
+                      },
+
+
+              {
+                  "NameOfScene": "No Anal",
+                  "theScene": [
+                                "SkipPlayerAttack",
+                                "IfMonsterHasStatusEffect", "Restrain", "No Anal Still",
+                                "IfMonsterHasStatusEffect", "Sleep", "No Anal Still",
+                                "IfMonsterHasStatusEffect", "Stun", "No Anal Still",
+                                "ChangeImageLayer", "Expression",  "Curious",
+                                "You move to penetrate Amy's ass, managing to move her long tail out of the way to see... She doesn't appear to have one? Amy's staring at you with a mixture of curiosity and confusion, and invitingly spreads her pussy with a chirp, inviting you in.",
+                                "Menu",
+                                  "Fuck her pussy!",
+                                  "Abort!",
+                                "EndLoop"
+                            ]
+              },
+                            {
+                                "NameOfScene": "No Anal Still",
+                                "theScene": [
+                                              "You move to penetrate Amy's ass, managing to move her long tail out of the way to see... She doesn't appear to have one?",
+                                              "Menu",
+                                                "Fuck her pussy!",
+                                                "Abort!",
+                                              "EndLoop"
+                                          ]
+                            },
+                      {
+                          "NameOfScene": "Abort!",
+                          "theScene": [ "You step back and try to think of your next move, and Amy seems a little miffed you ignored her offer..."
+                                    ]
+                      },
+                      {
+                          "NameOfScene": "Fuck her pussy!",
+                          "theScene": [ "ApplyStance", "Sex",
+                                        "HitPlayerWith", "Devouring Ride",
+                                        "ChangeImageLayer", "Expression",  "Seductive",
+                                        "You plunge your rigid cock into her tight cilia-filled pussy with a moan, and only moan louder as two long tongues descend and wrap around your throbbing cock to massage and tease it.[DamageToPlayer]",
+                                        "HitMonsterWith", "Thrust",
+                                        "But Amy herself also coos happily at your stiff erection filling her, clearly enjoying you inside her.[DamageToEnemy]"
+                                    ]
+                      },
+
+              {
+                "NameOfScene": "DeepTongueAction",
+                "theScene": [  "SkipPlayerAttack",
+                              "ApplyStance",   "Making Out",
+                              "ApplyStatusEffect",   "Voracious Make Out",
+                              "HitPlayerWith", "Voracious Make Out",
+                              "IfMonsterHasStatusEffect", "Restrain", "InstinctiveDeepKiss",
+                              "IfMonsterHasStatusEffect", "Sleep", "InstinctiveDeepKiss",
+                              "IfMonsterHasStatusEffect", "Stun", "InstinctiveDeepKiss",
+                              "ChangeImageLayer", "Expression",  "OpenMouth",
+                             "As you move to make out with Amy, you pause unsure exactly how to start given her mouthless appearance, but she catches onto your intention, and before you can do anything she splits open her mouth and jaw, revealing her five long tongues dripping with venom, and {i}deeply{/i} kisses you, latching onto your face, overwhelming you as her multiple tongues massage every part of your mouth.[DamageToPlayer]"
+                            ]
+              },
+                    {
+                      "NameOfScene": "InstinctiveDeepKiss",
+                      "theScene": [
+                                    "ChangeImageLayer", "Expression",  "OpenMouth",
+                                   "As you move to make out with Amy, you pause unsure exactly how to start given her mouthless appearance, and despite being immobilized her body acts on its own and before you can do anything her mouth and jaw split open, revealing her five long tongues dripping with venom, and she instinctively kisses you {i}deeply{/i}, latching onto your face, overwhelming you as her multiple tongues massage every part of your mouth.[DamageToPlayer]"
+                                  ]
+                    },
+              {
+                "NameOfScene": "FaceFuckSeal",
+                "theScene": [  "SkipPlayerAttack",
+                              "ApplyStatusEffect",   "Ball-Draining Oral Prison",
+                              "HitPlayerWith", "Ball-Draining Suction Massage",
+                              "IfMonsterHasStatusEffect", "Restrain", "InstinctiveFaceFuckSeal",
+                              "IfMonsterHasStatusEffect", "Sleep", "InstinctiveFaceFuckSeal",
+                              "IfMonsterHasStatusEffect", "Stun", "InstinctiveFaceFuckSeal",
+                              "ChangeImageLayer", "Expression",  "OpenInvitation",
+                             "You try to plow Amy's unnatural mouth, but she merely lets out a happy noise as you shove your dick deeper, and seals her mouth around your rigid erection and aching balls, using her tongues to easily draw you in, leaving you crying out in bliss as she starts to intensely suck while her tongues continue to milk your aching length![DamageToPlayer]",
+                             "Then you quickly realize you'll be helpless to do anything if she's so firmly latched onto your groin."
+
+                          ]
+              },
+                    {
+                      "NameOfScene": "InstinctiveFaceFuckSeal",
+                      "theScene": ["ChangeImageLayer", "Expression",  "OpenInvitation",
+                                   "You try to plow Amy's unnatural mouth, but as you shove your dick deeper her mouth acts on instinct despite her immobile form, and seals around your rigid erection and aching balls, her tongues easily drawing you in, leaving you crying out in bliss as she starts to intensely suck while her tongues continue to milk your aching length![DamageToPlayer]",
+                                   "Then you quickly realize you'll be helpless to do anything if she's so firmly latched onto your groin."
+
+                                ]
+                    },
+
+
+
+
+
+
+
+              {
+                  "NameOfScene": "StunFlareCounterCall",
+                  "theScene": [ "SetChoice", "1", "CounterCheckEndTurn"
+                            ]
+              },
+                  {
+                    "NameOfScene": "EndOfRoundCounterCheck",
+                    "theScene": [  "IfMonsterHasStatusEffect", "Sleep", "Remove Counter Checks",
+                                  "IfMonsterHasStatusEffect", "Stun", "Remove Counter Checks",
+                                  "IfMonsterHasStatusEffect", "Restrain", "Remove Counter Checks",
+                                  "IfPlayerHasStatusEffect", "Stun", "Remove Counter Checks",
+                                  "IfChoice", "2", "counter set", "CounterEnd",
+                                  "IfChoice", "2", "Countered!", "ResumeFight",
+                                  "IfChoice", "1", "CounterCheckEndTurn", "CounterSetCheck"
+                              ]
+                  },
+                          {
+                            "NameOfScene": "Remove Counter Checks",
+                            "theScene": [   "SetChoice", "1", "",
+                                            "SetChoice", "2", "",
+                                            "ResumeMonsterAttack"
+                                      ]
+                          },
+                  {
+                    "NameOfScene": "CounterSetCheck",
+                    "theScene": [   "SetChoice", "1", "",
+                                    "IfMonsterHasStance", "Any", "DoAttack",
+                                    "SetChoice", "2", "counter set",
+                                    "SkipMonsterAttack",
+                                    "ChangeImageLayer", "Expression", "Angry", "ChangeImageLayer", "Tail", "Threat",
+                                    "Amy suddenly gets low on all fours with a threatening hiss, all the purple on her body glowing a deep crimson as her tail glows with burning light, twitching erratically..."
+                              ]
+                  },
+                      {
+                        "NameOfScene": "DoAttack",
+                        "theScene": [  "CallMonsterAttack"
+                                  ]
+                      },
+                  {
+                    "NameOfScene": "CounterEnd",
+                    "theScene": [   "SetChoice", "2", "",
+                                    "ResumeMonsterAttack",
+                                    "ChangeImageLayer", "Expression", "Smug", "ChangeImageLayer", "Tail", "Base",
+                                    "The crimson on Amy's body fades back to purple and she resumes a more playful stance with a cheerful chirp."
+                              ]
+                  },
+                  {
+                    "NameOfScene": "ResumeFight",
+                    "theScene": [   "SetChoice", "2", "",
+                                    "ResumeMonsterAttack"
+                                   ]
+                  },
+              {
+                "NameOfScene": "CallCounterAttack",
+                "theScene": [  "IfMonsterHasStatusEffect", "Sleep", "Remove Counter Checks",
+                              "IfMonsterHasStatusEffect", "Stun", "Remove Counter Checks",
+                              "IfMonsterHasStatusEffect", "Restrain", "Remove Counter Checks",
+                              "IfPlayerHasStatusEffect", "Stun", "Remove Counter Checks",
+                              "IfChoice", "2", "counter set", "StunFlareCounterAttack!"
+                          ]
+              },
+              {
+                "NameOfScene": "StunFlareCounterAttack!",
+                "theScene": [   "EndCounterChecks",
+                                "SetChoice", "2", "Countered!",
+                                "SkipPlayerAttack",
+                                "SetPostName", " - Stunning Flare",
+                                "ApplyStatusEffect", "Stun Flare",
+                                "ChangeImageLayer", "Expression", "Shriek", "ChangeImageLayer", "Tail", "Smash",
+                                "FocusedSpeaksSkill",
+                                "As soon as you try to make a move on Amy, she slams her tail into the ground with a shrieking howl, and the cave is instantly flooded with blinding light as a shockwave blasts through the tunnel from the sizzling point of impact, leaving your ears ringing and your eyes blinded, making you horribly stunned and helpless!",
+                                "ChangeImageLayer", "Expression", "Happy", "ChangeImageLayer", "Tail", "Base",
+                                "SetPostName",
+                                ""
+                            ]
+              },
+
+              {
+                  "NameOfScene": "BlowjobOrgasm",
+                  "theScene": [ "ChangeImageLayer", "Expression", "OpenInvitation",
+                                "IfPlayerHasStatusEffect", "Restrain", "RestrainedBlowjobOrgasm",
+                                "SwapLineIf", "Random",
+                                    "Two of Amy's long tongues lovingly cradle your churning balls, massaging them as you draw closer and closer to climactic release, two of her other tongues are firmly wrapped around your twitching length, affectionately stroking it faster and faster, and the fifth tongue is eagerly lapping at your spasming tip while she keeps her mouth wide open, preparing to take in your inevitable load.|n|The lewd wet sounds her tongues are making ring in your ears as you get overwhelmed by the pleasure she's soaking your groin in, her every motion perfectly calculated to send a shivering tremor of bliss through you, and as her two tongues pump your shaft faster and faster you go moaning past the edge spurting long ropes of seed into her hungry mouth, and she continues to gently stimulate you while you come down from your orgasmic high, lovingly cradling your twitching balls.[PlayerOrgasmLine]",
+                                    "All five of Amy's long sinuous tongues coil tightly around your throbbing cock, wetly pumping your spasming erection up and down, lovingly squeezing every inch as they bring you closer and closer to the brink of orgasm, and Amy keeps her mouth wide open while she waits for your imminent load.|n|Every collective stroke with her writhing tongues wrapped around your throbbing erection sends a mind-blanking surge of warm pleasure through your groin, milking your spasming cock faster and faster until the squeezing ecstasy completely overtakes you, and you blow thick ropes of cum into her open mouth, a few stray strands coat her face, soaking into her skin while she eases down her teasing, giving you a moment to rest while maintaining the wonderful stimulation.[PlayerOrgasmLine]",
+                                    "Amy has all of her tongues wrap around your aching balls, squeezing and massaging them in a teasing attempt to coax out your seed, and you're so horny and overstimulated it's slowly working, every wet lick sending sparks of ecstasy through your hips, leaving your manhood wildly spasming in front of Amy's eager face, her mouth wide open and waiting for your load.|n|Her five long tongues lewdly slither and writhe around your aching sack, leaving your balls churning and tightening in preparation from her otherworldly massage, until with a final delightful squeeze your twitching cock erupts, shooting semen into her mouth and all over her face as she gently wrings your cum directly out of your balls, leaving you moaning in incoherent bliss.|n|Amy coos happily, soaking in the errant cum while you recover from your orgasm, still lovingly stimulating you with her long tongues.[PlayerOrgasmLine]",
+                                    "Two of Amy's tongues swirl and loop around your spasming tip, one of the other tongues is gently licking up and down the underside of your shaft while another is wrapped around everything but the underside, roughly pumping your length, and the fifth tongue has wrapped around your aching balls, massaging and squeezing them.|n|The overwhelming stimulation leaves you gasping and moaning as she works to milk out a thick load of cum, her tongues working in perfectly calculated unison as they tease you to the point of madness, leaving you howling with bliss as you unload all over her face and into her mouth, the tongue gliding up and down your length's underside practically drawing your seed out of your lovingly cradled balls.|n|She gives you a few gasping moments to recover, letting out a seductive coo as she continues to tease your spasming dick.",
+                                  "EndLoop"
+                            ]
+              },
+                      {
+                          "NameOfScene": "RestrainedBlowjobOrgasm",
+                          "theScene": [
+                                      "SwapLineIf", "Random",
+                                         "With Amy's mouth seamlessly sealing around your groin, she's easily able to overwhelm your spasming cock with pleasure. The intense suction alone feels like it could draw the cum right out of your throbbing erection, but with her five long tongues lavishing your every sensitive inch in affection licking and squeezing, you feel like you're going crazy as an orgasm boils over in your hips.|n|You cry out in mindless ecstasy as you erupt inside her tightly sealed mouth, and she greedily gulps down every drop while still intently sucking on your shaft and aching balls, and her long tongues don't relent for a second, targeting every part of your spasming manhood as they coil and writhe around it, paying special attention to the underside and crown of your twitching cockhead.|f|PlayerOrgasm|/|2|n|The mind-melting and abnormal ecstasy keeps your cock incredibly hard and spurting thick ropes of cum for far longer than normal, leaving you babbling incoherently with pleasure as she milks your balls for every drop she can, massaging your twitching manhood completely senseless with her slithering tongues, lovingly squeezing your entire length with a happy purr.|n|Finally as the intense orgasm ebbs away she gives you a moment to recover, but never stops the constant teasing stimulation her mouth is giving you.[PlayerOrgasmLine]",
+                                         "All five of Amy's tongues lovingly massage and squeeze your aching balls, leaving your twitching erection to spasm inside her tightly sealed mouth as she intensely sucks on your groin, and your entire body is left trembling with bliss as she brings you closer and closer to climactic oblivion.|n|With a writhing squeeze of your twitching balls you're left crying out in mindless ecstasy, the overwhelming stimulation finally coaxing out your seed in long spurts of cum that she eagerly drinks down, the intense suction only amplifying the maddening pleasure of your incredible orgasm, her five tongues still teasing your tensing balls to help milk out every drop from you.|f|PlayerOrgasm|/|2|n|The overwhelming sensations leave you moaning incoherently as you continue to cum over and over, flooding Amy's hungry mouth with all the seed she can drink down, the intense suction and loving massage drawing out load after load from your spasming groin, leaving your thoughts drifting away in a haze of climactic ecstasy.|n|Finally as your orgasm ebbs away, she gives you a few moments to try and recover, but her five loving tongues still teasing your balls are making it difficult to think clearly.[PlayerOrgasmLine]",
+                                         "While keeping you firmly locked inside her sucking mouth, two of Amy's long tongues lovingly cradle your churning balls, massaging them as you draw closer and closer to climactic release, two of her other tongues are firmly wrapped around your twitching length, affectionately stroking it faster and faster, and the fifth tongue is eagerly lapping at your spasming tip, driving you to the brink of climax.|n|The lewd wet sounds her sucking mouth and long tongues are vibrating in your ears as you get completely overwhelmed by the intoxicating pleasure she's soaking your groin in, her every motion and teasing suck is perfectly calculated to send a shivering tremor of bliss through you, and as her two tongues pump your shaft faster and faster you go moaning past the edge spurting long ropes of seed into her hungry mouth.|f|PlayerOrgasm|/|2|n|The constant stimulation to your entire groin combined with the maddening suction leaves you spurting more and more into her mouth, her tongues massaging and squeezing out every drop they can from you, the fifth tongue still affectionately teasing your spasming tip as you moan in incoherent orgasmic bliss.|n|Finally she relents her teasing as your orgasm ebbs away, giving you a brief moment to catch your breath before she starts massaging your aching manhood all over again with a delightful suck to start off with.[PlayerOrgasmLine]",
+                                         "All five of Amy's long slithering tongues coil around your rigid cock, and pump it like a lewd writhing orifice while she intensely sucks on your aching cock and tightening balls, leaving you gasping and moaning from the abnormal squirming sensation milking your twitching dick.|n|You're far too aroused to endure the maddening pleasure overwhelming your hips, and a dam breaks inside you as climax explodes through your groin, her pumping tongues makeshift pussy completely overwhelming your manhood as you erupt into her sucking mouth, letting her drink down spurt after spurt of your seed while your body twitches in ecstasy.|f|PlayerOrgasm|/|2|n|The near insanity-inducing pleasure keeps you cumming constantly into her hungry mouth, leaving you incoherently moaning as she wrings you dry, her twisting tongues giving you strange constantly shifting pleasure as she draws out every drop she can from your aching balls.|n|She finally gives you a moment of respite, leaving you gasping for air after the intense ecstasy she sent surging through your body, but she never quite stops licking and teasing your aching dick.[PlayerOrgasmLine]",
+                                      "EndLoop"
+                                    ]
+                      },
+
+
+
+
+              {
+                  "NameOfScene": "Ravenous Leap",
+                  "theScene": [ "SetPostName", " - Ravenous Leap",
+                              "ChangeImageLayer", "Expression", "Predatory",
+                              "FocusedSpeaksSkill",
+                              "Amy gets low to the ground on all fours with a playful purr and wiggles her rear in the air before lunging at you at a terrifying speed, her claws out stretched and her mouth splits open, revealing her five long tongues reaching out to you as well.",
+                              "SetPostName",
+                              "",
+                              "IfPlayerHasStatusEffect", "Stun", "StunnedLeap",
+                              "Menu",
+                                "Try to push her away! (Power) [StatCheckPost]",
+                                "Try to dodge her! (Technique) [StatCheckPost]",
+                                "Freeze up!",
+                              "EndLoop"]
+              },
+                      {
+                        "NameOfScene": "Try to push her away! (Power) [StatCheckPost]",
+                        "theScene": [    "StatCheck",
+                                          "Power",
+                                          "15",
+                                          "Tackled!",
+                                          "Fail",
+                                          "FailedTackle."
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "FailedTackle.",
+                              "theScene": [  "But you don't even manage to slow her down with your attempt!",
+                                            "JumpToScene",
+                                                "Pinned."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Tackled!",
+                              "theScene": [ "ChangeImageLayer", "Expression", "Base",
+                                              "You manage to grab her right before she impacts and toss her to the side, and with unnatural grace, she leaps onto the nearby wall, then the ceiling, before flipping back down to the ground with a playful growl."
+                                        ]
+                            },
+                      {
+                        "NameOfScene": "Try to dodge her! (Technique) [StatCheckPost]",
+                        "theScene": [    "StatCheck",
+                                          "Technique",
+                                          "15",
+                                          "Dodged!",
+                                          "Fail",
+                                          "FailedToDodge."
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "FailedToDodge.",
+                              "theScene": [  "But you can't manage to avoid Amy leaping at you!",
+                                            "JumpToScene",
+                                                "Pinned."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Dodged!",
+                              "theScene": [ "ChangeImageLayer", "Expression", "Base",
+                                            "You deftly avoid Amy's attempt to pin you to the ground, and she skids past you before turning to face you with a playful hiss."
+                                        ]
+                            },
+                      {
+                        "NameOfScene": "Freeze up!",
+                        "theScene": [
+                                      "Locked with fear and indecision you don't do anything!",
+                                      "JumpToScene",
+                                          "Pinned."
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "StunnedLeap",
+                        "theScene": [
+                                      "But you're too stunned to do anything about it!",
+                                      "JumpToScene",
+                                          "Pinned."
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Pinned.",
+                        "theScene": [  "ApplyStance", "Blowjob",
+                                      "ChangeImageLayer", "Expression", "OpenInvitation",
+                                      "She deftly knocks you to the ground with her predatory pounce, and coos happily as she wraps her long tongues dripping with venom around your stiff cock, eagerly starting to tease your rigid length."
+                                  ]
+                      },
+
+
+
+          {
+              "NameOfScene": "Voracious Tail Sweep",
+              "theScene": [ "SetPostName", " - Voracious Tail Sweep",
+                          "ChangeImageLayer", "Expression", "Predatory",
+                          "FocusedSpeaksSkill",
+                          "Amy gets low to the ground on all fours with a playful growl, and lowers her tail as she suddenly leaps toward you, sweeping her tail along the ground in an attempt to bring you down to the ground!",
+                          "SetPostName",
+                          "",
+                          "IfPlayerHasStatusEffect", "Stun", "StunnedSweep",
+                          "Menu",
+                            "Try to catch her tail! (Power) [StatCheckPost]",
+                            "Try to avoid her tail! (Technique) [StatCheckPost]",
+                            "Oh no!",
+                          "EndLoop"]
+          },
+                  {
+                    "NameOfScene": "Try to catch her tail! (Power) [StatCheckPost]",
+                    "theScene": [    "StatCheck",
+                                      "Power",
+                                      "15",
+                                      "Caught!",
+                                      "Fail",
+                                      "FailedCatch."
+                              ]
+                  },
+                        {
+                          "NameOfScene": "FailedCatch.",
+                          "theScene": [  "But her tail easily knocks your hands away!",
+                                        "JumpToScene",
+                                            "Swept."
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "Caught!",
+                          "theScene": [   "ChangeImageLayer", "Expression", "Excited",
+                                          "Amy lets out a surprised chirp as you catch her tail, stopping her in her tracks, but she playfully giggles and slips away, her smooth tail sliding right out of your grip as she leaps away!"
+                                    ]
+                        },
+                  {
+                    "NameOfScene": "Try to avoid her tail! (Technique) [StatCheckPost]",
+                    "theScene": [    "StatCheck",
+                                      "Technique",
+                                      "15",
+                                      "DodgedSweep!",
+                                      "Fail",
+                                      "FailedToDodgeSweep."
+                              ]
+                  },
+                        {
+                          "NameOfScene": "FailedToDodgeSweep.",
+                          "theScene": [  "But you don't move fast enough to avoid Amy's lithe but powerful tail!",
+                                        "JumpToScene",
+                                            "Swept."
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "DodgedSweep!",
+                          "theScene": [ "ChangeImageLayer", "Expression", "Base",
+                                        "You leap back and deftly avoid Amy's tail sweep, and she jumps back with a playful hiss."
+                                    ]
+                        },
+                  {
+                    "NameOfScene": "Oh no!",
+                    "theScene": [
+                                  "Locked with fear and indecision you don't do anything!",
+                                  "JumpToScene",
+                                      "Swept."
+                              ]
+                  },
+                  {
+                    "NameOfScene": "StunnedSweep",
+                    "theScene": [
+                                  "But you're too stunned to do anything about it!",
+                                  "JumpToScene",
+                                      "Swept."
+                              ]
+                  },
+                  {
+                    "NameOfScene": "Swept.",
+                    "theScene": [  "ApplyStance", "Sex",
+                                    "ApplyStatusEffect",   "Manticore Pin",
+                                    "ChangeImageLayer", "Expression", "Seductive",
+                                  "She knocks your feet from under you with her tail, and in an instant she has you pinned against the ground with a seductive purr, and you gasp as you feel her grind her drooling slit against your cock before she plunges your rigid manhood inside, and you gasp as you feel two long {i}tongues{/i} coil around your dick from inside her cilia-coated orifice!"
+                              ]
+                  },
+
+
+
+
+
+
+
+
+
+          {
+              "NameOfScene": "Playful Hunt",
+              "theScene": [ "SetPostName", " - Playful Hunt",
+                          "ChangeImageLayer", "Expression", "Predatory",
+                          "FocusedSpeaksSkill",
+                          "Amy lets out a playful chirp as she leaps back and forth in place before scampering off down one of the cavern tunnels with incredible grace and speed. But despite her sudden exit you can almost feel her watching you still... hunting you.",
+                          "SetPostName",
+                          "",
+                          "Menu",
+                            "Run and try to get the upper hand.",
+                            "Try to take a breather. (Restore 30% AP and EP.)",
+                          "EndLoop"]
+          },
+                  {
+                    "NameOfScene": "Try to take a breather. (Restore 30% AP and EP.)",
+                    "theScene": [
+                                  "ChangeArousalByPercent", "-30",   "ChangeEnergyByPercent", "30",
+                                  "You take the momentary reprieve from Amy to catch your breath and steady yourself, but you can feel your heart pounding in your chest as you try to figure out which way she's coming from...",
+                                  "Only to have every hair on your body stand on end as she lets out a coy chirp behind you, right before she leaps at you!",
+                                  "Menu",
+                                    "Try to throw her over you! (Power) [StatCheckPost]",
+                                    "Dive away! (Technique) [StatCheckPost]",
+                                    "Accept your fate as prey.",
+                                  "EndLoop"
+                      ]
+                  },
+                          {
+                            "NameOfScene": "Try to throw her over you! (Power) [StatCheckPost]",
+                            "theScene": [
+                                                "StatCheck",
+                                                "Power",
+                                                "20",
+                                                "ThrewHunt!",
+                                                "Fail",
+                                                "FailedToThrowHunt"
+                                      ]
+                          },
+                                  {
+                                    "NameOfScene": "FailedToThrowHunt",
+                                    "theScene": [  "But you don't move fast enough to avoid Amy's ambush!",
+                                                  "JumpToScene",
+                                                      "Hunted"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "ThrewHunt!",
+                                    "theScene": [ "ChangeImageLayer", "Expression", "Excited",
+                                                  "You turn just in time to leverage Amy's momentum against her and toss her over you, but she quickly recovers by leaping off the ground with an excited chirp and a wiggle of her hips."
+                                              ]
+                                  },
+                          {
+                            "NameOfScene": "Dive away! (Technique) [StatCheckPost]",
+                            "theScene": [
+                                                "StatCheck",
+                                                "Technique",
+                                                "20",
+                                                "DodgedHunt!",
+                                                "Fail",
+                                                "FailedToDodgeHunt"
+                                      ]
+                          },
+                                  {
+                                    "NameOfScene": "FailedToDodgeHunt",
+                                    "theScene": [  "But you don't move fast enough to avoid Amy's ambush!",
+                                                  "JumpToScene",
+                                                      "Hunted"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "DodgedHunt!",
+                                    "theScene": [ "ChangeImageLayer", "Expression", "Seductive",
+                                                  "You dive to the side and see Amy streak past right where you were a moment ago. She leaps to the side, readying herself for more with a low, seductive hiss."
+                                              ]
+                                  },
+                          {
+                            "NameOfScene": "Accept your fate as prey.",
+                            "theScene": [ "You decide to not even try to dodge.",
+                                          "JumpToScene", "Hunted"
+                                      ]
+                          },
+                                  {
+                                    "NameOfScene": "Hunted",
+                                    "theScene": [
+                                                  "ApplyStatusEffect",   "Manticore Pin",
+                                                  "ChangeImageLayer", "Expression", "Smug",
+                                                  "Amy slams into you and quickly pins you on your back with a rather smug-sounding chirp."
+                                              ]
+                                  },
+
+
+                  {
+                    "NameOfScene": "Run and try to get the upper hand.",
+                    "theScene": [
+                                  "You take off down one of the twisting cavern tunnels, intent on trying to beat Amy at her own game. But the sound of her letting out a purr that echoes through the cave leaves you doubtful.",
+                                  "Menu",
+                                    "Try to ambush her. (Hard Technique) [StatCheckPost]",
+                                    "Try to outmaneuver her. (Technique) [StatCheckPost]",
+                                    "Try to outsmart her. (Intelligence) [StatCheckPost]",
+                                    "Get ready to try and pin her when she shows up. (Power) [StatCheckPost]",
+                                    "Just run in a panic until she catches you.",
+                                  "EndLoop"
+                      ]
+                  },
+                        {
+                          "NameOfScene": "Just run in a panic until she catches you.",
+                          "theScene": [ "You run around the caverns aimlessly, and can hear Amy drawing closer with a chirping giggle right before she lunges at you! You're barely ready to even try to stop her, leaving you helpless against her predatory leap.",
+                                          "ApplyStatusEffect",   "Manticore Pin",
+                                          "ChangeImageLayer", "Expression", "Smug",
+                                          "Amy slams into you from behind and quickly pins you on your back with a rather smug-sounding purr."
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "Try to ambush her. (Hard Technique) [StatCheckPost]",
+                          "theScene": [       "You decide to try and take the harder option of turning this around on Amy completely, running down the tunnels, hoping you can lose her and find a good ambush spot...",
+                                              "StatCheck",
+                                              "Technique",
+                                              "20",
+                                              "TryToAmbushHer",
+                                              "Fail",
+                                              "FailedToAmbushHer"
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "FailedToAmbushHer",
+                                  "theScene": [ "Scooting into an alcove by the edge of a tunnel once you think you've lost her, you wait there a moment, preparing to lunge at the unsuspecting huntress.",
+                                                "ApplyStatusEffect",   "Manticore Pin",
+                                                "ApplyStatusEffect",   "Spank",
+                                                "ChangeImageLayer", "Expression", "Smug",
+                                                "But as time ebbs on you can't help but get a little nervous, only for a droplet of odd goo from the ceiling to fall down just a bit in front of you, and with mounting dread you look up to see Amy must have long since snuck up there while you were hiding, leaving you helpless as she leaps down on you with a playful hiss, the shock of her ambush leaving you totally dazed."
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "TryToAmbushHer",
+                                  "theScene": [ "Scooting into an alcove by the edge of a tunnel once you think you've lost her, you wait there a moment, preparing to lunge at the unsuspecting huntress.",
+                                                "ApplyStatusEffectToMonster",   "Huntress' Pin",
+                                                "ApplyStatusEffectToMonster",   "Spank",
+                                                "ChangeImageLayer", "Expression", "Curious",
+                                                "Then as she rounds a corner you hold your breath, a gentle coo escaping her as she looks around, and for a moment you could swear she was looking right at you, but a little lost she keeps moving on, only for you to leap out at her, tackling her to the ground, leaving her letting out a chorus of surprised and excited chirps.",
+                                                "ChangeImageLayer", "Expression", "Seductive",
+                                                "ApplyStatusEffectToMonster",   "Charm",
+                                                "By the end you have her pinned under you, clearly disoriented from your surprise ambush, but the look in her eyes, and her seductive purr, say she loved it."
+                                            ]
+                                },
+                        {
+                          "NameOfScene": "Try to outmaneuver her. (Technique) [StatCheckPost]",
+                          "theScene": [       "You run down the tunnels and try to circle around where you think Amy is hunting you from, hoping you can lose her just enough to get the jump on her.",
+                                              "StatCheck",
+                                              "Technique",
+                                              "15",
+                                              "TryToOutSpeedHer",
+                                              "Fail",
+                                              "FailedToOutSpeedHer"
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "FailedToOutSpeedHer",
+                                  "theScene": [ "But in the end the two of you end up turning a corner at the same time, leaving you both flailing at each other in surprise as you try to pin the other.",
+                                                "ApplyStatusEffect",   "Manticore Pin",
+                                                "ChangeImageLayer", "Expression", "Smug",
+                                                "But in the end Amy has you pinned to the ground with a smug look in her eyes as she mulls over what to do with her prize."
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "TryToOutSpeedHer",
+                                  "theScene": [ "But in the end the two of you end up turning a corner at the same time, leaving you both flailing at each other in surprise as you try to pin the other.",
+                                                "ApplyStatusEffectToMonster",   "Huntress' Pin",
+                                                "ChangeImageLayer", "Expression", "Excited",
+                                                "But that slight element of surprise ends up working in your favor, leading you to have Amy pinned underneath you, and she gives you an excited look, purring in a seductive tone."
+                                            ]
+                                },
+                        {
+                          "NameOfScene": "Try to outsmart her. (Intelligence) [StatCheckPost]",
+                          "theScene": [       "You run down the tunnels and try to formulate a plan to pull one over on Amy as you go, hoping you can figure something out before she catches you!",
+                                              "StatCheck",
+                                              "Intelligence",
+                                              "15",
+                                              "TryToTrickHer",
+                                              "Fail",
+                                              "FailedToTrickHer"
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "FailedToTrickHer",
+                                  "theScene": [ "You keep bolting down the caves as best you can, turning as often as possible, before pressing yourself against a wall, tossing a rock down another tunnel, seeing if Amy will fall for it.",
+                                                "ApplyStatusEffect",   "Manticore Pin",
+                                                "ChangeImageLayer", "Expression", "Seductive",
+                                                "You peer down the tunnel with bated breath, waiting for Amy to round the corner, only to hear dead silence... then she lets out a coy chirp right behind you! You staggering, reeling in shock, leaving you easily pinned to the ground as Amy lets out a giggling hiss."
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "TryToTrickHer",
+                                  "theScene": [ "You keep bolting down the caves as best you can, turning as often as possible, before pressing yourself against a wall, tossing a rock down another tunnel, seeing if Amy will fall for it.",
+                                                "ApplyStatusEffectToMonster",   "Huntress' Pin",
+                                                "ChangeImageLayer", "Expression", "Excited",
+                                                "She prances forward from a hallway and peers down the tunnel you tossed the rock with a curious purr as she scans it for you, and you take advantage of the distraction to leap out and pin her down, which elicits a series of surprised chirps before she's on her back with an excited hiss."
+                                            ]
+                                },
+                        {
+                          "NameOfScene": "Get ready to try and pin her when she shows up. (Power) [StatCheckPost]",
+                          "theScene": [       "You brace yourself as you run through the various tunnels, trying to keep an eye out for Amy as you go, and suddenly she lunges at you from out of one of the side tunnels!",
+                                              "StatCheck",
+                                              "Power",
+                                              "15",
+                                              "TryToPinHer",
+                                              "Fail",
+                                              "FailedToPinHer"
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "FailedToPinHer",
+                                  "theScene": [
+                                                "ApplyStatusEffect",   "Manticore Pin",
+                                                "ChangeImageLayer", "Expression", "Seductive",
+                                                "You do your best to try and be the one on top as you briefly struggle against each other, her letting out a surprised chirp for your efforts, but she lets out a satisfied purr as you end up being the one pinned against the ground."
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "TryToPinHer",
+                                  "theScene": [
+                                                "ApplyStatusEffectToMonster",   "Huntress' Pin",
+                                                "ChangeImageLayer", "Expression", "Excited",
+                                                "You do your best to try and be the one on top as you briefly struggle against each other, her letting out a surprised chirp for your efforts, and soon she's left on her back under you with a mixture of surprise and excitement on her face, letting out a playful purr."
+                                            ]
+                                },
+
+
+                  {
+                    "NameOfScene": "EventBroke.",
+                    "theScene": [  "Event Broke!"
+                    ]
+                  }
+
+              ]
+}

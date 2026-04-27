@@ -1,0 +1,715 @@
+{
+    "name": "GhostCombatEvents",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Ghost",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Intro",
+                        "theScene": [  "SetProgress", "0", "SetChoice", "1", "",  "SetChoice", "3", "",
+                                      "EncounterSizeLessOrEqualTo", "2", "DuoGhostIntro",
+                                      "A trio of Ghosts suddenly float out of the darkness with playful giggles!",
+                                      "ChangeImageLayer", "Expression", "Spooky",
+                                      "FocusedSpeaks",
+                                      "OOOOooooOOO,♥ we're going haunt your cock until you pass out.♥"
+                                  ]
+                    },
+                        {
+                            "NameOfScene": "DuoGhostIntro",
+                            "theScene": [ "EncounterSizeLessOrEqualTo", "1", "SoloGhostIntro",
+                                          "A pair of Ghosts suddenly float out of the darkness with playful giggles!",
+                                          "ChangeImageLayer", "Expression", "Spooky",
+                                          "FocusedSpeaks",
+                                          "OOOOooooOOO, we're going to drain your balls drryyyyyy.♥"
+                                      ]
+                        },
+                            {
+                                "NameOfScene": "SoloGhostIntro",
+                                "theScene": [
+                                              "A Ghost suddenly floats out of the darkness with a playful giggle!"
+                                          ]
+                            },
+
+
+
+
+                    {
+                        "NameOfScene": "StartOfRound",
+                        "theScene": [ "SetChoice", "2", "",
+                                       "SetProgress", "0"
+
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Nothing",
+                        "theScene": [
+                                  ]
+                    },
+
+
+
+                    {
+                        "NameOfScene": "EndOfRound",
+                        "theScene": [  "SetChoice", "1", "",
+                                      "IfMonsterHasStance", "Making Out", "EscapesMakeOut",
+                                      "IfMonsterHasStance", "Anal", "SwapToSex",
+                                      "JumpToScene", "TeamCheck"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "EscapesMakeOut",
+                                "theScene": [ "ChangeImageLayer", "Expression", "Smile",
+                                                "ClearStanceFromMonsterAndPlayer", "Making Out",
+                                               "The ghost giggles and easily breaks the kiss, phasing through any attempts to stop her!",
+                                               "JumpToScene", "TeamCheck"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "SwapToSex",
+                                "theScene": [ "ChangeImageLayer", "Expression", "Smile",
+                                                "ClearStanceFromMonsterAndPlayer", "Anal",
+                                                "ApplyStance", "Sex",
+                                               "The ghost giggles as your rigid cock phases from her tight rear into drooling pussy! Though, you're not really sure if she actually has a backdoor anatomically as you stare at her ghostly body...",
+                                               "JumpToScene", "TeamCheck"
+                                          ]
+                            },
+
+
+
+
+
+
+                  {
+                      "NameOfScene": "TeamCheck",
+                      "theScene": [  "IfChoice", "2", "teamChecked", "Nothing",
+                                    "SetChoice", "2", "teamChecked",
+                                    "IfChoice", "3", "ChargeSex", "ChargeViable",
+                                    "IfChoice", "3", "ChargeBJ", "ChargeViable",
+                                    "IfPlayerHasStance", "Sex", "Nothing",
+                                    "IfPlayerHasStance", "Anal", "Nothing",
+                                    "IfPlayerHasStance", "Blowjob", "Nothing",
+                                    "JumpToRandomScene",
+                                        "SexChargePrepare",
+                                        "BJChargePrepare",
+                                        "Nothing",
+                                        "Nothing",
+                                    "EndLoop"
+                                ]
+                  },
+                          {
+                              "NameOfScene": "SexChargePrepare",
+                              "theScene": [ "SkipAllMonsterAttacks",
+                                            "SetChoice", "3", "ChargeSex",
+                                            "EncounterSizeLessOrEqualTo", "1", "SingleGhostChageLine",
+                                            "ChangeImageLayer", "Expression", "Smug",
+                                            "The ghosts giggle in an eerie chorus, clearly planning something with rather fiendish smiles..."
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "BJChargePrepare",
+                              "theScene": [ "SkipAllMonsterAttacks",
+                                            "SetChoice", "3", "ChargeBJ",
+                                            "EncounterSizeLessOrEqualTo", "1", "SingleGhostChageLine",
+                                            "ChangeImageLayer", "Expression", "Smug",
+                                            "The ghosts giggle in an eerie chorus, clearly planning something as they lick their lips..."
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "SingleGhostChageLine",
+                                    "theScene": ["ChangeImageLayer", "Expression", "Smug",
+                                                  "The ghost giggles eerily, clearly planning something with a rather fiendish smile..."
+                                              ]
+                                },
+
+
+                          {
+                              "NameOfScene": "ChargeViable",
+                              "theScene": [
+                                          "IfPlayerHasStance", "Sex", "DitchCharge",
+                                          "IfPlayerHasStance", "Anal", "DitchCharge",
+                                          "IfPlayerHasStance", "Blowjob", "DitchCharge",
+                                          "JumpToScene", "TeamAttackDecision"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "DitchCharge",
+                                      "theScene": [ "The ghosts no longer need their prior plan, so they just do whatever they want!",
+                                                  "SetChoice", "3", "", "ResumeAllMonsterAttacks",
+                                                    "FocusOnMonster", "1",  "CallMonsterAttack",
+                                                    "EncounterSizeLessOrEqualTo", "1", "Nothing",
+                                                    "FocusOnMonster", "2",  "CallMonsterAttack",
+                                                    "EncounterSizeLessOrEqualTo", "2", "Nothing",
+                                                    "FocusOnMonster", "3",  "CallMonsterAttack",
+                                                    "EncounterSizeLessOrEqualTo", "3", "Nothing",
+                                                    "FocusOnMonster", "4",  "CallMonsterAttack",
+                                                    "EncounterSizeLessOrEqualTo", "4", "Nothing",
+                                                    "FocusOnMonster", "5",  "CallMonsterAttack",
+                                                    "EncounterSizeLessOrEqualTo", "5", "Nothing",
+                                                    "FocusOnMonster", "6",  "CallMonsterAttack",
+                                                    "EncounterSizeLessOrEqualTo", "6", "Nothing",
+                                                    "FocusOnMonster", "7",  "CallMonsterAttack",
+                                                    "EncounterSizeLessOrEqualTo", "7", "Nothing",
+                                                    "FocusOnMonster", "8",  "CallMonsterAttack",
+                                                    "EncounterSizeLessOrEqualTo", "8", "Nothing",
+                                                    "FocusOnMonster", "9",  "CallMonsterAttack",
+                                                    "EncounterSizeLessOrEqualTo", "9", "Nothing",
+                                                    "FocusOnMonster", "10",  "CallMonsterAttack",
+                                                    "EncounterSizeLessOrEqualTo", "10", "Nothing",
+                                                    "FocusOnMonster", "11",  "CallMonsterAttack",
+                                                    "EncounterSizeLessOrEqualTo", "11", "Nothing",
+                                                    "FocusOnMonster", "12",  "CallMonsterAttack"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "TeamAttackDecision",
+                                      "theScene": [ "IfChoice", "3", "ChargeSex", "GroupSex",
+                                                  "IfChoice", "3", "ChargeBJ", "GroupBJ"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "GroupSex",
+                                      "theScene": [ "SetChoice", "3", "", "ResumeAllMonsterAttacks",
+                                                  "SetPostName", " - Ethereal Love!",
+                                                  "FocusedSpeaks",
+                                                  "SwapLineIf", "EncounterSize",
+                                                    "2", "The ghosts surge towards you in a spectral rush, twining their movements around each other, phasing through one another.",
+                                                    "1", "The ghost surges towards you in a ethereal rush!",
+                                                  "EndLoop",
+                                                  "SetPostName", "",
+                                                  "Menu",
+                                                    "Repel them with magic! (Intelligence) [StatCheckPost]",
+                                                    "Dodge! (Technique) [StatCheckPost]",
+                                                    "Accept the ghostly embrace.",
+                                                  "EndLoop"
+                                                ]
+                                  },
+                                        {
+                                            "NameOfScene": "Repel them with magic! (Intelligence) [StatCheckPost]",
+                                            "theScene": [
+                                                        "StatCheck",
+                                                        "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "2", "5",
+                                                        "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "3", "5",
+                                                        "Intelligence",
+                                                        "15",
+                                                        "RepelledSex",
+                                                        "Fail",
+                                                        "FailedSex"
+                                                      ]
+                                        },
+                                        {
+                                            "NameOfScene": "Dodge! (Technique) [StatCheckPost]",
+                                            "theScene": [
+                                                        "StatCheck",
+                                                        "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "2", "5",
+                                                        "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "3", "5",
+                                                        "Technique",
+                                                        "15",
+                                                        "DodgedSex",
+                                                        "Fail",
+                                                        "FailedSex"
+                                                      ]
+                                        },
+                                    {
+                                        "NameOfScene": "Accept the ghostly embrace.",
+                                        "theScene": [ "ResetStatCheckDifficultyModifer",
+                                                    "You willingly accept the incoming ghostly charge...",
+                                                      "JumpToScene", "ApplySexCharge"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "RepelledSex",
+                                        "theScene": [ "But you manage to ward off the ghostly charge!",
+                                                    "ChangeImageLayer", "Expression", "Smile",
+                                                    "FocusedSpeaks",
+                                                    "SwapLineIf", "EncounterSize",
+                                                      "2", "We were {i}just{/i} going to haunt your dick with our pussies. Is that really so bad?",
+                                                      "1", "Aw, I just wanted to make you feel good.",
+                                                    "EndLoop"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "DodgedSex",
+                                        "theScene": [ "But you manage to avoid the ghostly charge!",
+                                                    "ChangeImageLayer", "Expression",  "Smile",
+                                                    "FocusedSpeaks",
+                                                    "SwapLineIf", "EncounterSize",
+                                                      "2", "We were {i}just{/i} going to haunt your dick with our pussies. Is that really so bad?",
+                                                      "1", "Aw, I just wanted to make you feel good.",
+                                                    "EndLoop"
+
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "FailedSex",
+                                        "theScene": [ "SwapLineIf", "EncounterSize",
+                                                        "2",   "The ghosts seem completely unstoppable as they ignore your every attempt to stop their ethereal bodies!",
+                                                        "1", "The ghost seem completely unstoppable as she ignores your every attempt to stop her ethereal body!",
+                                                    "EndLoop",
+                                                      "JumpToScene", "ApplySexCharge"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "ApplySexCharge",
+                                        "theScene": [
+                                                    "EncounterSizeGreaterOrEqualTo", "2", "ApplySexChargeGroup",
+                                                    "ApplyStance", "Sex",
+                                                    "The ghostly woman floats around you rapidly before pushing you down with a giggle as she starts to ride your rigid cock."
+                                                  ]
+                                    },
+                                                {
+                                                    "NameOfScene": "ApplySexChargeGroup",
+                                                    "theScene": [ "FocusOnMonster", "1", "ApplyStance", "Sex",
+                                                                  "FocusOnMonster", "2", "ApplyStance", "Sex",
+                                                                  "EncounterSizeLessOrEqualTo", "2", "DuoSexLine",
+                                                                  "FocusOnMonster", "3", "ApplyStance", "Sex",
+                                                                  "JumpToScene", "TrioSexLine"
+                                                              ]
+                                                },
+                                                {
+                                                    "NameOfScene": "DuoSexLine",
+                                                    "theScene": [
+                                                                  "The two ghostly women float around you rapidly, giggling before they easily push you down, practically phasing together as they start to ride your rigid cock at the same time, sending a blissful chill up your spine from the impossible sensations of their pussies overlaying with each other."
+                                                              ]
+                                                },
+                                                {
+                                                    "NameOfScene": "TrioSexLine",
+                                                    "theScene": [
+                                                                  "The trio of ghostly women float around you rapidly, giggling before they easily push you down, practically phasing together as they start to ride your rigid cock at the same time, sending a blissful chill up your spine from the impossible sensations of their pussies overlaying with each other."
+                                                              ]
+                                                },
+
+
+
+
+
+
+                              {
+                                  "NameOfScene": "GroupBJ",
+                                  "theScene": [ "SetChoice", "3", "", "ResumeAllMonsterAttacks",
+                                              "SetPostName", " - Ghostly Oral!",
+                                              "FocusedSpeaksSkill", 
+                                              "SwapLineIf", "EncounterSize",
+                                                "2", "The ghosts surge towards you in a spectral rush, twining their movements around each other, phasing through one another.",
+                                                "1", "The ghost surges towards you in a ethereal rush!",
+                                              "EndLoop",
+                                              "SetPostName", "",
+                                              "Menu",
+                                                "Repel them with magic! (Intelligence) [StatCheckPost] ",
+                                                "Dodge! (Technique) [StatCheckPost] ",
+                                                "Accept the ghostly embrace. ",
+                                              "EndLoop"
+                                            ]
+                              },
+                                    {
+                                        "NameOfScene": "Repel them with magic! (Intelligence) [StatCheckPost] ",
+                                        "theScene": [
+                                                    "StatCheck",
+                                                    "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "2", "5",
+                                                    "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "3", "5",
+                                                    "Intelligence",
+                                                    "15",
+                                                    "RepelledBJ",
+                                                    "Fail",
+                                                    "FailedBJ"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "Dodge! (Technique) [StatCheckPost] ",
+                                        "theScene": [
+                                                    "StatCheck",
+                                                    "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "2", "5",
+                                                    "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "3", "5",
+                                                    "Technique",
+                                                    "15",
+                                                    "DodgedBJ",
+                                                    "Fail",
+                                                    "FailedBJ"
+                                                  ]
+                                    },
+                                {
+                                    "NameOfScene": "Accept the ghostly embrace. ",
+                                    "theScene": [ "ResetStatCheckDifficultyModifer",
+                                                "You willingly accept the incoming ghostly charge...",
+                                                  "JumpToScene", "ApplyBJCharge"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "RepelledBJ",
+                                    "theScene": [ "But you manage to ward off the ghostly charge!",
+                                                  "ChangeImageLayer", "Expression",  "Smile",
+                                                "FocusedSpeaks",
+                                                "SwapLineIf", "EncounterSize",
+                                                  "2", "We were {i}just{/i} going to haunt your cock with our lips. Is that really so bad?",
+                                                  "1", "Aw, I just wanted to make you feel good.",
+                                                "EndLoop"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "DodgedBJ",
+                                    "theScene": [ "But you manage to avoid the ghostly charge!",
+                                                  "ChangeImageLayer", "Expression",  "Smile",
+                                                "FocusedSpeaks",
+                                                "SwapLineIf", "EncounterSize",
+                                                  "2", "We were {i}just{/i} going to haunt your cock with our lips. Is that really so bad?",
+                                                  "1", "Aw, I just wanted to make you feel good.",
+                                                "EndLoop"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "FailedBJ",
+                                    "theScene": [ "SwapLineIf", "EncounterSize",
+                                                    "2",   "The ghosts seem completely unstoppable as they ignore your every attempt to stop their ethereal bodies!",
+                                                    "1", "The ghost seem completely unstoppable as she ignores your every attempt to stop her ethereal body!",
+                                                "EndLoop",
+                                                  "JumpToScene", "ApplyBJCharge"
+                                              ]
+                                },
+                                      {
+                                          "NameOfScene": "ApplyBJCharge",
+                                          "theScene": [
+                                                      "EncounterSizeGreaterOrEqualTo", "2", "ApplyBJChargeGroup",
+                                                      "ApplyStance", "Blowjob",
+                                                      "The ghostly woman floats around you rapidly before pushing you down with a giggle as she takes your cock into her spectral mouth, lovingly sucking on your length."
+                                                    ]
+                                      },
+                                            {
+                                                "NameOfScene": "ApplyBJChargeGroup",
+                                                "theScene": [ "FocusOnMonster", "1", "ApplyStance", "Blowjob",
+                                                              "FocusOnMonster", "2", "ApplyStance", "Blowjob",
+                                                              "EncounterSizeLessOrEqualTo", "2", "DuoBJLine",
+                                                              "FocusOnMonster", "3", "ApplyStance", "Blowjob",
+                                                              "JumpToScene", "TrioBJLine"
+                                                          ]
+                                            },
+                                            {
+                                                "NameOfScene": "TrioBJLine",
+                                                "theScene": [
+                                                              "The trio of ghostly women float around you rapidly, giggling before they easily push you down, practically phasing together as they start to deepthroat your rigid cock at the same time, sending a blissful chill up your spine from the impossible sensations of their mouths and tongues overlaying with each other."
+                                                        ]
+                                            },
+                                            {
+                                                "NameOfScene": "DuoBJLine",
+                                                "theScene": [
+                                                            "The two ghostly women float around you rapidly, giggling before they easily push you down, practically phasing together as they start to deepthroat your rigid cock at the same time, sending a blissful chill up your spine from the impossible sensations of their mouths and tongues overlaying with each other."
+                                                        ]
+                                            },
+
+
+
+
+
+
+
+
+
+                      {
+                          "NameOfScene": "Multihitter",
+                          "theScene": [ "PlayerCurrentEnergyCost",
+                                        "SkipPlayerAttack",
+                                        "SetProgress", "2",
+                                        "FocusOnMonster", "1",
+                                        "JumpToScene", "HitChecker"
+                                    ]
+                      },
+                              {
+                                  "NameOfScene": "HitSecondFighter",
+                                  "theScene": [
+                                                "EncounterSizeLessOrEqualTo", "1", "PostAttackCheck",
+                                                "ChangeProgress", "-1",
+                                                "FocusOnMonster", "2",
+                                                "JumpToScene", "HitChecker"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "HitThirdFighter",
+                                  "theScene": [  "EncounterSizeLessOrEqualTo", "2", "PostAttackCheck",
+                                                "ChangeProgress", "-1",
+                                                "FocusOnMonster", "3",
+                                                "JumpToScene", "HitChecker"
+                                            ]
+                              },
+
+                      {
+                          "NameOfScene": "HitChecker",
+                          "theScene": [
+                                        "IfMonsterHasStance", "Sex", "CheckSkill",
+                                        "IfMonsterHasStance", "Blowjob", "CheckSkill",
+                                        "IfProgressEqualsOrGreater", "2", "HitSecondFighter",
+                                        "IfProgressEqualsOrGreater", "1", "HitThirdFighter",
+                                        "JumpToScene", "PostAttackCheck"
+                                    ]
+                      },
+                              {
+                                  "NameOfScene": "CheckSkill",
+                                  "theScene": [
+                                                "IfPlayerIsUsingThisSkill", "Thrust", "Thrust",
+                                                "IfPlayerIsUsingThisSkill", "Channeling Thrust", "Channeling Thrust",
+                                                "IfPlayerIsUsingThisSkill", "Pound", "Pound",
+                                                "IfPlayerIsUsingThisSkill", "Multi Thrust", "Multi Thrust",
+                                                "IfPlayerIsUsingThisSkill", "Empowered Thrust", "Empowered Thrust",
+                                                "IfPlayerIsUsingThisSkill", "Tantric Thrust", "Tantric Thrust",
+                                                "IfPlayerIsUsingThisSkill", "Passionate Lovemaking", "Passionate Lovemaking",
+                                                "IfPlayerIsUsingThisSkill", "Face Fuck", "Face Fuck"
+                                            ]
+                              },
+                      {
+                          "NameOfScene": "Face Fuck",
+                          "theScene": [
+                                        "HitMonsterWith", "Face Fuck",
+                                        "SetPostName", " - Face Fuck",
+                                        "PlayerSpeaksSkill",
+                                        "You grab a hold of the ghosts' head and roughly thrusts deep into her wet mouth, and she lets out muffled moans as you dominate her tight throat.[DamageToEnemy]",
+                                        "SetPostName",
+                                          "",
+                                          "ChangeImageLayer", "Expression", "Horny",
+                                        "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                            "'Mmmph?!♥'",
+                                            "'Oooohhh...♥ M-More...♥'",
+                                            "'Sh-Sho rough.♥'",
+                                            "'M-My throat feelsh sho good...♥'",
+                                            "'D-Don't stop.♥'",
+                                            "'Mmmm.♥ I won't be able to stop thinking about this for weeks.♥'",
+                                            "She merely looks up at you with a blissful expression as you pound her throat.",
+                                            "'Gonna haunt your cock.♥♥♥'",
+                                        "EndLoop",
+                                        "IfProgressEqualsOrGreater", "2", "HitSecondFighter",
+                                        "IfProgressEqualsOrGreater", "1", "HitThirdFighter",
+                                        "JumpToScene", "PostAttackCheck"
+                                    ]
+                      },
+                      {
+                          "NameOfScene": "Thrust",
+                          "theScene": [
+                                        "HitMonsterWith", "Thrust",
+                                        "SetPostName", " - Thrust",
+                                        "PlayerSpeaksSkill",
+                                        "You thrust your cock into the ghost's drooling pussy again and again, making her shiver with blissful pleasure.[DamageToEnemy]",
+                                          "ChangeImageLayer", "Expression",  "Horny",
+                                        "SetPostName",
+                                          "",
+                                        "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                            "'Ahhh...♥ This feels so good.♥'",
+                                            "'Ohhh...♥ Don't stop.♥'",
+                                            "'Ooooh...♥ I never want this to end.♥'",
+                                            "'Hehe,♥ I think I might have to haunt you.♥'",
+                                            "'Mmmm,♥ this is wonderful.♥'",
+                                        "EndLoop",
+                                        "IfProgressEqualsOrGreater", "2", "HitSecondFighter",
+                                        "IfProgressEqualsOrGreater", "1", "HitThirdFighter",
+                                        "JumpToScene", "PostAttackCheck"
+                                    ]
+                      },
+                      {
+                          "NameOfScene": "Channeling Thrust",
+                          "theScene": [
+                                        "HitMonsterWith", "Channeling Thrust",
+                                        "SetPostName", " - Channeling Thrust",
+                                        "ChangeEnergyQuietly", "25",
+                                        "PlayerSpeaksSkill",
+                                        "You slowly thrust your cock into ghost's drooling pussy while gradually drawing in mana from her and the air around the two of you.[DamageToEnemy]",
+                                          "ChangeImageLayer", "Expression",  "Horny",
+                                        "SetPostName",
+                                          "",
+                                        "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                            "'Ahhh...♥ This feels so good.♥'",
+                                            "'Ohhh...♥ Don't stop.♥'",
+                                            "'Ooooh...♥ I never want this to end.♥'",
+                                            "'Hehe,♥ I think I might have to haunt you.♥'",
+                                            "'Mmmm,♥ this is wonderful.♥'",
+                                        "EndLoop",
+                                        "IfProgressEqualsOrGreater", "2", "HitSecondFighter",
+                                        "IfProgressEqualsOrGreater", "1", "HitThirdFighter",
+                                        "JumpToScene", "PostAttackCheck"
+
+                                    ]
+                      },
+                      {
+                          "NameOfScene": "Pound",
+                          "theScene": [
+                                        "HitMonsterWith", "Pound",
+                                        "SetPostName", " - Pound",
+                                        "PlayerSpeaksSkill",
+                                        "You roughly fuck the ghost's spasming pussy with your stiff manhood, and she struggles to stay coherent from the pleasure slamming into her sensitive slit.[DamageToEnemy]",
+                                        "SetPostName",
+                                          "",
+                                        "JumpToScene", "teir2Lines"
+                                    ]
+                      },
+                      {
+                          "NameOfScene": "Multi Thrust",
+                          "theScene": [
+                                        "HitMonsterWith", "Multi Thrust",
+                                        "SetPostName", " - Multi Thrust",
+                                        "PlayerSpeaksSkill",
+                                        "You skillfully thrust your cock into the ghosts' tight pussy over and over again, making her gasp quickly from the constant bliss striking into her body.[DamageToEnemy]",
+                                        "HitMonsterWith", "Multi Thrust",
+                                        "PlayerSpeaksSkill",
+                                        "The ghost smiles blissfully at you as you keep thrusting, never giving her a moment to rest or recover from the ecstasy coursing through her spectral form.[DamageToEnemy]",
+                                        "HitMonsterWith", "Multi Thrust",
+                                        "PlayerSpeaksSkill",
+                                        "She quivers and moans with pleasure from your every hilting movement, her squeezing orifice accepting you deep inside, her cute gasps coaxing you unrelenting fuck her drooling slit.[DamageToEnemy]",
+                                        "SetPostName",
+                                          "",
+                                        "JumpToScene", "teir2Lines"
+                                    ]
+                      },
+                      {
+                          "NameOfScene": "Empowered Thrust",
+                          "theScene": [
+                                        "HitMonsterWith", "Empowered Thrust",
+                                        "SetPostName", " - Empowered Thrust",
+                                        "PlayerSpeaksSkill",
+                                        "You thrust your magically charged cock into the ghosts spasming pussy, and she moans loudly as erotic magic courses into her with every mind-blanking thrust.[DamageToEnemy]",
+                                        "SetPostName",
+                                          "",
+                                        "JumpToScene", "teir2Lines"
+                                    ]
+                      },
+                      {
+                          "NameOfScene": "Tantric Thrust",
+                          "theScene": [
+                                        "HitMonsterWith", "Tantric Thrust",
+                                        "SetPostName", " - Tantric Thrust",
+                                        "PlayerSpeaksSkill",
+                                        "You slowly thrust you manhood into the ghost's tight pussy with gentle care, all while teasingly caressing her body by sensually tracing your fingers over her ethereal skin, leaving her softly moaning from the building pleasure.[DamageToEnemy]",
+                                        "SetPostName",
+                                          "",
+                                        "JumpToScene", "teir2Lines"
+                                    ]
+                      },
+                      {
+                          "NameOfScene": "Passionate Lovemaking",
+                          "theScene": [
+                                        "HitMonsterWith", "Passionate Lovemaking",
+                                        "SetPostName", " - Passionate Lovemaking",
+                                        "ApplyStatusEffect", "Charm",
+                                        "PlayerSpeaksSkill",
+                                        "You lovingly fuck the ghost's tight pussy with infatuated passion, and she loses herself in the moment while they interlock their bodies, moaning in blissful delight as the two of them gaze into the others eyes.[DamageToEnemy]",
+                                        "SetPostName",
+                                          "",
+                                        "JumpToScene", "teir2Lines"
+                                    ]
+                      },
+                            {
+                                "NameOfScene": "teir2Lines",
+                                "theScene": [  "ChangeImageLayer", "Expression", "Horny",
+                                              "FocusedSpeaks",
+                                              "SwapLineIf", "Random",
+                                                  "'Ahhh!♥ S-So good!♥'",
+                                                  "'D-Don't stop.♥'",
+                                                  "'Ooooh!♥ I don't think I can take this much longer!♥'",
+                                                  "'MMMM!♥ I'm going to you-♥ Haaahhhh!♥'",
+                                                  "'AHHH!♥ Th-This is Amazing!♥'",
+                                                  "'Ohhh! M-More!♥'",
+                                                  "'I don't want this to ever ennnd!♥♥♥",
+                                                  "'I'm never letting us part!♥♥♥",
+                                              "EndLoop",
+                                              "IfProgressEqualsOrGreater", "2", "HitSecondFighter",
+                                              "IfProgressEqualsOrGreater", "1", "HitThirdFighter",
+                                              "JumpToScene", "PostAttackCheck"
+                                          ]
+                            },
+
+
+                            {
+                                "NameOfScene": "PostAttackCheck",
+                                "theScene": [
+                                              "CallMonsterEncounterOrgasmCheck"
+                                          ]
+                            },
+
+
+
+
+
+
+                      {
+                          "NameOfScene": "SexOrgasmLines",
+                          "theScene": [ "IfPlayerHasStances", "Sex", "Sex", "Sex", "EndLoop", "TrioSexOrgasmLines",
+                                      "IfPlayerHasStances", "Sex", "Sex", "EndLoop", "DuoSexOrgasmLines",
+                                        "ChangeImageLayer", "Expression", "Smug",
+                                      "SwapLineIf", "Random",
+                                          "The ghostly woman twists and sways her hips on your aching cock, her every movement massages your entire length, squeezing tightly as it lovingly clings to your twitching erection, until finally the blissful stimulation sends you over the edge, blowing a thick load into her ethereal pussy to be soaked into her ghostly form.[PlayerOrgasmLine]",
+                                          "As the ghost bounces excitedly on your twitching manhood, you're driven closer and closer to a mind-blanking orgasm, every wet meeting of your hips sending a heavenly jolt of pleasure through your hips, until finally, the constant rhythm of her hips wears away your resistance completely, and you're left spurting a hot load into her tight slit for her to soak in.[PlayerOrgasmLine]",
+                                          "The ghost rides your aching length with a smile, breaking up her teasing movements with the occasional break to grind and sway her hips, leaving your manhood twitching wildly in anticipation as she builds you up to a mind-blanking orgasm, and with a final rapid, wet strokes of her drooling pussy you're sent moaning over the edge, spurting thick ropes of cum into her spectral orifice, letting her soak in every drop.[PlayerOrgasmLine]",
+                                      "EndLoop"
+                                    ]
+                      },
+                              {
+                                  "NameOfScene": "DuoSexOrgasmLines",
+                                  "theScene": ["ChangeImageLayer", "Expression", "Smug",
+                                              "SwapLineIf", "Random",
+                                                "The duo of ghosts gently sway their hips in opposite directions, their tight squeezing insides caressing every inch of your stiff, twitching dick as it's assailed with overlaying sensations and gently bent in multiple directions at once by their rippling orifices, leaving you barely able to process the orgasmic bliss swelling in your loins as the sensations change constantly, overwhelming you with maddening bliss.|n|The slow sensual gyrations finally finish you off, the overlapping feeling of their drooling pussies too much to try and resist, leaving you to fill them both with your seed. your aching balls emptying a few more spurts into both of them as they give their hips a synchronized wiggle, their overlaid pussies giving your dick such wonderful and impossible pleasure.[PlayerOrgasmLine]",
+                                                "The two ghosts ecstatically ride your stiff cock in rapid alternation as they phase through each other, as one slams her hips down, taking your entire length to the base, the other is reaching the apex of lifting her hips back up to your tip, over and over they repeat it, slowly fucking you faster, refusing to give you a moment's rest.|n|This leaves your overstimulated dick throbbing and twitching madly in ecstasy until it finally erupts inside them, but they merely giggle as you pour them full cum, and continue riding your aching erection, working to milk out the next load from your churning balls with the ecstasy inducing feeling of fucking two women at the same time.[PlayerOrgasmLine]",
+                                                "One of the ghosts gently grinds and gyrates her shapely hips in a sensual circle, keeping your rigid cock firmly lodged inside her squeezing pussy, and the other ghost bounces on your twitching length energetically as she phases through her ally, leaving your dick throbbing like mad as it's stroked and squeezed by the combined power of their overlapping spectral pussies.|n|You're only able to gasp and squirm in bliss as your spasming cock is milked and massaged at the same time it's wildly ridden, until finally your entire body is lost in an electrifying orgasm, and you flood them both with your hot cum, and even as you spurt their pussies ripple and squeeze your aching erection in perfect unison, draining every drop of your seed they can.[PlayerOrgasmLine]",
+                                            "EndLoop"
+                                            ]
+                              },
+                                      {
+                                          "NameOfScene": "TrioSexOrgasmLines",
+                                          "theScene": ["ChangeImageLayer", "Expression",  "Smug",
+                                                      "SwapLineIf", "Random",
+                                                        "The trio of ghosts move like ethereal afterimages, all riding your achingly stiff cock in a slow steady rhythm. One of the ghosts leads the movements, and the other two follow suit a slight delay, leaving your dick twitching in delight as it's stroked over and over by the wonderful overlapping sensations of three squeezing pussies stroking its entire length a constant, sensual mind-melting pace.|n|The three ghosts work in perfect unison, the tight wet feeling of the orifice's slightly trailing behind the first feel just like it, giving you a strange eerie sense of deja-vu as maddening jolts of ecstasy strike into your hips, overwhelming you with the impossibly blissful sensations of their trio of squeezing slits all riding your twitching erection, leaving your entire body quivering as orgasmic ecstasy sears through you.|n|Your throbbing cock spasms like crazy from the overstimulation spurting thick loads of your seed into the trio's tight pussies as they continue to slowly ride your aching manhood at a steady pace, wringing out every drop of cum they can from your twitching balls, blanking out your mind in haunting pleasure.[PlayerOrgasmLine]",
+                                                        "The trio of ghosts keep your stiff cock firmly lodged inside their three tight, overlapping spectral pussies as they gyrate, grind, and squeeze your aching dick in multiple different ways and directions at a single time, overlaying the feeling of their churning insides around your throbbing shaft, flooding your body with mind-melting, otherworldly pleasure.|n|They churn your twitching dick inside their combined ghostly pussies, squeezing and milking your every inch all at once, and the maddening pleasure reaches its electrifying peak, cascading through your entire body, leaving you shivering in overwhelming ecstasy, unable to think straight, leaving you right on the climactic edge.|n|Then as you're lost in the throes of pleasure they finish you off with a unified sultry sway if their hips, realigning your spasming cock back to reality after being bent and squeezed in multiple directions, right into a mind-blanking orgasm, and your aching balls churn as you pump thick loads of your seed into their tight slits.[PlayerOrgasmLine]",
+                                                        "You can hardly comprehend the ecstasy overwhelming your twitching dick as one ghost gently sways and gyrates her shapely hips in small teasing circles, milking every inch of your twitching erection with her tight pussy's squeezing caress, and the second ghost keeps your aching cock firmly hilted inside her tight slit, not moving her hips a single inch, letting her rippling vaginal coax you closer and closer to a mind-melting orgasm.|n|All the while the third ghost energetically rides your spasming manhood, bouncing her hips at a constant ecstasy inducing pace while her ethereal allies work in tandem with her to drown your overstimulated cock in impossible ecstasy, leaving your dick throbbing like crazy in their combined spectral pussies unified assault and your entire body tensing in pleasure as an orgasm overtakes your entire body.|n|The waves of maddening bliss flowing through your spasming cock finally break your endurance with the overlaying sensations of their ethereal pussies squeezing, milking and stroking your twitching erection, and the constant surges overtake you as your dick unloads thick ropes of cum into the trios tight slits, but they don't relent for a second, eager to drain out every drop you can offer them.[PlayerOrgasmLine]",
+                                                    "EndLoop"
+                                                    ]
+                                      },
+
+
+                      {
+                          "NameOfScene": "BJOrgasmLines",
+                          "theScene": [ "IfPlayerHasStances", "Blowjob", "Blowjob", "Blowjob", "EndLoop", "TrioBJOrgasmLines",
+                                      "IfPlayerHasStances", "Blowjob", "Blowjob", "EndLoop", "DuoBJOrgasmLines",
+                                      "ChangeImageLayer", "Expression", "Smug",
+                                      "SwapLineIf", "Random",
+                                        "The ghost lovingly deepthroats your thick cock, sliding it to the back of her tight throat over and over, sending wonderful sparks of pleasure ricocheting through your aching manhood as her tongue teasing your entire shaft, until with a final hilting stroke you erupt directly down her throat, pouring a fresh load of your seed into her spectral body to be absorbed.[PlayerOrgasmLine]",
+                                        "The ghostly woman firmly sucks on your aching cock, bobbing her soft lips up and down your twitching length, leaving your balls spasming from the intense suction trying to coax out your seed, and as she lovingly suckles on your tip you can't hold out anymore, flooding her hungry mouth with your seed for her to eagerly gulp down with a giggle.[PlayerOrgasmLine]",
+                                      "EndLoop"
+                                    ]
+                      },
+                            {
+                                "NameOfScene": "DuoBJOrgasmLines",
+                                "theScene": ["ChangeImageLayer", "Expression",  "Smug",
+                                            "SwapLineIf", "Random",
+                                              "The duo of ghosts lovingly suck on your rigid rigid cock as they stroke your full length with their tightly sealed lips, lapping at the underside and tip with their nimble tongues, seamlessly phasing through each other as they move up and down in alternation, so just as one hilts your aching erection down her tight throat, the other is intensely sucking on the tip while lavishing it in affection with her tongue.|n|They continually intensify the suction as they go up and down your raging erection, making your balls twitch as their lips stroke up and down your twitching shaft, until their vacuum-like suction and dexterous tongues overwhelm you as they hilt your cock in turn, leaving you spurting thick ropes of cum into their hungry mouths and down their throats as they keep milking your length with their lips.[PlayerOrgasmLine]",
+                                              "The two ghosts keep their soft lips firmly sealed around your twitching cockhead, rolling their loving tongues around the sensitive flesh in opposite directions, stopping on occasion to both lap up your leaking pre-cum, sending a blissful pulse of ecstasy through your aching dick as they break up the pleasure of their swirling tongues, and your balls twitch with aching need, unable to take this wonderful bliss much longer.|n|The two giggle teasingly and deepthroat your stiff erection at the same time, sending a tremor of ecstasy through your hips from the overlapping sensation and combined suction of their tight throats, leaving you teetering on the brink of orgasm, your aching balls churning in preparation as they tense.|n|But as they both start to intensely suck on the base of your length the pleasure bubbles over inside you, and as they slowly pull their sucking lips back to your spasming tip, dancing their tongues along your entire length, you can only moan incoherently, spurting thick ropes of seed into their hungry mouth, pouring semen down their throats as they suddenly hilt themselves back down your entire cock's length, redoubling your orgasmic pleasure in an electric wave of melting ecstasy.[PlayerOrgasmLine]",
+                                              "While one of the ghosts gently strokes your rigid cock with her soft lips, licking every inch with her skilled tongue as she moves up and down your twitching length, the second ghost is rapidly deepthroating your throbbing dick, making it strike the back of her tight throat over and over, each time sending a jolt of bliss through your manhood that threatens to make you spurt as the first ghost continues to gently milk your shaft at the same time|n| Their combined mouths maddening sensations pulse through your spasming erection to your entire body, leaving you moaning blissfully as their teasing oral affection finally coaxes out thick ropes of seed from your aching balls that they greedily gulp down before switching the roles of gentle suction and frantic deep throating between them, and your dick can only twitch in anticipation.[PlayerOrgasmLine]",
+                                          "EndLoop"
+                                          ]
+                            },
+                                    {
+                                        "NameOfScene": "TrioBJOrgasmLines",
+                                        "theScene": ["ChangeImageLayer", "Expression",  "Smug",
+                                                    "SwapLineIf", "Random",
+                                                      "The trio of ghosts milk your aching dick with their soft lips at different paces, teasingly licking every twitching inch of your length as they overwhelm your aching manhood with the combined overlapping efforts of their sucking mouths and tight throats, each working to give you an expert blowjob at the same time, leaving your cock throbbing and twitching madly in ecstasy from the otherworldly pleasure.|n|One ghost is slowly bobbing up and down your length, gently running her tongue along the underside of your twitching dick, the second ghost lightly sucking on your spasming tip before slamming your entire cock down her throat, then intensely sucking her way back up to the tip sending mind-melting jolts of pleasure through your manhood.|n|And with the third ghost lovingly pounding your spasming cock down her throat at a rapid pace, you're helpless to resist the oncoming orgasm flooding your body.|n|The trio's mixture of blowjobs completely overwhelm your senses, leaving your entire body twitching from the otherworldly bliss as you start to unload into the trio's mouths and throats, feeling like you're going to lose your mind to the ghostly ecstasy as they keep sucking and licking all through your intense orgasm, the memory of this climax firmly ingraining into your memories.[PlayerOrgasmLine]",
+                                                      "One ghost keeps your stiff cock firmly hilted down her tight throat as she intensely sucks on it, the second keeps your twitching cock head trapped between her soft lips as she firmly sucks on it and lavishes it with affection with her nimble tongue, and the third ghost slowly bobs her head up and down your entire length with an intense suction as she deepthroats your length over and over.|n|Your spasming cock feels completely surrounded in pleasure, the trios combined stimulation completely overwhelming you as they lick and suck intensely all at once, leaving you crying out incoherently as you start to spurt thick ropes of cum from the maddening bliss, pouring your hot seed into their throats and mouths to greedily gulp down, but they keep lovingly sucking every inch, trying to coax out even more.[PlayerOrgasmLine]",
+                                                  "EndLoop"
+                                                  ]
+                                    },
+
+
+
+
+
+
+
+                      {
+                        "NameOfScene": "Event Broke",
+                        "theScene": [
+                                      "Event Broke"
+                                  ]
+                      }
+                ]
+}

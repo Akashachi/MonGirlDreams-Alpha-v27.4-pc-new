@@ -1,0 +1,72 @@
+{
+    "name": "Caverns Intro",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Salaris",
+                    "postName": " 1",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Salaris",
+                    "postName": " 2",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [  "IfProgressEqualsOrGreater", "1", "Delve",
+                                      "ChangeProgress", "1",
+                                      "ChangeBG", "mountain.png",
+                                      "Making your way down a mountain path from the temple, you eventually find yourself in front of the gaping maw that is the entrance to the mountain's caverns system, the only passageway for adventurers to get to the monster girl capital.",
+                                      "ChangeBG", "Caverns.png",
+                                      "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                      "You cautiously enter into the softly illuminated cave, and as you get deeper, small bioluminescent mushrooms and glowing stones light the path, and soon you're taking branching paths as you proceed deeper into the damp cavern network. Only the sound of dripping water to break up the tense silence.",
+                                      "But you freeze momentarily as you hear voices talking up ahead, and carefully edge forward to listen in better, and peer around the corner, spotting two nude amphibian lizard women.",
+                                      "DisplayCharacters",
+                                        "1",
+                                        "2",
+                                        "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Confused", "ChangeImageLayer", "Expression", "2", "Excited",
+                                      "Speaks",
+                                      "Seriously? They just let you go into the human town?",
+                                      "Speaks2",
+                                      "Yeah! You just gotta wear clothes and not attack men in the streets.",
+                                      "ChangeImageLayer", "Expression", "1", "Thinking",
+                                      "Speaks",
+                                      "Eugh, but clothes stick to our skin, it's so uncomfortab- wait, where did you even get clothes? Or get to the town without drying out? You said it wasn't raining...",
+                                      "ChangeImageLayer", "Expression", "2", "Happy",
+                                      "Speaks2",
+                                      "I bought them with some eros I saved up, and uh, there's a few ponds and streams you can take a dip in on the way, and uh, I also bribed a slime to help keep me hydrated.",
+                                      "ChangeImageLayer", "Expression", "1", "SmugPredatory",
+                                      "Speaks",
+                                      "Pfffhaha, that's so gross! And isn't it way too bright out during the day?",
+                                      "ChangeImageLayer", "Expression", "2", "Excited",
+                                      "Speaks2",
+                                      "Well, yeah, but it's not unbearable, just don't look at the sun. And seriously, it's basically all the semen you can eat at the bar! It's totally worth the effort!",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "Speaks",
+                                      "Ehhh, it wouldn't be the same if you didn't hunt the guy down, that's part of the fun! Pinning him down as our venom leaves him unable to move, then milking him for every drop.",
+                                      "ChangeImageLayer", "Expression", "2", "Thinking",
+                                      "Speaks2",
+                                      "Well, yeah but-",
+                                      "You suddenly lose your footing on the slick cave floor, slipping momentarily, and hide yourself behind the wall as their conversation abruptly ends.",
+                                      "DisplayCharacters",
+                                        "EndLoop",
+                                      "As you wait a moment, you hear two splashes of water, and looking back in the room you can see the pools of water inside still faintly rippling...",
+                                      "With a shrug you head down another nearby path to avoid the potential ambush, only to notice similar pools of water near the sides of the wide passageway."
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Delve",
+                        "theScene": [  "ChangeBG", "Caverns.png",
+                                      "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                      "You return to the cavern's entrance, and begin your exploration anew, and as you get deeper, small bioluminescent mushrooms and glowing stones light the damp cavern path. Only the sound of dripping water and eerie echo down the tunnels to break up the tense silence..."
+                                  ]
+                    }
+                ]
+}

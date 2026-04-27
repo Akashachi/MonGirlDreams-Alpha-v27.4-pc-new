@@ -1,0 +1,90 @@
+{
+    "name": "ForestTutorialEntry",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Elena",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+
+                ],
+    "EventText": [
+      {
+          "NameOfScene": "EventStart",
+          "theScene": [  "IfProgressEqualsOrGreater", "1", "GetOutThere",
+                        "ChangeProgress", "1",
+                        "You head out of the Town gate, but stop with a chill as reality visibly {i}contorts{/i} in front of you, the path ahead looking like it drunkenly sways and blurs, as if uncertain of its own existence. Meanwhile, to your redoubled surprise, your Grimoire suddenly floats up in front of you, opening on its own to show a clearly magical page inscribed with a variety of numbers, monster names, locations, and even what appears to be Quest prompts.",
+                        "For a few moments, you stare at the display, but with nothing else happening and the magic tome continuing to hover motionlessly in front of you, you experimentally try touching it, and realize that you can actually interact with the seemingly living pages, navigating from one section to the next and even changing the numbers shown by tapping them.",
+                        "Still feeling rather at a loss, you try fiddling with the options available, even though you're not too sure of what you're doing as you change numbers, read monster profiles, and select then deselect Quests. After a few minutes, however, you start to fear that you're actually going to break something or get yourself in trouble, and seriously consider whether you'd want to risk it or if you should instead ask the Adventurer's Guild for more information.",
+                        "DisplayCharacters",
+                          "1",
+                          "EndLoop",
+                        "ChangeImageLayer", "Base", "1", "WorkClothes",
+                        "Before you can make your choice, however, you hear someone hastily striding in your direction, and turning around, you see Elena power-walking your way, the guildswoman progressing at a rather impressive speed for someone wearing heels, and offering you a reassuring smile once she sees she has your attention.",
+                        "ChangeImageLayer", "Expression", "1", "SmileContent",
+                        "Speaks",
+                        "Hello [ThePlayerName]! Sorry, I for- I mean I {i}almost{/i} forgot to set up your Grimoire for your first adventure!... Don't worry, all that Grimoire setup stuff is pretty self-explanatory, but first-timers tend to try and bite off more than they can chew, or just hit the Randomize option and go for it, which isn't {i}exactly{/i} a great idea when you're just starting off...",
+                        "ChangeImageLayer", "Expression", "1", "Grumble",
+                        "ChangeImageLayer", "Extras", "1", "ScribblyBubble",
+                        "The smartly dressed lady trails off, her expression taking on a distasteful air as she seems to reminisce about something unpleasant, muttering a barely audible 'Damn elf ambushes...' before shaking her head and carrying on brightly, as if nothing happened.",
+                        "ChangeImageLayer", "Extras", "1", "",
+                        "ChangeImageLayer", "Expression", "1", "Thinking",
+                        "Speaks",
+                        "{i}So!{/i} I have something to help you ease yourself into your first outing. You'll need to go through this kind of set path once for every location you visit on Lucidia anyway, so that your Grimoire can attune to it. Then, once that magic book thing has 'harmonized' with the place, you'll be able to configure your next adventures there as you please... Something about magic leylines? You'd have to ask Elly.",
+                        "ChangeImageLayer", "Expression", "1", "Base",
+                        "Shrugging, she leaves it at that and, without further ado, she casually pulls out a green bookmark tucked into her cleavage that she then sticks onto your Grimoire where it vanishes in a glimmer of light. Instantly, the tabs and numbers on display change on their own in a whirring papery flurry, then the Grimoire closes shut before returning to you while the path ahead of you seems to stabilize, suddenly no longer looking indistinctly hazy.",
+                        "ChangeImageLayer", "Expression", "1", "Smile",
+                        "Speaks",
+                        "There.♪ As you can see, that's how exploration around this place works, and that's how you'll be moving around in the future. For this first adventure of yours, I even included a small Quest that I need taken care of at the end of the set course. Nothing dangerous, don't worry. I'm sure you'll handle it no problem.",
+                        "ChangeImageLayer", "Expression", "1", "SmileContent",
+                        "Speaks",
+                        "And of course, you'll be paid for it. 1000 Eros once you complete it... After that, you'll be free to explore the Forest all you want, and you'll also have access to the Forest Dungeon. That's where the first Sigil you'll need to get is located.",
+                        "ChangeImageLayer", "Expression", "1", "Smile",
+                        "Speaks",
+                        "The map included in your Grimoire will update with any new location you have access to, so don't forget to check it once you've attuned to a new area... And don't forget to check your Grimoire's tabs every now and then, too, even in areas you've already explored. You never know if a new Event or Quest may have popped up there!",
+                        "ChangeImageLayer", "Expression", "1", "Base",
+                        "Speaks",
+                        "SwapLineIf", "OtherEventsChoice", "EnteringGuild",
+                          "1", "MetElena", "But back to the present, your first Quest is to go stop a red slime from vandalizing the Town's walls... I'm pretty sure I mentioned it while we were in the guild hall.",
+                          "1", "", "But back to the present, your first Quest is to go stop a red slime from vandalizing the town's walls.",
+                        "EndLoop",
+                        "ChangeImageLayer", "Expression", "1", "Grumble",
+                        "As she speaks, she moodily gestures back towards the Town where you can indeed see various incensing messages to the effect of 'Humans Suck!' and 'Your Doom Approaches!' painted on the walls with red slime, along with a few depictions of what you guess is supposed to be a malevolently grinning or laughing face.",
+                        "ChangeImageLayer", "Extras", "1", "ScribblyBubble",
+                        "Speaks",
+                        "She also causes all kinds of other hassles, mostly for me: scaring people at night, running on the roofs and leaving slime blotches or damaging the tiles in the process, spilling garbage bins, playing ding-dong ditching... The cleaning costs and paperwork are frankly getting horrendous, as are the complaints I'm constantly getting... So {i}please{/i} find the source of this and stop it before I have an aneurysm.",
+                        "ChangeImageLayer", "Expression", "1", "Shy",
+                        "ChangeImageLayer", "Extras", "1", "",
+                        "Collecting herself with a huff, she looks away as she reflexively smoothes out her hair, then turns back to you with a prim smile returned to her face.",
+                        "ChangeImageLayer", "Expression", "1", "SmileContent",
+                        "Speaks",
+                        "Oh, and as a final word of caution: be sure to keep track of time while you're out there. Once night falls, monsters get more powerful. More so the later it gets. So try not to rest haphazardly while you're adventuring. Whenever you're in Town, however, you can head to your room at the Inn to sleep as much as you need. You'll wake up fully refreshed and ready to go out there again, with no risk of getting ambushed... I've made {i}sure{/i} of that.",
+                        "ChangeImageLayer", "Expression", "1", "Disgust",
+                        "A twitch of annoyance shows on her face at the notion, though she once more brushes it off, concluding with a cheerful smile.",
+                        "ChangeImageLayer", "Expression", "1", "Smile",
+                        "Speaks",
+                        "So with all of that said, good luck adventuring out there, [ThePlayerName]!",
+                        "(Note on the times of day:\n\nDay Time: Morning, Noon, and Afternoon.\n\nNight Time: Dusk, Evening, and Midnight.)",
+                        "(Time moves forward generally one increment at a time, in the order listed, looping back around to Morning after Midnight.\nResting recovers some of your Arousal, Energy, and Spirit, but advances time.\nSleeping in your room at the Inn will fully recover your Arousal, Energy, and Spirit, while advancing time to the next Morning.)",
+                        "ChangeImageLayer", "Expression", "1", "Base",
+                        "Feeling like you've understood the gist of what Elena told you, you nod and set out on your first Quest, trekking into the now stable Forest under the gaze of the guildswoman who waves you off then promptly strides back towards the Town.",
+                        "DisplayCharacters",
+                          "EndLoop",
+                        "Following the path deeper and deeper, you initially experience an uneventful and rather pleasant walk through the vibrant nature, but it doesn't take long for the rustling of foliage to catch your attention as someone approaches you..."
+                    ]
+      },
+                    {
+                        "NameOfScene": "GetOutThere",
+                        "theScene": [
+                                      "You begin your trek through the Forest once more in your quest to stop the vandal assailing the Town."
+                                  ]
+                    }
+
+
+
+                ]
+}

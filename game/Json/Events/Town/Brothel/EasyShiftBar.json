@@ -1,0 +1,36 @@
+{
+    "name": "EasyShiftBar",
+    "CardType": "BarShift",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Elf",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [ "ChangeBG", "Bar.png",
+                                      "You work behind the bar with Belle helping make drinks for the patrons.",
+                                      "Nothing odd happens, and nobody hires you for {i}services{/i} despite the drunken and lecherous stares you get from patrons.",
+                                      "ChangeBG", "Inn.png",
+                                      "Should you be insulted or happy? Oh well, at least you got paid.",
+                                      "ChangeEros", "100",
+                                      "IfTimeIs", "Midnight", "GoToBed",
+                                      "AdvanceTime", "1"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "GoToBed",
+                                "theScene": [
+                                              "Then, it being the end of the night, you head up to your room, and go to bed for the night...",
+                                              "JumpToNPCEventThenScene", "Go to your room.", "Sleeping"
+                                          ]
+                            }
+                ]
+}

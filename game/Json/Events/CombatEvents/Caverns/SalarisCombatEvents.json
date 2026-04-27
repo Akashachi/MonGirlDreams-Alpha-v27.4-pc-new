@@ -1,0 +1,248 @@
+{
+    "name": "SalarisCombatEvents",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Salaris",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Intro",
+                        "theScene": [  "SetProgress", "0", "SetChoice", "1", "", "StoreCurrentBG",
+                                      "ChangeBG", "Caverns.png",
+                                      "GetEventAndIfChoice", "Voracious Huntress", "18", "AmySalarisi", "NoIntro",
+                                      "EncounterSizeLessOrEqualTo", "1", "SoloSalarisIntro",
+                                      "A pair of Salaris suddenly leap out of the shallow pools of water near you! They circle you with a mixture of giggles and growls as they prowl on all fours before descending on you!",
+                                      "JumpToRandomScene",
+                                          "EndOfRound",
+                                          "NoHowlAllowed",
+                                          "NoHowlAllowed",
+                                      "EndLoop"
+                                  ]
+                    },
+
+                    {
+                        "NameOfScene": "NoIntro",
+                        "theScene": [  "GetEventAndSetChoice", "Voracious Huntress", "18", ""
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "SoloSalarisIntro",
+                                "theScene": [
+                                              "A Salaris suddenly leaps out of one the shallow pools of water near you with a growl and darts towards you in an instant!"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "NoHowlAllowed",
+                                "theScene": [
+                                              "SetProgress", "1"
+                                          ]
+                            },
+
+
+                    {
+                        "NameOfScene": "Hunting Howl",
+                        "theScene": [ "EncounterSizeGreaterOrEqualTo", "2", "NoHowl",
+                                    "IfProgressEqualsOrGreater", "1", "NoHowl",
+                                    "ChangeImageLayer", "Expression", "Roar",
+                                    "ChangeProgress", "1",
+                                    "SetPostName", " - Hunting Howl",
+                                    "AddMonsterToEncounter", "Salaris",
+                                    "FocusedSpeaksSkill",
+                                    "The Salaris lets out a guttural howl that echoes through the caverns, and moments later another Salarisi leaps out of a nearby pool of water with an excited hiss!",
+                                    "SetPostName",
+                                    ""]
+                    },
+                          {
+                              "NameOfScene": "NoHowl",
+                              "theScene": [ "CallMonsterAttack"
+                              ]
+                          },
+
+
+
+                    {
+                        "NameOfScene": "EndOfRound",
+                        "theScene": [  "SetChoice", "1", ""
+                                  ]
+                    },
+
+
+
+
+
+
+                    {
+                        "NameOfScene": "Predatory Leap",
+                        "theScene": [ "SetPostName", " - Predatory Leap",
+                                    "ChangeImageLayer", "Expression", "SmugPredatory",
+                                    "FocusedSpeaksSkill",
+                                    "SwapLineIf", "Choice",
+                                      "1", "DuoPounce", "While you're still distracted from the first Salaris' pounce, the Salaris leaping at you with a predatory grin from the other side, her claws outstretched, giving you barely any time to react!",
+                                      "1", "", "The Salaris darts back and forth on all fours before leaping at you with a predatory grin, her claws outstretched!",
+                                    "EndLoop",
+                                    "SetPostName",
+                                    "",
+                                    "IfPlayerStunnedByParalysis", "ParastunnedPounce",
+                                    "Menu",
+                                      "Try to deflect her jump and toss her to the ground! (Power) [StatCheckPost]",
+                                      "Try to dodge her! (Technique) [StatCheckPost]",
+                                      "Freeze up!",
+                                    "EndLoop"]
+                    },
+                            {
+                              "NameOfScene": "Try to deflect her jump and toss her to the ground! (Power) [StatCheckPost]",
+                              "theScene": [    "StatCheck",
+                                                "ChangeStatCheckDifficulty", "IfChoice", "1", "DuoPounce", "5",
+                                                "Power",
+                                                "15",
+                                                "Tackled!",
+                                                "Fail",
+                                                "FailedTackle."
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "FailedTackle.",
+                                    "theScene": [  "But you don't even manage to slow her down with your attempt!",
+                                                  "JumpToScene",
+                                                      "Pinned."
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "Tackled!",
+                                    "theScene": [   "SetChoice", "1", "DuoPounce", "ApplyStatusEffectToMonster", "Spank",
+                                                    "You manage to grab her at the last second and toss her to the side, leaving her reeling even as she flips back onto her clawed hands and feet with an excited growl."
+                                              ]
+                                  },
+                            {
+                              "NameOfScene": "Try to dodge her! (Technique) [StatCheckPost]",
+                              "theScene": [    "StatCheck",
+                                                "ChangeStatCheckDifficulty", "IfChoice", "1", "DuoPounce", "5",
+                                                "Technique",
+                                                "15",
+                                                "Dodged!",
+                                                "Fail",
+                                                "FailedToDodge."
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "FailedToDodge.",
+                                    "theScene": [  "But you can't manage to avoid the Salaris leaping at you!",
+                                                  "JumpToScene",
+                                                      "Pinned."
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "Dodged!",
+                                    "theScene": [ "SetChoice", "1", "DuoPounce", "ApplyStatusEffectToMonster", "Spank",
+                                                  "You deftly avoid the Salarisi's attempt to pin you to the ground, and she skids past you with a stagger before turning to face you with a hissing growl."
+                                              ]
+                                  },
+                            {
+                              "NameOfScene": "ParastunnedPounce",
+                              "theScene": [  "Your body is too wracked with paralysis to even move!",
+                                            "JumpToScene",
+                                                "Pinned."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Freeze up!",
+                              "theScene": [  "ResetStatCheckDifficultyModifer",
+                                            "Locked with fear and indecision you don't do anything!",
+                                            "JumpToScene",
+                                                "Pinned."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Pinned.",
+                              "theScene": [
+                                            "ApplyStatusEffect",   "Manticore Pin",
+                                            "ChangeImageLayer", "Expression", "Hungry",
+                                            "She crashes right into you, pinning you to the ground with a hissing laugh and a lick of her lips with her long venom dripping tongue!"
+                                        ]
+                            },
+
+
+
+
+
+              {
+                  "NameOfScene": "Predatory Oral Capture",
+                  "theScene": [ "SetPostName", " - Predatory Oral Capture",
+                              "ChangeImageLayer", "Expression", "Lick",
+                              "FocusedSpeaksSkill",
+                              "SwapLineIf", "Random",
+                                "'Come here.♥' The Salaris lashes out at you with her long tongue in an attempt to coil it around your manhood!",
+                                "'It looks so tasty.♥' The Salaris lashes out at you with her long tongue in an attempt to coil it around your manhood!",
+                                "'I want every last drop of your cum.♥' The Salaris lashes out at you with her long tongue in an attempt to coil it around your manhood!",
+                                "'You're mine!♥' The Salaris lashes out at you with her long tongue in an attempt to coil it around your manhood!",
+                              "EndLoop",
+                              "SetPostName",
+                              "",
+                              "IfPlayerStunnedByParalysis", "ParastunnedBJ",
+                              "Menu",
+                                "Try to dodge her tongue! (Technique) [StatCheckPost]",
+                                "This is fine.",
+                              "EndLoop"]
+              },
+                      {
+                        "NameOfScene": "Try to dodge her tongue! (Technique) [StatCheckPost]",
+                        "theScene": [    "StatCheck",
+                                          "Technique",
+                                          "15",
+                                          "DodgedBJ!",
+                                          "Fail",
+                                          "FailedToDodgeBJ."
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "FailedToDodgeBJ.",
+                              "theScene": [  "But you can't manage to avoid the Salaris' sinuous tongue!",
+                                            "JumpToScene",
+                                                "BJED."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "DodgedBJ!",
+                              "theScene": [
+                                            "You deftly avoid the Salaris's attempt to pull your length into her mouth, and she lets her long tongue slip back into her mouth with a pouty hiss."
+                                        ]
+                            },
+                      {
+                        "NameOfScene": "ParastunnedBJ",
+                        "theScene": [  "Your body is too wracked with paralysis to even move!",
+                                      "JumpToScene",
+                                          "BJED."
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "This is fine.",
+                        "theScene": [  "ResetStatCheckDifficultyModifer",
+                                      "You eagerly wait for her long, alluring tongue to wrap around your dick.",
+                                      "JumpToScene",
+                                          "BJED."
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "BJED.",
+                        "theScene": [
+                                        "ApplyStatusEffect",   "Paralytic Lick",
+                                      "ApplyStance",   "Blowjob",
+                                      "HitPlayerWith", "Paralytic Lick",
+                                      "Her long tongue expertly coils around your stiff cock, and in an instant she has pulled your raging erection into her hungry mouth, immediately starting to suck and lick your entire length with her unnatural tongue, and you can feel a warm numbness starting to spread through your hips from her venom.[DamageToPlayer]"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Event Broke",
+                        "theScene": [
+                                      "Event Broke"
+                                  ]
+                      }
+                ]
+}

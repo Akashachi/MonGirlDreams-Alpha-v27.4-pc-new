@@ -1,0 +1,46 @@
+{
+    "name": "Enter 'Amber's Adventuring Shop'",
+    "Addition": "Yes",
+    "Speakers": [
+    ],
+    "EventText": [
+        {
+            "NameOfScene": "Shop.",
+            "theScene": [
+                "ShopAddition",
+                    "Imp Juice",
+                    "Silver Rune",
+                "EndLoop"
+            ]
+        },
+        {
+            "NameOfScene": "Learn Skills.",
+            "theScene": [
+                "SkillShopAddition",
+                    "Teleport",
+                    "Anal Piston",
+                "EndLoop"
+            ]
+        },
+        {
+            "NameOfScene": "VisitMenu",
+            "theScene": [
+                "MenuAddition",
+                    "A New Scene!",
+                    "RequiresPerk", "Energy Drainer",
+                        "A New Scene!",
+                    "OverrideOption", "FinalOption", 
+                        "Leave Amber's store.",
+                "EndLoop"
+            ]
+        },
+        {
+            "NameOfScene": "A New Scene!",
+            "theScene": [
+                        "The world explodes. But it got better.",
+                        "Keep in mind that menu additions should be done separately from normal event additions to the same event, as normal event additions overwrite the scene, while menu additions solely add to the menu specified.",
+                        "Also if you want to test this in-game without making an entire mod distribution, temporarily toss it into the Events/Town/Inn folder and remove the _ at the front of the name."
+            ]
+        }
+    ]
+}

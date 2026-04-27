@@ -1,0 +1,28 @@
+vbox:
+        xalign 0.8
+        yalign 0.5
+        for i, fetish in enumerate(player.FetishList):
+            if fetish.Type == "Fetish":
+                hbox:
+                    if fetish.Level > 0:
+                        imagebutton:
+                            xpos -16
+                            idle "gui/circlebuttonsmallchecked.png"
+                            hover "gui/circlebuttonsmallchecked_hover.png"
+                            action [
+                                SetVariable("setThisFetish", i),
+                                tt.Action(fetish.CreationOff),
+                                Jump ("setFetish")]
+                    else:
+                        imagebutton:
+                            xpos -16
+                            idle "gui/circlebuttonsmall.png"
+                            hover "gui/circlebuttonsmall_hover.png"
+                            action [
+                                SetVariable("setThisFetish", i),
+                                tt.Action(fetish.CreationOn),
+                                Jump ("setFetish")]
+
+                    text fetish.name:
+                        yalign 0.5 xoffset -7
+                        color entry_color

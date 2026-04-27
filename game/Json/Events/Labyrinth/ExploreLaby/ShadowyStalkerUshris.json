@@ -1,0 +1,37 @@
+{
+    "name": "Shadowy Stalker Ushris",
+    "CardType": "Event",
+    "CardLimit": "6",
+    "Description": "Ushris is stalking you through the darkened hallways of the Labyrinth, intent on toying with you and teasing you into a whimpering pleasure-drunk puppy.\n\n{i}There’s a small note on the page mentioning that unlike the regular Labyrinth challenge, the hellhounds won't get stronger in the course of your exploration, since their lustful inner flames have time to abate from one encounter to the next.{/i}",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Ushris",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Fight",
+                        "theScene": [
+                                        "DisplayCharacters",
+                                            "1",
+                                          "EndLoop",
+                                          "ChangeBG", "LabyrinthUshris.png",
+                                          "GetEventAndSetProgress", "UshrisCombatEvents", "0",
+                                          "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                          "As you move onward, green flames suddenly erupt all around you, making the shadows dance menacingly before they coalesce and coil into an inky pool that Ushris elegantly rises out of with a smug smile.",
+                                          "Speaks",
+                                          "Keihihi, how interesting.♪ Time to make you a good obedient puppy.♪♥",
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Ushris",
+                                          "StartCombat",
+                                          "ChangeBG", "Labyrinth.png",
+                                          "With the shadowy witch dealt with, the flames flicker and vanish, leaving you free to proceed..."
+                                  ]
+                    }
+                ]
+}

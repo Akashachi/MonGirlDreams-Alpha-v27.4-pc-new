@@ -1,0 +1,327 @@
+{
+    "name": "ApartmentsTrialThinking",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Imp",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }  
+                ],
+    "EventText": [
+                    {
+                            "NameOfScene": "Floor1Think",
+                            "theScene": [    
+                                           "SetChoice", "1", "F1",
+                                           "JumpToScene", "ThinkCheck"
+                                        ]
+                    },  
+                    {
+                            "NameOfScene": "Floor2Think",
+                            "theScene": [    
+                                           "SetChoice", "1", "F2",
+                                           "JumpToScene", "ThinkCheck"
+                                        ]
+                    },  
+                    {
+                            "NameOfScene": "Floor3Think",
+                            "theScene": [    
+                                           "SetChoice", "1", "F3",
+                                           "JumpToScene", "ThinkCheck"
+                                        ]
+                    },  
+                    {
+                            "NameOfScene": "Floor4Think",
+                            "theScene": [    
+                                           "SetChoice", "1", "F4",
+                                           "JumpToScene", "ThinkCheck"
+                                        ]
+                    },  
+                    {
+                            "NameOfScene": "Floor5Think",
+                            "theScene": [    
+                                           "SetChoice", "1", "F5",
+                                           "JumpToScene", "ThinkCheck"
+                                        ]
+                    },  
+                    {
+                            "NameOfScene": "Floor6Think",
+                            "theScene": [    
+                                           "SetChoice", "1", "F6",
+                                           "JumpToScene", "ThinkCheck"
+                                        ]
+                    },  
+                    {
+                            "NameOfScene": "ThinkCheck",
+                            "theScene": [    
+                                                "GetEventAndIfChoice", "ApartmentsTrialFloor1", "1", "LetterGet", "ThinkMenu",
+                                                "IfChoice", "2", "PosterChecked", "ThinkMenu",
+                                                "You don't have much to think about yet. Maybe you should just check the poster in the entrance lobby for now? It seems like what entering adventurers would be expected to do.",
+                                                "JumpToScene", "Done thinking."
+                                        ]
+                    },  
+                     {
+                            "NameOfScene": "ThinkMenu",
+                            "theScene": [      
+                                                "Menu",                                          
+                                                    "What's the current clue..?",
+                                                    "Pass the time...",
+
+                                                    "RequiresStat", "Intelligence", "10",  
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor5", "2", "",  
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor4", "2", "FinalLetterGet",
+                                                    "Think about the letter you got from the merfolk puzzle... (Tip)",
+
+                                                    "RequiresStat", "Intelligence", "40",  
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor4", "2", "",
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor3", "2", "GotLetterClue",
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor4", "3", "CheckedCarpet",
+                                                    "Think about the Queens and how to discern which one is not lying... (Big Tip)",
+                                                    "RequiresStat", "Intelligence", "20",  
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor4", "2", "",
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor3", "2", "GotLetterClue",
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor4", "3", "CheckedCarpet",
+                                                    "Think about the letter you got from deciphering the succubus adverts... (Tip) ",
+
+                                                    "RequiresStat", "Intelligence", "10",  
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor4", "2", "",
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor3", "2", "GotLetterClue",
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor4", "3", "",
+                                                    "Think about the letter you got from deciphering the succubus adverts... (Tip)",
+
+                                                    "RequiresStat", "Intelligence", "20",  
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor3", "2", "",
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor2", "2", "ClueGet",
+                                                    "Think about the clue you got from the voltlin duo... (Tip)",
+
+                                                    "RequiresStat", "Intelligence", "10",  
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor2", "2", "",
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor6", "1", "PaintingFound",  
+                                                    "Think about the note you got from solving the riddle of the harpy paintings... (Tip)",
+
+                                                    "RequiresStat", "Intelligence", "10",  
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor6", "1", "",  
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor1", "1", "LetterGet",  
+                                                    "Think about the note you got from the mailbox... (Tip)",
+                                                   
+                                                    "RequiresStat", "Intelligence", "15",
+                                                    "RequiresChoice", "2", "PosterChecked",
+                                                    "RequiresChoiceFromEvent", "ApartmentsTrialFloor1", "1", "",  
+                                                    "Think about the poster's riddle... (Tip)",
+
+                                                    "Done thinking.",
+                                                "EndLoop"
+                                        ]
+                    },  
+                            {
+                                    "NameOfScene": "Pass the time...",
+                                    "theScene": [      
+                                                    "IfTimeIs", "Midnight", "PassingPassingPassing",
+                                                    "AdvanceTime", "1",
+                                                    "You wait around the apartments for a while and let time slip by... Though you don't get any rest from it, your current accommodations not offering enough comfort and amenities for you to actually relax and recover from your idle pause.",
+                                                    "JumpToScene", "ThinkMenu"
+                                                ]
+                            },  
+                                    {
+                                            "NameOfScene": "PassingPassingPassing",
+                                            "theScene": [        
+                                                            "You wait around the apartments for a while and let time slip by... But morning doesn't come, no matter how many hours go by... It seems like if you want this everlasting night to end, you'll have to leave the Starlight District, and return to the Eros District or wherever else time will flow normally again.",
+                                                            "JumpToScene", "ThinkMenu"
+                                                        ]
+                                    },  
+ 
+
+                            {
+                                "NameOfScene": "What's the current clue..?",
+                                "theScene": [  
+                                                "GetEventAndIfChoice", "ApartmentsTrialFloor5", "2", "FinishedPuzzle", "FinishedEverything",
+                                                "GetEventAndIfChoice", "ApartmentsTrialFloor4", "2", "FinalLetterGet", "RecallClueFromMerfolkfloor",
+                                                "GetEventAndIfChoice", "ApartmentsTrialFloor3", "2", "GotLetterClue", "RecallClueFromSuccfloor",
+                                                "GetEventAndIfChoice", "ApartmentsTrialFloor2", "2", "ClueGet", "RecallClueFromVoltlins",
+                                                "GetEventAndIfChoice", "ApartmentsTrialFloor6", "1", "PaintingFound", "RecallHarpyClue",
+                                                "GetEventAndIfChoice", "ApartmentsTrialFloor1", "1", "LetterGet", "RecallLetterClue",
+                                                "You take a moment to recall the words written on the poster in Adventure Apartments' entryway.",
+                                                "{i}Across the starlit skies, the constellations shine, waiting to be arranged in guiding harmony: 2 bolts of crossing lightning, 6 glinting succubus stars, 4 deep sea denizens, 1 dragon gazing at them all, and 10 harpies flitting even higher still. Where missives lie, you will find your way by the fifth times the third, followed by the others combined.{/i}",
+                                                "JumpToScene", "ThinkMenu"
+                                            ]
+                            },
+                                    {
+                                        "NameOfScene": "RecallLetterClue",
+                                        "theScene": [  
+                                                        "You check the letter you found in the lobby's mailbox...",
+                                                        "{i}Amid the collected constellations, you must seek your prize. Your quest will take you to harpy heights where they play games in the boundless starry skies... but only one holds the answers you seek. One wrong move and you'll be whisked away! Find she who is flying distantly over forest, above mountain, and between clouds, soaring towards the moon.{/i}",
+                                                        "JumpToScene", "ThinkMenu"
+                                                    ]
+                                    },
+                                    {
+                                        "NameOfScene": "RecallHarpyClue",
+                                        "theScene": [  
+                                                        "You check the slip of paper that came out of the harpy painting on floor six...",
+                                                        "{i}Divide this sky by three to discover the constellation you must next seek, far down below the high skies, and of the two clashing thunders, appoint the victor.{/i}",
+                                                        "JumpToScene", "ThinkMenu"
+                                                    ]
+                                    },
+                                    {
+                                        "NameOfScene": "RecallClueFromVoltlins",
+                                        "theScene": [  
+                                                        "You check the slip of paper that the voltlins gave you on floor two...",
+                                                        "{i}From moonlit skies, you've traveled down to jolting clashing volts. Now, you must count the succubus stars glimmering in the night to find your destination, and knock on their door before entering!{/i}",
+                                                        "JumpToScene", "ThinkMenu"
+                                                    ]
+                                    },
+                                    {
+                                        "NameOfScene": "RecallClueFromSuccfloor",
+                                        "theScene": [  
+                                                        "You check the slip of paper that you found in the room on floor three...",
+                                                        "{i}From a duel of competing thunders, you have found your way to this place among the stars,\nNow, plunge from the skies, and dive into the winding, crashing seas,\nTurn over the seabed to find its secrets, but beware the alluring merfolks' siren song, for three will lead you astray with both truth and lies,\nOnly one will tell no lies at all, guiding you to the stamp that is your goal.{/i}",
+                                                        "JumpToScene", "ThinkMenu"
+                                                    ]
+                                    },
+                                    {
+                                        "NameOfScene": "RecallClueFromMerfolkfloor",
+                                        "theScene": [  
+                                                        "You check the letter that you got after solving the merfolk puzzle on floor four. It should be the last riddle...",
+                                                        "{i}With your mind sharp and the puzzles solved, only one task remains: search for the peak of power where the final constellation shines, awaiting your arrival. Seek its gaze and find the finale!{/i}",
+                                                        "JumpToScene", "ThinkMenu"
+                                                    ]
+                                    },
+                                    {
+                                        "NameOfScene": "FinishedEverything",
+                                        "theScene": [  
+                                                        "Well, you've already gotten the stamp, so there's nothing else for you to do here! Unless you just want to kill some time... or perhaps get yourself exposed to the most likely still active lewd traps that will trigger whenever you poke at something you shouldn't... But you wouldn't purposefully do that, right?",
+                                                        "JumpToScene", "ThinkMenu"
+                                                    ]
+                                    },
+
+ 
+
+
+                                    {
+                                        "NameOfScene": "Think about the poster's riddle... (Tip)",
+                                        "theScene": [  
+                                                        "Mulling over the clue, you're pretty sure that based on 'Where missives lie', you have to figure out which one of the lobby's mailboxes to open. Something is telling you that one part of the riddle has to do with the floor, and the other with the room number, based on the numerals associated with each constellation. You'll need to do some math here...",
+                                                        "JumpToScene", "ThinkMenu"
+                                                    ]
+                                    },
+
+                                    {
+                                        "NameOfScene": "Think about the note you got from the mailbox... (Tip)",
+                                        "theScene": [  
+                                                        "Thinking over the riddle, it seems like you'll need to find something that matches what it's alluding to. Something to do with a {i}specific{/i} harpy? The building is not that big, so with a bit of exploration, it shouldn't be hard to find the floor where those harpies are, probably without even needing to risk entering any room...",
+                                                        "JumpToScene", "ThinkMenu"
+                                                    ]
+                                    },
+
+                                    {
+                                        "NameOfScene": "Think about the note you got from solving the riddle of the harpy paintings... (Tip)",
+                                        "theScene": [  
+                                                        "The note says 'Divide this sky by three'. If you assume that 'sky' is referring to one of the building's floors, then that would mean that the number associated with the floor you got this clue on is the number...?",
+                                                        "JumpToScene", "ThinkMenu"
+                                                    ]
+                                    },
+
+                                    {
+                                        "NameOfScene": "Think about the clue you got from the voltlin duo... (Tip)",
+                                        "theScene": [  
+                                                        "Mulling over the clue, you're pretty sure you need to find a place where you can see something related to succubi, from which you'll need to deduce a room number. Doing so at night seems like an essential part of correctly deciphering the riddle, too.",
+                                                        "JumpToScene", "ThinkMenu"
+                                                    ]
+                                    },
+
+                                    {
+                                        "NameOfScene": "Think about the letter you got from deciphering the succubus adverts... (Tip)",
+                                        "theScene": [  
+                                                        "It sounds like the next puzzle will be about finding someone who's telling the truth among liars... Though you first need to figure out where those 'merfolk' are... But judging by the previous steps you went through, if you explore the floors and look around, it should hopefully come up pretty obviously.",
+                                                        "JumpToScene", "ThinkMenu"
+                                                    ]
+                                    },
+                                    {
+                                        "NameOfScene": "Think about the letter you got from deciphering the succubus adverts... (Tip) ",
+                                        "theScene": [  
+                                                        "It sounds like the puzzle is about figuring out who among the merfolk Queens depicted on floor four is the one telling the truth. From there, you should be able to read into their respective statements to find out the number of the room you're supposed to check out, and how many times you need to knock to correctly solve the riddle.",
+                                                        "JumpToScene", "ThinkMenu"
+                                                    ]
+                                    },
+                                    {
+                                        "NameOfScene": "Think about the Queens and how to discern which one is not lying... (Big Tip)",
+                                        "theScene": [  
+                                                        "Looking over the information you got from the Queens, you're confident the Merfolk of the South is the one not telling lies... But knowing this will not be enough to solve the puzzle... You feel like you should remember that even though the other Queens lie, not {i}all{/i} of their statements are lies. By using logic, you should be able to deduce their falsehoods, and from there, use their possible truths to reach the answers you seek!",
+                                                        "JumpToScene", "ThinkMenu"
+                                                    ]
+                                    },
+
+                                    {
+                                        "NameOfScene": "Think about the letter you got from the merfolk puzzle... (Tip)",
+                                        "theScene": [  
+                                                        "It sounds like you need to find 'where the final constellation shines'... If you correctly remember the initial riddle and its mention of various constellations, wasn't that one a dragon?",
+                                                        "JumpToScene", "ThinkMenu"
+                                                    ]
+                                    },
+
+
+                                   
+
+
+
+                    {
+                        "NameOfScene": "Done thinking.",
+                        "theScene": [  
+                                        "IfChoice", "1", "F1", "F1Jump",
+                                        "IfChoice", "1", "F2", "F2Jump",
+                                        "IfChoice", "1", "F3", "F3Jump",
+                                        "IfChoice", "1", "F4", "F4Jump",
+                                        "IfChoice", "1", "F5", "F5Jump",
+                                        "IfChoice", "1", "F6", "F6Jump"
+                                    ]
+                    },
+                            {
+                                "NameOfScene": "F1Jump",
+                                "theScene": [  
+                                                "JumpToEventThenScene", "ApartmentsTrialFloor1", "EntryWayMenu"
+                                            ]
+                            },
+                            {
+                                "NameOfScene": "F2Jump",
+                                "theScene": [  
+                                                "JumpToEventThenScene", "ApartmentsTrialFloor2", "EntryWayMenu"
+                                            ]
+                            },
+                            {
+                                "NameOfScene": "F3Jump",
+                                "theScene": [  
+                                                "JumpToEventThenScene", "ApartmentsTrialFloor3", "EntryWayMenu"
+                                            ]
+                            },
+                            {
+                                "NameOfScene": "F4Jump",
+                                "theScene": [  
+                                                "JumpToEventThenScene", "ApartmentsTrialFloor4", "EntryWayMenu"
+                                            ]
+                            },
+                            {
+                                "NameOfScene": "F5Jump",
+                                "theScene": [  
+                                                "JumpToEventThenScene", "ApartmentsTrialFloor5", "EntryWayMenu"
+                                            ]
+                            },
+                            {
+                                "NameOfScene": "F6Jump",
+                                "theScene": [  
+                                                "JumpToEventThenScene", "ApartmentsTrialFloor6", "EntryWayMenu"
+                                            ]
+                            },
+
+                                   
+ 
+
+                    {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [   "event broke."
+                                ]
+                    }
+                ]
+}

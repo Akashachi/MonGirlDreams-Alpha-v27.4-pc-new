@@ -1,0 +1,1431 @@
+{
+    "name": "MikasCombatEvents",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Mika",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                      {
+                        "NameOfScene": "Intro",
+                        "theScene": [ "SetChoice", "7", "",
+                                    "SetChoice", "6", "",
+                                    "IfProgressEqualsOrGreater", "100", "SexReversalUpgrade",
+                                    "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "CollarUpgraded",
+                                    "GetEventAndIfChoice", "Visiting Mika", "19", "DildoScene", "DildoUpgraded",
+
+                                    "JumpToScene",
+                                    "IntroLine"
+                                  ]
+                      },
+                              {
+                                "NameOfScene": "SexReversalUpgrade",
+                                "theScene": [
+                                            "ClearMonsterPerks",
+                                            "GivePerkToMonster", "Swift",
+                                            "GivePerkToMonster", "Sex Adept",
+                                            "GivePerkToMonster", "Pinpoint Pleasure",
+                                            "GivePerkToMonster", "Lovers Passion",
+
+                                            "ChangeMonsterMaxArousal", "150",
+
+                                            "GiveSkillToMonster", "Mika's Relentless Mating",
+
+                                            "ChangeMonsterLevel", "7",
+
+                                            "ChangeMonsterFetish", "Sex", "-25",
+
+                                            "ChangeMonsterErosDrop", "250",
+                                            "ChangeMonsterExpDrop", "50",
+
+                                            "ChangeMonsterTech", "5",
+                                            "ChangeMonsterAllure", "5",
+
+                                            "ChangeMonsterSensitivity",   "Sex", "-40",
+
+
+
+                                            "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "CollarUpgraded",
+                                            "GetEventAndIfChoice", "Visiting Mika", "19", "DildoScene", "DildoUpgraded",
+                                            "JumpToScene", "IntroLine"
+                                          ]
+                              },
+
+                              {
+                                "NameOfScene": "CollarUpgraded",
+                                "theScene": [ "SetChoice", "6", "CollarUpgraded",
+
+                                            "ChangeMonsterLevel", "25",
+
+                                            "ChangeMonsterMaxArousal", "100",
+                                            "ChangeMonsterMaxSpirit", "1",
+
+
+                                            "ChangeMonsterErosDrop", "900",
+                                            "ChangeMonsterExpDrop", "325",
+
+                                            "ChangeMonsterPower", "5",
+                                            "ChangeMonsterTech", "25",
+                                            "ChangeMonsterAllure", "15",
+                                            "ChangeMonsterWill", "5",
+                                            "ChangeMonsterLuck", "15",
+
+                                            "ChangeMonsterStatusEffectResistances", "Sleep", "20",
+                                            "ChangeMonsterStatusEffectResistances", "Restraints", "20",
+                                            "ChangeMonsterStatusEffectResistances", "Aphrodisiac", "25",
+                                            "ChangeMonsterStatusEffectResistances",   "Stun", "20",
+
+                                            "GivePerkToMonster", "Pinpoint Ecstasy",
+                                            "GivePerkToMonster", "Unbridled Passion",
+                                            "GivePerkToMonster", "Sex Expert",
+                                            "GivePerkToMonster", "Loving",
+                                            "GivePerkToMonster", "Savvy",
+                                            "GivePerkToMonster", "Amazing Ass",
+                                            "GivePerkToMonster", "Nice Legs",
+                                            "GivePerkToMonster", "Monstrous Adept",
+
+                                            "GetEventAndIfChoice", "Visiting Mika", "19", "DildoScene", "DildoUpgraded",
+                                            "JumpToScene", "IntroLine"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "DildoUpgraded",
+                                "theScene": [
+                                            "ChangeMonsterLevel", "5",
+
+                                            "ChangeMonsterMaxArousal", "50",
+
+                                            "ChangeMonsterErosDrop", "250",
+                                            "ChangeMonsterExpDrop", "50",
+
+                                            "ChangeMonsterTech", "5",
+                                            "ChangeMonsterAllure", "5",
+
+                                            "ChangeMonsterSensitivity",   "Sex", "-5",
+                                            "ChangeMonsterSensitivity",   "Ass", "-5",
+
+                                            "GivePerkToMonster", "Pacing",
+
+                                            "JumpToScene", "IntroLine"
+                                          ]
+                              },
+                      {
+                        "NameOfScene": "IntroLine",
+                        "theScene": [  "Mika approaches you with a sensual sway of her wide hips."
+                                  ]
+                      },
+
+
+
+
+
+                      {
+                          "NameOfScene": "Pinning Pounce",
+                          "theScene": [ "SetPostName", " - Pinning Pounce",
+                                      "ChangeImageLayer", "Expression", "NyaNya",
+                                      "FocusedSpeaksSkill",
+                                      "SwapLineIf", "Random",
+                                            "'Nya!♪' Mika suddenly pounces at you with a playful smile, her 'claws' bared, and a slight predatory gleam shining in her eyes.",
+                                            "'Meow!♪' Mika suddenly pounces at you with a playful smile, her 'claws' bared, and a slight predatory gleam shining in her eyes.",
+                                            "'You're mine now!♪' Mika suddenly pounces at you with a playful smile, her 'claws' bared, and a slight predatory gleam shining in her eyes.",
+                                            "'Come here!♪' Mika suddenly pounces at you with a playful smile, her 'claws' bared, and a slight predatory gleam shining in her eyes.",
+                                      "EndLoop",
+                                      "SetPostName",
+                                      "",
+                                       "Menu",
+                                            "Try to push her away! (Power)",
+                                            "Try to get away from her! (Technique)",
+                                            "Kitty just wants a hug.",
+                                          "EndLoop"
+                                  ]
+                      },
+                              {
+                                "NameOfScene": "Try to push her away! (Power)",
+                                "theScene": [
+                                                "StatCheck",
+                                                "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                  "Power",
+                                                  "15",
+                                                  "Pushed her away!",
+                                                  "Fail",
+                                                  "FailedPushAway."
+                                          ]
+                              },
+                                    {
+                                      "NameOfScene": "FailedPushAway.",
+                                      "theScene": [  "But your attempt to stop her leap proves futile!",
+                                                    "JumpToScene",
+                                                        "Wall Pinned."
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "Pushed her away!",
+                                      "theScene": [   "ApplyStatusEffectToMonster", "Spank",
+                                                      "ChangeImageLayer", "Expression", "Shock",
+                                                    "Right before she impacts you, you grab ahold of the feline woman and shove her back, leaving her staggering backwards with a curse and falling on her cushy ass leaving her a little out of it from the impact.",
+                                                    "ChangeImageLayer", "Expression", "Laugh",
+                                                    "FocusedSpeaks",
+                                                    "A-Ahaha, can we take a quick time out nya?♪"
+                                                ]
+                                    },
+                              {
+                                "NameOfScene": "Try to get away from her! (Technique)",
+                                "theScene": [
+                                              "StatCheck",
+                                              "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                  "Technique",
+                                                  "15",
+                                                  "DodgedPounce!",
+                                                  "Fail",
+                                                  "FailedToDodgePounce."
+                                          ]
+                              },
+                                    {
+                                      "NameOfScene": "FailedToDodgePounce.",
+                                      "theScene": [  "But Mika's too quick for you to dodge!",
+                                                    "JumpToScene",
+                                                        "Wall Pinned."
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "DodgedPounce!",
+                                      "theScene": [  "ApplyStatusEffectToMonster", "Spank", "ChangeImageLayer", "Expression", "Shock",
+                                                    "But you side step her leap, and she's left pouncing right into a wall.",
+                                                    "FocusedSpeaks",
+                                                    "Shit!",
+                                                    "Mika crashes into the wall, and staggers away only slightly dazed from the impact.",
+                                                    "ChangeImageLayer", "Expression", "Laugh",
+                                                    "FocusedSpeaks",
+                                                    "O-Ow... Haha... Uhmm, t-time out nya?"
+                                                ]
+                                    },
+                              {
+                                "NameOfScene": "Kitty just wants a hug.",
+                                "theScene": [  "You eagerly accept Mika's pouncing embrace!",
+                                              "JumpToScene",
+                                              "Wall Pinned."
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "Wall Pinned.",
+                                "theScene": [
+                                              "ApplyStatusEffect",   "MikaWallPin",
+                                              "ApplyStance", "Thighjob",
+                                              "Mika lands on you and shoves you back into a wall, trapping you between her and the smooth stone. While you're left dazed from the impact she presses her soft breasts against you and traps your cock between her soft, overwhelming thighs.",
+                                              "You moan quietly from the feeling of her lovely thighs squeezing your manhood, she gently guides your hands to her bountiful ass, and you find yourself giving her voluptuous rear an indulgent squeeze in your daze as she wraps her arms around your neck."
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "BreakFree!",
+                                "theScene": [  "ClearStances",
+                                              "ChangeImageLayer", "Expression", "Smug",
+                                              "You manage to shove Mika away, and she merely gives you a playful laugh as she jumps back and turns to face you. Quickly you get away from the wall so she hopefully can't pin you like that again."
+                                            ]
+                              },
+
+
+
+                      {
+                          "NameOfScene": "Mika's Seductive Sway",
+                          "theScene": [ "SetPostName", " - Mika's Seductive Sway",
+                                      "ChangeImageLayer", "ImageSetDontCarryOver", "MikaAss",
+                                      "ChangeImageLayer", "Ass", "ShakeLight",
+                                      "PlayMotionEffect", "ScreenSway",
+                                      "HitPlayerWith", "Mika's Seductive Sway",
+                                      "FocusedSpeaksSkill",
+                                      "SwapLineIf", "Random",
+                                            "'Wouldn't you rather be fucking my tight ass?♥' Mika suddenly heel turns and bends over slightly, presenting her voluptuous ass to you as gently shaking it back and forth, giving her plump rear a teasing spank that makes her bountiful butt jiggle enticingly.[DamageToPlayer]",
+                                            "'You can't deny how hard my ass is making you.♥' Mika suddenly heel turns and bends over slightly, presenting her voluptuous ass to you as gently shaking it back and forth, giving her plump rear a teasing spank that makes her bountiful butt jiggle enticingly.[DamageToPlayer]",
+                                            "'Go on, don't deny yourself.♥' Mika suddenly heel turns and bends over slightly, presenting her voluptuous ass to you as gently shaking it back and forth, giving her plump rear a teasing spank that makes her bountiful butt jiggle enticingly.[DamageToPlayer]",
+                                            "'I bet you can't keep your eyes off my ass.♥' Mika suddenly heel turns and bends over slightly, presenting her voluptuous ass to you as gently shaking it back and forth, giving her plump rear a teasing spank that makes her bountiful butt jiggle enticingly.[DamageToPlayer]",
+                                            "'Come on, don't hold back.♥' Mika suddenly heel turns and bends over slightly, presenting her voluptuous ass to you as gently shaking it back and forth, giving her plump rear a teasing spank that makes her bountiful butt jiggle enticingly.[DamageToPlayer]",
+                                      "EndLoop",
+                                      "SetPostName",
+                                      "",
+                                      "IfFetishLevelEqualOrGreater", "Ass", "100", "ButtTemptedest",
+                                      "IfFetishLevelEqualOrGreater", "Ass", "75", "ButtTempteder",
+                                      "IfFetishLevelEqualOrGreater", "Ass", "25", "ButtTempted",
+                                       "JumpToScene", "TemptedMenu"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "TemptedMenu",
+                        "theScene": [   "Menu",
+                                         "Fuck her ass!",
+                                         "Fuck her pussy!",
+                                         "Worship her ass...",
+                                         "Ignore her.",
+                                       "EndLoop"
+                                    ]
+                      },
+                            {
+                              "NameOfScene": "ButtTempted",
+                              "theScene": [
+                                              "PlayImagePulseLoopingList", "1", "1.5", "0.25",
+                                                "Monsters/Mika/MikaButt/mikabutt.png",
+                                              "EndLoop",
+                                              "You love of asses is hazing your thoughts in a cloud of lust...",
+                                              "StatCheck",
+                                              "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                "Temptation",
+                                                "10",
+                                                "TemptedMenu",
+                                                "Fail",
+                                                "ButtMenu"
+                                          ]
+                            },
+                                    {
+                                      "NameOfScene": "ButtTempteder",
+                                      "theScene": [
+                                                      "PlayImagePulseLoopingList", "1", "1.5", "0.25",
+                                                        "Monsters/Mika/MikaButt/mikabutt.png",
+                                                      "EndLoop",
+                                                      "Your ass obsessed mind is flooded with lust at the tempting sight of Mika's perfect rear...",
+                                                      "StatCheck",
+                                                        "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                        "Temptation",
+                                                        "15",
+                                                        "TemptedMenu",
+                                                        "Fail",
+                                                        "ButtMenu"
+                                                  ]
+                                    },
+                                            {
+                                              "NameOfScene": "ButtTemptedest",
+                                              "theScene": [
+                                                          "PlayImagePulseLoopingList", "1", "1.5", "0.25",
+                                                            "Monsters/Mika/MikaButt/mikabutt.png",
+                                                            "EndLoop",
+                                                              "You ass addicted mind is overwhelmed at the sight of Mika's perfectly plump rear...",
+                                                              "StatCheck",
+                                                                "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                                "Temptation",
+                                                                "20",
+                                                                "TemptedMenu",
+                                                                "Fail",
+                                                                "ButtMenu"
+                                                          ]
+                                            },
+                                  {
+                                    "NameOfScene": "ButtMenu",
+                                    "theScene": [   "Menu",
+                                                      "Fuck her ass!",
+                                                      "Worship her ass...",
+                                                    "EndLoop"
+                                                ]
+                                  },
+                            {
+                              "NameOfScene": "Ignore her.",
+                              "theScene": [ "ChangeImageLayer", "ImageSetDontCarryOver", "Normal",
+                                            "EndImagePulseLoopingList",
+                                            "ChangeImageLayer", "Expression", "Confused",
+                                            "You look away and completely ignore Mika's tempting display, and she seems mildly annoyed as she turns back around to face you."
+                                          ]
+                            },
+                            {
+                              "NameOfScene": "Fuck her ass!",
+                              "theScene": [    "ChangeImageLayer", "ImageSetDontCarryOver", "Normal",
+                                               "EndImagePulseLoopingList",
+                                              "ApplyStance", "Anal",
+                                            "HitPlayerWith", "Assjob",
+                                            "You plunge your aching cock into her bouncy rear, and Mika softly moans as you unconsciously start to grope her bountiful rear while you thrust into her. You tremble with lust as her tight ass squeezes your length, and you feel yourself getting lost in the moment... [DamageToPlayer]"
+                                          ]
+                            },
+                            {
+                              "NameOfScene": "Fuck her pussy!",
+                              "theScene": [ "ChangeImageLayer", "ImageSetDontCarryOver", "Normal",
+                                               "EndImagePulseLoopingList",
+                                            "ChangeImageLayer", "Expression", "Flustered",
+                                          "You attempt to plunge your cock into Mika's dripping pussy, but she attempts to use her tail to redirect your manhood into her tight ass!",
+                                            "StatCheck",
+                                            "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                            "Technique",
+                                            "10",
+                                            "MikaIsInDanger",
+                                            "Fail",
+                                            "AnalTime"
+                                ]
+                            },
+                                  {
+                                    "NameOfScene": "AnalTime",
+                                    "theScene": [
+                                                    "ApplyStance", "Anal",
+                                                  "HitPlayerWith", "Assjob", "ChangeImageLayer", "Expression", "Smug",
+                                                  "Mika giggles seductively as she guides your erection into her tight rear, and you gasp with pleasure as its unnatural musculature sucks your twitching cock deeper into her squeezing ass, keeping you firmly lodged inside her... [DamageToPlayer]"
+                                                ]
+                                  },
+                                  {
+                                    "NameOfScene": "MikaIsInDanger",
+                                    "theScene": [ "You deftly grab ahold of Mika's flexible tail, and move to plunge your dick into Mika's tempting pussy, but she starts to slip away, out of your firm grasp!",
+                                                  "StatCheck",
+                                                  "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                  "Technique",
+                                                  "15",
+                                                  "Caught wrists",
+                                                  "Fail",
+                                                  "MikaEscapes"
+                                      ]
+                                  },
+                                          {
+                                            "NameOfScene": "MikaEscapes",
+                                            "theScene": [ "ChangeImageLayer", "Expression", "NyaSmug",
+                                                          "Mika escapes your grasp with her cat-like reflexes, turning to face you with a cat-like grin, putting you both back to square one."
+                                                        ]
+                                          },
+                                          {
+                                            "NameOfScene": "Caught wrists",
+                                            "theScene": [ "ChangeImageLayer", "Expression", "Lewded", "ChangeImageLayer", "Base", "Blush",
+                                                        "HitMonsterWith", "PoundingFeng",
+                                                          "You catch Mika's wrists before she can get away, and pull her back plunging your manhood deep into her dripping pussy, leaving her moaning loudly as you start to fuck her in this rather compromised position.[DamageToEnemy]",
+                                                          "FocusedSpeaks",
+                                                          "N-Nya!♥ Ah- O-Oh, this isn't good-♥ Ahhhh!♥♥♥",
+                                                          "ChangeImageLayer", "Expression", "Lewd",
+                                                          "Her voice becomes incoherent as you leverage your powerful thrusts into her with your firm hold on her wrists, and she mewls with joy at the pleasure striking through her body, shivering with bliss as you fuck her senseless.[DamageToEnemy]",
+                                                          "IfMonsterOrgasm", "MikaCumsFromReversal",
+                                                          "But despite her pleasure drunken state she tries to break free of your domineering hold!",
+                                                          "StatCheck",
+                                                          "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                          "Power",
+                                                          "15",
+                                                          "CounteredSexMenu",
+                                                          "Fail",
+                                                          "MikaEscapes2"
+                                                        ]
+                                          },
+                                                  {
+                                                    "NameOfScene": "CounteredSexMenu",
+                                                    "theScene": [   "But she can't get away!",
+                                                                    "Menu",
+                                                                      "RequiresEnergy",
+                                                                      "10",
+                                                                     "Keep fucking her! (10 Energy)",
+                                                                     "Let her go.",
+                                                                   "EndLoop"
+                                                              ]
+                                                  },
+                                                        {
+                                                          "NameOfScene": "Keep fucking her! (10 Energy)",
+                                                          "theScene": [    "ChangeEnergyQuietly",
+                                                                          "-10",
+                                                                        "JumpToRandomScene",
+                                                                            "Pounding",
+                                                                            "ElectricBliss",
+                                                                            "FuckDrunk",
+                                                                            "PurringWhilePounded",
+                                                                        "EndLoop"
+                                                                    ]
+                                                        },
+                                                              {
+                                                                "NameOfScene": "Pounding",
+                                                                "theScene": [ "HitMonsterWith", "PoundingFeng", "ChangeImageLayer", "Expression", "Lewded",
+                                                                            "You relentlessly fuck Mika's tight pussy, and it squeezes and spasms around your shaft while Mika mewls and whimpers in pleasure, drooling with mindless sexual bliss, leaving her arms limp in your firm grasp.[DamageToEnemy]",
+                                                                             "ChangeImageLayer", "Expression", "Lewd", "HitMonsterWith", "PoundingFeng",
+                                                                              "Every powerful thrust into her makes her attempts to hold back her lewd moans falter, and the deep impacting meeting of your hips makes her voluptuous ass bounce delightfully before your eyes, encouraging you to fuck her even harder.[DamageToEnemy]",
+                                                                            "IfMonsterOrgasm", "MikaCumsFromReversal",
+                                                                            "JumpToScene", "MikaComment"
+                                                                          ]
+                                                              },
+                                                              {
+                                                                "NameOfScene": "ElectricBliss",
+                                                                "theScene": [ "HitMonsterWith", "PoundingFeng", "ChangeImageLayer", "Expression", "Lewd",
+                                                                            "Mika loudly moans with ecstasy every time you pound her womb with your manhood, her entire body spasming with electric bliss as you thrust into her over and over.[DamageToEnemy]",
+                                                                             "HitMonsterWith", "PoundingFeng",
+                                                                              "Her bouncy rear jiggles wonderfully with every powerful impact of your hips, emphasized by Mika's lewd cries of pleasure and her pussy desperately clinging to your throbbing cock as you fuck her senseless.[DamageToEnemy]",
+                                                                            "IfMonsterOrgasm", "MikaCumsFromReversal",
+                                                                            "JumpToScene", "MikaComment"
+                                                                          ]
+                                                              },
+                                                              {
+                                                                "NameOfScene": "FuckDrunk",
+                                                                "theScene": [ "HitMonsterWith", "PoundingFeng", "ChangeImageLayer", "Expression", "Lewded",
+                                                                            "Mika mewls happily, completely lost in the intense pleasure coursing through her, moaning like a slut as you fuck her brain out, making her voluptuous ass jiggle with every thrust.[DamageToEnemy]",
+                                                                             "HitMonsterWith", "PoundingFeng",
+                                                                              "Pleasure drunk and incoherent she meets your thrusts with a teasing sway of her wide hips, churning her twitching pussy with your rigid cock even more as she briefly give in completely to her burning desires.[DamageToEnemy]",
+                                                                            "IfMonsterOrgasm", "MikaCumsFromReversal",
+                                                                            "JumpToScene", "MikaComment"
+                                                                          ]
+                                                              },
+                                                              {
+                                                                "NameOfScene": "PurringWhilePounded",
+                                                                "theScene": [ "HitMonsterWith", "PoundingFeng", "ChangeImageLayer", "Expression", "Lewded",
+                                                                            "You slow down your tempo for a moment, and Mika sweetly purrs with bliss as you slowly pound her dripping pussy, the vibrations of her body making you sigh with pleasure as you slowly put surely fuck Mika towards a blissful climax.[DamageToEnemy]",
+                                                                             "HitMonsterWith", "PoundingFeng",
+                                                                              "Mika is clearly losing to your rigid manhood as you start to pick up your tempo, her blissful purr shifting back to mewling cries of ecstasy with each and every meeting of your hips, her body twitching with electric jolts of pleasure.[DamageToEnemy]",
+                                                                            "IfMonsterOrgasm", "MikaCumsFromReversal",
+                                                                            "JumpToScene", "MikaComment"
+                                                                          ]
+                                                              },
+                                                      {
+                                                        "NameOfScene": "MikaComment",
+                                                        "theScene": [ "JumpToRandomScene",
+                                                                          "GoingBlank",
+                                                                          "Echo",
+                                                                          "Harder",
+                                                                          "ShouldEscape",
+                                                                          "Amazing",
+                                                                          "More",
+                                                                      "EndLoop"
+                                                                  ]
+                                                      },
+                                                            {
+                                                              "NameOfScene": "GoingBlank",
+                                                              "theScene": [  "FocusedSpeaks",
+                                                                            "'Nyaaaa!♥ My mind keeps blanking out from your cock!♥♥♥'",
+                                                                            "JumpToScene", "MikaStruggles"
+                                                                        ]
+                                                            },
+                                                            {
+                                                              "NameOfScene": "Echo",
+                                                              "theScene": [ "The lewd sounds of flesh meeting flesh echo throughout the room.",
+                                                                            "JumpToScene", "MikaStruggles"
+                                                                        ]
+                                                            },
+                                                            {
+                                                              "NameOfScene": "Amazing",
+                                                              "theScene": [ "FocusedSpeaks",
+                                                                            "'Your cock's amazing!♥♥♥'",
+                                                                            "JumpToScene", "MikaStruggles"
+                                                                        ]
+                                                            },
+                                                            {
+                                                              "NameOfScene": "Harder",
+                                                              "theScene": [  "FocusedSpeaks",
+                                                                            "'Hahhhh!♥ H-Harder nya!♥♥♥'",
+                                                                            "JumpToScene", "MikaStruggles"
+                                                                        ]
+                                                            },
+                                                            {
+                                                              "NameOfScene": "ShouldEscape",
+                                                              "theScene": [  "FocusedSpeaks",
+                                                                            "'I-I gotta get out of this posit-NYAAA!♥♥♥'",
+                                                                            "JumpToScene", "MikaStruggles"
+                                                                        ]
+                                                            },
+                                                            {
+                                                              "NameOfScene": "More",
+                                                              "theScene": [  "FocusedSpeaks",
+                                                                            "'Morreeee!♥♥♥'",
+                                                                            "JumpToScene", "MikaStruggles"
+                                                                        ]
+                                                            },
+                                                  {
+                                                    "NameOfScene": "MikaStruggles",
+                                                    "theScene": [ "Despite her pleasure drunk state, Mika tries to break free from her helpless position!",
+                                                                  "StatCheck",
+                                                                  "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                                    "Power",
+                                                                    "15",
+                                                                    "CounteredSexMenu",
+                                                                    "Fail",
+                                                                    "MikaEscapes2"
+                                                              ]
+                                                  },
+                                                        {
+                                                          "NameOfScene": "MikaCumsFromReversal",
+                                                          "theScene": [   "ChangeImageLayer", "Expression", "Lewd",
+                                                                        "ChangeProgress", "20",
+                                                                        "Mika's back arches as she cries out in ecstasy, her entire body trembling as you relentlessly fuck her spasming pussy, overwhelming her entire being with climactic bliss.",
+                                                                        "Not yet satisfied yourself, you keep thrusting into her, making her whimper and mewl with pleasure as every deep impact of your manhood sends a chain of orgasms striking through her body.",
+                                                                        "ChangeImageLayer", "Expression", "Lewded",
+                                                                        "She eagerly moves her hips back into yours, completely lost in a haze of drooling orgasmic pleasure, making her plump ass bounce even more delightfully before your eyes as you fuck her senseless.",
+                                                                        "The sounds of her erotic moans and the lewd wet meeting of your hips echo through the room, and you can feel your body aching for release with every thrust into her tight squeezing pussy",
+                                                                        "Electric pleasure ricochets up your spine with every thrust, and you feel yourself finally getting overwhelmed with climactic ecstasy as you pound Mika from behind, and with a final hilting thrust you cry out like a beast as you erupt inside her.",
+                                                                        "ChangeImageLayer", "Expression", "LewdedSilly", "PlayerOrgasmNoSpiritLoss",
+                                                                        "The feeling of your seed pouring into her redoubles Mika's trembling pleasure, and she cries out with you as your semen fills her trembling pussy, a pleasure drunk expression plastered on her face.",
+                                                                        "ChangeImageLayer", "Expression", "Lewd",
+                                                                        "As the last few spurts of your seed fill her, you sigh and release your hold on her wrists and she crumples to the ground with a happy overfucked mewl of bliss as she lays on her side.",
+                                                                        "You gasp from the exertion of fucking Mika so hard, and blink with surprise as she weakly sits up, gasping with lust, and suddenly starts to nuzzle your still rigid cock with a cheek.",
+                                                                        "Your heart skips a beat at the sight of her lustful gaze, and before you can react she starts to diligently service your twitching erection, and you moan softly as she bobs her head up and down your length, sucking and licking the entire way.",
+                                                                        "Her roughly textured tongue makes you gasp with surprise as she runs it over the head of your cock, and so sensitive from your recent orgasm you know you can't last long in her loving mouth as it lavishes your manhood with affection.",
+                                                                        "You sigh happily and gently hold her head as she works your shaft, her ears twitching in minor annoyance, but as she purrs a sweet jolt of bliss shoots through your hips as the reverberating vibration of her contentment ripples through your hips.",
+                                                                        "ChangeImageLayer", "BodyPart", "HandV",
+                                                                        "As Mika starts to roughly stroke your aching erection with her mouth she looks up at you with a purring mewl, giving you a victory sign as she brings your aching cock to twitching climax.",
+                                                                        "You moan loudly as you start to flood her mouth with your seed, but she pulls back with a giggle, letting your load splatter her face in ropes of cum, and as you finish spurting your load she takes your cock back into her sucking mouth with a mischievous giggle as she laps at the tip of your now oversensitive manhood.",
+                                                                        "ChangeImageLayer", "Expression", "Cocky",
+                                                                        "You're left gasping and twitching with overstimulation as she keeps sucking on your spasming cock, endlessly teasing your tip with her roughly textured tongue, leaving you moaning incoherently and your vision bugging out while she giggles smugly.",
+                                                                        "ChangeImageLayer", "Expression", "Smug",
+                                                                        "ChangeImageLayer", "BodyPart","Hand",
+                                                                        "She finally wetly pops her mouth off of your twitching cock with a smug smile on her cum coated face, and you're gasping as you glare down at her for her excessive service.",
+                                                                        "FocusedSpeaks",
+                                                                        "Hehe, I had to get back at you somehow for fucking me senseless like that, but next time I'll {i}really{/i} get my revenge.",
+                                                                        "Mika finally fades away, a mischievous glint in her golden eyes.",
+                                                                        "SetChoice", "7", "LostInReversal",
+                                                                        "GetEventAndSetChoice", "Commander's Pet", "1", "Pussy",
+                                                                        "IfChoice", "1", "BeatenInReversal", "EndFight",
+                                                                        "SetChoice", "1", "BeatenInReversal",
+                                                                        "GetEventAndChangeProgress", "Commander's Pet", "5",
+                                                                        "DefeatMonster"
+                                                                    ]
+                                                        },
+                                                              {
+                                                                "NameOfScene": "EndFight",
+                                                                "theScene": [    "DefeatMonster"
+                                                                          ]
+                                                              },
+                                              {
+                                                "NameOfScene": "MikaEscapes2",
+                                                "theScene": [ "ChangeImageLayer", "Expression", "Lewded",
+                                                              "Mika manages to break free of your hold on her wrists and scrabbles away gasping with desire, briefly taking to all fours before she uprights herself heel turning back to face you a little dazed and very aroused."
+                                                          ]
+                                              },
+                                              {
+                                                "NameOfScene": "Let her go.",
+                                                "theScene": [ "ChangeImageLayer", "Expression", "Lewded",
+                                                              "Mika quickly scrabbles out of your grip, briefly taking to all fours before she uprights herself heel turns to face you, a deep flush still on her face, and clearly still a little dazed from getting fucked like that."
+                                                          ]
+                                              },
+                            {
+                              "NameOfScene": "Worship her ass...",
+                              "theScene": [ "ChangeImageLayer", "Ass", "Base",
+                                            "PlayMotionEffect", "Crash",
+                                            "HitPlayerWith", "Face Grind", "ChangeImageLayer", "Expression", "Mocking",
+                                            "You stagger forward before collapsing to your knees, and start to kiss and lick Mika's perfectly plump ass, your mind lost in a haze of aching obsessive arousal.[DamageToPlayer]",
+                                            "ChangeImageLayer", "Expression", "Smug",
+                                            "SwapLineIf", "Choice",
+                                               "2", "AssWorshiped", "She looks back at you a smug grin, shaking her perfect rear in your hapless face, leaving you even more dazed.",
+                                               "2", "", "She looks back at you with mild surprise for a moment, clearly not expecting this outcome, but seems smugly content to roll with it.",
+                                            "EndLoop",
+                                            "FocusedSpeaks",
+                                            "SwapLineIf", "Choice",
+                                               "2", "AssWorshiped", "Go on,♥ worship my ass to your heart's content.♥",
+                                               "2", "", "I mean... If you're into that, I won't complain.",
+                                            "EndLoop",
+                                            "ChangeImageLayer", "Ass", "Sit",
+                                            "PlayMotionEffect", "ScreenSway",
+                                            "SetChoice", "2", "AssWorshiped",
+                                            "HitPlayerWith", "Face Grind",
+                                            "She leans back a little, burying your face deeper in her soft overwhelming rear, leaving you groaning with pleasure at the feeling of her bountiful ass rubbing your face while you worship its bountiful curved shape, barely noticing her tail snake around your neck, leashing you to her ass.[DamageToPlayer]",
+                                            "JumpToScene", "AssWorshipMenu"
+                                ]
+                            },
+                                    {
+                                      "NameOfScene": "AssWorshipMenu",
+                                      "theScene": [ "IfPlayerOrgasm", "WoshipPhase2",
+                                                  "IfFetishLevelEqualOrGreater", "Ass", "25", "CharmedAssWorshipMenu",
+                                                  "IfPlayerHasStatusEffect", "Charm", "CharmedAssWorshipMenu",
+                                                  "Menu",
+                                                   "Get away from her butt!",
+                                                   "Keep worshiping...",
+                                                 "EndLoop"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "CharmedAssWorshipMenu",
+                                        "theScene": [  "JumpToRandomScene",
+                                                          "CharmedAssWorshipMenu1",
+                                                          "CharmedAssWorshipMenu2",
+                                                      "EndLoop"
+                                                  ]
+                                    },
+                                          {
+                                              "NameOfScene": "CharmedAssWorshipMenu1",
+                                              "theScene": [    "Menu",
+                                                                 "Get away from her butt!",
+                                                                 "Keep worshiping...",
+                                                               "EndLoop"
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "CharmedAssWorshipMenu2",
+                                              "theScene": [   "Menu",
+                                                               "Keep worshiping...",
+                                                               "Get away from her butt!",
+                                                             "EndLoop"
+                                                        ]
+                                          },
+                                                {
+                                                    "NameOfScene": "Get away from her butt!",
+                                                    "theScene": [  "IfFetishLevelEqualOrGreater", "Ass", "100", "WorshipCraving3",
+                                                                  "IfFetishLevelEqualOrGreater", "Ass", "75", "WorshipCraving2",
+                                                                  "IfFetishLevelEqualOrGreater", "Ass", "25", "WorshipCraving",
+                                                                  "JumpToScene", "EscapeWorshipAttempt"
+                                                              ]
+                                                },
+                                                        {
+                                                            "NameOfScene": "WorshipCraving",
+                                                            "theScene": [  "You try to think of escaping this submissive stance, but your ass loving mind leaves this feeling just so right...",
+                                                                          "StatCheck",
+                                                                          "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                                          "Temptation",
+                                                                          "10",
+                                                                          "EscapeWorshipAttempt",
+                                                                          "Fail",
+                                                                          "Keep worshiping..."
+                                                                      ]
+                                                        },
+                                                                {
+                                                                    "NameOfScene": "WorshipCraving2",
+                                                                    "theScene": [  "You try to think of escaping the nuzzling embrace of Mika's plump rear, but your ass obsessed mind leaves you craving to her worship more...",
+                                                                                  "StatCheck",
+                                                                                  "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                                                  "Temptation",
+                                                                                  "15",
+                                                                                  "EscapeWorshipAttempt",
+                                                                                  "Fail",
+                                                                                  "Keep worshiping..."
+                                                                              ]
+                                                                },
+                                                                        {
+                                                                            "NameOfScene": "WorshipCraving3",
+                                                                            "theScene": [  "You try to think of ceasing your worship of Mika's perfectly plump rear, but your ass addicted mind craves more of this heavenly feeling...",
+                                                                                          "StatCheck",
+                                                                                          "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                                                          "Temptation",
+                                                                                          "20",
+                                                                                          "EscapeWorshipAttempt",
+                                                                                          "Fail",
+                                                                                          "Keep worshiping..."
+                                                                                      ]
+                                                                        },
+                                                        {
+                                                            "NameOfScene": "EscapeWorshipAttempt",
+                                                            "theScene": [  "PlayMotionEffect", "Crash",
+                                                                          "You try to break away from Mika's tempting ass, but her tail is trying to keep you firmly restrained in place!",
+                                                                          "StatCheck",
+                                                                          "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                                          "Power",
+                                                                          "10",
+                                                                          "EscapedAssWorship!",
+                                                                          "Fail",
+                                                                          "Keep worshiping..."
+                                                                      ]
+                                                        },
+                                                                {
+                                                                    "NameOfScene": "EscapedAssWorship!",
+                                                                    "theScene": [   "PlayMotionEffect", "Crash",
+                                                                                    "EndAllVisualEffects", "ChangeImageLayer", "ImageSetDontCarryOver", "Normal",
+                                                                                    "You break away from Mika's bountiful ass, ceasing your worshiping with a deep flush as you scramble away, and she turns back to face you with a smug smile.",
+                                                                                  "ChangeImageLayer", "Expression", "NyaSmug",
+                                                                                    "FocusedSpeaks",
+                                                                                    "Hey, you're the one who started worshiping my ass. Are you sure you really wanted to stop?♥ Hehe."
+                                                                              ]
+                                                                },
+                                            {
+                                              "NameOfScene": "Keep worshiping...",
+                                              "theScene": [ "JumpToRandomScene",
+                                                              "KissLickGrope",
+                                                              "Shaking",
+                                                              "Tease",
+                                                              "Scent",
+                                                          "EndLoop"
+                                                ]
+                                            },
+                                                    {
+                                                      "NameOfScene": "KissLickGrope",
+                                                      "theScene": [   "ChangeImageLayer", "Ass", "Base",
+                                                                      "PlayMotionEffect", "ScreenSway",
+                                                                      "HitPlayerWith", "Face Grind",
+                                                                      "With a blissful sigh you kiss and lick Mika's heavenly ass, its bountiful size overwhelming your sense of reason with aching desire as you worship its voluptuous curves.[DamageToPlayer]",
+                                                                      "PlayMotionEffect", "ScreenBounce",
+                                                                      "ChangeImageLayer", "Ass", "Sit",
+                                                                      "HitPlayerWith", "Face Grind",
+                                                                      "You eagerly bury your face in its softness while your hands sink into her soft flesh, indulging her perfect booty, leaving your cock throbbing as you feel drunk off her curvaceous rear from your devoted worship.[DamageToPlayer]",
+                                                                      "JumpToScene", "AssWorshipMenu"
+                                                                ]
+                                                    },
+                                                    {
+                                                      "NameOfScene": "Shaking",
+                                                      "theScene": [   "ChangeImageLayer", "Ass", "Base",
+                                                                      "HitPlayerWith", "Face Grind",
+                                                                      "PlayMotionEffect", "ScreenSway",
+                                                                      "Mika shakes her plump ass in your face, and you're left moaning and dazed with arousal as her bountiful ass knocks every thought out of your head other than worshiping her perfect rear, from the mere jiggly feeling assailing your face.[DamageToPlayer]",
+                                                                      "HitPlayerWith", "Face Grind",
+                                                                      "ChangeImageLayer", "Ass", "Sit",
+                                                                      "PlayMotionEffect", "ScreenSway",
+                                                                      "You thoughtlessly nuzzle her voluptuous rear as she stops her teasing motions, and you lavish her ass with affectionate kisses, gradually losing yourself more and more to this pleasurable moment.[DamageToPlayer]",
+                                                                      "JumpToScene", "AssWorshipMenu"
+                                                                ]
+                                                    },
+                                                    {
+                                                      "NameOfScene": "Tease",
+                                                      "theScene": [
+                                                                      "HitPlayerWith", "Face Grind",
+                                                                      "ChangeImageLayer", "Ass", "Base",
+                                                                      "PlayMotionEffect", "ScreenBounce",
+                                                                      "You're lost in a confused daze as Mika takes a step forward, pulling her heavenly ass away from your loving worship, and she teasingly sways her hips, leaving you to instinctively bury your face in her soft, voluptuous ass.[DamageToPlayer]",
+                                                                      "HitPlayerWith", "Face Grind",
+                                                                      "ChangeImageLayer", "Ass", "Sit",
+                                                                      "PlayMotionEffect", "ScreenSway",
+                                                                      "Mika giggles in amusement as you eagerly resume worshiping her plush rear, letting you grope and kiss her plump ass to your heart's content, her bountiful butt filling you with an aching desire for more of its perfect softness.[DamageToPlayer]",
+                                                                      "JumpToScene", "AssWorshipMenu"
+                                                                ]
+                                                    },
+                                                    {
+                                                      "NameOfScene": "Scent",
+                                                      "theScene": [
+                                                                      "HitPlayerWith", "Face Grind",
+                                                                      "PlayMotionEffect", "ScreenSway",
+                                                                      "PlayVisualEffect", "BlindingFlash", "pinkHaze.png",
+                                                                      "You take a deep breath of Mika's womanly scent, flooding your mind with aching lust as you kiss and lick her bountiful ass, it's softness practically intoxicating you to devote yourself to it.[DamageToPlayer]",
+                                                                      "HitPlayerWith", "Face Grind",
+                                                                      "PlayMotionEffect", "ScreenSway",
+                                                                      "PlayVisualEffect", "BlindingFlash", "pinkHaze.png",
+                                                                      "Her perfect ass is completely overwhelming you, and Mika hardly has to do anything, merely letting you worship her perfect rear, occasionally burying your face in her plump butt or giving her hips a teasing shake to help you along your way to defeat.[DamageToPlayer]",
+                                                                      "JumpToScene", "AssWorshipMenu"
+                                                                ]
+                                                    },
+
+
+                                            {
+                                              "NameOfScene": "WoshipPhase2",
+                                              "theScene": [ "ChangeImageLayer", "Ass", "Sit",
+                                                            "PlayVisualEffect", "SuddenHaze", "pinkHaze.png",
+                                                            "PlayMotionEffect", "ScreenBounce",
+                                                            "You're left gasping and moaning with intoxicated lust as Mika presses her perfect ass into your face, your twitching cock left on the brink of orgasm from your rampaging lust.",
+                                                            "PlayMotionEffect", "ScreenBounce",
+                                                            "She playfully giggles and presses her plump rear back, slowly forcing almost all of her weight onto your hapless face, until she's sitting on you like a chair, and the feeling of her bountiful rear overtaking your face is too much for you to bear.",
+                                                            "PlayerOrgasm", "1",
+                                                            "PlayVisualEffect2", "DoublePulse", "white.png",
+                                                            "PlayMotionEffect", "Crash",
+                                                            "You let out a muffled moan as your manhood erupts, spurting thick ropes of cum onto the ground in worship for Mika's overwhelming ass, leaving you drunk off her curvy rear and a mind-blanking orgasm.",
+                                                            "ChangeImageLayer", "Ass", "Base",
+                                                            "PlayMotionEffect", "ScreenSway",
+                                                            "Lost in this ecstasy ridden daze, you mindlessly lick Mika's dripping pussy and do your best to support her plump rear with your hands as you lovingly grope it, and she gives you a teasing wiggle of her hips as a reward.",
+                                                            "FocusedSpeaks",
+                                                            "SwapLineIf", "Choice",
+                                                               "3", "AssWorshipedOrgasm", "Come on,♥ stop trying hold back my ass and start stroking that cock of yours while you worship me.♥",
+                                                               "3", "", "Wow, you came just from your face getting sat on by my ass? Either my butt is really that perfect,♥ or you're a complete pervert.♥ Well come on, stop trying to hold back my ass and start stroking that cock of yours while you worship me.♥",
+                                                            "EndLoop",
+                                                            "SetChoice", "3", "AssWorshipedOrgasm",
+                                                            "HitPlayerWith", "MikaFaceChairHit",
+                                                            "ChangeImageLayer", "Ass", "Sit",
+                                                            "PlayVisualEffect", "DecreasingHaze", "pinkHaze.png",
+                                                            "You groan blissfully as you let one of your hands fall away to start pumping your still aching erection, letting her plump ass overwhelm your face a little more, flooding your brain with pleasure from its softness.[DamageToPlayer]",
+                                                            "JumpToScene", "AssWorshipSittingMenu"
+
+                                                        ]
+                                            },
+                                                    {
+                                                      "NameOfScene": "AssWorshipSittingMenu",
+                                                      "theScene": [ "IfPlayerSpiritGone", "WorshipLossScene",
+                                                                  "IfFetishLevelEqualOrGreater", "Ass", "25", "CharmedAssWorshipSittingMenu",
+                                                                  "IfPlayerHasStatusEffect", "Charm", "CharmedAssWorshipSittingMenu",
+                                                                  "Menu",
+                                                                   "Try to escape Mika's ass!",
+                                                                   "Keep devotedly worshiping her...",
+                                                                 "EndLoop"
+                                                                ]
+                                                    },
+                                                    {
+                                                        "NameOfScene": "CharmedAssWorshipSittingMenu",
+                                                        "theScene": [  "JumpToRandomScene",
+                                                                          "CharmedAssWorshipSittingMenu1",
+                                                                          "CharmedAssWorshipSittingMenu2",
+                                                                      "EndLoop"
+                                                                  ]
+                                                    },
+                                                          {
+                                                              "NameOfScene": "CharmedAssWorshipSittingMenu1",
+                                                              "theScene": [    "Menu",
+                                                                                "Try to escape Mika's ass!",
+                                                                                "Keep devotedly worshiping her...",
+                                                                               "EndLoop"
+                                                                        ]
+                                                          },
+                                                          {
+                                                              "NameOfScene": "CharmedAssWorshipSittingMenu2",
+                                                              "theScene": [   "Menu",
+                                                                                "Keep devotedly worshiping her...",
+                                                                                "Try to escape Mika's ass!",
+                                                                             "EndLoop"
+                                                                        ]
+                                                          },
+                                              {
+                                                  "NameOfScene": "Try to escape Mika's ass!",
+                                                  "theScene": [  "IfFetishLevelEqualOrGreater", "Ass", "100", "TempleWorshipCraving3",
+                                                                "IfFetishLevelEqualOrGreater", "Ass", "75", "TempleWorshipCraving2",
+                                                                "IfFetishLevelEqualOrGreater", "Ass", "25", "TempleWorshipCraving",
+                                                                "JumpToScene", "EscapeTempleAttempt"
+                                                            ]
+                                              },
+                                                      {
+                                                          "NameOfScene": "TempleWorshipCraving",
+                                                          "theScene": [  "You try to think of get out from under Mika's domineering rear, but your ass loving mind leaves this feeling just so right...",
+                                                                        "StatCheck",
+                                                                        "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                                        "Temptation",
+                                                                        "15",
+                                                                        "EscapeTempleAttempt",
+                                                                        "Fail",
+                                                                        "Keep devotedly worshiping her..."
+                                                                    ]
+                                                      },
+                                                              {
+                                                                  "NameOfScene": "TempleWorshipCraving2",
+                                                                  "theScene": [  "You try to think of escaping out from under Mika's overwhelming plump rear, but your ass obsessed mind leaves you craving to her worship more...",
+                                                                                "StatCheck",
+                                                                                "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                                                "Temptation",
+                                                                                "20",
+                                                                                "EscapeTempleAttempt",
+                                                                                "Fail",
+                                                                                "Keep devotedly worshiping her..."
+                                                                            ]
+                                                              },
+                                                                      {
+                                                                          "NameOfScene": "TempleWorshipCraving3",
+                                                                          "theScene": [  "You try to think of escaping out from under Mika's perfectly plump rear, but your ass addicted mind craves more of this heavenly feeling...",
+                                                                                        "StatCheck",
+                                                                                        "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                                                        "Temptation",
+                                                                                        "25",
+                                                                                        "EscapeTempleAttempt",
+                                                                                        "Fail",
+                                                                                        "Keep devotedly worshiping her..."
+                                                                                    ]
+                                                                      },
+                                                      {
+                                                          "NameOfScene": "EscapeTempleAttempt",
+                                                          "theScene": [  "PlayMotionEffect", "Crash",
+                                                                        "You try to break away from Mika's tempting ass, but her tail is trying to keep you firmly restrained in place, while her weight pressing down on your face assists her.",
+                                                                        "StatCheck",
+                                                                        "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "Visiting Mika", "28", "CollarUpgraded", "5",
+                                                                        "Power",
+                                                                        "15",
+                                                                        "EscapedAssTemple!",
+                                                                        "Fail",
+                                                                        "Keep devotedly worshiping her..."
+                                                                    ]
+                                                      },
+                                                              {
+                                                                  "NameOfScene": "EscapedAssTemple!",
+                                                                  "theScene": [
+                                                                                  "PlayMotionEffect", "Crash",
+                                                                                  "EndAllVisualEffects", "ChangeImageLayer", "ImageSetDontCarryOver", "Normal",
+                                                                                "ChangeImageLayer", "Expression", "NyaSmug",
+                                                                                "You break away from Mika's heavenly ass, ceasing your devoted worshiping with a deep flush as you scramble away, and she turns back to face you with a smug smile.",
+                                                                                  "FocusedSpeaks",
+                                                                                  "Hey, you're the one who started worshiping my ass, and you seemed to be really enjoying yourself.♥ Are you sure you don't want to just kneel down and start all over?♥"
+                                                                            ]
+                                                              },
+                                          {
+                                            "NameOfScene": "Keep devotedly worshiping her...",
+                                            "theScene": [ "JumpToRandomScene",
+                                                            "Press",
+                                                            "Dizzy",
+                                                            "Wiggle",
+                                                            "LostInWorship",
+                                                        "EndLoop"
+                                              ]
+                                          },
+                                                  {
+                                                    "NameOfScene": "Press",
+                                                    "theScene": [
+                                                                    "HitPlayerWith", "MikaFaceChairHit",
+                                                                    "ChangeImageLayer", "Ass", "Sit",
+                                                                    "PlayMotionEffect", "ScreenBounce",
+                                                                    "Mika presses her thick rear down on your face a little harder, and you moan with bliss from the weight of her heavenly ass pressing down on your face, overwhelming you with its perfect softness.[DamageToPlayer]",
+                                                                    "PlayMotionEffect", "ScreenSway",
+                                                                    "HitPlayerWith", "MikaFaceChairHit",
+                                                                    "You mindlessly lap at her pussy and stroke your twitching cock, sending jolts of pleasure up your spine with every moment that passes, your free hand to feel up Mika's plump ass, letting your fingers sink into the soft flesh.[DamageToPlayer]",
+                                                                    "IfPlayerOrgasm", "PressOrgasm",
+                                                                    "JumpToScene", "WorshipTempleComment"
+                                                              ]
+                                                  },
+                                                        {
+                                                            "NameOfScene": "PressOrgasm",
+                                                            "theScene": [ "PlayVisualEffect", "IncreasingHaze", "pinkHaze.png",
+                                                                        "You moan as Mika's perfect ass overwhelms you with its voluptuous curves, and you stroke your leaking manhood faster and faster as you lose yourself completely to your lusts.",
+                                                                        "PlayerOrgasm", "1",
+                                                                        "PlayVisualEffect2", "DoublePulse", "white.png",
+                                                                        "PlayMotionEffect", "Crash",
+                                                                        "Mika gives her plump rear a teasing slap, and the rippling impact snaps you out of your lustful haze with a crashing wave of pleasure, leaving you moaning incoherently as your cock erupts thick ropes of cum onto the ground in reverence to her perfection.",
+                                                                        "PlayVisualEffect", "DecreasingHaze", "pinkHaze.png",
+                                                                        "As the orgasm ebbs away you mindlessly resume worshipping Mika's wonderful ass, your mind completely drunk on pleasure, and your hand pumps your twitching cock at a slow pace, leaving you to revel in the feeling of Mika's plush rear pressing down on you.",
+                                                                        "JumpToScene", "WorshipTempleOrgasmComment"
+                                                                      ]
+                                                        },
+
+                                                {
+                                                  "NameOfScene": "Dizzy",
+                                                  "theScene": [   "ChangeImageLayer", "Ass", "Sit",
+                                                                  "HitPlayerWith", "MikaFaceChairHit",
+                                                                  "PlayMotionEffect", "Crash",
+                                                                  "You struggle for breath under Mika's suffocating rear, leaving you dizzy and lightheaded, making every stroke of your twitching cock feel even better as you become increasingly ass drunk.[DamageToPlayer]",
+                                                                  "HitPlayerWith", "MikaFaceChairHit",
+                                                                  "ChangeImageLayer", "Ass", "Base",
+                                                                  "She lifts her luscious butt off your face for a moment, letting you take a deep breath of her intoxicating womanly scent, only adding to your addled lust ridden haze as she plops her jiggly rear back down on you, making your entire body twitch with arousal.[DamageToPlayer]",
+                                                                  "ChangeImageLayer", "Ass", "Base",
+                                                                  "IfPlayerOrgasm", "DizzyOrgasm",
+                                                                  "ChangeImageLayer", "Ass", "Sit",
+                                                                  "JumpToScene", "WorshipTempleComment"
+                                                            ]
+                                                },
+                                                      {
+                                                          "NameOfScene": "DizzyOrgasm",
+                                                          "theScene": [ "PlayerOrgasm", "1",
+                                                                        "PlayMotionEffect", "Crash",
+                                                                        "PlayVisualEffect2", "DoublePulse", "white.png",
+                                                                        "PlayVisualEffect", "IncreasingHaze", "pinkHaze.png",
+                                                                      "The bouncy impact of Mika's bountiful ass on your face breaks your endurance, leaving your aching dick spurting thick ropes of cum as you pump your length, your dizzy lust drunk mind completely overwhelmed with heavenly bliss.",
+                                                                      "You quiver with bliss underneath Mika, doing your best to act as her chair as you recover from your mind-blanking orgasm, finding yourself short of breath and eager to breathe in more of her womanly scent.",
+                                                                      "JumpToScene", "WorshipTempleOrgasmComment"
+                                                                    ]
+                                                      },
+                                              {
+                                                "NameOfScene": "Wiggle",
+                                                "theScene": [
+                                                                "HitPlayerWith", "MikaFaceChairHit",
+                                                                "ChangeImageLayer", "Ass", "Base",
+                                                                "PlayMotionEffect", "ScreenSway",
+                                                                "Mika gently sways her hips while she sits on your face, rocking your head back and forth between her bountiful soft ass, making you twitch with lustful adoration while you pump your aching manhood.[DamageToPlayer]",
+                                                                "HitPlayerWith", "MikaFaceChairHit",
+                                                                "PlayMotionEffect", "ScreenSway",
+                                                                "The gentle rhythm of her movement leaves your mind drifting away in a soft haze of heavenly bliss, and you lavish her pussy with affection as you fall deeper into loving adoration for her plump ass.[DamageToPlayer]",
+                                                                "IfPlayerOrgasm", "WiggleOrgasm",
+                                                                "ChangeImageLayer", "Ass", "Sit",
+                                                                "JumpToScene", "WorshipTempleComment"
+                                                          ]
+                                              },
+                                                    {
+                                                        "NameOfScene": "WiggleOrgasm",
+                                                        "theScene": [
+                                                                    "PlayVisualEffect", "IncreasingHaze", "pinkHaze.png",
+                                                                    "You pump your cock in time with Mika's swaying hips, letting her melt away your thoughts with her voluptuous ass, the slow sensual pace capturing your aching desires, bringing you closer and closer to sweet ecstatic release.",
+                                                                    "PlayerOrgasm", "1",
+                                                                    "PlayVisualEffect2", "DoublePulse", "white.png",
+                                                                    "A muffled and incoherent moan escapes you as your body is overwhelmed with pleasure, and your hips weakly buck into your hand as your spurt thick ropes of cum onto the floor, your thoughts completely lost in the softness of Mika's perfect ass.",
+                                                                    "ChangeImageLayer", "Ass", "Sit",
+                                                                    "You thoughtlessly service Mika's dripping slit while the pleasure ebbs away from your body, and she stops swaying her wide womanly hips on your face, sighing with contentment as she presses her rear on your face a little more, and you eagerly continue pumping your cock in worship to her body.",
+                                                                    "JumpToScene", "WorshipTempleOrgasmComment"
+                                                                  ]
+                                                    },
+                                              {
+                                                "NameOfScene": "LostInWorship",
+                                                "theScene": [
+                                                                "HitPlayerWith", "MikaFaceChairHit",
+                                                                "PlayVisualEffect3", "ScreenPulse", "pink.png",
+                                                                "PlayMotionEffect", "ScreenSway",
+                                                                "You eagerly grope Mika's soft ass with your free hand, indulging in her bountiful rear, while pumping your twitching cock with your other hand in loving worship to her perfect butt, washing your brain with submissive devotion.[DamageToPlayer]",
+                                                                "HitPlayerWith", "MikaFaceChairHit",
+                                                                "PlayVisualEffect3", "ScreenPulse", "pink.png",
+                                                                "So completely focused on her plump rear you lose yourself in the moment, loving every pleasure soaked moment of your loving licks and kisses to her domineering ass, letting her voluptuous curves fill your mind with twitching lust.[DamageToPlayer]",
+                                                                "IfPlayerOrgasm", "LostInWorshipOrgasm",
+                                                                "JumpToScene", "WorshipTempleComment"
+                                                          ]
+                                              },
+                                                    {
+                                                        "NameOfScene": "LostInWorshipOrgasm",
+                                                        "theScene": [
+                                                                    "PlayVisualEffect", "IncreasingHaze", "pinkHaze.png",
+                                                                    "You pump your twitching manhood faster as you start to reach your peak, Mika quietly laughs as she had to do nothing but sit on your hapless face to bring you to mindless heights of ecstasy.",
+                                                                    "PlayerOrgasm", "1",
+                                                                    "PlayVisualEffect2", "DoublePulse", "white.png",
+                                                                    "PlayMotionEffect", "Crash",
+                                                                    "A muffled moan escapes you as your throbbing cock unloads its seed all over the floor in tribute to Mika's perfect ass pressing down on you, the soft curves crushing your mind and resistance for a brief moment as pleasure soaks every fiber of your being.",
+                                                                    "As the pleasure ebbs away you happily resume worshiping Mika's slit, letting her scent dominate your senses as you lose yourself to her curves, and she sighs with contentment, her tail tightening slightly around your neck.",
+                                                                    "JumpToScene", "WorshipTempleOrgasmComment"
+                                                                  ]
+                                                    },
+
+                                          {
+                                            "NameOfScene": "WorshipTempleComment",
+                                            "theScene": [ "ChangeImageLayer", "Ass", "Sit",
+                                                          "JumpToRandomScene",
+                                                              "EnjoyingYourself",
+                                                              "DidntKnow",
+                                                              "DefeatingYourself",
+                                                              "Drunk",
+                                                              "GoodChair",
+                                                              "MmmmDontStop",
+                                                          "EndLoop"
+                                                      ]
+                                          },
+                                                  {
+                                                    "NameOfScene": "EnjoyingYourself",
+                                                    "theScene": [
+                                                                  "FocusedSpeaks",
+                                                                  "You seem like you're enjoying yourself down there.♥",
+                                                                  "JumpToScene", "AssWorshipSittingMenu"
+                                                              ]
+                                                  },
+                                                  {
+                                                    "NameOfScene": "DidntKnow",
+                                                    "theScene": [
+                                                                  "FocusedSpeaks",
+                                                                  "I knew my ass was perfect, but I didn't realize it was {i}this{/i} perfect.♥",
+                                                                  "JumpToScene", "AssWorshipSittingMenu"
+                                                              ]
+                                                  },
+                                                  {
+                                                    "NameOfScene": "DefeatingYourself",
+                                                    "theScene": [
+                                                                  "FocusedSpeaks",
+                                                                  "At this rate I won't have to do a thing to defeat you.♥",
+                                                                  "JumpToScene", "AssWorshipSittingMenu"
+                                                              ]
+                                                  },
+                                                  {
+                                                    "NameOfScene": "Drunk",
+                                                    "theScene": [
+                                                                  "FocusedSpeaks",
+                                                                  "You're getting drunk off my ass, how cute.♥",
+                                                                  "JumpToScene", "AssWorshipSittingMenu"
+                                                              ]
+                                                  },
+                                                  {
+                                                    "NameOfScene": "GoodChair",
+                                                    "theScene": [
+                                                                  "FocusedSpeaks",
+                                                                  "You make for a pretty good chair [ThePlayerName].♥",
+                                                                  "JumpToScene", "AssWorshipSittingMenu"
+                                                              ]
+                                                  },
+                                                  {
+                                                    "NameOfScene": "MmmmDontStop",
+                                                    "theScene": [
+                                                                  "FocusedSpeaks",
+                                                                  "Mmmm.♥ Don't stop now, keep going.♥",
+                                                                  "JumpToScene", "AssWorshipSittingMenu"
+                                                              ]
+                                                  },
+                                      {
+                                        "NameOfScene": "WorshipTempleOrgasmComment",
+                                        "theScene": [ "PlayVisualEffect", "DecreasingHaze", "pinkHaze.png",
+                                                      "JumpToRandomScene",
+                                                          "DefeatingYourselfOrgasm",
+                                                          "KeepGoing",
+                                                          "Tribute",
+                                                          "Devoted",
+                                                          "Lover",
+                                                          "IfYouNeedAir",
+                                                      "EndLoop"
+                                                  ]
+                                      },
+                                              {
+                                                "NameOfScene": "DefeatingYourselfOrgasm",
+                                                "theScene": [   "ChangeImageLayer", "Expression", "Mocking",
+                                                              "FocusedSpeaks",
+                                                              "Wow.♥ You're really going to lose just from me sitting on your face?♥ You must really love my ass.♥",
+                                                              "JumpToScene", "AssWorshipSittingMenu"
+                                                          ]
+                                              },
+                                              {
+                                                "NameOfScene": "KeepGoing",
+                                                "theScene": [   "ChangeImageLayer", "Expression", "Smug",
+                                                              "FocusedSpeaks",
+                                                              "Mmmm, that's it, keep worshipping my perfect ass.♥",
+                                                              "JumpToScene", "AssWorshipSittingMenu"
+                                                          ]
+                                              },
+                                              {
+                                                "NameOfScene": "Tribute",
+                                                "theScene": [   "ChangeImageLayer", "Expression", "Smug",
+                                                              "FocusedSpeaks",
+                                                              "Is that all the cum you're going to let in tribute to my ass?♥ Come on, I know you can do better.♥",
+                                                              "JumpToScene", "AssWorshipSittingMenu"
+                                                          ]
+                                              },
+                                              {
+                                                "NameOfScene": "Devoted",
+                                                "theScene": [   "ChangeImageLayer", "Expression", "Smug",
+                                                              "FocusedSpeaks",
+                                                              "Hehehe.♥ You're pretty devoted to my ass. Well go on, don't stop now.♥",
+                                                              "JumpToScene", "AssWorshipSittingMenu"
+                                                          ]
+                                              },
+                                              {
+                                                "NameOfScene": "Lover",
+                                                "theScene": [   "ChangeImageLayer", "Expression", "Smug",
+                                                              "FocusedSpeaks",
+                                                              "Hehe, if you weren't an ass lover before, I bet you are now.♥",
+                                                              "JumpToScene", "AssWorshipSittingMenu"
+                                                          ]
+                                              },
+                                              {
+                                                "NameOfScene": "IfYouNeedAir",
+                                                "theScene": [  "ChangeImageLayer", "Expression", "NyaSmug",
+                                                              "FocusedSpeaks",
+                                                              "Slap my ass twice if you need a breath of fresh air, I don't want you passing out.♥",
+                                                              "ChangeImageLayer", "Expression", "Smug",
+                                                              "JumpToScene", "AssWorshipSittingMenu"
+                                                          ]
+                                              },
+
+
+                                  {
+                                        "NameOfScene": "WorshipLossScene",
+                                        "theScene": [ "ChangeImageLayer", "ImageSetDontCarryOver", "Normal",
+                                                    "ChangeImageLayer", "Expression", "Smug",
+                                                    "ChangeBGM", "music/Loss/reason.mp3",
+                                                    "Mika stands up, freeing your pleasure drunk face from her perfect rear as your body trembles and quivers with exhaustion, her tail giving you a playful flick on the chin as it uncoils around your neck, leaving you falling backwards onto the hard floor from exhaustion.",
+                                                    "ChangeImageLayer", "Expression", "NyaSmug",
+                                                    "FocusedSpeaks",
+                                                    "Well, that was pretty fun. Shame you're too exhausted to keep going... Unless...",
+                                                    "ChangeImageLayer", "Expression", "Smile",
+                                                    "Mika leaves your field of view as you lay on your back idly stroking your cock in an ass drunken daze. But it doesn't take her long to return and she quickly slips a soft pillow under your head before sitting her plump rear back down on your face.",
+                                                    "ChangeImageLayer", "ImageSetDontCarryOver", "MikaAss",
+                                                    "ChangeImageLayer", "Ass", "Sit",
+                                                    "PlayMotionEffect", "ScreenSway",
+                                                    "FocusedSpeaks",
+                                                    "There, now your head won't get crushed into the floor.♥",
+                                                    "You moan in appreciation and start to worship her bountiful ass all over again, completely lost in the submissive pleasure as you pump your twitching dick with renewed vigor.",
+                                                    "Trapped between the soft pillow and Mika's even softer ass you're able to fully appreciate how overwhelming her voluptuous rear is as it presses down on your face, leaving you lost in a sea of devoted pleasure.",
+                                                    "PlayVisualEffect3", "ScreenPulse", "pink.png",
+                                                    "Mika lets out a purring sigh that reverberates through your brain as it makes her perfect ass jiggle, and you moan and twitch, your hips bucking into your hand from the sudden mind-melting sensation.",
+                                                    "FocusedSpeaks",
+                                                    "Ohhh?♥ Did you like that?♥",
+                                                    "PlayVisualEffect3", "BlindingFlash", "pink.png",
+                                                    "She lets out a mischievous laugh before she starts to intentionally purr at a much more pleasurable frequency, her prior purring sigh clearly not intended to turn your brain to mush, leaving her vibrations ringing through your pleasure drunk mind like a constant wave of electric pleasure.",
+                                                    "PlayVisualEffect3", "BlindingFlash", "pink.png",
+                                                    "PlayMotionEffect", "Crash",
+                                                    "You spasm and twitch under her, wildly pumping your aching cock as her purring reverberates through your brain, flooding you with a sweet fascination for her jiggly and voluptuous rear as it buries your face.",
+                                                    "PlayVisualEffect", "FadingHaze", "pinkHaze.png",
+                                                    "Right before you reach your quickly approaching climactic release, she stops purring, and the melting pleasure reverberating in your skull ebbs away, and you moan in desperation.",
+                                                    "PlayMotionEffect", "ScreenSway",
+                                                    "FocusedSpeaks",
+                                                    "Hehe, if you worship me some more I'll do it agai- Ohhhh!♥♥♥",
+                                                    "PlayVisualEffect", "IncreasingHaze", "pinkHaze.png",
+                                                    "PlayMotionEffect", "ScreenSway",
+                                                    "You immediately set to lavishing her pussy with loving licks and kisses, your free hand alternating between groping her perfect ass and her soft thighs, leaving Mika moaning in surprise at the intensity of your worship.",
+                                                    "PlayMotionEffect", "ScreenBounce",
+                                                    "She instinctively presses her rear down onto your face, seductively swaying her wide hips, letting you pleasure her even more, cutting you off from air as she smothers you with her plush ass, leaving you increasingly light-headed.",
+                                                    "ChangeImageLayer", "Ass", "Base",
+                                                    "You whimper with desperation and slap her thigh as your air runs out, and she lifts her plush rear off your face for a moment, letting you take heaving breaths of her womanly scent inbetween lovingly kissing her perfect ass in obsessive worship.",
+                                                    "ChangeImageLayer", "Ass", "Sit",
+                                                    "PlayMotionEffect", "ScreenBounce",
+                                                    "She happily sighs with blissful pleasure as you mindlessly lavish her with affection, before she presses her asses jiggly weight back down on your face, trapping you between her plump butt and the pillow once more.",
+                                                    "FocusedSpeaks",
+                                                    "Mmmmm, that's it, just a bit more...♥",
+                                                    "Her body tenses a little as you tease her inner thigh with your free hand and lap at her dripping pussy, clearly losing herself in the pleasure you're giving her, while you masturbate your aching cock in reverence for her perfect ass as you worship it.",
+                                                    "ChangeImageLayer", "Base","BlushSweat",
+                                                    "PlayVisualEffect3", "BlindingFlash", "pink.png",
+                                                    "She starts to sweetly purr, slowly growing it in intensity, slowly building reverberating climactic bliss inside the back of your brain as you pump your twitching erection faster and your hips buck into it again.",
+                                                    "PlayVisualEffect3", "BlindingFlash", "pink.png",
+                                                    "Your world starts to blank out from pleasure as you lovingly worship Mika's curvy rear, your entire body lost in the sweet mind-melting vibration of her purring form and jiggly rear, until she finally cries out in sweet ecstasy, sending an explosion of orgasmic jolting through your brain and down your spine.",
+                                                    "PlayVisualEffect2", "DoublePulse", "white.png",
+                                                    "PlayVisualEffect3", "BlindingFlash", "pink.png",
+                                                    "PlayMotionEffect", "Crash",
+                                                    "As your entire body tenses in ecstasy, your eyes roll up slightly and your cock spurts like a fountain into the air, your mind awash in devotion to Mika's plump rear and the pleasure coursing through you.",
+                                                    "EndAllVisualEffects",
+                                                    "ChangeImageLayer", "ImageSetDontCarryOver", "Normal",
+                                                    "Slowly the two of you go limp as the pleasure from your respective climaxes ebbs away, Mika lazily, and a bit shakily gets off your face with a sigh before sitting down next to you with a sigh while you take deep breaths of air.",
+                                                    "FocusedSpeaks",
+                                                    "Mmmmmmm...♥ We should do this again sometime.♥",
+                                                    "PlayBlackOut",
+                                                    "You thoughtlessly nod as you blackout, completely drunk on pleasure and her plump ass...",
+                                                    "...",
+                                                    "ChangeFetish", "Ass", "5",
+                                                    "ChangeSensitivity", "Seduction", "5",
+
+                                                    "IfChoice", "4", "LostToAssWorship", "GameOver",
+                                                    "SetChoice", "4", "LostToAssWorship",
+                                                    "GetEventAndChangeProgress", "Commander's Pet", "5",
+                                                    "EndBlackOut",
+                                                    "GameOver"
+                                                  ]
+                                  },
+
+
+                                  {
+                                      "NameOfScene": "Penetrated",
+                                      "theScene": [ "GetEventAndIfChoice", "Commander's Pet", "15", "SexReversal", "Penetrated2",
+                                                  "IfProgressEqualsOrGreater", "100", "PenetratedItsATrap",
+                                                  "ChangeImageLayer", "Expression", "Lewd",
+                                                  "FocusedSpeaks",
+                                                  "SwapLineIf", "Random",
+                                                    "'W-Wait, h-hold on- EEEK!♥'",
+                                                    "'I promise my ass feels better than my pussssyyyy-!!!♥♥♥'",
+                                                    "'Eh? Wait! That's not my ass- Nyyyyaaaaa!♥'",
+                                                  "EndLoop"]
+                                  },
+                                        {
+                                            "NameOfScene": "PenetratedItsATrap",
+                                            "theScene": [ "GetEventAndSetChoice", "Commander's Pet", "15", "SexReversal",
+                                                        "ChangeImageLayer", "Expression", "Nya",
+                                                        "Mika's pussy clings tightly to your erection as you enter into it, the exquisite interior firmly fitting around your dick as if it was made for you, and Mika gives you a cat-like smile as you gasp in pleasure.",
+                                                        "FocusedSpeaks",
+                                                        "Come on nya,♥ try and fuck me silly like all those other time.♥",
+                                                        "Her smile slowly splits into a smug grin as she grinds her plump rear against you.",
+                                                        "ChangeImageLayer", "Expression", "Smug",
+                                                        "FocusedSpeaks",
+                                                        "It's not like I ended up getting fucking used to your dick and I'm planning to revenge fuck you until you pass out...",
+                                                        "ChangeImageLayer", "Expression", "NyaNya",
+                                                        "FocusedSpeaks",
+                                                        "Nya!♪"]
+                                        },
+                                        {
+                                            "NameOfScene": "Penetrated2",
+                                            "theScene": [ "ChangeImageLayer", "Expression", "Nya",
+                                                        "FocusedSpeaks",
+                                                        "SwapLineIf", "Random",
+                                                          "'Don't hold back!♥'",
+                                                          "'Come on, fuck me like you mean it.♥'",
+                                                          "'Going to breed me now, nya?♥'",
+                                                          "'How many loads are you going to pump into me this time?♥'",
+                                                        "EndLoop"]
+                                        },
+
+
+                                  {
+                                      "NameOfScene": "Thrust",
+                                      "theScene": [ "IfProgressEqualsOrGreater", "100", "Thrust2",
+                                                  "ChangeImageLayer", "Expression", "Lewd",
+                                                  "FocusedSpeaks",
+                                                  "SwapLineIf", "Random",
+                                                    "'Ahh♥ W-Wouldn't you r-rather be fucking m-my ass?'",
+                                                    "'Nyaaa!♥'",
+                                                    "'C-Can't t-think-♥'",
+                                                    "'G-Gotta get out of this position- Nyaaa!♥'",
+                                                    "'My womb won't stop aching for your seed!♥'",
+                                                  "EndLoop"]
+                                  },
+                                        {
+                                            "NameOfScene": "Thrust2",
+                                            "theScene": [ "ChangeImageLayer", "Expression", "Nya",
+                                                        "FocusedSpeaks",
+                                                        "SwapLineIf", "Random",
+                                                          "'You're so big nya!♥'",
+                                                          "'Be rougher!♥'",
+                                                          "'Keep fucking me nya!♥'",
+                                                          "'Don't stop!♥'",
+                                                          "'Keep going!♥'",
+                                                          "'My womb won't stop aching for your seed!♥'",
+                                                        "EndLoop"]
+                                        },
+
+
+                                  {
+                                      "NameOfScene": "ThrustTeir2",
+                                      "theScene": [ "IfProgressEqualsOrGreater", "100", "Thrust2Teir2",
+                                                  "ChangeImageLayer", "Expression", "Lewd",
+                                                  "FocusedSpeaksSkill",
+                                                  "SwapLineIf", "Random",
+                                                    "'Don't stop!♥ Breed me!♥'",
+                                                    "'Yes!♥ More!♥'",
+                                                    "'Nyaaaaa♥♥♥!'",
+                                                    "The sounds of Mika's slutty moans echo throughout the room.",
+                                                  "EndLoop"]
+                                  },
+                                        {
+                                            "NameOfScene": "Thrust2Teir2",
+                                            "theScene": [ "ChangeImageLayer", "Expression", "Lewd",
+                                                        "FocusedSpeaksSkill",
+                                                        "SwapLineIf", "Random",
+                                                          "'Don't stop!♥ Breed me!♥'",
+                                                          "'Yes!♥ More!♥'",
+                                                          "'Harder!♥ Deeper!♥'",
+                                                          "'Don't stop!♥'",
+                                                          "The lewd sounds of flesh meeting flesh echo throughout the room.",
+                                                        "EndLoop"]
+                                        },
+                                  {
+                                      "NameOfScene": "TantricThrust",
+                                      "theScene": [ "IfProgressEqualsOrGreater", "100", "TantricThrust2",
+                                                  "ChangeImageLayer", "Expression", "Submissive",
+                                                  "FocusedSpeaksSkill",
+                                                  "SwapLineIf", "Random",
+                                                    "'Prrrrrr♥♥♥'",
+                                                    "'Nyaaa...♥♥♥ Breed me...♥♥♥'",
+                                                    "'Nyaaa...♥♥♥'",
+                                                    "The sounds of Mika's slutty moans echo throughout the room.",
+                                                    "'I-I can feel every thrust...♥'",
+                                                    "'C-Can't t-think-♥'",
+                                                    "'G-Gotta get out of this position- Nyaaa...♥' Mika's body goes a little limp as your gentle treatment makes her shiver with bliss.",
+                                                    "'My womb won't stop aching for your seed...♥'",
+                                                  "EndLoop"]
+                                  },
+                                        {
+                                            "NameOfScene": "TantricThrust2",
+                                            "theScene": [ "ChangeImageLayer", "Expression", "Submissive",
+                                                        "FocusedSpeaks",
+                                                        "SwapLineIf", "Random",
+                                                          "'Prrrrrr♥♥♥'",
+                                                          "'Nyaaa...♥♥♥ Breed me...♥♥♥'",
+                                                          "'Prrrrrr,♥♥♥ don't stop.♥'",
+                                                          "'Nyaaa...♥♥♥'",
+                                                          "'Th-This is making me feel a little weird, nyaaa...♥'",
+                                                          "'I-I can feel every thrust...♥'",
+                                                          "'My womb won't stop aching for your seed...♥'",
+                                                          "Mika's body goes a little limp as your gentle treatment makes her shiver with bliss.",
+                                                        "EndLoop"]
+                                        },
+                                  {
+                                      "NameOfScene": "EscapedSex",
+                                      "theScene": [ "IfProgressEqualsOrGreater", "3", "EscapedSex2", "ChangeImageLayer", "Expression", "Flustered",
+                                                  "FocusedSpeaks",
+                                                  "SwapLineIf", "Random",
+                                                      "'I- uh- so-♥ you're going to fuck my ass no right..?'",
+                                                      "'O-Okay- ah-♥ quick time out?'",
+                                                      "'D-Damn it I still want more...♥'",
+                                                  "EndLoop"]
+                                  },
+                                        {
+                                            "NameOfScene": "EscapedSex2",
+                                            "theScene": [ "ChangeImageLayer", "Expression", "Smug",
+                                                        "FocusedSpeaks",
+                                                        "SwapLineIf", "Random",
+                                                            "'Shouldn't you be fucking me senseless, instead of pulling out?♥'",
+                                                            "'I can tell you want more.♥'",
+                                                            "'Was that too much for you?'",
+                                                            "'I'll catch you again soon.♥'",
+                                                            "Mika lets out a smug purr as she gazes at you.",
+                                                        "EndLoop"]
+                                        },
+
+                                  {
+                                      "NameOfScene": "FailedEscapeSex",
+                                      "theScene": [ "IfProgressEqualsOrGreater", "3", "FailedEscapeSex2", "ChangeImageLayer", "Expression", "Pleasured",
+                                                  "FocusedSpeaks",
+                                                  "SwapLineIf", "Random",
+                                                      "'C-Can't t-think-♥'",
+                                                      "'Prrrr-♥'",
+                                                      "'Da-Damn it-♥ This feels way too good-♥'",
+                                                      "She gasps and moans from your manhood stirring up her insides.",
+                                                  "EndLoop"]
+                                  },
+                                        {
+                                            "NameOfScene": "FailedEscapeSex2",
+                                            "theScene": [ "ChangeImageLayer", "Expression", "Predatory",
+                                                        "FocusedSpeaksSkill",
+                                                        "SwapLineIf", "Random",
+                                                              "'Hehe, can't handle it?♥ Too bad.♥'",
+                                                              "'Come on,♥ pour your cum into me instead of trying to get away!♥'",
+                                                              "'Just keep fucking me, nya!♥'",
+                                                              "'Fuck me like you mean it, or you're going to lose!♥'",
+                                                              "'What's wrong?♥ You should just be mindlessly swinging your hips, nya.♥",
+                                                              "'It's too late to pull out now!♥'",
+                                                              "The lewd sounds of flesh meeting flesh and Mika's moans echo throughout the room as she refuses to stop fucking you.",
+                                                        "EndLoop"]
+                                        },
+
+                                  {
+                                    "NameOfScene": "_buttstufffromCombatLossReminder",
+                                    "theScene": [    "SetChoice", "5", "AnalOrgasm",
+                                                    "Progress is used in ancilla's combat file to track her stockade sexing count for orgasms."
+                                              ]
+                                  },
+                                        {
+                                          "NameOfScene": "GameOver",
+                                          "theScene": [    "GetEventAndIfChoice", "Visiting Mika", "41", "spar", "WakeUpPostLoss",
+                                                            "GameOver"
+                                                    ]
+                                        },
+                                              {
+                                                "NameOfScene": "WakeUpPostLoss",
+                                                "theScene": [   "EndAllVisualEffects",
+                                                                "CallLossLevelUp",
+                                                                "ClearStances",
+                                                                "ClearPlayerStatusEffects",
+                                                                "Drowzily you register Mika dragging you back into her room and pulling you onto her bed before cuddling up to you, letting you rest...",
+                                                                "ClearMonsterEncounter",
+                                                                "GetEventAndSetChoice", "Visiting Mika", "41", "",
+                                                                "JumpToEventThenScene",
+                                                                "Visiting Mika",
+                                                                "PostSexWakeup"
+                                                          ]
+                                              },
+                                        {
+                                          "NameOfScene": "EventBroke",
+                                          "theScene": [    "Something went wrong and the event broke."
+                                                    ]
+                                        }
+
+                ]
+}

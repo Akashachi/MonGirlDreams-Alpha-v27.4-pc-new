@@ -1,0 +1,72 @@
+{
+    "name": "GoToLakeIntro",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Blue Slime",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Perpetua",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "???",
+                    "postName": "",
+                    "SpeakerType": "?"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": ["SetChoice", "1", "SlomeIntro",
+                                      "AdventureComplete", "Go to the Lake.",
+                                      "ChangeBGM", "music/Forest/hitoriame.mp3",
+                                      "ChangeBG", "forest.png",
+                                      "Guided by the Slime Badge, you're taken to a small, verdant flower filled clearing surrounded by trees, with a pathway leading towards what looks to be a huge glimmering lake undulating with gentle windswept waves.",
+                                      "ChangeBG", "Lake.png",
+                                      "As you step forward, basking in the pristine sight and fresh air, more of the serene, breathtakingly picturesque body of glimmering water comes into view. Taking a moment to enjoy the sight and look at your map to get your bearings, you see that you're standing at one of the corners of the large pool: a circular outcropping of water that flows in and out of the main part of the lake, surrounded by plentiful berry bushes.",
+                                      "ChangeBGM", "music/Forest/Are-you-kidding.mp3",
+                                      "Exiting the pathway to approach the pool, you notice a crude wooden sign 'painted' in blue slime, messily reading 'Sleim Vllge'. And true to the claim, you can see many blue slimes going about their day, happily splashing around or lazing at the edge of the water, stuffing themselves with blueberries, fixing up stone-and-wood structures, proudly manning what looks like shop counters, and more...",
+                                      "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "While you're still processing what you're looking at, walking onward and perplexedly nodding back to a few friendly-looking gooey girls, one of the cheerful slime women bouncily sloshes over to you and waves lazily.",
+                                      "ChangeImageLayer", "Expression", "1", "Excited",
+                                      "Speak", "Slime",
+                                      "Hiiii.♪ Welcome to the secret slime town, Sliem Vllge. Since you got here, that means you were given a Slime Badge, right?",
+                                      "ChangeImageLayer", "Expression", "1", "Happy",
+                                      "You pull out your grimoire and show the glimmering badge still stuck to it, prompting a small 'Yay.♪' from the woman who cheerily claps with slimy slapping sounds before bouncily turning and scooting forward, urging you to follow while she excitedly points to the pool.",
+                                      "ChangeImageLayer", "Expression", "1", "Excited",
+                                      "Speak", "Slime",
+                                      "That's the lake where all the water is... and the fish... and other stuff. We have resting shacks and umbrellas all around the beach too if it gets too sunny or too cold.",
+                                      "She gestures more wildly as she proudly shows off the myriad of ramshackle buildings and much nicer-looking umbrellas. A few have towels under them, most with at least one slime under it, napping or lazing about, some of them pointing at you or waving in salute. Waving back uncertainly, you keep following your 'tour guide' who points to the many berry bushes lining the edge of the forest, almost all of them blueberries.",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "Speak", "Slime",
+                                      "There's the food. Help yourself if you're hungry. Oh, but if you want to take some home, please buy it from the Slime Shop over there.",
+                                      "The gooey woman pivots and indicates a lemonade stand-like structure with another blue slime behind it, the gooey saleswoman waving happily at the two of you. Greeting her back alongside your slime guide, you notice a crudely carved sign above the stall that reads 'Sleim Shoppe', as well as stores of what looks like bundles of berries and slime blobs...",
+                                      "ChangeImageLayer", "Expression", "1", "Shy",
+                                      "Speak", "Slime",
+                                      "...And I think that's everything... Oh, wait, right.",
+                                      "ChangeImageLayer", "Expression", "1", "Excited",
+                                      "She turns and points to another pathway that snakes through the forested edge, but quickly ends at a number of cherry trees planted before a building that looks like... Perpetua's head, smoothly hewn from stone and painted to match, with the mouth for a door and the eyes as windows. On the side is a small sign that says: '{i}Perpetua's Secret Evil Lair! - DO NOT TOUCH MY CHERRIES!!!{/i}' in splashy cursive with now hardened red slime.",
+                                      "Speak", "Slime",
+                                      "That's Petua's house.♪ We helped build it for her birthday. She didn't know how to react, he he.♪ She hogs all the cherries 'cause they're her favorite... but we don't mind 'cause nobody else really likes 'em anyway.",
+                                      "ChangeImageLayer", "Expression", "1", "Happy",
+                                      "With a wobble, she turns to you, a big smile adorning her guileless features.",
+                                      "Speak", "Slime",
+                                      "Anyways... That was your tour of Sliem Vllge... Enjoy your stay. Don't be afraid to ask us questions and stuff.",
+                                      "DisplayCharacters",
+                                      "EndLoop",
+                                      "While you're still mentally catching up with this whole... oddity, the slime woman bounces away to faceplant into the water with a 'Wheee!', leaving you on your own to explore.",
+                                      "JumpToEventThenScene", "SleimVllge", "SlomeExploreMenu"
+                                  ]
+                    }
+                ]
+}

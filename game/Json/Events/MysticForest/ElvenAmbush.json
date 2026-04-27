@@ -1,0 +1,195 @@
+{
+    "name": "Elven Ambush",
+    "CardType": "Event",
+    "CardLimit": "2",
+    "Description": "Pairs of elves have set traps around the forest to catch men with.",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Elf",
+                    "postName": "",
+                    "SpeakerType": ""
+                  },
+                  {
+                    "name": "Elf",
+                    "postName": "",
+                    "SpeakerType": ""
+                  }
+
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [
+                                      "StoreCurrentBG",
+                                      "ChangeBG", "forest.png",
+                                      "While peacefully walking through the forest, you can't help but feel you're being watched...",
+                                      "Menu",
+                                        "Keep your wits about you. (Int)",
+                                        "Trust in your reflexes. (Tech)",
+                                        "Walk forward without a care in the world.",
+                                      "EndLoop"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "Keep your wits about you. (Int)",
+                                "theScene": [    "StatCheck",
+                                                  "Intelligence",
+                                                  "15",
+                                                  "RopeWPass",
+                                                  "Fail",
+                                                  "RopeFail"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Trust in your reflexes. (Tech)",
+                                "theScene": [    "StatCheck",
+                                                  "Technique",
+                                                  "15",
+                                                  "RopeTPass",
+                                                  "Fail",
+                                                  "RopeFail"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Walk forward without a care in the world.",
+                                "theScene": [   "JumpToScene", "RopeFail"
+                                          ]
+                            },
+
+                    {
+                        "NameOfScene": "RopeFail",
+                        "theScene": [  "As you continue to walk forward, you hear the snap of a wire as you are suddenly hoisted into the air by a net!",
+                                      "ApplyStatusEffect", "Elven Rope Trap",
+                                      "The restraints tightly wrap around you before unceremoniously dropping you to the ground!",
+                                      "DisplayCharacters",
+                                        "1",
+                                        "2",
+                                        "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Smug",
+                                      "ChangeImageLayer", "Expression", "2", "Smug",
+                                      "Two very excited elves emerge from some nearby foliage and descend upon your now restricted body!",
+                                      "CombatEncounter",
+                                      "Elf",
+                                      "Elf",
+                                      "StartCombat",
+                                      "You somehow managed to defeat the elves despite getting caught in their trap.",
+                                      "Moving forward, you feel a sense of pride.",
+                                      "UseHeldBG"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "RopeWPass",
+                        "theScene": [  "As you continue to walk forward, you notice a cleverly concealed wire on the path in front of you, on top of what appears to be a rope net.",
+                                      "Menu",
+                                        "Step over it.",
+                                        "Set it off intentionally.",
+                                      "EndLoop"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Set it off intentionally.",
+                              "theScene": [  "You snap the wire with your foot, and your world spins as you are suddenly hoisted into the air by a net!",
+                                            "ApplyStatusEffect",
+                                            "Elven Rope Trap",
+                                            "The restraints tightly wrap around you before unceremoniously dropping you to the ground!",
+                                            "DisplayCharacters",
+                                              "1",
+                                              "2",
+                                              "EndLoop",
+                                            "ChangeImageLayer", "Expression", "1", "Smug",
+                                            "ChangeImageLayer", "Expression", "2", "Smug",
+                                            "Two very excited elves emerge from some nearby foliage and descend upon your now restricted body",
+                                            "CombatEncounter",
+                                            "Elf",
+                                            "Elf",
+                                            "StartCombat",
+                                            "You somehow managed to defeat the elves despite getting intentionally caught in their trap.",
+                                            "UseHeldBG"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Step over it.",
+                              "theScene": [  "You carefully step over the wire and continue on your way, only to hear some elves yelling at you not long after.",
+
+                                            "DisplayCharacters",
+                                              "1",
+                                              "2",
+                                              "EndLoop",
+                                              "ChangeImageLayer", "Expression", "1", "Shock",
+                                              "ChangeImageLayer", "Expression", "2", "Shock",
+                                            "You turn, ready to fight, only to watch as two elves, who presumably set the trap in the first place, trigger the tripwire and get hoisted into the air.",
+                                            "ChangeImageLayer", "Expression", "1", "Flustered",  "ChangeImageLayer", "Blush", "1", "Blush",
+                                            "ChangeImageLayer", "Expression", "2", "Tsun", "ChangeImageLayer", "Blush", "2", "Blush",
+                                            "They seem rather embarrassed by being caught by their own trap. They stare at you awkwardly as they gently dangle in the air.",
+                                            "Speaks",
+                                            "Uhm... Y-You wouldn't happen to be willing to get us down from here, would you? M-Merciful hero?",
+                                            "Menu",
+                                              "Get them down.",
+                                              "Leave them there.",
+                                            "EndLoop"
+                                        ]
+                          },
+                                    {
+                                        "NameOfScene": "Get them down.",
+                                        "theScene": [  "You grab the rope holding them in the air and quickly untie it, leaving the elves squealing as they fall to the ground.",
+                                                      "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                      "ChangeImageLayer", "Expression", "2", "Flustered", 
+                                                      "The elves untangle themselves from the ropes and stand up, dusting themselves off.",
+                                                      "Speaks",
+                                                      "Uhm... Ah... Th-Thank you...",
+                                                      "They appear very embarrassed about this and head back into the forest.",
+                                                      "UseHeldBG"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "Leave them there.",
+                                        "theScene": [  "ChangeImageLayer", "Expression", "1", "Tsun",  
+                                                      "ChangeImageLayer", "Expression", "2", "Tsun",  
+                                                      "You decide to continue on your way, ignoring the elves' pleas. They tried to catch you in that trap, after all. They deserve a taste of their own medicine, don't they?",
+                                                      "As you walk away, you are pretty sure you can hear them moaning softly behind you...",
+                                                      "UseHeldBG"
+                                                  ]
+                                    },
+                {
+                    "NameOfScene": "RopeTPass",
+                    "theScene": [  "As you continue to walk forward, you hear the snap of a wire! Thankfully, your lightning like reflexes kick in and you leap forward, avoiding the inevitable trap!",
+                                  "The net misses you completely.",
+                                  "DisplayCharacters",
+                                    "1",
+                                    "2",
+                                    "EndLoop",
+                                    "ChangeImageLayer", "Expression", "1", "Lewd", "ChangeImageLayer", "Blush", "1", "Blush",
+                                    "ChangeImageLayer", "Expression", "2", "Lustful", "ChangeImageLayer", "Blush", "2", "Blush",
+                                  "You see two elves staring at you in awe from some nearby foliage. Your acrobatics appear to have made them hot and bothered.",
+                                  "Menu",
+                                    "Get out of there.",
+                                    "Fuck the horny elves.",
+                                  "EndLoop"
+
+                              ]
+                },
+                              {
+                                  "NameOfScene": "Get out of there.",
+                                  "theScene": [  "You continue on your way, leaving the pair of elves standing there, enamoured by your amazing display.",
+                                                "UseHeldBG"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "Fuck the horny elves.",
+                                  "theScene": [  "ChangeImageLayer", "Expression", "1", "Smug", "ChangeImageLayer", "Blush", "1", "Blush",
+                                                "ChangeImageLayer", "Expression", "2", "Smug", "ChangeImageLayer", "Blush", "2", "Blush",
+                                                "As you approach the two elves, they snap out of their lusty stupor and charge towards you!",
+                                                "CombatEncounter",
+                                                "Elf",
+                                                "Elf",
+                                                "StartCombat",
+                                                "With both elves satisfied, you continue on your way, feeling a small sense of pride.",
+                                                "UseHeldBG"
+                                            ]
+                              }
+
+
+
+                ]
+}

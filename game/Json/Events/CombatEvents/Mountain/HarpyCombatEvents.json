@@ -1,0 +1,37 @@
+{
+    "name": "HarpyCombatEvent",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Harpy",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+
+                  {
+                      "NameOfScene": "StanceCheckCGOff",
+                      "theScene": [                                     
+                                    "IfPlayerHasStance", "None", "ClearCG",
+                                    "IfPlayerHasStance", "Sex", "Nothing",
+                                    "IfPlayerHasStance", "Anal", "Nothing",
+                                    "IfPlayerHasStance", "Face Sit", "Nothing",
+                                    "RoledCGEnd"
+                                ]
+                  },
+                          {
+                              "NameOfScene": "ClearCG",
+                              "theScene": [ "RoledCGEnd"
+                                        ]
+                          },
+                          {
+                            "NameOfScene": "Nothing",
+                            "theScene": [  
+                                      ]
+                          }
+                ]
+}

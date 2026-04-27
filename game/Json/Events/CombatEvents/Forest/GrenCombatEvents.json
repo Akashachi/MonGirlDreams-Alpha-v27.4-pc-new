@@ -1,0 +1,97 @@
+{
+    "name": "GrenCombatEvents",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [""],
+    "Speakers": [
+                  {
+                    "name": "Gren",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Intro",
+                        "theScene": [ "ChangeBGM", "music/Battle/French_Toast.mp3",
+                                      "ChangeImageLayer", "Expression", "Base",
+                                      "Gren is ready to rumble!"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Headpat",
+                        "theScene": [ "SwapLineIf", "Random",
+                                      "Mussing her hair feels like running your hand through a wild tangle of fresh-smelling algae.",
+                                      "She croaks blissfully, pushing against your hand.",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "Shock",
+                                      "Speaks",
+                                      "Eh? Wait, did you actually just want to cuddle?",
+                                      "Menu",
+                                      "'Cuddling sounds nice...'",
+                                      "'No, let's keep fighting!'",
+                                      "EndLoop"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "'No, let's keep fighting!'",
+                        "theScene": [ "ChangeImageLayer", "Expression", "Cheerful",
+                                      "Speaks",
+                                      "Oh, ok... Well, thanks for the patting!♪"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "'Cuddling sounds nice...'",
+                        "theScene": [ "ChangeImageLayer", "Expression", "Sparkling",
+                                      "Speaks",
+                                      "You bet!",
+                                      "ChangeBGM", "music/Relaxing/BGM05_Azalea.mp3",
+                                      "With unexpected suddenness and force, she throws herself at you and you fall into the forest greenery, the eager frog girl's arms and legs wrapped around you while she energetically nuzzles your chest.",
+                                      "ChangeImageLayer", "Expression", "Happy",
+                                      "In response, you caress her head, the patting turning to vigorous tousling under her contagious enthusiasm, making her mop of hair even more of a mess.",
+                                      "ChangeImageLayer", "Expression", "Cheerful",
+                                      "The brisk gesture sends a giggle up her throat while her face splits into the biggest grin. Closing her eyes closed to fully enjoy your touch, she lets out a low, steady, almost purr-like ribbit of happiness.",
+                                      "ChangeImageLayer", "Base", "BaseBlush",
+                                      "Infused with the holy comforting energy, she relaxes and untangles her arms and legs from you, the better to curl up against you and rest her head against your chest.",
+                                      "ChangeImageLayer", "Expression", "Pleasured",
+                                      "Her giggling turns to soft ribbiting, one of her hands snaking up to your head to pat and stroke it in turn, while her other arm wraps around your neck. Thoughtlessly, you reciprocate, hugging the cooing Gren who sounds very much in favor of such an initiative.",
+                                      "Despite the open-air freshness, the ample vegetation makes for a surprisingly nice bed, and the surrounding woodland noises provide a pleasant background atmosphere.",
+                                      "ChangeImageLayer", "Base", "Base",
+                                      "ChangeImageLayer", "Expression", "Cheerful",
+                                      "The cuddliness and comfiness of the experience are quickly getting to you, and Gren herself is making no effort to hold the drowsiness at bay, already starting to doze peacefully in your embrace, her breathing turning to ribbity snoring.",
+                                      "ChangeImageLayer", "Expression", "Fantasizing",
+                                      "You can't stifle a yawn and give in to the moment in turn, letting your head fall against the grass and closing your eyes, enjoying the feeling of the frog girl's lithe, smooth form against you, the fresh, marshy scent of her hair and the fragrant perfume of her relaxing mucus wafting up your nose.",
+                                      "In short notice, you feel your sensations grow fuzzy, sleep softly overtaking you...",
+                                      "...",
+                                      "RestPlayer",
+                                      "... An indeterminate amount of time later, your eyes flutter open. Gren appears to be rousing too, though you can't know for sure who awoke the other.",
+                                      "ChangeImageLayer", "Expression", "Cheerful",
+                                      "Regardless, by an unspoken agreement, you both get up, your cuddling lover gently rolling out of your grasp to lie down and stretch on the humid grass, flexing and twisting her limbs in an impressive display of flexibility.",
+                                      "ChangeImageLayer", "Expression", "Happy",
+                                      "Speaks",
+                                      "Mmmmmh! That hit the spot. ♪",
+                                      "ChangeImageLayer", "Expression", "Base",
+                                      "You readily agree, though you are slightly miffed at your clothes being wet with dew, not to mention frog girl mucus...",
+                                      "Oh well, you'll walk it off.",
+                                      "Once you have properly shaken up the cobwebs, you turn to Gren who is as radiant as ever, and exchange a sightly squishy parting hug with the slippery cutie.",
+                                      "ChangeImageLayer", "Expression", "Happy",
+                                      "Speaks",
+                                      "{i}C'était chouette !{/i} We'll have to do it again!",
+                                      "DisplayCharacters",
+                                      "EndLoop",
+                                      "You then each go your own way, the frog girl bouncing away merrily while you resume your adventure.",
+                                      "SetChoice", "1", "HadCuddles",
+                                      "ClearMonsterEncounter"
+                                  ]
+                    },
+
+                  
+                    {
+                        "NameOfScene": "NoThighjobSexOrAnal",
+                        "theScene": [  "ClearStanceFromMonsterAndPlayer", "Thighjob"
+                                  ]
+                    }
+                ]
+}

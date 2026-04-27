@@ -1,0 +1,294 @@
+{
+    "name": "PerpetuaLabyrinthInterlude",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Perpetua",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "???",
+                    "postName": "",
+                    "SpeakerType": "?"
+
+                  },
+                  {
+                    "name": "Black Knight",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": ["StopBGM",
+                                      "ChangeBG",  "Labyrinth.png",
+                                      "You return to the checkpoint gem at the end of the Labyrinth, and take a moment to prepare yourself before pushing open the large stone doors.",
+                                      "Flinching slightly as the crack between the opening door throws what feels like a dazzling beam of outdoors light at you, you nevertheless press on, somewhat eager for open spaces after the stiflingly dark confines you've been wandering through. One arm raised protectively against the comparatively bright glow, your lungs gratefully filling with fresh air, you leave the shadowy tunnels of the Umbral Labyrinth behind...",
+                                      "JumpToScene", "OutsideTheLabyrinth"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "OutsideTheLabyrinth",
+                        "theScene": [
+                                      "SetChoice", "1", "MeetingComplete",
+                                      "ChangeBG",  "mountain.png",
+                                      "ChangeBGM", "music/Capital/Despair_City.mp3",
+                                      "Stepping out onto a rocky outcropping on the other side of the Mountain, you're met with a looming vista of towering black spires and swirling miasmic clouds filling the land in front of you: the monster girl Capital is in view.",
+                                      "A far cry from the Town, the Forest Dungeon, the Temple, or even back home in Fertilia, you find yourself momentarily enraptured by the otherworldly architecture and intimidating, endless fog of unnatural-looking, roiling smoke, the occasional light piercing through the purple smog, almost like flashes of lightning through an ominous dark sky.",
+                                      "But your eyes are pulled away from the awe-striking sight by a pointed cough, drawing your attention to a familiar figure perched on a nearby ledge...",
+                                      "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "Her colorful shape offering a stark contrast to the mountainous backdrop, Perpetua is standing high with her arms confidently crossed and a smug smile on her lips, clearly having expected and awaited your arrival.",
+                                      "ChangeImageLayer", "Expression", "Perpetua", "Pride",
+                                      "Speak", "Perpetua",
+                                      "Hmhmhm...♪ [ThePlayerName]... Took you long enough, my fated nemesis! I almost thought you didn't have what it takes to deal with those small fries I sent at you.♪",
+                                      "ChangeImageLayer", "Expression", "Perpetua", "Base",
+                                      "Speak", "Perpetua",
+                                      "But it truly is no surprise you managed to get this far... And now, we stand on the precipice of our long awaited rematch!",
+                                      "ChangeImageLayer", "Expression", "Perpetua", "Joy",
+                                      "For a flickering moment, a joyful smile crosses Perpetua's face, as though pleased with herself for aptly delivering a heavily rehearsed line, clearly indulging in your sustained rivalry and recollections of your past encounters.",
+                                      "ChangeImageLayer", "Expression", "Perpetua", "Base",
+                                      "The cheerful expression doesn't linger, however, the slime girl theatrically gesturing with a gooey arm to the imposing landscape behind her while her smile curls into a smirk and she dramatically clenches a blobby fist, the perspective making it look like she's grabbing and crushing the Capital in her grasp.",
+                                      "ChangeBGM", "music/Battle/bgm_maoudamashii_orchestra12.mp3",
+                                      "Speak", "Perpetua",
+                                      "So cower in fear before me, {i}'brave hero'{/i}, for I am Perpetua, great gooey villainess, and the next monster who will be Demon Queen! I shall now have my revenge for the {i}humiliation{/i} you put me through back in the Forest! Any last words?",
+                                      "Menu",
+                                        "I'm not going to lose to the likes of you, fiend!",
+                                        "I really missed this...",
+                                        "...Can I just surrender now orrr...?",
+                                        "Are you okay? You know, after that whole thing in the Caverns?",
+                                        "...I don't really have time for this?",
+                                      "EndLoop"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "I'm not going to lose to the likes of you, fiend!",
+                              "theScene": ["ChangeImageLayer", "Expression", "Perpetua", "Joy",
+                                            "A giddy smile shows on the slime woman's face as you indulge in the moment with her, the dramatic monster girl jiggling in excitement.",
+                                            "Speak", "Perpetua",
+                                            "Haha! That's the spirit! But rest assured that this foolish confidence will do little to help against the mighty Perpetua, you fool!",
+                                            "GetEventAndChangeProgress", "PerpetuaHouse", "2",
+                                            "JumpToScene", "PostDialogue"
+                                          ]
+                          },
+                          {
+                              "NameOfScene": "I really missed this...",
+                              "theScene": ["ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                           "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                            "She huffs poutily at your reaction, crossing her arms under her slimy bust, her diminutive body jiggling indignantly as she can't help but avert her gaze slightly, a hint of blush showing on her cherry-red cheeks.",
+                                            "Speak", "Perpetua",
+                                            "Wha- Guh- D-Don't go and get sappy now!",
+                                            "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                            "Speak", "Perpetua",
+                                            "...Though it {b}has{/b} been, like... {i}forever{/i} since our last battle...",
+                                            "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                            "Catching herself 'getting sappy' as well, she shakes her head and slaps her cheeks to refocus on your impending epic battle, the motion making cute little plapping noises which you refrain from commenting on as Perpetua readjusts her dramatic pose.",
+                                            "GetEventAndChangeProgress", "PerpetuaHouse", "2",
+                                            "JumpToScene", "PostDialogue"
+                                          ]
+                          },
+                          {
+                              "NameOfScene": "...Can I just surrender now orrr...?",
+                              "theScene": ["ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                            "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                            "She sputters flusteredly in indignation, wobbling in place slightly at your suggestive proposition before she recollects herself and looks down chidingly at you from her elevated position.",
+                                            "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                            "Speak", "Perpetua",
+                                            "Oh, come on, it's been {i}forever{/i} since our last battle... At least {i}try!{/i}",
+                                            "ChangeImageLayer", "Expression", "Perpetua", "LipLick",
+                                            "Her expression shifts to one of confident smugness as she continues sneeringly.",
+                                            "Speak", "Perpetua",
+                                            "That way, you may rest assured that even your best wasn't enough to defeat the great Perpetua once you are left shaking with lust, unable to resist!",
+                                            "GetEventAndChangeProgress", "PerpetuaHouse", "1",
+                                            "JumpToScene", "PostDialogue"
+                                          ]
+                          },
+                          {
+                              "NameOfScene": "Are you okay? You know, after that whole thing in the Caverns?",
+                              "theScene": ["ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                            "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                            "Speak", "Perpetua",
+                                            "Gah- Uh- D-Don't bring {i}that{/i} up! I'm {i}fine!{/i} A-And I totally don't care that you care! Sh-Shut up now!",
+                                            "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                            "She huffs poutily as she recomposes herself from her sputtering outburst, only a subtle smile tugging at her lips.",
+                                            "Speak", "Perpetua",
+                                            "L-Let's just get to the fight before you kill the mood... idiot.",
+                                            "Taking a deep breath, she refocuses on your impending epic battle, the atmosphere shifting again.",
+                                            "GetEventAndChangeProgress", "PerpetuaHouse", "2",
+                                            "JumpToScene", "PostDialogue"
+                                          ]
+                          },
+                          {
+                              "NameOfScene": "...I don't really have time for this?",
+                              "theScene": [ "StopBGM",
+                                            "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                            "Her face freezes for a moment at your blunt refusal, then she stomps her foot angrily... or at least, she would if she had feet, instead of which she just sloshes furiously in place.",
+                                            "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                            "Speak", "Perpetua",
+                                            "Oh no you don't! I'm the roadblock of evil that will stop you at every turn! Y-You don't skip the epic battle with your arch-nemesis just because you 'don't really have time'! You're not going anywhere!",
+                                            "ChangeImageLayer", "Expression", "Perpetua", "Base",
+                                            "It looks like she's really not letting you pass without a fight, the slime girl calming herself with fuming breaths before she proceeds to ignore your objection and continues with her dramatic speech.",
+                                            "GetEventAndChangeProgress", "PerpetuaHouse", "-1",
+                                            "JumpToScene", "PostDialogue"
+                                          ]
+                          },
+                  {
+                      "NameOfScene": "PostDialogue",
+                      "theScene": [
+                                    "ChangeImageLayer", "Expression", "Perpetua", "Laugh",
+                                    "ChangeBGM", "music/Battle/bgm_maoudamashii_orchestra12.mp3",
+                                    "Raising her hand up to her mouth in traditional villainous fashion, she raises her voice in evil laughter.",
+                                    "Speak", "Perpetua",
+                                    "{i}Mwaaahahahaha!{/i} Now then! Prepare for {i}battle!{/i} I'll drag you down into a mire of slimy sinful depravity and will reduce you to a twitching wreck for contesting me!",
+                                    "ChangeImageLayer", "Expression", "Perpetua", "Joy",
+                                    "She gleefully hops in place to readjust her position before giving you a smug stare, clearly relishing the moment.",
+                                    "ChangeImageLayer", "Expression", "Perpetua", "LipLick",
+                                    "Speak", "Perpetua",
+                                    "But first...♪ I'll use my {i}new{/i} skill! Time for you to quiver and tremble in shame and fear as I see how feeble you truly are! Mwahaha! Go {b}Analyze!{/b}",
+                                    "Before combat has even started, there's a brief flicker of magic as she casts the spell, then a quick shiver running through your scalp as your capabilities become plain for her to see. Humming snarkily, she spaces out for a moment, scanning an invisible list...",
+                                    "StopBGM",
+                                    "ChangeImageLayer", "Expression", "Perpetua", "Neutral",
+                                    "... then her expression becomes blank.",
+                                    "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                    "Her features shift from thrilled glee to disillusionment as she reviews the spell's information again, disbelief plain in her eyes when she squeaks out.",
+                                    "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                    "Speak", "Perpetua",
+                                    "L-Level [PlayerLevel]... B-But... I-Is this thing defective!?",
+                                    "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                    "After a few more seconds of frantic double-checking, she dismisses the spell, gazing into space as she mutters dispiritedly.",
+                                    "ChangeBGM", "music/Emotional/Purple Planet Music - Emotional - Sense Of Loss (2_04) 54bpm.mp3",
+                                    "Speak", "Perpetua",
+                                    "I-I'm not even level {i}10{/i} yet...",
+                                    "She speaks in an increasingly quivering voice while she stares despondently at the ground.",
+                                    "Speak", "Perpetua",
+                                    "I trained, I fought, I studied... I-I really did my best...",
+                                    "ChangeImageLayer", "Expression", "Perpetua", "Crying",
+                                    "She looks to you shakily, tears welling in her eyes before trailing down her cheeks as the full reality of the situation crashes down on her.",
+                                    "Speak", "Perpetua",
+                                    "Th-That... That's not fair...",
+                                    "Any fight plainly taken out of her, she just stays there, looking at you.",
+                                    "Menu",
+                                      "Perpetua...",
+                                      "I mean... We can still- you know...",
+                                      "...Can you get out of my way now?",
+                                    "EndLoop"
+                                  ]
+                  },
+                          {
+                              "NameOfScene": "Perpetua...",
+                              "theScene": [ "You make to join her on her perch to offer some compassion, but before you can advance, her face hardens.",
+                                            "ChangeImageLayer", "Expression", "Perpetua", "Rage",
+                                            "Speak", "Perpetua",
+                                            "Don't give me your {i}pity{/i}!",
+                                            "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                            "Speak", "Perpetua",
+                                            "E-Everyone was right- I {i}don't{/i} have what it takes... I thought that with enough effort and determination, maybe I...",
+                                            "Sadly and forlornly, she trails off, turning to look off to the swirling horizon at the Capital city's miasmic compounds and black piercing spires, dropping her head with a heavy sigh.",
+                                            "Speak", "Perpetua",
+                                            "I'll just... go on ahead. Since I'm here, I might as well have a look...",
+                                            "JumpToScene", "PostDialogue2"
+                                          ]
+                          },
+                          {
+                              "NameOfScene": "I mean... We can still- you know...",
+                              "theScene": [
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                              "The slime girl huffs derisively at your proposition.",
+                                              "Speak", "Perpetua",
+                                              "What's the {i}point{/i}, Mister Level [PlayerLevel]? It'd barely last ten seconds... unless you throw the match, and that would be {i}even worse{/i}...",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                              "Speak", "Perpetua",
+                                              "I'm not even {i}close{/i} to rival material... Let alone Demon Queen...",
+                                              "Sadly and forlornly, she trails off, turning to look off to the swirling horizon at the Capital city's miasmic compounds and black piercing spires, dropping her head with a heavy sigh.",
+                                              "Speak", "Perpetua",
+                                              "Don't bother with me, I'll just... go on ahead.  Since I'm here, I might as well have a look...",
+                                              "JumpToScene", "PostDialogue2"
+                                          ]
+                          },
+                          {
+                              "NameOfScene": "...Can you get out of my way now?",
+                              "theScene": [
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                              "Taken aback by your sudden dismissal, she sputters meekly, slipping further into encroaching despair.",
+                                              "Speak", "Perpetua",
+                                              "...I- Uh... Y-Yeah... sorry... I'll-",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Rage",
+                                              "Speak", "Perpetua",
+                                              "W-Wait a minute! You {i}jerk{/i}! You- I- I hope the Black Knight twists you into a pretzel! Th-This isn't the last you've heard of me!",
+                                              "GetEventAndChangeProgress", "PerpetuaHouse", "-1",
+                                              "JumpToScene", "PostDialogue2"
+                                          ]
+                          },
+                  {
+                      "NameOfScene": "PostDialogue2",
+                      "theScene": [
+                                    "Giving you no time to react, she suddenly flings herself off the edge of the cliff face, hurtling toward the bottom of the massive sheer drop!",
+                                    "Menu",
+                                      "{i}Perpetua!?!?{/i}",
+                                      "...",
+                                    "EndLoop"
+                                  ]
+                  },
+                        {
+                            "NameOfScene": "{i}Perpetua!?!?{/i}",
+                            "theScene": [
+                                          "ChangeImageLayer", "Expression", "Perpetua", "Joy",
+                                          "Rushing to the cliffside, you see her look back at you as she keeps falling, a smug smile on her face at your panicked reaction.",
+                                          "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                          "ChangeImageLayer", "Expression", "Perpetua", "Laugh",
+                                          "Speak", "Perpetua",
+                                          "I'm a {i}sliiiime!{/i} You du-",
+                                          "DisplayCharacters",
+                                          "EndLoop",
+                                          "She is suddenly cut short when she hits the bottom of the cliff with a distant, wet splat... then recoalesces harmlessly before your eyes, shaking off stray dust, pebbles, and assorted debris off her body before peevishly sticking out her tongue at you and scooting her way towards the Capital.",
+                                          "GetEventAndChangeProgress", "PerpetuaHouse", "1",
+                                          "JumpToScene", "PostDialogue3"
+                                        ]
+                        },
+                        {
+                            "NameOfScene": "...",
+                            "theScene": [
+                                          "StopBGM",
+                                          "DisplayCharacters",
+                                          "EndLoop",
+                                          "Watching from the cliffside, you see her hit the bottom of the cliff with a distant, wet splat... then recoalesce harmlessly before your eyes, shaking off stray dust, pebbles, and assorted debris off her body before scooting her way towards the Capital.",
+                                          "Good thing you remembered that as a slime, she has nothing to fear from impacts, right?",
+                                          "JumpToScene", "PostDialogue3"
+                                        ]
+                        },
+                  {
+                      "NameOfScene": "PostDialogue3",
+                      "theScene": ["StopBGM",
+                                    "Menu",
+                                      "Make your way to the Capital.",
+                                      "Return to Town.",
+                                    "EndLoop"
+                                  ]
+                  },
+                        {
+                            "NameOfScene": "Make your way to the Capital.",
+                            "theScene": [
+                                          "AdventureComplete", "Proceed to the Capital",
+                                          "JumpToEventThenScene", "Approach the Capital...", "Makeyourwaydown"
+                                        ]
+                        },
+                        {
+                            "NameOfScene": "Return to Town.",
+                            "theScene": [
+                                          "AdventureComplete", "Proceed to the Capital",
+                                          "You decide you need a bit more time before moving on, and retrace your steps to use the checkpoint gem, instantly returning to Town.",
+                                          "GoToTown"
+                                        ]
+                        }
+
+
+
+                ]
+}

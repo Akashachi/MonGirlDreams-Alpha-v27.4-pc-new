@@ -1,0 +1,249 @@
+{
+	"name": "ForestDungeonEntrance",
+	"CardType": "Event",
+	"CardLimit": "0",
+	"Description": "",
+	"requires": [ ""],
+	"Speakers": [
+              	{
+                	"name": "Perpetua",
+                	"postName": "",
+                	"SpeakerType": "Monster"
+              	}
+
+            	],
+	"EventText": [
+                	{
+                    	"NameOfScene": "EventStart",
+                    	"theScene": [  "ChangeBG", "forest.png",
+                                  	"IfProgressEqualsOrGreater",
+                                  	"1",
+                                  	"TryAgain",
+                                  	"ChangeProgress",
+                                  	"1",
+                                  	"You embark on your arduous journey to the Forest Dungeon!\n\n... Which, as it turns out, is not very arduous at all. Now that you have explored the Mystic Forest and become familiar with it, crossing straight through the woods feels like no more than a quick jaunt, which you suspect has to do with the peculiar way the monster continent's geography works.",
+                                  	"At the end of your breezy walk, you enter a clearing, and immediately find yourself face to face with a squat, solid-looking tower made of dark, smooth rock surrounded by a variety of arcane-looking dolmens and menhirs, all carved with glyph-like patterns and glowing with suffuse pink light. At the tower's foot stand a set of grand double doors made of smoothly cut stone surrounded by decorative patterns, and currently shut tight.",
+                                    "Most noticeable of all, however, is a huge, intricate crest set into the tower, and which seems to be part of the masonry itself. From where you're standing, it appears to be several times as big as you are, and roughly looks like a sharp-edged heart flanked by a pair of wings... Probably the emblem of the dungeon's champion?",
+                                  	"Given the size of the building, you can't but wonder how you couldn't see it from afar, which can likely be attributed to the clearly magically-infused monoliths surrounding the construction. And yet, the owner doesn't seem to be particularly caring for their privacy, the area looking conspicuously unguarded, and a comparatively plain plaque right above the entry gate even prosaically stating: 'Forest Dungeon'.",
+                                  	"Still feeling like you should be on your guard, you stay alert as you walk towards the entrance, but even once you've gotten almost within arm's reach of the doors, nothing has happened...",
+                                  	"ChangeBGM", "music/Forest/Purple Planet Music - On Tiptoe (1 37) 100bpm.mp3",
+                                    "Until suddenly, a red blur falls straight down from the archway above the doors, faceplanting onto the ground right in front of you with a loud, wet smack!",
+                                  	"Befuddled by the splatting irruption, you stare at the gooey shape that has just impacted the ground, the indistinct blobby mass wobbling energetically as it recoalesces before your eyes while a muffled voice rises from it.",
+                                  	"Speak", "Familiar-Sounding Exuberant Female Voice",
+                                  	"{size=-5}J-Just give me a moment...!{/size}",
+                                    "In an instant, the increasingly humanoid-shaped blob swiftly rearranges itself into an easily identifiable slime girl who alertly leaps to her 'feet', striking a dynamic pose while letting out a triumphant laugh!",
+                                  	"ChangeBGM", "music/Forest/nandesuto.mp3",
+                                  	"DisplayCharacters",
+                                    	"1",
+                                    "EndLoop",
+                                  	"ChangeImageLayer", "Expression", "1", "Laugh",
+                                  	"Speaks",
+                                  	"Mwahahah! Stunned and in awe of my {i}incredible{/i} entrance, hero? Quaking in fear of my sudden return?!",
+                                  	"ChangeImageLayer", "Expression", "1", "Pride",
+                                  	"The questions very much appear to be rhetorical, as before you can even open your mouth to answer, Perpetua animatedly goes on, proudly crossing her arms while showily standing to her full diminutive height and thrusting out her modest chest.",
+                                  	"Speaks",
+                                  	"Know that I have been training without rest since my defeat at your hands, and I have now returned stronger than ever to both get my revenge on you and set off on my path of evil conquest!",
+                                  	"ChangeImageLayer", "Expression", "1", "Joy",
+                                  	"Speaks",
+                                  	"With you being a hero, I {i}knew{/i} you would come here, so I lay in wait of your arrival to stop you dead in your tracks! And in so doing, not only will I stand as an immovable obstacle on your quest, I will also grow all the stronger from this new and this time undoubtedly victorious confrontation that we are about to have! Quite the shrewd way of patting two harpies with one hand, if I do say so myself.♪",
+                                  	"ChangeImageLayer", "Expression", "1", "Pride",
+                                  	"After her boastful declamation, the slime girl takes a moment to gloatingly chuckle to herself in total self-assurance, finally giving you an opening to chime in.",
+                                  	"Menu",
+                                    	"'That... That was a terrible entrance.'",
+                                    	"'It hasn't even been that long...'",
+                                    	"'That looked like it hurt... Are... Are you okay?'",
+                                  	"EndLoop"
+                              	]
+                	},
+                      	{
+                          	"NameOfScene": "'That... That was a terrible entrance.'",
+                          	"theScene": [  "ChangeImageLayer", "Expression", "1", "Panic",
+                                        	"Speaks",
+                                        	"Gh-! Th-That- Sh-Shut up! It would have been cool if I stuck the landing right! It's that dang archway's fault for being so high anyway!",
+                                        	"JumpToScene",
+                                        	"returnPt2"
+                                    	]
+                      	},
+                      	{
+                          	"NameOfScene": "'It hasn't even been that long...'",
+                          	"theScene": [  "ChangeImageLayer", "Expression", "1", "Laugh",
+                                        	"Speaks",
+                                        	"Mwahahah! How complacent of you, hero! While you rested and idled, content in your fleeting victory, I took advantage of every spare moment to improve, like a true villainess! Tremble as you remember that your gooey doom ever sloshes onward!",
+                                        	"JumpToScene",
+                                        	"returnPt2"
+                                    	]
+                      	},
+                      	{
+                          	"NameOfScene": "'That looked like it hurt... Are... Are you okay?'",
+                          	"theScene": [  "ChangeImageLayer", "Expression", "1", "Joy",
+                                        	"Speaks",
+                                        	"Oh, yes! I'm a slime, so a little fall like that is just a bit disorienting.♪ I-",
+                                     	"ChangeImageLayer", "Expression", "1", "Panic",
+                                        	"Speaks",
+                                        	"I-I mean- {i}Of course{/i} I am! I am the great Perpetua! And we are enemies, you know!? Y-You're not supposed to care for my well-being! ...I-I think...",
+                                        	"ChangeImageLayer", "Expression", "1", "Pout",
+                                        	"Despite her fuming words, she looks a bit touched by your attention, though she quickly moves on with a sweeping gesture of dismissal.",
+                                        	"GetEventAndChangeProgress", "PerpetuaHouse", "1",
+
+                                        	"JumpToScene",
+                                        	"returnPt2"
+                                    	]
+                      	},
+                  	{
+                      	"NameOfScene": "returnPt2",
+                      	"theScene": [  "ChangeImageLayer", "Expression", "1", "Base",
+                                    	"Speaks",
+                                    	"But enough about that!",
+                                  	      "ChangeBGM", "music/Battle/bgm_maoudamashii_orchestra12.mp3",
+                                    	"'Menacingly', she once more stands as tall as she can, glaring at you domineeringly as she loudly proclaims.",
+                                    	"Speaks",
+                                    	"I, {b}Perpetua{/b}, am your eternal foe! Our battles will shake all of Lucidia- Nay, the {i}world{/i}! And they shall be recorded in history for all time!",
+                                     	"ChangeImageLayer", "Expression", "1", "Pride",
+                                    	"Speaks",
+                                    	"My ascension to Demon Queen will be legendary, starting with the defeat of...",
+                                  	      "StopBGM",
+                                     	"ChangeImageLayer", "Expression", "1", "Shy",
+                                    	"Speaks",
+                                    	"Of...",
+                                    	"ChangeImageLayer", "Expression", "1", "Neutral",
+                                    	"She stops mid-sentence and stares at you quizzically for a moment, seeming to be groping for a good way to carry on with her grandiose speech, but ultimately giving up and flatly asking.",
+                                     	"ChangeBGM", "music/Forest/nandesuto.mp3",
+                                      "ChangeImageLayer", "Expression", "1", "Shy",
+                                    	"Speaks",
+                                    	"...Uh... Y-You... The h-hero... Um... W-What's your name?",
+                                  	"Menu",
+                                    	"'It's [ThePlayerName].'",
+                                    	"'I'm not saying.'",
+                                    	"'Foolish Perpetua, do you not know that you stand before [ThePlayerName], the greatest hero of all time in the making!?'",
+                                    	"'I'm just going to enter the dungeon.'",
+                                  	"EndLoop"
+                                    	]
+                      	},
+                  	{
+                      	"NameOfScene": "'It's [ThePlayerName].'",
+                      	"theScene": [
+                                         	"ChangeImageLayer", "Expression", "1", "Joy",
+                                    	"Speaks",
+                                    	"[ThePlayerName] it is.♪ Nice to meet you-",
+                                    	"The slime girl nods as she repeats your name, diligently committing it to memory with a companionable smile... which immediately turns into a panicked grimace as she remembers that you're archenemies and not supposed to be having a friendly chat.",
+                                         	"ChangeImageLayer", "Expression", "1", "Panic",
+                                    	"Speaks",
+                                    	"I-I mean, more like, 'Nice to {i}defeat{/i} you!' Y-You know, because I'm going to... Urgh...",
+                                         	"ChangeImageLayer", "Expression", "1", "Pout",
+                                         	"Groaning at her own lame quip, she rolls her eyes and shakes her head, but then promptly gets back on track with an unassailably confident expression.",
+                                         	"ChangeImageLayer", "Expression", "1", "Base",
+                                    	"Speaks",
+                                    	"Well, whatever, let's battle! You will now taste the might of {b}Perpetua Level 5{/b}!",
+                                        	"GetEventAndChangeProgress", "PerpetuaHouse", "1",
+                                    	"JumpToScene",
+                                    	"Fight"
+                                    	]
+                      	},
+
+
+                  	{
+                      	"NameOfScene": "'I'm not saying.'",
+                      	"theScene": [
+                                    	"ChangeImageLayer", "Expression", "1", "Panic",
+                                    	"Speaks",
+                                    	"Aw, {i}come on{/i}, really!?",
+                                    	"ChangeImageLayer", "Expression", "1", "Pout",
+                                    	"Speaks",
+                                    	"Hmph! {i}Whatever{/i}! Have it your way! I'll just ask around Town until I dig it up!",
+                                    	"ChangeImageLayer", "Expression", "1", "Pride",
+                                    	"Speaks",
+                                    	"For now, your dogged silence will be met with swift retribution from the one and only {b}Perpetua Level 5{/b}!",
+                                        	"GetEventAndChangeProgress", "PerpetuaHouse", "-1",
+                                    	"JumpToScene",
+                                    	"Fight"
+                                    	]
+                      	},
+                  	{
+                      	"NameOfScene": "'Foolish Perpetua, do you not know that you stand before [ThePlayerName], the greatest hero of all time in the making!?'",
+                      	"theScene": [
+                                  	      "StopBGM",
+                                          "ChangeImageLayer", "Expression", "1", "StarryAwe",
+                                          "Perpetua stays reverently silent through your self-aggrandizing declaration, then fervently claps and enthusiastically whoops once you're done.",
+                                  	      "ChangeBGM", "music/Battle/bgm_maoudamashii_orchestra12.mp3",
+                                          "ChangeImageLayer", "Expression", "1", "StarryJoy",
+                                    	"Speaks",
+                                    	"Yes! {b}Yes!{/b}",
+                                          "ChangeImageLayer", "Expression", "1", "Joy",
+                                    	"Speaks",
+                                    	"{i}Yes!{/i} That's how confrontations between villains and heroes should be! Full of awe-inspiring speeches and world-shaking pithy back-and-forths!",
+                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                    	"The epic-loving slime woman appears to be getting somewhat lost in her own gusto, but quickly gets a grip on herself with a little cough, before carrying on as if that giddy aside never happened.",
+                                    	"Speaks",
+                                    	"{i}Ahem...{/i} Bold words, [ThePlayerName], but unfortunately for you, victory will elude you on this day, for you stand before {b}Perpetua Level 5{/b}! I will right now deal with you as promptly as I would dispose of a bowl of fresh cherries!",
+                                          "ChangeImageLayer", "Expression", "1", "Joy",
+                                    	"Speaks",
+                                       	"{size=-5}This is {i}so cool!{/i}{/size}",
+                                        	"GetEventAndChangeProgress", "PerpetuaHouse", "4",
+                                    	"JumpToScene",
+                                    	"Fight"
+                                    	]
+                      	},
+                  	{
+                      	"NameOfScene": "'I'm just going to enter the dungeon.'",
+                      "theScene": [  	"ChangeImageLayer", "Expression", "1", "Neutral",
+                                      "Not having time for this, you just walk around Perpetua to reach the doors, but the slime girl isn't so easily shaken off, promptly squeaking out.",
+                                    	"ChangeImageLayer", "Expression", "1", "Panic",
+                                    	"Speaks",
+                                    	"W-Wait!",
+                                  	      "ChangeImageLayer", "Expression", "1", "LipLick",
+                                    	"Panicking as she looks to be losing you, she quickly hops to stand back in your way, and reasserts her posture with a confidently predatory expression.",
+                                    	"Speaks",
+                                          "There is {i}no way{/i} I'm letting you just pass like this! If you want to get into the dungeon, you will need to defeat me first!",
+                                    	"ChangeImageLayer", "Expression", "1", "Laugh",
+                                    	"Speaks",
+                                    	"And know that I am not the same Perpetua you knew before! I am {b}Perpetua Level 5{/b}!",
+                                        	"GetEventAndChangeProgress", "PerpetuaHouse", "-1",
+                                    	"JumpToScene",
+                                    	"Fight"
+                                	]
+                  	},
+                  	{
+                      	"NameOfScene": "Fight",
+                      	"theScene": [  "CombatEncounter",
+                                      	"NoRunning",
+                                      	"Perpetua Lvl 5",
+                                      	"StartCombat",
+                                    	"ChangeProgress", "1",
+                                    	"Defeated, the slime girl vanishes away, only leaving a faint scent of cherry in her wake, her departure making the straight, neat dirt path into the Forest Dungeon now obstacle-free. You're pretty sure that she won't be standing in your way again whenever you return here... but you also can't shake off the feeling that you haven't seen the last of her...",
+                                    	"Regardless, for the time being, you walk up to the doors and, seeing no opening mechanism of any sort nor any way to formally announce your presence, you just give them a push, and find that they open near-silently and without resistance, allowing you to slip in without further complications.",
+                                    	"ChangeBG", "DungeonForest.png",
+                                      "Stepping into the foreboding keep, you find yourself in a dark, low stone corridor covered with erratic plantlife and lit by torches that somehow cast a pinkish glow. Despite the seeming absence of denizens, you can't help but feel that you're being watched, and swear you can hear an impish giggle as the doors behind you smoothly close on their own, leaving you with no way to go but forward...",
+                                    	"JumpToScene",
+                                    	"Enter Dungeon"
+                                	]
+                  	},
+                  	{
+                      	"NameOfScene": "TryAgain",
+                      	"theScene": [
+                                  	"You make your way back to the Forest Dungeon which, just as before, you find surrounded by its arcane monuments and devoid of any guards, letting you enter unimpeded...",
+                                  	"IfProgressEqualsOrGreater",
+                                      	"2",
+                                      	"Enter Dungeon",
+                                  	"DisplayCharacters",
+                                    	"1",
+                                    	"EndLoop",
+                                  	"... That is, if it weren't for the presence of a certain jiggly self-styled villainess who stands smugly by the entrance, looking as unwilling as before to let you pass without a fight!",
+                                  	"ChangeImageLayer", "Expression", "1", "Laugh",
+                                  	"Speaks",
+                                  	"Mwahaha, the pathetic hero returns to try his luck again! ...Although I bet that in truth, you're just here so you can lose to me once more and taste the forbidden pleasure of my slimy delights all over again.",
+                                  	"ChangeImageLayer", "Expression", "1", "LipLick",
+                                  	"Speaks",
+                                  	"After all, we both know you don't actually stand a chance against the great Perpetua! ...But I {i}suppose{/i} I will humor you and accept your challenge, you perverted hero.♥",
+                                  	"JumpToScene",
+                                  	"Fight"
+                                	]
+                  	},
+                  	{
+                      	"NameOfScene": "Enter Dungeon",
+                      	"theScene": [
+                                    	"ChangeBG", "DungeonForest.png"
+                                	]
+                  	}
+
+            	]
+}

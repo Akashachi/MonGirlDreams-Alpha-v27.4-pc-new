@@ -1,0 +1,214 @@
+{
+    "name": "CerisGridAI",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Ceris",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+
+                            {
+                                "NameOfScene": "CaughtTut",
+                                "theScene": [   "DisplayCharacters",
+                                                "1",
+                                                "EndLoop",
+                                                "IfChoice", "4", "TutCatch", "Tutcaught",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                "Ceris laughs playfully as you walk towards her.",
+                                                "Speak", "Ceris",
+                                                "Hahaha, well, I guess I 'caught' you.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                "Speak", "Ceris",
+                                                "Normally, this is where I would try to attack you and fuck you into the ground, but this is just a tutorial, so I'll let you off easy.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "SmugKnowing",
+                                                "Speak", "Ceris",
+                                                "This time.♥",
+                                                "She lightly shoves you back towards the entrance of the room.",
+                                                "DisplayCharacters",
+                                                    "EndLoop",
+                                                "SetChoice", "4", "TutCatch",
+                                                "SetPlayerGridPosition", "4", "2"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "Tutcaught",
+                                      "theScene": [   "DisplayCharacters",
+                                                      "1",
+                                                      "EndLoop",
+                                                      "ChangeImageLayer", "Expression", "Ceris", "Smug",
+                                                      "Speak", "Ceris",
+                                                      "Well, now I guess we just {i}have{/i} to try fucking each other into the ground.♥ Feel free to run if you want, 'cause I won't go easy on you.♥",
+                                                      "CombatEncounter",
+                                                          "RunningWontSkipEvent",
+                                                          "Ceris",
+                                                      "StartCombat",
+                                                      "SetProgress", "0",
+                                                      "IfRanAway", "RanFromCeris",
+                                                      "SpawnGridNPC", "CerisResting", "Here",
+                                                      "RemoveGridNPC", "Current"
+                                                ]
+                                  },
+
+
+
+
+                            {
+                                "NameOfScene": "Caught",
+                                "theScene": [   "DisplayCharacters",
+                                                "1",
+                                                "EndLoop",
+                                                "CombatEncounter",
+                                                    "RunningWontSkipEvent",
+                                                    "Ceris",
+                                                "StartCombat",
+                                                "SetProgress", "0",
+                                                "IfRanAway", "RanFromCeris",
+                                                "CallEventAndSceneThenReturn", "CerisCombatEvents", "UpdatePower",
+                                                "SpawnGridNPC", "CerisResting", "Here",
+                                                "RemoveGridNPC", "Current"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "RanFromCeris",
+                                      "theScene": [
+                                                      "Having made your escape, you hear Ceris let out a playful laugh. It doesn't sound like she's immediately pursuing you, but you think you're getting her fired up...",
+                                                      "GetEventAndChangeProgress", "CerisCombatEvents", "5",
+                                                      "SpawnGridNPC", "CerisRespawnWarning", "Here",
+                                                      "RemoveGridNPC", "Current"
+                                                ]
+                                  },
+
+                            {
+                                "NameOfScene": "Timer",
+                                "theScene": ["SetChoice", "1", "CerisIn",
+                                            "IfGridNPCSeesPlayer",  "EnsuredChase",
+                                              "ChangeProgress", "1",
+                                              "IfChoice", "2", "Recalling", "TimerReturn",
+
+                                              "IfProgressEqualsOrGreater", "20", "TimerUp"
+                                          ]
+                            }, 
+                                  {
+                                      "NameOfScene": "EnsuredChase",
+                                      "theScene": [ "SetChoice", "2", "",
+                                                    "SetProgress", "5",
+                                                      "ChangeGridNPCMovement", "Chase", "Player"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "TimerUp",
+                                      "theScene": [ "SetChoice", "2", "Recalling",
+                                                      "SetProgress", "0",
+                                                      "ChangeGridNPCMovement", "Chase", "RecallPoint"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "TimerReturn",
+                                      "theScene": [ "IfProgressEqualsOrGreater", "6", "TimerReturnUp"
+                                                ]
+                                  },
+                                      {
+                                          "NameOfScene": "TimerReturnUp",
+                                          "theScene": [ "SetChoice", "2", "",
+                                                          "SetProgress", "0",
+                                                          "ChangeGridNPCMovement", "Chase", "Player"
+                                                    ]
+                                      },
+                            {
+                                "NameOfScene": "WarnTimer",
+                                "theScene": [
+                                              "IfGridNPCThere", "Ceris", "Nothing",
+                                              "IfChoice", "1", "CerisIn", "StartRespawnTimer",
+                                              "ChangeProgress", "1",
+                                              "IfChoice", "3", "DownedThrice", "ShorterTimer3",
+                                              "IfChoice", "3", "DownedTwice", "ShorterTimer2",
+                                              "IfChoice", "3", "DownedOnce", "ShorterTimer1",
+                                              "IfProgressEqualsOrGreater", "6", "SpawnTimerUp"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "ShorterTimer1",
+                                      "theScene": [
+                                                    "IfProgressEqualsOrGreater", "5", "SpawnTimerUp"
+                                                ]
+                                  },
+                                        {
+                                            "NameOfScene": "ShorterTimer2",
+                                            "theScene": [
+                                                          "IfProgressEqualsOrGreater", "4", "SpawnTimerUp"
+                                                      ]
+                                        },
+                                            {
+                                                "NameOfScene": "ShorterTimer3",
+                                                "theScene": [
+                                                              "IfProgressEqualsOrGreater", "3", "SpawnTimerUp"
+                                                          ]
+                                            },
+                                  {
+                                      "NameOfScene": "StartRespawnTimer",
+                                      "theScene": [
+                                                      "SetProgress", "0",
+                                                      "SetChoice", "1", "CerisOut"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "SpawnTimerUp",
+                                      "theScene": [
+                                                      "SetProgress", "0",
+                                                      "SpawnGridNPC", "CerisRespawnWarning", "Here",
+                                                      "RemoveGridNPC", "Current",
+                                                      "IfChoice", "3", "DownedThrice", "Nothing",
+                                                      "IfChoice", "3", "DownedTwice", "Downed3",
+                                                      "IfChoice", "3", "DownedOnce", "Downed2",
+                                                      "SetChoice", "3", "DownedOnce"
+                                                ]
+                                  },
+                                        {
+                                            "NameOfScene": "Downed2",
+                                            "theScene": [
+                                                            "SetChoice", "3", "DownedTwice"
+                                                      ]
+                                        },
+                                        {
+                                            "NameOfScene": "Downed3",
+                                            "theScene": [
+                                                            "SetChoice", "3", "DownedThrice"
+                                                      ]
+                                        },
+
+                            {
+                                "NameOfScene": "RespawnTimer",
+                                "theScene": [
+                                              "ChangeProgress", "1",
+                                              "IfProgressEqualsOrGreater", "4", "TrueSpawnTimerUp"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "TrueSpawnTimerUp",
+                                      "theScene": [   "SpawnGridNPC", "Ceris", "Here",
+                                                      "RemoveGridNPC", "Current",
+                                                      "SetProgress", "0",
+                                                       "SetChoice", "2", "",
+                                                      "SetChoice", "1", "CerisIn"
+                                                ]
+                                  },
+
+                            {
+                                "NameOfScene": "Nothing",
+                                "theScene": [
+                                          ]
+                            },
+                    {
+                        "NameOfScene": "EventBreak",
+                        "theScene": [
+                                        "Evento broko"
+                                  ]
+                    }
+                ]
+}

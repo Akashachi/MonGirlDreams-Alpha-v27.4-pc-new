@@ -1,0 +1,1865 @@
+{
+    "name": "Enter the Bar.",
+    "CardType": "Inn",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Belle",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EnterBar",
+                        "theScene": [ "SetChoice", "2", "NotWorking", "SetChoice", "3", "", "ChangeBG", "Bar.png",
+                                      "GetEventAndIfChoice", "Head over to Vivian.", "6", "WorkingForViv", "NormalIntro",
+                                      "IfChoice", "1", "MetBelle", "NormalIntro",
+                                      "As you make your way into the bar you're waved over by the tall, gruff minotaur, who is clearly the bartender.",
+                                      "DisplayCharacters",
+                                          "1",
+                                          "EndLoop",
+                                      "Speaks",
+                                      "SwapLineIf", "OtherEventsChoice", "Head over to Vivian.",
+                                        "6", "WorkingForViv", "Hey [ThePlayerName]... You know, most people check out a place before they start working there, right?",
+                                        "6", "", "You're a new adventurer aren't you? I'm Belle. I work here as both the bartender, and the bouncer, so try not to cause any trouble...",
+                                      "EndLoop",
+                                      "SwapLineIf", "OtherEventsChoice", "Head over to Vivian.",
+                                        "6", "WorkingForViv", "Belle sighs as she cleans a glass, and briefly glances up at you as she continues to speak.",
+                                        "6", "", "Belle cleans a glass while she talks to you and briefly glances up at you expectantly, and after a moments hesitation you introduce yourself.",
+                                      "EndLoop",
+                                      "Speaks",
+                                      "SwapLineIf", "OtherEventsChoice", "Head over to Vivian.",
+                                        "6", "WorkingForViv",  "Anyway [ThePlayerName], if you want to order some food just go sit at a table and a waitress will get it, if you want to order a drink let me know. Just so you know, the meals here will help you with adventuring, so be sure to try some. The basic food is free for adventurers.",
+                                        "6", "", "Well [ThePlayerName], if you want to order some food just go sit at a table and a waitress will get it, if you want to order a drink let me know. Just so you know, the meals here will help you with adventuring, so be sure to try some. The basic food is free for adventurers.",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Annoyed",
+                                      "Speaks",
+                                      "SwapLineIf", "OtherEventsChoice", "Head over to Vivian.",
+                                        "6", "WorkingForViv",  "Oh, and if someone gets frisky with you, and you're not interested, just yell for me. Monster girls here get a bit too touchy with people who aren't staff sometimes, and you're not on shift right now. This is a {i}respectable{/i} establishment.",
+                                        "6", "", "Oh, and if someone gets frisky with you, and you're not interested, just yell for me. Monster girls here get a bit too touchy with people who aren't staff sometimes. This is a {i}respectable{/i} establishment.",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "Her gruff voice is filled with momentary agitation as she turns around putting the glass down back with the others. Then when she turns back she seems mildly surprised to see you're still there.",
+                                      "Speaks",
+                                      "SwapLineIf", "OtherEventsChoice", "Head over to Vivian.",
+                                        "6", "WorkingForViv",   "Well? Go on shoo, order something, I don't have a lot of time for idle chatter, you should know that. I just wanted to give you the proper rundown of the place.",
+                                        "6", "",   "Well? Introductions are over, go on shoo, order something, I don't have a lot of time for idle chatter. It's just important I get to know the faces of regulars.",
+                                      "EndLoop",
+                                      "DisplayCharacters",
+                                          "EndLoop",
+                                      "You step away from the counter a little unnerved by the towering woman's stern glare as she goes about her business. Contemplating what to do.",
+                                      "JumpToScene", "RoomMenu"
+                                  ]
+                    },
+
+                          {
+                              "NameOfScene": "NormalIntro",
+                              "theScene": ["You head into the sparsely populated bar, noting an assortment of adventurers and monster girls calmly relaxing and eating.",
+                                            "JumpToScene", "RoomMenu"
+                                        ]
+                          },
+                    {
+                        "NameOfScene": "RoomMenu",
+                        "theScene": [   "SetChoice", "1", "MetBelle",
+                                      "Menu",
+                                        "Go to the bar.",
+                                        "RequiresTime","Night",
+                                        "Check out the Tavern's nightlife.",
+                                        "RequiresTime", "Day",
+                                        "Look around the Tavern.",
+                                        "Sit down and order some food.",
+                                        "Leave the bar.",
+                                      "EndLoop"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "Go to the bar.",
+                                "theScene": ["DisplayCharacters",
+                                              "1",
+                                              "EndLoop",
+                                            "CallSceneThenReturn", "BraRandom",
+                                            "You sit yourself at the bar, and Belle looks over at you a stern but rather welcoming look as she gruffly addresses you.",
+                                            "Speaks",
+                                            "Hey [ThePlayerName], what do you want?",
+                                            "JumpToScene", "BarMenu"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "BarMenu",
+                                "theScene": [ "IfChoice", "18", "", "MilkypanicCheck",
+                                              "JumpToScene", "BarMenuTrue"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "MilkypanicCheck",
+                                      "theScene": [ "IfProgressEqualsOrGreater", "20", "MilkPanicIntro",
+                                                    "JumpToScene", "BarMenuTrue"
+                                                ]
+                                  },
+                                          {
+                                              "NameOfScene": "MilkPanicIntro",
+                                              "theScene": [
+                                                            "JumpToNPCEventThenScene", "Belle's Break", "EventStart"
+                                                        ]
+                                          },
+
+
+                                          {
+                                              "NameOfScene": "BraRandom",
+                                              "theScene": [
+                                                            "JumpToRandomScene",
+                                                                "Nothing",
+                                                                "Nothing",
+                                                                "Nothing",
+                                                                "Nothing",
+                                                                "Nothing",
+                                                                "BraOffBelle",
+                                                            "EndLoop"
+                                                        ]
+                                          },
+                                                  {
+                                                      "NameOfScene": "Nothing",
+                                                      "theScene": [
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "BraOffBelle",
+                                                      "theScene": [  "ChangeImageLayer", "Bra", "1", ""
+                                                                ]
+                                                  },
+
+
+                            {
+                                "NameOfScene": "BarMenuTrue",
+                                "theScene": [
+                                              "Menu",
+                                                "Talk with Belle.",
+                                                "Order a Drink.",
+                                                "Flirt with her.",
+                                                "RequiresChoice", "4", "FoodTalk",
+                                                "RequiresChoice", "8", "",
+                                                "Ask to help her with her recipes.",
+                                                "RequiresChoice", "8", "Helping",
+                                                "Help with her recipes.",
+                                                "RequiresChoice", "18", "Milky",
+                                                "RequiresChoice", "19", "",
+                                                "'So about your uh, 'milking'?'",
+                                                "RequiresChoice", "19", "MilkHelp",
+                                                "'Want some help with the milk?'",
+                                                "Leave the counter.",
+                                              "EndLoop"
+                                          ]
+                            },
+                                    {
+                                        "NameOfScene": "'So about your uh, 'milking'?'",
+                                        "theScene": [
+                                                      "ChangeImageLayer", "Expression", "1", "Shock",
+                                                      "Belle rushes forward and covers your mouth before speaking to you in a hushed voice.",
+                                                      "ChangeImageLayer", "Expression", "1", "Stern",
+                                                      "Speaks",
+                                                      "Wh- Keep it {i}down!{/i} I don't want every damn person to know about that.",
+                                                      "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                      "She pulls her hand off of your mouth.",
+                                                      "IfProgressEqualsOrGreater", "20", "HelpOffer",
+                                                      "GetEventAndIfChoice", "Belle's Break", "2", "Nursed", "HelpOffer",
+                                                      "GetEventAndIfChoice", "Belle's Break", "3", "SuckleFucked", "HelpOffer",
+                                                      "Speaks",
+                                                      "Now let's just leave it at that, alright? You know about it, just don't go talking to everyone about it.",
+                                                      "You get the feeling she might be interested in getting your help relieving her heavy breasts, if she liked you more, or if you got a bit more intimate with her tits when you found out...",
+                                                      "JumpToScene", "BarMenu"
+                                                  ]
+                                    },
+                                              {
+                                                  "NameOfScene": "HelpOffer",
+                                                  "theScene": [
+                                                                "ChangeImageLayer", "Expression", "1", "Shy",
+                                                                "Speaks",
+                                                                "But... If you're interested, you could give me a bit more 'hands on' help...",
+                                                                "You mull the offer over as she lets it hang in the air.",
+                                                                "SetChoice", "19", "MilkHelp",
+                                                                "JumpToScene", "BarMenu"
+                                                            ]
+                                              },
+                                              {
+                                                  "NameOfScene": "'Want some help with the milk?'",
+                                                  "theScene": [ "IfTimeIs", "Night", "TooLateAtNightToHelp",
+                                                                "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                "Speaks",
+                                                                "Sure, just give me a second...",
+                                                                "ChangeImageLayer", "Expression", "1", "Base",
+                                                                "She calls over one of the other waitresses to watch the bar while she gets you to help her with some stuff in the back before both of you make your way back to the barn-like room.",
+                                                                "JumpToNPCEventThenScene", "Belle's Break", "NotWorkingCalmIntro"
+                                                            ]
+                                              },
+                                                      {
+                                                          "NameOfScene": "TooLateAtNightToHelp",
+                                                          "theScene": [
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Speaks",
+                                                                        "It's the middle of the night shift! I don't have time to go messing around like that. Just, bug me in the morning or something.",
+                                                                        "JumpToScene", "BarMenu"
+                                                                    ]
+                                                      },
+
+
+
+                                  {
+                                      "NameOfScene": "Talk with Belle.",
+                                      "theScene": [ "IfProgressEqualsOrGreater", "10", "TalkWithBelle",
+                                                    "IfChoice", "3", "DrinkOrdered", "TalkWithBelle",
+                                                    "ChangeImageLayer", "Expression", "1", "Sigh",
+                                                    "Belle lets out a slight sigh of annoyance.",
+                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                    "Speaks",
+                                                    "Listen, I don't have a ton of time idly chat, so if you want to talk at least order a drink first.",
+                                                    "JumpToScene", "BarMenu"
+                                                ]
+                                  },
+                                          {
+                                              "NameOfScene": "TalkWithBelle",
+                                              "theScene": [ "Belle starts idly cleaning some shot glasses with a cloth as you try to spark a conversation with a drink in your hand.",
+                                                            "Speaks",
+                                                            "Alright fine, just don't try to keep me too long.",
+                                                            "JumpToScene", "TalkMenu"
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "TalkMenu",
+                                              "theScene": [  "Menu",
+                                                              "Talk about people.",
+                                                              "Talk about her work place and job.",
+                                                              "RequiresChoice", "18", "Milky",
+                                                              "Ask about her lactation.",
+                                                              "Done talking.",
+                                                            "EndLoop"
+                                                        ]
+                                          },
+                                                {
+                                                    "NameOfScene": "Done talking.",
+                                                    "theScene": [
+                                                                  "Belle nods and puts away her cloth and the well cleaned shot glass.",
+                                                                  "JumpToScene", "BarMenu"
+                                                              ]
+                                                },
+                                                {
+                                                    "NameOfScene": "Ask about her lactation.",
+                                                    "theScene": [ "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                  "Belle addresses you in a hushed and slightly flustered tone.",
+                                                                  "Speaks",
+                                                                  "Alright, I'll explain it a bit, {i}just keep it down.{/i} I don't want every dang person in town to know about it... It's embarrassing...",
+                                                                  "ChangeImageLayer", "Expression", "1", "Scoff",
+                                                                  "Speaks",
+                                                                  "Really there isn't much too it, I was uh, just really into a... fetish when I was younger... And uh, back then I got the permanent lactation potions, figured I'd always be into it... Well, I mean, I still kind of {i}am{/i}...",
+                                                                  "Speaks",
+                                                                  "It's just the stains on my shirts are a pain, needing to take breaks to get milked is a pain, other minotaurs poking fun at me for it was a {i}pain.{/i} There's a bit more, but it just kinda added up, and got... grating I guess...",
+                                                                  "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                  "Speaks",
+                                                                  "But with how many of the dang things I took, and for so long... Well reversing the effects is almost impossible... I guess I should say, cost an absolute fortune... And well... I still kind of like it...",
+                                                                  "She gives you a level glare.",
+                                                                  "Speaks",
+                                                                  "What do you think?",
+                                                                  "Menu",
+                                                                    "'That's not the worst thing from the past that could haunt you, I guess?'",
+                                                                    "'Well... I like it too.'",
+                                                                    "'Not really my thing.'",
+                                                                  "EndLoop"
+                                                              ]
+                                                },
+                                                        {
+                                                            "NameOfScene": "'That's not the worst thing from the past that could haunt you, I guess?'",
+                                                            "theScene": [ "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                          "Belle lets out a wry but cheerful laugh.",
+                                                                          "Speaks",
+                                                                          "Yeah I guess that's true isn't it?",
+                                                                          "She can't contain another chuckle as she continues in a joking tone almost not suited to her gruff voice.",
+                                                                          "Speaks",
+                                                                          "Behold my terrible past, I took one too many potions for the sake of a fetish, and also got a scar for getting in a dumb shit fight with another minotaur.",
+                                                                          "IfChoice", "21", "LactationTalk", "TalkMenu",
+                                                                          "SetChoice", "21", "LactationTalk",
+                                                                          "ChangeProgress", "5",
+                                                                          "JumpToScene", "TalkMenu"
+                                                                      ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "'Well... I like it too.'",
+                                                            "theScene": [ "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                          "Belle gets a little flustered and glances away from you.",
+                                                                          "Speaks",
+                                                                          "I- D-Don't look at me like that when you say that... But I guess...",
+                                                                          "ChangeImageLayer", "Expression", "1", "Caring",
+                                                                          "She looks back at you with a sweet smile.",
+                                                                          "Speaks",
+                                                                          "But if you're interested... I wouldn't mind getting your 'help' with it...",
+                                                                          "SetChoice", "19", "MilkHelp",
+                                                                          "IfChoice", "21", "LactationTalk", "TalkMenu",
+                                                                          "SetChoice", "21", "LactationTalk",
+                                                                          "ChangeProgress", "3",
+                                                                          "JumpToScene", "TalkMenu"
+                                                                      ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "'Not really my thing.'",
+                                                            "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                                                          "Belle gives you a solem nod.",
+                                                                          "Speaks",
+                                                                          "Yeah I get that. Hope this sated your curiosity though.",
+                                                                          "IfChoice", "21", "LactationTalk", "TalkMenu",
+                                                                          "SetChoice", "21", "LactationTalk",
+                                                                          "ChangeProgress", "1",
+                                                                          "JumpToScene", "TalkMenu"
+                                                                      ]
+                                                        },
+
+
+
+
+                                                {
+                                                    "NameOfScene": "Talk about her work place and job.",
+                                                    "theScene": [  "Menu",
+                                                                    "Ask about the Goddess' Embrace Inn and Brothel.",
+                                                                    "Ask about her job.",
+                                                                    "Talk about the Inn's food.",
+                                                                    "Ask about the sectioned off area of the bar.",
+                                                                    "Talk about something else.",
+                                                                  "EndLoop"
+                                                              ]
+                                                },
+                                                        {
+                                                            "NameOfScene": "Ask about the Goddess' Embrace Inn and Brothel.",
+                                                            "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                                                          "Belle keeps her gaze level as she gruffly speaks to you.",
+                                                                          "Speaks",
+                                                                          "This here is a respectable establishment that the Boss runs, so be sure to let me know if anyone is giving you trouble while you're here.",
+                                                                          "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                          "She averts her gaze as she continues, thoughtlessly cleaning the glass in her hands.",
+                                                                          "Speaks",
+                                                                          "Though it's understandable if its nature is a bit... off-putting to some.",
+                                                                          "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                          "Speaks",
+                                                                          "But I can speak for the high quality of the beds, food, and drinks, it's a live in for my job. So you're definitely getting a deal on accommodations as an adventurer. They've even got rooms for-",
+                                                                          "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                          "She awkwardly clears her throat.",
+                                                                          "Speaks",
+                                                                          "Uh, nevermind that.",
+                                                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                                                          "Speaks",
+                                                                          "Did you want another drink? Or are you planning to chat with me all day?",
+                                                                          "JumpToScene", "TalkMenu"
+                                                                      ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "Talk about the Inn's food.",
+                                                            "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                                                          "Belle gives you a slightly curious glare while she cleans the glass in her hand, her gruff voice eventually ringing out in response.",
+                                                                          "Speaks",
+                                                                          "You want to know about the food, huh?",
+                                                                          "Speaks",
+                                                                          "Not too much to tell really, we get almost all the ingredients fresh, locally or from around Lucidia, kitchen staff handles making them to order.",
+                                                                          "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                          "A hint of a smile crosses her face as she continues.",
+                                                                          "Speaks",
+                                                                          "Course, they follow the recipes I make in advance. To the letter.",
+                                                                          "ChangeImageLayer", "Expression", "1", "Scoff",
+                                                                          "Speaks",
+                                                                          "{i}Most of the time.{/i}",
+                                                                          "Her gaze turns slightly over to the kitchen door, before softening and looking back at you.",
+                                                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                                                          "Speaks",
+                                                                          "If you've had a meal here I'm sure you can attest to it's quality, we even have a pretty good variety with all the connections the Boss set up.",
+                                                                          "ChangeImageLayer", "Expression", "1", "Scoff",
+                                                                          "Speaks",
+                                                                          "Though I do wish I had a bit more room to experiment to come up with some {i}more{/i} variety, some real {i}specialty{/i} dishes... or drinks.",
+                                                                          "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                          "Speaks",
+                                                                          "All the supplies we get go into the existing meals and beverages, so it's hard to find the time and resources to actually get something of quality together.",
+                                                                          "She looks back to you with a slight smile, a hint of slyness in her gruff voice.",
+                                                                          "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                          "Speaks",
+                                                                          "Hmm, you're an adventurer, maybe you'd be interested in tracking down some ingredients for me?",
+                                                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                                                          "Speaks",
+                                                                          "Though I can't afford to pay you for it if you {i}are{/i} interested. But I think adding some more options to the menu would be a win for everyone in town, might even help you with your travels, depending on the dish or drink.",
+                                                                          "She coughs slightly.",
+                                                                          "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                          "Speaks",
+                                                                          "A {i}few{/i} of the meals I have in mind might actually make it harder to adventure, but it's nothing you can't get fixed in any case...",
+                                                                          "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                          "Speaks",
+                                                                          "But I {i}can{/i} promise each and every one will end up tasty.",
+                                                                          "IfChoice", "4", "FoodTalk", "TalkMenu",
+                                                                          "SetChoice", "4", "FoodTalk",
+                                                                          "ChangeProgress", "1",
+                                                                          "JumpToScene", "TalkMenu"
+                                                                      ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "Ask about the sectioned off area of the bar.",
+                                                            "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                                                          "Belle glances off the rather spacious area separated from the rest of the bar with dividers before looking back to you.",
+                                                                          "Speaks",
+                                                                          "That's where the glory hole taps are, not all of our patrons really want to see something like that while eating, they're also closed until night time rolls around.",
+                                                                          "ChangeImageLayer", "Expression", "1", "Scoff",
+                                                                          "Speaks",
+                                                                          "If not, I swear some people would {i}never{/i} leave...",
+                                                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                                                          "Belle lets out a slightly exasperated sigh before speaking again.",
+                                                                          "Speaks",
+                                                                          "But if a horny and, or, hungry, monster gal wants semen fresh, they can get it in there. There's also tables for dining in there too, which is why it takes up over a dang quarter of the layout's space.",
+                                                                          "She seems a {i}little{/i} miffed about it, but clearly doesn't mind it overall.",
+                                                                          "JumpToScene", "TalkMenu"
+                                                                      ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "Ask about her job.",
+                                                            "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                                                          "Belle continues to idly clean the glass with the cloth while she stares at you, talking in her gruff voice.",
+                                                                          "Speaks",
+                                                                          "My job? Pretty sure I already gave you the rundown about it, but I'm the bartender here, I mix and serve drinks, help manage the wait staff, listen to peoples problems, chat with customers, and if people get too rowdy I'm also the bouncer. So I also toss people out on occasion.",
+                                                                          "Speaks",
+                                                                          "Well, I guess I didn't mention this when I introduced myself, but I'm also sort of the head chef. I prep the recipes.",
+                                                                          "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                          "She lets out a quick and amused wry laugh.",
+                                                                          "Speaks",
+                                                                          "But most of my work is done behind the bar counter, and I'll be honest, I really like my job as a bartender, it's... relaxing. Most of the time.",
+                                                                          "She lets out a languid sigh and puts the glass she was cleaning under the counter before picking up a new one to wipe down with the cloth.",
+                                                                          "IfChoice", "5", "Work", "TalkMenu",
+                                                                          "SetChoice", "5", "Work",
+                                                                          "ChangeProgress", "2",
+                                                                          "JumpToScene", "TalkMenu"
+                                                                      ]
+                                                        },
+                                                {
+                                                    "NameOfScene": "Talk about people.",
+                                                    "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                                                  "Speaks",
+                                                                  "I'm not one for gossip, so don't expect any life changing revelations...",
+                                                                  "JumpToScene", "TalkPeopleMenu"
+                                                              ]
+                                                },
+                                                {
+                                                    "NameOfScene": "TalkPeopleMenu",
+                                                    "theScene": [  "Menu",
+                                                                    "Talk about Vivian.",
+                                                                    "Talk about Elena.",
+                                                                    "Talk about Lillian.",
+                                                                    "Talk about Elly.",
+                                                                    "Talk about something else.",
+                                                                  "EndLoop"
+                                                              ]
+                                                },
+                                                      {
+                                                          "NameOfScene": "Talk about Vivian.",
+                                                          "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Belle arches a single brow as you ask about Vivian, her gruff voice laced with a bit of curiosity as she responds.",
+                                                                        "Speaks",
+                                                                        "The Boss?",
+                                                                        "She mulls it over a moment while cleaning her glass.",
+                                                                        "Speaks",
+                                                                        "Eh, she's a pretty good woman from what I've seen. Great boss too. Bit too loose with her own rules sometimes though...",
+                                                                        "ChangeImageLayer", "Expression", "1", "Scoff",
+                                                                        "Speaks",
+                                                                        "Though she sure as hell can get a little too nosey and pushy... Especially when it comes to {i}romance{/i}...",
+                                                                        "ChangeImageLayer", "Expression", "1", "Sigh",
+                                                                        "Belle lets out an agitated sigh as she tightly grips the glass she's holding before relaxing it.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Speaks",
+                                                                        "But like I said, nice woman. Just kind of... overbearing, and overthinks things sometimes.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                        "As the conversation ends, she chimes in again with a wry laugh.",
+                                                                        "Speaks",
+                                                                        "Oh right, she's also quite the looker I suppose, but you probably knew that already.",
+                                                                        "IfChoice", "6", "Boss", "TalkPeopleMenu",
+                                                                        "SetChoice", "6", "Boss",
+                                                                        "ChangeProgress", "1",
+                                                                        "JumpToScene", "TalkPeopleMenu"
+                                                                    ]
+                                                      },
+                                                      {
+                                                          "NameOfScene": "Talk about Elena.",
+                                                          "theScene": [ "ChangeImageLayer", "Expression", "1", "Scoff",
+                                                                        "Belle looks away from you with a gruff scoff and a mild look of disgust.",
+                                                                        "Speaks",
+                                                                        "Ugh, {i}Elena{/i}... Do you really want to talk about {i}her{/i}...",
+                                                                        "ChangeImageLayer", "Expression", "1", "Sigh",
+                                                                        "You can't help but give her a look of curiosity at her reaction, to which she sighs before continuing.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Speaks",
+                                                                        "{i}Fine.{/i} She's one of our {i}best{/i} customers, you could say. Basically every night she comes to the bar, and gets completely shit faced drunk. Then endlessly bitches to me about all her problems, half coherent.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Scoff",
+                                                                        "Speaks",
+                                                                        "I mean... I can respect how well she can hold her drink... But...",
+                                                                        "ChangeImageLayer", "Expression", "1", "Annoyed",
+                                                                        "Speaks",
+                                                                        "You can only do that so many times before it gets grating and repetitive... She's just so infuriating! She doesn't even bother to listen to any advice I give her!",
+                                                                        "ChangeImageLayer", "Expression", "1", "Sigh",
+                                                                        "Belle's hands furiously clean the glass she's holding, and she takes a moment to breathe in and calm herself.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Scoff",
+                                                                        "Speaks",
+                                                                        "Honestly one of the worst things about her is how abnormally strong she is, I can hardly even try to throw her out if she gets uppity or something! Unless she's {i}completely{/i} sloshed...",
+                                                                        "ChangeImageLayer", "Expression", "1", "Sigh",
+                                                                        "She sighs again with much more agitation being relieved in her gruff voice.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Speaks",
+                                                                        "Two of us would probably get along fine if I didn't need to deal with her so much...",
+                                                                        "IfChoice", "7", "ElenaVent", "TalkPeopleMenu",
+                                                                        "SetChoice", "7", "ElenaVent",
+                                                                        "ChangeProgress", "2",
+                                                                        "JumpToScene", "TalkPeopleMenu"
+                                                                    ]
+                                                      },
+                                                      {
+                                                          "NameOfScene": "Talk about Lillian.",
+                                                          "theScene": [ "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                        "Belle looks away almost bashfully as you bring up the short priestess.",
+                                                                        "Speaks",
+                                                                        "Lillian? I mean... She sure is... Adorable, I guess?",
+                                                                        "ChangeImageLayer", "Expression", "1", "Sigh",
+                                                                        "Speaks",
+                                                                        "Though I swear her ignorance to things is just... {i}astounding{/i}...",
+                                                                        "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                        "Speaks",
+                                                                        "But she sure can appreciate some good food.",
+                                                                        "JumpToScene", "TalkPeopleMenu"
+                                                                    ]
+                                                      },
+                                                      {
+                                                          "NameOfScene": "Talk about Elly.",
+                                                          "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Belle thinks for a moment trying to recall something.",
+                                                                        "Speaks",
+                                                                        "Elly? ...Elly... Uhhh... Oh! That's Elena's sister, right?",
+                                                                        "ChangeImageLayer", "Expression", "1", "Sigh",
+                                                                        "You nod and Belle sighs.",
+                                                                         "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Speaks",
+                                                                        "Poor girl, only time I really see her in here is when she's dragging her sister's drunk ass home...",
+                                                                        "JumpToScene", "TalkPeopleMenu"
+                                                                    ]
+                                                      },
+
+                                                      {
+                                                          "NameOfScene": "Talk about something else.",
+                                                          "theScene": [
+                                                                        "JumpToScene", "TalkMenu"
+                                                                    ]
+                                                      },
+
+                                              {
+                                                  "NameOfScene": "Flirt with her.",
+                                                  "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                                                "You try to throw her a few seductive pickup lines, but you're only met with a deadpan stare from Belle.",
+                                                                "Speaks",
+                                                                "I'm the bartender, even if your attempt at flirting {i}worked{/i}, I'd still be working. Try it on some of the other patrons, I'm sure you'd be a hit with the elves.",
+                                                                "She crosses her arms with a sigh, and incidentally makes her huge breasts bounce seductively in front of you.",
+                                                                "JumpToScene", "FlirtMenu"
+
+                                                            ]
+                                              },
+                                              {
+                                                  "NameOfScene": "FlirtMenu",
+                                                  "theScene": [
+                                                                "Menu",
+                                                                  "Compliment her eyes.",
+                                                                  "Say her scar is cool.",
+                                                                  "Compliment her muscles.",
+                                                                  "Stare at her cleavage.",
+                                                                  "'Is it so wrong that I want you to pin me down, and fuck me until my hips feel like they're going to break?'",
+                                                                  "Give up flirting.",
+                                                                "EndLoop"
+
+                                                            ]
+                                              },
+                                                      {
+                                                          "NameOfScene": "Give up flirting.",
+                                                          "theScene": [
+                                                                        "JumpToScene", "BarMenu"
+                                                                    ]
+                                                      },
+                                                      {
+                                                          "NameOfScene": "Compliment her eyes.",
+                                                          "theScene": ["ChangeImageLayer", "Expression", "1", "Scoff",
+                                                                        "Speaks",
+                                                                        "Uhuh. Are you going to order a drink or something?",
+                                                                        "JumpToScene", "FlirtMenu"
+                                                                    ]
+                                                      },
+                                                      {
+                                                          "NameOfScene": "Say her scar is cool.",
+                                                          "theScene": ["ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "She gives you a brief look of confusion before touching near her left eye.",
+                                                                        "Speaks",
+                                                                        "Oh, right, that.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                        "Speaks",
+                                                                        "Thanks? I guess?",
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Speaks",
+                                                                        "Not much of a story behind it though, I got it doing something stupid when I was younger.",
+                                                                        "IfChoice", "14", "Scar", "FlirtMenu",
+                                                                        "SetChoice", "14", "Scar",
+                                                                        "ChangeProgress", "1",
+                                                                        "JumpToScene", "FlirtMenu"
+                                                                    ]
+                                                      },
+                                                      {
+                                                          "NameOfScene": "Compliment her muscles.",
+                                                          "theScene": ["ChangeImageLayer", "Expression", "1", "Smug",
+                                                                        "She gives you a smug smile.",
+                                                                        "Speaks",
+                                                                        "Heh, so are you into girls that can bend you like a pretzel or something? But yeah, I'm pretty strong, even for a minotaur-",
+                                                                        "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                        "Speaks",
+                                                                        "Hold on, I told you your flirting is pointless.",
+                                                                        "IfChoice", "15", "Strong", "FlirtMenu",
+                                                                        "SetChoice", "15", "Strong",
+                                                                        "ChangeProgress", "2",
+                                                                        "JumpToScene", "FlirtMenu"
+                                                                    ]
+                                                      },
+                                                      {
+                                                          "NameOfScene": "Stare at her cleavage.",
+                                                          "theScene": ["ChangeImageLayer", "Expression", "1", "Stern",
+                                                                        "You gaze into her soft and inviting cleavage, letting your eyes soak in the pillowy sight, but Belle clearly notices where your eyes are looking.",
+                                                                        "Speaks",
+                                                                        "If you're going to try and flirt you could at least {i}try{/i} to keep your eyes up here.",
+                                                                        "Menu",
+                                                                          "'But they're so... {i}Big.{/i}'",
+                                                                          "'I'd love to suckle them... W-Wait did I say that outloud?!'",
+                                                                          "'I mean... You're not exactly covering them...'",
+                                                                          "'Er- Sorry.'",
+                                                                        "EndLoop"
+                                                                    ]
+                                                      },
+                                                              {
+                                                                  "NameOfScene": "'Er- Sorry.'",
+                                                                  "theScene": [ "ChangeImageLayer", "Expression", "1", "Scoff",
+                                                                                "Speaks",
+                                                                                "Yeah, yeah...",
+                                                                                "SetChoice", "16", "Stare",
+                                                                                "JumpToScene", "FlirtMenu"
+                                                                            ]
+                                                              },
+                                                              {
+                                                                  "NameOfScene": "'I mean... You're not exactly covering them...'",
+                                                                  "theScene": [ "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                                "Speaks",
+                                                                                "Th-That's just because I can't get a damn shirt to fit the fucking things... N-Not to mention...",
+                                                                                "ChangeImageLayer", "Expression", "1", "Base",
+                                                                                "She clears her throat.",
+                                                                                "Speaks",
+                                                                                "Nevermind that, are you going to keep gawking at me all day or order a drink?",
+                                                                                "SetChoice", "16", "Stare",
+                                                                                "JumpToScene", "FlirtMenu"
+                                                                            ]
+                                                              },
+                                                              {
+                                                                  "NameOfScene": "'But they're so... {i}Big.{/i}'",
+                                                                  "theScene": [ "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                "Belle sighs with a bit of a smirk.",
+                                                                                "Speaks",
+                                                                                "{i}Seriously?{/i} If you can't keep your eyes off em, you're going to have one hell of a time adventuring out there. I mean, I've seen {i}way{/i} bigger and better tits than mine.",
+                                                                                "She lets out a wry laugh.",
+                                                                                "Speaks",
+                                                                                "But thanks, I guess.",
+                                                                                "IfChoice", "16", "Stare", "FlirtMenu",
+                                                                                "SetChoice", "16", "Stare",
+                                                                                "ChangeProgress", "2",
+                                                                                "JumpToScene", "FlirtMenu"
+                                                                            ]
+                                                              },
+                                                              {
+                                                                  "NameOfScene": "'I'd love to suckle them... W-Wait did I say that outloud?!'",
+                                                                  "theScene": [ "ChangeImageLayer", "Expression", "1", "Shock",
+                                                                                "Belle sputters at your rather brazen declaration.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Flustered", "ChangeImageLayer", "Base", "1", "Blush",
+                                                                                "Speaks",
+                                                                                "Wh-What the hell [ThePlayerName], I mean, do you not have {i}any{/i} filter?!",
+                                                                                "Her gruff voice is left a little shaky with surprise and a hint of arousal while her face flushes in reaction to what you said.",
+                                                                                "Speaks",
+                                                                                "B-Besides, I'm a minotaur, not a holstaur, we don't do the milk thing anyways- Well- I guess you don't need lactation to suckl-",
+                                                                                "ChangeImageLayer", "Expression", "1", "Stern",
+                                                                                "She clears her throat and recomposes herself.",
+                                                                                 "ChangeImageLayer", "Base", "1", "Base",
+                                                                                "Speaks",
+                                                                                "H-Hurry up and order something!",
+                                                                                "She looks a little mad, but she doesn't sound mad...",
+                                                                                "IfChoice", "16", "Stare", "FlirtMenu",
+                                                                                "SetChoice", "16", "Stare",
+                                                                                "ChangeProgress", "5",
+                                                                                "JumpToScene", "FlirtMenu"
+                                                                            ]
+                                                              },
+                                                      {
+                                                          "NameOfScene": "'Is it so wrong that I want you to pin me down, and fuck me until my hips feel like they're going to break?'",
+                                                          "theScene": [ "ChangeImageLayer", "Expression", "1", "Shock", "ChangeImageLayer", "Base", "1", "Blush",
+                                                                        "Belle is left sputtering in shock at your blunt and brazen statement.",
+                                                                        "Speaks",
+                                                                        "I- You-",
+                                                                        "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                        "Speaks",
+                                                                        "Wh-What kind of pervert are you to just go and say something like that... {i}In public!{/i}",
+                                                                        "There's a lone elf sitting near the edge of the bar that calls out 'Do it!'.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Stern",
+                                                                        "Speaks",
+                                                                        "How about I toss {i}you{/i} out the window!",
+                                                                        "The elf titters playfully as Belle returns her attention to you.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Scoff",
+                                                                        "Speaks",
+                                                                        "If you're looking for something like that, just- go to the mountain! There are plenty of younger minotaurs there that will break your pelvis all you want.",
+                                                                        "ChangeImageLayer", "Base", "1", "Base",
+                                                                        "She looks a little mad, but she doesn't sound mad...",
+                                                                        "IfChoice", "17", "Stare", "FlirtMenu",
+                                                                        "SetChoice", "17", "Stare",
+                                                                        "ChangeProgress", "2",
+                                                                        "JumpToScene", "FlirtMenu"
+                                                                    ]
+                                                      },
+
+
+
+
+
+
+
+
+
+
+                                          {
+                                              "NameOfScene": "Ask to help her with her recipes.",
+                                              "theScene": [
+                                                            "ChangeImageLayer", "Expression", "1", "Smug",
+                                                            "Speaks",
+                                                            "Oh, so you are interested in helping me out huh?",
+                                                            "IfHasItem", "Vandal Note", "ReadyToHelpChef",
+                                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                                            "Speaks",
+                                                            "But I don't think you've even got past the forest yet, have you?",
+                                                            "ChangeImageLayer", "Expression", "1", "Sigh",
+                                                            "She lets out a bit of a sigh before continuing.",
+                                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                                            "Speaks",
+                                                            "You won't be much help to me until you get to the forest dungeon. So let me know once you're able to get there.",
+                                                            "JumpToScene", "BarMenu"
+                                                        ]
+                                          },
+                                                  {
+                                                      "NameOfScene": "ReadyToHelpChef",
+                                                      "theScene": [ "SetChoice", "8", "Helping",
+                                                                    "Speaks",
+                                                                    "Great! Well then, here's what I'd like to try making...",
+                                                                    "JumpToScene", "RecipeMenu"
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "Help with her recipes.",
+                                                      "theScene": [
+                                                                    "Speaks",
+                                                                    "Alright, well then, here's what I'd like to try making. You have any of the ingredients?",
+                                                                    "JumpToScene", "RecipeMenu"
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "RecipeMenu",
+                                                      "theScene": [
+                                                                    "Menu",
+                                                                      "RequiresChoice", "9", "",
+                                                                      "Mystic Salad Recipe.",
+                                                                      "HideOptionOnRequirementFail",
+                                                                      "RequiresChoice", "10", "",
+                                                                      "RequiresItem", "Sigil Of Allure",
+                                                                      "Imp Curry Recipe.",
+                                                                      "HideOptionOnRequirementFail",
+                                                                      "RequiresChoice", "11", "",
+                                                                      "RequiresItem", "Sigil Of Allure",
+                                                                      "Belle Deluxe Spice Burger Recipe.",
+                                                                      "HideOptionOnRequirementFail",
+                                                                      "RequiresChoice", "12", "",
+                                                                      "RequiresItem", "Sigil Of Will-Power",
+                                                                      "Deep Fish Tempura Udon Recipe.",
+                                                                      "That's all for now.",
+                                                                    "EndLoop"
+                                                                ]
+                                                  },
+                                                        {
+                                                            "NameOfScene": "That's all for now.",
+                                                            "theScene": [ "Belle nods in understanding.",
+                                                                          "JumpToScene", "BarMenu"
+                                                                      ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "I don't have the ingredients yet.",
+                                                            "theScene": [ "Belle nods in understanding.",
+                                                                          "JumpToScene", "RecipeMenu"
+                                                                      ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "Mystic Salad Recipe.",
+                                                            "theScene": [
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Speaks",
+                                                                        "To make a Mystic Salad I'm going to need Elven Herbs, a Matango Mushroom, Alraune Nectar, a Blue Slime Blob, and a Forest Kebab. With that I should be able to make a healthy and energizing Salad.",
+                                                                        "Speaks",
+                                                                        "If you're having difficulty finding them, you should be able to get most of them from monsters in the forest.",
+                                                                        "Menu",
+                                                                          "RequiresItem", "Alraune Nectar",
+                                                                          "RequiresItem", "Elven Herb",
+                                                                          "RequiresItem", "Blue Slime Blob",
+                                                                          "RequiresItem", "Matango Mushroom",
+                                                                          "RequiresItem", "Forest Kebab",
+                                                                          "Give the ingredients for the Mystic Salad.",
+                                                                          "I don't have the ingredients yet.",
+                                                                        "EndLoop"
+                                                                      ]
+                                                        },
+                                                                  {
+                                                                      "NameOfScene": "Give the ingredients for the Mystic Salad.",
+                                                                      "theScene": [
+                                                                                  "SetChoice", "9", "MysticSaladUnlocked", "SetChoice", "13", "UnlockedSpecialty",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                  "GiveItemQuietly", "-1", "Alraune Nectar",
+                                                                                  "GiveItemQuietly", "-1", "Elven Herb",
+                                                                                  "GiveItemQuietly", "-1", "Blue Slime Blob",
+                                                                                  "GiveItemQuietly", "-1", "Matango Mushroom",
+                                                                                  "GiveItemQuietly", "-1", "Forest Kebab",
+                                                                                  "Belle smiles as she takes the ingredients from you.",
+                                                                                  "Speaks",
+                                                                                  "I'll be right back with a sampler for you.",
+                                                                                  "She walks through the kitchen door with long powerful strides, then you hear some muffled chatter from back there, then some activity, then some shouting from Belle, then a crash of metal hitting the floor, then more shouting, the bar shakes a little bit, then Belle strides out again with a smile and a {i}huge{/i} bowl of salad.",
+                                                                                  "Speaks",
+                                                                                  "Now for the taste test. Enjoy.",
+                                                                                  "She pushes the meal towards you with a confident smile, leaving you to tentatively pick up a fork as you look over the salad, its multitude variety of foliage are coated with a special dressing, with bits of meat and other veggies scattered throughout.",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Caring",
+                                                                                  "Before you know it you've scarfed down the whole bowl of surprisingly delicious and refreshing salad feeling oddly energized. You then note Belle is giving you a very happy smile at your satisfaction.",
+                                                                                  "Speaks",
+                                                                                  "I'm glad you enjoyed it. I'll get that recipe refined and on the specialty menu in no time, that should properly bring out its effects for you, just keep in mind the effects of food like this will override anything similar. Oh! And for helping me out, you can even order it free of charge.",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                  "Belle puts the large bowl away behind the counter.",
+                                                                                  "Speaks",
+                                                                                  "You got any other ingredients for me? Or are you too full to eat another bite? Hahaha.",
+                                                                                  "ChangeProgress", "5",
+                                                                                  "JumpToScene", "RecipeMenu"
+                                                                                ]
+                                                                  },
+                                                      {
+                                                          "NameOfScene": "Imp Curry Recipe.",
+                                                          "theScene": [
+                                                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                                                      "Speaks",
+                                                                      "To make Imp Curry I'm going to need Imp Juice, a Blue Slime Blob, a Giant Shank of Meat, and some of the special spices I hear the maid in the forest dungeon has. With those I should be able to make a special sweet and spicy curry.",
+                                                                      "Speaks",
+                                                                      "It should be pretty obvious where to get most of it, but Minotaurs tend to carry around giant shanks of meat, just a tip for you.",
+                                                                      "Menu",
+                                                                        "RequiresItem", "Imp Juice",
+                                                                        "RequiresItem", "Specially Maid Spice Mix",
+                                                                        "RequiresItem", "Blue Slime Blob",
+                                                                        "RequiresItem", "Giant Shank of Meat",
+                                                                        "Give the ingredients for the Imp Curry.",
+                                                                        "I don't have the ingredients yet.",
+                                                                      "EndLoop"
+                                                                    ]
+                                                      },
+                                                                {
+                                                                    "NameOfScene": "Give the ingredients for the Imp Curry.",
+                                                                    "theScene": [
+                                                                                "SetChoice", "10", "ImpCurryUnlocked", "SetChoice", "13", "UnlockedSpecialty",
+                                                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                "GiveItemQuietly", "-1", "Imp Juice",
+                                                                                "GiveItemQuietly", "-1", "Specially Maid Spice Mix",
+                                                                                "GiveItemQuietly", "-1", "Blue Slime Blob",
+                                                                                "GiveItemQuietly", "-1", "Giant Shank of Meat",
+                                                                                "Belle smiles as she takes the ingredients from you.",
+                                                                                "Speaks",
+                                                                                "I'll be right back with a sampler for you.",
+                                                                                "She walks through the kitchen door with long powerful strides, then you hear some muffled chatter from back there, then some movement, then some shouting from Belle, then the loud sounds of chopping and stirring, then more shouting, the bar shakes a little bit, then Belle strides out again with a smile and a plate of rice and curry.",
+                                                                                "Speaks",
+                                                                                "Now for the taste test. Enjoy.",
+                                                                                "She pushes the meal towards you with a confident smile, leaving you to tentatively pick up a fork as you look over the purple tinged curry filled with chunks of meat and veggies, noting the high quality rice on the side before digging in.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Caring",
+                                                                                "Before you know it you've scarfed down the plate of sweet and spicy curry, a little surprised at the lack of an aphrodisiac kick, given the ingredients. But you're kind of left wishing you had a little more. Belle is giving you a very happy smile at your satisfaction.",
+                                                                                "Speaks",
+                                                                                "I'm glad you enjoyed it. I'll get that recipe refined and on the specialty menu in no time, that should properly bring out its effects for you. For helping me you can even order it for free.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                "Belle puts the plate away behind the counter.",
+                                                                                "Speaks",
+                                                                                "You got any other ingredients for me? Or are you too full to eat another bite? Hahaha.",
+                                                                                "ChangeProgress", "5",
+                                                                                "JumpToScene", "RecipeMenu"
+                                                                              ]
+                                                                },
+                                                      {
+                                                          "NameOfScene": "Belle Deluxe Spice Burger Recipe.",
+                                                          "theScene": [
+                                                                      "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                      "Speaks",
+                                                                      "This one is a bit of a tall order... To make the best spicy burger around, I'm going to need a Giant Shank of Meat, Elven Herbs, Imp Juice, a Harpy Egg, Exotic Spices, and a Manticore Spike.",
+                                                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                                                      "Speaks",
+                                                                      "Most of it you should be able to find pretty easy, but I think at least half of the ingredients you can find on the mountain.",
+                                                                      "Menu",
+                                                                        "RequiresItem", "Imp Juice",
+                                                                        "RequiresItem", "Harpy Egg",
+                                                                        "RequiresItem", "Elven Herb",
+                                                                        "RequiresItem", "Giant Shank of Meat",
+                                                                        "RequiresItem", "Manticore Spike",
+                                                                        "RequiresItem", "Exotic Spices",
+                                                                        "Give the ingredients for the Belle Deluxe Spice Burger.",
+                                                                        "I don't have the ingredients yet.",
+                                                                      "EndLoop"
+                                                                    ]
+                                                      },
+                                                                {
+                                                                    "NameOfScene": "Give the ingredients for the Belle Deluxe Spice Burger.",
+                                                                    "theScene": [
+                                                                                "SetChoice", "11", "DeluxeBurgerUnlocked", "SetChoice", "13", "UnlockedSpecialty",
+                                                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                "GiveItemQuietly", "-1", "Imp Juice",
+                                                                                "GiveItemQuietly", "-1", "Harpy Egg",
+                                                                                "GiveItemQuietly", "-1", "Manticore Spike",
+                                                                                "GiveItemQuietly", "-1", "Giant Shank of Meat",
+                                                                                "GiveItemQuietly", "-1", "Exotic Spices",
+                                                                                "GiveItemQuietly", "-1", "Elven Herb",
+                                                                                "ChangeImageLayer", "Expression", "1", "Caring",
+                                                                                "Belle smiles sweetly as she takes the ingredients from you.",
+                                                                                "Speaks",
+                                                                                "Wow, I'm actually kind of surprised you got all of them. I'll be right back with a sampler for you.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                "She walks through the kitchen door with long powerful strides, then you hear some muffled chatter from back there, then some movement, then some shouting from Belle, then the loud sounds of meat being pounded and then cooked, then more shouting, the bar shakes a little bit, then Belle strides out again with a smile and a plate with a concerningly large burger.",
+                                                                                "Speaks",
+                                                                                "Now for the taste test. Enjoy... Hopefully isn't too much kick.",
+                                                                                "She pushes the meal towards you with a confident smile, leaving you to stare at the impressive, juicy burger laden with an assortment of spices, a slice of cheese, and a freshly fried egg. The Manticore spike is stabbed through the top like a tooth pick. You can't help but be a little concerned about what this is going to do to you.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Caring",
+                                                                                "But once you take the first bite you just can't bring yourself to stop from how delicious it is, however it's {i}incredibly{/i} spicy, leaving your eyes watering and you face flushing from a mix of arousal and heat. All the while Belle is giving you a very happy smile at your clear satisfaction.",
+                                                                                "With the burger finally finished you lean back in the bar chair with a sigh, drinking down the thankfully provided water to sooth the burning in your mouth.",
+                                                                                "Speaks",
+                                                                                "I'm glad you enjoyed it. I'll get that recipe refined and on the specialty menu in no time, that should properly bring out its effects for you. For helping me you can even order it for free.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                "Belle puts the plate away behind the counter.",
+                                                                                "Speaks",
+                                                                                "You got any other ingredients for me? Or are you too full to eat another bite? Hahaha.",
+                                                                                "ChangeProgress", "5",
+                                                                                "JumpToScene", "RecipeMenu"
+                                                                              ]
+                                                                },
+                                                      {
+                                                          "NameOfScene": "Deep Fish Tempura Udon Recipe.",
+                                                          "theScene": [
+                                                                      "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                      "Speaks",
+                                                                      "Alright, to make this experimental dish, I'm going to need Exotic Spices, Deep Fish, Tofu, Toxic Matango Mushrooms, and a Harpy Egg.",
+                                                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                                                      "Speaks",
+                                                                      "That temple should have most of what you're looking for, but I think some of it could be found in the caverns.",
+                                                                      "Menu",
+                                                                        "RequiresItem", "Tofu",
+                                                                        "RequiresItem", "Harpy Egg",
+                                                                        "RequiresItem", "Toxic Matango Mushroom",
+                                                                        "RequiresItem", "Deep Fish",
+                                                                        "RequiresItem", "Exotic Spices",
+                                                                        "Give the ingredients for the Deep Fish Tempura Udon.",
+                                                                        "I don't have the ingredients yet.",
+                                                                      "EndLoop"
+                                                                    ]
+                                                      },
+                                                                {
+                                                                    "NameOfScene": "Give the ingredients for the Deep Fish Tempura Udon.",
+                                                                    "theScene": [
+                                                                                "SetChoice", "12", "DeepUdonUnlocked", "SetChoice", "13", "UnlockedSpecialty",
+                                                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                "GiveItemQuietly", "-1", "Tofu",
+                                                                                "GiveItemQuietly", "-1", "Harpy Egg",
+                                                                                "GiveItemQuietly", "-1", "Toxic Matango Mushroom",
+                                                                                "GiveItemQuietly", "-1", "Exotic Spices",
+                                                                                "GiveItemQuietly", "-1", "Deep Fish",
+                                                                                "Belle smiles sweetly as she takes the ingredients from you.",
+                                                                                "Speaks",
+                                                                                "Oh you actually got them! Well, I'll be right back with a sampler for you. Hopefully you don't regret this one...",
+                                                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                "She walks through the kitchen door with long powerful strides, then you hear some muffled chatter from back there, then some movement, then some shouting from Belle, then some chopping and frying, then some screams, then more chopping, the bar shakes a little bit, then Belle strides out again with a smile and a large bowl filled with udon noodles and broth.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                                                "Speaks",
+                                                                                "Now for the taste test. Enjoy. Uh, I hope.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                "She pushes the meal towards you with a nervous smile, leaving you to stare at the bowl of udon, the broth an odd purple and blue color, with tons of udon noodles, deep fried deep fish, two halves of a boiled egg, and chopped up toxic matango mushrooms alongside squares of tofu floating in the broth. Tentatively you eat it, and the taste is strange and thought provoking, but it's definitely {i}good!{/i}",
+                                                                                "ChangeImageLayer", "Expression", "1", "Caring",
+                                                                                "Once you've eaten the entire dish your mind feels like it's practically bursting at the seams with ideas and you're left shivering a little from the flavor. All the while Belle is giving you a very happy smile at your clear satisfaction.",
+                                                                                "Speaks",
+                                                                                "I'm glad you actually enjoyed it, I was a little worried to be honest. I'll get that recipe refined and on the specialty menu in no time, that should properly bring out its effects for you. For helping me you can even order it for free.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                "Belle puts the plate away behind the counter.",
+                                                                                "Speaks",
+                                                                                "You got any other ingredients for me? Or are you too full to eat another bite? Hahaha.",
+                                                                                "ChangeProgress", "5",
+                                                                                "JumpToScene", "RecipeMenu"
+                                                                              ]
+                                                                },
+
+
+
+                                  {
+                                      "NameOfScene": "Order a Drink.",
+                                      "theScene": [
+                                                    "Menu",
+                                                      "Order a Glass of Elven Wine. (100 Eros)",
+                                                      "Order a Mug of Alraune Mead. (200 Eros)",
+                                                      "Order a Glass of Succubi's Kiss. (500 Eros)",
+                                                      "Order a Shot Glass of Angel Ambrosia. (5000 Eros)",
+                                                      "Done ordering drinks.",
+                                                    "EndLoop"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Reconsider.",
+                                      "theScene": ["ChangeImageLayer", "Expression", "1", "Base",
+                                                    "Belle nods and gives you some time to think.",
+                                                    "JumpToScene", "Order a Drink."
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "LackMoney",
+                                      "theScene": [ "ChangeImageLayer", "Expression", "1", "Sigh",
+                                                    "You go to order a drink, and realize you don't have the eros for it.",
+                                                    "Speaks",
+                                                    "If you can't pay you can't drink, we don't do tabs here, sorry.",
+                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                    "JumpToScene", "Order a Drink."
+                                                ]
+                                  },
+                                        {
+                                            "NameOfScene": "Order a Glass of Elven Wine. (100 Eros)",
+                                            "theScene": [
+                                                        "ChangeImageLayer", "Expression", "1", "Smug",
+                                                        "Speaks",
+                                                        "Elven Wine, huh? It's made with grapes and a mix of elven spices. In other words its got aphrodisiacs. But it's as cheap and weak {i}as{/i} an elf... Which is a bit surprising for wine. You sure that's what you want? Costs 100 eros.",
+                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                        "Menu",
+                                                          "Order a Glass of Elven Wine.",
+                                                          "Reconsider.",
+                                                        "EndLoop"
+                                                      ]
+                                        },
+                                                  {
+                                                      "NameOfScene": "Order a Glass of Elven Wine.",
+                                                      "theScene": ["HasErosLessThan",   "100", "LackMoney",
+                                                                  "ChangeEros", "-100",
+                                                                  "SetChoice", "3", "DrinkOrdered",
+                                                                  "Belle nods and grabs a bottle from the rack behind the bar with one hand while grabbing a wine glass with the other, before turning back to pour your drink with a slight flourish that inadvertently makes her heavy chest bounce. Then she slides you your drink before putting the bottle back.",
+                                                                  "Speaks",
+                                                                  "Enjoy.",
+                                                                  "ChangeArousalQuietly", "50",
+                                                                  "You take a moment to enjoy the sweet and exotic drink and you can feel the warm effects of the drink spreading through your body rather quickly as it hits your system. Before you know it you're left with a rather hot feeling in your core and a bit of a daze in your head.",
+                                                                  "JumpToScene", "DrinkCheck"
+                                                                ]
+                                                  },
+
+
+                                        {
+                                            "NameOfScene": "Order a Mug of Alraune Mead. (200 Eros)",
+                                            "theScene": [
+                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                        "Speaks",
+                                                        "Alraune Mead? Should be self explanatory but that has Alraune Nectar in it. But it's a pretty respectable, and well loved drink here. Though it's still has a potent aphrodisiac effect, and the sweetness might be off putting to some. That would be 200 eros, you sure that's what you want?",
+                                                        "Menu",
+                                                          "Order a Mug of Alraune Mead.",
+                                                          "Reconsider.",
+                                                        "EndLoop"
+                                                      ]
+                                        },
+                                              {
+                                                  "NameOfScene": "Order a Mug of Alraune Mead.",
+                                                  "theScene": ["HasErosLessThan",   "200", "LackMoney",
+                                                              "ChangeEros", "-200",
+                                                              "SetChoice", "3", "DrinkOrdered",
+                                                              "Belle nods and grabs a large wooden mug from behind the counter before walking over to a sizable keg on the side of the bar, using the tap to fill up the glass with surprising speed, a slight golden foam soon peeking up from to edge of the mug before she slides it down the bar to you with a slight smile.",
+                                                              "ChangeImageLayer", "Expression", "1", "Smug",
+                                                              "Speaks",
+                                                              "Enjoy.",
+                                                              "ChangeArousalQuietly", "100",
+                                                              "You start happily drinking the cloyingly sweet beverage and you can soon feel the mind-melting aphrodisiac effects of the drink spreading through your body like oozing, tingle inducing molasses. Soon you're feeling quite flush and horny, your eyes unconsciously drifting to Belle's impressive bust, and you can feel your cock stiffening as heat settles in your loins.",
+                                                              "JumpToScene", "DrinkCheck"
+                                                            ]
+                                              },
+                                        {
+                                            "NameOfScene": "Order a Glass of Succubi's Kiss. (500 Eros)",
+                                            "theScene": [
+                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                        "Speaks",
+                                                        "Succubi's Kiss? It's not made from demonic sexual fluids or anything like that, it's basis is magically enhanced demonic herbs and fruit mixed into a rather potent cocktail. This should be obvious, but it's a very potent aphrodisiac, in addition to sharpening your sensitivity for a short time. If you can't handle it, it's probably going to knock you flat. It's 500 eros if you're sure you want one though.",
+                                                        "Menu",
+                                                          "Order a Glass of Succubi's Kiss.",
+                                                          "Reconsider.",
+                                                        "EndLoop"
+                                                      ]
+                                        },
+                                              {
+                                                  "NameOfScene": "Order a Glass of Succubi's Kiss.",
+                                                  "theScene": ["HasErosLessThan",   "500", "LackMoney",
+                                                              "ChangeEros", "-500",
+                                                              "SetChoice", "3", "DrinkOrdered",
+                                                              "Belle gives you a nod before setting a glass on the counter and starts mixing your drink, pouring in a few differently labeled bottles with different sweet smelling liquids to specific levels with practiced ease then stirring them together with a small metal spoon, her face locked in focus as she completes her task with impressive poise, pushing the drink towards you.",
+                                                              "Speaks",
+                                                              "Enjoy.",
+                                                              "ChangeArousalQuietly", "200",
+                                                              "You carefully sip the drink and a wonderful haze of intoxicating sweetness starts flooding your head, each gulp sharpening your senses as the cloying beverage fills your body with aching warmth and need, your thoughts drifting away into horny temptation. Soon you find your eyes wandering around the bar, catching looks at some of the women sitting around, but Belle being the closest, draws your eyes to her bountiful chest the most.",
+                                                              "JumpToScene", "DrinkCheck"
+                                                            ]
+                                              },
+                                        {
+                                            "NameOfScene": "Order a Shot Glass of Angel Ambrosia. (5000 Eros)",
+                                            "theScene": [
+                                                        "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                        "Speaks",
+                                                        "Angel Ambrosia?! Uh, you sure about that? Not only is it very expensive, it's also very, {i}very{/i} potent. {i}Too{/i} potent really, you'll barely get to enjoy the actual drink before you're completely smashed, dry orgasming, and painfully horny. But if you're sure, it's 5000 eros. Seriously, I recommend you order {i}anything{/i} else.",
+                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                        "Speaks",
+                                                        "Oh right, it's made from herbs from the celestial realm apparently... No clue where the boss actually gets it from to be honest.",
+                                                        "Menu",
+                                                          "Order a Shot Glass of Angel Ambrosia.",
+                                                          "Reconsider.",
+                                                        "EndLoop"
+                                                      ]
+                                        },
+                                              {
+                                                  "NameOfScene": "Order a Shot Glass of Angel Ambrosia.",
+                                                  "theScene": ["HasErosLessThan",   "5000", "LackMoney",
+                                                              "ChangeEros", "-5000",
+                                                              "SetChoice", "3", "DrinkOrdered",
+                                                              "Belle gives you a hesitant nod before grabbing a golden and white bottle off the shelf and then a small shot glass from under the counter, she gives the ornate bottle an idle spin before she fills the glass, then with practiced ease she puts the lid back on it with one hand and pushes you your drink.",
+                                                              "ChangeImageLayer", "Expression", "1", "Flustered",
+                                                              "Speaks",
+                                                              "Enjoy?",
+                                                              "ChangeArousalQuietly", "9999",
+                                                              "You down the shot glass in one go, quivering as its almost sickeningly sweet, heavenly flavor washes over your tongue and down your throat. Then the drink hits you full force with a shivering dry orgasm cascading through your body, leaving your dick twitching and achingly hard as you quiver with bliss, and you're forced to lean on the counter for support.",
+                                                              "As the orgasm ebbs away you're left deliriously horny, and your balls feel so agonizingly {i}full{/i}, you desperately want to fuck someone, but you can barely move with you your body is spasming, leaving you to desperately catch your breath and futilely try to collect yourself.",
+                                                              "Speaks",
+                                                              "Warned you...",
+                                                              "IfPlayerOrgasm", "CutOff",
+                                                              "JumpToScene", "DrinkCheck"
+                                                            ]
+                                              },
+                                        {
+                                            "NameOfScene": "Done ordering drinks.",
+                                            "theScene": [
+                                                          "JumpToScene", "BarMenu"
+                                                      ]
+                                        },
+                                        {
+                                            "NameOfScene": "DrinkCheck",
+                                            "theScene": [ "IfPlayerOrgasm", "TooHornyTooDrunk",
+                                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                                          "With your drink finished, you idly wonder if you should order another.",
+                                                          "JumpToScene", "Order a Drink."
+                                                      ]
+                                        },
+                                            {
+                                                "NameOfScene": "TooHornyTooDrunk",
+                                                "theScene": [
+                                                              "Your head's left spinning with drunken arousal, and you find yourself laying your head down on the counter and using your arms to keep yourself up, any attempt to move leaves you almost falling out of your chair.",
+                                                              "JumpToScene", "CutOff"
+                                                          ]
+                                            },
+                                                  {
+                                                      "NameOfScene": "CutOff",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Stern",
+                                                                    "Speaks",
+                                                                    "Alright, I'm cutting you off.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Sigh",
+                                                                    "You can only manage an incoherent slur of words in response that makes Belle sigh as she walks out from behind the bar and throws you over her shoulder, with surprising care, carrying you like a keg of booze. This leaves your groin pressing up against her impressive and soft bust just slightly, but she doesn't seem to notice.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                                    "Speaks",
+                                                                    "Guess I'll carry your drunk ass to your room...",
+                                                                    "ChangeBG", "InnPlayerRoom.png",
+                                                                    "She carries your weight around as if it's nothing, quickly trudging up stairs before stopping before your room, using her free hand to unlock and open it before walking inside.",
+                                                                    "Belle then gently lays you down on your soft bed, standing back to her full imposing height, overshadowing you with her bust and a neutral glare.",
+                                                                    "Speaks",
+                                                                    "Hopefully you learn to watch how much you drink next time...",
+                                                                    "ChangeImageLayer", "Expression", "1", "Flustered", "ChangeImageLayer", "Base", "1", "Blush",
+                                                                    "You groan and shift on the bed and Belle catches a look at your erection painfully straining against your pants, leaving a deep flush on her face.",
+                                                                    "IfProgressEqualsOrGreater", "25", "OfferRelief",
+                                                                    "Speaks",
+                                                                    "A-And don't expect me to help with that! You should have tried picking up an elf or something before it got {i}this{/i} bad...",
+                                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                                    "DisplayCharacters",
+                                                                        "EndLoop",
+                                                                    "She trudges out of the room, and locks the door behind her, leaving you to sleep off the swirling mix of drunken arousal permeating your head...",
+                                                                    "JumpToNPCEventThenScene", "Go to your room.", "Sleeping"
+                                                                ]
+                                                  },
+                                                          {
+                                                              "NameOfScene": "OfferRelief",
+                                                              "theScene": [
+                                                                            "Speaks",
+                                                                            "Uh... Do you want to help with that? T-To take the edge off I mean...",
+                                                                            "Menu",
+                                                                              "'Please...'",
+                                                                              "'I just wanna sleep...'",
+                                                                            "EndLoop"
+                                                                        ]
+                                                          },
+                                                                    {
+                                                                        "NameOfScene": "'I just wanna sleep...'",
+                                                                        "theScene": ["ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                      "Speaks",
+                                                                                      "Heh, rest well then.",
+                                                                                      "DisplayCharacters",
+                                                                                          "EndLoop",
+                                                                                      "She trudges out of the room, and locks the door behind her, leaving you to sleep off the swirling mix of drunken arousal permeating your head...",
+                                                                                      "JumpToNPCEventThenScene", "Go to your room.", "Sleeping"
+                                                                                  ]
+                                                                    },
+                                                                    {
+                                                                        "NameOfScene": "'Please...'",
+                                                                        "theScene": [ "ChangeBGM", "music/Forest Dungeon/night road.mp3",
+                                                                                      "Speaks",
+                                                                                      "Alright, but try to make it quick, I need to get back to work.",
+                                                                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                                                                      "She pulls your hips over to the edge of the bed, and pulls down your pants freeing your aching erection, sending a shiver of need through you as it twitches in the open air, already leaking pre-cum.",
+                                                                                      "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                      "Speaks",
+                                                                                      "Wow, you really do need some relief, that looks a little painful...",
+                                                                                      "Before you can try to form a coherent response, she gets down on her knees by the edge of the bed, and promptly buries your manhood between her deep cleavage, leaving you gasping and moaning as the warm softness envelops your cock.",
+                                                                                      "Speaks",
+                                                                                      "There, I bet you're already feeling better.",
+                                                                                      "ChangeImageLayer", "Expression", "1", "Shock",
+                                                                                      "You moan in agreement, and she uses her arms to press her huge tits tightly together, making you cry out in bliss as your hips unconsciously buck upwards, a single spurt of cum shooting out from her sandwiching breasts, and Belle yelps in surprise.",
+                                                                                      "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                      "Speaks",
+                                                                                      "Wh- Hey, I know I said quick, but I didn't mean {i}that{/i} quick. Heh. But, I doubt that's enough to help you out anyways.",
+                                                                                      "You whimper in blissful agreement as she starts to pump your length with her large, pillowy tits, each heavy stroke making you shiver with euphoric delight, your hips completely drowning in the soft, intoxicating sensations, leaving you moaning for the minotaur's bountiful chest.",
+                                                                                      "The aphrodisiacs pulsing through your body keep your mind swirling in a haze of pleasure, Belle's huge breasts all you can drunkenly focus on as she works to milk you with her overflowing bosom, your thoughts left in a horny needy mess from each upward swing and downward slam of her tits.",
+                                                                                      "Speaks",
+                                                                                      "Hmm, feels like your dick's right at home in my cleavage... You probably won't last much longer...",
+                                                                                      "ChangeImageLayer", "Expression", "1", "Caring",
+                                                                                      "She gives you a sweet smile as she slows down her titfuck, your hips and manhood twitching and shivering with quivering orgasmic need.",
+                                                                                      "Speaks",
+                                                                                      "Don't hold back now, let it all out for me.",
+                                                                                      "PlayerOrgasmNoSpiritLoss",
+                                                                                      "Belle breaks the relaxing tempo with a tight squeeze and a heavy downward swing of her huge, pillowy tits, overloading you with a wave of intoxicating orgasmic bliss that leaves your hips uncontrollably bucking up into their softness as you spurt load after load into her cleavage, slowly painting her chest with your seed.",
+                                                                                      "Speaks",
+                                                                                      "There you go. Heh, you were really backed up. I bet you feel better now.",
+                                                                                      "You murmur a soft incoherent reply, your entire body relaxing into the bed as she stands up, letting her chest spread apart, revealing the sticky mess you made of her breasts before she pulls out a cloth and starts to deftly wipe up the mess.",
+                                                                                      "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                                      "Speaks",
+                                                                                      "Alright, you get some sleep, I'm heading back to work.",
+                                                                                      "ChangeBGM", "music/Town/casino.mp3",
+                                                                                      "DisplayCharacters",
+                                                                                          "EndLoop",
+                                                                                      "She trudges out of the room with a smile, and locks the door behind her, leaving you to drift into blissful sleep...",
+                                                                                      "JumpToNPCEventThenScene", "Go to your room.", "Sleeping"
+                                                                                  ]
+                                                                    },
+
+
+
+
+                    {
+                        "NameOfScene": "Leave the counter.",
+                        "theScene": [ "DisplayCharacters",
+                                      "EndLoop",
+                                      "JumpToScene", "RoomMenu"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Leave the table.",
+                        "theScene": [ "JumpToScene", "RoomMenu"
+                                  ]
+                    },
+
+
+                    {
+                        "NameOfScene": "Look around the Tavern.",
+                        "theScene": [ "Glancing around the sparsely populated Tavern you spot a few adventurers and monster girls relaxing, chatting, and eating, but you don't spot anyone of interest, or anyone you know.",
+                                      "JumpToScene", "RoomMenu"
+                                  ]
+                    },
+
+                    {
+                        "NameOfScene": "Check out the Tavern's nightlife.",
+                        "theScene": [ "You look around the lively nightlife of the Tavern, checking for anyone of interest amidst the bustle...",
+                                      "JumpToScene", "NightLifeMenu"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "NightLifeMenu",
+                              "theScene": [ "SetChoice", "2", "NotWorking",
+                                            "Menu",
+                                              "MaxMenuSlots", "4",
+                                              "FinalOption",
+                                              "Stop checking out the room.",
+                                              "RequiresChoiceFromEvent", "Lonely Arch Succubus", "2", "Met",
+                                              "Go and check out Mara, as she sits alone while sipping a drink.",
+                                              "RequiresChoiceFromEvent", "Lonely Arch Succubus", "2", "",
+                                              "Go and check out the mature, voluptuous woman sitting alone, sipping a drink.",
+                                              "RequiresChoiceFromEvent", "Galvi's Night Out", "4", "MetGalvi",
+                                              "Go over to Galvi, who's sitting at a small table alone, and giving you a very sultry gaze.",
+                                              "RequiresChoiceFromEvent", "Galvi's Night Out", "4", "",
+                                              "Go over to the short stacked woman who's sitting at a small table alone, and giving you a very sultry gaze.",
+
+                                              "RequiresChoiceFromEvent", "Labyrinth Intro",  "1", "", "RequiresChoiceFromEvent", "Hellhound Bondage", "1", "",
+                                              "Head over to the angry looking Hellhound sitting in a booth alone.",
+                                              "RequiresChoiceFromEvent", "Labyrinth Intro",  "1", "IntroDone", "RequiresChoiceFromEvent", "Hellhound Bondage", "1", "",
+                                              "Head over to Beris who's sitting in a booth alone glaring angrily at anyone who passes by.",
+                                              "RequiresChoiceFromEvent", "Hellhound Bondage", "1", "Signed",
+                                              "Head over to Beris who's sitting in a booth alone glaring angrily at anyone who passes by.",
+                                            "EndLoop"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "Stop checking out the room.",
+                                      "theScene": [ "JumpToScene", "RoomMenu"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Go and check out Mara, as she sits alone while sipping a drink.",
+                                      "theScene": [ "JumpToNPCEventThenScene", "Lonely Arch Succubus", "EventStart"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Go and check out the mature, voluptuous woman sitting alone, sipping a drink.",
+                                      "theScene": [ "JumpToNPCEventThenScene", "Lonely Arch Succubus", "EventStart"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Go over to the short stacked woman who's sitting at a small table alone, and giving you a very sultry gaze.",
+                                      "theScene": [ "JumpToNPCEventThenScene", "Galvi's Night Out", "OffWorkMeeting"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Go over to Galvi, who's sitting at a small table alone, and giving you a very sultry gaze.",
+                                      "theScene": [ "JumpToNPCEventThenScene", "Galvi's Night Out", "OffWorkMeeting"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Head over to the angry looking Hellhound sitting in a booth alone.",
+                                      "theScene": [ "JumpToNPCEventThenScene", "Hellhound Bondage", "OffWorkMeeting"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Head over to Beris who's sitting in a booth alone glaring angrily at anyone who passes by.",
+                                      "theScene": [ "JumpToNPCEventThenScene", "Hellhound Bondage", "OffWorkMeeting"
+                                                ]
+                                  },
+
+
+
+
+
+
+
+
+
+                    {
+                        "NameOfScene": "Sit down and order some food.",
+                        "theScene": [
+                                      "IfHasPerk", "Ate Hearty Meal", "TooFull", "IfHasPerk", "Ate Meaty Meal", "TooFull", "IfHasPerk", "Ate Flighty Meal", "TooFull", "IfHasPerk", "Ate Fishy Meal", "TooFull", "IfHasPerk", "Ate Savory Meal", "TooFull",
+                                      "IfHasPerk", "Ate Strangely Sweet Feast", "TooFull", "IfHasPerk", "Ate Refreshing Feast", "TooFull", "IfHasPerk", "Ate Jumbo Feast", "TooFull", "IfHasPerk", "Ate Beefy Feast", "TooFull", "IfHasPerk", "Ate Tricky Feast", "TooFull",
+                                      "JumpToScene", "FoodMenu"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "Maybe something else...",
+                                "theScene": [ "JumpToScene", "FoodMenu"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "TooFull",
+                                "theScene": [ "You're still too full from your last meal to consider ordering more...",
+                                              "JumpToScene", "RoomMenu"
+                                          ]
+                            },
+
+                    {
+                        "NameOfScene": "FoodMenu",
+                        "theScene": [ "Menu",
+                                        "Simple Meals. (On the house, +10 Max Energy.)",
+                                        "RequiresItem", "Sigil Of Allure",
+                                        "Adventurer Meals. (500 eros, +25 Max Energy.)",
+                                        "RequiresChoice", "13", "UnlockedSpecialty",
+                                        "Specialty Meals. (Free, with a variety of 'permanent' effects.)",
+                                        "Leave the table.",
+                                      "EndLoop"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "Simple Meals. (On the house, +10 Max Energy.)",
+                                "theScene": [ "IfHasPerk", "Well Fed", "TooFull", "IfHasPerk", "Adventure Ready", "TooFull",
+                                              "Menu",
+                                                "Harpy Omelette With Bacon and Waffles.",
+                                                "Steak Seasoned with Elven Herbs and Spices.",
+                                                "Electricity-Fried Chicken Legs With Traditional Harpy Seasoning.",
+                                                "Fire-Roasted Fish Fillet With Slime Goo Glaze - {i}A Lizard Girl favorite!{/i}",
+                                                "Alraune Nectar-Glazed Sausages.",
+                                                "Maybe something else...",
+                                              "EndLoop"
+                                          ]
+                            },
+                                    {
+                                      "NameOfScene": "Harpy Omelette With Bacon and Waffles.",
+                                      "theScene": [  "After a few minutes of waiting, the arrival of your meal is heralded by a pleasantly rich, greasy smell. As you grab a knife and fork, you notice the omelette has a cute heart shape drawn on it with ketchup. Catching sight of the artistic liberty, Belle frowns slightly, but does not comment, letting you get to work on the hearty meal.",
+                                                     "As could be expected, the fatty meat makes for a very robust dish, but the omelette is remarkably fluffy, nicely balancing out the delightfully crispy bacon. The crunchy, buttery waffles are addictive to bite into, and despite the omelette and bacon being more than sufficiently filling, you can't help but polish your plate, ending up with a heavy stomach, but with your appetite and tastebuds thoroughly satisfied!",
+                                                      "GivePerk", "Well Fed",
+                                                      "With your rich meal finished, you get up and prepare yourself for the rest of the day.",
+                                                      "JumpToScene", "RoomMenu"
+                                              ]
+                                    },
+                                    {
+                                      "NameOfScene": "Steak Seasoned with Elven Herbs and Spices.",
+                                      "theScene": [
+                                                      "The rich, slightly sharp perfume of the spices wafts up your nose, whetting your appetite. You lose no time in attacking the steak, finding it sinfully tender, the piece of meat practically melting under your knife. The taste is equally exquisite, the spicy herbs blending in with the meat without overpowering it, each bite making you hungry for more.",
+                                                      "As you finish your meal, you are surprised to find yourself slightly flush, the pungency of the spices getting to you, making you energized, almost restless. For a moment, you wonder if there might actually be something aphrodisiac to the elven seasonings, but you don't actually feel aroused. Just satiated and ready for adventure!",
+                                                      "GivePerk", "Well Fed",
+                                                      "With your spicy meal finished, you get up and prepare yourself for the rest of the day.",
+                                                      "JumpToScene", "RoomMenu"
+                                              ]
+                                    },
+                                    {
+                                      "NameOfScene": "Electricity-Fried Chicken Legs With Traditional Harpy Seasoning.",
+                                      "theScene": [
+                                                      "The freshly fried chicken legs let out a slightly off-putting smell of ozone, and you can actually feel the hair on your forearms rise when you grab one. Nonetheless, you dauntlessly bite into it, and are rewarded with an astonishingly crispy texture, the chicken given an entirely novel taste by the uncommon cooking technique.",
+                                                      "The seasoning itself is {i}very{/i} tasteful and borders on sweet, which you assume must be what most harpies enjoy. You have no difficulty getting through the appetizing pair of legs, and afterward feel oddly enthusiastic and slightly bouncy, as if some of the customary joyfulness of harpies had rubbed off on you.",
+                                                      "GivePerk", "Well Fed",
+                                                      "With your electrifying meal finished, you get up and prepare yourself for the rest of the day.",
+                                                      "JumpToScene", "RoomMenu"
+                                              ]
+                                    },
+                                    {
+                                      "NameOfScene": "Fire-Roasted Fish Fillet With Slime Goo Glaze - {i}A Lizard Girl favorite!{/i}",
+                                      "theScene": [
+                                                      "The wild-looking charred fish fillet forms an interesting contrast with the cutesy colorful glaze that sits atop it, the slimy coating wobbling almost cheerfully. Grabbing a tentative bite, you quickly find that the two combine wonderfully, the goo melting in your mouth, enveloping the taste of the fish, giving it a thoroughly enjoyable, mellow savor and texture.",
+                                                      "It's like the fish is swimming smoothly through your mouth, accompanied by the goo to bring it straight into your stomach where it can sit easy, quenching your hunger without making you feel stuffed in the slightest. Restored and ready for action, you understand why Lizard Girls apparently enjoy it so much!",
+                                                      "GivePerk", "Well Fed",
+                                                      "With your energizing meal finished, you get up and prepare yourself for the rest of the day.",
+                                                      "JumpToScene", "RoomMenu"
+                                              ]
+                                    },
+                                    {
+                                      "NameOfScene": "Alraune Nectar-Glazed Sausages.",
+                                      "theScene": [
+                                                      "The sausages turn out to be a bunch of cocktail-sized little morsels, tastefully arranged on a painted plate along with a handful of colorful flower petals. The honeyed smell of Alraune nectar is mouth-watering and you waste no time in digging in, spearing one of the bite-sized pieces with gusto.",
+                                                      "The sugary and greasy taste of the sausages turns out to be as wonderfully decadent as expected, and you can't keep yourself from ravenously eating one after the other. You feel slightly guilty about partaking of such a decidedly non-dietetic meal, but also have no regrets about the yummy indulgence.",
+                                                      "GivePerk", "Well Fed",
+                                                      "With your tasty meal finished, you get up and prepare yourself for the rest of the day.",
+                                                      "JumpToScene", "RoomMenu"
+                                              ]
+                                    },
+                            {
+                                "NameOfScene": "_Simple Meals. (On the house) ORIGINAL VER",
+                                "theScene": [ "Menu",
+                                                "Harpy Omelette With Bacon and Waffles. (+10 Max AP and Max EP)",
+                                                "Steak Seasoned with Elven herbs and Spices. (+2 Power, +5 Max AP)",
+                                                "Electricity-Fried Chicken Legs With Traditional Harpy Seasoning. (+2 Technique, +1% crit chance)",
+                                                "Fire-Roasted Fish Fillet With Slime Goo Glaze - {i}A Lizard Girl favorite!{/i} (+2 Willpower, +5 EP)",
+                                                "Alraune Nectar-Glazed Sausages. (+5% res to all status effects, and reduces their effectiveness by 5%)",
+                                                "Maybe something else...",
+                                              "EndLoop"
+                                          ]
+                            },
+                                  {
+                                    "NameOfScene": "Harpy Omelette With Bacon and Waffles. (+10 Max AP and Max EP)",
+                                    "theScene": [
+                                                    "You place your order and are soon greeted with a large plate of food that you eagerly dig into.",
+                                                    "GivePerk", "Ate Hearty Meal",
+                                                    "With your meal finished you get up and prepare yourself for the rest of the day.",
+                                                    "JumpToScene", "RoomMenu"
+                                            ]
+                                  },
+                                  {
+                                    "NameOfScene": "Steak Seasoned with Elven herbs and Spices. (+2 Power, +5 Max AP)",
+                                    "theScene": [
+                                                    "You place your order and are soon greeted with a large plate of food that you eagerly dig into.",
+                                                    "GivePerk", "Ate Meaty Meal",
+                                                    "With your meal finished you get up and prepare yourself for the rest of the day.",
+                                                    "JumpToScene", "RoomMenu"
+                                            ]
+                                  },
+                                  {
+                                    "NameOfScene": "Electricity-Fried Chicken Legs With Traditional Harpy Seasoning. (+2 Technique, +1% crit chance)",
+                                    "theScene": [
+                                                    "You place your order and are soon greeted with a large plate of food that you eagerly dig into.",
+                                                    "GivePerk", "Ate Flighty Meal",
+                                                    "With your meal finished you get up and prepare yourself for the rest of the day.",
+                                                    "JumpToScene", "RoomMenu"
+                                            ]
+                                  },
+                                  {
+                                    "NameOfScene": "Fire-Roasted Fish Fillet With Slime Goo Glaze - {i}A Lizard Girl favorite!{/i} (+2 Willpower, +5 EP)",
+                                    "theScene": [
+                                                    "You place your order and are soon greeted with a large plate of food that you eagerly dig into.",
+                                                    "GivePerk", "Ate Fishy Meal",
+                                                    "With your meal finished you get up and prepare yourself for the rest of the day.",
+                                                    "JumpToScene", "RoomMenu"
+                                            ]
+                                  },
+                                  {
+                                    "NameOfScene": "Alraune Nectar-Glazed Sausages. (+5% res to all status effects, and reduces their effectiveness by 5%)",
+                                    "theScene": [
+                                                    "You place your order and are soon greeted with a large plate of food that you eagerly dig into.",
+                                                    "GivePerk", "Ate Savory Meal",
+                                                    "With your meal finished you get up and prepare yourself for the rest of the day.",
+                                                    "JumpToScene", "RoomMenu"
+                                            ]
+                                  },
+
+                            {
+                                "NameOfScene": "Adventurer Meals. (500 eros, +25 Max Energy.)",
+                                "theScene": [ "IfHasPerk", "Well Fed", "TooFull", "IfHasPerk", "Adventure Ready", "TooFull",
+                                              "Menu",
+                                                "'Monster' Burger With a Minotaur Milkshake.",
+                                                "Jumbo Roasted Boar Leg with House Blend of Spices.",
+                                                "Inari Sushi Platter With Optional Fresh Fish Filling.",
+                                                "Slime Girl Extract-Hinted Coffee or Tea With an Elven Bagel and Your Choice of Toppings.",
+                                                "Seared Alraune Nectar-Dipped Matango Mushrooms.",
+                                                "Maybe something else...",
+                                              "EndLoop"
+                                          ]
+                            },
+                            {
+                              "NameOfScene": "LacksFundsForFood",
+                              "theScene": [  "You go to order your meal, then realize you won't have the money to pay for it...",
+                                              "JumpToScene", "FoodMenu"
+                                      ]
+                            },
+
+                                  {
+                                    "NameOfScene": "'Monster' Burger With a Minotaur Milkshake.",
+                                    "theScene": [   "HasErosLessThan", "500", "LacksFundsForFood",
+                                                    "ChangeEros", "-500",
+                                                    "As could be expected, the 'Monster' part of your meal's name refers to its intimidating size, the two slices of toasted hamburger bread holding a massive beef patty, an abundance of melted cheese, juicy tomato slices, big salad leaves, and a few crunchy pickles for good measure. The giant of a burger feels daunting just to hold!",
+                                                    "You nevertheless get to work, washing off the gargantuan sandwich with generous gulps of the creamy, strong-tasting milkshake, your mind drifting to thoughts of lactating minotaur breasts. When you're done, you feel distressingly full, but also filled with energy, ready to burn those calories!",
+                                                    "GivePerk", "Adventure Ready",
+                                                    "With your bovine meal finished, you get up and prepare yourself for the rest of the day.",
+                                                    "JumpToScene", "RoomMenu"
+                                            ]
+                                  },
+                                  {
+                                    "NameOfScene": "Jumbo Roasted Boar Leg with House Blend of Spices.",
+                                    "theScene": [   "HasErosLessThan", "500", "LacksFundsForFood",
+                                                    "ChangeEros", "-500",
+                                                    "After some waiting, a waitress arrives hoisting an almost comically-sized leg on a platter, complete with a jutting piece of bone to hold it by. Grabbing your rustic-looking dish, you bite into it, finding the texture enjoyably thick and the flavor powerful, its aggressively meaty taste enhanced by the blend of spices.",
+                                                    "Almost as if overcoming a challenge, you indefatigably munch through your meal, finding yourself going through the hunk of meat with surprisingly little trouble. Only when you eventually drop the now clean bone on the platter do you realize how satiated you are... and how messy your face is! You take care to carefully clean yourself with a towel helpfully provided by Belle...",
+                                                    "GivePerk", "Adventure Ready",
+                                                    "With your mighty meal finished, you get up and prepare yourself for the rest of the day.",
+                                                    "JumpToScene", "RoomMenu"
+                                            ]
+                                  },
+                                  {
+                                    "NameOfScene": "Inari Sushi Platter With Optional Fresh Fish Filling.",
+                                    "theScene": [   "HasErosLessThan", "500", "LacksFundsForFood",
+                                                    "ChangeEros", "-500",
+                                                    "The inari sushi comes as three fragrant little pockets on a small, square wooden plate, along with a few pieces of ginger for palate cleansing. Biting into one of the pockets, you find its flavor unexpectedly deep and fragrant, your mouth filled with the tang of vinegar, the sweetness of sugar, and the filling oiliness of fried tofu.",
+                                                    "You take your meal at a relaxed pace, losing your sense of time and even that of your surroundings as your mind is somehow filled with the smells and sounds of faraway lands. With your last bite, you can almost hear the ruffling of fluffy tails and feel their softness on your face... Then you're back at the Goddess's Embrace, your meal over, filled with strange nostalgia.",
+                                                    "GivePerk", "Adventure Ready",
+                                                    "With your foxy meal finished, you get up and prepare yourself for the rest of the day.",
+                                                    "JumpToScene", "RoomMenu"
+                                            ]
+                                  },
+                                  {
+                                    "NameOfScene": "Slime Girl Extract-Hinted Coffee or Tea With an Elven Bagel and Your Choice of Toppings.",
+                                    "theScene": [   "HasErosLessThan", "500", "LacksFundsForFood",
+                                                    "ChangeEros", "-500",
+                                                    "Your meal arrives on a nice little board adorned with pretty designs, complementing the steaming colorful mug and plump bagel. Alternating between sips and bites, you quickly discover that your hot beverage has a slightly syrupy texture, helping it go down all the more pleasantly and melting away any hint of bitterness.",
+                                                    "The bagel, meanwhile, tastes of rich grains and plump vegetables with hints of a subtly creamy sauce, bringing to mind visions of sensuality and fertility that certainly seem in line with the usual proclivities of elves. In the end, what might have seemed like just a snack turns out to be a pleasant, filling dish.",
+                                                    "GivePerk", "Adventure Ready",
+                                                    "With your light meal finished, you get up and prepare yourself for the rest of the day.",
+                                                    "JumpToScene", "RoomMenu"
+                                            ]
+                                  },
+                                  {
+                                    "NameOfScene": "Seared Alraune Nectar-Dipped Matango Mushrooms.",
+                                    "theScene": [   "HasErosLessThan", "500", "LacksFundsForFood",
+                                                    "ChangeEros", "-500",
+                                                    "You are brought two skewers on a plate, dripping with an appetizing sauce. The white-dotted, usually bright-red Matango mushrooms have turned slightly crimson under the searing, and they give off an almost mesmerizing smell... Certainly some effect of the Matango spores, and the alluring Alraune honey certainly doesn't help...",
+                                                    "Savoring one mushroom after the other, you appreciatively bite through their chewiness, their earthly, easy flavor made even more captivatingly mellow by the nectar. As you gulp down the last piece, you can't hold back a sigh of satisfaction, and feel an itch to take a walk through the nearby forest...",
+                                                    "GivePerk", "Adventure Ready",
+                                                    "With your lovely meal finished, you get up and prepare yourself for the rest of the day.",
+                                                    "JumpToScene", "RoomMenu"
+                                            ]
+                                  },
+
+
+
+                                  {
+                                      "NameOfScene": "_Adventurer Meals. (500 eros)ORIGINAL",
+                                      "theScene": [ "Menu",
+                                                      "'Monster' Burger With a Minotaur Milkshake. (+25 Max AP and Max EP)",
+                                                      "Jumbo Roasted Boar Leg with House Blend of Spices. (+5 Power, +10 Max AP)",
+                                                      "Inari Sushi Platter With Optional Fresh Fish Filling. (+5 Technique, +2% crit chance)",
+                                                      "Slime Girl Extract-Hinted Coffee or Tea With an Elven Bagel and Your Choice of Toppings. (+5 Willpower and +10 EP)",
+                                                      "Seared Alraune Nectar-Dipped Matango Mushrooms. (+10% res to all status effects, and reduces their effectiveness by 10%)",
+                                                      "Maybe something else...",
+                                                    "EndLoop"
+                                                ]
+                                  },
+                                            {
+                                              "NameOfScene": "'Monster' Burger With a Minotaur Milkshake. (+25 Max AP and Max EP)",
+                                              "theScene": [   "HasErosLessThan", "500", "LacksFundsForFood",
+                                                              "ChangeEros", "-500",
+                                                              "You place your order and are soon greeted with a large plate of food that you eagerly dig into.",
+                                                              "GivePerk", "Ate Beefy Feast",
+                                                              "With your meal finished you get up and prepare yourself for the rest of the day.",
+                                                              "JumpToScene", "RoomMenu"
+                                                      ]
+                                            },
+                                            {
+                                              "NameOfScene": "Jumbo Roasted Boar Leg with House Blend of Spices. (+5 Power, +10 Max AP)",
+                                              "theScene": [   "HasErosLessThan", "500", "LacksFundsForFood",
+                                                              "ChangeEros", "-500",
+                                                              "You place your order and are soon greeted with a large plate of food that you eagerly dig into.",
+                                                              "GivePerk", "Ate Jumbo Feast",
+                                                              "With your meal finished you get up and prepare yourself for the rest of the day.",
+                                                              "JumpToScene", "RoomMenu"
+                                                      ]
+                                            },
+                                            {
+                                              "NameOfScene": "Inari Sushi Platter With Optional Fresh Fish Filling. (+5 Technique, +2% crit chance)",
+                                              "theScene": [   "HasErosLessThan", "500", "LacksFundsForFood",
+                                                              "ChangeEros", "-500",
+                                                              "You place your order and are soon greeted with a large plate of food that you eagerly dig into.",
+                                                              "GivePerk", "Ate Tricky Feast",
+                                                              "With your meal finished you get up and prepare yourself for the rest of the day.",
+                                                              "JumpToScene", "RoomMenu"
+                                                      ]
+                                            },
+                                            {
+                                              "NameOfScene": "Slime Girl Extract-Hinted Coffee or Tea With an Elven Bagel and Your Choice of Toppings. (+5 Willpower and +10 EP)",
+                                              "theScene": [   "HasErosLessThan", "500", "LacksFundsForFood",
+                                                              "ChangeEros", "-500",
+                                                              "You place your order and are soon greeted with a large plate of food that you eagerly dig into.",
+                                                              "GivePerk", "Ate Refreshing Feast",
+                                                              "With your meal finished you get up and prepare yourself for the rest of the day.",
+                                                              "JumpToScene", "RoomMenu"
+                                                      ]
+                                            },
+                                            {
+                                              "NameOfScene": "Seared Alraune Nectar-Dipped Matango Mushrooms. (+10% res to all status effects, and reduces their effectiveness by 10%)",
+                                              "theScene": [   "HasErosLessThan", "500", "LacksFundsForFood",
+                                                              "ChangeEros", "-500",
+                                                              "You place your order and are soon greeted with a large plate of food that you eagerly dig into.",
+                                                              "GivePerk", "Ate Strangely Sweet Feast",
+                                                              "With your meal finished you get up and prepare yourself for the rest of the day.",
+                                                              "JumpToScene", "RoomMenu"
+                                                      ]
+                                            },
+
+
+
+
+                  {
+                      "NameOfScene": "Specialty Meals. (Free, with a variety of 'permanent' effects.)",
+                      "theScene": [
+                                    "Menu",
+                                      "RequiresChoice", "9", "MysticSaladUnlocked",
+                                      "Order the Mystic Salad.",
+                                      "RequiresChoice", "10", "ImpCurryUnlocked",
+                                      "Order Imp Curry.",
+                                      "RequiresChoice", "11", "DeluxeBurgerUnlocked",
+                                      "Order the Belle Deluxe Spice Burger.",
+                                      "RequiresChoice",  "12", "DeepUdonUnlocked",
+                                      "Order the Deep Fish Tempura Udon.",
+                                      "Order a Palate Cleanser. (Remove any of the food perks.)",
+                                      "Maybe something else...",
+                                    "EndLoop"
+                                ]
+                  },
+                  {
+                      "NameOfScene": "Reconsider your options.",
+                      "theScene": [
+                                    "JumpToScene", "Specialty Meals. (Free, with a variety of 'permanent' effects.)"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "Order the Mystic Salad.",
+                            "theScene": [
+                                        "You contemplate ordering the Mystic Salad, noting that it would rejuvenate your body throughout your adventures, regenerate 2% of your max arousal and max energy every turn in combat. Provided you haven't surrendered.",
+                                        "Menu",
+                                          "Order a Mystic Salad.",
+                                          "Reconsider your options.",
+                                        "EndLoop"
+                                      ]
+                        },
+                                  {
+                                      "NameOfScene": "Order a Mystic Salad.",
+                                      "theScene": [
+                                                  "Your meal arrives in a massive bowl, filled to the brim with a multitude of foliage and seasonings, a special nectar dressing, with bits of meat and other veggies scattered throughout.",
+                                                  "Before you know it you've scarfed down the whole bowl of surprisingly delicious and refreshing salad feeling energized!",
+                                                  "CallSceneThenReturn", "ClearFoodPerks",
+                                                  "GivePerk", "Mystic Salad Special",
+                                                  "With your magically healthy meal finished, you get up and prepare yourself for the rest of the day.",
+                                                  "JumpToScene", "RoomMenu"
+                                                ]
+                                  },
+                        {
+                            "NameOfScene": "Order Imp Curry.",
+                            "theScene": [
+                                        "You contemplate ordering the sweet and spicy Imp Curry, noting it helps stave off all kinds of negative effects, for 25%: you take less aphrodisiac damage, break out of sleep, resist paralysis stuns, resist stuns, and get out of stances and restraints easier! You also get 5 Luck! Imps practically vibrate with energy after eating that curry.",
+                                        "Menu",
+                                          "Order the Imp Curry.",
+                                          "Reconsider your options.",
+                                        "EndLoop"
+                                      ]
+                        },
+                              {
+                                  "NameOfScene": "Order the Imp Curry.",
+                                  "theScene": [
+                                              "Your meal arrives on a plate, half fine rice, the other a purple tinged curry filled with chunks of meat and veggies with a delightful scent that makes you drool with hunger.",
+                                              "Before you know it you've scarfed down the plate of sweet and spicy curry, a little surprised at the lack of an aphrodisiac kick, given the ingredients. But you feel like you could take on the whole world after that meal!",
+                                              "CallSceneThenReturn", "ClearFoodPerks",
+                                              "GivePerk", "Imp Curry Special",
+                                              "With your sweet and spicy meal finished, you get up and prepare yourself for the rest of the day.",
+                                              "JumpToScene", "RoomMenu"
+                                            ]
+                              },
+                        {
+                            "NameOfScene": "Order the Belle Deluxe Spice Burger.",
+                            "theScene": [
+                                        "You contemplate ordering the 'Lucidia Famous' Belle Deluxe Spice Burger, noting your Virility will increase by 10%, and while in combat your arousal increases by 10% of its max every turn, but you regain 10% of your max energy.",
+                                        "Menu",
+                                          "Order a Belle Deluxe Spice Burger.",
+                                          "Reconsider your options.",
+                                        "EndLoop"
+                                      ]
+                        },
+                              {
+                                  "NameOfScene": "Order a Belle Deluxe Spice Burger.",
+                                  "theScene": [
+                                              "Your meal arrives on a sizable plate, leaving you to stare at the impressive, juicy burger laden with an assortment of spices, a slice of cheese, and a freshly fried egg. The Manticore spike is stabbed through the top like a tooth pick. You can't help but be a little concerned about what this is going to do to you.",
+                                              "But once you take the first bite you just can't bring yourself to stop from how delicious it is, however it's {i}incredibly{/i} spicy, leaving your eyes watering and you face flushing from a mix of arousal and heat. ",
+                                              "With the burger finally finished you lean back in the bar chair with a sigh, drinking down the thankfully provided water to sooth the burning in your mouth while your meals effects take hold.",
+                                              "CallSceneThenReturn", "ClearFoodPerks",
+                                              "GivePerk", "Spicy Burger Special",
+                                              "With your burningly spicy meal finished, you get up and prepare yourself for the rest of the day.",
+                                              "JumpToScene", "RoomMenu"
+                                            ]
+                              },
+                        {
+                            "NameOfScene": "Order the Deep Fish Tempura Udon.",
+                            "theScene": [
+                                        "You contemplate ordering the Deep Fish Tempura Udon, an odd meal that you note will make your status effects last 25% longer, as well as increasing non-penetrative magic, and indulgent skills arousal dealt by 10%.",
+                                        "Menu",
+                                          "Order Deep Fish Tempura Udon.",
+                                          "Reconsider your options.",
+                                        "EndLoop"
+                                      ]
+                        },
+                              {
+                                  "NameOfScene": "Order Deep Fish Tempura Udon.",
+                                  "theScene": [
+                                              "Your meal arrives in a large stylized bowl, it's filled to the brim with an odd purple and blue colored broth, tons of udon noodles, deep fried deep fish, two halves of a boiled egg, and chopped up toxic matango mushrooms alongside squares of tofu floating in the broth. Tentatively you eat it, and the taste is strange and thought provoking, but it's definitely {i}good!{/i}",
+                                              "Once you've eaten the entire dish your mind feels like it's practically bursting at the seams with ideas and you're left shivering a little from the flavor.",
+                                              "CallSceneThenReturn", "ClearFoodPerks",
+                                              "GivePerk", "Deep Fish Udon Special",
+                                              "With your mind tingling meal finished, you get up and prepare yourself for the rest of the day.",
+                                              "JumpToScene", "RoomMenu"
+                                            ]
+                              },
+
+                        {
+                            "NameOfScene": "Order a Palate Cleanser. (Remove any of the food perks.)",
+                            "theScene": [
+
+                                        "You order the palate cleanser, and get a small bowl of what seems to be magic ginger, which you then eat, and feel a shiver run through your body as all specialty meal effects end.",
+                                        "CallSceneThenReturn", "ClearFoodPerks",
+                                        "JumpToScene", "RoomMenu"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "ClearFoodPerks",
+                            "theScene": [
+                                        "CallNextSceneJumpThenReturn", "IfHasPerk", "Hearty Meal Special", "RemoveHeartyMeal",
+
+                                        "CallNextSceneJumpThenReturn", "IfHasPerk", "Mystic Salad Special", "RemoveMysticSalad",
+                                        "CallNextSceneJumpThenReturn", "IfHasPerk", "Imp Curry Special", "RemoveImpCurry",
+                                        "CallNextSceneJumpThenReturn", "IfHasPerk", "Spicy Burger Special", "RemoveSpiceBurger",
+                                        "CallNextSceneJumpThenReturn", "IfHasPerk", "Deep Fish Udon Special", "RemoveDeepUdon",
+
+                                        "CallNextSceneJumpThenReturn", "IfHasPerk", "Shinobi Sushi Special", "RemoveShinobiSushi",
+                                        "CallNextSceneJumpThenReturn", "IfHasPerk", "Haunting's Bar and Grill Special", "RemoveHaunting",
+                                        "CallNextSceneJumpThenReturn", "IfHasPerk", "Curry and Catastrophe Special", "RemoveCurryAndCatastrophe",
+                                        "CallNextSceneJumpThenReturn", "IfHasPerk", "Harpizza Special", "RemoveHarpizza",
+                                        "CallNextSceneJumpThenReturn", "IfHasPerk", "Ice Cream Special", "RemoveIceCream"
+                                      ]
+                        },
+                              {
+                                "NameOfScene": "RemoveHeartyMeal",
+                                "theScene": [
+                                            "RemovePerk", "Hearty Meal Special"
+                                          ]
+                              },
+                              {
+                                  "NameOfScene": "RemoveMysticSalad",
+                                  "theScene": [
+                                               "RemovePerk", "Mystic Salad Special"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "RemoveImpCurry",
+                                  "theScene": [
+                                               "RemovePerk", "Imp Curry Special"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "RemoveSpiceBurger",
+                                  "theScene": [
+                                               "RemovePerk", "Spicy Burger Special"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "RemoveDeepUdon",
+                                  "theScene": [
+                                               "RemovePerk", "Deep Fish Udon Special"
+                                            ]
+                              },
+
+                              {
+                                  "NameOfScene": "RemoveShinobiSushi",
+                                  "theScene": [
+                                               "RemovePerk", "Shinobi Sushi Special"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "RemoveHaunting",
+                                  "theScene": [
+                                               "RemovePerk", "Haunting's Bar and Grill Special"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "RemoveCurryAndCatastrophe",
+                                  "theScene": [
+                                               "RemovePerk", "Curry and Catastrophe Special"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "RemoveHarpizza",
+                                  "theScene": [
+                                               "RemovePerk", "Harpizza Special"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "RemoveIceCream",
+                                  "theScene": [
+                                               "RemovePerk", "Ice Cream Special"
+                                            ]
+                              },
+
+
+
+
+
+
+                          {
+                              "NameOfScene": "Leave the bar.",
+                              "theScene": [ "SetChoice", "2", "", "ChangeBG", "Inn.png"
+                                        ]
+                          },
+
+
+
+              {
+                  "NameOfScene": "EventBroke",
+                  "theScene": [ "ok event broked but waiii."
+                            ]
+              }
+            ]
+}

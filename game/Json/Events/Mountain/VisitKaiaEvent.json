@@ -1,0 +1,75 @@
+{
+    "name": "VisitKaiaEvent",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Kaia",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Kaia",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Kaia",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+
+                ],
+    "EventText": [
+                    {
+                      "NameOfScene": "EventStart",
+                      "theScene": [  
+                                      "GetEventAndSetChoice", "Sleeping Manticore", "3", "Kaia",
+                                        "GetEventAndSetChoice", "ManticoreCombatEvent", "1", "Kaia",
+                                      
+                                        "SetFlexibleSpeaker", "2",
+
+                                      "IfTimeIs", "NightTrue", "NightAlt",
+                                      "DisplayCharacters",
+                                        "1",
+                                        "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Sleeping",
+                                      "Following a familiar path along the Mountain, you return to a certain alcove where the sun is currently shining brightly down on a large rock where you see Kaia snoozing contentedly, clearly greatly enjoying the sun's rays.",
+                                      "ChangeImageLayer", "Expression", "1", "Happy",
+                                      "However, at your approach, her nose twitches, and she rouses with a sleepy yawn and a languid feline stretch before hopping up to prowl closer with a sharp-toothed grin.",
+                                      "ChangeImageLayer", "Expression", "1", "SmugSharp",
+                                      "Speak", "Kaia",
+                                      "Well hey, [ThePlayerName]. Come all this way to visit me? ...Wanna head back to my place?",
+                                      "JumpToScene", "JumpToTheEventKaia"
+                                    
+                                ]
+                  },
+                  {
+                    "NameOfScene": "NightAlt",
+                    "theScene": [  
+                                    "Following a familiar path along the Mountain, you return to a certain alcove where the moonlight is filtering down on a large rock. The sight is rather serene and soothing, but its usually catnapping occupant is nowhere to be seen.",
+                                    "DisplayCharacters",
+                                      "1",
+                                      "EndLoop",
+                                    "ChangeImageLayer", "Expression", "1", "SmugSharp",
+                                    "... At least, until you hear the flutter of wings behind you and someone suddenly embraces you from behind, the manticore's heavy breasts pressing against your back as she purrs with seductive predatory glee into your ear.",
+                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                    "Speak", "Kaia",
+                                    "Fancy seeing you out here at this hour, he he. I was just on my way home... Wanna join me, [ThePlayerName]?",
+                                    "JumpToScene", "JumpToTheEventKaia"
+                                  
+                              ]
+                },
+
+                
+                  {
+                    "NameOfScene": "JumpToTheEventKaia",
+                    "theScene": [  
+                                    "JumpToEventThenScene", "Sleeping Manticore", "VisitJump"
+                                  
+                              ]
+                  }
+                ]
+}

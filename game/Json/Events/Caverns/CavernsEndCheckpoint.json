@@ -1,0 +1,32 @@
+{
+    "name": "Caverns End Checkpoint",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Perpetua",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [  "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                      "ChangeBG", "Labyrinth.png",
+                                      "As you head down the tunnel you realize it's not like the caverns before it, this is all perfectly smooth, clearly artificial, but aged and cracked, and the bricks are made of an almost pitch black stone, yet it all seems dimly lit despite no noticeable light source.",
+                                      "Despite hearing Perpetua's laugh still echoing from up ahead you stop as you see a sizable alcove in the wall, effectively a side path with a dead-end immediately, where a large blue gem is gently floating in the air. And you eagerly touch the large gem, not wanting to have to travel through the caverns to get here again.",
+                                      "You touch the floating gem and feel a rush of magic flow through you as a small blue gemstone materializes in your other hand, and you let out a sigh of relief from the easy way here and back.",
+                                      "GiveItem",
+                                                        "1",
+                                      "Labyrinth Checkpoint Gem",
+                                      "You pull out your grimoire, deciding to return back to town to prepare before whatever is next, placing the checkpoint gem on a socket on the front cover first, a soft magical light emanates from the grimoire as it clicks into it.",
+                                      "Then you return to town, pretty sure that Perpetua will be waiting for you up ahead when you come back, and you idly note her laughter has stopped, either due to distance or some other reason...",
+                                      "AdventureComplete", "Delve the Caverns"
+                                  ]
+                    }
+                ]
+}

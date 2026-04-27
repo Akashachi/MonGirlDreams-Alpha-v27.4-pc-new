@@ -1,0 +1,233 @@
+{
+    "name": "Street Traffic Havoc",
+    "CardType": "Event",
+    "CardLimit": "3",
+    "Description": "There's too many passersby crowding the streets of Ars Delusia, slowing travel down to a crawl.",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "",
+                    "postName": "",
+                    "SpeakerType": ""
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [ "StoreCurrentBG",
+                                      "ChangeBG",  "CapitalPeople.png",
+                                      "SwapLineIf", "IfTimeIs",
+                                        "Night", "As you make your way through the moonlit streets of Ars Delusia, you suddenly find the path forward blocked by a veritable mob of womanly silhouettes blending together as they pass by each other, the sea of alluringly curvy bodies looking quite 'dangerous' to pass through... Though you could also just progress at a careful pace and take your time, which would most likely let you get away with just a few fondling gropes...",
+                                        "Day", "As you make your way through the streets of Ars Delusia, you suddenly find the path forward blocked by a veritable mob of passersby all going in conflicting directions. Even with a number of faded silhouettes just passing through, it isn't enough to unclog traffic, making the chaotic web of movement a potentially exhausting challenge to navigate through... Though you could also just bear with it and progress at a snail's pace...",                                        
+                                      "EndLoop", 
+                                      "IfPlayerOrgasm", "TooHornyToThink",                                  
+                                      "Menu",
+                                        "Make your way through! (Power)",
+                                        "Nimbly weave past people! (Tech)",
+                                        "Use your charms to make people give way! (Allure)",
+                                        "Carefully calculate where to go! (Int)",
+                                        "Bear with it and wait... (Advances Time)",
+                                      "EndLoop"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "Make your way through! (Power)",
+                                "theScene": [   "StatCheck",
+                                                "Power",
+                                                "20",
+                                                "PowPass",
+                                                "Fail",
+                                                "StatFail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Nimbly weave past people! (Tech)",
+                                "theScene": [   "StatCheck",
+                                                "Technique",
+                                                "20",
+                                                "TechPass",
+                                                "Fail",
+                                                "StatFail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Use your charms to make people give way! (Allure)",
+                                "theScene": [   "StatCheck",
+                                                "Allure",
+                                                "25",
+                                                "AllurePass",
+                                                "Fail",
+                                                "StatFail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Carefully calculate where to go! (Int)",
+                                "theScene": [   "StatCheck",
+                                                "Intelligence",
+                                                "20",
+                                                "IntPass",
+                                                "Fail",
+                                                "StatFail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "TooHornyToThink",
+                                "theScene": [  
+                                                "With your arousal achingly pushing you to your limit and your mind fogged with thought-staining lust, you can only slowly stagger your way through the crowd, a part of you indulgently hoping that someone will take advantage of your debilitating horny state...",
+                                                "IfTimeIs", "Night", "SeaOfBodies",
+                                                "Thankfully, or perhaps unfortunately, nobody seems to do so, but your ploddingly groggy advance does mean you get sluggishly carried along with the crowd rather than move through it, time ticking by as you slowly inch towards your destination for what feels like an eternity...",
+                                                "CallEventAndSceneThenReturn", "CapitalTimePassTracker", "TimeAdvance",
+                                                "JumpToScene", "PostEventStuffs"
+                                            ]
+                            },
+                    {
+                        "NameOfScene": "Bear with it and wait... (Advances Time)",
+                        "theScene": [  
+                                        "IfTimeIs", "Night", "SeaOfBodies",
+                                        "Seeing no other way, you plod along with the sluggish ebb and flow of foot traffic while doing your best not to get carried away by the crowd, time ticking by as you slowly inch towards your destination for what feels like an eternity...",
+                                        "CallEventAndSceneThenReturn", "CapitalTimePassTracker", "TimeAdvance",
+                                        "JumpToScene", "PostEventStuffs"
+                                  ]
+                    },
+                                   
+                    {
+                        "NameOfScene": "StatFail",
+                        "theScene": [   "IfTimeIs", "Night", "SeaOfBodiesfailStart",
+                                       "ChangeEnergyQuietly", "-50",
+                                        "Despite your best efforts, your attempt at cutting a path through the crowd instead results in you getting swept into the flow and getting turned around a few times, time slipping by until you eventually manage to shake off the throng and get back on track, the experience leaving you feeling rather tired and sweaty...\nYou lose 50 Energy.",
+                                        "CallEventAndSceneThenReturn", "CapitalTimePassTracker", "TimeAdvance",
+                                        "JumpToScene", "PostEventStuffs"
+                                  ]
+                    },
+                                        {
+                                            "NameOfScene": "SeaOfBodiesfailStart",
+                                            "theScene": [  
+                                                            "But despite your best efforts, you still end up caught up within the crowd and forced to move at the mob's languid pace, a shiver of trepidation coursing through your spine as you realize how many horny eyes are suddenly trained on you-!",                                                                
+                                                            "JumpToScene", "SeaOfBodies"
+                                                    ]
+                                        },
+                            {
+                                "NameOfScene": "SeaOfBodies",
+                                "theScene": [  
+                                                "ChangeBGM", "music/Casino/BGM sweet smell.mp3",
+                                                "DamagePlayerFromMonster", "Fashionable Succubus", "Enamor",
+                                                "Moving with the ebb and flow of the voluptuous foot traffic you soon find a parade of hefty breasts, hourglass curves, thick asses, and lithe feminine bodies fleetingly pressed and rubbed against you as you're carried by the tide of people, an atmosphere of obscene promiscuity settling in as both your time and your personal space are stolen away from you...",
+                                                "DamagePlayerFromMonster", "Fashionable Succubus", "Sensually Seductive Kiss",
+                                                "While most of the alluring contacts are seemingly incidental, you find the occasional pair of lips, gentle hand, or grazing tail being purposefully pressed on your skin with a giggle as you're practically passed along to your destination like a floating toy, getting increasingly touch-drunk and lost in the moment...",
+                                                "DamagePlayerFromMonster", "Fashionable Succubus", "Ear Tease",
+                                                "In the low light, and with how many figures you're surrounded by, it's hard to tell individuals apart in she sea of frisky monster girls, giving you the impression that the entire throng all around you is one single indistinct mass of stroking limbs, hungry gazes, and horny voices carrying you and lusting over you.",
+                                                "DamagePlayerFromMonster", "Fashionable Succubus", "Handjob",
+                                                "It feels like at any moment, the traveling mob might pounce on you all at once as some of the passersby get more and more handsy, lecherously groping and rubbing your increasingly obvious erection as it strains against your clothing from all the doting touches dragging across you as you're moved through the crowd, though the opportunistic groping never seems to escalate past tempting teasing foreplay.",
+                                                "IfPlayerOrgasm", "SeaOfBodiesClimax",
+                                                
+                                                "JumpToScene", "SeaOfBodiesPost"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "SeaOfBodiesClimax",
+                                        "theScene": [  
+                                                        "But even then, the repeated caresses and the lewd atmosphere take their toll on your body, and as you hotly pant and gasp with twitching arousal from the constant stimulation, one of the many women presses her alluring curves against your back while a soft feminine hand covers your eyes alongside a soft, wordless coo gently blown into one of your ears, making your entire body tense in heart-racing anticipation.",
+                                                        "Soon enough, before you can even react, your spiking lust is further stoked as more of the blurry mob of lusty women firmly press together against your helpless form, one greedily stealing your lips for a steamy makeout while another rubs her soft thigh against your twitching erection, two more clinging to your arms as if to keep you in place as they whisper giggling sweet nothings into your ears and press their busts against you.",
+                                                        "Your mind spins from the sudden rush of pleasure you're assailed with, leaving you moaning into the hot and heavy smooching, gaps in the fingers of the woman blindfolding you from behind letting you see flashes of lustfully loving gazes while you feel the thigh over your groin move away only to be replaced with someone's thick derriere in a soft jiggly impact that soon turns into an enticing grind against your twitching manhood.",
+                                                        "With so many soft curves rubbing and pressing against you from practically every angle amid a breathless kiss while coos, giggles, and murmured praise drift through your ears in a charming barrage of captivating euphoria, you find your hips mindlessly jerking in wanton need against the mystery woman's plump ass, sending you over the edge as bursts of climactic pleasure flare up across your entire body like fireworks.",
+                                                        "PlayerOrgasm", "2",
+                                                        "With a skilled wiggle of curvy hips, breathy whispers, squeezing rubbing breasts, and a sudden draining surge of succubus magic, your climax hits you all at once in a mind-blanking rush of spurting ecstasy, leaving you shaking in the mob's grasp while they cheer happily at their free meal, your powerful ejaculation getting instantly absorbed by your opportunistic assailants without even leaving a stain in your pants.",
+                                                        "There's an assortment of giggles and contented sighs as they vocally delight in your seed's taste, and your lips are finally wetly parted from the hungry kissing fiend, leaving you catching your breath with a dazed rasp while the crowd lavishes you with a few soothingly affectionate groping caresses to ease you back into a happy afterglow.",
+
+                                                        "IfPlayerSpiritGone", "SeaOfBodiesGameOver",
+
+                                                        "Before you can even manage to get a good look at the women that milked a load out of you, you're deftly passed forward through the crowd as it keeps irrepressibly moving, and soon enough, you find yourself pushed out of the feminine throng entirely.",                                                        
+                                                        "JumpToScene", "SeaOfBodiesPost"
+                                                ]
+                                    },
+                                                {
+                                                    "NameOfScene": "SeaOfBodiesGameOver",
+                                                    "theScene": [  
+                                                                    "ChangeBGM", "music/Loss/Falling Down.mp3",
+                                                                    "However, as the smooching woman ends her long kiss with a loud, brain-melting 'Mwah.♥︎', you're left trembling, gasping, and powerlessly exhausted from your recent orgasm, now clearly totally helpless in their grasp...",
+                                                                    "Your unseen assailants clearly realizing it, a few of them let out hungry purrs and audibly lick their lips, obviously all too happy to take advantage of the opportunity. Hazily, you feel the group of women break off from the crowd with you in tow, the unambiguously horny ladies hastily dragging you into a nearby alleyway.",
+                                                                    "All the while, the one woman's hand never leaves your eyes, keeping you docilely blind as she rubs her ample breasts against your back and coos hotly in your ears to ensure you stay awash in woozy arousal while the others 'dig in', freeing your still hard length with happy cheers and lewd giggles.",
+                                                                    "Without giving you a moment's rest, they immediately attack your vulnerable manhood with their ravenous lips and tongues, their three hungry mouths smooching, licking, and sucking across your twitching and sensitive erection while two other feminine figures tightly press their curves to your sides and pass your lips back and forth between each other for more mind-addling kisses.",
+                                                                    "Despite having a hard time seeing anything through the hand covering your eyes in the darkly lit nighttime alleyway, you can feel even more hungry gazes trained on you while chuckles and coos ring out in a variety of voices as more opportunistic monster girls await their turn with you, which should not be long going by how voraciously the three ones preying on you are 'devouring' you...",
+                                                                    "As they trade your dick between their soft lips to greedily bob up and down your shaft, you're hit with lasciviously draining pulses of magic from each one of the women pressed tight against you, making your head go blank once more as your hips excitedly jerk on instinct, leaving you messily groaning as the pleasure quickly overloads you into another sloppy climax.",
+                                                                    "Cooing in lewd joy, the three fellatrices happily drain every drop you have to offer, your jolting cock getting passed from one mouth to another like a sweet treat, each of your slurping lovers hungrily suckling and lapping at you until your ejaculation abates, prompting a mixture of disappointed moans, satisfied giggles, and parting kisses of praise from them as they get back up.",
+                                                                    "Then, before you can recover, they swiftly move out of the way to let two pairs of tits take over, the soft breasts instantly smothering your dick to pump, stroke, and squeeze it, the merciless curvaceous assault on your fizzling senses readily sending you sinking back even deeper into a charmed state of intoxicated bliss, your giddy euphoria only amplified by the ongoing kisses and coos on your ears.",
+                                                                    "The eager buxom newcomers don't seem intent on taking things slow either as the massaging, smothering pressure of their cleavages stroking your dick only continues to intensify while more draining pulses of magic rush deep into your frame, coaxingly demanding that you spurt out even more.",
+                                                                    "With how mired in debauched ecstasy you are and how relentlessly you're being pampered and serviced by your unseen partners, you find yourself more than willing to comply, trembling as you surrender to the lusty mob and stain the duo's busts with your seed, their wanton laughs and slurps congratulating you on your good work as a semen dispenser.",
+                                                                    "As you twitch and spurt, the small crowd lets out a collective happy cheer and the next woman immediately tags in, this time pivoting away from you before plunging your dick deep into her tightly squeezing pussy, her ravenously clenching insides instantly making a mess out of you as she carries on by frantically swinging her hips without delay.",
+                                                                    "Clearly intent on not giving you any rest and on squeezing another load out of you as soon as possible, she repeatedly slams her plump ass against your defenseless pelvis with whorish cries, the jiggly impacts leaving you completely slumping in the grasp of the two women still holding your arms and keeping you up while egging your lover on.",
+                                                                    "With mind-wracking intensity, her clearly demonic folds expertly massage and tighten around your quivering manhood, taming your throbbing dick with little effort given your helpless state, leaving you only able to mindlessly huff and pant in complete defeat, your flanking attackers meanwhile continuing to hotly coo into your ears in-between light smooches, keeping you nice and docile as you're fucked senseless.",
+                                                                    "Quickly, with one more hilting impact into your partner's otherworldly sex, you unload a spurting climax into her, tensing up with a long moan as more draining pulses ensure you give her every drop of cum you can while she tenderly grinds her wide hips against you, your tongue now vacantly lolling out in the brief moments you're not caught in a melty makeout, barely giving you time to gasp for breath amid the smothering bliss.",
+                                                                    "Soon, you're freed from your assailant's clenching pussy as she lets go with a happy sigh, walking away and leaving your slick dick to twitch at full mast in the nighttime air, only for the next hungry women to descend on it and milk it all over again...",
+                                                                    "Then the next... and the next... {i}and the next,{/i} as you're all but used like a communal cum pump and dildo by the lusty women, passed about in a blur of sexual euphoria as you cum again and again from an alternating orgy of sex, titfucks, fellatios, hotdogging, handjobs, draining magic, and whatever else the hungry women can bring to bear, until you eventually pass out from a mix of exhaustion and overstimulation...",
+                                                                    "As your vision darkens for good and you feel yourself fade away, your ears catch disappointed moans from many feminine voices who were looking forward to getting a round with you, intermingled with content murmurs and laughs from your many happy lovers, the echoing sounds and the lingering sensation of overstimulating ecstasy making a part of you eager to go back to them and satisfy them all over again as soon as possible...", 
+
+                                                                    "...",
+                                                                    "ChangeFetish", "Ass", "5",
+                                                                    "ChangeFetish", "Breasts", "5",
+                                                                    "ChangeFetish", "Kissing", "5",
+                                                                    "ChangeSensitivity", "Seduction", "10",
+                                                                    "ChangeSensitivity", "Sex", "5",
+                                                                    "ChangeSensitivity", "Magic", "5",
+                                                                    "GameOver"
+                                                            ]
+                                                },
+
+                            {
+                                "NameOfScene": "SeaOfBodiesPost",
+                                "theScene": [  
+                                                "Staggering and a little bit dizzy, you blink, belatedly realizing you're finally out of the woods, your heart racing as your woozy libido tempts you into immediately walking back into the hustle and bustle of horny women... Yet, when you look back, there's no one to be seen, as if you somehow imagined the entire experience, leaving you no option but to gather your wits and carry on with some puzzlement and no small leftover arousal...",
+                                                "CallEventAndSceneThenReturn", "CapitalTimePassTracker", "TimeAdvance",
+                                                "JumpToScene", "PostEventStuffs"
+                                        ]
+                            },
+                    {
+                        "NameOfScene": "PowPass",
+                        "theScene": [ "With a bit of gentle nudging, assertive shoving, and confident striding, you manage to cut a path for yourself through the hectic crowd, successfully keeping a steady travel pace despite your fellow pedestrians' grumbling and occasional descriptive swearing.",
+                                      "JumpToScene", "PostEventStuffs"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "TechPass",
+                        "theScene": [  
+                                      "You manage to skillfully flow through the gaps in people's movements, flawlessly becoming one with the bustling crowd and keeping perfect travel time, as if you were one of the transparent silhouettes yourself.",
+                                      "JumpToScene", "PostEventStuffs"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "AllurePass",
+                        "theScene": [  
+                                      "Using a mix of suave movements, 'Pardon me's, gentle suggestion, and charming smiles, you succeed in making your way through the hustling and bustling crowd, all the while also managing to avoid garnering the 'wrong' kind of attention, notwithstanding a few gropes from especially friendly or lecherous monster girls.",
+                                      "JumpToScene", "PostEventStuffs"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "IntPass",
+                        "theScene": [  
+                                      "Spotting openings, keeping an eye out for slowpokes, and predictively zigzagging through the crowd, you smartly make your way past the Delusian mass, ensuring you aren't delayed by even a single second.",
+                                      "JumpToScene", "PostEventStuffs"
+                                  ]
+                    },
+
+                    {
+                        "NameOfScene": "PostEventStuffs",
+                        "theScene": [
+                                     "IfInExploration", "EndEvent",
+                                     "AllowInventory",
+                                     "GoBackToStoredEvent"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "EndEvent",
+                        "theScene": [    "UseHeldBG"
+                                  ]
+                      },
+
+
+                    {
+                        "NameOfScene": "EventBroke",
+                        "theScene": [  "Event Broke!!!"
+                                  ]
+                    }
+                ]
+}

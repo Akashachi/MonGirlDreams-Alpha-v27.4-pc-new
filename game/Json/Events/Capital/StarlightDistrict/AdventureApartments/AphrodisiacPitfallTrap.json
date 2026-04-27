@@ -1,0 +1,245 @@
+{
+    "name": "Aphrodisiac Pitfall Trap",
+    "CardType": "Event",
+    "CardLimit": "3",
+    "Description": "Within Ars Delusia's Adventure Apartments lie hidden pitfalls filled with pools of aphrodisiacs, in wait of foolish adventurers...",
+    "requires": [ "Starlight District Stamp"],
+
+    "Speakers": [
+                  {
+                    "name": "Imp",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }  
+                ],
+    "EventText": [                    
+                            {
+                            "NameOfScene": "EventStart",
+                            "theScene": [  "StoreCurrentBG",
+                                            "ChangeBG", "Capital.png",
+                                            "IfInExploration", "PitfallTrap",
+                                            "As you turn the doorknob, there's a resounding click... and the floor under you suddenly opens up into a gaping trapdoor hole-!?",
+                                            "JumpToScene", "FallenIn"
+                                        ]
+                            },  
+                                        {
+                                            "NameOfScene": "PitfallTrap",
+                                            "theScene": [      
+                                                        "As you pass through the winding, mazelike passageways of an Ars Delusian building's interior, there's a sudden, resounding click underfoot, and the floor beneath you suddenly opens up into a gaping trapdoor hole, giving you but a fraction of a second to react and jump out of the way!",                                        
+                                                        "StatCheck",
+                                                        "Technique",
+                                                        "25",
+                                                        "EscapeFall",
+                                                        "Fail",
+                                                        "NoEscapeFall"
+                                            ]
+                                        },
+                                                {
+                                                    "NameOfScene": "EscapeFall",
+                                                    "theScene": [      
+                                                                 "Your reflexes do not fail you this time, and with exemplary reaction speed, you narrowly leap past the pitfall before it opens all the way and gravity embraces you!",
+                                                                 "Skidding to a halt as the trap immediately closes back behind you, you let out a sigh of relief and continue moving down the seemingly endless hallways, hoping that you're making some actual progress...",
+                                                                 "JumpToScene", "EndEvent"                      
+                                                    ]
+                                                },
+                                                {
+                                                    "NameOfScene": "NoEscapeFall",
+                                                    "theScene": [      
+                                                                 "But you're neither fast nor nimble enough to escape the sudden drop, leaving you haplessly plummeting down-!",
+                                                                 "JumpToScene", "FallenIn"                      
+                                                    ]
+                                                },
+
+                            {
+                            "NameOfScene": "FallenIn",
+                            "theScene": [ 
+                                            "Thankfully, the fall is only about five feet, and you safely land with a loud but harmless splash into a pool of waist-high liquid, leaving you drenched and stained, but unhurt by what appears to be more of a practical joke than a trap...",
+                                            "ApplyStatusEffect", "Cloying Mist",
+                                            "However, as you regain your bearings, it quickly appears that the warm pink liquid is clearly obscene in nature as it rapidly starts to soak into your clothes and skin, readily filling your entire lower body with aching lust!",
+                                            "ApplyStatusEffect", "Cloying Mist", 
+                                            "Reflexively, you gasp in surprise at the sudden and oddly comfortable lewd sensation, upon which you realize that your arousal is growing {i}very{/i} fast! You should hurry up and leave this hole if you don't want to quickly lose yourself to the aphrodisiac bliss!",
+                                            "PlayerStep",
+                                            "IfPlayerOrgasm", "ClimaxTime",
+                                            "JumpToScene", "EscapeMenu"
+                                        ]
+                            },  
+
+
+
+
+                                {
+                                "NameOfScene": "EscapeMenu",
+                                "theScene": [  
+                                                 "Menu",    
+                                                    "Pull yourself out! (Power)",
+                                                    "Nimbly escape! (Technique)",
+                                                    "Just relax...",
+                                                "EndLoop"
+                                            ]
+                                },  
+                                        {
+                                            "NameOfScene": "Pull yourself out! (Power)",
+                                            "theScene": [ 
+                                                        "Gathering your strength, you quickly brace yourself against the bottom of the shallow pit, preparing to jump with all your might in an attempt to reach for the edge of the thankfully still open trapdoor!",                                               
+                                                        "StatCheck",
+                                                        "Power",
+                                                        "15",
+                                                        "PowerPass",
+                                                        "Fail",
+                                                        "YouFail"
+                                            ]
+                                        },
+                                                {
+                                                    "NameOfScene": "PowerPass",
+                                                    "theScene": [                                                
+                                                                "And with the power of both your legs and your upper body strength, you successfully pull yourself out of the pit with a heaving gasp!",
+                                                                "PlayerStep",
+                                                                "JumpToScene", "PostEventStuffs"
+                                                    ]
+                                                },
+                                        {
+                                            "NameOfScene": "Nimbly escape! (Technique)",
+                                            "theScene": [       
+                                                        "With the walls being so close to one another, you should be able to use them to climb out! All it will take is a bit of acrobatic prowess!",                                         
+                                                        "StatCheck",
+                                                        "Technique",
+                                                        "15",
+                                                        "TechPass",
+                                                        "Fail",
+                                                        "YouFail"
+                                            ]
+                                        },
+                                                {
+                                                    "NameOfScene": "TechPass",
+                                                    "theScene": [                                                
+                                                                "And with a few skillful hops against the walls, you manage to swiftly make your way back up and scurry out of the trap with a heated gasp!",
+                                                                "PlayerStep",
+                                                                "JumpToScene", "PostEventStuffs"
+                                                    ]
+                                                },                                        
+                                        {
+                                            "NameOfScene": "YouFail",
+                                            "theScene": [                                                
+                                                        "But despite your best efforts, you just can't manage to make it out of the pitfall trap, leaving you slipping back into the warm, watery embrace of the liquid aphrodisiacs!",
+                                                        "JumpToScene", "Just relax..."
+                                            ]
+                                        },
+                                         {
+                                            "NameOfScene": "Just relax...",
+                                            "theScene": [  
+                                                        "ApplyStatusEffect", "Cloying Mist",                                              
+                                                        "With every passing moment, you can feel the obscene fluid soak into you more and more, imbuing you with enticing heat and invading all of your senses with treacherous pervasiveness...",
+                                                        "PlayerStep",
+                                                        "Intoxicating tingles dance across your entire body from the effects of the lewd drug alone, making your cock throb with burning need and your balls tense with rising anticipation, staining your mind with an ever more insistent want for release!",
+                                                        "IfPlayerOrgasm", "ClimaxTime",
+                                                        "JumpToScene", "EscapeMenu"
+                                            ]
+                                        },
+
+                                        {
+                                            "NameOfScene": "ClimaxTime",
+                                            "theScene": [            
+                                                        "JumpToRandomScene",
+                                                            "ShiverAndTwitch",
+                                                            "Masturbate",
+                                                        "EndLoop"  
+                                            ]
+                                        },
+                                                {
+                                                    "NameOfScene": "ShiverAndTwitch",
+                                                    "theScene": [            
+                                                                  "ApplyStatusEffect", "Cloying Mist",
+                                                                  "Under the inescapable stimulation of the warm aphrodisiac sloshing around your waist, not to mention your trembling and throbbing erection sensitively rubbing against your clothes, you feel your head rapidly go increasingly blank from the rising raw lust permeating your entire being, the sensation quickly becoming too imperiously pressing to ignore!",                                                                  
+                                                                  "PlayerOrgasm", "1",
+                                                                  "Gasping and panting hotly, you woozily lean against the nearest wall, your hips frantically jerking and thrusting on instinct as drug-induced ecstasy overwhelms you more and more with every passing moment, until the all-consuming euphoria overloads your restraint and draws out a thick spurt of semen from your tingling, spasming erection, leaving you indulgently basking in the helplessly pleasurable ejaculation...",
+                                                                  "PlayerOrgasm", "1", "ApplyStatusEffect", "Cloying Mist",
+                                                                  "But a feeling of alarm quickly jolts you back into awareness upon the realization that now that you've hit that obscene orgasmic peak, it refuses to stop! Like a crashing tide, it washes back and forth through your body and mind, leaving you spacing out again in tongue-lolling bliss as you unload more fresh ropes of semen into the pool below you, only able to gasp and whimper in base pleasure from the raw delight suffusing you!",
+                                                                  "PlayerStep",
+                                                                  "IfPlayerOrgasm", "CantStopCumming-?!",
+                                                                  "IfPlayerSpiritGone", "CantStopCumming-?!",
+                                                                  "But slowly and thankfully, that spurting high eventually abates, allowing you a precious moment of clarity to regain your bearings, all the while the pool you're still bathed in filters away all of your leaked cum, leaving the aphrodisiac bath as pristine as when you entered it...",
+                                                                  "JumpToScene", "EscapeMenu"
+                                                    ]
+                                                },
+                                                {
+                                                    "NameOfScene": "Masturbate",
+                                                    "theScene": [            
+                                                                  "ApplyStatusEffect", "Cloying Mist",
+                                                                  "Gasping and panting with raw arousal from your lower body's depraved liquid submersion, you can't stop yourself from reaching down on libidinous instinct and frantically pumping your cock in desperate search of release from the all-consuming need permeating your entire body!",                                                                  
+                                                                  "PlayerOrgasm", "1",
+                                                                  "And with your endurance being so worn down by the lust-stoking soak, it only takes a few strokes of your oversensitized dick for you to unload warm spurts of seed from your eagerly tensing balls as a hot wave of climax crashes through your senses, sending intoxicating euphoria tingling up and down every part of you in an eye-rolling surge of climactic bliss!",
+                                                                  "PlayerOrgasm", "1", "ApplyStatusEffect", "Cloying Mist",
+                                                                  "However, with you being so soaked in pent-up aphrodisiac arousal, you find yourself unable to stop at just one cumshot now that your liberating climax has started, leaving you masturbating indulgently and moaning out loudly as you continue stroking yourself with blind ardor, your head empty of anything but the animalistic search for more pleasure as you pour load after load of your seed into the pool entrapping you.",
+                                                                  "PlayerStep",
+                                                                  "IfPlayerOrgasm", "CantStopCumming-?!",
+                                                                  "IfPlayerSpiritGone", "CantStopCumming-?!",
+                                                                  "But slowly and thankfully, that spurting high eventually abates, allowing you a precious moment of clarity to regain your bearings, all the while the pool you're still bathed in filters away all of your leaked cum, leaving the aphrodisiac bath as pristine as when you entered it...",
+                                                                  "JumpToScene", "EscapeMenu"
+                                                    ]
+                                                },
+                                                        {
+                                                            "NameOfScene": "CantStopCumming-?!",
+                                                            "theScene": [            
+                                                                        "ChangeBGM", "music/Casino/BGM06_sink.mp3",
+                                                                        "You yelp in confused euphoria as your manhood keeps hotly spasming and spurting from the soaking bath of aphrodisiacs, the constant oozing assault of pleasurable shocks making every part of your body twitch receptively with mind-blanking, tingly intensity.",
+                                                                        "Your legs desperately wobbling from the nonstop orgasmic high you're experiencing, you woozily totter in place until you can't take any more and they finally give out beneath you, letting you crumple into the entrapping pink pool with a splash!",
+                                                                        "Gasping as the colorful liquid sloshes around you, you experience a short-lived spell of alarm as you suddenly fear that you might drown, the surge of blind panic momentarily short-circuiting the burning lust coursing through you and leaving you messily splashing around until you remember that the pit you're lying in is actually {i}not that deep{/i}, the assuaging realization making you exhale in relief.",
+                                                                        "Helplessly feeling relaxation comfortingly fill you as the lewd, almost syrupy substance surrounds you from all around like a watery blanket, you can't keep yourself from indulgently letting yourself sink into the warm liquid {i}just for a moment{/i}, gradually lowering yourself until you come to rest at neck level in your 'tub', just like in a cozy spa bath.",
+                                                                        "In your brief moment of clarity, you note that your ejaculated seed has been drained out of the pool by some filter, leaving its contents as pristine as ever... which actually reminds you that you're currently in a predicament that you'd better try and get out of instead of lounging around!-",
+                                                                        "However, trying to stand back up only leaves you slumping back down with a moan as you shiver both from the tempting aphrodisiac titillation and the comparably unpleasant coldness of the surrounding air, bringing you to needily submerge yourself back up to your neck with a happy sigh, your cock throbbing harder than ever while your balls tense in excitement, the arousing liquid continuing to fill you through every inch of your soaked skin.",
+                                                                        "'Just one more orgasm' is all you can think as you lie there in blissful relaxation, your splayed body completely offered to the enticing embrace of the watery trap... Yes, one more orgasm, just to clear your head, then you'll be feeling nice and refreshed, all ready to go...",
+                                                                        "However, before you can get to work on that indulgent 'plan', you notice a hidden compartment in the wall next to you suddenly open with a whirr as a masturbation sleeve attached to some kind of cord unwinds from its hiding spot, extending helpfully towards you until it comes to hang motionlessly above your midsection like some kind of offering, silently waiting for you to make use of it...",
+                                                                        "A still rational part of your mind registers that it must be some kind of extra trick and that you {i}probably{/i} shouldn't fall for it... but lounging in the bath of warm aphrodisiacs as you are, filled to the brim with lust that just keeps steadily rising, that little voice of wisdom is all but drowned out as you thoughtlessly grab the masturbator and dive it into the pink liquid to sheathe your cock!",
+                                                                        "With the pool acting like a prodigal lubricant, your dick slides easily into the artificial folds, the tightly constricting yet soft material ending up pleasantly slippery and a bit sticky from the ample fluids surrounding you as you hilt your shaft into the pseudo-pussy with a blissed-out moan, your eyes opening wide in vacant ecstasy as your crumbles resistance nearly sends you spurting again right then and there.",
+                                                                        "Leaning back against one wall of the pit with an intoxicated sigh, you start to slowly pump your shaft with the sex toy, rubbing even more of the warm liquid into your throbbing manhood in the process of getting yourself off, every stroke of the luxuriously textured sleeve sending chills through your senses from the strangely intensified sensations enveloping your length.",
+                                                                        "All too quickly, you can't muster the presence of mind to think straight anymore as you pump the masturbator up and down your trembling erection in blind need, sinking into onanistic bliss as the familiar, hot urge to cum rapidly starts to overtake your lower body, coaxing you into stroking and shaking the toy ever faster, heedless of any preoccupation to pace yourself or hold back, leaving you just pumping and pumping...",
+                                                                        "Until with a shivering, incoherent moan, your eyes roll up in climax as your hips buck into the soft, inviting fake pussy and you pour your thickest load yet into the device, the warmth of the drugged waters all around you feeling like a wondrously cozy hug as you shudder and spurt for what feels like an eternity, the lewd contraption draining every drop you give it and vacuuming it all away to some unseen, unknown place.",
+                                                                        "Completely surrendering yourself to your copious ejaculation, your brain devolves into an animalistic mush as you can't bring yourself to care about anything but keeping a firm grip on the deluxe masturbator as you fap with base abandon, feeding the cocksleeve with enough semen to make its suction noises briefly intensify as it automatedly gulps down your flowing seed faster, allowing you to keep cumming and cumming...",
+                                                                        "You're not entirely sure how long your orgasm lasts, but eventually, you do come down from the oozing, mind-blanking pleasure, twitching and gasping messily as you try to recollect yourself, still lightly and thoughtlessly pumping the toy up and down your length as you're euphorically filled with post-orgasmic shocks of hot bliss, all the while your aphrodisiac-fueled libido keeps your erection {i}so{/i} achingly hard and receptive...",
+                                                                        "PlayBlackOut",
+                                                                        "However, as you indulgently lie there in idle ecstasy, the trapdoor above you suddenly slides shut, making you jump in confused surprise, the jolting shock actually making you spurt out another rope of semen into the toy as you blindly look around your now pitch-black surroundings, finding yourself left with only the bath's luscious warmth and the masturbator's soft vice to keep you company.",
+                                                                        "... And yet, instead of worrying, you let out a dreamy, intoxicated sigh and relaxedly slump back against the wall as you start stroking the wonderful aphrodisiac-soaked sleeve up and down your length all over again, your lust-filled, reason-emptied head firmly deciding that there's no hurry, and that you can always see about getting out once you're done taking care of your imperiously brimming arousal.",
+                                                                        "With your eyes now unable to see much of anything anymore, you can appreciate your current flurry of tactile sensations all the more, from the delightfully slippery, squeezing, textured interior of the sex toy to the sumptuous warmth of the lewd substance sloshing against your skin as you bask in the luxurious comfort of the pool, completely focused on getting yourself off with delirious gasps and moans in the solitary darkness.",
+                                                                        "Utterly lost and willingly drowning in these wonderful sensations, you can only mewl in delight as you mindlessly pleasure yourself, closing your eyelids the better to enjoy the finely crafted toy you're currently fucking, and into which you soon pour another load of fresh cum with vacant giddiness, the warm liquid that surrounds you keeping you hot, sensitive, and needy even as fresh shuddering shocks of climax jolt across your body.",
+                                                                        "But suddenly, you're in for another surprise as something touches you in the midst of your orgasm: a soft, feminine hand caressing your cheek and tilting your face into a deep kiss with her soft lips, all the while another body pushes up against your side with a low coo!",
+                                                                        "With the darkness being just as complete as before, you can't see the unknown figures at all, but you can definitely feel them and hear them, their coaxing hands soon running over your body in a parade of grazing, doting touches while they coquettishly giggle into your ears, as if to wordlessly invite you not to worry and just appreciate the moment...",
+                                                                        "Even pleasure-soaked and drunk off multiple orgasms as you are, your brain tries to process who or what the newcomers might be to suddenly appear like this. Since they don't feel like slimes, part of you wonders if they're just illusions... but as they soon push your hands off of the masturbator and grasp it for themselves to stroke along your length instead, you quickly find out that it very much seems not to be the case!",
+                                                                        "However, with the two enticingly feminine shapes pressing themselves against you and melting down your worries with tittering coos and sighs, you quickly decide that you actually don't care, your aphrodisiac-saturated head leaving you unable to think about anything but how {i}good{/i} you're feeling right now, and how you should definitely just go with the flow and enjoy yourself...",
+                                                                        "Approving of your indulgent decision, the mystery duo reward you by treating you to an alternating flurry of mind-numbing kisses, one keeping your mouth captive while the other breathily coos sweet nothings into your ear, making you feel more and more like there's clearly {i}no{/i} reason not to just make the most of this blissful moment...",
+                                                                        "While the unknown pair keep cajolingly smooching you, their fingers dance over your chest and waist tenderly, meanwhile they keep pumping the slippery sex sleeve over your trembling erection in unison, the sensation of it swallowing and squeezing your dick becoming all the more powerfully stimulating now that it's in someone else's control.",
+                                                                        "With each stroke of the toy, you can feel your aching balls eagerly tense, drawing out a constant river of precum from your overstimulated testes, your libido kept nice and hot by your ongoing bath and by the mysterious women showering you in affectionate kisses while languidly rubbing their curves against your wetly slick body, leaving your moans echoing in the small chamber as you're wonderfully pampered in your oversensitive state.",
+                                                                        "Then, as the duo feel you getting close to the edge and suddenly speed up their jerking of the tight and inviting sex sleeve, everything goes blank with climactic bliss and your dam breaks in a flood of euphoria, your hips jerking into the toy as it diligently drains away every spurting rope of cum you offer it, your two mystery lovers dotingly cooing and wordlessly whispering into your ears in-between trading more kisses with you.",
+                                                                        "Completely orgasm-drunk, you ejaculate with thorough abandon once more, your spurting high feeling like it might never actually stop this time, each cascading wave of pleasure overlapping and crashing into the next one thanks to the aphrodisiacs you're filled with, every jolting shock of climax setting off the next in a seemingly unending chain.",
+                                                                        "Through it all, the duo keep lightly pumping the toy over your spasming manhood while soothingly caressing you, ensuring your extended orgasm is as luxuriously ecstatic as can be, your unseen helpers taking care of everything while you just need to lie back and cum, cum, cum, cum...",
+                                                                        "Slowly, very gradually, they take you to the peak of rapture, then work you down from your raw, chain-orgasmed state with attentive care, spoiling you rotten with affectionately gentle touches that don't seem to disturb the pink liquid you're submersed in, letting you dreamily drift into a wonderfully brimming afterglow of euphoric pleasure, deliciously warm from head to toe and gloriously unable to think about {i}anything{/i} at all.",
+                                                                        "Just as you start to come down from your high, they already resume slowly moving the toy with mischievous giggles, clearly intent on putting you through this delightful wringer all over again... but they then let out pouty 'Boos~' as they realize you're actually starting to fade away from exhaustion, spoiling the fun they were obviously looking forward to having.",
+                                                                        "As if to make up for that disappointment, the anonymous pair instead press themselves tight to your sides, giving you smooches and lovingly rubbing their smooth frames against you, easing you lewdly through your woozy afterglow and into blissful unconsciousness until you depart completely, your stamina thoroughly spent, but your twitching erection all but begging you to quickly come back for more...",
+                                                                        "...",
+                                                                        "ChangeSensitivity", "Sex", "20",
+                                                                        "ChangeSensitivity", "Magic", "10",
+                                                                        "GameOver"
+                                                            ]
+                                                        },
+
+                    {
+                      "NameOfScene": "PostEventStuffs",
+                      "theScene": [
+                                   "As you lay there, hotly panting to collect yourself, the trapdoor firmly shuts behind you, leaving you safely back on firm ground to dry yourself off as best you can, then carry on with your exploration...",
+                                   "IfInExploration", "EndEvent",
+                                   "AllowInventory",
+                                   "GoBackToStoredEvent"
+                                ]
+                    },
+                        {
+                        "NameOfScene": "EndEvent",
+                        "theScene": [    "UseHeldBG"
+                                    ]
+                        },
+
+                    {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [   "event broke."
+                                ]
+                    }
+                ]
+}

@@ -1,0 +1,504 @@
+{
+  "name": "PurpleHeartTile",
+  "CardType": "Event",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [ ""],
+  "Speakers": [
+                {
+                  "name": "Iabel",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                }
+              ],
+  "EventText": [
+                  {
+                      "NameOfScene": "PurpleTile",
+                      "theScene": [  "SpawnGridNPC", "PurpleHeartTrapDormant", "Here",
+                                    "RemoveGridNPC", "Current",
+                                      "As you step onto the tile inlaid with a stylish purple heart, there's a sensual glow of mystic energy-!",
+                                     "JumpToScene", "PostIntro"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "PurpleTile2",
+                            "theScene": [  "SpawnGridNPC", "PurpleHeartTrapDormant2", "Here",
+                                          "RemoveGridNPC", "Current",
+                                            "As you step onto the tile inlaid with a stylish purple heart, there's a sensual glow of mystic energy-!",
+                                           "JumpToScene", "PostIntro"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "PurpleTile3",
+                            "theScene": [  "SpawnGridNPC", "PurpleHeartTrapDormant3", "Here",
+                                          "RemoveGridNPC", "Current",
+                                            "As you step onto the tile inlaid with a stylish purple heart, there's a sensual glow of mystic energy-!",
+                                           "JumpToScene", "PostIntro"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "PurpleHeartProjectile",
+                            "theScene": [
+                                          "RemoveGridNPC", "Current",
+                                          "As the mystical purple hearts drift into you, there's a dazzling flash of arcane light amid a head-spinning rush of dizzying euphoria-!",
+                                           "JumpToScene", "PostIntro"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "PurpleTileAlt",
+                            "theScene": [  "SpawnGridNPC", "PurpleHeartTrapDormant", "Here",
+                                          "RemoveGridNPC", "Current",
+                                          "The tile flares up with a stylish purple heart on its center, conjuring a sensual glow of mystic energy-!",
+                                           "JumpToScene", "PostIntro"
+                                      ]
+                        },
+                  {
+                      "NameOfScene": "PostIntro",
+                      "theScene": [
+                                      "SetProgress", "0", "SetChoice", "2", "",
+                                      "GetEventAndSetChoice", "ShadowsTile", "1", "",
+
+                                      "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "Iabel", "Wink",
+                                      "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                      "And your surroundings are suddenly encased in a shimmering purple barrier, leaving you trapped inside with Iabel only a few feet away, a small smile on her soft lips as she lightly sways and gyrates her seductively wide hips, making her jewelry bounce and jingle along with her huge, pendulous breasts.[DamageToPlayer]",
+                                      "ChangeImageLayer", "Mask", "Iabel", "",
+                                      "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                      "She wordlessly plucks off her mask with a teasing wink, blowing you a kiss as she hands it off to one of her slithering shadowy hair serpents which tucks it away in one engulfing bite, letting her now unobstructed seductive gaze meet you directly while she trails her fingers down along her luxurious curves, groping and showing off her heavy tits and plush thighs.[DamageToPlayer]",
+                                      "Speaks",
+                                      "SwapLineIf", "Random",
+                                        "Auhuhu~♥ Care to treat your eyes to my body?♥",
+                                        "Ufuhu~♥ How do you like my dance?♥",
+                                        "Uhuhu~♥ Lose yourself in my curves.♥",
+                                        "Mfhfh~♥ Stare as long as you want.♥ Feel yourself fall for me.♥",
+                                      "EndLoop",
+                                      "IfPlayerOrgasm", "WatchHorny",
+                                      "IfHasPerk", "Gilded Infatuation", "GildedTemptation",
+                                      "IfHasPerk", "Gilded Captivation", "GildedTemptation",
+                                      "IfHasPerk", "Gilded Enchantment", "GildedTemptation",
+                                      "Menu",
+                                        "Watch...",
+                                        "Look away!",
+                                      "EndLoop"
+
+                                  ]
+                  },
+                                {
+                                  "NameOfScene": "WatchHorny",
+                                  "theScene": [
+                                                  "You're too horny and aroused to even think about looking away from the intoxicating show in front of you!",
+                                                  "JumpToScene", "Watch..."
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "GildedTemptation",
+                                  "theScene": ["DamagePlayerFromMonster", "Iabel", "Seduce",
+                                                "SwapLineIf", "Perk",
+                                                 "Gilded Enchantment",  "You're too enchanted with Iabel's perfectly plush, divine body to think about anything other than worshiping her, huffing with excitement at her intoxicating, captivating hourglass curves alluringly shaking back and forth to an unheard rhythm, eager to simply give in and let your brain get filled with the voluptuous, divine serpent goddess' enthralling dance...[DamageToPlayer]",
+                                                 "Gilded Captivation",  "You're too captivated with Iabel's luxurious body to think about anything else, huffing with excitement at her alluring hourglass curves temptingly shaking back and forth to an unheard rhythm, eager to simply relax and let your brain get filled with the sight of the intoxicatingly voluptuous serpent woman's dance...[DamageToPlayer]",
+                                                 "Gilded Infatuation",  "You're too infatuated with Iabel's glamourous body to think straight, panting with excitement at her tempting hourglass curves bouncing back and forth to an unheard rhythm, eager to simply relax and turn off your brain to watch the voluptuous serpent woman's dance...[DamageToPlayer]",
+                                                "EndLoop",
+                                                "IfPlayerOrgasm", "WatchHorny",
+                                                "Menu",
+                                                  "Try to think! (Temptation)",
+                                                  "Watch...",
+                                                "EndLoop"
+                                            ]
+                                },
+                                        {
+                                          "NameOfScene": "Try to think! (Temptation)",
+                                          "theScene": [
+                                                        "StatCheck",
+                                                        "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Enchantment", "5",
+                                                        "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Captivation", "5",
+                                                        "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Mark", "1",
+                                                        "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Markings", "3",
+                                                        "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Coating", "5",
+                                                        "Temptation",
+                                                        "15",
+                                                        "GildedTemptationPass",
+                                                        "Fail",
+                                                        "Watch..."
+                                                    ]
+                                        },
+                                {
+                                  "NameOfScene": "GildedTemptationPass",
+                                  "theScene": [
+                                                "You manage to get enough of a grip on yourself to act on your own accord! But she's still swaying and shaking her heavy tits and wide hips for you...",
+                                                "Menu",
+                                                  "Watch...",
+                                                  "Look away!",
+                                                "EndLoop"
+                                            ]
+                                },
+                        {
+                          "NameOfScene": "Look away!",
+                          "theScene": [
+                                          "ChangeImageLayer", "Expression", "Iabel", "GlareShine",
+                                          "As you look away from Iabel's luxurious form, her gaze flares up with imperious arcane might, her stern words ringing in your ears with regal authority.",
+                                          "Speaks",
+                                          "I said, {b}{i}watch!{/i}{/b}",
+                                          "StatCheck",
+                                          "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Enchantment", "5",
+                                          "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Captivation", "5",
+                                          "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Infatuation", "5",
+                                          "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Mark", "1",
+                                          "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Markings", "3",
+                                          "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Coating", "5",
+                                          "Willpower",
+                                          "15",
+                                          "GazeEscape",
+                                          "Fail",
+                                          "GazeFail"
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "GazeFail",
+                                  "theScene": [
+                                                  "ChangeImageLayer", "Expression", "Iabel", "Wink",
+                                                  "In spite of yourself, you find your gaze gluing itself to Iabel's swaying curves, her command resonating through your charmed mind, leaving you no choice but to eagerly drink in her divine body as it shakes and bounces back and forth.",
+                                                  "Speaks",
+                                                  "Good.♥ Now then.~♥",
+                                                  "JumpToScene", "Watch..."
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "GazeEscape",
+                                  "theScene": [
+                                                  "ChangeImageLayer", "Expression", "Iabel", "Cold",
+                                                  "You shake off the will-cracking stare bearing down on you, making Iabel huff in annoyance as she ends her tempting dance, peevishly crossing her arms under her bust and tilting her hips to the side.",
+                                                  "Speaks",
+                                                  "Hmph, fine then.",
+                                                  "DisplayCharacters",
+                                                  "EndLoop",
+                                                  "In a flare of purple light, the serpentine hellhound and the barrier vanish, leaving you alone in the darkened halls of the labyrinth."
+                                            ]
+                                },
+                        {
+                          "NameOfScene": "Watch...",
+                          "theScene": [
+                                          "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                          "Your eyes eagerly drink in the sight of Iabel shaking her wide hips back and forth with tempting gyrations of her waist. Her upper body stays mostly still, her bust only jiggling slightly from her eye-catching dance, the ornamental gems hanging from her body swaying and jingling along with her wiggling hips, while her long tail slithers and coils in place.[DamageToPlayer]",
+                                          "ChangeImageLayer", "Expression", "Iabel", "Smug", "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                          "The serpent woman lets out a haughty chuckle as she gazes down at you, sensually trailing her elegant hands up and down her voluptuous, full curves while she rocks her trim waist back and forth in wider, slower arcs, winding her serpent half to aid her, hefting her pillowy tits in her hands before letting them captivatingly drop, stretching her arms languidly to push out her divine, bouncing bust...[DamageToPlayer]",
+                                          "ChangeImageLayer", "Expression", "Iabel", "Wink", "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                          "She purrs at the sight of your obviously mounting captivation, the erotic swaying and tempting shaking of her sinfully soft bust and wide womanly hips drawing you into a fuzzy state of horny infatuation for her hourglass-shaped body, your cock throbbing eagerly as she pivots to the side with her coiling motions, giving you an eyeful of her plump, bouncing ass, the smooth, luxurious skin demanding your attention as it jiggles for you.[DamageToPlayer]",
+                                          "ChangeImageLayer", "Expression", "Iabel", "Caring", "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                          "Her serpentine hair sweeps across your vision with a hiss, disorienting you for a moment as Iabel pivots again, drawing closer with every sway of her glamourous curves, smiling down at you warmly as she temptingly shakes her heavy tits a few inches from your face, breaking up the tempo by running her fingers across her soft, pliable skin, leaving you increasingly awestruck and enraptured with her heavenly beauty.[DamageToPlayer]",
+                                          "IfHasPerk", "Gilded Infatuation", "Keep watching",
+                                          "IfHasPerk", "Gilded Captivation", "Keep watching",
+                                          "IfHasPerk", "Gilded Enchantment", "Keep watching",
+                                          "CallSceneThenReturn", "InfatuationStack",
+                                          "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                          "Until finally, she coils around you with a teasing coo, circling your dazed form before pressing her cleavage against your face, draping her arms over your shoulders, still rocking her voluptuous body back and forth, coaxing you to sway with her in a captivating dance, your mind turning pink with intoxicating infatuation from her loving gaze, your hands slipping around her trim waist to eagerly grope her plump ass almost of their own accord.[DamageToPlayer]",
+                                          "SetChoice", "1", "Prior",
+                                          "IfPlayerOrgasm", "Step1Orgasm",
+                                          "JumpToScene", "PostOrgasm1"
+
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "Step1Orgasm",
+                                  "theScene": [
+                                                "You mewl and pant with melty desire, nuzzling Iabel's pillowy tits, pampering yourself with her heavenly curves while your cock throbs and twitches eagerly. In reaction to your trembling needy lust, Iabel slides your throbbing erection between her plush thighs with a smooth motion of her waist, her rocking hips quickly sending blossoming ecstasy through your loins as your cock is massaged up and down by her smooth, luscious legs.",
+                                                "ChangeImageLayer", "Expression", "Iabel", "Wink",
+                                                "Embracing you possessively, she lovingly scratches the back of your neck with her long nails, coaxing you to bury your pleasure-drunk face deeper into her luxurious cleavage, your mind going blank as she sways and wiggles her hips, your hands lost in the plushness of her ass, your manhood obediently spasming between her cradling thighs with each shake of her waist, overwhelming you with enthralling, divine bliss.",
+                                                "PlayerOrgasm", "1",
+                                                "Huffing and gasping, you thoughtlessly thrust your hips along with the gyrating dance, eagerly breaking down your remaining endurance with a few resounding slaps against her luscious thighs, using your hold on her plump butt to leverage your humping until waves of hot pleasure explode outwards and you erupt all over her legs, coating her skin in your thick seed, some of the long ropes shooting out past her embrace.",
+                                                "ChangeImageLayer", "Expression", "Iabel", "Caring",
+                                                "She gently pulls you away a few inches while a gilded glow submerses her body, soaking in your seed while your mind catches up with the dizzying, captivating pleasure ricocheting through your brain and you slip your manhood free of her legs' tempting embrace.",
+                                                "IfChoice", "1", "Prior", "PostOrgasm1",
+                                                "JumpToScene", "KeepWatchPostOrg"
+                                            ]
+                                },
+                    {
+                      "NameOfScene": "PostOrgasm1",
+                      "theScene": [
+                                          "ChangeImageLayer", "Expression", "Iabel", "Wink",
+                                          "Then with a teasing wink from Iabel, the heart trap glows anew, flaring up to take away the enrapturing serpent who gives you a goodbye smooch to the forehead and some tempting parting words before the flash of magic spirits her away.",
+                                          "Speaks",
+                                          "The more captivated you become,♥ the longer I'll dance with you.♥",
+                                          "Her voice echoes in your ears and her luscious body stays in your mind's eye, swaying and shaking, tempting you towards sweet surrender...",
+                                          "DisplayCharacters",
+                                          "EndLoop",
+                                          "ChangeSensitivity", "Seduction", "5",
+                                          "CallSceneThenReturn",  "FixSpirit"
+                                      ]
+                    },
+                    {
+                      "NameOfScene": "Keep watching",
+                      "theScene": [
+                                      "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                      "Until finally, she coils around you with a teasing coo, circling your dazed, infatuated form before pressing her luscious cleavage against your face, draping her elegant arms over your shoulders, still rocking her voluptuous body back and forth, coaxing you to sway with her in a captivating dance, your love-drunk mind stained pink with intoxicating bliss from her loving gaze, your hands slipping around her trim waist to eagerly grope her plump ass.[DamageToPlayer]",
+                                      "SetChoice", "1", "Post",
+                                      "IfPlayerOrgasm", "Step1Orgasm",
+                                      "JumpToScene", "KeepWatchPostOrg"
+                        ]
+                    },
+                        {
+                          "NameOfScene": "KeepWatchPostOrg",
+                          "theScene": [
+                                          "ChangeImageLayer", "Expression", "Iabel", "Wink",
+                                          "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                          "She lets out a low laugh as she continues to sway and gyrate her body, slowly dancing in a coiling circle, making your head spin with her teasing movement, coaxing you to lean into her with a blissful whimper, burying your face in her luxurious breasts while you look up into her golden eyes in enamored captivation, drunkenly kneading and squeezing her luscious rear as it shakes back and forth.[DamageToPlayer]",
+                                          "DamagePlayerFromMonster", "Iabel", "Luxurious Sway", "ChangeImageLayer", "Expression", "Iabel", "Caring",
+                                          "Your cock eagerly leaks and throbs as more infatuated euphoria melts through your senses with each massaging shake and sway of Iabel's intoxicating curves, making you feel like your charmed-senseless mind is getting sensually squeezed tighter with each passing moment. Sinking in love-struck bliss, you dance and twirl with the divine serpent woman while she scritches the back of your neck, leaving you feeling delightfully floaty and pampered.[DamageToPlayer]",
+                                          "IfHasPerk", "Gilded Captivation", "Keep watching2",
+                                          "IfHasPerk", "Gilded Enchantment", "Keep watching2",
+                                          "CallSceneThenReturn", "InfatuationStack",
+                                          "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                          "ChangeImageLayer", "Expression", "Iabel", "Happy",
+                                          "Iabel sweetly purrs at your growing charmed captivation towards her voluptuous body, rewarding your dazed, slack-jawed mesmerization by rocking her wide hips side to side, teasingly rubbing her soft thighs against your aching manhood, letting your hands get lost in the softness of her plump ass while she shakes her huge, pillowy tits in your drunken face, knocking loose bits and pieces of your remaining rationality, making you lose yourself deeper and deeper in her coiling dance.[DamageToPlayer]",
+                                          "SetChoice", "1", "Prior",
+                                          "IfPlayerOrgasm", "Step2Orgasm",
+                                          "JumpToScene", "PostOrgasm2"
+                            ]
+                        },
+                        {
+                          "NameOfScene": "PostOrgasm2",
+                          "theScene": [
+                                          "ChangeImageLayer", "Expression", "Iabel", "Wink",
+                                          "Then with a teasing wink from Iabel, the heart trap glows anew, flaring up to take away the enrapturing serpent who gives you a goodbye smooch to the forehead and some tempting parting words before the flash of magic spirits her away.",
+                                          "Speaks",
+                                          "If you get {i}too{/i} captivated,♥ you might never want me to stop dancing.♥ You'll be too love-drunk to care about anything else.♥",
+                                          "Her sweet voice echoes in your ears and her alluring, luscious body stays in your pleasure-stained mind's eye, teasingly swaying and shaking, seductively rubbing and pampering you, tempting you towards sweet surrender...",
+                                          "DisplayCharacters",
+                                          "EndLoop",
+                                            "ChangeSensitivity", "Seduction", "10",
+                                          "CallSceneThenReturn",  "FixSpirit"
+                            ]
+                        },
+                                {
+                                  "NameOfScene": "Step2Orgasm",
+                                  "theScene": [
+                                              "ChangeImageLayer", "Expression", "Iabel", "Smug",
+                                              "You mewl with euphoric bliss as you grope her overflowing ass and nuzzle your face deeper into her plump tits, pampering yourself deeper into submission and starting to indulgently thrust between her luxurious thighs, only for one of Iabel's elegant hands to slip down and deftly wrap around your shaft, teasingly pumping your length while keeping you right where she wants you.",
+                                              "Speaks",
+                                              "Ufuhu.♥ You don't need to {i}thrust{/i} to reach release.♥",
+                                              "ChangeImageLayer", "Expression", "Iabel", "Wink",
+                                              "She slips back a few inches, depriving you of the heavenly touch of her glamourous body, teasingly giving your manhood a few coy strokes before sliding away with a parting caress of her index along the underside of your spasming erection, leaving you panting in helpless captivation as she sways and rocks her hourglass curves right in front of you, letting her wide hips and huge tits fill your charmed mind with bouncing bliss.",
+                                              "Speaks",
+                                              "You just need {i}me{/i} to get off.♥ The mere {i}presence{/i} of my divine curves makes you eager to {i}spurt.♥{/i} Everything else is just you getting pampered and spoiled.♥",
+                                              "PlayerOrgasm", "1",
+                                              "Euphoric bliss melts through your senses while your cock spasms in submissive agreement with her words, every shake and sway of her luscious body sending a hot wave of charming pleasure coiling through your mind, the jiggling of her divine bust and sashaying flicks of her thick hips blanking out everything else in your brain, immersing you deeper and deeper in worshipful rapture until the bubbling ecstasy erupts and you cum from the horny veneration alone, your spurting dick coating Iabel's smooth skin in long ropes of seed.",
+                                              "DamagePlayerFromMonster", "Iabel", "Luxurious Sway", "ChangeImageLayer", "Expression", "Iabel", "Caring",
+                                              "While you tremble in orgasmic awe a few inches from her, she soaks your semen in with a haughty laugh and a gilded glow of magic, then slides forward to embrace you anew, leaving your mind spinning and sinking as you go back to groping her plump ass and nuzzling her luxurious cleavage like an addict, her arms possessively draping over you while she resumes swaying side to side with your captivated form.[DamageToPlayer]",
+
+                                              "IfChoice", "1", "Prior", "PostOrgasm2",
+                                              "JumpToScene", "KeepWatch2PostOrg"
+
+                                  ]
+                                },
+                          {
+                            "NameOfScene": "Keep watching2",
+                            "theScene": [
+                                            "DamagePlayerFromMonster", "Iabel", "Luxurious Sway", "ChangeImageLayer", "Expression", "Iabel", "Wink",
+                                            "Iabel sweetly purrs at your charmed captivation with her voluptuous body, rewarding your dazed, slack-jawed mesmerization by rocking her wide hips side to side, teasingly rubbing her soft thighs against your aching manhood, letting your hands get lost in her pillowy, plump ass while she shakes her huge, indulgent tits in your drunken face, knocking loose bits and pieces of your remaining rationality, making you moan out happily.[DamageToPlayer]",
+                                            "SetChoice", "1", "Post",
+                                            "IfPlayerOrgasm", "Step2Orgasm",
+                                            "JumpToScene", "KeepWatch2PostOrg"
+
+                              ]
+                          },
+                          {
+                            "NameOfScene": "KeepWatch2PostOrg",
+                            "theScene": [
+                                            "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                            "But the dance still seems far from over as she sways with your pleasure-drunk and infatuated form, pivoting her slithering body as she shakes her bountiful tits and lets you appreciate her full ass. At this point, you vacantly realize that her serpentine tail is slowly coiling around your body, binding your legs and waist tightly while leaving your twitching manhood fully exposed.[DamageToPlayer]",
+                                            "DamagePlayerFromMonster", "Iabel", "Luxurious Sway", "ChangeImageLayer", "Expression", "Iabel", "Smug",
+                                            "She slowly lifts her body up higher with her large, powerful tail, freeing you regretfully from her bountiful cleavage and gropeable ass, leaving you leaning back in awe as she looms over you, languorously wiggling her thick hips in front of your face, your upward gaze eclipsed by her heavy, bouncing tits, obscuring everything but the glow of her golden eyes glaring down at you while her mesmerizingly gyrating waist draws your gaze back down.[DamageToPlayer]",
+                                            "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                            "Iabel then pivots, blocking your sight with her roiling, living hair, the snakes lowly hissing as your gaze is flooded with her divine ass bouncing back and forth, letting you comfortably appreciate the plump butt you were previously groping, every shake and dancing wiggle making your cock twitch with melty excitement, sinking deeper and deeper in charming infatuation as you watch her jiggly rear temptingly gyrate for you.[DamageToPlayer]",
+                                            "IfHasPerk", "Gilded Enchantment", "Keep watching3",
+                                            "CallSceneThenReturn", "InfatuationStack", "DamagePlayerFromMonster", "Iabel", "Luxurious Sway", "ChangeImageLayer", "Clothing", "Iabel", "", "ChangeImageLayer", "Expression", "Iabel", "Caring",
+                                            "Her hair then twists and obscures your vision as she turns to face you again, a snap of her elegant fingers making her gilded clothing vanish in a glimmer of magic, leaving only her bare, perfectly smooth skin for you to drunkenly worship with your eyes, her glimmering gaze and divine body leaving you completely enchanted with the serpentine goddess.[DamageToPlayer]",
+                                            "SetChoice", "1", "Prior",
+                                            "IfPlayerOrgasm", "Step3Orgasm",
+                                            "JumpToScene", "PostOrgasm3"
+                              ]
+                          },
+                          {
+                            "NameOfScene": "PostOrgasm3",
+                            "theScene": [
+                                            "ChangeImageLayer", "Expression", "Iabel", "Wink",
+                                            "Then with a teasing wink from Iabel, the heart trap glows anew, flaring up to take away your captivating goddess who generously gives you a goodbye smooch to the forehead along with some careful chin scritches from her long nails, sending a tingle of bliss through your senses and sharing some tempting parting words before the flash of magic spirits her away.",
+                                            "Speaks",
+                                            "If this {i}fleeting{/i} glimpse of my divine bare skin isn't enough for you,♥ just watch my dance again.♥ But be careful,♥ you could end up my devoted celebrant,♥ auhuhu.~♥",
+                                            "Her divine voice echoes in your ears and her alluring, luscious body stays in your pleasure-stained mind's eye, teasingly swaying and shaking, seductively rubbing and pampering you, tempting you towards sweet worshipful surrender to your goddess' body...",
+                                            "DisplayCharacters",
+                                            "EndLoop",
+                                            "ChangeSensitivity", "Seduction", "20",
+                                            "CallSceneThenReturn",  "FixSpirit"
+
+
+                              ]
+                          },
+                                    {
+                                      "NameOfScene": "Step3Orgasm",
+                                      "theScene": [   "ChangeImageLayer", "Expression", "Iabel", "Smug",
+                                                      "Iabel teasingly slithers her voluptuous, nude form in front of you, gyrating and swaying her wide hips, running her elegant hands across her seductively smooth skin, your enraptured eyes drinking in every little detail of her intoxicatingly divine body, every back-and-forth shake making your captivated manhood throb and pulse with euphoric captivation.",
+                                                      "ChangeImageLayer", "Expression", "Iabel", "Wink",
+                                                      "Speaks",
+                                                      "Auhuhu~♥ Is my body in all its nude perfection too much for you, human?♥",
+                                                      "PlayerOrgasm", "1",
+                                                      "The serpentine goddess gives her thick hips a single teasing, wiggle-accented shake, and that single elegant, sultry motion of her peerless body takes you over the edge, your head rolling back with a moan while your manhood erupts a thick geyser of semen into the air, professing its total captivated submission to her, making the regal hellhound purr in appreciation as she soaks in your seed.",
+                                                      "ChangeImageLayer", "Expression", "Iabel", "Happy",
+                                                      "Speaks",
+                                                      "{i}Good.♥{/i}",
+                                                      "IfChoice", "1", "Prior", "PostOrgasm3",
+                                                      "JumpToScene", "KeepWatch3PostOrg"
+                                                      ]
+                                    },
+                            {
+                              "NameOfScene": "Keep watching3",
+                              "theScene": [ "ChangeImageLayer", "Expression", "Iabel", "Caring", "DamagePlayerFromMonster", "Iabel", "Luxurious Sway", "ChangeImageLayer", "Clothing", "Iabel", "",
+                                              "Her hair then twists and obscures your love-drunk vision as she turns to face you again, a snap of her elegant fingers making her gilded clothing vanish in a glimmer of magic, leaving only her bare, perfectly smooth skin for you to drunkenly worship with your eyes, her glimmering gaze and divine body leaving your enchanted mind turning to mush at the rapturous sight of the serpentine goddess' perfect body.[DamageToPlayer]",
+                                              "SetChoice", "1", "Post",
+                                              "IfPlayerOrgasm", "Step3Orgasm",
+                                              "JumpToScene", "KeepWatch3PostOrg"
+                                ]
+                            },
+                            {
+                              "NameOfScene": "KeepWatch3PostOrg",
+                              "theScene": [
+                                              "ChangeImageLayer", "Expression", "Iabel", "Wink", "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                              "Completely infatuated and pleasure-drunk, you watch as Iabel swings and sways side to side, draping her arms over you as she pulls you into her bare tits' divine embrace, melting your mind with a charming surge from mere intimate physical contact with her regal form, a pampering hand gently scritching the back of your neck while she stares down at you with her imperious gilded gaze, your enchanted mind spinning with the need to obey.",
+                                              "Speaks",
+                                              "Ufuhu~♥ Now then.♥ Worship me.♥",
+                                              "ChangeImageLayer", "Expression", "Iabel", "Pleasured",
+                                              "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                              "Her words strike deep into your pliable, captivated mind, and you immediately set to kissing and licking Iabel's divine bust while you grope her soft, pillowy flesh with eager hands, your fingers sinking deeply into her plush breasts as you lavish them with adoring veneration. Safely in the doting embrace of her powerful tail coiled around your lower body, you make her gasp and sigh, catching one of her pert nipples in your mouth to greedily suckle.",
+                                              "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                              "Spurred on by her noises of pleasure, you lap at her areola in slow circles as you keep sucking, your head spacing in and out of a worshipful trance, your cock throbbing with bliss from every touch and caress you get to give your goddess, squeezing and kneading her luxurious tits, your diligent work earning you sharp gasps and moans from the serpent woman, coaxing you to swap to the other teat, peppering it in licks and kisses while you grope the other.",
+                                              "Speaks",
+                                              "Lower-~♥",
+                                              "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                              "ChangeImageLayer", "Expression", "Iabel", "Predatory",
+                                              "She lets out a low moan as you slowly kiss and massage your way down from her bust to her waist, her domineering hand coaxing you lower and lower until you're kneeling in her tight coils, her drooling pussy now at eye level, giving you free rein to tease and lick her clit, your hands groping her scale-coated hips while you dive your tongue into her womanly folds to adoringly worship her sex while she purringly hisses with bliss.",
+                                              "ChangeImageLayer", "Expression", "Iabel", "Orgasm",
+                                              "Speaks",
+                                              "Mfffhpfh-~♥",
+                                              "DamagePlayerFromMonster", "Iabel", "Luxurious Sway",
+                                              "Iabel purrs and coos with pleasure, rewardingly scritching your head with a hand and pressing you against her gushing pussy, your every lick and kiss to her flawless pussy sending a melty wave of euphoria through your senses, your infatuated state making you rapidly drunk on her divine nectar, your eyes glazing over with charmed bliss, your dick obediently throbbing as you worship your goddess' body.",
+                                              "ChangeImageLayer", "Expression", "Iabel", "Pleasured",
+                                              "You mewl incoherently in-between steamy breaths of air, your senses completely enveloped in the divine rapture you're graciously given, your hands slipping back to grope her plump ass and bury yourself further in her drooling pussy which you keep licking and kissing affectionately, making the serpent woman's voice catch as her back arches in ecstasy, one of her hands toying with a heavy tit and aching nipple while the other never stops pampering you with rewarding scritches.",
+                                              "PlayerOrgasm", "1",
+                                              "As your goddess cries out in climax, her pussy gushes sweet nectar, the rewarding surge turning what's left of your mind into infatuated mush as you gratefully drink it down, making what's left of your mind spurt out of your spasming cock as you offer yourself completely to her, her pleasure ricocheting against your pleasure, everything turning into fluffy euphoria as you ride an intoxicating high, a warm gilded glow enveloping you while she soaks in your tribute.",
+                                              "ChangeImageLayer", "Expression", "Iabel", "Predatory",
+                                              "Iabel lets out an excited, energized sigh of fiery, lustful need, her own climax clearly having only worked her up even more, and the sight of your kneeling, pleasure-drunk form seeming to stoke her predatory instincts as she gently pulls your trembling face from her pussy, your mind swooning and swimming with hopeless infatuation.",
+                                                "For a moment, your goddess looks like she's about to issue you your next order, but she instead bites her lip regretfully.",
+                                              "ChangeImageLayer", "Expression", "Iabel", "Wink",
+                                              "Speaks",
+                                              "Mfffhh...♥ It's a shame we can't keep going.♥ I'd love to keep you worshiping me like this all day and night...♥ As my own personal servant.♥",
+                                              "ChangeImageLayer", "Expression", "Iabel", "Caring",
+                                              "Speaks",
+                                              "But we have a challenge to continue.♥",
+                                              "ChangeImageLayer", "Expression", "Iabel", "Smug",
+                                              "Speaks",
+                                              "Assuming you even {i}want{/i} to continue.♥ Auhuhu~♥",
+                                              "StunGridPlayer", "2", "GetEventAndChangeProgress", "IabelPower", "10",
+                                              "DisplayCharacters",
+                                              "EndLoop",
+                                              "Then a flash of light from the trap teleports her away, leaving her sweet voice echoing in your enchanted ears and her alluring, luscious body sticking to your pleasure-stained mind's eye, teasingly swaying and shaking, seductively rubbing and pampering you, tempting you towards sweet surrender... You're so out of it that it's actually a little while before you can move again... And you're aching to just set off the trap again.♥",
+                                              "ChangeSensitivity", "Seduction", "30",
+                                              "CallSceneThenReturn",  "FixSpirit"
+                                ]
+                            },
+
+
+
+
+                      {
+                        "NameOfScene": "InfatuationStack",
+                        "theScene": [
+                                      "IfHasPerk", "Gilded Enchantment", "Nothing",
+                                      "IfHasPerk", "Gilded Captivation", "GildedEnchantment",
+                                      "IfHasPerk", "Gilded Infatuation", "GildedCaptivation",
+                                      "GivePerkQuietly", "Gilded Infatuation"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "GildedCaptivation",
+                              "theScene": [ "RemovePerkQuietly", "Gilded Infatuation",
+                                            "GivePerkQuietly", "Gilded Captivation"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "GildedEnchantment",
+                              "theScene": [ "RemovePerkQuietly", "Gilded Captivation",
+                                            "GivePerkQuietly", "Gilded Enchantment"
+                                        ]
+                            },
+                                  {
+                                      "NameOfScene": "Nothing",
+                                      "theScene": [
+                                                ]
+                                  },
+
+                  {
+                    "NameOfScene": "FixSpirit",
+                    "theScene": [
+                                    "IfPlayerSpiritGone", "Give1Spirit"
+                              ]
+                  },
+                        {
+                          "NameOfScene": "Give1Spirit",
+                          "theScene": [
+                                          "SetSpirit", "1",
+                                          "Despite being completely spent, something from that encounter leaves you oddly energized..."
+                                    ]
+                        },
+                  {
+                      "NameOfScene": "PurpleHeartTimer",
+                      "theScene": ["IfChoice", "2", "TimerEnd", "Nothing",
+                                    "ChangeProgress", "1",
+                                    "IfProgressEqualsOrGreater", "10", "ActiveTimerUp"
+                                ]
+                  },
+                          {
+                              "NameOfScene": "ActiveTimerUp",
+                              "theScene": ["SetProgress", "0",
+                                            "SetChoice", "2", "TimerEnd"
+                                        ]
+                          },
+                  {
+                      "NameOfScene": "CheckTimerEndOnTile",
+                      "theScene": [
+                                    "IfChoice", "2", "TimerEnd", "SwapTile"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "SwapTile",
+                            "theScene": [
+                                          "SpawnGridNPC", "PurpleHeartTrap", "Here",
+                                          "RemoveGridNPC", "Current"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "SwapTile2",
+                            "theScene": [
+                                          "SpawnGridNPC", "PurpleHeartTrapTrove2", "Here",
+                                          "RemoveGridNPC", "Current"
+                                      ]
+                        }, 
+                        {
+                            "NameOfScene": "SwapTile3",
+                            "theScene": [
+                                          "SpawnGridNPC", "PurpleHeartTrapTrove3", "Here",
+                                          "RemoveGridNPC", "Current"
+                                      ]
+                        },
+
+
+
+
+                  {
+                      "NameOfScene": "EventBreak",
+                      "theScene": [
+                                      "Evento broko"
+                                ]
+                  }
+              ]
+}

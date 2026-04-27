@@ -1,0 +1,60 @@
+{
+    "name": "Titillating Terror Vili",
+    "CardType": "Quest",
+    "CardLimit": "0",
+    "Description": "At the end of your travels awaits a battle of boobtacular proportions with Vili the Arch-Imp!",
+    "requires": [ ""],
+    "requiresEvent": [
+                {
+                    "NameOfEvent": "Vili the Titillating Terror",
+                    "Progress": "0",
+                    "ChoiceNumber": "1",
+                    "Choice": "BeatVili"
+                }
+            ],
+    "Speakers": [
+                  {
+                    "name": "Vili",
+                    "postName": "",
+                    "SpeakerType": ""
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Fight",
+                        "theScene": [
+                                          "Deep within the miasmic Labyrinth, you suddenly find yourself in the Forest Dungeon for a brief moment... then the air trembles and the imposing masonry rapidly crumbles away all around you into a swirling maelstrom of demonic energy-",
+                                          "DisplayCharacters",
+                                                "1",
+                                              "EndLoop",
+                                          "ChangeBG", "darkCombat.png",
+                                          "ChangeImageLayer", "Expression", "Vili", "Smug",
+                                          "... making way for the appearance of Vili the vivacious Arch-Imp, who looks clearly intent on turning you into her loving tit-addicted plaything, the bewitching boobs of the bubbly buxom boss bouncing brazenly before you!",
+                                          "Speaks",
+                                          "Kyahaha!♪ Welcome to my dream realm! {i}Your titillating nightmare!♥{/i}",
+                                          "GetEventAndSetChoice", "ViliLossScenes", "1", "FightingFinalVili",
+                                          "GetEventAndSetChoice", "ViliLossScenes", "2", "LabyrinthBattle",
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Vili",
+                                            "Phantasmal Vili PuffPuff",
+                                          "StartCombat",
+                                          "GetEventAndSetChoice", "ViliLossScenes", "1", "",
+                                          "GetEventAndSetChoice", "ViliLossScenes", "2", "",
+                                          "IfChoice", "1", "ClearedLabyMatch", "PostWin",
+                                          "SetChoice", "1", "ClearedLabyMatch",
+                                          "GetEventAndChangeProgress", "Labyrinth Depths", "1",
+                                          "JumpToScene", "PostWin"
+
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "PostWin",
+                                "theScene": [
+                                              "With Vili's climactic defeat, the umbral memory disperses, leaving you alone once more in the dark halls of the Labyrinth, the end of your trials finally in sight."
+
+                                          ]
+                            }
+                ]
+}

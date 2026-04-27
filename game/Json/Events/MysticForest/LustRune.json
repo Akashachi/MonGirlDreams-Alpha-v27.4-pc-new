@@ -1,0 +1,183 @@
+{
+    "name": "Lust Rune",
+    "CardType": "Event",
+    "CardLimit": "3",
+    "Description": "Strange pink runes have been scattered around the area. How they got there is unknown, but they're still something to be cautious of.",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "",
+                    "postName": "",
+                    "SpeakerType": ""
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [
+                                      "While walking onwards and appreciating the scenery, an intricate pink rune suddenly appears beneath you!",
+                                      "Menu",
+                                        "Try to dodge! (Technique)",
+                                        "Try to use your magical powers to destroy the rune! (Intelligence)",
+                                        "Wait and see what happens.",
+                                      "EndLoop"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Try to dodge! (Technique)",
+                        "theScene": [    "StatCheck",
+                                        "Technique",
+                                        "10",
+                                        "TechPass",
+                                        "Fail",
+                                        "StatFail"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Try to use your magical powers to destroy the rune! (Intelligence)",
+                        "theScene": [    "StatCheck",
+                                        "Intelligence",
+                                        "10",
+                                        "WillPass",
+                                        "Fail",
+                                        "StatFail"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Wait and see what happens.",
+                        "theScene": [    "You let the rune go off and it flashes brightly!",
+                                        "ChangeArousalByPercent", "50",
+                                        "ChangeArousalQuietly", "10",
+                                        "You can't help but moan as your cock goes rigid from the sudden influx of arousal.",
+                                        "IfPlayerOrgasm", "OrgasmScene",
+                                        "JumpToScene", "StayMenu"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "StatFail",
+                        "theScene": [    "Before you can react, the rune flashes brightly!",
+                                        "ChangeArousalByPercent", "50",
+                                        "ChangeArousalQuietly", "10",
+                                        "You can't help but moan as your cock goes rigid from the sudden influx of arousal.",
+                                        "IfPlayerOrgasm", "OrgasmScene",
+                                        "JumpToScene", "StayMenu"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "WillPass",
+                        "theScene": [ "Before the rune can activate, you quickly nullify it using your own magical abilities! Upon further inspection, the remnants of the rune contain a small amount of eros!",
+                                      "ChangeEros", "50",
+                                      "All things considered, that went well."
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "TechPass",
+                        "theScene": [  "Before the rune can activate, you quickly jump away from it!",
+                                      "Leaving it to activate harmlessly.",
+                                      "All things considered, that went well."
+                                  ]
+                    },
+
+                    {
+                        "NameOfScene": "StayMenu",
+                        "theScene": [
+                                      "Menu",
+                                        "Get out of here!",
+                                        "Stay in the rune...",
+                                      "EndLoop"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Get out of here!",
+                              "theScene": [ "With an embarrassed flush, you continue on your way."
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Stay in the rune...",
+                              "theScene": [ "ChangeArousalByPercent", "60",
+                                            "ChangeArousalQuietly", "10",
+                                          "With a lustful ache in your groin you decide to stay in the rune for just a little longer, and you're rewarded with another bright flash of magic and a surge of arousal flooding your body that makes you fall to your knees with a moan!",
+                                          "JumpToScene", "OrgasmScene"
+                                        ]
+                          },
+                    {
+                        "NameOfScene": "OrgasmScene",
+                        "theScene": [  "The magically induced lust quickly overwhelms you, and you helplessly start masturbating while the rune starts to glow brighter in pulses of pink magic that make your head go numb with bliss.",
+                                      "Arcane pleasure electrifies your brain with a sudden surge of pleasure while every stroke of your twitching cock only serves to intensify the mind melting sensations.",
+                                      "Your head feels like it's going to break from the sheer amount of ecstasy cascading through your body as your frantic masturbation sends you over the edge.",
+                                      "PlayerOrgasm", "1",
+                                      "You shoot load after load of cum onto the ground, shuddering with mind-blanking pleasure as pleasure short circuits your body, and the glowing rune soaks in your seed, gleaming a little brighter. You lost 1 spirit!",
+                                      "IfPlayerSpiritGone",  "CantThink",
+                                      "Twitching from the aftershocks of your orgasm and suffused in a warm tingly afterglow from your orgasm, you slowly begin to collect yourself before realizing what just happened...",
+                                      "You're pretty sure if you stay here the rune is going to keep you horny and masturbating for as long as you can endure...",
+                                      "Menu",
+                                        "Get out of here!",
+                                        "Just one more time...",
+                                      "EndLoop"
+                                  ]
+                    },
+                              {
+                                  "NameOfScene": "CantThink",
+                                  "theScene": [ "Twitching from the aftershocks of your orgasm and suffused in a warm tingly afterglow from your orgasm, your mind is left only craving more of this sweet masturbatory bliss...",
+                                                "JumpToScene", "J-Just one more time...♥"
+                                            ]
+                              },
+
+                          {
+                              "NameOfScene": "Just one more time...",
+                              "theScene": [   "ChangeArousalByPercent", "55",
+                                            "You gasp happily as you start to stroke your cock again and the rune flares to life again, flooding your body and mind with aching arousal, leaving your expression loose and pleasure drunk as you pump your thobbing manhood.",
+                                            "ChangeArousalByPercent", "55",
+                                            "Shivering from the blissful waves of ecstasy the rune is flooding you with, your twitching erection feels like it's on a constant orgasmic edge as you masturbate yourself senseless, leaving you gasping and moaning in ecstasy.",
+                                            "PlayerOrgasm", "1",
+                                            "Even as you shudder and twitch in orgasm, your cock spurting thick ropes of cum onto the glowing rune, you can't bring yourself to stop pumping your aching cock, your mind blank with need and pleasure as you cum and quiuver in shivering ecstasy.",
+                                            "ChangeArousalByPercent", "110",
+                                            "You feel like you're losing your mind as even after your orgasm ends the next one is already fast approaching, your frantic masturbation keeping your twitching manhood on edge as the rune pulses with mind melting magic, sending surges of bliss through your entire being.",
+                                            "PlayerOrgasm", "1",
+                                            "As you crying out incoherently in orgasmic ecstasy your cock shoots more of your seed onto the glowing magic circle, your entire body tensed tight in pleasure as you tremble in mindless bliss, letting out load after load of your semen in masturbatory bliss.",
+                                            "IfPlayerSpiritGone",
+                                            "OrgasmHellScene",
+                                            "The magic slowly fades away again and you're left gasping and sweating in mild delirium as you recover from the pleasure, your entire body still twitching and shaking from the aftershocks...",
+                                            "You're not sure how safe it would be to keep going like this... But it feels soooo gooooooddddd...♥",
+                                            "Menu",
+                                              "Get out of here!",
+                                              "J-Just one more time...♥",
+                                            "EndLoop"
+                                        ]
+                          },
+                    {
+                        "NameOfScene": "OrgasmHellScene",
+                        "theScene": [  "Gasping and sweating in mild delirium after the intense orgasm, you try to recollect yourself, feeling completely out of it. Your entire body still twitching and shaking from the aftershocks.",
+                                      "Before you can, however, the rune starts glowing again, leaving you moaning as pleasure surges through you once more and your cock helplessly spurting out another load of cum while you twitch in mindless bliss.",
+                                      "JumpToScene", "FinalScene"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "J-Just one more time...♥",
+                        "theScene": [  "You start to gently stroke your aching manhood again, and the rune starts to glow again, and you moan as pleasure surges through you once more, leaving your cock helplessly spurting out another load of cum while you twitch in mindless bliss.",
+                                      "JumpToScene", "FinalScene"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "FinalScene",
+                        "theScene": [ "PlayerOrgasm", "1",
+                                      "Your mind muddied from the magical onslaught and orgasmic bliss, you start to uncontrollably masturbate again, but this time every full stroke of your rock hard erection brings out another load of your semen.",
+                                      "PlayerOrgasm", "1",
+                                      "Moaning deliriously as you milk yourself, the rune absorbs your cum, rewarding you with pulse after pulse of intense pleasure cascading through your entire body up into your pleasure drunk brain.",
+                                      "PlayerOrgasm", "1",
+                                      "With your mind fried from the amount of climactic pleasure racing through you, you can't help but smile loosely and drool as the magic onslaught ingrains more and more pleasure into you as you pump your aching cock and spurt like a broken faucet.",
+                                      "PlayerOrgasm", "1",
+                                      "The small part of you left wishing for the orgasmic hell you're trapped in to stop is completely washed away in wave after wave of ecstasy, leaving you wanting more and more pleasure as you endlessly pleasure yourself, cumming your brains out again and again.",
+                                      "PlayerOrgasm", "5",
+                                      "Time itself melts away to the ceaseless pleasure, leaving you moaning and stroking yourself senseless while the rune floods you with pleasure for who knows how long...",
+                                      "SetSpirit", "0",
+                                      "Eventually your weary body can take no more, and you collapse onto the ground, too tired to lift a finger anymore, even as the rune continues to send more and more pulses of mind melting ecstasy throughout you, making your body twitch with bliss despite how spent you are.",
+                                      "But eventually exhaustion overtakes you, quickly turning your world dark even as your mind screams for more pleasure...",
+                                      "...",
+                                      "ChangeSensitivity", "Sex", "5",
+                                      "ChangeSensitivity", "Magic", "5",
+                                      "GameOver"
+                                  ]
+                    }
+                ]
+}

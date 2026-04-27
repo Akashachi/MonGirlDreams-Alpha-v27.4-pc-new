@@ -1,0 +1,1628 @@
+{
+  "name": "Labyrinth Floor 3",
+  "CardType": "Event",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [ ""],
+  "Speakers": [
+                {
+                  "name": "Ceris",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "Beris",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "Ushris",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "Iabel",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "Perpetua",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "???",
+                  "postName": "",
+                  "SpeakerType": "?"
+                }
+              ],
+  "EventText": [
+                  {
+                      "NameOfScene": "LabyrinthMenu",
+                      "theScene": [
+                                    "Menu",
+                                      "Talk with Ushris.",
+                                      "Challenge Ushris' floor!",
+
+                                      "RequiresChoice", "1", "Sitting",
+                                      "Drink tea.",
+                                      "RequiresChoice", "10", "TeaDrank", "RequiresChoice", "1", "Sitting",
+                                      "Ask for a different kind of tea.",
+                                      "RequiresChoice", "1", "Sitting",
+                                      "Stand up.",
+
+                                      "RequiresChoice", "1", "",
+                                      "Sit at the table.",
+                                      "RequiresChoice", "1", "",
+                                      "Go to another floor.",
+                                      "RequiresChoice", "1", "",
+                                      "Leave the labyrinth.",
+                                    "EndLoop"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "EnterFloor3",
+                            "theScene": ["ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                          "ChangeBG", "LabyrinthUshris.png",
+                                          "Making your way through the dark passageways, you return to the second chamber, stepping into the dimly-lit crossroad-like room featuring multiple hallways heading off in twisting directions, its interior ominously lit by wall braziers burning with an eerie green fire.",
+                                          "DisplayCharacters",
+                                            "3",
+                                          "EndLoop",
+                                          "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                          "In the center of the room sits Ushris in an elegant black chair adorned with coiling flowery metal patterns, facing a small rounded table of similar design with a second chair across from her. As you make your entrance, she takes a dainty sip from a teacup using one of her massive clawed hands with careful precision, offering you a welcoming smile as she sets the cup back down on its saucer.",
+                                          "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                          "Speak", "Ushris",
+                                          "SwapLineIf", "Progress",
+                                            "10",  "Hihihi,♪ welcome back, dear [ThePlayerName]. Care to join me for tea?♪",
+                                            "0",  "Hihihi,♪ welcome back, [ThePlayerName]. Care to join me for tea?♪",
+                                          "EndLoop",
+                                          "JumpToScene", "LabyrinthMenu"
+                                      ]
+                        },
+
+
+                        {
+                            "NameOfScene": "Drink tea.",
+                            "theScene": [
+                                          "ChangeEnergyQuietly", "25", "ChangeArousalQuietly", "-25",
+                                          "SwapLineIf", "Choice",
+                                            "12", "pomegranate",   "You take a long sip from your cup of tea, and feel pleasantly soothed and refreshed as you enjoy the bittersweet pomegranate & raspberry tea.",
+                                            "12", "blueberry",   "You take a long sip from your cup of tea, and feel pleasantly soothed and refreshed as you enjoy the sweet blueberry tea.",
+                                            "12", "minty",   "You take a long sip from your cup of tea, and feel pleasantly soothed and refreshed as you enjoy the sharp mint tea intermixed with notes of chocolate.",
+                                            "12", "bergamot",   "You take a long sip from your cup of tea, and feel pleasantly soothed and refreshed as you enjoy the smooth, citrus-laden taste of the earl grey tea.",
+                                            "12", "",   "You take a long sip from your cup of tea, and feel pleasantly soothed and refreshed as you enjoy the mildly bitter honeyed green tea.",
+                                          "EndLoop",
+                                          "CallSceneThenReturn", "DrinkTracker",
+                                          "IfChoice", "10", "TeaDrank", "LabyrinthMenu",
+                                          "ChangeProgress", "2",
+                                          "SetChoice", "10", "TeaDrank",
+                                          "ChangeImageLayer", "Expression", "Ushris", "Happy",
+                                          "Speak", "Ushris",
+                                          "Ehihi-♪ Do let me know if it is not to your taste. My arcane teapot allows for all sorts of tea to be enjoyed.",
+                                          "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                          "She takes a languid sip of her own cup of tea, her snake tail letting out a contented purring hiss, then she lightly sets the cup back down on its saucer with a gentle clink.",
+                                          "JumpToScene", "LabyrinthMenu"
+                                      ]
+                        },
+                                  {
+                                      "NameOfScene": "DrinkTracker",
+                                      "theScene": [
+                                                     "IfChoice", "11", "", "Drink1",
+                                                    "IfChoice", "11", "Refilled", "Drink1",
+                                                     "IfChoice", "11", "2", "Drink2",
+                                                     "IfChoice", "11", "3", "RefillScene"
+                                                ]
+                                  },
+                                          {
+                                              "NameOfScene": "Drink1",
+                                              "theScene": [
+                                                             "SetChoice", "11", "2"
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "Drink2",
+                                              "theScene": [
+                                                             "SetChoice", "11", "3"
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "RefillScene",
+                                              "theScene": [
+                                                             "SetChoice", "11", "Refilled",
+                                                             "As you finish your tea and set it down on the porcelain saucer, Ushris is already pouring you another cup of the steamy-hot beverage with a small smile on her soft lips, the metallic chains draping her clothes gently clicking and clacking as she moves.",
+                                                             "Then she tops off her own drink with a hum before setting the arcane teapot back down, settling into her ornate chair with a happy sigh, her small breasts bouncing slightly as she scoots her chair back in position, drawing a mild hiss of agitation from her disturbed tail."
+                                                        ]
+                                          },
+                              {
+                                  "NameOfScene": "Ask for a different kind of tea.",
+                                  "theScene": [
+                                                "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                "Speak", "Ushris",
+                                                "Well, what would you like?",
+                                                "She quickly lists the blends her enchanted teacup can brew on demand...",
+                                                "Menu",
+                                                  "Honey-laden green tea.",
+                                                  "Earl grey tea.",
+                                                  "Mint chocolate tea.",
+                                                  "Herbal blueberry ginseng tea.",
+                                                  "Pomegranate raspberry tea.",
+                                                  "I'm actually fine as is.",
+                                                "EndLoop"
+                                            ]
+                              },
+                                      {
+                                          "NameOfScene": "Honey-laden green tea.",
+                                          "theScene": [
+                                                        "SetChoice", "12", "",
+                                                        "ChangeImageLayer", "Expression", "Ushris", "Happy",
+                                                        "Speak", "Ushris",
+                                                        "Hmhm, a classic.♪",
+                                                        "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                        "She daintily lifts the teapot with her massive claws to pour you a fresh helping, a light, subtle flicker running across the ornate vessel as the amber liquid flows into your cup, any remaining tea in there changing to match the steamy green brew.",
+                                                        "Ushris then gently sets the teapot back down with care before reseating herself with a calm smile, her small bust jiggling slightly within her clothing. Restfully picking up her own cup, she takes a light sip from it, letting you enjoy yours.",
+                                                        "JumpToScene", "LabyrinthMenu"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "Earl grey tea.",
+                                          "theScene": [
+                                                        "SetChoice", "12", "bergamot",
+                                                        "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                        "Speak", "Ushris",
+                                                        "Oh?♪ So you prefer something darker?",
+                                                        "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                        "She gives you a curious glance as she daintily lifts the teapot with her massive claws to pour you a fresh helping, a light, subtle flicker running across the ornate vessel as the dark liquid flows into your cup, any remaining tea in there changing to match the steamy bergamot tea, the citrus scent gently wafting up to your nose.",
+                                                        "Ushris then gently sets the teapot back down with care before reseating herself with a calm smile, her small bust jiggling slightly within her clothing. Restfully picking up her own cup, she takes a light sip from it, letting you enjoy yours.",
+                                                        "JumpToScene", "LabyrinthMenu"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "Mint chocolate tea.",
+                                          "theScene": [
+                                                        "SetChoice", "12", "minty",
+                                                        "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                        "Speak", "Ushris",
+                                                        "It pairs well with sweets and cookies.♪",
+                                                        "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                        "With a playful giggle, she daintily lifts the teapot with her massive claws to pour you a fresh helping, a light, subtle flicker running across the ornate vessel as the dark liquid flows into your cup, any remaining tea in there changing to match the steamy mint choco tea, the piquing scent of mint drifting up to your nostrils.",
+                                                        "Ushris then gently sets the teapot back down with care before reseating herself with a calm smile, her small bust jiggling slightly within her clothing. Restfully picking up her own cup, she takes a light sip from it, letting you enjoy yours.",
+                                                        "JumpToScene", "LabyrinthMenu"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "Herbal blueberry ginseng tea.",
+                                          "theScene": [
+                                                        "SetChoice", "12", "blueberry",
+                                                        "ChangeImageLayer", "Expression", "Ushris", "Happy",
+                                                        "Speak", "Ushris",
+                                                        "Oh, I find that one exceptionally soothing.♪",
+                                                        "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                        "With a warm smile, she daintily lifts the teapot with her massive claws to pour you a fresh helping, a light, subtle flicker running across the ornate vessel as the bluish liquid flows into your cup, any remaining tea in there changing to match the steamy blueberry tea.",
+                                                        "Ushris then gently sets the teapot back down with care before reseating herself with a calm smile, her small bust jiggling slightly within her clothing. Restfully picking up her own cup, she takes a light sip from it, letting you enjoy yours.",
+                                                        "JumpToScene", "LabyrinthMenu"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "Pomegranate raspberry tea.",
+                                          "theScene": [
+                                                        "SetChoice", "12", "pomegranate",
+                                                        "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                        "Speak", "Ushris",
+                                                        "Hmm?♪ Supposedly, this one is good for your health.",
+                                                        "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                        "With a light chuckle, she daintily lifts the teapot with her massive claws to pour you a fresh helping, a light, subtle flicker running across the ornate vessel as the reddish amber liquid flows into your cup, any the remaining tea in there changing to match the steamy pomegranate tea, the fruity scent drifting up to your nose.",
+                                                        "Ushris then gently sets the teapot back down with care before reseating herself with a calm smile, her small bust jiggling slightly within her clothing. Restfully picking up her own cup, she takes a light sip from it, letting you enjoy yours.",
+                                                        "JumpToScene", "LabyrinthMenu"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "I'm actually fine as is.",
+                                          "theScene": [ "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                        "Speak", "Ushris",
+                                                        "If you're sure.♪",
+                                                        "JumpToScene", "LabyrinthMenu"
+                                                    ]
+                                      },
+
+
+
+                        {
+                            "NameOfScene": "Talk with Ushris.",
+                            "theScene": [
+                                          "IfChoice", "1", "", "NoTalky",
+                                          "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                          "Speak", "Ushris",
+                                          "I don't mind at all if you wish to chat over tea.♪",
+                                          "JumpToScene", "UshrisTalkMenu"
+                                      ]
+                        },
+                                  {
+                                      "NameOfScene": "NoTalky",
+                                      "theScene": [
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "Speak", "Ushris",
+                                                    "If you wish to chat, the {i}least{/i} you could do is join me for tea.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "The witch takes a casual sip from her teacup while gazing at you a conspicuous smile on her soft lips.",
+                                                    "JumpToScene", "LabyrinthMenu"
+                                                ]
+                                  },
+                        {
+                            "NameOfScene": "Sit at the table.",
+                            "theScene": ["SetChoice", "11", "" ,
+                                          "SetChoice", "1", "Sitting",
+                                          "ChangeImageLayer", "Expression", "Ushris", "Happy",
+                                          "SwapLineIf", "Choice",
+                                            "12", "pomegranate",   "You sit across from Ushris and she smiles widely as you join her for tea, using her massive claws to carefully pour you a cup of reddish amber-colored tea from the teapot in the center of the table, leaning far enough to incidentally give you an eyeful of her diminutive cleavage.",
+                                            "12", "blueberry",   "You sit across from Ushris and she smiles widely as you join her for tea, using her massive claws to carefully pour you a cup of bluish colored tea from the teapot in the center of the table, leaning far enough to incidentally give you an eyeful of her diminutive cleavage.",
+                                            "12", "minty",   "You sit across from Ushris and she smiles widely as you join her for tea, using her massive claws to carefully pour you a cup of dark-colored tea from the teapot in the center of the table, leaning far enough to incidentally give you an eyeful of her diminutive cleavage.",
+                                            "12", "bergamot",   "You sit across from Ushris and she smiles widely as you join her for tea, using her massive claws to carefully pour you a cup of dark-colored tea from the teapot in the center of the table, leaning far enough to incidentally give you an eyeful of her diminutive cleavage.",
+                                            "12", "",   "You sit across from Ushris and she smiles widely as you join her for tea, using her massive claws to carefully pour you a cup of amber-colored tea from the teapot in the center of the table, leaning far enough to incidentally give you an eyeful of her diminutive cleavage.",
+                                          "EndLoop",
+
+                                          "Speak", "Ushris",
+                                          "Wonderful.♪ Hmhm,♪ be careful not to burn your tongue.",
+                                          "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                          "She carefully sets the teapot back down with a light click of porcelain, her coiling, eyeless snake tail slithering around the bottom of her chair before peeking up from the edge of the table, 'staring' at you for a moment before going back down, gently rustling the metal chains hanging below the witch's garb on its way.",
+                                          "Speak", "Ushris",
+                                          "Now then, is there anything you wish to talk about, dear [ThePlayerName]?♪",
+                                          "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                          "Speak", "Ushris",
+                                          "We can of course just enjoy our tea in silence, if you wish.♪",
+                                          "She tilts her wide hat with a polite smile before lifting her own cup of tea with her razor-sharp claws to take a well-mannered sip, the chained padlock around her monstrous wrist swaying lightly in the air.",
+                                          "JumpToScene", "LabyrinthMenu"
+                                      ]
+                        },
+                          {
+                              "NameOfScene": "Stand up.",
+                              "theScene": [
+                                            "SetChoice", "1", "",
+                                            "IfChoice", "11", "", "StandUpNoTea",
+                                            "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                            "Ushris pouts daintily as you rise from your ornate chair, her tail letting out a low hiss as it squirms around her heel for a moment.",
+                                            "Speak", "Ushris",
+                                            "I suppose you can't stay and entertain me forever.",
+                                            "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                            "Speak", "Ushris",
+                                            "Now, did you wish to try your hand at my floor? Hihihi.♪",
+                                            "Her giggle ominously rings through the dimly-lit halls...",
+                                            "JumpToScene", "LabyrinthMenu"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "StandUpNoTea",
+                                      "theScene": [
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "Ushris lets out a small pouty sigh as you rise from your ornate chair, her tail letting out a low hiss as it rises above the rim of the table to eyelessly glare at you.",
+                                                    "Speak", "Ushris",
+                                                    "You didn't even touch your tea... It's a shame to let it go to waste, you know...",
+                                                    "ChangeImageLayer", "Snake", "Ushris", "MouthOpen",
+                                                    "As if prompted by her words, her tail suddenly snaps forward and engulfs the entire cup in a single flaming bite!",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "TsundereYell", "ChangeImageLayer", "Snake", "Ushris", "",  "ChangeImageLayer", "Ears", "Ushris", "Down",
+                                                    "Speak", "Ushris",
+                                                    "Wh- Hey! {i}Spit that out, you idiot!{/i}",
+                                                      "ChangeImageLayer", "Snake", "Ushris", "MouthOpen",
+                                                    "She lightly baps the back of the snake head with one of her massive claws, making it spit out the steaming, drool-coated cup, nary a drop of tea left. Sighing in exasperation, she looks dejectedly at the dirtied porcelain while her tail slinks back down below her chair.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Cold", "ChangeImageLayer", "Snake", "Ushris", "",
+                                                    "Speak", "Ushris",
+                                                    "Ugh... I'll have to thoroughly clean that, now...",
+                                                    "She carefully sets the offending teacup aside, away from the others for later cleaning, then looks back to you with a smile, as if nothing happened.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base", "ChangeImageLayer", "Ears", "Ushris", "Up",
+                                                    "Speak", "Ushris",
+                                                    "Well, that aside, is there anything else I can do for you? Perhaps you wish to try your hand at my floor? Hihihi.♪",
+                                                    "JumpToScene", "LabyrinthMenu"
+                                                ]
+                                  },
+
+
+
+                            {
+                                "NameOfScene": "Done talking.",
+                                "theScene": [
+                                              "JumpToScene", "LabyrinthMenu"
+                                          ]
+                            },
+                        {
+                            "NameOfScene": "UshrisTalkMenu",
+                            "theScene": [
+                                          "Menu",
+                                            "RequiresChoice", "2", "", "Ask about her.",
+                                            "RequiresChoice", "2", "talkaboutHer", "Ask more about her.",
+                                            "Ask about Ceris.",
+                                            "Ask about Beris.",
+                                            "Ask about Iabel.",
+                                            "Ask about the labyrinth.",
+                                            "Done talking.",
+                                          "EndLoop"
+                                      ]
+                        },
+
+
+                                  {
+                                      "NameOfScene": "Ask about her.",
+                                      "theScene": [
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "Speak", "Ushris",
+                                                    "Hmmm? You wish to know about me, do you?",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "The witch takes a moment to gently sip her tea, carefully using her massive clawed hand to bring the fragile teacup to her soft lips, then setting the porcelain back down onto its plate with a warm, satisfied sigh.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                    "Speak", "Ushris",
+                                                    "I am the Caretaker of the Labyrinth, the Barghest Witch of the Umbral Coven. It is my duty to guard this place and see to its smooth operation as a waypoint in Lucidia. I also handle all arcane research related to this place... Though of course, my sisters aid me to the best of their abilities.",
+                                                    "Her large snake tail coils around the bottom of her chair with a lazy hiss, occasionally bumping into the chains hanging from Ushris' clothing, making them clink and clack eerily. Ushris herself leans forward with a smile, using one of her large claws to trace the rim of her teacup.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "Speak", "Ushris",
+                                                    "Should you want to hear some {i}small{/i} fraction of what there is to know about this place, feel free to ask, I might be inclined to treat you.♪ But let's keep this focused on the topic you inquired about: {i}me.♪{/i} So-",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                                    "Ushris jumps slightly at something, frowning in annoyance, and you can hear a confused hiss from her tail as the hellhound woman looks down with a heavy sigh of frustration.",
+                                                    "Speak", "Ushris",
+                                                    "Do you mind? I swear, you are impossible sometimes...",
+                                                      "ChangeImageLayer", "Snake", "Ushris", "MouthOpen",
+                                                    "Glancing down, you can see her snake tail has somehow gotten itself tangled up in Ushris' chair, around her calves, and into its own serpentine length, rendering it immobile. It's clearly unhappy about it, letting out a few spouts of green flames as it squirms helplessly.",
+                                                      "Pouting and muttering, the witch takes a moment to free it using her claws and her control over her semi-autonomous tail, carefully untangling it then setting it back behind her seat for the moment, the mawed beast peacefully coiling up to rest.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base", "ChangeImageLayer", "Snake", "Ushris", "",
+                                                    "Speak", "Ushris",
+                                                    "There. Now... where was I? Ah, yes, {i}me.♪{/i}",
+                                                    "She puts her large clawed hands to her sides, the chains covering her clothing jangling as she proudly squares up her shoulders before settling back into her chair, the movement showing off some of her small bust's cleavage.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                    "Speak", "Ushris",
+                                                    "I am a woman of... {i}refined{/i} tastes. I enjoy peace and quiet, a relaxed ambience in pleasant solitude while drinking soothing tea, reading a book, or studying arcane mysteries... perhaps even just having a meal or snacking on luxury sweets.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "Speak", "Ushris",
+                                                    "That is not to say I don't like going out. I actually do love basking in the hustle and bustle of the capital we live so close to and enjoying the many attractions it has to offer... But alas, I'm often too busy managing my duties to take proper time off.",
+                                                    "She lets out a lazy sigh, primly taking a sip of her steamy tea while languidly crossing her plush legs, her soft thighs pressing together alluringly, the seductive show visible through the gaps in the ornate table.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "LipLick",
+                                                    "Ushris licks her soft lips as she sets down her teacup, her tongue smoothly running along her glossy, dark green lipstick while she gazes at you intently.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                    "Speak", "Ushris",
+                                                    "I of course also love the company of my sisters, and friends on occasion... But by and large, I simply happen to enjoy being alone...",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                    "She leans forward with half-lidded eyes, setting one of her elbows on the table to lightly cradle her head in one of her large claws. Her gaze is firmly trained on you, the flickering green flames licking off her eyes framing her face in a ominous yet engrossing light, and you can hear her gently shift her legs, the slow rubbing of her garters and soft skin producing a low rustling that audibly drifts in the air.",
+                                                    "Speak", "Ushris",
+                                                    "But I do know I would be much more content in my solitude with a 'pet' by my side. Someone like {i}you.♪{/i} Someone who could be a nice, ador-♪able-♪ puppy for me to mess and toy with,♥ complete with a collar and leash for me to tug on.♥ A pet I've {i}personally{/i}♥ tamed senseless into total, horny o-♥be-♥di-♥ence.♥",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "LipLick",
+                                                    "The way she accentuates her words sends small erotic shivers through your body in reaction to her brazenly lustful intentions, though she then leans back with a steamy sigh and licks her soft lips again, as if suppressing her own urge to lunge across the small table to grab you.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                                    "Speak", "Ushris",
+                                                    "Yes,♥ it would be quite wonderful to have someone to be my personal plaything, pet, dildo, footrest, or chair... Whatever I wanted...♥ {i}Whenever{/i} I wanted.♥",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "Her toothy, predatory grin widens before she catches herself and clears her throat awkwardly, gingerly picking up her teacup to sip at, letting the subtly building tension slowly drain from her limbs.",
+                                                    "Speak", "Ushris",
+                                                    "Ahem... How about we change topics? I am getting myself {i}far{/i} too worked up for casual conversation...",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "She sets the porcelain cup back down with a clink, uncrossing her soft legs with a recomposed smile.",
+                                                    "IfChoice", "2", "talkaboutHer", "Ask more about her.",
+                                                    "SetChoice", "2", "talkaboutHer",
+                                                    "ChangeProgress", "5",
+                                                    "JumpToScene", "Ask more about her."
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Ask about Ceris.",
+                                      "theScene": [
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "Speak", "Ushris",
+                                                    "My dear sister Ceris?",
+                                                    "Ushris lets out a small huff, setting her massive claws in her lap as she looks to you thoughtfully, before letting out a small giggle.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "Speak", "Ushris",
+                                                    "Kehehe... If you're interested in her, you would be far better off just asking her. She's very forthcoming, as you've likely noticed.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                    "Speak", "Ushris",
+                                                    "And if you have gotten this far with somehow no understanding of how she hunts, why, I would be a tad disappointed in you...",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "Ushris gingerly picks up her tea, letting her other clawed hand slip to her side while she sips her drink.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                    "Speak", "Ushris",                                                    
+                                                    "After all, who knows when she might make an unexpected comeback.♪",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "Letting out a prim giggle at the suggestion, she sets the cup back down with a porcelain clink.",
+                                                    "IfChoice", "3", "ceris", "UshrisTalkMenu",
+                                                    "SetChoice", "3", "ceris",
+                                                    "ChangeProgress", "1",
+                                                    "JumpToScene", "UshrisTalkMenu"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Ask about Beris.",
+                                      "theScene": [
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "Speak", "Ushris",
+                                                    "My dear sister Beris? She can be rather crass and rude, can't she...?",
+                                                    "Ushris takes a moment to top off her cup of tea, using her huge claws with careful precision to pour out the steamy liquid from the teapot, then setting the porcelain vessel back down before daintily brushing down her clothes with her exotic monstrous hands.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                    "Speak", "Ushris",
+                                                    "As abrasive as she may be, rest assured she does not mean ill... Well, for the most part, at least. It's just how she is.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "Her eyeless snake tail coils around the base of her chair, letting out a small puff of viridescent fire before uncoiling again, its movements rattling the chains adorning Ushris' clothing.",
+                                                    "Speak", "Ushris",
+                                                    "I confess that Ceris and I are probably partly to blame for her character, having teased her quite unreservedly through our childhood... She has worked quite hard to get as strong as she is now.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "Speak", "Ushris",
+                                                    "But I would say her rudeness plays very well into her 'charm', now. Hihihi.♪",
+                                                    "The hellhound lets out a knowing giggle as if reacting to some inside joke, before taking a gentle sip of her freshly refilled tea.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "Speak", "Ushris",
+                                                    "Hmm...♪ I do hope you're not expecting me to give you any tips on how to best my sisters... It is my duty to ensure this place is run by the book, and that would ruin the fun...",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                    "She sets the cup down with a gentle clink, her curious, flame-lit eyes calmly gauging you.",
+                                                    "IfChoice", "4", "beris", "UshrisTalkMenu",
+                                                    "SetChoice", "4", "beris",
+                                                    "ChangeProgress", "1",
+                                                    "JumpToScene", "UshrisTalkMenu"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Ask about Iabel.",
+                                      "theScene": [
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Love",
+                                                    "Speak", "Ushris",
+                                                    "Ah, yes, my dear sister Iabel... I'm sure she's given you much to be curious about?",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "Ushris hums in thought, lifting a single scything claw to tap her cheek as she mulls over something with a smile.",
+                                                    "Speak", "Ushris",
+                                                    "Now, how do I put this... Hmm... I should keep it simple...",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "She lets out a heavy sigh, primly setting her monstrous hands in her lap, her serpentine tail hissing lowly as it coils around the base of her chair.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Love",
+                                                    "Speak", "Ushris",
+                                                    "Iabel is a hellhound, just like I, Ceris, or Beris. Hellhounds are demonic beasts hailing from who knows how many ages ago... Likely sometime around the first war between monsters and humanity... If myth and vague records are to be trusted, at least.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "Speak", "Ushris",
+                                                    "Our progenitor from ages past was known as Cerberus, a beastly primordial hound of a woman with three heads that could spew flames to match a dragon's, claws and fangs that could shatter steel with ease, a wild mane of hair intermixed with gnashing demonic snakes, and a serpentine tail that could spew clouds of deadly poisons.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "Speak", "Ushris",
+                                                    "Of course, it's anyone's guess how reliable any of these ancient records truly are, given how far the myth dates back to... Some even say the 'tail' was another woman, rather than a mere ophidian appendage... But the important takeaway from these records of hellhound origin is the chimeric, protean nature of our ancestor... And, of course, the snakes.",
+                                                    "Her eyeless serpent tail uncoils from her legs and chair to slowly rise up next to the table, 'glaring' at you with a quiet hiss, prompting Ushris to giggle and give it a gentle caress under its maw with a long claw.",
+                                                    "Speak", "Ushris",
+                                                    "For example, while my wonderful claws as they are now stem from my witchcraft, I was {i}born{/i} with my adorable tail.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                                    "The tail opens its maw and starts to make its way towards the teapot on the table, but Ushris promptly uses the palm of her extra-large metallic hand to close its snout with a frown, gently but firmly forcing it back down to the base of her chair.",
+                                                    "Speak", "Ushris",
+                                                    "...Which, of course, has come with all its own {i}joys{/i}...",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "With her offending tail safely back under the table, she takes a moment to pick up her teacup and sip at her drink, letting out a satisfied sigh as she sets it back down.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "Speak", "Ushris",
+                                                    "To get back to the point, if we consider the deep nature of our demonic beast bloodline, Iabel is most certainly a hellhound, born from our shared mother and father. Though it is true that full serpentine hellhounds like her {i}are{/i} very rare... So she is often mistaken for entirely different species, which causes her quite a bit of exasperation...",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "Speak", "Ushris",
+                                                    "This is not exactly common knowledge, after all. Most people's idea of hellhounds is much closer to, say, Ceris or Beris. Even I am something of an oddity in that regard...",
+                                                    "She lets out a rueful sigh, gingerly brushing down her elegant clothing with a large claw.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Love",
+                                                    "Speak", "Ushris",
+                                                    "Hm, I realize I ended up talking more about our species than my sister...",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "Speak", "Ushris",
+                                                    "In the end, I think it would be far better if you talked to her yourself, rather than hearing me ramble about her.",
+                                                    "She takes a gentle sip of her tea with a small smile, letting a soothing silence settle back.",
+                                                    "IfChoice", "5", "Iabel", "UshrisTalkMenu",
+                                                    "SetChoice", "5", "Iabel",
+                                                    "ChangeProgress", "1",
+                                                    "JumpToScene", "UshrisTalkMenu"
+                                                ]
+                                  },
+
+                                  {
+                                    	"NameOfScene": "Ask more about her.",
+                                    	"theScene": [
+                                                  	"Menu",
+                                                    	"Ask her to repeat her introduction.",
+                                                    	"Ask about her tail.",
+                                                    	"Ask about her claws.",
+                                                      "RequiresChoice", "16", "IWantToLive", "Ask for another 'demonstration' from her...",
+                                                      "Ask about something else.",
+                                                  	"EndLoop"
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "Ask her to repeat her introduction.",
+                                    	"theScene": [
+                                                  	"JumpToScene", "Ask about her."
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "Ask about something else.",
+                                    	"theScene": [
+                                             	 	"JumpToScene", "UshrisTalkMenu"
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "Ask about her tail.",
+                                    	"theScene": [
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                      "ChangeImageLayer", "Snake", "Ushris", "MouthOpen",
+                                                      "At your question, Ushris' tail's mouth opens wider and lets out a curious hissing-like noise, having apparently noticed that you're talking about it, the reaction getting a dainty little chuckle out of its owner.",
+                                                      "ChangeImageLayer", "Snake", "Ushris", "",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                      "Speak", "Ushris",
+                                                      "Interested in this little troublemaker, are you?",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                      "Speak", "Ushris",
+                                                        "SwapLineIf", "Choice",
+                                                      "5", "", "I was actually born with it... which might come across as strange, if not downright anomalous, but not so much when you consider how strong an ophidian affinity hellhounds have. I even heard of members of our kin with snakes instead of arms, or possessed of a venomous bite akin to a cobra's... And of course, you have met dear Iabel, whose serpentine atavism is especially apparent.",
+                                                      "5", "Iabel", "As I previously mentioned, I was born with it, which is no surprise when you consider how strong an ophidian affinity hellhounds have. I even heard of members of our kin with snakes instead of arms, or possessed of a venomous bite akin to a cobra's... And of course, you have met dear Iabel, whose serpentine atavism is especially apparent.",
+                                                        "EndLoop",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                                      "ChangeImageLayer", "Snake", "Ushris", "MouthOpen",
+                                                      "Seeming to feel like it is being unfairly ignored, Ushris' tail makes a displeased growl as it rises up above the table, the demonstration of petulance met by a disapproving frown from its mistress who nonetheless soothingly scratches its chin with one of her impressive claws, drawing a placated purr out of it while she goes on.",
+                                                      "ChangeImageLayer", "Snake", "Ushris", "",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                      "Speak", "Ushris",
+                                                      "Do not let its intimidating appearance fool you, by the way. It may look scary, but it is by and large a lazy, gluttonous, and I must admit not very smart creature who is content to spend its days napping, snacking, or poking at whatever catches its attention.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                      "Speak", "Ushris",
+                                                      "Though... truth be told, it {i}is{/i} dangerous... While I have never been of a martial disposition myself, I do know that in addition to being able to spew paralyzing vapors, the power of its bite is frightening, and its fiery breath is even more potent than that of a regular hellhound, being hot enough to melt all but the toughest of metals... Which are all impressive assets for conventional warfare, but not so much on Lucidia.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                      "She lets out a little chuckle, not seeming actually bothered by the incompatibility, while her tail appears to get bored of scritches and slithers away.",
+                                                      "Speak", "Ushris",
+                                                      "All in all, you can consider it a sort of pet that is literally attached to me. A semi-independent one, at that, for while it is docile, I have no direct control over it-",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                                      "ChangeImageLayer", "Snake", "Ushris", "MouthOpen",
+                                                      "She stops as you both realize that the 'little troublemaker' has stealthily snuck back under the table and gotten interested in you, nudging your foot inquisitively, earning it a chiding bump from Ushris who sighs.",
+                                                      "Speak", "Ushris",
+                                                      "Case in point...",
+                                                      "ChangeImageLayer", "Snake", "Ushris", "",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                      "The serpentine appendage huffs grumpily, but reluctantly starts to draw back while the hellhound relaxedly shifts in her seat with an alluring froufrou of her elegant clothes and plush thighs, looking to you amicably as she awaits your next query, having seemingly said all that she had to say on the subject.",
+                                                      "IfChoice", "17", "Tail", "PetTailMenu",
+                                                      "SetChoice", "17", "Tail",
+                                                      "ChangeProgress", "1",
+                                                  	"JumpToScene", "PetTailMenu"
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "PetTailMenu",
+                                    	"theScene": [
+                                                  	"Menu",
+                                                    	"Pet her tail!",
+                                                    	"Get back to your questions.",
+                                                  	"EndLoop"
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "Get back to your questions.",
+                                    	"theScene": [
+                                                  	"JumpToScene", "Ask more about her."
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "Pet her tail!",
+                                    	"theScene": [
+                                                      "IfProgressEqualsOrLess", "14", "NoPetTail",
+                                                      "ChangeImageLayer", "Snake", "Ushris", "MouthOpen",
+                                                      "Before Ushris' tail slides out of your reach, you lean down and grab it between your hands!",
+                                                 	"ChangeBGM", "music/Forest/nandesuto.mp3",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Tsundere",
+                                                      "ChangeImageLayer", "Snake", "Ushris", "",
+                                                      "Though initially taken aback by your bold move, the creature quickly lends itself to your petting when you start rubbing your fingers all over its warm scaly hide, a sort of growl-like purr rumbling out of its fiery maw, encouraging you to redouble your touchy-feely coddling.",
+                                                      "ChangeImageLayer", "Face", "Ushris", "Blush",
+                                                      "Its happy noises intensify as you move on from stroking it to scratching it all over, the snakelike beast wriggling in your grasp to show off the spots it likes best, all the while the initially frozen Ushris utters flustered noises of protest at your unexpected forwardness, the miffed hellhound eventually pulling at her tail with authority.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "TsundereYell",
+                                                      "Speak", "Ushris",
+                                                      "A-Alright, that's enough!",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                                      "ChangeImageLayer", "Snake", "Ushris", "MouthOpen",
+                                                      "The serpentine pet squeaks out a hiss of discontent at its impromptu pampering session already coming to an end, but doesn't question the command, sulkily but docilely returning at the feet of its mistress who gives it a mild glare of disapproval, the reproachful stare switching to you as she gives a little cough and recomposes herself.",
+                                                      "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                                      "ChangeImageLayer", "Face", "Ushris", "Base",
+                                                      "ChangeImageLayer", "Snake", "Ushris", "",
+                                                      "Speak", "Ushris",
+                                                      "{i}Ahem...{/i} [ThePlayerName]... I will trust that you had no ill intent and that your... rather {i}cavalier{/i} initiative was motivated by nothing more than affectionate curiosity... and therefore shan't hold it against you... But {i}all the same{/i}, I would rather that you abstain from such untoward indiscretions in the future...",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                      "Huffing affectedly, she looks away as she twirls one of her twin-tailed locks around a massive finger, before adding in a softer voice.",
+                                                      "Speak", "Ushris",
+                                                      "Though I {i}suppose{/i} it {i}is{/i} good that you have such a good relationship with it...",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                                      "ChangeImageLayer", "Face", "Ushris", "Blush",
+                                                      "Speak", "Ushris",
+                                                      "...and that you aren't put off by an inhuman appendage such as it...",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                      "For a moment, a not-so-discreet dark blush returns to her cheeks, until she takes a deep breath and her gaze refocuses on you more coolly.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                      "ChangeImageLayer", "Face", "Ushris", "",
+                                                      "Speak", "Ushris",
+                                                      "With that out of the way... Anything else you might want to ask about?",
+                                                      "IfChoice", "14", "PetTail", "Ask more about her.",
+                                                      "SetChoice", "14", "PetTail",
+                                                      "ChangeProgress", "2",
+                                                  	"JumpToScene", "Ask more about her."
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "NoPetTail",
+                                    	"theScene": [
+                                                  	"Before Ushris' tail slides out of your reach, you lean down and try to grab it between your hands...",
+                                                      "ChangeImageLayer", "Snake", "Ushris", "MouthOpen",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                                      "...but to your dismay, the serpentine creature quickly slithers away and, uttering an angry hiss, opens its large maw, spewing a puff of noxious gas that hits you straight in the face, immediately stinging your eyes and nose with an unpleasant acrid smell!",
+                                                      "ChangeImageLayer", "Snake", "Ushris", "",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                      "Sputtering, you reflexively draw back, sent into a coughing fit by the smoky vapor that thankfully dissipates quickly, leaving you wheezing and wiping your reddened eyes, but unhurt. The aggrieved tail, for its part, has retreated behind its mistress who sighs disappointedly.",
+                                                      "Speak", "Ushris",
+                                                      "My apologies, but it is wary towards strangers, and not comfortable being touched by people it is not familiar with...",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                      "Speak", "Ushris",
+                                                      "... not to mention protective of me. I would not recommend trying this again until we at least know each other a bit better.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                      "Speak", "Ushris",
+                                                      "Though if it is any consolation, I do not believe it to be ill-disposed towards you, just... skittish. It will get better in time.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Happy",
+                                                      "Speak", "Ushris",
+                                                      "So let us keep knowing each other better, alright?♪",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                      "Thus advised, you take a sip of tea to wash off the bitter taste lingering in your mouth, Ushris' expression relaxing back into her usual amicable mien while her tail remains coiled at her feet, eyeing you cautiously.",
+                                                  	"JumpToScene", "Ask more about her."
+
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "Ask about her claws.",
+                                    	"theScene": [
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                      "The hellhound takes a relaxed sip of her tea at your question, then fixes you with her usual calm, knowing expression.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                      "Speak", "Ushris",
+                                                      "An expected inquiry... And one that I will answer to the best of my ability.",
+                                                      "Setting down her cup with a light clink, she flexes her enormous hands and puts them palms down on the table, presenting them to you in all their shiny, clawed, scaled glory.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                      "Speak", "Ushris",
+                                                      "Unlike my ears or my tail, which I have had from my birth, my claws are the result of my pursuit of witchcraft... I shan't go into all the lengthy, complex, arcane, and private details of such a path, so to focus instead on the matter at hand, I will say that it is not uncommon for witches to develop stark physical changes such as this one.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                                      "Speak", "Ushris",
+                                                      "Such traits are reflective of one's true self, and in my case... Why, [ThePlayerName], I won't deny that they are a testament to my possessive and, perhaps, yes, controlling nature. I do so love an obedient, well-behaved, disciplined boy.~",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                      "She lets her last words hang in the air with a sultry purr and a lascivious smile, a greedy bit of tongue showing through her sharp teeth, right between her soft-looking dark lips, while a slight puff of hot viridescent smoke leaks out of her mouth, languidly floating away as she smoothly switches back to a more businesslike attitude.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                      "Speak", "Ushris",
+                                                      "But you needn't worry, dear [ThePlayerName]. Should anyone wish to become my pet, I would want it to be fully of their own accord. Hellhound inclinations notwithstanding, I pride myself on my self-control and reasonability.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Happy",
+                                                      "Speak", "Ushris",
+                                                      "And on that note, I have learned to actually see these claws as both a challenge, a lesson, and a boon... As you may have assumed based on their size, they are {i}quite{/i} unwieldy, and it took no small amount of training and rigor to be able to use them as naturally as my previous hands... But now, I am glad to say I am as dexterous with them as can be.♪",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                      "To demonstrate, she takes her massive claws off the table, daintily grabs the teapot with one, her cup with the other, and, raising the vessel high, pours herself a cup without spilling a drop, and without her smoldering gaze leaving you for a moment... which is certainly impressive to see.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Happy",
+                                                      "Once she has finished pouring, she sets the teapot back down and flaunts her filled cup with a joyful 'Tada!' expression, happily taking a sip from it, then adding as if as an afterthought.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                      "Speak", "Ushris",
+                                                      "By the way... Back when I had just gotten these claws, and had yet to get accustomed to them, I was {i}at my wit's end{/i} trying to get used to them, and actually once thought it simpler to get used to manipulating objects with my feet instead.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                      "Unexpectedly, you hear a sudden, soft clattering sound below the table which, you quickly realize, came from Ushris conspicuously removing her shoes, leaving her lower body clad only in her delicate, sheer black stockings.",
+                                                      "ChangeBGM", "music/Casino/BGM sweet smell.mp3",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                      "Speak", "Ushris",
+                                                      "Incidentally, this has made me {i}very{/i} skilled with my feet as well... Would you care for a demonstration?♥ I would be glad to give you one, were you to request it po-♥li-♥te-♥ly.♥",
+                                                      "Again, her purring, almost growling voice lingers dangerously while she teasingly rubs the side of your calf with a nimble toe, eliciting a surprised gasp from you that carries a faint but enticing sweet scent of caramel, sending a tinge of arousal through you as you consider her proposition. You're {i}quite{/i} sure that her demonstration won't be about manipulating objects...",
+                                                      "IfChoice", "15", "Claws", "FootjobMenu",
+                                                      "SetChoice", "15", "Claws",
+                                                      "ChangeProgress", "1",
+                                                  	"JumpToScene", "FootjobMenu"
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "FootjobMenu",
+                                    	"theScene": [
+                                                  	"Menu",
+                                                    	"'I would love a demonstration...'",
+                                                    	"Stay flustered and silent.",
+                                                    	"'Please educate me, Mistress Ushris...'",
+                                                    	"'I'm good.'",
+                                                  	"EndLoop"
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "'I would love a demonstration...'",
+                                    	"theScene": [
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                      "Speak", "Ushris",
+                                                      "Of course... I {i}love{/i} to educate eager pupils.♥",
+                                                  	"JumpToScene", "Footjob"
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "Stay flustered and silent.",
+                                    	"theScene": [
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                      "Unable to look the seductive witch in the eye, you avert your gaze with a blush, your demonstration of shyness seeming to earn you the approval of the demonic monster girl whose smile widens, taking on a caring, affectionate air as she redoubles the rubbing of her foot against your leg, the tender sensation further imbuing you with a feeling of comforting submissiveness while Ushris croons.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                      "Speak", "Ushris",
+                                                      "Aww, timid, are we not? Kehihi.♪ Don't worry, dear [ThePlayerName], I'll take very good care of you. You will {i}love{/i} this demonstration.♥",
+                                                  	"JumpToScene", "Footjob"
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "'Please educate me, Mistress Ushris...'",
+                                    	"theScene": [
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Predatory",
+                                                      "Ushris' expression immediately changes at your needy words, her relaxed flirtatious smile switching to a hungry one that bares her fangs predatorily, a dangerous shiver of trepidant arousal running down your spine at the stark shift.",
+                                                      "Speak", "Ushris",
+                                                      "Oh, {i}yes{/i}.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Mocking",
+                                                      "You start when she dominantly catches the fabric of your lower clothes between her toes and rubs your leg with renewed strength, the intensified touch making you feel like she is marking you as she grins gleefully, her switch having been visibly flipped.",
+                                                      "Speak", "Ushris",
+                                                      "Oh, yes, that is {i}very{/i} good... Very... promising...♥",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                      "Speak", "Ushris",
+                                                      "For now, let us focus on our demonstration, but I believe we'll get along {i}splendidly{/i}, my dear puppy-in-training.♥",
+                                                  	"JumpToScene", "Footjob"
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "'I'm good.'",
+                                    	"theScene": [
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                      "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                                      "In an instant, at your refusal, Ushris' expression returns to her customary prim and proper one as she shifts in her chair to put her shoes back on, then gives you a courteous nod.",
+                                                      "Speak", "Ushris",
+                                                      "As you wish.",
+                                                      "She then lets silence return, waiting for your next question.",
+                                                  	"JumpToScene", "Ask more about her."
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "Ask for another 'demonstration' from her...",
+                                    	"theScene": [
+                                                      "ChangeBGM", "music/Casino/BGM sweet smell.mp3",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                      "Ushris' relaxed expression switches to a seductive smile at your request, the petite witch shifting in her seat as she slips off her shoes, giving your knee an intimate, enticing nudge with the tip of her foot as she giggles.",
+                                                      "Speak", "Ushris",
+                                                      "Kehihi.♪ What an industrious pupil you are, [ThePlayerName]... But maybe you can present your request more... adequately? Might you have some heartfelt words for your kind, diligent, lovely teacher that you'd like to voice?♥",
+                                             	 	"JumpToScene", "FootjobMenu"
+                                              	]
+                                	},
+
+                                	{
+                                    	"NameOfScene": "Footjob",
+                                    	"theScene": [
+                                                      "ChangeImageLayer", "Expression", "Ushris", "LipLick",
+                                                      "Her expression grows positively more lascivious as she greedily licks her lips at your acceptance, her chains clinking gently as some of them wrap around your torso and upper arms, strongly but carefully lifting you off your seat so that Ushris can grab the edges of your lower garment and pull it off your waist, revealing your already stiffening cock, the sight drawing a low, sensual growl of approval from the hellhound as she goes on.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                      "Speak", "Ushris",
+                                                      "As you can see, my toes are very dexterous, being able to nimbly wrap around objects and work together in effective coordination... Why, I would go as far as to say that they are prehensile!♪",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                      "Her singsong, conversational voice floats softly in the air as she dotingly sets you back down, letting your lower clothes fall over your ankles before moving her toes back up your legs, lightly caressing your skin all the way, sometimes grazing, sometimes tapping. In this fashion, she teasingly proceeds up your thighs, then into your lap, one foot resting casually over your knee while the other grabs the tip of your rigid manhood.",
+                                                      "As light and dainty as her touch may be, you can't help but feel warmly aroused by the contact, Ushris' flaming gaze making you feel hotter by the moment while your dick twitches eagerly in her grasp, the simple physical connection with the hellhound already imbuing you with a sensation of nascent burning lust, bringing a blush to your cheeks that makes the smile on the petite witch's face grow as she goes on.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                      "Speak", "Ushris",
+                                                      "...And while I will of course not demonstrate it fully here, I have quite the strength in them, and am thus quite capable of skillfully pinching, pressing, or {i}squeezing{/i} with them.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                                      "Her grin widens confidently as she delicately grips your glans between her toes, the growing feeling of enticing hellhound heat running more intensely through your shaft and into the rest of your body as her nimble digits press massagingly against your engorged flesh, redoubling your excitation and making Ushris let out a perverse purr.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                      "Speak", "Ushris",
+                                                      "Of course, such practice involves a lot of leg strength and endurance, which are paramount in order to be able to make repeated movements without awkwardness or exhaustion, like so...",
+                                                      "Without interruption, she proceeds to catch your erection between the toes of both of her feet, then to rub them gently over your dick, her delightfully soft stockings allowing her toes to run smoothly over your skin while letting you feel more of her body's intoxicating warmth, your breath quickening while the hellhound giggles playfully.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                                      "Speak", "Ushris",
+                                                      "Kehihi.♪ What a reaction.~ I do so like someone who appreciates the enlightening effect of a hands-on experience...",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                      "Speak", "Ushris",
+                                                      "By the by, as you will understand, I did not go all the way to removing my stockings for the purpose of this demonstration, even though I am {i}sure{/i} you would have {i}loved{/i} to feel my naked feet all over you... But perhaps another time? Who knows, if you prove to be a {i}good boy{/i}... But as it is, you will agree that you are not losing out, won't you?",
+                                                      "Your mind already basking in an enthralling, muddling haze of burning excitation, you can only muster a mumbling, sloppy sound of approval that makes Ushris chuckle sweetly as she happily drinks in your increasingly vacuous expression, rewarding your obedience with a graceful twirl of her foot that makes your hips jerk needily, each of her movements putting you deeper and deeper under her spell...",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                      "Your thoughts grow ever fuzzier and filled with the rising urge to cum as Ushris keeps gently but uninterruptedly assaulting you with the feel of her toes, sometimes switching things up by twisting her feet or tapping you with the tip of her digits, the change of sensations each time sending a fresh jolt of arousal that cascades through your waist and up your spine, giving you the impression that you're melting from within...",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Happy",
+                                                      "Speak", "Ushris",
+                                                      "Yes, my stockings are veeeery soft.~ Much like my entire body, including of course my feet... Every part of my feet, in fact, such as for example my heels...",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                      "Once more putting her claim into application, she holds your now throbbing and quivering manhood with one of her feet's toes while she uses her other foot to delicately press on your shaft with her heel, a wanton sigh escaping your mouth at the feeling of the larger, even surface cradling your cock...",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                                      "...then catching in your throat when she uses her toes' grip to keep your length in place while rubbing you up and down with her heel, redoubled pleasure submerging you as Ushris continues to masturbate you with her feet as skillfully as one would with a pair of hands, if not more, the lovingly relentless attack making you jump and twitch as hellhound heat keeps rising within you, making you feel like you're literally burning with lust!",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Mocking",
+                                                      "Letting out a sweetly domineering 'Kehihihi.♪', the witchy monster girl plainly delights in the sight and sounds of your helpless bliss as you already feel your orgasm fast approaching, more and more of her infernal scalding warmth filling you, making you crave release with increasing desperation, feeling like you could go as far as to beg, but wondering if you would even be able to, only inarticulate sounds escaping your sloppily agape mouth!",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "LipLick",
+                                                      "Not that Ushris is showing any intention of relenting, instead savoring your reactions with perverted enthusiasm as she nimbly switches from one foot to the next, sometimes scissoring your glans between her toes, sometimes giving your skin little stimulating pinches, each time making you shudder and jerk in her grasp, all the while she carries on conversationally.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                      "Speak", "Ushris",
+                                                      "...But of course, while all parts of me are {i}silky soft{/i}, the softest part of my feet is unquestionably...",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Predatory",
+                                                      "You freeze in place when you suddenly feel your entire manhood get sandwiched in a smothering embrace of peerless smoothness, the enveloping sensation alongside the roaring increase in hellhound warmth making your libido skyrocket, leaving you teetering on the edge of ejaculation...",
+                                                      "Speak", "Ushris",
+                                                      "...my {i}sole{/i}, kehihihihi!♪",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "ToothyGrin",
+                                                      "PlayerOrgasmNoSpiritLoss",
+                                                      "You actually cry out this time as the dainty witch mercilessly rubs her feet against each other with your impossibly hard and sensitive cock in the middle, your eyes rolling back and your teeth clenching as you finally orgasm with a strangled scream, bolt after bolt of wracking pleasure lancing your brain with each squeeze from Ushris and each copious rope of semen you shoot into her grasp in response...",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Mocking",
+                                                      "But even then, she doesn't stop her relentless massage, and neither does your arousal abate in the slightest, the domineering sorceress subjecting you to a veritable hell of climactic ecstasy as she tirelessly dedicates all her skill to prolonging your blissful torment, coaxing spurt after spurt out of you as the hellhound heat envenoming you keeps carrying your sexual drive beyond what you imagined possible.",
+                                                      "Speak", "Ushris",
+                                                      "Kehihi!♪ {i}Kehehehihihi!♪{/i}",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Horny",
+                                                      "Ushris continues to sweetly laugh at your reactions and expressions, seeming to truly get off on controlling you and lovingly bullying you with consecutive orgasms, your successive climaxes feeling like they are overlapping with one another, your consciousness fizzling from the excessive pleasure, your sputtering senses occasionally registering a burst of viridescent magic as the enthralling giggling minx absorbs your seed...",
+                                                      "...Only to immediately make you spill more of it, expertly milking cumshot after cumshot out of your tamed cock that keeps ejaculating on demand like a broken faucet... until despite your withering lust and the searing euphoria bathing you, you eventually slump back into your chair, your head leaning limply to the side and your tongue lolling out messily as you take short breathless gasps, unable to bear any more.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Happy",
+                                                      "Only at this point does Ushris finally take mercy on you and put an end to the tormenting footjob, letting you laboriously catch your breath while she puts her shoes back on and rises from her seat to approach you happily with a hop, a skip, and a jump.",
+                                                      "Speak", "Ushris",
+                                                      "Aww, you look just like a panting doggie... So adorable.♪",
+                                                      "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                      "While you wait for the entire room to stop spinning, she takes a black lacy handkerchief out of her dress and gently wipes your face with it, carefully using her other hand to pat your cheek comfortingly.",
+                                                      "Speak", "Ushris",
+                                                      "There, there... I hope that you enjoyed yourself plenty, dear [ThePlayerName]... Take however long you need to recover, and feel free to help yourself to as much tea as you want. It should help assuage that fire within you.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                                      "Speak", "Ushris",
+                                                      "...And in the future, don't hesitate to ask again if you would like another {i}demonstration{/i}, kehihi.♪",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Kiss",
+                                                      "With one last doting dab of her handkerchief, she gives you a quick parting peck on the cheek, then returns to her seat, her serpentine tail helpfully pushing your filled teacup towards you in the process.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                      "Actually feeling absolutely parched, you follow Ushris' recommendation: doing your best to ignore the post-climactic trembling in your body and the burning urge to immediately request more footjobs, you pick up your teacup and sip from it, exhaling a breath of relief as you find out that it {i}does{/i} help, the smooth herbal warmth of the beverage quenching more of the roaring hellhound heat within you with each gulp.",
+                                                      "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                      "After two whole teacups, helpfully refilled by Ushris, you realize as you are about to attack the third that you feel more or less back to normal, letting out a deep sigh as you reflexively wipe your forehead, focusing back on your hostess who is back to looking like the very picture of a prim and proper lady, restfully awaiting your next query.",
+                                                      "IfChoice", "16", "IWantToLive", "Ask more about her.",
+                                                      "SetChoice", "16", "IWantToLive",
+                                                      "ChangeProgress", "4",
+                                                  	"JumpToScene", "Ask more about her."
+                                              	]
+                                	},
+
+
+
+                                  {
+                                      "NameOfScene": "Ask about the labyrinth.",
+                                      "theScene": [
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                    "Speak", "Ushris",
+                                                    "Hmmm? You want to know more about the Umbral Labyrinth?",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "She takes a little sip of tea, using two claws to hold the handle with gentle precision, before setting the cup back down with a small smile.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "Speak", "Ushris",
+                                                    "I suppose I can grace you with some fragments of what I know. Ask whatever questions you may have.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                    "Speak", "Ushris",
+                                                    "But mind that I will not be going over every little thing in full detail. I do need to abide by the rules set forth by the Umbral Coven and the higher echelons of monster society.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                                    "Speak", "Ushris",
+                                                    "...Besides, the conversation would get unbearably dull, one-sided, and not exactly relaxing tea talk...",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "She lets out a small sigh and takes another sip of tea, her eyeless snake tail chiming in with a low hiss.",
+                                                    "JumpToScene", "AskLabyrinthMenu"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "AskLabyrinthMenu",
+                                      "theScene": [
+                                                    "Menu",
+                                                      "How do you tell the time down here?",
+                                                      "Who made this place?",
+                                                      "How does the labyrinth work?",
+                                                      "Umbral Coven?",
+                                                      "Talk about something else.",
+                                                    "EndLoop"
+                                                ]
+                                  },
+                                          {
+                                              "NameOfScene": "How do you tell the time down here?",
+                                              "theScene": [
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                            "Speak", "Ushris",
+                                                            "Hmm...? Well, you simply can't without magic.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                            "Speak", "Ushris",
+                                                            "I'm sure that grimoire you have can keep track of time if you need to know. Similarly, I have timekeeping devices set in our rooms for personal use, and I made sure to teach everyone a simple time-checking spell, just in case.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                            "Ushris pauses a moment to enjoy her tea, her fluffy ears twitching slightly as she sets the cup back down with a light clink of porcelain.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                                            "Speak", "Ushris",
+                                                            "Without any means to track time within this labyrinth, it would be deceptively easy to let hours pass without even realizing it, to forget to sleep as you wander endlessly... Locked in a state of perpetual 'night'...",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                            "She lets out a quiet chuckle while lightly tracing a metallic claw along the rim of her teacup.",
+                                                            "Speak", "Ushris",
+                                                            "Paradoxically, the connection monsters have with the night is cut off within this twilit labyrinthine place. The invigorating glimmer of the stars and moon have no sway in these abyssal halls...",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                            "Speak", "Ushris",
+                                                            "Though... As you delve deep into the Labyrinth's twisting passageways, reality distorts and melds with Lucidia's magic-infused environment, resulting in an ever-repeating shifting of energies not dissimilar to what one may experience on the surface, with 'Day' alternating with 'Night'.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                            "Speak", "Ushris",
+                                                            "Said 'night'time is also infused with the nightmarish demonic energy that lingers in this place, and which grows heavier and thicker the further you go, making for an even more supernaturally invigorating medium for monsters. And while it does procure an exhilarating rush of power, it honestly gets taxing after a while...",
+                                                            "Ushris lets her clawed hands rest in her lap with a prim smile.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                            "Speak", "Ushris",
+                                                            "So while I and my beloved sisters do live here, we still must go out every so often to avoid adverse effects of shunning the night and day completely. Not to mention that we all have our own hobbies that we like to attend to in our free time...",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                            "Speak", "Ushris",
+                                                            "Ah, but I'm getting off track. Do you have any other questions about the labyrinth, dear [ThePlayerName]?",
+                                                            "IfChoice", "6", "Night", "AskLabyrinthMenu",
+                                                            "SetChoice", "6", "Night",
+                                                            "ChangeProgress", "1",
+                                                            "JumpToScene", "AskLabyrinthMenu"
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "Who made this place?",
+                                              "theScene": [
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                                            "Speak", "Ushris",
+                                                            "Hmph... Good question...",
+                                                            "Ushris huffs in mild annoyance, setting her elbow on the able to rest her cheek on the curled fist of her massive claw, pensively crossing her soft legs.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                            "Speak", "Ushris",
+                                                            "I don't know who made it specifically, for this place is inconceivably ancient... Ensconced in the very foundations of this mountain, endlessly spiraling deeper and deeper, down into maddening dark depths...",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                                            "A sharp grin splits her calm face as she continues speaking, an obvious amount of jubilant pride in her voice. With quiet nonchalance, she lets her claw rest on the table, her tail letting out a low purring hiss as she fixes her posture.",
+                                                            "Speak", "Ushris",
+                                                            "Of course, through my study of this place, I have uncovered much about its functions, expanding upon my predecessors' work tenfold.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                            "Speak", "Ushris",
+                                                            "What was once a carefully treaded, singular pathway between two halves of Lucidia, now enables bustling trade and travel across the mountain range's scattered entryways, and with complete stability.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                            "Speak", "Ushris",
+                                                            "Of course, that is for the use of monsters and registered traders only. You adventurers must take the singular path generously allowed to you, kehehe.♪",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                            "She pauses, taking a long sip of her steamy tea with a blissful sigh, unconsciously uncrossing her legs while still daintily holding the teacup in her claws.",
+                                                            "Speak", "Ushris",
+                                                            "Hmm...♪ Though I must say, while I do take pride in my accomplishments in contributing to tame this unruly place, I know not how old it is, nor who made it, let alone how to make one like it... It greatly surpasses any method of dungeon or lair creation we know of today.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                                            "She sets down the cup with a light clink, looking down at it with a mildly troubled gaze.",
+                                                            "Speak", "Ushris",
+                                                            "...There is also the concern about the innate design of this place. It seems to naturally keep people out, leading trespassers to some random exit after a variable period of aimless wandering... And the deeper one attempts to go, the more one finds their efforts resisted and thwarted:  methods that work on higher layers no longer operate, and the ambient demonic energy grows ever thicker, until even a monster could choke on the air itself...",
+                                                            "Speak", "Ushris",
+                                                            "While it may be that this place is merely an abandoned monster lair of old, the ease with which it spits people out and guides them away from pockets of deadly ambient 'Ancient' energy... its still pristine functionality... its unfathomable complexity... Those lead one to think it may actually be a prison of sorts... On rare occasions, one exploring alone may even hear eerie, hollow cries in the distance...",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                            "Speak", "Ushris",
+                                                            "...Of course, that is nothing more than a theory. Idle speculation. We have nary a single record hint at what this place was... But regardless of its origin, it suitably serves the present day in its own way.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                            "She reaches out with a claw and daintily takes a small cookie to snack on.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                            "Speak", "Ushris",
+                                                            "Mnmg... Ah- Wait- That's right... some even speculate that the Umbral Labyrinth itself {i}is{/i} a monster...",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                            "Speak", "Ushris",
+                                                            "But while this place is surprisingly easy to work with, I've found no evidence to support it being 'alive'...",
+                                                            "Ushris then reaches out for another cookie to nibble on while she waits for your next question.",
+                                                            "IfChoice", "7", "Made", "AskLabyrinthMenu",
+                                                            "SetChoice", "7", "Made",
+                                                            "ChangeProgress", "1",
+                                                            "JumpToScene", "AskLabyrinthMenu"
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "How does the labyrinth work?",
+                                              "theScene": [
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                            "Speak", "Ushris",
+                                                            "{i}Magic.♪{/i}",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Mocking",
+                                                            "Following her coy, single-word response, she can't help but burst into a giggling fits, one claw hovering by her soft lips while you glare at her flatly.",
+                                                            "Speak", "Ushris",
+                                                            "Kehehihi.♪",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                            "Her features smooth out as her laughter ebbs away, resolving back into a more calm and composed smile as she relents.",
+                                                            "Speak", "Ushris",
+                                                            "But more seriously... I can't exactly go and explain all the tricks of the trade.♪ As I mentioned earlier, I have rules to abide by.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                            "Speak", "Ushris",
+                                                            "Besides, if I told you how it all works, you might try to use that information to cheat.♪ And that's no fun at all.♪",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                            "Squirming relaxedly in her seat, she lets out a thoughtful hum and stretches her lithe body, briefly interlocking her outstretched claws before letting them settle in her lap, the chains adorning her clothing clinking and clacking from her long, drawn-out movement.",
+                                                            "Speak", "Ushris",
+                                                            "Hmmm-♪ But to sate your curiosity even to a superficial degree, just think of it as an infinitely more complicated version of that forest dungeon you went to; an ever-shifting and restructuring dungeon, able to be made and remade into all kinds of shapes and passages, with traps and other such things laid across the halls.",
+                                                            "IfChoice", "8", "work", "AskLabyrinthMenu",
+                                                            "SetChoice", "8", "work",
+                                                            "ChangeProgress", "1",
+                                                            "JumpToScene", "AskLabyrinthMenu"
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "Umbral Coven?",
+                                              "theScene": [
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                            "Speak", "Ushris",
+                                                            "Hm? Well, that's not directly related to the labyrinth, but I {i}suppose{/i} I can indulge you a little.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                            "Ushris takes a moment to mull the subject over while refilling her teacup, the chains across her outfit clicking and clacking as she moves.",
+                                                            "Speak", "Ushris",
+                                                            "Let's see... The Umbral Coven is an organized group of witches who have been around for hundreds of years, and work towards deepening our understanding of witchcraft and demonic energy, generally through personal study, the analysis of old artifacts, and the collection of books and scrolls from across the lands.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                                            "She gently sets the teapot down before sitting back in her chair with a toothy grin, while her long snake tail coils itself back around the base of the chair after being disturbed.",
+                                                            "Speak", "Ushris",
+                                                            "Within the coven, I am known as Barghest Witch, and it is my appointed duty to oversee the Umbral Labyrinth that we hold jurisdiction over, and study it.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                            "Ushris lets out a low sigh as her self-important smugness deflates a bit.",
+                                                            "Speak", "Ushris",
+                                                            "Although despite my important role here, it is important to note the Umbral Coven has scattered projects across the world to tend to, and we only fully convene every year or so, barring the odd personal visit to another witch.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                            "Speak", "Ushris",
+                                                            "Our organization is led by whoever is currently elected as 'Queen' of the Umbral Coven. To be honest, I can't really recall the name of the current Queen... But that aside, for the most part, we all have about equal standing, though our accomplishments also factor in... And of course, new recruits are another story, hehe.♪",
+                                                            "The hellhound woman takes a slow sip of tea, pausing for the moment, until she sets the cup back down with a dainty click.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                            "Speak", "Ushris",
+                                                            "In truth, there is one Umbral Witch who stands above us as the {i}true{/i} Queen of witches from sheer merit and power alone: the legendary Venefica, rarely seen in person, and wholly unapproachable. It would be trivial for her to take the spot of leader if she so wished... But she instead stays out of our affairs as much as possible...",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                            "Speak", "Ushris",
+                                                            "Oh, I would absolutely adore having some time with her to glean even a sliver of what she knows of magic over tea and sweets...",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                                            "Speak", "Ushris",
+                                                            "But sadly, no amount of enthusiasm seems to reach that woman... She is infuriatingly secretive, colder than a glacier, and as apathetic as a true succubus... She even {i}banned{/i} me from her stupid...",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                                            "Ushris lets out a heavy, despondent sigh before taking a long sip of tea to distract herself from her obviously stinging frustrations.",
+                                                            "Speak", "Ushris",
+                                                            "She is a testament to the saying 'Never meet your heroes', I suppose...",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                            "A smile returns to her face as she shifts in her chair slightly, giving her tail a light backward kick to get it to stop tugging on one of the chains hanging down from her outfit.",
+                                                            "Speak", "Ushris",
+                                                            "Ahem, to get back on track, the Umbral Coven isn't the only witch coven in the world, but we are likely the most prominent and powerful. And as I mentioned, once a year, we all- or at least all {i}try{/i} to convene for a large meeting, more akin to a witch festival than anything professional, with only a {i}mild{/i} bit of showing off our accomplishments, ehehe.♪",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                            "Speak", "Ushris",
+                                                            "The largest covens take turns hosting the event, it's quite a bit of fun.♪ We're even allowed to bring family members or 'pets' along.♪",
+                                                            "She takes a small sip of her tea, holding the fragile cup in her monstrous claws with careful precision, setting it down with a light click.",
+                                                            "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                            "Speak", "Ushris",
+                                                            "Hmmm...♪ I think that's about all I can reasonably cover without getting into excruciatingly boring details... Unless I forgot something.♪",
+                                                            "The hellhound woman gives you a nonchalant shrug to conclude her impromptu lesson.",
+                                                            "IfChoice", "9", "coven", "AskLabyrinthMenu",
+                                                            "SetChoice", "9", "coven",
+                                                            "ChangeProgress", "2",
+                                                            "JumpToScene", "AskLabyrinthMenu"
+                                                        ]
+                                          },
+
+
+                                  {
+                                      "NameOfScene": "Talk about something else.",
+                                      "theScene": ["ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                    "Ushris calmly sips her tea, one of her brows arched in curiosity as you switch the topic.",
+                                                    "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                                    "Speak", "Ushris",
+                                                    "Well, thank you for indulging me a little by chatting about this place... It's not too often people want to learn about it. Hihihi...♪",
+                                                    "JumpToScene", "UshrisTalkMenu"
+                                                ]
+                                  },
+
+
+                        {
+                            "NameOfScene": "Go to another floor.",
+                            "theScene": ["DisplayCharacters",
+                                          "EndLoop",
+                                          "Menu",
+                                            "Go to the first floor.",
+                                            "Go to the second floor.",
+                                            "RequiresChoice", "13", "BeatFloor3",
+                                            "Go to the fourth floor.",
+                                            "Stay here.",
+                                          "EndLoop"
+                                      ]
+                        },
+                              {
+                                  "NameOfScene": "Stay here.",
+                                  "theScene": ["DisplayCharacters",
+                                                "3",
+                                              "EndLoop",
+                                                "JumpToScene", "LabyrinthMenu"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "Go to the first floor.",
+                                  "theScene": ["SetChoice", "1", "",
+                                                "JumpToEventThenScene", "Labyrinth Floor 1", "EnterFloor1"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "Go to the second floor.",
+                                  "theScene": ["SetChoice", "1", "",
+                                                "JumpToEventThenScene", "Labyrinth Floor 2", "EnterFloor2"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "Go to the fourth floor.",
+                                  "theScene": ["SetChoice", "1", "",
+                                                "JumpToEventThenScene", "Labyrinth Floor 4", "EnterFloor4"
+                                            ]
+                              },
+
+
+                        {
+                            "NameOfScene": "Leave the labyrinth.",
+                            "theScene": ["SetChoice", "1", "", "ChangeBG", "Labyrinth.png",
+                                        "DisplayCharacters", 
+                                                "EndLoop",
+                                          "You make your way out of the labyrinth's twisting shadowy interior and return to the checkpoint gem, using it to teleport back to town."
+                                      ]
+                        },
+
+                            {
+                                "NameOfScene": "Challenge Ushris' floor!",
+                                "theScene": [
+                                              "ChangeImageLayer", "Expression", "Ushris", "Happy",
+                                              "Speak", "Ushris",
+                                              "Hmm?♪ So you're ready, then? Won♪der♪ful~♪",
+                                              "With a cheerful smile on her face, she takes one last sip of her tea before setting the cup down with a definitive porcelain click, scooting her chair back so she can hop down to a standing position, forcing her snake tail to uncoil from the base of the chair with an annoyed hiss while the chains across her outfit clack with eerie metallic rattling as they sway along with her movements.",
+                                              "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                              "SwapLineIf", "Choice",
+                                                "1", "Sitting",   "With a careful stride, she rounds the table, and with little warning helps you out of your seat, using her large monstrous claws to hoist you up with surprising gentleness before she turns to take a few prancing steps towards one of the dark tunnels, twirling back to face you with a smile, the green flames from the braziers ominously illuminating her entire form.",
+                                                "1", "",   "With a few prancing steps, the witch makes her way over to one of the dark tunnels while her snake tail slithers in the air behind her, eyelessly gazing at you until Ushris twirls to face you with a smile, giving you a moment to appreciate the dramatic sight of the braziers' green flames ominously illuminating her entire form.",
+                                              "EndLoop",
+                                              "Speak", "Ushris",
+                                              "Proceed down any path you wish, you will end up right where I want you anyway.♪",
+                                              "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                              "The hellhound woman takes a few steps backwards with a teasing giggle, the writhing shadows of the hallway obscuring and engulfing her until she vanishes entirely.",
+                                              "Speak", "Ushris",
+                                              "Kehehihihi~♪ I'm going to have such fun hunting you down.♪",
+                                              "DisplayCharacters",
+                                              "EndLoop",
+                                              "Once you're left alone in the dimly-lit chamber with naught but the faint echo of Ushris' voice, you determinedly stride into one of the tunnels until the shadows distort around you, your next step dropping you straight into a fresh hallway, the pathway behind you entirely gone. Shortly, your grimoire pulses warmly as it displays a map.",
+                                              "ChangeBGM", "music/Caverns/Purple Planet Music - Tense - Melancholia (1_24) 96bpm.mp3",
+                                              "In the distance, the sound of a distant giggle echoes down the darkened corridors, sending a chill down your spine...",
+
+                                              "SetChoice", "1", "",
+                                              "GetEventAndSetChoice", "CerisCombatEvents", "4", "",
+                                              "GetEventAndSetProgress", "CerisCombatEvents", "0",
+
+                                              "GetEventAndSetChoice", "BerisCombatEvents", "4", "",
+                                              "GetEventAndSetChoice", "BerisCombatEvents", "5", "",
+                                               "GetEventAndSetProgress", "BerisCombatEvents", "0",
+                                              "GetEventAndSetChoice", "UshrisCombatEvents", "1", "",
+                                                "GetEventAndSetChoice", "UshrisCombatEvents", "2", "",
+                                              "GetEventAndSetProgress", "UshrisCombatEvents", "0",
+
+                                              "GetEventAndSetChoice", "Labyrinth", "1", "",
+                                              "GetEventAndSetProgress", "Labyrinth", "0",
+
+                                              "GetEventAndSetProgress", "BlueHeartTile", "0",
+                                              "GetEventAndSetChoice", "BlueHeartTile", "1", "",
+                                              "GetEventAndSetProgress", "PinkHeartTile", "0",
+                                              "GetEventAndSetChoice", "PinkHeartTile", "1", "",
+
+                                              "GoToMap",
+                                                "Tileset",
+                                                  "0", "GridMap/floor.png", "Floor", "", "", "",
+                                                  "1", "GridMap/Wall.png", "Wall",  "", "", "",
+                                                  "D", "GridMap/floorDark.png",  "Floor", "", "", "",
+                                                  "E", "GridMap/LockedGate.png", "Interactable", "Labyrinth Floor 3", "Exit", "You stand before a large metal gate with multiple large locks...",
+                                                  "P", "GridMap/floorPoisoned.png", "Auto", "Labyrinth", "Posion", "The ground is laden in aphrodisiac.",
+
+                                                  "L", "GridMap/floor.png", "Auto", "Labyrinth", "LightUp", "",
+                                                  "Z", "GridMap/floorDark.png",  "Auto", "Labyrinth", "LightDown", "",
+
+                                                "EndLoop",
+                                                "PlayerCoord", "1", "6",
+                                                "NPC",
+                                                  "Name", "Key",
+                                                  "Img", "GridMap/Key.png",
+                                                  "Event", "Auto", "Labyrinth", "ShadowKey",
+                                                  "Obstacle",
+                                                "EndLoop",
+                                                "NPC",
+                                                  "Name", "KeyBonus",
+                                                  "Img", "GridMap/Key.png",
+                                                  "Event", "Auto", "Labyrinth", "ShadowKeyBonus",
+                                                  "Obstacle",
+                                                "EndLoop",
+
+                                                "NPC",
+                                                  "Name", "Ceris",
+                                                  "Img", "GridMap/CerisIcon.png",
+                                                  "Event", "Auto", "CerisGridAI", "Caught",
+                                                  "Movement", "Chase", "Player",
+                                                  "TurnEvent", "CerisGridAI", "Timer",
+                                                  "CanShareTile", "False",
+                                                "EndLoop",
+                                                    "NPC",
+                                                      "Name", "CerisResting",
+                                                      "Img", "GridMap/CerisRestingIcon.png",
+                                                      "TurnEvent", "CerisGridAI", "WarnTimer",
+                                                    "EndLoop",
+                                                    "NPC",
+                                                      "Name", "CerisRespawnWarning",
+                                                      "Img", "GridMap/CerisRespawnIcon.png",
+                                                      "TurnEvent", "CerisGridAI", "RespawnTimer",
+                                                    "EndLoop",
+
+                                                "NPC",
+                                                  "Name", "Beris",
+                                                  "Img", "GridMap/BerisIcon.png",
+                                                  "Event", "Auto", "BerisGridAI", "Caught",
+                                                  "Movement", "Ambush", "Player",
+                                                  "TurnEvent", "BerisGridAI", "Timer",
+                                                  "CanShareTile", "False",
+                                                "EndLoop",
+                                                    "NPC",
+                                                      "Name", "BerisResting",
+                                                      "Img", "GridMap/BerisRestingIcon.png",
+                                                      "TurnEvent", "BerisGridAI", "WarnTimer",
+                                                    "EndLoop",
+                                                    "NPC",
+                                                      "Name", "BerisRespawnWarning",
+                                                      "Img", "GridMap/BerisRespawnIcon.png",
+                                                      "TurnEvent", "BerisGridAI", "RespawnTimer",
+                                                    "EndLoop",
+                                                "NPC",
+                                                  "Name", "Ushris",
+                                                  "Img", "GridMap/UshrisIcon.png",
+                                                  "Event", "Auto", "UshrisGridAI", "Caught",
+                                                  "Movement", "Whimsical", "Player", "15",
+                                                  "TurnEvent", "UshrisGridAI", "Timer",
+                                                  "CanShareTile", "False",
+                                                "EndLoop",
+                                                    "NPC",
+                                                      "Name", "UshrisResting",
+                                                      "Img", "GridMap/UshrisRestingIcon.png",
+                                                      "TurnEvent", "UshrisGridAI", "WarnTimer",
+                                                    "EndLoop",
+                                                    "NPC",
+                                                      "Name", "UshrisRespawnWarning",
+                                                      "Img", "GridMap/UshrisRespawnIcon.png",
+                                                      "TurnEvent", "UshrisGridAI", "RespawnTimer",
+                                                    "EndLoop",
+                                                "NPC",
+                                                  "Name", "Iabel",
+                                                  "Img", "GridMap/IabelIcon.png",
+                                                  "Event", "Auto", "IabelGridAI", "Caught",
+                                                  "Movement", "Whimsical", "Player", "15",
+                                                  "TurnEvent", "IabelGridAI", "Timer",
+                                                  "CanShareTile", "False",
+                                                "EndLoop",
+                                                    "NPC",
+                                                      "Name", "IabelResting",
+                                                      "Img", "GridMap/IabelRestingIcon.png",
+                                                      "TurnEvent", "IabelGridAI", "WarnTimer",
+                                                    "EndLoop",
+                                                    "NPC",
+                                                      "Name", "IabelRespawnWarning",
+                                                      "Img", "GridMap/IabelRespawnIcon.png",
+                                                      "TurnEvent", "IabelGridAI", "RespawnTimer",
+                                                    "EndLoop",
+
+
+                                                "NPC",
+                                                  "Name", "RecallPoint",
+                                                  "Img", "Invisible",
+                                                "EndLoop",
+
+                                                "NPC",
+                                                  "Name", "WorldTimerBlueHeart",
+                                                  "Img", "Invisible",
+                                                  "TurnEvent", "BlueHeartTile", "BlueHeartTimer",
+                                                "EndLoop",
+                                                "NPC",
+                                                  "Name", "WorldTimerPinkHeart",
+                                                  "Img", "Invisible",
+                                                  "TurnEvent", "PinkHeartTile", "PinkHeartTimer",
+                                                "EndLoop",
+                                                "NPC",
+                                                  "Name", "WorldTimerBlackHeart",
+                                                  "Img", "Invisible",
+                                                  "TurnEvent", "BlackHeartTile", "BlackHeartTimer",
+                                                "EndLoop",
+                                                "NPC",
+                                                  "Name", "WorldTimerGreenHeart",
+                                                  "Img", "Invisible",
+                                                  "TurnEvent", "GreenHeartTile", "GreenHeartTimer",
+                                                "EndLoop",
+
+                                                "NPC",
+                                                  "Name", "BlueHeartTrap",
+                                                  "Img", "GridMap/heartTileBlue.png",
+                                                  "Event", "Auto", "BlueHeartTile", "BlueHeart",
+                                                  "Obstacle",
+                                                "EndLoop",
+                                                    "NPC",
+                                                      "Name", "BlueHeartTrapDormant",
+                                                      "Img", "GridMap/heartTileDormant.png",
+                                                      "TurnEvent", "BlueHeartTile", "CheckTimerEndOnTile",
+                                                      "Event", "Interactable", "BlueHeartTile", "BlueHeart",
+                                                      "Obstacle",
+                                                    "EndLoop",
+                                                "NPC",
+                                                  "Name", "PinkHeartTrap",
+                                                  "Img", "GridMap/heartTilePink.png",
+                                                  "Event", "Auto", "PinkHeartTile", "PinkHeart",
+                                                  "Obstacle",
+                                                "EndLoop",
+                                                      "NPC",
+                                                        "Name", "PinkHeartTrapDormant",
+                                                        "Img", "GridMap/heartTileDormant.png",
+                                                        "TurnEvent", "PinkHeartTile", "CheckTimerEndOnTile",
+                                                        "Event", "Interactable", "PinkHeartTile", "PinkHeart",
+                                                        "Obstacle",
+                                                      "EndLoop",
+                                                "NPC",
+                                                  "Name", "GreenHeartTrap",
+                                                  "Img", "GridMap/heartTileGreen.png",
+                                                  "Event", "Auto", "GreenHeartTile", "GreenHeart",
+                                                  "Obstacle",
+                                                "EndLoop",
+                                                      "NPC",
+                                                        "Name", "GreenHeartTrapDormant",
+                                                        "Img", "GridMap/heartTileDormant.png",
+                                                        "TurnEvent", "GreenHeartTile", "CheckTimerEndOnTile",
+                                                        "Event", "Interactable", "GreenHeartTile", "GreenHeart",
+                                                        "Obstacle",
+                                                      "EndLoop",
+                                                "NPC",
+                                                  "Name", "BlackHeartTile",
+                                                  "Img", "GridMap/HeartTileBlack.png",
+                                                  "Event", "Auto", "BlackHeartTile", "BlackHeart",
+                                                  "Obstacle",
+                                                "EndLoop",
+                                                      "NPC",
+                                                        "Name", "BlackHeartTrapDormant",
+                                                        "Img", "GridMap/heartTileDormant.png",
+                                                        "TurnEvent", "BlackHeartTile", "CheckTimerEndOnTile",
+                                                        "Event", "Interactable", "BlackHeartTile", "BlackHeart",
+                                                        "Obstacle",
+                                                      "EndLoop",
+                                                "NPC",
+                                                  "Name", "ShadowsTile",
+                                                  "Img", "GridMap/ShadowsTile.png",
+                                                  "Event", "Auto", "ShadowsTile", "ShadowsTile",
+                                                  "Obstacle",
+                                                "EndLoop",
+
+
+
+                                                "NPC",
+                                                  "Name", "HiddenTrap",
+                                                  "Img", "GridMap/floor.png",
+                                                  "Event", "Auto", "HiddenTrapFloor3", "HiddenTrap",
+                                                  "Obstacle",
+                                                "EndLoop",
+                                                "NPC",
+                                                  "Name", "HiddenTrapPink",
+                                                  "Img", "GridMap/floor.png",
+                                                  "Event", "Auto", "HiddenTrapPink", "HiddenTrap",
+                                                  "Obstacle",
+                                                "EndLoop",
+                                                "NPC",
+                                                  "Name", "HiddenTrapBlue",
+                                                  "Img", "GridMap/floor.png",
+                                                  "Event", "Auto", "HiddenTrapBlue", "HiddenTrap",
+                                                  "Obstacle",
+                                                "EndLoop",
+                                                "NPC",
+                                                  "Name", "HiddenTrapGreen",
+                                                  "Img", "GridMap/floor.png",
+                                                  "Event", "Auto", "HiddenTrapGreen", "HiddenTrap",
+                                                  "Obstacle",
+                                                "EndLoop",
+                                                "NPC",
+                                                  "Name", "HiddenTrapBlack",
+                                                  "Img", "GridMap/floor.png",
+                                                  "Event", "Auto", "HiddenTrapBlack", "HiddenTrap",
+                                                  "Obstacle",
+                                                "EndLoop",
+                                                "NPC",
+                                                  "Name", "HiddenTrapShadows",
+                                                  "Img", "GridMap/floor.png",
+                                                  "Event", "Auto", "HiddenTrapShadows", "HiddenTrap",
+                                                  "Obstacle",
+                                                "EndLoop",
+
+                                                "NPC",
+                                                  "Name", "TreasureCommon",
+                                                  "Img", "GridMap/Treasure.png",
+                                                  "Event", "Interactable", "TreasureTile", "TreasureCommon",
+                                                  "Description", "Interact to open the treasure chest!",
+                                                  "Obstacle",
+                                                "EndLoop",
+                                                "NPC",
+                                                  "Name", "TreasureUncommon",
+                                                  "Img", "GridMap/Treasure2.png",
+                                                  "Event", "Interactable", "TreasureTile", "TreasureUncommon",
+                                                  "Description", "Interact to open the treasure chest!",
+                                                  "Obstacle",
+                                                "EndLoop",
+
+                                                "SpawnNPC", "WorldTimerBlueHeart", "0", "0",
+                                                "SpawnNPC", "WorldTimerPinkHeart", "0", "0",
+                                                "SpawnNPC", "WorldTimerBlackHeart", "0", "0",
+                                                "SpawnNPC", "WorldTimerGreenHeart", "0", "0",
+
+                                                "SpawnNPC", "TreasureUncommon", "11", "3",
+                                                "SpawnNPC", "TreasureUncommon", "11", "9",
+                                                "SpawnNPC", "TreasureCommon", "1", "1",
+                                                "SpawnNPC", "TreasureCommon", "21", "11",
+
+                                                "SpawnNPC", "Key", "1", "11",
+                                                "SpawnNPC", "Key", "21", "1",
+
+                                                "SpawnNPC", "Key", "8", "3",
+                                                "SpawnNPC", "Key", "8", "9",
+                                                "SpawnNPC", "Key", "14", "3",
+                                                "SpawnNPC", "Key", "14", "9",
+
+                                                "SpawnNPC", "Key", "21", "6",
+
+
+                                                "SpawnNPC", "RecallPoint", "1", "1",
+                                                "SpawnNPC", "RecallPoint", "1", "11",
+                                                "SpawnNPC", "RecallPoint", "21", "1",
+                                                "SpawnNPC", "RecallPoint", "21", "11",
+                                                "SpawnNPC", "RecallPoint", "11", "3",
+                                                "SpawnNPC", "RecallPoint", "11", "6",
+                                                "SpawnNPC", "RecallPoint", "11", "9",
+
+                                                "SpawnNPC", "PinkHeartTrapDormant", "2", "5",
+                                                "SpawnNPC", "BlueHeartTrapDormant", "2", "7",
+                                                "SpawnNPC", "PinkHeartTrapDormant", "20", "5",
+                                                "SpawnNPC", "BlueHeartTrapDormant", "20", "7",
+                                                "SpawnNPC", "GreenHeartTrap", "5", "2",
+                                                "SpawnNPC", "GreenHeartTrap", "5", "10",
+                                                "SpawnNPC", "GreenHeartTrap", "17", "2",
+                                                "SpawnNPC", "GreenHeartTrap", "17", "10",
+                                                "SpawnNPC", "BlackHeartTile", "5", "6",
+                                                "SpawnNPC", "BlackHeartTile", "17", "6",
+
+                                                "SpawnNPC", "Ushris", "21", "7",
+                                                "SpawnNPC", "Beris", "21", "5",
+
+                                                "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",   "EndLoop",
+                                                "Row", "1","D","D","D","Z","L","0","0","0","0","0","L","0","0","0","0","0","L","Z","D","D","D","1",   "EndLoop",
+                                                "Row", "1","D","1","1","1","0","1","1","1","1","1","Z","1","1","1","1","1","0","1","1","1","D","1",   "EndLoop",
+                                                "Row", "1","D","1","0","0","L","Z","D","D","D","D","D","D","D","D","D","Z","L","0","0","1","D","1",   "EndLoop",
+                                                "Row", "1","Z","1","0","1","0","1","1","1","1","1","Z","1","1","1","1","1","0","1","0","1","Z","1",   "EndLoop",
+                                                "Row", "1","L","0","0","0","0","0","0","0","0","0","L","0","0","0","0","0","0","0","0","0","L","1",   "EndLoop",
+                                                "Row", "1","0","1","0","1","0","1","0","1","0","1","E","1","0","1","0","1","0","1","0","1","0","1",   "EndLoop",
+                                                "Row", "1","L","0","0","0","0","0","0","0","0","0","L","0","0","0","0","0","0","0","0","0","L","1",   "EndLoop",
+                                                "Row", "1","Z","1","0","1","0","1","1","1","1","1","Z","1","1","1","1","1","0","1","0","1","Z","1",   "EndLoop",
+                                                "Row", "1","D","1","0","0","L","Z","D","D","D","D","D","D","D","D","D","Z","L","0","0","1","D","1",   "EndLoop",
+                                                "Row", "1","D","1","1","1","0","1","1","1","1","1","Z","1","1","1","1","1","0","1","1","1","D","1",   "EndLoop",
+                                                "Row", "1","D","D","D","Z","L","0","0","0","0","0","L","0","0","0","0","0","L","Z","D","D","D","1",   "EndLoop",
+                                                "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",   "EndLoop",
+
+                                              "StartMap"
+                                          ]
+                            },
+
+
+
+                  {
+                      "NameOfScene": "StillLocked",
+                      "theScene": [
+                                        "You try to open the door, but it won't budge. It's still locked, you need more keys!"
+                                ]
+                  },
+                          {
+                              "NameOfScene": "StillLockedFinal",
+                              "theScene": [
+                                                "You try to open the door with all the keys you've found, but it won't budge... It looks like you're missing one more... But you've looked everywhere since it's gone dark... right? ... Maybe even back where you started?"
+                                        ]
+                          },
+                  {
+                      "NameOfScene": "Exit",
+                      "theScene": [
+                                      "IfGridNPCThere", "Key", "StillLocked",
+                                      "IfGridNPCThere", "KeyBonus", "StillLockedFinal",
+                                      "You use all of the keys you've collected and unlock the gate! It opens with intimidating metallic clacks and creaks loudly as it swings inward, making you indecisively stand in place for a few moments before you hurry on and escape!",
+                                      "ExitGridmap",
+                                      "IfChoice", "13", "BeatFloor3", "Exit2",
+                                      "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                      "DisplayCharacters",
+                                        "3",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                      "ChangeBG", "Labyrinth.png",
+                                      "As you carefully step through the nigh pitch-black passageway that slopes downwards and curves around in a slow turn, you feel a chill run down your spine. Looking back, you can't help but start at the sudden sight of Ushris melding out of the darkness creeping along the floor behind you, though the hellhound nonchalantly dusts herself off then follows you along, her shoes clicking gently on the stone floor.",
+                                      "Speak", "Ushris",
+                                      "Hmph, good job, I suppose.",
+                                      "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                      "Speak", "Ushris",
+                                      "I didn't really expect you to figure out a way through my floor. I was really hoping I could toy with you more...",
+                                      "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                      "She lets out a small giggle as she sinks back into the floor then instantly pops back up in front of you, barring your way with a warm smile on her face as the long hall is suddenly illuminated by floating green flames, giving you much needed visibility in the previously oppressively dark hallway.",
+                                      "Speak", "Ushris",
+                                      "Ah, but you deserve proper praise, I suppose, rather than some half-hearted acknowledgment.",
+                                        "ChangeImageLayer", "Expression", "Ushris", "Happy",
+                                      "She gives you a small curtsy, lifting the hem of her dress with a cheerful grin.",
+                                      "Speak", "Ushris",
+                                      "Congratula-!♪",
+                                      "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                      "DisplayCharacters",
+                                        "3",
+                                        "1",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "Ushris", "Cold", "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                      "Mid-word, there's a rippling distortion along the wall next to the two of you, and an instant later, Ceris bursts forth with arms spread wide in an attempt to give you both a hug.",
+                                      "Speak", "Ceris",
+                                      "Congrat-!♪",
+                                      "ChangeImageLayer", "Expression", "Ushris", "Tsundere", "ChangeImageLayer", "Expression", "Ceris", "Surprised",
+                                      "While Ceris is still halfway through the wall, Ushris deftly ends her curtsy and lifts up one of her massive claws, putting it up against her sister's torso and roughly shoving her back into the rippling wall.",
+
+                                      "Speak", "Ushris",
+                                      "No!",
+                                      "Speak", "Ceris",
+                                      "Aw, come on-",
+                                      "ChangeImageLayer", "Expression", "Ushris", "TsundereYell",
+                                      "StopBGM",
+                                      "Speak", "Ushris",
+                                      "{i}No!{/i}",
+                                      "DisplayCharacters",
+                                        "3",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                      "There's a magical {i}bloop{/i} sound as Ceris is forced back into the wall, huffing out another disappointed 'aw' as Ushris decisively denies her attempt at physical affection on the two of you. The green hellhound lets out an exasperated sigh and gingerly brushes off her outfit with her heavy claws.",
+                                        "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                      "Speak", "Ushris",
+                                      "My apologies for my dear sister, she often forgets protocol... Well... {i}ignores...{/i} protocol, rather.",
+                                      "There's a muffled response from the thicker-set hellhound, as though she were directly on the other side of the wall.",
+                                      "Speak", "Ceris",
+                                      "I'm just trying to help cheer him on.♪",
+                                      "ChangeImageLayer", "Expression", "Ushris", "Tsundere",
+                                      "Speak", "Ushris",
+                                      "Ghn- You're just trying to get in his {i}pants!{/i} So go away already, you've spoiled the moment enough!",
+                                      "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                      "You hear Ceris let out a muffled pouty harrumph, and there is a brief silence as Ushris waits to be certain of her sister's departure before looking back to you with a smile.",
+                                      "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                      "Speak", "Ushris",
+                                      "Congratulations.♪",
+                                      "And with that simple word of cheerful praise, she swiftly spins and prances down the eerily lit hallway, her heavy chains rattling and clanking with each step while her snake tail raises to lightly hiss at you with an eyeless stare.",
+                                      "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                      "Speak", "Ushris",
+                                      "Next will be dear Iabel's floor, the final stage of this labyrinthine challenge. Good luck.♪",
+                                      "DisplayCharacters",
+                                      "EndLoop",
+                                      "ChangeBG", "LabyrinthIabel.png",
+                                      "With a final bouncing step, she drops down into the floor with a shadowy pulse, leaving you completely alone in the hallway again, a few more moments of progress revealing another crossroad chamber lit by soundless purple flames held by regal, golden braziers.",
+                                      "ChangeProgress", "5",
+                                      "SetChoice", "13", "BeatFloor3",
+
+                                      "ChangeBGM", "music/Relaxing/Purple Planet Music - Lanquidity (2 52) 110bpm.mp3",
+                                      "DisplayCharacters",
+                                        "4",
+                                      "EndLoop",
+
+                                      "You enter into the vacant, flame-illuminated room, gingerly stepping towards its center, stopping as you hear a chorus of low, ominous hisses pierce the eerie silence, accompanied by the light jingle of adornments bouncing and swaying as the large serpentine form of Iabel slithers out of a shadow-wreathed hallway.",
+                                      "Her masked eyes glare coldly and wordlessly down at you while her large, intimidating form moves forward in a captivating swaying motion as she settles into the room, her sizable ophidian body taking up a fair portion of the dimly-lit chamber.",
+                                          "Her living shadowy hair flits about around her of its own accord, their mass only adding to the difference in size between you, her daunting appearance offset slightly by the allure of her barely clothed, erotic body, its sensual appeal further accentuated by her languorous snakelike movements as she sets her wide hips to one side.",
+                                      "ChangeImageLayer", "Expression", "Iabel", "Caring",
+                                      "Speak", "Iabel",
+                                      "So you've made it this far...",
+                                      "ChangeImageLayer", "Expression", "Iabel", "Smug",
+                                      "Speak", "Iabel",
+                                      "Then welcome, and {i}despair{/i} as you behold my dark domain and my opulent grandeur!",
+                                      "She gestures wide with her lithe arms, slowly swaying her hips to the other side, her regal ornaments of dazzling gold and shining gems sending musical metallic rings through the air as they bounce and shake with her movements.",
+                                          "Her slow and sultry but intimidating posturing brings attention to every bit of her bare purple skin, her languid gestures lasciviously hinting at what parts of her luscious body you cannot see, and flaunting her crown of deadly, serpent-filled hair as the living shadow snakes curiously dart about.",
+                                      "ChangeImageLayer", "Expression", "Iabel", "Base",
+                                      "Slowly, she lets her hands slip back to her sides, her nails gently gliding across her smooth curves as she exhales an amused sigh, her long serpentine form coiling in place more relaxedly.",
+                                      "Speak", "Iabel",
+                                      "Now, I am sure you are already {i}quivering{/i} in fear and subservience, little adventurer. However... you would not have reached me had something as paltry as trepidation been enough to stop you.",
+                                      "ChangeImageLayer", "Expression", "Iabel", "Glare",
+                                      "Speak", "Iabel",
+                                      "So challenge me once your will is steeled. But know my sisters' trials will {i}pale{/i} in comparison to what {i}I{/i} have in store for you.",
+                                      "Iabel lets out a haughty laugh as she shifts in place, her living hair purring with predatory anticipation...",
+                                      "JumpToEventThenScene", "Labyrinth Floor 4",  "LabyrinthMenu"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "Exit2",
+                            "theScene": [
+                                              "DisplayCharacters",
+                                                "3",
+                                              "EndLoop",
+                                              "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                              "ChangeImageLayer", "Expression", "Ushris", "Sigh",
+                                              "Making your way through the nearly pitch-black passageway, you eventually find yourself back at the entrance of the third floor, Ushris calmly sitting at her ornate table, sipping tea with a relaxed hum.",
+                                              "Speak", "Ushris",
+                                              "Hmm... Good job, I suppose... ",
+                                              "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                              "Speak", "Ushris",
+                                              "Care to join me for tea? Or... ",
+                                              "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                              "Speak", "Ushris",
+                                              "Would you perhaps like to give me another chance to make a mess of you as I toy with you to my heart's content?",
+                                              "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                              "The hellhound witch giggles sweetly as she sets down her teacup with a gentle clink, laying her massive claws in her lap as she gazes at you expectantly.",
+                                              "JumpToScene",  "LabyrinthMenu"
+                                      ]
+                        },
+
+            {
+                "NameOfScene": "eventbroke.",
+                "theScene": [
+                              "screm event broke"
+                          ]
+            }
+              ]
+}

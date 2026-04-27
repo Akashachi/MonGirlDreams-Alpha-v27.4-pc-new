@@ -1,0 +1,1293 @@
+{
+    "name": "Harpy",
+    "IDname": "Harpy",
+    "species": "Avian",
+    "gender": "female",
+    "description": "A slender young woman with short, pointed ears and short windswept brown hair. Her cheerful green eyes and lighthearted smile frame her cute face, displaying an abundant amount of bubbly energy in her slim body. Instead of arms and hands, she has two large wings covered in large, fluffy brown plumage. Her B cup breasts are covered in a tightly bound loop of blue silk fabric, which causes her chest to bounce delightfully with every flap of her wings. A small brace of tail feathers sprouts from just above her firm rear. A simple blue silk loincloth barely covers her pussy, the fabric tightly wrapped around her lithe looking hips. Starting from her hips moving down, her thighs are covered in more of her soft brown plumage, ending shortly before reaching her birdlike talons where her feet and ankles would normally be.",
+    "encyclopedia": "A race of bird women who tend to inhabit locations with vast amounts of open air, like forests and mountains. Many are friendly, cheerful, and carefree, often trying to simply enjoy life rather than try to actively seek conflict.\n\nTheir bodies are much lighter than they appear, due to a combination of natural magic and a hollow bone structure, allowing for flight. Due to their inherent magical nature, they are fairly resistant to outside magical sources, though many still believe the misconception that harpies are too air headed to be affected by magic, despite many studies done showing the contrary.\n\nHarpies will often form complex societies due in part to necessity, as their lack of hands often inhibits their ability to perform what humans can do easily, often forcing them to rely on outside sources for commodities such as clothing, but also due in part for an intense inherent desire to socialize and be around other individuals, be they harpies, other monsters, or humans.\n\nHarpies, due to their need for socialization, will often share anything and everything they have, including food, clothing, and even mates, and it isn't uncommon to have harems form around males taken back to their nests. Due to their extreme sociability and cheerful nature, harpies often live in harmony with other species of monsters and humans, frequently establishing trade routes with other settlements around them and often acting as intermediaries between hostile factions.\n\nCare should be taken when dealing with them, however, as they are notorious thieves due to their impulsive nature and lack of understanding of personal belongings from to their social structure, which can manifest in either small belongings going missing to (rarely) attractive males being carried away as mates. Caution should always be a priority when dealing with them!",
+    "tags": "none",
+    "generic": "True",
+    "requires": [ "Temple Checkpoint Gem"],
+    "skillList": [ "Kiss", "Feather Tease", "Dive Bomb", "Feather Job", "Feather Job", "Face Grind", "Harpy Double Trouble", "Harpy Double Team", "Harpy Insert", "Grind", "Energetic Bounce"],
+    "perks": [ "Swift"],
+    "stats": { "lvl": "9",
+              "Exp": "50",
+              "max_hp": "200",
+              "max_ep": "50",
+              "max_sp": "1",
+              "Power": "5",
+              "Technique": "14",
+              "Intelligence": "3",
+              "Allure": "7",
+              "Willpower": "3",
+              "Luck": "8"
+    },
+    "Fetishes": [ ""],
+    "BodySensitivity": { "Sex": "100",
+              "Ass": "100",
+              "Breasts": "200",
+              "Mouth": "100",
+              "Seduction": "100",
+              "Magic": "50",
+              "Pain": "50",
+              "Holy": "50",
+              "Unholy": "50"
+    },
+    "resistancesStatusEffects": {
+              "Stun": "0",
+              "Charm": "0",
+              "Aphrodisiac": "0",
+              "Restraints": "25",
+              "Sleep": "0",
+              "Trance": "0",
+              "Paralysis": "0"
+    },
+    "moneyDropped": "200",
+    "ItemDropList": [
+                      {
+                        "name": "Harpy Feather",
+                        "dropChance": "75"
+                      },
+                      {
+                        "name": "Harpy Feather",
+                        "dropChance": "50"
+                      },
+                      {
+                        "name": "Harpy Egg",
+                        "dropChance": "25"
+                      },
+                      {
+                        "name": "Soothing Potion",
+                        "dropChance": "25"
+                      },
+                      {
+                        "name": "Anti-Magic Rune",
+                        "dropChance": "10"
+                      },
+                      {
+                        "name": "Wind Rune",
+                        "dropChance": "10"
+                      }
+                    ],
+    "lossScenes": [
+                    
+                    {
+                        "NameOfScene": "Two Harpies",
+                        "move": "",
+                        "stance": "",
+                        "includes": [ "Harpy", "Harpy"],
+                        "theScene": ["RoledCGEnd", "ClearStances", "RemoveStatusEffectFromMonster", "All",
+                                    "You lay twitching on the ground, unable to fight back anymore...",
+                                    "The harpies look proudly at one another over their victory.",
+                                    "ChangeImageLayer", "Expression", "1", "Excited Blush",
+                                    "Speaks",
+                                    "Let's take him somewhere more comfortable!♪",
+                                    "They quickly grab you with their talons and take off into the air.",
+                                    "You can't help but nervously stare down at the ground as you ascend.",
+                                    "ClearMonsterEncounter",
+                                    "JumpToLossEvent",
+                                    "HarpyHaremLoss"
+                                  ],
+                        "picture": ""
+                    },
+                    {
+                        "NameOfScene": "One Harpy Scene",
+                        "move": "",
+                        "stance": "",
+                        "includes": [ "Harpy"],
+                        "theScene": ["RoledCGEnd", "ClearStances", "RemoveStatusEffectFromMonster", "All",
+
+                                    "Unable to fight back anymore, you lay back, gasping for air.",
+                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                    "Speaks",
+                                    "I did it!♪ Uhm... But I don't think I can carry you home by myself... I'd probably drop you...",
+                                    "You give her a nervous look and she smiles bashfully.",
+                                    "ChangeImageLayer", "Expression", "1", "Embarrassed",
+                                    "Speaks",
+                                    "Don't worry! Don't worry! I won't try it! We can just mate here for now!♪",
+                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                    "Before you can react, she wraps her soft wings around you and pulls you into a deep kiss.",
+                                    "ChangeImageLayer", "ImageSetDontCarryOver", "1", "Sex",
+                                    "ChangeImageLayer", "DickHarpy", "1", "DickRide", "PlayMotionEffect", "CrashSmol",
+                                    "ChangeImageLayer", "DickHarpyExpression", "1", "Base",
+                                    "At the same time, she positions her slender hips above your rigid manhood before spearing herself on it and starting to slowly ride its length.",
+                                    "ChangeImageLayer", "DickHarpyExpression", "1", "Excited Blush",
+                                    "She continues to energetically kiss you while her brilliant green eyes stare lovingly into yours for a short while longer before breaking the kiss and letting out a happy sigh as her hips continue their slow, delightful movements.",
+                                    "Speaks",
+                                    "Your cock is hitting me so deeply.♥ It's like we were meant for each other.♥",
+                                    "As if to punctuate her statement, she slowly lifts her hips before slamming them back down, shuddering in delight as your manhood hits her cervix.",
+                                    "She cuddles closer to you as she begins to speed up the pace of her hips, fucking your shaft with every ounce of her energy.",
+                                    "ChangeImageLayer", "DickHarpyExpression", "1", "Lewd",
+                                    "Clinging so close to you, her gasps and moans entice you to stop trying to resist any longer and to just enjoy her body, making your cock throb and twitch with her every movement.",
+                                    "ChangeImageLayer", "DickHarpyExpression", "1", "Base",
+                                    "As she tightens her hold on you with a cute moan, her affections finally get to you, and you can't help but instinctively wrap your arms around her.",
+                                    "A loving gasp escapes her mouth as you embrace her, and she suddenly kisses you deeply, her eyes filled with love.",
+                                    "She redoubles her efforts to fuck your shaft senseless, and soon the stimulation is too much as your balls tighten and your cock shoots load after load into her.",
+                                    "ChangeImageLayer", "DickHarpyExpression", "1", "Lewd", "PlayerOrgasm", "1", "PlayMotionEffect", "CrashSmol",
+                                    "ChangeImageLayer", "SemenSex", "1", "Semen",
+                                    "As your cum enters her womb, she desperately clings to you as her body shakes in pleasure, barely managing to maintain the kiss as she gently moans into your mouth.",
+                                    "ChangeImageLayer", "SemenSex", "1", "",
+                                    "She finally breaks the kiss as you both come down from your respective orgasms and rests her head in the crook of your neck as she recovers, letting her erotic gasps go straight into your ear.",
+                                    "Speaks",
+                                    "That was incredible...♥",
+                                    "Her pussy tightens around your shaft, keeping it hard and ready.",
+                                    "ChangeImageLayer", "DickHarpyExpression", "1", "Excited Blush",
+                                    "Speaks",
+                                    "Ah! You're still hard!♥ Well I can't leave it like that, now can I?♪",
+                                    "Before you can respond, she pulls you into another deep kiss and resumes fucking your shaft with energetic fervor.",
+                                    "Your body does its best to thrust back in time with her movements, but your shaft is still oversensitive from its last orgasm, quickly leaving you spasming and twitching in pleasure underneath her.",
+                                    "PlayerOrgasm", "1", "ChangeImageLayer", "SemenSex", "1", "Semen", "PlayMotionEffect", "CrashSmol",
+                                    "It doesn't take long for your cock to be overwhelmed with pleasure and spray the harpy's pussy full of more semen.",
+                                    "Without breaking the deep, romantic kiss she has you in, the harpy continues to wiggle her hips and, upon feeling your erection still going strong, continues to fuck you without rest.",
+                                    "PlayerOrgasm", "1", "PlayMotionEffect", "CrashSmol",
+                                    "Determined to satisfy you, she relentlessly bounces her hips, not even stopping when you cum, leaving you twitching and moaning into her mouth.",
+                                    "ChangeImageLayer", "DickHarpyExpression", "1", "Lewd",
+                                    "She has her own fair share of orgasms while mating with you, and she eventually breaks the long kiss as both of your breathing becomes labored from the exhaustion and pleasure racing through the both of you.",
+                                    "Speaks",
+                                    "W-Why won't it go d-down? I-I can't keep going like this...",
+                                    "ChangeImageLayer", "SemenSex", "1", "",
+                                    "You can only gasp in pleasure, hardly able to think straight after what she put you through.",
+                                    "ChangeImageLayer", "DickHarpyExpression", "1", "Clueless",
+                                    "The harpy stares off in a tired daze for a moment before something finally clicks and her face flushes in bashful embarrassment.",
+                                    "ChangeImageLayer", "DickHarpyExpression", "1", "Embarrassed",
+                                    "Speaks",
+                                    "Oh... Oh yeah... Ehehe...",
+
+                                    "ChangeImageLayer", "ImageSetDontCarryOver", "1", "Normal", "PlayMotionEffect", "CrashSmol",
+                                    "ChangeImageLayer", "Expression", "1", "Embarrassed",
+                                    "She slowly frees your exhausted shaft from her pussy, and your erection finally subsides.",
+                                    "Speaks",
+                                    "I uh, forgot that my pussy does that... Ehehe...",
+                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                    "She smiles at you apologetically as you exhaustedly glare at her for a moment.",
+                                    "Trying to make it up to you, she gently nuzzles against you and lovingly wraps her wings around you.",
+                                    "Speaks",
+                                    "Here, we can both rest for a while.♪",
+                                    "Her warm embrace is too much for your overused and pleasurably sore body to deny, so you cuddle with the harpy until you both fall asleep...",
+                                    "PlayBlackOut",
+                                    "...",
+                                    "ChangeSensitivity", "Sex", "3",
+                                    "ChangeSensitivity", "Mouth", "3"
+                                  ],
+                        "picture": ""
+                    }
+                  ],
+    "combatDialogue": [
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Spank",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Panic|n|The harpy lets out panicked bird sounds.",
+                                        "|f|ChangeImageLayer|/|Expression|/|Panic|n|'KYA!? Hey! I wasn't trying to do anything bad!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Panic|n|'Hey! Cut that out!'"
+                                        ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Whip",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Panic|n|'Eh-Ehhhh?! I-I'm not a bad monster!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Panic|n|'Oh that's so cool! Are you some kinda demon hunt-KYA!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Panic|n|'EEEK, uh, ah. D-Do we have a safe word?'"
+                                        ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Demon Layer",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Panic|n|'Eh-Ehhhh?! I-I'm not a bad monster!'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Panic|n|'Oh that's so cool! Are you some kinda demon hunt-KYA!'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Panic|n|'Oh that's so cool! Are you some kinda demon hunt-KYA!'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Panic|n|'EEEK, uh, ah. D-Do we have a safe word?'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Holy Headpat",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Clueless|n|'...?' The harpy seems confused by your actions, but not unhappy.",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Oh, hey! This is kinda nice! You wanna mate now, right?'" ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Bondage Net", "Magical Binding"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Panic|n|The harpy lets out panicked bird sounds.",
+                                     "|f|ChangeImageLayer|/|Expression|/|Panic|n|'Th-This is weird! I can't move my wings!'",
+                                     "|f|ChangeImageLayer|/|Expression|/|Panic|n|The harpy lets out a panicked squawk."]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Pin",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Panic|n|The harpy lets out surprised squawk.",
+                                        "|f|ChangeImageLayer|/|Expression|/|Lewd|n|The harpy stares up into your eyes as her face turns bright red.",
+                                        "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Uhm... Ah... Be gentle?'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Lewd Bottle", "Cloying Mist", "Placebo Pheromone"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'W-Wow... My body feels so hot...'",
+                                     "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'H-Hey, let's hurry up and mate!♥'",
+                                     "|f|ChangeImageLayer|/|Expression|/|Clueless|n|'I feel like I'm flying...♥ Wait...'"
+                                     ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": [ "Arouse", "Arousara", "Arousero"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Clueless|n|The harpy shivers with pleasure slightly from your magic, but overall just seems confused.",
+                                      "|f|ChangeImageLayer|/|Expression|/|Clueless|n|'Uh... Did something happen?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Clueless|n|'Was there a really nice breeze suddenly?'",
+                                    "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Was that magic?♪'"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Electrify",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Panic|n|'AHHHH! W-Why would you do something so scary!'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Panic|n|'EEE! I-I should fly away... B-But I can't give up so easily!'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Panic|n|The harpy lets out a pained cry."]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Kiss",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'I'm cute, right?♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'You like me!♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|As you break the kiss, the harpy looks at the ground bashfully."]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Make Out",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Oh gosh, this is romantic!♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Kiss me lots.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|The harpy blushes deeply as you kiss her deeply."]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Deep Kiss", "Lovingly Rough Kiss", "Skillfully Passionate Kiss", "Misty Kiss", "Sensually Seductive Kiss"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Mmmm.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'I feel like I'm going to fly away...♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'This is so romantic...♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'You must really like me...'"]
+                        },
+                        {
+                          "lineTrigger": "HitWithPre",
+                          "move": "Penetrate",
+                          "theText": [ "|f|ChangeImageLayer|/|ImageSetRoleStart|/|Sex|n|"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Penetrate",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Mmmh?!♥ You put it in so suddenly...♥ You must really like me!♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Be sure to not pull out.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'I knew you liked me!♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ahhh!♥ You're filling me up completely!♥"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Thrust", "Channeling Thrust"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ahhh,♥ this is amazing!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Mmmm,♥ I think I'm falling in love with you!♥",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Hahhh,♥ you can fuck me harder if you want.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Be sure to cum inside, okay?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ahhh♥ Mmmmm♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Base|n|'Mmmmm.♪'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Pound", "Multi Thrust", "Empowered Thrust", "Carrying Fuck"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'MMM!♥ Yes!♥ More!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'I can't think!♥",
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Ahhhh!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'S-So good!♥'"
+                                    ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Tantric Thrust", "Passionate Lovemaking"],
+                          "theText": [
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Mmmm,♥ I think I'm falling in love with you!♥",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Hahhh,♥ you can fuck me harder if you want.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Be sure to cum inside, okay?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Base|n|'Mmmmm.♪'"]
+                        },
+                        {
+                          "lineTrigger": "HitWithPre",
+                          "move": "Anal Penetration",
+                          "theText": [ "|f|ChangeImageLayer|/|ImageSetRoleStart|/|Sex|n|"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Anal Penetration",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Some of the other girls talked about this... It feels weird... But in a good way.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'Ahhh... Th-That's not for mating...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'I-Is really okay to do it like this?'"]
+                        },
+                        {
+                          "lineTrigger": "HitWithA",
+                          "move": ["Thrust", "Channeling Thrust"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ahhh,♥ this is amazing!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Hahhh,♥ you can fuck me harder if you want.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Ahhh♥ Mmmmm♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Mmmmm.♪'"]
+                        },
+                        {
+                          "lineTrigger": "HitWithA",
+                          "move": ["Pound", "Multi Thrust", "Empowered Thrust", "Carrying Fuck", "Anal Piston"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'MMM!♥ Yes!♥ More!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'I can't think!♥",
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Ahhhh!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'S-So good!♥'"]
+                        },
+
+                        {
+                          "lineTrigger": "HitWithA",
+                          "move": ["Tantric Thrust", "Passionate Lovemaking"],
+                          "theText": [
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Mmmm,♥ I think I'm falling in love with you!♥",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Hahhh,♥ you can fuck me harder if you want.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Be sure to cum inside, okay?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Base|n|'Mmmmm.♪'"]
+                        },
+
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Breast Caress",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Ah!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'Uhm... S-Sorry they aren't very big...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Mmmm!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'D-Don't tease me!♥",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'This feels really good.♪'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Breast Knead", "Breast Massage", "Breast Fondle"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ohh...♥ T-This feels super good!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Mmmm!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'W-Was I doing something? O-Oh right, letting you play with my breasts!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'I-Is this really just foreplay?♥'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Suckle",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'EEEK!♥ Ah! D-Don't stop!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|She gently wraps her soft wings around your head.",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'I'm so happy you like my breasts!♪'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'T-Tease me more!♥'"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Pinch Nipples",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Panic|n|'EEEP!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'C-Careful! My breasts are sensitive!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Mmmm!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'D-Don't tease me!♥"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Grope Ass", "Squeeze Ass", "Massage Ass", "Fondle Ass"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|She wiggles her butt into your hand.",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'This is getting me really excited.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|She hums with contentment as you grope her."]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Finger",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'I'm already wet... So let's mate!♪'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Base|n|'Mmmm!♥'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Dildo",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Base|n|'Mmmm!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'I'd prefer it if you used your cock instead. But this is kinda nice...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'I-I should get one of these... F-For practice!'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Seduce", "Enamor", "Smoldering Seduction", "Smoldering Flaunt", "Massaging Seduction", "Mass Seduction"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'EH?! Uhm... Ah...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|The bird woman bashfully stares at the ground.",
+                                      "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'R-Really?'"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Ear Tease",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Eh? Ah...♥ Ohhh...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Hehehe! It kinda tickles.'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Lewd|n|She seems to space out a bit..."]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Pussy Worship",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Is my scent overwhelming you?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Hmmm... We should probably fuck soon.'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Clueless|n|'Ahhh...♥ What was I supposed to do after knocking you down again...?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Whoa... This feels great...♥'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Sleep",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Wow... I'm... Really tired... I should land so I don't fall off the cliff.' She yawns. 'Again...'"
+                                      ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Charm", "Charm Wave"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Let's mate, right now.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Oh, I think I'm in love!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'My heart's racing...♥"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Enfeeble", "Sensitize"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Clueless|n|'I feel kinda dizzy?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Clueless|n|'I feel weird...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Was that magic?'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Disarming Appeal"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'We can take it slow if you want to.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Oh, gentler? I can do that.'"]
+                        },
+                        {
+                            "lineTrigger": "Escape",
+                            "move": ["Distract", "Teleport"],
+                            "theText": [ "|f|CallEventAndSceneThenReturn|/|HarpyCombatEvent|/|StanceCheckCGOff|n|"]
+                        },
+
+
+
+
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Kiss",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Hey, wanna have some fun?♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Base|n|'You're really handsome.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited|n|'This is gonna be great!♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'I think you might be a keeper.♪'"]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Feather Tease",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Ehehe♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Base|n|'Once we're done, I'm going to snuggle you senseless.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Base|n|'Aren't feathers the best?♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Base|n|'I can make you feel really good if you don't fight back.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Come on!♪ I wanna hear you moan.♥'"]
+                        },
+                        {
+                          "lineTrigger": "UsesMovePre",
+                          "move": "Dive Bomb",
+                          "theText": [ "|f|ChangeImageLayer|/|ImageSetRoleStart|/|Sex|n|"]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Dive Bomb",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited|n|'WEEEEEE!♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Ahhhh, I can't wait anymore!♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Hold still 'kay!♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited|n|'You're gonna be mineeee!♪'"]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Feather Job",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Base|n|'Your cock's so hard...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Base|n|'The tip is the most sensitive, right?'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Base|n|'Hands can't do {i}this{/i}!♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Hey, if you stay with me, I promise to do this whenever you want.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'I almost can't wait for this thing to go in me.♥"]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Face Grind",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Is my scent overwhelming you?'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'I bet you wanna mate with me now!♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Base|n|'This feels nice.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Clueless|n|'Ahhh...♪ What was I supposed to do after knocking you down again...?'"]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Harpy Double Trouble",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Hey! I don't wanna get left out!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'I get his cock next!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Hey, let's marry him together!♪"]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Harpy Double Team",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Dibs on his dick!♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'You can have his cock after!♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Hey, let's marry him together!♪'"]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Harpy Insert",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Ah!♪ Right, we should fuck!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited|n|'I'm going to go show you how much I want you to be mine!♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited|n|'We're going to mate until we can hardly move!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited|n|'I hope you're ready!♪'"]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Grind",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ahhh!♪ Your cock's so big!♥ This is amazing!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Feel free to cum whenever you want!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ehehe,♪ this is the best!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Base|n|'Mmmmm.♪'"]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Energetic Bounce",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Hey, can you keep up with me?♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Come on!♥ Thrust!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ahhhh!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Mmmmm.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ehehe.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Let's fuck all day!♥"]
+                        },
+                        {
+                            "lineTrigger": "usesMoveA",
+                            "move": "Grind",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ahhh!♪ Your cock's so big!♥ This is amazing!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Feel free to cum whenever you want!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ehehe,♪ this is the best!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Base|n|'Mmmmm.♪'"]
+                        },
+                        {
+                            "lineTrigger": "usesMoveA",
+                            "move": "Energetic Bounce",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Hey, can you keep up with me?♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Come on!♥ Thrust!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ahhhh!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Mmmmm.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ehehe.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Let's fuck all day!♥"]
+                        },
+                        {
+                            "lineTrigger": "LowHealth",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Ahhh,♪ I can't take much more of this...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'My whole body is tingling.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'If this keeps up, I won't be able to fly straight for a while.♥'"]
+                        },
+                        {
+                            "lineTrigger": "PlayerLowHealth",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ehehe,♪ your cock's twitching like crazy.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Don't hold back, cum as much as you want!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Hey, after you cum, wanna go back to my place and get married?♥'"]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "Sex",
+                            "theText": [ "|f|ChangeImageLayer|/|SemenSex|/|Semen|n||f|ChangeImageLayer|/|Expression|/|Excited Blush|n|As pleasure overtakes you, the harpy continues to ride your shaft with boundless energy even as you fill her womb with your thick seed. She lets out a sound of glee and bounces on your manhood even faster, forcing out a few more loads of your semen.[PlayerOrgasmLine]|f|ChangeImageLayer|/|SemenSex|/|None|n||c|",
+                                        "|f|ChangeImageLayer|/|SemenSex|/|Semen|n||f|ChangeImageLayer|/|Expression|/|Excited Blush|n|As the harpy continues to bounce her hips on your cock, she gently caresses your chest with her soft feathered wings. Your body spasms from the combined stimulation as your hips buck into hers, unleashing a torrent of semen into her waiting pussy as she cries out in joy.[PlayerOrgasmLine]|f|ChangeImageLayer|/|SemenSex|/|None|n||c|",
+                                        "|f|ChangeImageLayer|/|SemenSex|/|Semen|n||f|ChangeImageLayer|/|Expression|/|Lewd|n|The harpy grinds her hips into you, leaving both of you moaning as your shaft stirs up her pussy. She looks up at you, pleading. 'Please cum!♥ Fill up my womb!♥ Pleasseeeee!♥' Her needy begging sends your primal instincts over the edge, overriding whatever little reason you had left as you pour load after load into her tight pussy.[PlayerOrgasmLine]|f|ChangeImageLayer|/|SemenSex|/|None|n||c|"
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "Anal",
+                            "theText": [ "|f|ChangeImageLayer|/|SemenSex|/|Semen|n||f|ChangeImageLayer|/|Expression|/|Excited Blush|n|As pleasure overtakes you, the harpy continues to ride your shaft with boundless energy even as you fill her ass with your thick seed. She lets out a sound of glee and bounces on your manhood even faster, forcing out a few more loads of your semen.[PlayerOrgasmLine]|f|ChangeImageLayer|/|SemenSex|/|None|n||c|",
+                                        "|f|ChangeImageLayer|/|SemenSex|/|Semen|n||f|ChangeImageLayer|/|Expression|/|Excited Blush|n|As the harpy continues to bounce her hips on your cock, she gently caresses your chest with her soft feathered wings. Your body spasms from the combined stimulation as your hips buck into hers, unleashing a torrent of semen into her waiting ass while she cries out in joy.[PlayerOrgasmLine]|f|ChangeImageLayer|/|SemenSex|/|None|n||c|",
+                                        "|f|ChangeImageLayer|/|SemenSex|/|Semen|n||f|ChangeImageLayer|/|Expression|/|Lewd|n|The harpy grinds her hips into you, leaving both of you moaning as your shaft stirs up her tight ass. She looks up at you, pleading. 'Please cum!♥ Pleasseeeee!♥' Her needy begging sends your primal instincts over the edge, overriding whatever little reason you had left as you pour load after load into her tight rear.[PlayerOrgasmLine]|f|ChangeImageLayer|/|SemenSex|/|None|n||c|"
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "Feather Job",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|The harpy giggles as she carefully teases your shaft with her feathers, your cock so overstimulated that a single feather trailing from the base of your manhood to the tip sends you over the edge into a orgasm that cascades across your entire body.",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|The harpy teases and strokes your throbbing shaft with her soft plumage, and as she traces circles around the head of your cock, you can take no more as you shoot ropes of cum onto her feathered wing. 'AH!♥ Ohhhh,♪ the other girls are gonna be so jealous!♥'"
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "Face Sit",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|As the harpy continues to grind her pussy into your face, her scent and the lack of air slowly gets to you, intensifying your body's sensations, and soon your cock throbs and twitches as it spurts out your cum in an electrifying orgasm!"
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Clueless|n|Unable to hold out any longer, your shaft erupts in pleasure, coating one of the harpy's wings in cum as she lets out a startled squawking noise. '...Ahhh... Is this hard to clean out of feathers?'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Lewd|n|Barely able to resist the pleasure racing through your body, the harpy easily pulls you into a deep, romantic kiss while trapping your shaft between her thighs. She gently caresses and teases you lovingly like this until you shaft spurts out a thick load."
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnOrgasm",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Orgasm|n|'I'm cumminnng!♥♥♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Orgasm|n|'Ahhhhh!♥ Yessss!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Orgasm|n|'I don't want this to end!♥'"
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnSurrender",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Eh? EHH?! Y-You like me that much?! Uhm, ah. Okay! I'll do my best!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'R-Really? Yay!♪ I'm going to show you how much I love you back right now!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'You like me? Then let's start our family together right away!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Wow, you really wanna do this then, don't you...? I hope you don't mind if I share you with a few friends later.♪"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggle",
+                            "move": "Sex",
+                            "theText": [ "[ThePlayerName] tries to pull out of [AttackerName]'s tight pussy..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFail",
+                            "move": "Sex",
+                            "theText": [ "But [AttackerName] refuses to be dislodged from your cock and continues to energetically ride your shaft!",
+                                        "But with surprising force, [AttackerName] slams her hips back into yours before giving her hips a delightful little wiggle as she settles back onto your cock.",
+                                        "But as you grab her hips to pull out, she tickles you with her feathered wings, making you laugh and assaulting you with a strange, yet delightful sensation!",
+                                        "But as you push the harpy away she lets out a few sad noises that give you pause, but she cheers right back up at your hesitation and quickly takes your shaft back into her pussy."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleComment",
+                            "move": "Sex",
+                            "theText": [ "",
+                                      "|f|ChangeImageLayer|/|Expression|/|Clueless|n|'Why would you wanna stop mating?",
+                                      "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'Eh?! Uhm, I really like you, so don't push me away, okay?",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ehehe!♥",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Don't be afraid to cum inside!♪'"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFree",
+                            "move": "Sex",
+                            "theText": [ "|f|CallEventAndSceneThenReturn|/|HarpyCombatEvent|/|StanceCheckCGOff|n|And manage to pull your cock out of her tight slit!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFreeComment",
+                            "move": "Sex",
+                            "theText": [
+                                      "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Ehhhh?! Y-You don't want to mate with me?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Base|n|'Ah?! Hmmm, is this what they mean by playing hard to get?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Panic|n|She lets out a few panicked squawking sounds as you push her away.",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Hmph... Well I'm not going to give up yet!♪'",
+                                      ""]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggle",
+                            "move": "Anal",
+                            "theText": [ "[ThePlayerName] tries to pull out of [AttackerName]'s tight ass..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFail",
+                            "move": "Anal",
+                            "theText": [ "But [AttackerName] refuses to be dislodged from your cock and continues to energetically ride your shaft!",
+                                        "But with surprising force, [AttackerName] slams her hips back into yours before giving her hips a delightful little wiggle as she settles back onto your cock.",
+                                        "But as you grab her hips to pull out, she tickles you with her feathered wings, making you laugh and assaulting you with a strange, yet delightful sensation!",
+                                        "But as you push the harpy away she lets out a few sad noises that give you pause, but she cheers right back up at your hesitation and quickly takes your shaft back into her tight ass."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleComment",
+                            "move": "Anal",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Why would you wanna stop?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'Eh?! Uhm, I really like you, so don't push me away, okay?",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ehehe!♥"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFree",
+                            "move": "Anal",
+                            "theText": [ "|f|CallEventAndSceneThenReturn|/|HarpyCombatEvent|/|StanceCheckCGOff|n|And manage to pull your cock out of her tight rear!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFreeComment",
+                            "move": "Anal",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'Ehhhh?! But you were the one who put it in there...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Base|n|'Ah?! Hmmm, is this what they mean by playing hard to get?'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Panic|n|She lets out a few panicked squawking sounds as you push her away.",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Hmph... Well I'm not going to give up yet!♪'",
+                                        ""]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggle",
+                            "move": "Face Sit",
+                            "theText": [ "[ThePlayerName] tries to push [AttackerName]'s wet pussy off [TargetHisOrHer] face..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFail",
+                            "move": "Face Sit",
+                            "theText": [ "But she firmly grinds her hips back down onto your face!",
+                                        "But she stays firmly seated on your face!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleComment",
+                            "move": "Face Sit",
+                            "theText": [ "",
+                                          "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Is my scent overwhelming you?'",
+                                          "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Hmmm... We should probably fuck soon.'",
+                                          "|f|ChangeImageLayer|/|Expression|/|Clueless|n|'Ahhh...♪ What was I supposed to do after knocking you down again...?'"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFree",
+                            "move": "Face Sit",
+                            "theText": [ "|f|CallEventAndSceneThenReturn|/|HarpyCombatEvent|/|StanceCheckCGOff|n|And manage to push [AttackerName] off!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFreeComment",
+                            "move": "Face Sit",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Panic|n|She lets out a few panicked squawking sounds as you push her away.",
+                                        "|f|ChangeImageLayer|/|Expression|/|Base|n|'Hmph... Well I'm not going to give up yet!♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Embarrassed|n|'Ah?! Oh... I was overdoing it wasn't I? Sorry!♪'"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggle",
+                            "move": "Making Out",
+                            "theText": [ "[ThePlayerName] tries to break the deep kiss with [AttackerName]..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFail",
+                            "move": "Making Out",
+                            "theText": [ "But she keeps a tight hold on [ThePlayerName] with her feathery wings, and he stays locked in a deep kiss!",
+                                        "But as you start to push her away she wraps her wings around your back, deepening the kiss while she gazes lovingly into your eyes."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleComment",
+                            "move": "Making Out",
+                            "theText": [ "",
+                                      "",
+                                        "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Mmm, this is nice...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ahhh... We're already so lovey dovey!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Base|n|'So... Are we going to have sex soon?'"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFree",
+                            "move": "Making Out",
+                            "theText": [ "And free your mouth from [AttackerName]'s soft lips!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFreeComment",
+                            "move": "Making Out",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Lewd|n|'Eh? But you kissed me first...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited Blush|n|'Ah! Are you going to fuck me now?♥ EEeee! this is so romantic!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Lewd|n|She doesn't seem to realize you pushed her away, and she continues to make out with the air for a moment before realizing what's going on."]
+                        }
+                      ],
+  "victoryScenes": [
+    {
+          "NameOfScene": "VictorySex",
+          "move": "",
+          "stance": "Sex",
+          "includes": [ "Harpy"],
+          "theScene": [ "DisplayCharacters",
+                        "Harpy",
+                        "EndLoop",
+                        "ChangeImageLayer", "Expression", "1", "Orgasm",
+                        "ChangeBGM", "music/Loss/reason.mp3",
+                        "However, instead of fading away immediately, the harpy clings to your body in an effort to linger just a bit longer, her still wanting pussy clenching possessively around your manhood while her fluffy wings seek to wrap around you in a needy hug, all the while she looks at you with lust-clouded eyes and moans.",
+                        "Speaks",
+                        "Aaah... More... Please...",
+                        "The begging, cooing tone of her sweet voice, along with the heat and softness of her almost completely bare frame, coaxingly surround you as she makes her plea while continuing to needily wiggle against you, tempting you to take her up on her request and continue to fuck her...",
+                        "Menu",
+                         "Keep fucking the harpy!",
+                         "Better not.",
+                        "EndLoop"
+                                                          ],
+          "picture": ""
+      },
+
+    {
+          "NameOfScene": "Better not.",
+          "move": "",
+          "stance": "noentryhere",
+          "includes": [ "Harpy"],
+          "theScene": [ "ChangeImageLayer", "Expression", "1", "Embarrassed",
+                        "The bird woman lets out a meek, plaintive sound as you disengage from her and pull your cock out of her, though instead of trying to resist or flapping away indignantly, she sighs longingly and rests her head against your chest, seeming intent on at least enjoying your warmth for as long as she still can while she shyly volunteers.",
+                        "Speaks",
+                        "... Maybe next time, then?",
+                        "DisplayCharacters",
+                        "EndLoop",
+                        "ChangeBGM", "music/Mountain/Purple Planet Music - Chilled - Desert Winds (3_12).mp3",
+                        "With that hopeful suggestion, she nuzzles your torso for just a moment more, then fades away for good, leaving you on your own and free to continue your adventure... albeit with a persistent feeling of slight regret at the idea of what an extra round with the eager harpy could have felt like...\n\nWell, 'maybe next time'?"
+                                                          ],
+          "picture": ""
+      },
+
+    {
+          "NameOfScene": "Keep fucking the harpy!",
+          "move": "",
+          "stance": "noentryhere",
+          "includes": [ "Harpy"],
+          "theScene": [ "ChangeImageLayer", "Expression", "1", "Excited Blush",
+                        "Seeing you give in to her needy seductions as well as to your own lust, the winged monster girl perks up instantly as you get up to bring the two of you in a more convenient standing position while lifting her up in your arms to keep her pressed against you, a big, guileless grin spreading over her face as she excitedly cheers while nuzzling lovingly into you.",
+                        "Speaks",
+                        "Yay!♪",
+                        "However, any impression of innocence that she might have given is quickly belied by the eagerness with which she looks down at your rigid dick as you slowly draw back to gather some momentum, the hatted cutie clearly no stranger to sex and plainly craving as much of it as she can have with you.",
+                        "ChangeArousalByPercent", "5",
+                        "ChangeBGM", "music/Loss/Falling Down.mp3",
+                        "ChangeImageLayer", "Expression", "1", "Orgasm",
+                        "And for your part, you're all too happy to grant her what she's pining for, taking just a moment to properly adjust her clingy frame in your grasp before immediately giving it to her fast and hard, swiftly reburying your entire shaft into her in a way that makes her hot, sodden pussy squeeze delightfully around your length while the rest of her body shudders blissfully in the throes of a small orgasm, leaving her giddily moaning.",
+                        "Speaks",
+                        "O-Oooooh... Yesss...♥︎",
+                        "ChangeArousalByPercent", "5",
+                        "All at once, her previously chipper voice melts into a much sultrier, erotic one while her cheerful expression devolves into a vapid smile of wanton ecstasy, her winged embrace instinctively moving from your torso up to your neck in reaction to your powerful insertion, both for better leverage and to pull you into a passionate kiss, the petite woman feverishly lavishing you with both the fluffiness of her plumage and the softness of her lips.",
+                        "ChangeArousalByPercent", "5",
+                        "ChangeImageLayer", "Expression", "1", "Excited Blush",
+                        "With your lust thus deftly stoked by the harpy's fervid makeout, the loving entanglement of her nimble tongue around yours, and her feathered caresses all over your head and neck, you're rapidly coaxed into a quick rhythm that has you repeatedly slamming your hips against hers at an assertive tempo, eagerly returning her smooches while making a mess of her sopping insides which receptively quiver and clench around your cock.",
+                        "ChangeArousalByPercent", "5",
+                        "Finding yourself gladly going further along with the monster girl's subby affections, you adjust your grip more securely over her, one hand squeezing her pert butt while the other supports her back, the better to keep her pleasantly lithe, lightweight form completely at your mercy as you fuck her without restraint while trading increasingly hot and messy kisses with her, claiming both her warm pussy and sweet mouth at the same time.",
+                        "ChangeImageLayer", "Expression", "1", "Orgasm",
+                        "ChangeArousalByPercent", "5",
+                        "With how readily you're giving in to your mating urges, you can feel pleasure rise within you steadily and rapturously under the stimulation of your indulgent thrusting... though not as rapturously as it does for your opponent who seems to have already given in completely to your dominance, her eyes completely glazed with arousal as she goes through one shivery orgasm after the next under your uninterrupted ramming.",
+                        "ChangeArousalByPercent", "5",
+                        "Every time she goes over the edge all over again, you can feel her twitch and tremble against you with an adorably high-pitched cry that reverberates into your body through your continued makeout, fueling your own lust and driving you to carry on plowing her without much care for pacing yourself, surrendering more and more to the animalistically base need to relieve your loins by filling up your defeated foe with your cum.",
+                        "ChangeArousalByPercent", "5",
+                        "ChangeImageLayer", "Expression", "1", "Excited Blush",
+                        "And plainly, she has no problem with that, in fact yielding more and more enthusiastically to your fervent ministrations by pressing herself ever more urgently into you, by tightening her downy wings' grip over you, and even by adding in the embrace of her powerful legs, which suddenly wrap around your waist and lock behind your back with surprising strength, as if to instinctively ensure you're not going anywhere!",
+                        "ChangeArousalByPercent", "5",
+                        "In that new, tighter position, you find yourself having to make do with shorter and briefer thrusts, but quickly find that your heated lovemaking with the energetic harpy isn't growing any less intense for it, instead turning all the more intimate and sensual as your glued frames now rub lasciviously into each other, allowing you to bask all the more carnally into each other's taste and smell.",
+                        "ChangeArousalByPercent", "5",
+                        "And with your mutual pleasure only heightened by the change of posture and pace, your feverish mating grows all the more indulgent, making you now approach the brink while your feathered lover's endurance is getting rapidly ground down by her consecutive climaxes, leaving her constantly shuddering and moaning against you in one vocally gushing high after another.",
+                        "ChangeImageLayer", "Expression", "1", "Orgasm",
+                        "Eventually, after one more demonstratively exerting orgasm, she laboriously withdraws from your exchanges of kisses in order to speak up, needing a few seconds to gather her messy thoughts and focus her fogged-up gaze on you before she actually manages to talk, her squeezing limbs and sex continuing to clutch possessively all over you as she ultimately manages to woozily intone.",
+                        "ChangeImageLayer", "Expression", "1", "Embarrassed",
+                        "Speaks",
+                        "Aaaaah...♥︎ I-I don't think I can hold out much longer...♥︎ J-Just so you know, I'm p-pretty sure the next time I cum's gonna be the last before I finish fading away for good...♥︎",
+                        "ChangeArousalByPercent", "5",
+                        "Then, with that warning delivered, she immediately goes back to melting against you, clearly shamelessly looking forward to that final, decisive climax, her body indulgently yielding to your increasingly frantic smooches and thrusts as you feel your own orgasm draw near, the now delightfully sloppy back and forth of your twitching cock into her sopping slit bringing you both closer and closer to the edge, until...",
+                        "ChangeImageLayer", "Expression", "1", "Orgasm",
+                        "Speaks",
+                        "A-Ah! I can't-! I'm cumming!!!♥︎♥︎♥︎",
+                        "ChangeArousalByPercent", "5",
+                        "With that overwhelmed scream of pleasure, she goes over the brink in total abandon, her entire frame going rigid in rapture while her eyes roll over and her now madly clenching pussy convulses all over your dick, stimulating you powerfully through her climax!",
+                        "IfPlayerOrgasm", "OrgasmFinish",
+                        "StopBGM",
+                        "DisplayCharacters",
+                        "EndLoop",
+                        "... Right before she abruptly disappears in the middle of her orgasmic crying, the ghost of her voice bodilessly echoing around while you stagger dazedly in place from her sudden absence, your dizzy stupor quickly giving way to frustration and denial as you swiftly realize that this means no finishing for you!",
+                        "Your abruptly neglected manhood throbbing and leaking in the air as if in furious protest at this literally unclimactic outcome, you stand there for a moment as you wrestle with your dissatisfaction, grumpily muttering a curse against the harpy for leaving you high and dry... yet ultimately having little choice but to acknowledge that there's not much you can blame her for, except perhaps not having much endurance...",
+                        "ChangeBGM", "music/Mountain/Purple Planet Music - Chilled - Desert Winds (3_12).mp3",
+                        "ChangeEnergyByPercent", "30",
+                        "As for you, you'll have to deal with your blue balls on your own, something which you resign yourself to as you redress yourself and carry on with your adventure with newfound pent-up energy, a sneaky part of you wondering if {i}maybe{/i} you should be a {i}bit{/i} more indulgent than usual with the next monster girl you meet, perhaps by purposefully letting her get {i}one{/i} load out of you, just for the sake of clearing your mind...",
+                        "GetEventAndChangeProgress", "TimePassed", "50"
+                                                          ],
+          "picture": ""
+      },
+
+    {
+          "NameOfScene": "OrgasmFinish",
+          "move": "",
+          "stance": "noentryhere",
+          "includes": [ "Harpy"],
+          "theScene": [ "PlayerOrgasmNoSpiritLoss",
+                        "And with her orgasmic squeezing and trembling taking you all the way to your own release, you gladly go for the plunge alongside her and hilt yourself deep within her while embracing her tightly, allowing the two of you to enjoy a wonderfully intense, mutual high as you let yourself go, filling her up with your fresh, hot cum to her loudly crying content.",
+                        "Enjoying her waning presence for as long as you can while she still manages to hang on to you before she inevitably fades away, you fervently trade more kisses with her while letting your hands roam over her pert, thoroughly flushed frame, your shared ecstasy reaching its peak as the two of you mindlessly indulge in each other's bodies and bask in base bliss, wordlessly panting and gasping and moaning through those last moments...",
+                        "StopBGM",
+                        "DisplayCharacters",
+                        "EndLoop",
+                        "Until your harpy opponent-turned-lover can't hold out a second longer and vanishes for good, leaving you stumbling for a moment as you abruptly need to rebalance yourself in reaction to her sudden absence, your now neglected manhood throbbing as if in protest upon finding itself separated from the pleasurably warm, receptive pussy it was filling up... before ultimately flagging between your legs, satiated by your post-battle round.",
+                        "ChangeBGM", "music/Mountain/Purple Planet Music - Chilled - Desert Winds (3_12).mp3",
+                        "As you then gather yourself after that vigorous romp, you can't help but wish that the cute, energetic monster girl could have stuck around a bit longer... But since there's not much you can do about it now, you redress yourself, take a moment to catch your breath, then briskly proceed with your adventure, feeling all in all quite pleasantly lighter after the refreshing, passionate exertions you just partook in."
+                                                          ],
+          "picture": ""
+      }
+
+        ],
+        "pictures": [
+                    {
+                      "Name": "Normal",
+                      "Set": [
+                      {
+                          "Name": "Expression",
+                          "StartOn": "1",
+                          "AlwaysOn": "1",
+                          "IsScene": "0",
+                          "TheBody": "1",
+                          "Overlay": "No",
+                          "setXalign": "0.0",
+                          "setYalign": "0.0",
+                          "Images": [
+                            {
+                                "Name": "Base",
+                                "File": "Monsters/Harpy/Harpy-Base.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Clueless",
+                                "File": "Monsters/Harpy/Harpy-Clueless.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Embarrassed",
+                                "File": "Monsters/Harpy/Harpy-Embarassed.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Excited",
+                                "File": "Monsters/Harpy/Harpy-Excited.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Excited Blush",
+                                "File": "Monsters/Harpy/Harpy-Excited 2.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Lewd",
+                                "File": "Monsters/Harpy/Harpy-Lewd.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Panic",
+                                "File": "Monsters/Harpy/Harpy-Panic.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+
+                            {
+                                "Name": "Orgasm",
+                                "File": "Monsters/Harpy/Harpy-Lewd.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            }
+                        ]
+                      }
+                    ]
+                    },
+                      {
+                        "Name": "Sex",
+                        "Set": [
+                          {
+                             "Role": "FaceRider",
+                             "StanceRequired": "Face Sit",
+                             "MonsterRequired": "Harpy",
+                             "CGTranslator": [
+                             ],
+                             "TogglesLayers": [
+                                 "FaceHarpy"
+                             ],
+                             "ActiveRequirment": "Yes",
+                             "SpecificUIPlacementX": "0.30",
+                             "SpecificUIPlacementY": "0.24"
+                         },
+                         {
+                            "Role": "Sex",
+                            "StanceRequired": "Sex",
+                            "MonsterRequired": "Harpy",
+                            "CGTranslator": [
+                                {
+                                    "In": "Expression",
+                                    "Out": "DickHarpyExpression"
+                                }
+                            ],
+                            "TogglesLayers": [
+                                "DickHarpyExpression",
+                                "DickHarpy"
+                            ],
+                            "ActiveRequirment": "Yes",
+                            "SpecificUIPlacementX": "0.75",
+                            "SpecificUIPlacementY": "0.35"
+                        },
+                        {
+                            "Role": "Anal",
+                            "StanceRequired": "Anal",
+                            "MonsterRequired": "Harpy",
+                            "CGTranslator": [
+                                {
+                                    "In": "Expression",
+                                    "Out": "DickHarpyAnalExpression"
+                                }
+                            ],
+                            "TogglesLayers": [
+                                "DickHarpyAnalExpression",
+                                "DickHarpyAnal"
+                            ],
+                            "ActiveRequirment": "Yes",
+                            "SpecificUIPlacementX": "0.75",
+                            "SpecificUIPlacementY": "0.35"
+                        },
+                        {
+                            "Role": "Idle",
+                            "StanceRequired": "",
+                            "MonsterRequired": "Harpy",
+                            "CGTranslator": [
+                            ],
+                            "TogglesLayers": [
+                            ],
+                            "ActiveRequirment": "",
+                            "SpecificUIPlacementX": "0.55",
+                            "SpecificUIPlacementY": "0.2"
+                        },
+                            {
+                                "Name": "Background",
+                                "StartOn": "1",
+                                "AlwaysOn": "1",
+                                "IsScene": "1",
+                                "TheBody": "0",
+                                "Overlay": "No",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0",
+                                "Images": [
+                                    {
+                                        "Name": "Base",
+                                        "File": "Monsters/Harpy/CG/HarpyCG_BG.png",
+                                        "setXalign": "0.0",
+                                        "setYalign": "0.0"
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "PlayerBody",
+                                "StartOn": "1",
+                                "AlwaysOn": "1",
+                                "IsScene": "1",
+                                "TheBody": "0",
+                                "Overlay": "No",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0",
+                                "Player": "Yes",
+                                "Images": [
+                                    {
+                                        "Name": "Base",
+                                        "File": "Monsters/Harpy/CG/HarpyCG_Guy.png",
+                                        "setXalign": "0.0",
+                                        "setYalign": "0.0"
+                                    }
+                                ]
+                            },
+                                {
+                                    "Name": "PlayerBodySilhouette",
+                                    "StartOn": "1",
+                                    "AlwaysOn": "1",
+                                    "IsScene": "1",
+                                    "TheBody": "0",
+                                    "Overlay": "PlayerBody",
+                                    "setXalign": "0.0",
+                                    "setYalign": "0.0",
+                                    "Player": "Silhouette",
+                                    "Images": [
+                                        {
+                                            "Name": "Base",
+                                            "File": "Monsters/Harpy/CG/HarpyCG_GuySilhouette.png",
+                                            "setXalign": "0.0",
+                                            "setYalign": "0.0"
+                                        }
+                                    ]
+                                },
+                              {
+                                "Name": "PlayerHair",
+                                "StartOn": "1",
+                                "AlwaysOn": "1",
+                                "IsScene": "1",
+                                "TheBody": "0",
+                                "Overlay": "No",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0",
+                                "Player": "Hair",
+                                "Images": [
+                                    {
+                                        "Name": "Base",
+                                        "File": "Monsters/Harpy/CG/HarpyCG_GuyHair.png",
+                                        "setXalign": "0.0",
+                                        "setYalign": "0.0"
+                                    }
+                                ]
+                            },
+
+
+
+                            {
+                                "Name": "DickHarpy",
+                                "StartOn": "0",
+                                "AlwaysOn": "0",
+                                "IsScene": "1",
+                                "TheBody": "0",
+                                "Overlay": "No",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0",
+                                "Images": [
+                                    {
+                                        "Name": "DickRide",
+                                        "File": "Monsters/Harpy/CG/HarpyCG_HarpyRide.png",
+                                        "setXalign": "0.0",
+                                        "setYalign": "0.0"
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "DickHarpyExpression",
+                                "StartOn": "0",
+                                "AlwaysOn": "0",
+                                "IsScene": "1",
+                                "TheBody": "0",
+                                "Overlay": "No",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0",
+                                "Images": [
+                                    {
+                                        "Name": "Base",
+                                        "File": "Monsters/Harpy/CG/HarpyCG_Expression_Base.png",
+                                        "setXalign": "0.0",
+                                        "setYalign": "0.0"
+                                    },
+                                    {
+                                      "Name": "Embarrassed",
+                                      "File": "Monsters/Harpy/CG/HarpyCG_Expression_Embarassed.png",
+                                      "setXalign": "0.0",
+                                      "setYalign": "0.0"
+                                  },
+                                  {
+                                      "Name": "Excited",
+                                      "File": "Monsters/Harpy/CG/HarpyCG_Expression_Excited.png",
+                                      "setXalign": "0.0",
+                                      "setYalign": "0.0"
+                                  },
+                                  {
+                                      "Name": "Lewd",
+                                      "File": "Monsters/Harpy/CG/HarpyCG_Expression_Lewd.png",
+                                      "setXalign": "0.0",
+                                      "setYalign": "0.0"
+                                  },
+                                  {
+                                    "Name": "Orgasm",
+                                    "File": "Monsters/Harpy/CG/HarpyCG_Expression_Orgasm.png",
+                                    "setXalign": "0.0",
+                                    "setYalign": "0.0"
+                                  },
+
+                                  {
+                                    "Name": "Clueless",
+                                    "File": "Monsters/Harpy/CG/HarpyCG_Expression_Embarassed.png",
+                                    "setXalign": "0.0",
+                                    "setYalign": "0.0"
+                                },
+                                {
+                                    "Name": "Excited Blush",
+                                    "File": "Monsters/Harpy/CG/HarpyCG_Expression_Excited.png",
+                                    "setXalign": "0.0",
+                                    "setYalign": "0.0"
+                                },
+                                {
+                                    "Name": "Panic",
+                                    "File": "Monsters/Harpy/CG/HarpyCG_Expression_Embarassed.png",
+                                    "setXalign": "0.0",
+                                    "setYalign": "0.0"
+                                }
+                                ]
+                            },
+
+                            {
+                                "Name": "DickHarpyAnal",
+                                "StartOn": "0",
+                                "AlwaysOn": "0",
+                                "IsScene": "1",
+                                "TheBody": "0",
+                                "Overlay": "No",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0",
+                                "Images": [
+                                    {
+                                        "Name": "DickRide",
+                                        "File": "Monsters/Harpy/CG/HarpyCG_HarpyRide.png",
+                                        "setXalign": "0.0",
+                                        "setYalign": "0.0"
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "DickHarpyAnalExpression",
+                                "StartOn": "0",
+                                "AlwaysOn": "0",
+                                "IsScene": "1",
+                                "TheBody": "0",
+                                "Overlay": "No",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0",
+                                "Images": [
+                                    {
+                                        "Name": "Base",
+                                        "File": "Monsters/Harpy/CG/HarpyCG_Expression_Base.png",
+                                        "setXalign": "0.0",
+                                        "setYalign": "0.0"
+                                    },
+                                    {
+                                      "Name": "Embarrassed",
+                                      "File": "Monsters/Harpy/CG/HarpyCG_Expression_Embarassed.png",
+                                      "setXalign": "0.0",
+                                      "setYalign": "0.0"
+                                  },
+                                  {
+                                      "Name": "Excited",
+                                      "File": "Monsters/Harpy/CG/HarpyCG_Expression_Excited.png",
+                                      "setXalign": "0.0",
+                                      "setYalign": "0.0"
+                                  },
+                                  {
+                                      "Name": "Lewd",
+                                      "File": "Monsters/Harpy/CG/HarpyCG_Expression_Lewd.png",
+                                      "setXalign": "0.0",
+                                      "setYalign": "0.0"
+                                  },
+                                  {
+                                    "Name": "Orgasm",
+                                    "File": "Monsters/Harpy/CG/HarpyCG_Expression_Orgasm.png",
+                                    "setXalign": "0.0",
+                                    "setYalign": "0.0"
+                                  },
+
+                                  {
+                                    "Name": "Clueless",
+                                    "File": "Monsters/Harpy/CG/HarpyCG_Expression_Embarassed.png",
+                                    "setXalign": "0.0",
+                                    "setYalign": "0.0"
+                                },
+                                {
+                                    "Name": "Excited Blush",
+                                    "File": "Monsters/Harpy/CG/HarpyCG_Expression_Excited.png",
+                                    "setXalign": "0.0",
+                                    "setYalign": "0.0"
+                                },
+                                {
+                                    "Name": "Panic",
+                                    "File": "Monsters/Harpy/CG/HarpyCG_Expression_Embarassed.png",
+                                    "setXalign": "0.0",
+                                    "setYalign": "0.0"
+                                }
+                                ]
+                            },
+
+
+
+                            {
+                                "Name": "SemenSex",
+                                "StartOn": "0",
+                                "AlwaysOn": "0",
+                                "IsScene": "1",
+                                "TheBody": "0",
+                                "Overlay": "No",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0",
+                                "Images": [
+                                    {
+                                        "Name": "Semen",
+                                        "File": "Monsters/Harpy/CG/HarpyCG_Semen.png",
+                                        "setXalign": "0.0",
+                                        "setYalign": "0.0"
+                                    }
+
+                                ]
+                            },
+                            {
+                              "Name": "FaceHarpy",
+                              "StartOn": "0",
+                              "AlwaysOn": "0",
+                              "IsScene": "1",
+                              "TheBody": "0",
+                              "Overlay": "No",
+                              "setXalign": "0.0",
+                              "setYalign": "0.0",
+                              "Images": [
+                                {
+                                    "Name": "FaceRide",
+                                    "File": "Monsters/Harpy/CG/HarpyCG_HarpyFaceSit.png",
+                                    "setXalign": "0.0",
+                                    "setYalign": "0.0"
+                                }
+                              ]
+                          }
+
+                        ]
+                    }
+                    ]
+}

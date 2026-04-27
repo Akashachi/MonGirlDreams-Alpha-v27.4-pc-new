@@ -1,0 +1,1559 @@
+{
+    "name": "MinotaurPowerPuzzles",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Minoni",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "TenguHarpy",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Feng",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Enter Block Puzzle Room",
+                        "theScene": [  "IfChoice", "1", "blockPuzzle complete", "Enter Block Puzzle RoomCompleted",
+                                      "You enter into a large, open room that has a golden door straight ahead with a much less ornate wooden door on the wall to your right. Most notably, there is a large wooden block in the center of the room, sitting next to an equally large square shaped hole in the ground.",
+                                      "PlayerStep",
+                                      "GetEventAndIfChoice", "WillPowerTempleEntrance", "1", "Talked to Minoni", "MinoniBlockPuzzle",
+                                      "JumpToScene",
+                                      "Block Puzzle Room"
+                                  ]
+                    },
+          {
+                        "NameOfScene": "Enter Block Puzzle RoomCompleted",
+                        "theScene": [  "You enter into a large, open room that has a golden door straight ahead with a much less ornate wooden door on the wall to your right. Most notably, there is a large hole in the center of the room that is completely filled with a large wooden block, still sitting there after your completion of the trial.",
+                                      "PlayerStep",
+                                      "GetEventAndIfChoice", "WillPowerTempleEntrance", "1", "Talked to Minoni", "MinoniBlockPuzzle",
+                                      "JumpToScene",
+                                      "Block Puzzle Room"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "MinoniBlockPuzzle",
+                        "theScene": [  "As you look around the room some more, you notice Minoni sitting on a chair in one of the corners, reading a book.",
+                                      "Menu",
+                                         "Interact with the block.",
+                                         "Talk to Minoni about the room.",
+                                         "Go through the door leading deeper into the dungeon.",
+                                         "Enter the simple wooden door.",
+                                         "Head back towards the trial's entrance.",
+                                       "EndLoop"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Block Puzzle Room",
+                        "theScene": [  "Menu",
+                                         "Interact with the block.",
+                                         "Go through the door leading deeper into the dungeon.",
+                                         "Enter the simple wooden door.",
+                                         "Head back towards the trial's entrance.",
+                                       "EndLoop"
+
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Talk to Minoni about the room.",
+                              "theScene": [ "DisplayCharacters",
+                                              "1",
+                                              "EndLoop",
+                                            "IfChoice", "1", "blockPuzzle complete", "Talk to Minoni about the room DoneBlock",
+                                            "ChangeImageLayer", "Expression", "1", "Smile", "ChangeImageLayer", "ArmL", "1", "Reading",
+                                            "She glances up from her book for a moment fixes you with a look.",
+                                            "Speaks",
+                                            "You have to get the block into the hole. Nothing else. It's pretty straightforward.",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "She continues to stare at you for a few heartbeats longer before letting out a faint sigh and continuing to read her book.",
+                                            "Menu",
+                                            "RequiresStat", "Allure", "15",
+                                               "Get her to push the block for you.",
+                                               "Enough of this.",
+                                             "EndLoop"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "Talk to Minoni about the room DoneBlock",
+                                    "theScene": [ "ChangeImageLayer", "Expression", "1", "Smile", "ChangeImageLayer", "ArmL", "1", "Reading",
+                                                  "She looks up from her book for a moment to stare at the block before turning her attention back at you.",
+                                                  "Speaks",
+                                                  "You already cleared the room? Congratulations, but if you want to talk, you'll have to head back to the entrance to the power trials. I'm not allowed to tell you anything once you're in here, you know.",
+                                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                                  "Without even giving you a moment to speak, she immediately resumes reading her book, all but ignoring you as you stand before her.",
+                                                  "JumpToScene",
+                                                     "Enough of this."
+                                              ]
+                                },
+                              {
+                                  "NameOfScene": "Get her to push the block for you.",
+                                  "theScene": [     "SetChoice", "1", "blockPuzzle complete",
+                                                  "ChangeBGM", "music/Relaxing/Purple Planet Music - Gentle - Eastern Karma (2_16).mp3",
+                                                  "ChangeImageLayer", "Face", "1", "Blush", "ChangeImageLayer", "ArmL", "1", "BaseBook", "ChangeImageLayer", "Expression", "1", "Embarrassed",
+                                                    "You move in a bit closer to Minoni as you look directly into her red eyes, and you notice a small flush begins to tinge her cheeks pink as she pushes her face further into her book before abruptly slamming it shut with an embarrassed, exasperated expression.",
+                                                    "Speaks",
+                                                    "W-What do you want now?!",
+                                                    "PlayerSpeaks",
+                                                    "You wouldn't mind giving me a demonstration on how to get it in the hole, right?",
+                                                    "ChangeImageLayer", "Expression", "1", "Stumbling", "ChangeImageLayer", "Face", "1", "BlushDeep",
+                                                    "Minoni's face turns an even brighter shade of crimson as you inch closer towards her, and she she shyly averts her eyes from you as your face nears hers.",
+                                                    "Speaks",
+                                                    "U-Uh, sure! I s-should make sure you don't throw out your back with a bad stance or something... y-yeah...",
+                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                    "She stands up and slides past you with her face still bright red before heading over to the block and assuming a sturdy stance, taking care to explain to you the best ways to push the block without injuring yourself before finishing off her demonstration by giving the block a strong push.",
+                                                    "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                                    "ChangeImageLayer", "Expression", "1", "Stunned",
+                                                    "The block immediately and easily slides into the hole with a loud thud, and the sound seems to snap Minoni out of her daze as she stares at the block, then at you, then back at the block before burying her face in her hands.",
+                                                    "ChangeImageLayer", "Expression", "1", "Frustrated",
+                                                    "Speaks",
+                                                    "Ahhhhh! I can't believe that you tricked me into doing that! It even counts as you clearing the room, too! Ughhh!",
+                                                    "ChangeImageLayer", "Expression", "1", "Angry",
+                                                    "After a few long moments, Minoni looks up and points an accusing finger at you as she gives you an embarrassed, angry glare.",
+                                                    "Speaks",
+                                                    "You planned this, didn't you?! Well, it doesn't matter anyway, because that kind of tactic {i}definitely{/i} won't help you in the next trial...",
+                                                    "ChangeBGM", "music/Temple/far-east-kingdom.mp3",
+                                                    "ChangeImageLayer", "Expression", "1", "Pout", "ChangeImageLayer", "ArmL", "1", "Reading",
+                                                    "She brushes past you with a huff before sitting back down in her chair and intently continuing to read her book, but you can't help but notice that even as her anger dies down, her cheeks are still flushed bright red...",
+                                                    "JumpToScene",
+                                                    "Enough of this."
+                                            ]
+                              },
+                          {
+                              "NameOfScene": "Go through the door leading deeper into the dungeon.",
+                              "theScene": [  "IfChoice", "1", "blockPuzzle complete", "GoThroughBlockPuzzleDoor",
+                                            "You walk up to the door and attempt to open it, but it won't budge, despite your best efforts.",
+                                            "PlayerStep",
+                                            "JumpToScene",
+                                            "Enough of this."
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Enter the simple wooden door.",
+                              "theScene": [  "SaveNextLine",
+                                            "You move to the wooden door and push it open, entering into a long hallways with another, similarly designed wooden door on the other end.",
+                                            "PlayerStep",
+                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                            "JumpToEventThenScene",
+                                            "templeRandomEncounters",
+                                            "RedSideEncounter",
+                                            "UseSavedLineInMenu",
+                                            "Menu",
+                                              "Proceed down the hall.",
+                                              "Go back into the block room.",
+                                            "EndLoop"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "Go back into the block room.",
+                                    "theScene": [
+                                                  "JumpToScene",
+                                                  "Enter Block Puzzle Room2"
+                                              ]
+                                },
+          {
+                        "NameOfScene": "Enter Block Puzzle Room2",
+                        "theScene": [  "IfChoice", "1", "blockPuzzle complete", "Enter Block Puzzle RoomCompleted2",
+                                      "You enter into a large, open room that has a golden door leading further into the temple to your right with a similarly designed door leading back towards the entrance to your left, and there's a much less ornate wooden door behind you. Most notably, there is a large wooden block in the center of the room, sitting next to an equally large square shaped hole in the ground.",
+                                      "PlayerStep",
+                                      "GetEventAndIfChoice", "WillPowerTempleEntrance", "1", "Talked to Minoni", "MinoniBlockPuzzle",
+                                      "JumpToScene",
+                                      "Block Puzzle Room"
+                                  ]
+                    },
+          {
+                        "NameOfScene": "Enter Block Puzzle RoomCompleted2",
+                        "theScene": [  "You enter into a large, open room that has a golden door leading further into the temple to your right with a similarly designed door leading back towards the entrance to your left, and there's a much less ornate wooden door behind you. Most notably, there is a large hole in the center of the room that is completely filled with a large wooden block, still sitting there after your completion of the trial.",
+                                      "PlayerStep",
+                                      "GetEventAndIfChoice", "WillPowerTempleEntrance", "1", "Talked to Minoni", "MinoniBlockPuzzle",
+                                      "JumpToScene",
+                                      "Block Puzzle Room"
+                                  ]
+                    },
+                        {
+                            "NameOfScene": "Proceed down the hall.",
+                            "theScene": [ "SaveNextLine",
+                                          "You walk down the side hall and stop just short of the wooden door leading further in, and the door back into the block trial room is behind you.",
+                                          "PlayerStep",
+                                          "StoreCurrentEventSpotSkippingLines", "3",
+                                          "JumpToEventThenScene",
+                                          "templeRandomEncounters",
+                                          "RedSideEncounter",
+                                          "UseSavedLineInMenu",
+                                          "Menu",
+                                            "Go through the next door.",
+                                            "Head back down the hall towards the block room.",
+                                          "EndLoop"
+                                      ]
+                        },
+                              {
+                                  "NameOfScene": "Head back down the hall towards the block room.",
+                                  "theScene": [ "SaveNextLine",
+                                                "You walk down the hall back towards the block room and stop just before the door leading back into it, and the door on the other end of the hallway leading further into the side path is behind you.",
+                                                "PlayerStep",
+                                                "StoreCurrentEventSpotSkippingLines", "3",
+                                                "JumpToEventThenScene",
+                                                "templeRandomEncounters",
+                                                "RedSideEncounter",
+                                                "UseSavedLineInMenu",
+                                                "Menu",
+                                                  "Proceed down the hall.",
+                                                  "Go back into the block room.",
+                                                "EndLoop"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "Go through the next door.",
+                                  "theScene": [  "IfChoice", "2", "opened chest", "EmptyChestRoom",
+                                                "You enter into a small room and immediately notice an engraved wooden pedestal jutting out of the center of the floor with a wooden treasure chest resting on top of it.",
+                                                "PlayerStep",
+                                                "Menu",
+                                                  "Open the chest.",
+                                                  "Go back to the hallway.",
+                                                "EndLoop"
+                                            ]
+                              },
+                                      {
+                                          "NameOfScene": "Open the chest.",
+                                          "theScene": [  "SetChoice", "2", "opened chest",
+                                                        "You open the chest and...",
+                                                        "GiveItem", "1", "Lion's Amulet",
+                                                        "JumpToScene",
+                                                        "EmptyChestRoomStanding"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "EmptyChestRoomStanding",
+                                          "theScene": [  "You stand in a small room with an opened and empty treasure chest still resting on the top of the engraved wooden pedestal, and now that you're less concerned with trying to find out what's on the inside of the chest, you notice that it seems to be bolted to the pedestal...",
+                                                        "PlayerStep",
+                                                        "Menu",
+                                                          "Go back to the hallway.",
+                                                        "EndLoop"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "EmptyChestRoom",
+                                          "theScene": [  "You enter into the small room with the opened and empty treasure chest still resting on the top of the engraved wooden pedestal, and now that you're less concerned with trying to find out what's on the inside of the chest, you notice that it seems to be bolted to the pedestal...",
+                                                        "PlayerStep",
+                                                        "Menu",
+                                                          "Go back to the hallway.",
+                                                        "EndLoop"
+                                                    ]
+                                      },
+                              {
+                                  "NameOfScene": "Go back to the hallway.",
+                                  "theScene": [ "SaveNextLine",
+                                                "You push open the wooden door and head back into the long hallway that leads to the block room.",
+                                                "PlayerStep",
+                                                "StoreCurrentEventSpotSkippingLines", "3",
+                                                "JumpToEventThenScene",
+                                                "templeRandomEncounters",
+                                                "RedSideEncounter",
+                                                "UseSavedLineInMenu",
+                                                "Menu",
+                                                  "Head back down the hall towards the block room.",
+                                                  "Go through the next door.",
+                                                "EndLoop"
+                                            ]
+                              },
+                            {
+                                "NameOfScene": "Enough of this.",
+                                "theScene": [ "DisplayCharacters",
+                                                "EndLoop",
+                                              "GetEventAndIfChoice", "WillPowerTempleEntrance", "1", "", "Block Puzzle Room",
+                                              "Menu",
+                                                 "Interact with the block.",
+                                                 "Talk to Minoni about the room.",
+                                                 "Go through the door leading deeper into the dungeon.",
+                                                 "Enter the simple wooden door.",
+                                                 "Head back towards the trial's entrance.",
+                                               "EndLoop"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Interact with the block.",
+                                "theScene": [    "IfChoice", "1", "blockPuzzle complete", "already done block puzzle.",
+                                                "You look over at the large wooden block in the center of the room and note that while you won't have to move it far, it certainly doesn't look like it'll be easy, and you consider how you're going to approach this situation...",
+                                               "Menu",
+                                                  "RequiresStat",
+                                                  "Power",
+                                                  "20",
+                                                 "Push the block into the hole.",
+                                                 "RequiresStat",
+                                                 "Intelligence",
+                                                 "20",
+                                                 "Use your magic to move the block.",
+                                                 "RequiresStat",
+                                                 "Luck",
+                                                 "15",
+                                                 "Something unexpected happens...",
+                                                 "Try your best?",
+                                                 "Enough of this.",
+                                               "EndLoop"
+                                          ]
+                            },
+                                      {
+                                          "NameOfScene": "already done block puzzle.",
+                                          "theScene": [
+                                                            "You look over at the block as it's already firmly stuck in its hole, and you're pretty sure that you're already done here.",
+                                                            "JumpToScene",
+                                                            "Enough of this."
+                                                    ]
+                                      },
+                                  {
+                                      "NameOfScene": "Push the block into the hole.",
+                                      "theScene": [     "SetChoice", "1", "blockPuzzle complete",
+                                                        "Deciding that there's nothing quite as effective as manual labor, you walk up to the block and begin to push as hard as you can, and after a few moments of grunting, straining effort, you manage to slide the block into the hole, and as you do you hear a faint click as the door leading further into the dungeon suddenly unlocks!",
+                                                        "GetEventAndIfChoice", "WillPowerTempleEntrance", "1", "Talked to Minoni", "Push the block into the hole.2",
+                                                        "JumpToScene",
+                                                        "Enough of this."
+                                                ]
+                                  },
+                                        {
+                                            "NameOfScene": "Push the block into the hole.2",
+                                            "theScene": [    "DisplayCharacters",
+                                                            "1",
+                                                            "EndLoop",
+                                                            "ChangeImageLayer", "Expression", "1", "Smile", "ChangeImageLayer", "ArmL", "1", "Base",
+                                                             "Speaks",
+                                                              "Hey, good job! There's still more to go for the entire trial, and it's only going to get harder from here. Uh, not that this one was really difficult, but... Well... You know...",
+                                                              "ChangeImageLayer", "Expression", "1", "Stumbling",
+                                                              "Speaks",
+                                                              "...Good job anyway?",
+                                                              "ChangeProgress", "5",
+                                                              "JumpToScene",
+                                                              "Enough of this."
+                                                      ]
+                                        },
+                                {
+                                    "NameOfScene": "Use your magic to move the block.",
+                                    "theScene": [     "SetChoice", "1", "blockPuzzle complete",
+                                                      "Deciding that there's no power like willpower, you focus your attention on the block and begin to channel your magical might, and after a brief moment of mental strain, you manage to slide the block into the hole, and as you do you hear a faint click as the door leading further into the dungeon suddenly unlocks!",
+                                                      "GetEventAndIfChoice", "WillPowerTempleEntrance", "1", "Talked to Minoni", "Use your magic to move the block.2",
+                                                      "JumpToScene",
+                                                      "Enough of this."
+                                              ]
+                                },
+                                      {
+                                          "NameOfScene": "Use your magic to move the block.2",
+                                          "theScene": [    "DisplayCharacters",
+                                                          "1",
+                                                          "EndLoop",
+                                                          "ChangeImageLayer", "Expression", "1", "Pout",
+                                                           "Speaks",
+                                                            "Honestly, I wish I could say that's cheating, but the goal of this trial was to simply get the block in the hole, so it's not. At least you can't use magic in the next trial...",
+                                                            "JumpToScene",
+                                                            "Enough of this."
+                                                    ]
+                                      },
+                                {
+                                    "NameOfScene": "Something unexpected happens...",
+                                    "theScene": [    "SetChoice", "1", "blockPuzzle complete",
+                                                    "DisplayCharacters",
+                                                      "2",
+                                                      "EndLoop",
+                                                      "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                                      "ChangeImageLayer", "Expression", "1", "Happy",
+                                                    "You start to walk towards the block to get a better idea of how you're going to tackle the problem, but just as you reach it, a piercing cry fills the room as a tengu harpy dives out from somewhere in the ceiling and charges straight for you!",
+                                                      "GetEventAndIfChoice", "WillPowerTempleEntrance", "1", "Talked to Minoni", "Something unexpected happens...2",
+                                                      "Speaks2",
+                                                      "I've got you now-!",
+                                                      "ChangeImageLayer", "Expression", "1", "Panic",
+                                                      "But before she can finish her sentence, she misses you completely and smashes straight into the block, making it slide into place as she careens off to the side and faceplants directly into the floor.",
+                                                      "DisplayCharacters",
+                                                            "EndLoop",
+                                                      "There's a long pause as you stare at the dazed harpy while she struggles to stand back up, and once she finally manages to get to her feet, she flushes bright red with embarrassment and flies back into the ceiling before you can really process what just happened. Well, at least the door's unlocked now...",
+                                                      "ChangeBGM", "music/Temple/far-east-kingdom.mp3",
+                                                      "JumpToScene",
+                                                      "Enough of this."
+                                              ]
+                                },
+                                      {
+                                          "NameOfScene": "Something unexpected happens...2",
+                                          "theScene": [    "DisplayCharacters",
+                                                          "2",
+                                                          "1",
+                                                          "EndLoop",
+                                                            "ChangeImageLayer", "Expression", "2", "Angry", "ChangeImageLayer", "ArmL", "1", "BaseBook",
+                                                          "ChangeImageLayer", "Expression", "1", "Happy",
+                                                           "Speaks",
+                                                            "Wh-HEY! You're not supposed to attack him in here!",
+                                                            "Despite Minoni's loud objections, the harpy completely ignores her as she continues to barrel towards you with blinding speed!",
+                                                            "Speaks2",
+                                                            "I've got you now-!",
+                                                            "ChangeImageLayer", "Expression", "1", "Panic",  "ChangeImageLayer", "Expression", "2", "Stunned",
+                                                            "But before she can finish her sentence, she misses you completely and smashes straight into the block, making it slide into place as she careens off to the side and faceplants directly into the floor. An awkward silence fills the room as you and Minoni stare at each other for a moment before looking back at the harpy.",
+                                                            "DisplayCharacters",
+                                                                  "1",
+                                                                  "EndLoop",
+                                                            "ChangeImageLayer", "Expression", "1", "Stunned",
+                                                            "There's a long pause as you stare at the dazed harpy as she struggles to stand back up, and once she finally manages to get to her feet, she flushes bright red with embarrassment and flies back into the ceiling before you can really process what just happened.",
+                                                            "ChangeImageLayer", "Expression", "1", "Pout",
+                                                            "Speaks",
+                                                            "...Well then. She's going to get yelled at later for that. But... The challenge was to just get the block in the hole and I didn't specify how you had to do that, so technically... You completed this trial. The door's unlocked. Ugh.",
+                                                              "ChangeBGM", "music/Temple/far-east-kingdom.mp3",
+                                                              "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "ArmL", "1", "Reading",
+                                                              "Minoni continues to read her book with a huff. She seems rather annoyed about what just happened...",
+                                                            "JumpToScene",
+                                                            "Enough of this."
+                                                    ]
+                                      },
+                                {
+                                    "NameOfScene": "Try your best?",
+                                    "theScene": [     "You approach the block, feeling uncertain on if you're actually strong enough to move the block, but you give it your best shot anyway. But no matter how much strength you muster, you can't make it budge a single inch...",
+                                                      "GetEventAndIfChoice", "WillPowerTempleEntrance", "1", "Talked to Minoni", "Try your best?2",
+                                                      "JumpToScene",
+                                                      "Enough of this."
+                                              ]
+                                },
+                                      {
+                                          "NameOfScene": "Try your best?2",
+                                          "theScene": [    "DisplayCharacters",
+                                                          "1",
+                                                          "EndLoop",
+                                                          "ChangeImageLayer", "Expression", "1", "Embarrassed",
+                                                            "You hear a light cough behind you and turn to look at Minoni.",
+                                                            "ChangeImageLayer", "Expression", "1", "Stumbling",
+                                                          "Speaks",
+                                                          "Ahh... Uhm... Maybe you should come back here after you've trained a little, or put on some equipment to help you out. N-Not that you're doing bad or anything, I just thought...",
+                                                          "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "ArmL", "1", "Reading", "ChangeImageLayer", "Face", "1", "Blush",
+                                                          "Minoni trails off as her face begins to turn bright red, and she buries her face in her book to avoid looking at you.",
+                                                            "JumpToScene",
+                                                            "Enough of this."
+                                                    ]
+                                      },
+
+
+
+
+                    {
+                        "NameOfScene": "Head back towards the trial's entrance.",
+                        "theScene": [  "DisplayCharacters",
+                                          "EndLoop",
+                                        "SaveNextLine",
+                                        "You push open the golden door back to the entrance of the power trials and enter into a short hallway with an intricate golden door on the other end.",
+                                        "PlayerStep",
+                                        "StoreCurrentEventSpotSkippingLines", "3",
+                                        "JumpToEventThenScene",
+                                        "templeRandomEncounters",
+                                        "RedSideEncounter",
+                                        "UseSavedLineInMenu",
+                                      "JumpToEventThenScene",
+                                      "WillPowerTempleEntrance",
+                                      "Power Trials entry hallway."
+                                  ]
+                    },
+
+
+
+
+                    {
+                        "NameOfScene": "GoThroughBlockPuzzleDoor",
+                        "theScene": [  "DisplayCharacters",
+                                          "EndLoop",
+                                        "SaveNextLine",
+                                        "You push open the golden door leading deeper into the dungeon and enter into a small, empty room with yet another golden door on the other side that has the words 'Second Trial' engraved in gold into the wall above it.",
+                                        "PlayerStep",
+                                        "StoreCurrentEventSpotSkippingLines", "3",
+                                        "JumpToEventThenScene",
+                                        "templeRandomEncounters",
+                                        "NinjaRoll",
+                                        "UseSavedLineInMenu",
+                                        "Menu",
+                                          "Enter the next room.",
+                                          "Go back into the block room.",
+                                        "EndLoop"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Enter the next room.",
+                        "theScene": [   "IfChoice", "3", "armwrestle", "Go back into the arm wrestling room.",
+                                      "You enter into a fairly spacious room with a decently sized table in the middle placed between two simple chairs, and there's a golden door at the other end of the room leading further into the dungeon that's identical to the one you just came through.",
+                                      "PlayerStep",
+                                      "GetEventAndIfChoice", "WillPowerTempleEntrance", "1", "Talked to Minoni", "MinoniArmWrestle",
+                                      "JumpToScene",
+                                      "Late oni..."
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Late oni...",
+                              "theScene": [  "The room is otherwise completely devoid of anything, and is incredibly quiet. As you begin to walk towards the other door, however, you faintly hear the muffled sound of someone approaching you from above as the wooden frame of the room creaks, and while it's very faint, you can easily hear them speak a blistering string of curses as they bumble through the rafters.",
+                                            "DisplayCharacters",
+                                            "1",
+                                            "EndLoop",
+                                                    "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                                    "ChangeImageLayer", "Expression", "1", "Awawa", "ChangeImageLayer", "Face", "1", "BlushDeep",
+                                            "Suddenly, there's a loud crash as the large minotaur woman you saw but didn't speak to from the beginning of the trials falls through the ceiling with a surprisingly girly shriek, landing next to the table in a heap of dust and sprawling limbs.",
+                                            "ChangeImageLayer", "Expression", "1", "Stumbling",
+                                            "After a brief moment of silence, she quickly stands up and readjusts her clothing before flashing you a somewhat embarrassed smile.",
+                                            "Speaks",
+                                            "Um... Hey! I'm Minoni, and I'm the proctor for the power trials! I... Uh... Didn't see you come in because I was too absorbed in reading my book, s-so... y-yeah, haha... I, uh, didn't realize you went in, or were even here...",
+                                            "ChangeImageLayer", "Expression", "1", "Embarrassed",
+                                            "You hear the sudden sound of a throat clearing coming from above you, and you and Minoni look up at the ceiling as you notice a pair of kunoichi trainees pointedly glaring at Minoni while they repair the damage done to the ceiling by her fall, and she sheepishly grins up at them as they work.",
+                                            "Speaks",
+                                            "U-Uhm... S-Sorry!",
+                                              "ChangeBGM", "music/Temple/far-east-kingdom.mp3",
+                                              "ChangeImageLayer", "Expression", "1", "Serious", "ChangeImageLayer", "ArmR", "1", "Flex",
+                                            "She clears her throat as she returns her attention back to you, and her expression suddenly becomes serious as she crosses her arms.",
+                                            "Speaks",
+                                            "Alright, for this room, you're going to have to beat me in a good old fashioned arm wrestling match. If you have any other questions about the trials, you're going to have to head back to the first room of the power trials and talk to me there. Those are the rules, so sorry if you don't like them.",
+                                            "ChangeImageLayer", "Expression", "1", "Cocky", "ChangeImageLayer", "ArmL", "1", "Wrestle",
+                                            "She sits down in one of the chairs and puts her arm on the table with a cocky grin before immediately straightening with a realization.",
+                                            "ChangeImageLayer", "Expression", "1", "Smile",  "ChangeImageLayer", "ArmR", "1", "Base",
+                                            "Speaks",
+                                            "Oh! A-And I forgot to mention that nothing bad will happen if you end up losing, you can just keep trying for as long as you want.",
+                                            "JumpToEventThenScene",
+                                            "WillPowerTempleEntrance",
+                                            "Late meeting Minoni"
+                                        ]
+                          },
+                    {
+                        "NameOfScene": "MinoniArmWrestle",
+                        "theScene": [  "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Cocky", "ChangeImageLayer", "ArmR", "1", "Flex",
+                                      "Minoni is sitting in one of the chairs, and she flashes you a cocky smile as she turns her attention towards you.",
+                                      "Speaks",
+                                      "For this room, {i}I'll{/i} be the one testing your power.",
+                                      "ChangeImageLayer", "ArmR", "1", "Base",
+                                      "Menu",
+                                         "What's the challenge?",
+                                         "So... We're going to fuck now, right?",
+                                         "How did you get here so fast?",
+                                       "EndLoop"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "What's the challenge?",
+                                "theScene": [ "ChangeImageLayer", "Expression", "1", "Smile",
+                                              "Speaks",
+                                              "You have to beat me in a good old fashioned arm wrestling competition. But don't worry, nothing bad will happen to you if you lose, you can just keep trying until you win. But good luck anyways, because I'm not going to just let you get through this without a challenge.",
+                                              "ChangeImageLayer", "Expression", "1", "Cocky", "ChangeImageLayer", "ArmL", "1", "Wrestle",
+                                              "Minoni places her arm on the table as she eyes you expectantly.",
+                                              "JumpToScene",
+                                              "Arm wrestle Room"
+
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "So... We're going to fuck now, right?",
+                                "theScene": [ "ChangeImageLayer", "Expression", "1", "Stunned", "ChangeImageLayer", "ArmL", "1", "Base",  "ChangeImageLayer", "ArmR", "1", "Base",  "ChangeImageLayer", "Face", "1", "BlushDeep",
+                                              "Minoni's face turns bright red as her cocky demeanor immediately crumbles, and she coughs and sputters for a few moments as she tries, and fails, to speak.",
+                                              "ChangeImageLayer", "Expression", "1", "Awawa",
+                                              "Speaks",
+                                              "Wha- NO! You have to beat me at {i}arm wrestling!{/i} And you don't get fucked or anything if you lose, you just get to keep trying until you win! Seriously, this is a trial of strength, {i}not{/i} sex!",
+                                              "ChangeImageLayer", "Expression", "1", "Pout",
+                                              "Speaks",
+                                              "A-At least this part of the trial doesn't involve sex, b-but... ARGH! YOU GET THE IDEA!",
+                                              "ChangeImageLayer", "Expression", "1", "Frustrated", "ChangeImageLayer", "ArmL", "1", "Base",  "ChangeImageLayer", "ArmR", "1", "Wrestle",  "ChangeImageLayer", "Face", "1", "Blush",
+                                              "Minoni gets her breathing under control before slamming her arm on the table and glaring at you expectantly, even as her cheeks still burn bright red.",
+                                              "JumpToScene",
+                                              "Arm wrestle Room"
+
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "How did you get here so fast?",
+                                "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                              "Minoni blinks in surprise from your question, obviously not expecting you to ask it.",
+                                              "Speaks",
+                                              "O-Oh... There's a bunch of secret passageways throughout the entire temple that lets people move around places more quickly than taking the doors and passageways. And no, you can't use them, because they're for employees only.",
+                                              "Menu",
+                                                 "What's the challenge?",
+                                                 "So... We're going to fuck now, right?",
+                                               "EndLoop"
+                                          ]
+                            },
+                    {
+                        "NameOfScene": "Arm wrestle Room",
+                        "theScene": [  "SetChoice", "3", "armwrestle",
+                                      "DisplayCharacters",
+                                          "EndLoop",
+                                      "Menu",
+                                         "Challenge Minoni.",
+                                         "Proceed through the next door.",
+                                         "Head back towards the block room.",
+                                       "EndLoop"
+
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Challenge Minoni.",
+                              "theScene": [  "DisplayCharacters",
+                                              "1",
+                                              "EndLoop",
+                                    "IfChoice", "5", "armwrestle complete", "Rematch Minoni.",
+                                    "ChangeImageLayer", "Expression", "1", "Cocky", "ChangeImageLayer", "ArmL", "1", "Wrestle", "ChangeImageLayer", "Face", "1", "",
+
+                                              "You sit down across from Minoni and lock your hand with her, and you can tell by her grip and powerful muscles that this isn't going to be easy. As she begins to count down to start the match, you ponder on how you're going to win this...",
+                                              "Menu",
+                                                "RequiresStat",
+                                                "Power",
+                                                "25",
+                                                "Defeat Minoni fair and square.",
+                                                "RequiresStat",
+                                                "Allure",
+                                                "20",
+                                                "Kiss her.",
+                                                "RequiresStat",
+                                                "Luck",
+                                                "20",
+                                                "Something strange happens...",
+                                               "Lose.",
+                                             "EndLoop"
+                                        ]
+                          },
+                  {
+                      "NameOfScene": "Rematch Minoni.",
+                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "ArmL", "1", "Wrestle", "ChangeImageLayer", "Face", "1", "",
+                                    "Minoni gives you an odd look, but puts her book down before resting her arm on the table and gestures for you to sit anyway.",
+                                    "ChangeImageLayer", "Expression", "1", "Smile",
+                                    "Speaks",
+                                    "Well, you already won, but if you want a rematch I certainly don't mind. But only if you go at it fair and square.",
+                                    "Menu",
+                                      "Rematch.",
+                                      "Nevermind.",
+                                   "EndLoop"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "Nevermind.",
+                            "theScene": [ "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "ArmL", "1", "Reading",
+                                          "Minoni simply shrugs and leans back in her chair before going back to reading her book.",
+                                          "You're in a fairly spacious room with a decently sized table in the middle placed between two simple chairs, one of which is occupied by Minoni as she reads a book, and there's a golden door at one end of the room leading further into the dungeon that's visually identical to the one leading back out of the dungeon on the other end.",
+                                          "JumpToScene",
+                                          "Arm wrestle Room"
+                                      ]
+                        },
+                  {
+                      "NameOfScene": "Rematch.",
+                      "theScene": ["ChangeImageLayer", "Expression", "1", "Cocky", "ChangeImageLayer", "ArmL", "1", "Wrestle",
+                                    "You sit down across from Minoni and lock your hand with hers, and you can tell by the strength of her grip and the powerful muscles in her arm that this isn't going to be easy...",
+                                    "IfProgressEqualsOrGreater", "35", "Rematch.4",
+                                    "IfProgressEqualsOrGreater", "30", "Rematch.3",
+                                    "IfProgressEqualsOrGreater", "25", "Rematch.2",
+                                    "Speaks",
+                                    "Don't worry, I'll take it easy on you. This time.",
+                                    "As Minoni counts down to start the match, you tense your muscles in preparation.",
+                                    "StatCheck",
+                                    "Power",
+                                    "10",
+                                    "Defeat Minoni.",
+                                    "Fail",
+                                    "Lose."
+                                ]
+                  },
+                        {
+                            "NameOfScene": "Rematch.2",
+                            "theScene": [
+                                          "Speaks",
+                                          "You know, you're pretty strong... Maybe I should start trying.",
+                                          "As Minoni counts down to start the match, you tense your muscles in preparation.",
+                                          "StatCheck",
+                                          "Power",
+                                          "15",
+                                          "Defeat Minoni.",
+                                          "Fail",
+                                          "Lose.2"
+                                      ]
+                        },
+                            {
+                                "NameOfScene": "Rematch.3",
+                                "theScene": [
+                                              "Speaks",
+                                              "I hope you're ready!",
+                                              "As Minoni counts down to start the match, you tense your muscles in preparation.",
+                                              "StatCheck",
+                                              "Power",
+                                              "20",
+                                              "Defeat Minoni.",
+                                              "Fail",
+                                              "Lose.2"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "Rematch.4",
+                                      "theScene": [  "Minoni only gives you a confident grin as she firmly squeezes your hand.",
+                                                    "As she counts down to start the match, you tense your muscles in preparation.",
+                                                    "StatCheck",
+                                                    "Power",
+                                                    "25",
+                                                    "Defeat Minoni.2",
+                                                    "Fail",
+                                                    "Lose.3"
+                                                ]
+                                  },
+                  {
+                      "NameOfScene": "Defeat Minoni.",
+                      "theScene": [     "SetChoice", "5", "armwrestle complete",
+                                        "ChangeBGM", "music/Temple/SAMURAI.mp3",
+                                        "As soon as the count reaches zero, you immediately begin struggling against each other, straining your muscles as you push against the other's grip.",
+                                        "Minutes go by as both of your hands end up wavering slightly over the center of the table, but as time goes on you feel your strength begin to wane as Minoni gradually starts to bring your hand closer and closer to the table.",
+                                        "ChangeImageLayer", "Expression", "1", "Stunned",
+                                        "But just before she can finish you off, you let out a yell as you find yourself straining your body beyond its limits and manage to push your hands back towards the center once more, much to Minoni's surprise as she stares at you, obviously sure that she had you.",
+                                        "ChangeImageLayer", "Expression", "1", "Serious",
+                                        "And as you recover from your bout of weakness, Minoni's arm starts to shake as she begins to reach her own limit, and you put all of your remaining strength into one final push as she wavers, finally managing to slam her hand into the table with a triumphant whoop.",
+                                        "ChangeImageLayer", "Expression", "1", "Smile",
+                                        "As you both pant from the exertion of your competition with sweat trailing down both of your faces, golden feelings of victory race through you, and as your hand unlocks from Minoni's, she looks rather impressed.",
+                                        "Speaks",
+                                        "Great job! I guess I should train some more if I want to beat you in the future, though I'm not sure that would be fair to other people who do the trial in the future... Or that poor dancer girl outside the temple for that matter...",
+                                        "ChangeBGM", "music/Temple/far-east-kingdom.mp3", "ChangeImageLayer", "ArmL", "1", "Reading",
+                                        "You're in a fairly spacious room with a decently sized table in the middle placed between two simple chairs, one of which is occupied by Minoni as she reads a book, and there's a golden door at one end of the room leading further into the dungeon that's visually identical to the one leading back out of the dungeon on the other end.",
+                                        "ChangeProgress", "5",
+                                        "JumpToScene",
+                                        "Arm wrestle Room"
+                                ]
+                  },
+                      {
+                          "NameOfScene": "Defeat Minoni.2",
+                          "theScene": [     "SetChoice", "5", "armwrestle complete",
+                                            "ChangeBGM", "music/Temple/SAMURAI.mp3",
+                                            "As soon as the count reaches zero, you immediately begin struggling against each other, straining your muscles as you push against the other's grip.",
+                                            "Minutes go by as both of your hands end up wavering slightly over the center of the table, but as time goes on you feel your strength begin to wane as Minoni gradually starts to bring your hand closer and closer to the table.",
+                                            "ChangeImageLayer", "Expression", "1", "Stunned",
+                                            "But just before she can finish you off, you let out a yell as you find yourself straining your body beyond its limits and manage to push your hands back towards the center once more, much to Minoni's surprise as she stares at you, obviously sure that she had you.",
+                                            "ChangeImageLayer", "Expression", "1", "Serious",
+                                            "And as you recover from your bout of weakness, Minoni's arm starts to shake as she begins to reach her own limit, and you put all of your remaining strength into one final push as she wavers, finally managing to slam her hand into the table with a triumphant whoop.",
+                                            "ChangeImageLayer", "Expression", "1", "Smile", "ChangeImageLayer", "Face", "1", "Blush",
+                                            "As you both pant from the exertion of your competition with sweat trailing down both of your faces, golden feelings of victory surge through your body, and as your hand unlocks from Minoni's, she flashes you an impressed smile. You can't help but notice that her face seems to be flush with more than just exertion, too...",
+                                            "Speaks",
+                                            "G-Great job! I guess I should train some more to be able to tussle with you, huh? H-Hehe...",
+                                            "ChangeBGM", "music/Temple/far-east-kingdom.mp3", "ChangeImageLayer", "ArmL", "1", "Reading",
+                                            "You're in a fairly spacious room with a decently sized table in the middle placed between two simple chairs, one of which is occupied by Minoni as she reads a book, and there's a golden door at one end of the room leading further into the dungeon that's visually identical to the one leading back out of the dungeon on the other end.",
+                                            "ChangeProgress", "1",
+                                            "JumpToScene", "Arm wrestle Room"
+                                    ]
+                      },
+                                {
+                                    "NameOfScene": "Defeat Minoni fair and square.",
+                                    "theScene": [     "SetChoice", "5", "armwrestle complete",
+                                                      "ChangeBGM", "music/Temple/SAMURAI.mp3",
+                                                      "As soon as the count reaches zero, you immediately begin struggling against each other, straining your muscles as you push against the other's grip.",
+                                                      "Minutes go by as both of your hands end up wavering slightly over the center of the table, but as time goes on you feel your strength begin to wane as Minoni gradually starts to bring your hand closer and closer to the table.",
+                                                      "ChangeImageLayer", "Expression", "1", "Stunned",
+                                                      "But just before she can finish you off, you let out a yell as you find yourself straining your body beyond its limits and manage to push your hands back towards the center once more, much to Minoni's surprise as she stares at you, obviously sure that she had you.",
+                                                      "ChangeImageLayer", "Expression", "1", "Serious",
+                                                      "And as you recover from your bout of weakness, Minoni's arm starts to shake as she begins to reach her own limit, and you put all of your remaining strength into one final push as she wavers, finally managing to slam her hand into the table with a triumphant whoop.",
+                                                      "ChangeImageLayer", "Expression", "1", "Smile",
+                                                      "As you both pant from the exertion of your competition with sweat trailing down both of your faces, golden feelings of victory race through you, and as your hand unlocks from Minoni's, she looks rather impressed.",
+                                                      "Speaks",
+                                                      "Great job! You cleared this challenge with flying colors! Heh, well, you're not done with the trials just yet, but after all that, I'm pretty sure you can do it.",
+                                                      "ChangeBGM", "music/Temple/far-east-kingdom.mp3", "ChangeImageLayer", "ArmL", "1", "Reading",
+                                                      "You're in a fairly spacious room with a decently sized table in the middle placed between two simple chairs, one of which is occupied by Minoni as she reads a book, and there's a golden door at one end of the room leading further into the dungeon that's visually identical to the one leading back out of the dungeon on the other end.",
+                                                      "ChangeProgress", "5",
+                                                      "JumpToScene",
+                                                      "Arm wrestle Room"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "Kiss her.",
+                                    "theScene": [     "SetChoice", "5", "armwrestle complete",
+                                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                                      "Shortly after the count reaches zero, you feel yourself quickly losing ground as you strain your arm against Minoni, and as you lean towards her over the table, she gives you an odd look as your stance pushes your arm even closer towards the table.",
+                                                      "ChangeBGM", "music/Casino/BGM sweet smell.mp3",
+                                                      "ChangeImageLayer", "Expression", "1", "Awawa", "ChangeImageLayer", "Face", "1", "Blush",
+                                                      "But as your lips start to approach hers, her face turns bright red as she stares at you, and her arm begins to shake as you inch closer and closer towards her.",
+                                                      "Speaks",
+                                                      "Wh-Wha- Hold on a sec- Mpph?!",
+                                                      "ChangeImageLayer", "Expression", "1", "Stunned", "ChangeImageLayer", "Face", "1", "BlushDeep",
+                                                      "As your mouth locks onto hers, cutting her weak protests off, you easily start to tease her mouth with your skilled tongue, and her eyes start to glaze over as she melts into your deep kiss, clearly unprepared for this tactic, but just as clearly not resisting it either.",
+                                                      "ChangeImageLayer", "Expression", "1", "Horny",
+                                                      "Her arm starts to go limp as she loses focus on the arm wrestling match, and as you begin to play with her tongue, it goes completely slack, letting you easily push her hand down onto the table.",
+                                                      "But despite already winning, you continue to kiss her for a few moments longer, and after you eventually pull your face away from hers, she quickly snaps out of her stupor as her face turns a brilliant shade of crimson.",
+                                                      "ChangeImageLayer", "Expression", "1", "Awawa",
+                                                      "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                                      "Speaks",
+                                                      "I- Wha- You! That! Th-That was definitely cheating!",
+                                                      "ChangeImageLayer", "Expression", "1", "Pout",
+                                                      "She continues to sputter angrily for a moment before reaching underneath the table and pulling out a small guidebook, almost tearing it open as she searches through its pages, but she abruptly stops as you hear the door leading further into the dungeon click as it unlocks.",
+                                                      "ChangeImageLayer", "Expression", "1", "Angry",
+                                                      "Speaks",
+                                                      "What?! S-Seriously?! That counts?!",
+                                                      "You hear some muffled giggling from the ceiling, and Minoni angrily bolts out of her chair before throwing the guidebook towards the source of the laughter, resulting in it hitting the wood with a loud smack which only makes the giggling become even louder than before.",
+                                                      "Speaks",
+                                                      "Sh-Shut up you damn ninjas!",
+                                                      "ChangeImageLayer", "Expression", "1", "Pout",
+                                                      "Minoni harrumphs loudly as the tittering slowly subsides, and she eventually walks over the freshly thrown book before picking it up and walking back towards her chair, sitting down with as much dignity as she can muster as she avoids making eye contact with you while her face still burns red.",
+                                                      "Speaks",
+                                                      "Fine, you win, I guess... Well... Good luck with the last trial...",
+                                                      "ChangeBGM", "music/Temple/far-east-kingdom.mp3",
+                                                      "ChangeImageLayer", "Expression", "1", "Base",  "ChangeImageLayer", "Face", "1", "Blush", "ChangeImageLayer", "ArmL", "1", "Reading",
+                                                      "She's clearly miffed at your particular method of victory, but as she pulls open her book and sneaks a glance at you before blushing fiercely, you don't think that she's complaining all that much about the kiss...",
+                                                      "ChangeProgress",
+                                                      "5",
+                                                      "You're in a fairly spacious room with a decently sized table in the middle placed between two simple chairs, one of which is occupied by Minoni as she reads a book, and there's a golden door at one end of the room leading further into the dungeon that's visually identical to the one leading back out of the dungeon on the other end.",
+                                                      "ChangeProgress", "5",
+                                                      "JumpToScene",
+                                                      "Arm wrestle Room"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "Something strange happens...",
+                                    "theScene": [     "SetChoice", "5", "armwrestle complete",
+                                                      "ChangeBGM", "music/Temple/SAMURAI.mp3",
+                                                      "As soon as the count reaches zero, you begin to strain your muscles against Minoni, but you can immediately tell that things aren't going your way as your hand is easily pushed closer and closer towards the table.",
+                                                      "You struggle and push as hard as you can against Minoni's powerful grip, but the most you can manage to do is to simply slow her down, and in what feels like only moments, your defeat seems inevitable as you're unable to make any progress against her seemingly limitless strength...",
+                                                      "StopBGM",
+                                                      "ChangeImageLayer", "Expression", "1", "Stunned", "ChangeImageLayer", "ArmL", "1", "Base",
+                                                      "...Until a loud crack suddenly fills the air, stunning you both for a moment before one of the legs of Minoni's chair snaps in two.",
+                                                      "She immediately falls to the side with a look of shock as her hand hits the table, and you're unable to break free of her grip as she unintentionally pulls you down to the floor with her.",
+                                                      "ChangeImageLayer", "Expression", "1", "Stumbling",
+                                                      "As you both slowly start to get up, taking a moment to shake off your daze at the unexpected events that just occurred, Minoni gives you a sheepish grin, and you notice with that Minoni's chair has already been replaced with a new one without the old one anywhere in sight.",
+                                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                                      "Speaks",
+                                                      "Alright... Maybe I got a little bit too fired up that time... So let's try that agai-",
+                                                      "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                                      "ChangeImageLayer", "Expression", "1", "Angry",
+                                                      "But before she can even finish speaking, you both hear the door leading further into the dungeon click as it unlocks, and Minoni whips her head around to stare at it in shock.",
+                                                      "Speaks",
+                                                      "Wh-WHAT?! Really?!",
+                                                      "ChangeImageLayer", "Expression", "1", "Pout",
+                                                      "You can hear muffled giggling coming from the ceiling as Minoni angrily stews for a moment before sighing heavily, looking more than a little put out that you managed to win through sheer luck alone.",
+                                                      "Speaks",
+                                                      "Ughhh... Well... Guess you only have one trial left then... I'd wish you good luck, but after what just happened, I don't think you need it...",
+                                                      "ChangeBGM", "music/Temple/far-east-kingdom.mp3",
+                                                      "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "ArmL", "1", "Reading",
+                                                      "After letting out another sigh, Minoni sits down in her new chair and slowly pulls out her book with a despondent look on her face.",
+                                                      "You're in a fairly spacious room with a decently sized table in the middle placed between two simple chairs, one of which is occupied by Minoni as she reads a book, and there's a golden door at one end of the room leading further into the dungeon that's visually identical to the one leading back out of the dungeon on the other end.",
+                                                      "JumpToScene",
+                                                      "Arm wrestle Room"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "Lose.",
+                                    "theScene": [
+                                                      "As soon as the count reaches zero, you strain the muscles in your arm as you try to overpower Minoni, but you can't even make her budge at all as she effortlessly holds your hand in place.",
+                                                      "ChangeImageLayer", "Expression", "1", "Smile",
+                                                      "After a few long moments, Minoni sighs as she easily slams your hand down on the table before giving you a sympathetic look.",
+                                                      "Speaks",
+                                                      "Hey, don't feel too bad about losing, alright? Just go train some more and I'm sure you'll be able to beat me. Hell, you can even put on some gear to boost your power if you want. It's not cheating, and I {i}am{/i} a minotaur after all, so I kind of have an unfair advantage to begin with.",
+                                                      "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "ArmL", "1", "Reading",
+                                                      "She flashes you a small smile before she pulls out her book and starts to read it.",
+                                                      "You're in a fairly spacious room with a decently sized table in the middle placed between two simple chairs, one of which is occupied by Minoni as she reads a book, and there's a golden door at one end of the room leading further into the dungeon that's visually identical to the one leading back out of the dungeon on the other end.",
+                                                      "JumpToScene",
+                                                      "Arm wrestle Room"
+                                              ]
+                                },
+                                    {
+                                        "NameOfScene": "Lose.2",
+                                        "theScene": [      "As soon as the count reaches zero, you strain the muscles in your arm as you try to overpower Minoni, but you can't even make her budge at all as she slowly begins to push your hand closer and closer to the table.",
+                                                            "ChangeImageLayer", "Expression", "1", "Stumbling",
+                                                          "You redouble your efforts as you try to push back, but you only manage to slow her down slightly until she slams your hand down on the table and lets out a cheer of victory, only to stop moments later with a bashful look as she weakly smiles at you.",
+                                                          "ChangeImageLayer", "Expression", "1", "Smile",
+                                                          "Speaks",
+                                                          "Uhm, hehe... S-Sorry about that, I just got a little too into that... So uh, don't feel too bad about losing, alright? Just go train some more and I'm sure you'll be able to beat me. Or you can put on some gear to boost your power if you haven't already, that might help too. It's not cheating, and I {i}am{/i} a minotaur after all, so I kind of have an unfair advantage to begin with...",
+                                                          "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "ArmL", "1", "Reading",
+                                                          "She flashes you a small, faintly embarrassed smile before she pulls out her book and starts to read it.",
+                                                          "You're in a fairly spacious room with a decently sized table in the middle placed between two simple chairs, one of which is occupied by Minoni as she reads a book, and there's a golden door at one end of the room leading further into the dungeon that's visually identical to the one leading back out of the dungeon on the other end.",
+                                                          "JumpToScene",
+                                                          "Arm wrestle Room"
+                                                  ]
+                                    },
+                                          {
+                                              "NameOfScene": "Lose.3",
+                                              "theScene": [      "ChangeBGM", "music/Temple/SAMURAI.mp3",
+                                                                "As soon as the count reaches zero, you let out a surprised gasp as your hand is almost immediately brought down to the table, and as you muster a gargantuan amount of effort to push back, you only manage to make her arm move the slightest bit back towards the center, only to lose your ground all over again as she puts more and more force into her grip.",
+                                                                "ChangeImageLayer", "Expression", "1", "Sparkling",
+                                                                "And after a few more intense moments of barely hanging on, Minoni suddenly redoubles her efforts and slams your hand against the table before standing up with a whooping cheer!",
+                                                                "Speaks",
+                                                                "Ha! Yes! Beat you that time! I- Uh...",
+                                                                "ChangeBGM", "music/Temple/far-east-kingdom.mp3",
+                                                                "ChangeImageLayer", "Expression", "1", "HappyClosed",
+                                                                "She suddenly seems to realize what she's doing as she flushes slightly, awkwardly smiling at you as she quickly returns to her seat while bashfully scratching the back of her head.",
+                                                                "Speaks",
+                                                                "Uh... S-Sorry about that... I just got a little carried away... You've beaten me a few times so uh, ya know...",
+                                                                  "ChangeImageLayer", "Expression", "1", "Smile",
+                                                                "Her face lights up as her smile becomes much happier, and you can see a flare of friendly competition burning in her eyes as she looks at you.",
+                                                                "Speaks",
+                                                                "But just let me know when you want to try again! I've been having a lot of fun spending time with you, so...",
+                                                                "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "ArmL", "1", "Reading", "ChangeImageLayer", "Face", "1", "Blush",
+                                                                "She lets out a slight cough and averts her gaze while she trails off, and while you notice that she has a slight flush on her face, you assume that it's probably just from the physical exertion of your competition, and after a few moments she straightens and pulls out her book, giving you one last small smile before she starts to read.",
+                                                                "You're in a fairly spacious room with a decently sized table in the middle placed between two simple chairs, one of which is occupied by Minoni as she reads a book, and there's a golden door at one end of the room leading further into the dungeon that's visually identical to the one leading back out of the dungeon on the other end.",
+                                                                "JumpToScene",
+                                                                "Arm wrestle Room"
+                                                        ]
+                                          },
+
+
+
+
+
+                          {
+                              "NameOfScene": "Proceed through the next door.",
+                              "theScene": [  "IfChoice", "5", "armwrestle complete", "GoThroughArmWrestleDoor",
+                                            "DisplayCharacters",
+                                                "1",
+                                                "EndLoop",
+                                                "ChangeImageLayer", "Expression", "1", "Frustrated",
+                                            "You walk past Minoni and try to open the golden doors leading further into the dungeon, but despite your best efforts you can't get them to budge, and Minoni looks back at you from her chair with a slightly annoyed expression.",
+                                            "Speaks",
+                                            "It won't open unless you beat me, just so you know. And in case you're wondering how that works, we have ninjas in the walls.",
+                                            "JumpToScene",
+                                            "Arm wrestle Room"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Head back towards the block room.",
+                              "theScene": [  "DisplayCharacters",
+                                                "EndLoop",
+                                              "SaveNextLine",
+                                              "You push open the golden door leading back to the entrance of the dungeon and enter into a small, empty room with another golden door on the other side leading towards the block trial, and the door you just walked through has the words 'Second Trial' engraved with gold into the wall above it.",
+                                              "StoreCurrentEventSpotSkippingLines", "3",
+                                              "JumpToEventThenScene",
+                                              "templeRandomEncounters",
+                                              "NinjaRoll",
+                                              "UseSavedLineInMenu",
+                                              "Menu",
+                                                "Enter the next room.",
+                                                "Go back into the block room.",
+                                              "EndLoop"
+                                        ]
+                          },
+
+
+
+
+
+
+                          {
+                              "NameOfScene": "GoThroughArmWrestleDoor",
+                              "theScene": [  "DisplayCharacters",
+                                                "EndLoop",
+                                              "SaveNextLine",
+                                              "You push open the golden door leading further into the dungeon and enter into a small room with an identical golden door on the other end with the words 'Rest Point' engraved with gold in the wall above it, but there's also an unmarked and unobtrusive wooden door to your right as well.",
+                                              "PlayerStep",
+                                              "StoreCurrentEventSpotSkippingLines", "3",
+                                              "JumpToEventThenScene",
+                                              "templeRandomEncounters",
+                                              "RedSideEncounter",
+                                              "UseSavedLineInMenu",
+                                              "Menu",
+                                                "Enter the rest point room.",
+                                                "Go through the unmarked door.",
+                                                "Go back into the arm wrestling room.",
+                                              "EndLoop"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Go back towards the arm wrestling room.",
+                              "theScene": [  "DisplayCharacters",
+                                                "EndLoop",
+                                                "SaveNextLine",
+                                              "You head back through the golden doors leading to the entrance of the dungeon and enter into a room with an identical golden door on the other end leading to the arm wrestling trial, and the door you just walked through has the words 'Rest Point' engraved with gold in the wall above it, but there's also an unmarked and unobtrusive wooden door to your left as well.",
+                                              "PlayerStep",
+                                              "StoreCurrentEventSpotSkippingLines", "3",
+                                              "JumpToEventThenScene",
+                                              "templeRandomEncounters",
+                                              "RedSideEncounter",
+                                              "UseSavedLineInMenu",
+                                              "Menu",
+                                                "Enter the rest point room.",
+                                                "Go through the unmarked door.",
+                                                "Go back into the arm wrestling room.",
+                                              "EndLoop"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Go through the unmarked door.",
+                              "theScene": [  "SaveNextLine",
+                                            "You enter into a short hallway with a similarly plain wooden door at the end, similar to the one you just went through.",
+                                            "PlayerStep",
+                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                            "JumpToEventThenScene",
+                                            "templeRandomEncounters",
+                                            "NinjaRoll",
+                                            "UseSavedLineInMenu",
+                                            "Menu",
+                                              "Enter the plain door.",
+                                              "Go back to the power trial hallway.",
+                                            "EndLoop"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Go back to the power trial hallway.",
+                              "theScene": [  "DisplayCharacters",
+                                                "EndLoop",
+                                              "SaveNextLine",
+                                              "You walk back through the unobtrusive wooden door and enter into a small room with two identical golden doors on both ends end with the one on your right leading further into the dungeon having the words 'Rest Point' engraved with gold in the wall above it and the one to your left leading out of the dungeon, and the unmarked door you just came through is behind you.",
+                                              "PlayerStep",
+                                              "StoreCurrentEventSpotSkippingLines", "3",
+                                              "JumpToEventThenScene",
+                                              "templeRandomEncounters",
+                                              "RedSideEncounter",
+                                              "UseSavedLineInMenu",
+                                              "Menu",
+                                                "Enter the rest point room.",
+                                                "Go through the unmarked door.",
+                                                "Go back into the arm wrestling room.",
+                                              "EndLoop"
+                                        ]
+                          },
+                              {
+                                  "NameOfScene": "Enter the plain door.",
+                                  "theScene": [  "IfChoice", "6", "opened chest", "EmptyPlainChestRoom",
+                                                "You push through the door and enter into a small room, and you immediately notice an iron treasure chest that's been painted red sitting in the center of the floor.",
+                                                "PlayerStep",
+                                                "Menu",
+                                                  "Open the red chest.",
+                                                  "Go back to the power trial hallway.",
+                                                "EndLoop"
+                                            ]
+                              },
+                                      {
+                                          "NameOfScene": "Open the red chest.",
+                                          "theScene": [  "SetChoice", "6", "opened chest",
+                                                        "You open the unlocked chest and...",
+                                                        "GiveItem", "1", "Hero's Cape",
+                                                        "GiveItem", "3", "Bull Rune",
+                                                        "JumpToScene",
+                                                        "EmptyPlainChestRoomStanding"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "EmptyPlainChestRoomStanding",
+                                          "theScene": [  "You stand in a small room, easily spotting the opened and empty red painted iron treasure chest in the center of the floor, and you can't help but notice now that you're less concerned with trying to find out what's inside the chest that it has been bolted to the floor...",
+                                                        "PlayerStep",
+                                                        "Menu",
+                                                          "Go back to the power trial hallway.",
+                                                        "EndLoop"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "EmptyPlainChestRoom",
+                                          "theScene": [  "You push through the door and enter into a small room, noticing the opened and empty red painted iron treasure chest in the center of the floor, and you can't help but notice now that you're less concerned with trying to find out what's inside the chest that it has been bolted to the floor...",
+                                                        "PlayerStep",
+                                                        "Menu",
+                                                          "Go back to the power trial hallway.",
+                                                        "EndLoop"
+                                                    ]
+                                      },
+
+
+
+
+
+                                {
+                                    "NameOfScene": "Go back into the arm wrestling room.",
+                                    "theScene": [  "You enter into a fairly spacious room with a decently sized table in the middle placed between two simple chairs, and there's a golden door at the other end of the room leading towards the entrance of the dungeon that's identical to the one you just came through.",
+                                                  "PlayerStep",
+                                                  "JumpToScene",
+                                                  "Arm wrestle Room"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "Enter the rest point room.",
+                                    "theScene": [  "IfChoice", "9", "FengLove", "EnterRestPointAlter",
+                                                  "GetAnEventsProgressThenIfEqualsOrGreater", "Feng's Room", "50", "FengConfession",
+                                                  "You push through the golden door and enter into a decently sized room. To your left, a faintly glowing white circle carved with intricate patterns sits on the ground, and Minoni is standing straight in front of you on the other side of the room next to a large, rather demonic looking door.",
+                                                  "PlayerStep",
+                                                  "Menu",
+                                                    "Approach the demonic door.",
+                                                    "Use the glowing circle?",
+                                                    "HideOptionOnRequirementFail",
+                                                    "RequiresItem", "Sigil Of Will-Power",
+                                                    "Take a shortcut.",
+                                                    "Go back towards the arm wrestling room.",
+                                                  "EndLoop"
+                                              ]
+                                },
+                                        {
+                                            "NameOfScene": "EnterRestPointAlter",
+                                            "theScene": [
+                                                          "You push through the golden door and enter into a decently sized room. To your left, a faintly glowing white circle carved with intricate patterns sits on the ground, and Feng is on the other side of the room smiling at you, leaning against the wall next to a large, rather demonic looking door.",
+                                                          "PlayerStep",
+                                                          "Menu",
+                                                            "Approach the demonic door.",
+                                                            "Go to Feng's room.",
+                                                            "Use the glowing circle?",
+                                                            "HideOptionOnRequirementFail",
+                                                            "RequiresItem", "Sigil Of Will-Power",
+                                                            "Take a shortcut.",
+                                                            "Go back towards the arm wrestling room.",
+                                                          "EndLoop"
+                                                      ]
+                                        },
+
+
+                                {
+                                    "NameOfScene": "Enter the rest point room.FengVER",
+                                    "theScene": [  "ChangeBG",
+                                                   "templeRed.png",
+                                                    "IfChoice", "9", "FengLove", "EnterRestPointAlterFeng",
+                                                   "You exit Feng's room and enter into a decently sized room. A golden door leading back towards the entrance to the dungeon is on the other side of the room, and to your right a faintly glowing white circle carved with intricate patterns sits on the ground. Minoni stands off to your side, resting next to the large, rather demonic door you just came out of.",
+                                                  "PlayerStep",
+                                                  "Menu",
+                                                    "Approach the demonic door.",
+                                                    "Use the glowing circle?",
+                                                    "HideOptionOnRequirementFail",
+                                                    "RequiresItem", "Sigil Of Will-Power",
+                                                    "Take a shortcut.",
+                                                    "Go back towards the arm wrestling room.",
+                                                  "EndLoop"
+                                              ]
+                                },
+                                                {
+                                                    "NameOfScene": "EnterRestPointAlterFeng",
+                                                    "theScene": [
+                                                                   "You exit Feng's room, and enter into a decently sized room, Feng herself moves to the side of the door with a smile and leans against the wall. A golden door leading back towards the entrance to the dungeon is on the other side of the room, and to your right a faintly glowing white circle carved with intricate patterns sits on the ground.",
+                                                                  "PlayerStep",
+                                                                  "Menu",
+                                                                    "Approach the demonic door.",
+                                                                    "Go to Feng's room.",
+                                                                    "Use the glowing circle?",
+                                                                    "HideOptionOnRequirementFail",
+                                                                    "RequiresItem", "Sigil Of Will-Power",
+                                                                    "Take a shortcut.",
+                                                                    "Go back towards the arm wrestling room.",
+                                                                  "EndLoop"
+                                                              ]
+                                                },
+                                                      {
+                                                          "NameOfScene": "ExitedFengsActualRoomPostRomance",
+                                                          "theScene": [
+                                                                        "Menu",
+                                                                          "Approach the demonic door.",
+                                                                          "Go to Feng's room.",
+                                                                          "Use the glowing circle?",
+                                                                          "HideOptionOnRequirementFail",
+                                                                          "RequiresItem", "Sigil Of Will-Power",
+                                                                          "Take a shortcut.",
+                                                                          "Go back towards the arm wrestling room.",
+                                                                        "EndLoop"
+                                                                    ]
+                                                      },
+                                                {
+                                                    "NameOfScene": "Go to Feng's room.",
+                                                    "theScene": [  "DisplayCharacters",
+                                                                      "3",
+                                                                  "EndLoop",
+                                                                  "ChangeImageLayer", "Expression","1", "HappyOpenMouth",
+                                                                   "Speaks3",
+                                                                  "Hehe, I knew you came to visit me, come on let's go!♪",
+                                                                  "Menu",
+                                                                    "Carry her.",
+                                                                    "Let her show you the way.",
+                                                                  "EndLoop"
+                                                              ]
+                                                },
+                                                      {
+                                                          "NameOfScene": "Let her show you the way.",
+                                                          "theScene": [
+                                                                      "Feng walks over to the wall opposite the healing circle, and pulls down a hidden handle in it, and a door slides open, letting the two of you into a secret hallway.",
+                                                                      "ChangeImageLayer", "Expression","1", "Annoyed",
+                                                                        "The door shuts behind the two of you as you continue onwards, a few kunoichi trainees passing by quietly murmur amongst each other but shut up when Feng glares at them.",
+                                                                        "ChangeImageLayer", "Expression","1", "Base", "ChangeImageLayer", "Tail","1", "Wag",
+                                                                        "After a journey through the hidden hallways you finally reach a door with a nameplate labeled 'Feng', and she excitedly opens the door with a wagging tail before entering into her room.",
+                                                                        "JumpToEventThenScene", "Feng's Room", "Enter Feng's Room Already Warm"
+                                                                    ]
+                                                      },
+                                                      {
+                                                          "NameOfScene": "Carry her.",
+                                                          "theScene": ["ChangeImageLayer", "Expression","1", "Shy", "ChangeImageLayer", "Face","1", "Blush",
+                                                                        "You lift Feng's body up bridal style, and she lets out a yelp of embarrassment, before gazing up at you with a deep flush, but then she happily sighs and nuzzles into your warm body before gesturing you forward.",
+                                                                      "Speaks3",
+                                                                      "I could have walked you know...",
+                                                                       "Once you reach the wall she pulls on a handle hidden in the wall, and a door slides open that you proceed into, the door shuts behind the two of you as you continue onwards.",
+                                                                       "ChangeImageLayer", "Expression","1", "Growl",
+                                                                       "Feng's face goes completely red as a few kunoichi trainees pass by quietly giggling at Feng's current situation, but they yelp and hurry on when Feng growls at them.",
+                                                                       "ChangeImageLayer", "Expression","1", "StiffShy",
+                                                                       "She huffs with a flush and urges you onwards through the hidden hallways until you finally reach a door with a nameplate labeled 'Feng'. She urges you to put her down, soon she's back on her feet and quickly opens the door with a wagging tail before entering into her room.",
+                                                                      "JumpToEventThenScene", "Feng's Room", "Enter Feng's Room Already Warm"
+                                                                    ]
+                                                      },
+                                                      {
+                                                          "NameOfScene": "FengConfession",
+                                                          "theScene": [
+                                                                        "You push through the golden door and enter into a decently sized room, a golden door leading back towards the entrance to the dungeon is on the other side of the room, and to your right, a faintly glowing white circle carved with intricate patterns sits on the ground.",
+                                                                        "DisplayCharacters",
+                                                                            "3",
+                                                                        "EndLoop",
+                                                                        "ChangeBGM", "music/Relaxing/Purple Planet Music - Gentle - Eastern Karma (2_16).mp3",
+                                                                        "ChangeImageLayer", "Expression","1", "StiffShy",
+                                                                        "But you quickly notice that something new is happening as you see Feng nervously pacing and muttering to herself under her breath as she fidgets anxiously in the center of the room, seemingly oblivious to your presence with Minoni nowhere to be found.",
+                                                                        "Speaks3",
+                                                                        "...Sh-Should I just come out and say it, or do I build up to it first? ...Oh man, I don't know how I should do-",
+                                                                        "ChangeImageLayer", "Expression","1", "Panic", "ChangeImageLayer", "Face","1", "Blush",
+                                                                        "The door behind you closes with a noticeable thud, and Feng jumps as her head jerks towards you, freezing with a crimson flush on her face as her mouth hangs open in surprise.",
+                                                                        "Speaks3",
+                                                                        "I-I... Uh... So... Umm... Hi...?",
+                                                                        "ChangeImageLayer", "Expression","1", "Shy",
+                                                                        "Her flush deepens as her attempt to start a conversation sputters and dies almost instantly, and she takes a deep breath while straightening herself as she takes a few steps towards you.",
+                                                                        "ChangeImageLayer", "Expression","1", "Smile",
+                                                                        "Speaks3",
+                                                                        "S-So [ThePlayerName], I... Uh, I wanted to talk with you, a-and it's kind of important, s-so... {i}UGH!{/i}",
+                                                                        "ChangeImageLayer", "Expression","1", "Base",
+                                                                        "Feng suddenly brings her hands up and powerfully slaps her face, making you jump in surprise as she stands up completely straight and draws in a deep breath before closing the distance between you two with a few long strides, standing in front of you as her eyes glitter with nervous, tentative determination.",
+                                                                        "Speaks3",
+                                                                        "I'm sorry that I'm being so weird right now and this may seem kind of sudden, but after I saw you last, I was thinking about how we've been spending a lot of time together, a-and...",
+                                                                        "ChangeImageLayer", "Expression","1", "HappyOpenMouth",
+                                                                        "Her face becomes an even brighter shade of crimson as her words trail off once more, but she takes in another deep breath as her eyes lock onto yours, and you can see a steely resolve in her expression as she sets her jaw.",
+                                                                        "Speaks3",
+                                                                        "[ThePlayerName], I love you. I've had to fuck a lot of people who tried to beat the power trials, but none of those people have made me feel like I do when I spend time with you. I've never confessed to anyone else before, so at least for this you'll be my first.",
+                                                                        "ChangeImageLayer", "Expression","1", "Shy",
+                                                                        "She takes in another deep breath as she prepares to speak again, but you can already see her resolve start to crumble slightly as a mix of hope, desperation, and vulnerability gleams in her eyes.",
+                                                                        "Speaks3",
+                                                                        "A-And to show you how serious I am about all this, I've already resigned from working in the power trials so you can see how devoted I am to a relationship with you.",
+                                                                        "ChangeImageLayer", "Expression","1", "StiffShy",
+                                                                        "Feng gulps as she stands almost completely still, watching you intently before nervously speaking in a frenzied rush of words.",
+                                                                        "Speaks3",
+                                                                        "B-But before you say anything, I want you to know that I'm perfectly fine with you having other mates! Uhm, I-I meant lovers! I d-don't care about any of that stuff, so...",
+                                                                        "ChangeImageLayer", "Expression","1", "Loving",
+                                                                        "She looks up at you with a hopeful, yet slightly nervous expression, slowly wagging her tail behind her with her hands gently clasped in front of her chest.",
+                                                                        "Speaks3",
+                                                                        "S-So... How do you feel about me?",
+                                                                        "Menu",
+                                                                          "I love you too.",
+                                                                          "Kiss her!",
+                                                                          "Ah, another member for the harem.",
+                                                                          "I don't love you.",
+                                                                        "EndLoop"
+                                                                    ]
+                                                      },
+                                                            {
+                                                                "NameOfScene": "I love you too.",
+                                                                "theScene": [ "ChangeImageLayer", "Expression","1", "HappyOpenMouth",
+                                                                              "Before you can even finish what you're saying, Feng has already lunged forward and started giving you a barrage of loving kisses and tightly embracing you, almost threatening to send you sprawling backwards onto the ground with her excited intensity.",
+                                                                              "SetChoice", "9", "FengLove",
+                                                                              "GetEventAndChangeProgress", "Feng's Room", "15",
+                                                                               "ChangeImageLayer", "Expression","1", "Shy",  "ChangeImageLayer", "Tail","1", "Wag",
+                                                                              "She sheepishly stops her kissing assault and takes a step back with a deep flush on her face, but her tail is still wagging with excitement.",
+                                                                              "Speaks3",
+                                                                              "Ehehe... Sorry, I got a little bit excited.♪",
+                                                                              "ChangeImageLayer", "Expression","1", "Smile",
+                                                                              "Speaks3",
+                                                                              "Well, I won't be hanging out in that cold room anymore, instead I'll be waiting for you here.♪ So, want to head to my room and consummate our new relationship?♥ Well, more than we already have I guess.♪",
+                                                                              "ChangeBGM", "music/Temple/far-east-kingdom.mp3",
+                                                                              "Menu",
+                                                                                "Approach the demonic door.",
+                                                                                "Go to Feng's room.",
+                                                                                "Use the glowing circle?",
+                                                                                "HideOptionOnRequirementFail",
+                                                                                "RequiresItem", "Sigil Of Will-Power",
+                                                                                "Take a shortcut.",
+                                                                                "Go back towards the arm wrestling room.",
+                                                                              "EndLoop"
+                                                                          ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "Kiss her!",
+                                                                "theScene": [  "SetChoice", "9", "FengLove",
+                                                                              "GetEventAndChangeProgress", "Feng's Room", "5",
+                                                                              "You lean in and kiss her, and Feng's body tenses for a moment before she leans into the deepening kiss, wrapping her arms around your neck.",
+                                                                              "She gazes dreamily into your eyes while your tongues lovingly entangle, and you gasp in surprise as she gently bites down on your tongue with a muffled giggle, leaving your mouth warm with her aphrodisiacs.",
+                                                                              "ChangeImageLayer", "Expression","1", "HappyOpenMouth",
+                                                                              "Feng breaks the kiss with a joyful smile and licks her lips.",
+                                                                              "Speaks3",
+                                                                              "I liked that answer.♥",
+                                                                              "ChangeImageLayer", "Expression","1", "Smile",
+                                                                              "She then giggles with excitement, prancing rather girlishly in place before recomposing.",
+                                                                              "Speaks3",
+                                                                              "Hehehe,♪ well, I won't be hanging out in that cold room anymore, instead I'll be waiting for you here.♪ So, want to head to my room and consummate our new relationship?♥ Well, more than we already have I guess.♪",
+                                                                              "ChangeBGM", "music/Temple/far-east-kingdom.mp3",
+                                                                              "Menu",
+                                                                                "Approach the demonic door.",
+                                                                                "Go to Feng's room.",
+                                                                                "Use the glowing circle?",
+                                                                                "HideOptionOnRequirementFail",
+                                                                                "RequiresItem", "Sigil Of Will-Power",
+                                                                                "Take a shortcut.",
+                                                                                "Go back towards the arm wrestling room.",
+                                                                              "EndLoop"
+                                                                          ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "Ah, another member for the harem.",
+                                                                "theScene": [  "SetChoice", "9", "FengLove",
+                                                                              "ChangeBGM", "music/Temple/far-east-kingdom.mp3",
+                                                                              "ChangeImageLayer", "Expression","1", "Annoyed",
+                                                                              "Feng gives you a pouty frown, closes the distance between you, and gently bops you on the head with a closed fist.",
+                                                                              "Speaks3",
+                                                                              "Asshole.",
+                                                                              "ChangeImageLayer", "Expression","1", "Base",
+                                                                              "To your surprise, her frown bursts into a wide grin.",
+                                                                              "Speaks3",
+                                                                              "With that kind of attitude, your 'harem' is more likely to just spend all day fucking you silly, draining you completely dry.♪",
+                                                                              "She playfully sticks her tongue out at you before laughing.",
+                                                                              "ChangeImageLayer", "Expression","1", "Smug",
+                                                                              "Speaks3",
+                                                                              "I guess I'll be helping them do that.♪ Hehe, if you even {i}have{/i} a harem.",
+                                                                              "ChangeImageLayer", "Expression","1", "Smile",
+                                                                              "Speaks3",
+                                                                              "Oh right! I won't be hanging out in that cold room anymore, I'll be waiting for you here instead. Anyways,♪ want to head to my room and have some fun?♥",
+                                                                              "Menu",
+                                                                                "Approach the demonic door.",
+                                                                                "Go to Feng's room.",
+                                                                                "Use the glowing circle?",
+                                                                                "HideOptionOnRequirementFail",
+                                                                                "RequiresItem", "Sigil Of Will-Power",
+                                                                                "Take a shortcut.",
+                                                                                "Go back towards the arm wrestling room.",
+                                                                              "EndLoop"
+                                                                          ]
+                                                            },
+
+                                                            {
+                                                                "NameOfScene": "I don't love you.",
+                                                                "theScene": [
+                                                                              "GetEventAndChangeProgress", "Feng's Room", "-35",
+                                                                              "ChangeImageLayer", "Tail","1", "Droop", "ChangeImageLayer", "Ears","1", "Droop", "ChangeImageLayer", "Expression","1", "Sleepy",
+                                                                              "ChangeBGM", "music/Emotional/Purple Planet Music - Emotional - Sense Of Loss (2_04) 54bpm.mp3",
+                                                                              "Feng visibly wilts at your words, her tail sags and her ears go low, you can see tears starting to form in the corner of her eyes.",
+                                                                              "ChangeImageLayer", "Expression","1", "StiffShy",
+                                                                              "Speaks3",
+                                                                              "O-Oh... I... I guess I'll just go back to working the trials then... M-Maybe I'll see you around sometime...",
+                                                                              "DisplayCharacters",
+                                                                              "EndLoop",
+                                                                              "She quickly heads through the large demonic door while wiping her eyes with an arm before slamming the door shut.",
+                                                                              "You can hear her faintly sobbing on the other side of the door, you're quite certain now would not be the time to go through that door...",
+                                                                              "ChangeBGM", "music/Temple/far-east-kingdom.mp3",
+                                                                              "Menu",
+                                                                                "Use the glowing circle?",
+                                                                                "HideOptionOnRequirementFail",
+                                                                                "RequiresItem", "Sigil Of Will-Power",
+                                                                                "Take a shortcut.",
+                                                                                "Go back towards the arm wrestling room.",
+                                                                              "EndLoop"
+                                                                          ]
+                                                            },
+
+
+
+
+
+                                    {
+                                        "NameOfScene": "Use the glowing circle?",
+                                        "theScene": [ "IfHealingSickness", "CantHealYet",
+                                                      "HealingSickness",
+                                                       "RefreshPlayer",
+                                                      "You enter the glowing circle and are fully refreshed!",
+                                                      "IfChoice", "9", "FengLove", "ExitedFengsActualRoomPostRomance",
+                                                      "Menu",
+                                                        "Approach the demonic door.",
+                                                        "Use the glowing circle?",
+                                                        "HideOptionOnRequirementFail",
+                                                        "RequiresItem", "Sigil Of Will-Power",
+                                                        "Take a shortcut.",
+                                                        "Go back towards the arm wrestling room.",
+                                                      "EndLoop"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "RoomMenu",
+                                        "theScene": [
+                                                      "IfChoice", "9", "FengLove", "ExitedFengsActualRoomPostRomance",
+                                                      "Menu",
+                                                        "Approach the demonic door.",
+                                                        "Use the glowing circle?",
+                                                        "HideOptionOnRequirementFail",
+                                                        "RequiresItem", "Sigil Of Will-Power",
+                                                        "Take a shortcut.",
+                                                        "Go back towards the arm wrestling room.",
+                                                      "EndLoop"
+                                                  ]
+                                    },
+
+
+                                    {
+                                        "NameOfScene": "Take a shortcut.",
+                                        "theScene": [
+                                                      "DisplayCharacters",
+                                                        "EndLoop",
+                                                        "Noting a part of the wall is ajar, you realize you could easily get to somewhere else in the temple if you really wanted to!",
+                                                        "Menu",
+                                                          "Go to the entrance of Aiko's chamber.",
+                                                          "Go back to the main entrance.",
+                                                          "Nevermind. ",
+                                                        "EndLoop"
+                                                  ]
+                                    },
+                                            {
+                                                "NameOfScene": "Nevermind. ",
+                                                "theScene": [
+                                                                "JumpToScene", "RoomMenu"
+                                                          ]
+                                            },
+                                            {
+                                                "NameOfScene": "Go to the entrance of Aiko's chamber.",
+                                                "theScene": [   "ChangeBG", "templeBlue.png",
+                                                                "JumpToEvent", "Bed Mimic"
+                                                          ]
+                                            },
+                                            {
+                                                "NameOfScene": "Go back to the main entrance.",
+                                                "theScene": [   "ChangeBG", "templeMainHall.png",
+                                                                "JumpToEventThenScene", "WillPowerTempleEntrance", "After Entering"
+                                                          ]
+                                            },
+
+
+
+
+
+
+
+                                          {
+                                              "NameOfScene": "CantHealYet",
+                                              "theScene": [
+                                                            "You've been restored by restorative healing magic too recently, you'll have to wait a day before it works again.",
+                                                            "JumpToScene", "CantHealYetMenu"
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "CantHealYetMenu",
+                                              "theScene": [
+                                                            "Menu",
+                                                              "Rest instead. (Advances Time 1)",
+                                                              "Don't Rest.",
+                                                            "EndLoop"
+                                                        ]
+                                          },
+                                                {
+                                                    "NameOfScene": "Don't Rest.",
+                                                    "theScene": [
+                                                                "JumpToScene", "RoomMenu"
+                                                              ]
+                                                },
+                                                {
+                                                    "NameOfScene": "Rest instead. (Advances Time 1)",
+                                                    "theScene": ["RestPlayer",
+                                                                  "You take a moment to rest by the healing circle.",
+                                                                "JumpToScene", "CantHealYetMenu"
+                                                              ]
+                                                },
+
+
+                                    {
+                                        "NameOfScene": "Approach the demonic door.",
+                                        "theScene": [  "IfChoice", "9", "FengLove", "EnterDemonDoorFeng",
+                                                      "IfChoice", "4", "talked about fight", "Enter the demonic door.",
+                                                      "SetChoice", "4", "talked about fight",
+                                                      "DisplayCharacters",
+                                                          "1",
+                                                          "EndLoop",
+                                                          "ChangeImageLayer", "Expression", "1", "Smile",
+                                                      "As you walk towards the imposing door, Minoni reaches a hand out to stop you with a small smile.",
+                                                      "Speaks",
+                                                      "Through here is the last challenge of the power side of the dungeon. She's a real tough fight, so make sure you're prepared for it. That circle over there can recover any strength that you've lost on the way up to this point.",
+                                                      "Speaks",
+                                                      "And here, maybe this will help you out.",
+                                                      "GiveItem", "1", "Elixir",
+                                                      "DisplayCharacters",
+                                                          "EndLoop",
+                                                      "Menu",
+                                                        "Enter the demonic door.",
+                                                        "Use the glowing circle?",
+                                                        "Go back towards the arm wrestling room.",
+                                                      "EndLoop"
+                                                  ]
+                                    },
+
+
+                                        {
+                                            "NameOfScene": "EnterDemonDoorFeng",
+                                            "theScene": [   "DisplayCharacters",
+                                                                "3",
+                                                            "EndLoop",
+                                                            "ChangeImageLayer", "Expression","1", "HappyOpenMouth",
+                                                             "Speaks3",
+                                                            "Huh? You want to rematch me in there? Eheh, alright I suppose we can. Just wait a moment for me to go cool down and get ready.♪",
+                                                            "DisplayCharacters",
+                                                                            "EndLoop",
+                                                            "Feng hurries inside the room, closing the door behind her, and you wait a few moments for her to get into position before entering.",
+                                                          "JumpToEvent",
+                                                           "Feng's Room"
+                                                      ]
+                                        },
+                                        {
+                                            "NameOfScene": "Enter the demonic door.",
+                                            "theScene": [   "JumpToEvent",
+                                                           "Feng's Room"
+                                                      ]
+                                        },
+
+
+
+
+
+                                        {
+                                            "NameOfScene": "Lever Room",
+                                            "theScene": [  "DisplayCharacters",
+                                                            "1",
+                                                            "EndLoop",
+                                                            "ChangeBGM", "music/Temple/far-east-kingdom.mp3",
+                                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                                          "You enter into a small, well lit red room with a very large lever placed on the wall directly in front of you, and you notice Minoni standing off to one side with a pleased smile on her face.",
+                                                          "ChangeImageLayer", "Expression", "1", "HappyClosed",
+                                                          "Speaks",
+                                                          "Great job! You did amazing throughout all of the trials, and I knew you could do it! Well, I mean... I didn't watch you and Feng go at it or anything, so I guess I can't say for certain if you did an amazing job for {i}everything{/i}, but... Uhm...",
+                                                          "ChangeImageLayer", "Expression", "1", "Stumbling",
+                                                          "She starts to flush with embarrassment as she awkwardly trails off, and she takes a deep breath as she composes herself before talking once more.",
+                                                          "ChangeImageLayer", "Expression", "1", "Cocky",
+                                                          "Speaks",
+                                                          "The last thing you need to do to signify your success is to pull this lever over here. I'll be helping you out, because it's impossible to move this thing otherwise.",
+                                                          "Menu",
+                                                            "Pull the lever with Minoni.",
+                                                            "Pull the lever by yourself.",
+                                                          "EndLoop"
+                                                      ]
+                                        },
+                                                {
+                                                    "NameOfScene": "Pull the lever with Minoni.",
+                                                    "theScene": [    "SetChoice", "7", "Pulled Lever",
+                                                                     "GetEventAndSetChoice", "templeRandomEncounters", "1", "NoRedEncountersFirstTimeSet",
+                                                                     "ChangeImageLayer", "Expression", "1", "Smile",
+                                                                  "You walk up to the lever on one side and Minoni moves to the other, and after a brief shared nod, you both pull as hard as you can, slowly but surely moving it down until it locks in place, and you hear the muffled groaning of gears turning as the distant boom of a large door unlocking echoes in the distance.",
+                                                                  "Speaks",
+                                                                  "Alright! Congratulations! You have now officially cleared the power side of the dungeon! Now you just have to do the will side, and the big door to the end of the dungeon will open, unless you've already done that side, in which case you're already able to access the final part of the dungeon.",
+                                                                  "Speaks",
+                                                                  "But either way, you won't have to worry about monsters attacking you on this side anymore now that you've completed all the trials. Except for the kunoichi trainees. They'll still attack you. They follow different rules, apparently.",
+                                                                  "ChangeImageLayer", "Expression", "1", "Pout",
+                                                                  "Minoni takes a moment to angrily glare at the wall, and you swear that you can hear the faint sound of someone giggling from somewhere within it...",
+                                                                  "ChangeImageLayer", "Expression", "1", "Smile",
+                                                                  "Speaks",
+                                                                  "...Anyway, just so you know, you won't be able to come back into this room. I'm just letting you know ahead of time so if you ever decide to come back to Feng's room for whatever reason, you shouldn't question your sanity when the door leading into here isn't there. The kunoichi move the wall over when you're around, so the door kinda disappears.",
+                                                                  "After a brief frown crosses her face while her eyes stare off in thought, she shakes her head and gives you a proud smile while ushering you back into Feng's room, giving you a few extra words of praise while she walks before opening up a concealed door in one of the walls, but right as she's about to disappear into the hidden passageway, she suddenly straightens and turns to give you a sheepish grin.",
+                                                                  "Speaks",
+                                                                  "O-Oh, and I nearly forgot to mention, if you want monsters to attack you again as you walk through the dungeon, there's a concealed button to the right of the door leading into the trials that will tell them to come back out. It's at about chest level, and I'm sure you can find it now that you know where to look.",
+                                                                  "ChangeImageLayer", "Expression", "1", "Cocky",
+                                                                  "Speaks",
+                                                                  "But that should be everything now. Congratulations again, and if you ever want to see me, I'll still be here in the Power trials. It'd be nice to hang out with you every once in a while, and I wouldn't mind an arm wrestling rematch from time to time either. I think we make a really good couple...",
+                                                                  "ChangeImageLayer", "Expression", "1", "Awawa", "ChangeImageLayer", "Face", "1", "BlushDeep",
+                                                                  "Minoni trails off as she suddenly seems to realize what she said, and her face turns a bright shade of crimson.",
+                                                                  "Speaks",
+                                                                  "I-I didn't mean in the romantic way, I-I just meant...",
+                                                                  "ChangeImageLayer", "Expression", "1", "Stunned",
+                                                                  "She lets out a surprisingly girly 'eep' as her face becomes an even deeper red flush as she keeps getting increasingly flustered, and she hastily throws open a hidden door in the wall and darts inside, slamming it behind her as she leaves you in Feng's room.",
+                                                                  "DisplayCharacters",
+                                                                  "EndLoop",
+                                                                  "ChangeProgress", "5",
+                                                                  "JumpToEventThenScene",
+                                                                  "Feng's Room",
+                                                                  "Back Into Feng's room."
+                                                              ]
+                                                },
+                                                {
+                                                    "NameOfScene": "Pull the lever by yourself.",
+                                                    "theScene": [  "You walk up to the lever and try to pull it down with all your might, but no matter how much effort you put into it, you can't seem to make it budge at all!",
+                                                                    "ChangeImageLayer", "Expression", "1", "Stumbling",
+                                                                  "Speaks",
+                                                                  "Uh... When I said you can't do it alone, I was being literal. The lever won't move unless we work together, and it's not about how strong you are. I think it's supposed to be one of those 'working together is stronger than working alone' symbolism things?",
+                                                                  "ChangeImageLayer", "Expression", "1", "Smile",
+                                                                  "She flashes you a sheepish grin as you take a step back and stare at her for a brief moment.",
+                                                                     "Menu",
+                                                                      "Pull the lever with Minoni.",
+                                                                  "EndLoop"
+                                                              ]
+                                                }
+                ]
+}

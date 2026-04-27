@@ -1,0 +1,470 @@
+{
+    "name": "Dragon Painting's Plunge",
+    "CardType": "Event",
+    "CardLimit": "1",
+    "Description": "In Ars Delusia's Adventure Apartments, there lies an extremely devious trap of sultry temptation, designed to enchant those who fall into it with an enthralling chorus of lascivious phantasmal ministrations.",
+    "requires": [ "Starlight District Stamp"],
+
+    "Speakers": [
+                  {
+                    "name": "Harpy",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }  
+                ],
+    "EventText": [                    
+                    {
+                                "NameOfScene": "EventStart",
+                                "theScene": [      
+                                             "StoreCurrentBG",
+                                             "ChangeBG", "Capital.png",
+                                             "IfInExploration", "AltIntroBit", 
+                                             "JumpToScene", "Click"                                            
+                                ]
+                    },
+                                {
+                                            "NameOfScene": "AltIntroBit",
+                                            "theScene": [      
+                                                        "Exploring a strange Ars Delusian building, you step down a long narrow corridor lined with paintings, the end of the hallway featuring only a single door that won't open, but which presents a conspicuous button next to it, prompting you to reach out and press it for lack of other options. And...",
+                                                        "JumpToScene", "Click"                                            
+                                            ]
+                                },
+                    {
+                                "NameOfScene": "Click",
+                                "theScene": [      
+                                            "ChangeBGM", "music/Relaxing/Purple Planet Music - Dreamy - A Touch Of Zen (4_25) 62bpm.mp3",  
+                                             "SetChoice", "2", "", "SetChoice", "3", "", "SetChoice", "4", "", "SetChoice", "5", "DragonPainting",
+                                             "DenyInventory",
+                                             "As soon as you press the button, the sound of silvery voices singing in a unified chorus emanates from the paintings, coalescing together in a dizzying, captivating siren song that leaves you spacing out thoughtlessly, suddenly unable to do anything but listen to the echoing music!",
+                                             "PlayMotionEffect", "CrashSmol",
+                                             "ChangeBG",  "dungeon.png",
+                                             "StopBGM",
+                                             "Then, abruptly, you feel the rush of the world tumbling away as the ground disappears beneath you... Literally, as you drop like a stone the moment a trapdoor opens up at your feet and sends you helplessly careening downwards, the plummeting descent instantly sobering your befuddled mind as you hurtle down the yawning chute...",
+                                             "PlayMotionEffect", "Crash",
+                                             "Until you unceremoniously land onto a cushioned surface with a soft {i}fwomp{/i}. Shaken, but unhurt.",
+                                             "Dazedly getting your bearings, you see that the chamber you've landed in is taken up in its near entirety by the large, luxurious bed that caught your falling form, its fancy mass and plushness starkly contrasting with the cramped and otherwise rather bare basement it's sitting in, the only other furnishings consisting of a plain door, as well as various paintings that cover the walls nearly floor-to-ceiling.",
+                                             "ChangeBGM", "music/Capital/sneaking-mission.mp3",  
+                                             "ApplyStatusEffect", "Cloying Mist",
+                                             "After a moment of stunned silence, you reflexively inhale... and immediately, your nose fills with an alluring fragrance drifting through the air: an erotically charged, heady smell of spiced honey and sandalwood that suddenly makes your body feel tense and hot, the lewd surprise ringing alarm bells in your mind, but also irresistibly stoking your arousal!",
+                                             "ApplyStatusEffect",  "Harpies Song", "DamagePlayerFromMonster", "Fashionable Succubus", "Harpies Song",
+                                             "Simultaneously, the chorus of cooing siren singing you heard a moment ago starts to play again, the dizzying sound echoing about the enclosed room and resonating from wall to wall to even greater effect than before!",
+                                             "ApplyStatusEffect", "Cloying Mist", "ApplyStatusEffect",  "Harpies Song", "DamagePlayerFromMonster", "Fashionable Succubus", "Harpies Song",
+                                             "DisplayCharacters",
+                                                "1",
+                                                "1",
+                                             "EndLoop",
+                                             "And perhaps even more concerningly, as you sit up from your prone position, some of the paintings around you seemingly come to life, two shimmering harpies darting out of their frames with cooing, enticing trills that reverberate sweetly in your head along with the ongoing, sweet silvery choir!", 
+                                             "ChangeImageLayer", "Expression", "1", "Excited Blush",
+                                             "ChangeImageLayer", "Expression", "2", "Lewd",
+                                             "As the pair of winged women merrily flit about the room while proceeding with their singing and casting you the occasional lascivious gaze, it's readily apparent to your eyes that they're just illusions, their bodies gleaming and occasionally flickering like insubstantial projections...",
+                                             "ChangeImageLayer", "Expression", "1", "Lewd",
+                                             "ApplyStatusEffect", "Cloying Mist", "DamagePlayerFromMonster", "Fashionable Succubus", "Feather Tease",
+                                             "Yet, as they pass you by and run their ethereal wings over your frame, you can somehow still feel the softness of their feathers, shivers running across your skin while a sharp gasp of surprise on your part fills your senses with even more of the intoxicating fragrance permeating the bedchambers, the pleasurable combined assault on your dazed senses already making your cock achingly strain against your clothes!",
+                                             "ApplyStatusEffect", "Cloying Mist", "ApplyStatusEffect",  "Harpies Song", "DamagePlayerFromMonster", "Fashionable Succubus", "Valley Of Fascination",
+                                             "PlayImagePulseLoopingList", "6.0", "1.10", "0.8",
+                                                "Monsters/Elizabeth/ElizabethCutInSmirk.png",
+                                            "EndLoop", 
+                                             "And as if all of those stacking stimulations weren't already enough, a large painting dominating one side of the room comes to life as well, the wolfishly grinning woman depicted in it showily flaunting her exquisitely detailed and highlighted cleavage for you, the warm enchanting magic permeating the picture alongside the ongoing, swirling siren song leaving you wanting to just vacantly stare and listen in unresisting fascination...",
+                                             "IfPlayerOrgasm", "EntrappedClimax",
+                                             "JumpToScene", "PaintingTrapMenu"                                            
+                                ]
+                    },
+                            {
+                                        "NameOfScene": "PaintingTrapMenu",
+                                        "theScene": [ "IfPlayerSpiritGone", "PaintingTrapProgress", 
+                                                    "IfPlayerOrgasm", "EntrappedClimax",                                                                                                
+                                                    "Menu",      
+                                                        "RequiresChoice", "2", "AtDoor",  "Steel your will and try to escape-!",
+                                                        "RequiresChoice", "2", "Step1", "Try to make a break for the exit!",      
+                                                        "RequiresChoice", "2", "", "Try to make a break for the exit!",                                                        
+                                                        "Fight!",
+                                                        "Stare at the buxom painting and appreciate the captivating singing...",
+                                                    "EndLoop"                                            
+                                        ]
+                            },
+                                    {
+                                                "NameOfScene": "TooCaptivated",
+                                                "theScene": [
+                                                            "IfChoice", "2", "CantResist", "PaintingTrapProgress",
+                                                            "With your brain simply brimming with entranced captivation, you find yourself unable to do anything but stare, relax, and get utterly swayed as the illusory displays' enchanting allure coils around your mind and libido, coaxing you into indulgently giving up all resistance and enjoying the show...",
+                                                            "SetChoice", "2", "CantResist",
+                                                            "JumpToScene", "PaintingTrapProgress"                                
+                                                ]
+                                    },
+                                    {
+                                                "NameOfScene": "EntrappedClimax",
+                                                "theScene": ["IfChoice", "4", "Climax2", "SpurtRepeat",
+                                                            "IfChoice", "4", "Climax2", "SpurtThird",
+                                                            "IfChoice", "4", "Climax1", "SpurtSecond",
+                                                            "SetChoice", "4", "Climax1",
+                                                            "PlayerOrgasm", "1",
+                                                            "Utterly consumed with lust, the only thing you can do is shiver, tremble, and moan from the multilayered fascinations assailing you, your hips thoughtlessly thrusting in reverence to the kinky show while your overloaded arousal makes your cock twitch needily in impending orgasm, until with a unified, tingle-inducing coo from the harpies, you moan messily and spurt thick ropes of cum into the air in hedonistic abandon...",
+                                                            "JumpToScene", "PaintingTrapProgress"                                
+                                                ]
+                                    },
+                                            {
+                                                        "NameOfScene": "SpurtSecond",
+                                                        "theScene": [
+                                                                    "SetChoice", "4", "Climax2",
+
+                                                                    "You can no longer bring yourself to stop thoughtlessly masturbating as you ogle the buxom woman in the painting, lecherously admiring every artistic curve of her luscious body while hotly breathing in the luxuriously heady incense permeating the air, uncaring for anything but to satisfy your base urges...",
+                                                                    "PlayerOrgasm", "1",                                                                    
+                                                                    "All the while, you unresistingly listen to the enrapturing singing that surrounds and caresses you from all around, haplessly riding the wave of the siren music that seems to accompany and guide your reverent fapping, steering you closer and closer to the edge until a sudden crescendo makes you powerfully pump your cock and throw back your head in messy climax, splattering your seed across the room to be absorbed by the erotic trap...",
+                                                                    "JumpToScene", "PaintingTrapProgress"                                
+                                                        ]
+                                            },
+                                            {
+                                                        "NameOfScene": "SpurtThird",
+                                                        "theScene": [
+                                                                    "SetChoice", "4", "Climax3",
+
+                                                                    "Your panting, enchanted moans almost make it feel like you're now messily singing along with the harpy chorus as you frantically pump your trembling erection, the enticing motions of the infatuating painting encouraging you to keep greedily stroking yourself like a worshipful addict, further stoking your burning libido and leaving you unable to deny your ever mounting need to cum.",
+                                                                    "PlayerOrgasm", "2",                                                                    
+                                                                    "Blindly gawking at the luxuriously busty lady as she keeps swaying, groping, and caressing her tits for your perverted enjoyment, you drink in every bit of her womanly allure until a sneaky, unified kiss to your ears from the harpy duo pushes you over the brink once more, sending you spurting rope after rope of seed while you keep eagerly masturbating, helplessly sinking deeper and deeper in base pleasure...",
+                                                                    "JumpToScene", "PaintingTrapProgress"                                
+                                                        ]
+                                            },
+                                             {
+                                                        "NameOfScene": "SpurtRepeat",
+                                                        "theScene": [  
+
+                                                                    "Getting increasingly wrapped up in the captivating charms surrounding you and lasciviously accompanying your every move and every breath, you keep indulgently masturbating, each pump of your length feeling intoxicatingly better than the last as you continue vapidly watching the painted woman flaunt her mature curves for you.",
+                                                                    "PlayerOrgasm", "3",
+                                                                    "When she silently coos and pushes her chest against the painting's frame like an invisible window, making her cleavage press and spill all over in a raunchy display, you frantically accelerate your feverish strokes, letting out a drunken mewl as you quickly go over the edge and cum again in a long, shuddering climax for the alluring magical trap to absorb in turn, each new orgasm feeling better than the previous one...",
+                                                                    "JumpToScene", "PaintingTrapProgress"                                
+                                                        ]
+                                            },
+
+                                    {
+                                                "NameOfScene": "Stare at the buxom painting and appreciate the captivating singing...",
+                                                "theScene": [  
+                                                            "JumpToScene", "PaintingTrapProgress"
+                                                ]
+                                    },
+                                    {
+                                                "NameOfScene": "Fight!",
+                                                "theScene": [                 
+                                                            "ChangeImageLayer", "Expression", "1", "Excited",
+                                                            "ChangeImageLayer", "Expression", "2", "Excited",                               
+                                                            "ApplyStatusEffect",  "Harpies Song", "DamagePlayerFromMonster", "Fashionable Succubus", "Harpies Song",
+                                                            "Swiftly, you try to engage the flitting harpies in an attempt to hopefully disarm the trap or at least disrupt its effects, but find out to your dismay that the birdlike pair's illusionary forms are untouchable! Any means of attack that you employ just phases through them, even as their feathery grazing touches continue to relentlessly tease your skin and they keep singing their captivating tune...",
+                                                            "JumpToScene", "PaintingTrapProgress"
+                                                ]
+                                    },
+                                    {
+                                                "NameOfScene": "Steel your will and try to escape-!",
+                                                "theScene": [                                                
+                                                            "JumpToScene", "Try to make a break for the exit!"
+                                                ]
+                                    },
+                                    {
+                                                "NameOfScene": "Try to make a break for the exit!",
+                                                "theScene": [
+                                                            "Gathering your wits and doing your best to focus your mind, you attempt to shut out the tempting displays and reach for the nearby exit...",                                                
+                                                            "StatCheck",
+                                                            "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "90", "5",
+                                                            "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Trance", "10", "5",
+                                                            "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "HypnosisAddict", "25", "2",
+                                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "HypnosisAddict", "50", "3",
+                                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "HypnosisAddict", "75", "5",
+                                                            "Willpower",
+                                                            "20",
+                                                            "PaintingTrapEscapeProgress",
+                                                            "Fail",
+                                                            "CantMove"
+                                                ]
+                                    },
+                                    {
+                                                "NameOfScene": "CantMove",
+                                                "theScene": [                                                
+                                                             "But despite your best efforts, you're kept all but frozen in place by the melodious voices, sweet fragrance, and alluring show...",
+                                                             "JumpToScene", "PaintingTrapProgress"
+                                                ]
+                                    },
+                                    {
+                                                "NameOfScene": "PaintingTrapEscapeProgress",
+                                                "theScene": [
+                                                            "IfChoice", "2", "AtDoor", "PaintingEscapeMenu",                          
+                                                            "IfChoice", "2", "Step1", "ReachDoor",
+                                                             "SetChoice", "2", "Step1",            
+                                                             "And manage to get up from the cozy bed and start making your way towards the exit door!",
+                                                             "However, with so many distractions getting in the way of your fragile resolve, each step feels like an ordeal as you constantly need to fight off the urge to stop and indulgently enjoy the lascivious sights and sounds, making it a veritable challenge to just reach your goal...",
+                                                             "JumpToScene", "PaintingTrapProgress"
+                                                ]
+                                    },
+                                            {
+                                                        "NameOfScene": "ReachDoor",
+                                                        "theScene": [                            
+                                                                    "SetChoice", "2", "AtDoor",            
+                                                                    "And manage to reach the door despite the barrage of mind-melting pleasures!",
+                                                                    "... But as you grab the handle, it's instantly apparent the door is locked! You will need to find a way to unlock it, all the while you keep getting more and more enticed by the lewd trap's temptations with every passing second!",
+                                                                    "JumpToScene", "PaintingTrapProgress"
+                                                        ]
+                                            },
+
+                                            {
+                                                "NameOfScene": "PaintingEscapeMenu",
+                                                "theScene": [  
+                                                            "And manage to keep your focus on the door for now!",
+                                                            "Your mind spinning in panic and muddled arousal, you review your options. One way or another, there must be a way you can make it through this final obstacle!",                                              
+                                                            "Menu",      
+                                                                "Break down the door! (Power)",  
+                                                                "Pick the lock! (Technique)",  
+                                                                "Check your surroundings for a key??? (Luck)",
+                                                            "EndLoop"                                            
+                                                ]
+                                            },
+                                                    {
+                                                        "NameOfScene": "Break down the door! (Power)",
+                                                        "theScene": [                                                
+                                                                    "StatCheck",
+                                                                    "Power",
+                                                                    "20",
+                                                                    "PowerPass",
+                                                                    "Fail",
+                                                                    "PowerFail"
+                                                        ]
+                                                    },
+                                                            {
+                                                                "NameOfScene": "PowerPass",
+                                                                "theScene": [  
+                                                                            "PlaySoundEffect", "sfx/doorClose.mp3",
+                                                                            "PlayMotionEffect", "Crash",
+                                                                            "DisplayCharacters",
+                                                                            "EndLoop",
+                                                                            "StopBGM",
+                                                                            "With a display of sheer brute force from you and a plaintive crash from the unfortunate door, the last barrier between you and your freedom shatters from your might, allowing you to stagger out into a basement hallway, whereupon the charming siren song cuts off in an instant.",
+                                                                            "Gasping and panting, you look back over the utterly destroyed door, but before you can wonder if your somewhat forceful method of saving yourself from obscene captivation might cause some kind of issue, you watch as the door's fragments magically float back together and reassemble themselves just as they were a moment ago. Looks like you won't need to worry about that...",
+                                                                            "JumpToScene", "Escaped"
+                                                                ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "PowerFail",
+                                                                "theScene": [      
+                                                                            "But the door only strains without breaking against your efforts, leaving you no closer to your freedom while you continue being pleasantly assaulted by the sensual sensory delights...",
+                                                                            "JumpToScene", "PaintingTrapProgress"
+                                                                ]
+                                                            },
+                                                    {
+                                                        "NameOfScene": "Pick the lock! (Technique)",
+                                                        "theScene": [                                                
+                                                                    "StatCheck",
+                                                                    "Technique",
+                                                                    "20",
+                                                                    "TechPass",
+                                                                    "Fail",
+                                                                    "TechFail"
+                                                        ]
+                                                    },
+                                                            {
+                                                                "NameOfScene": "TechPass",
+                                                                "theScene": [      
+                                                                            "After a moment of fiddling, the lock clicks open, and you can hastily step out and close the door behind you!",
+                                                                            "DisplayCharacters",
+                                                                            "EndLoop",
+                                                                            "StopBGM",
+                                                                            "Immediately, the lascivious sounds and smells are cut off by the barrier between you and the trap room, and the harpy illusions make no attempt to follow you out, instantly giving you reprieve from the insistent temptations and letting you enjoy the much fresher air of the basement hallway where you now find yourself, and where you can regain your breathing and get your bearings with a sigh of relief.",
+                                                                            "JumpToScene", "Escaped"
+                                                                ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "TechFail",
+                                                                "theScene": [      
+                                                                            "But despite your best efforts, the lock holds fast against your attempts, keeping you locked in the trap room and its constant raunchy temptations!",
+                                                                            "JumpToScene", "PaintingTrapProgress"
+                                                                ]
+                                                            },
+                                                    {
+                                                        "NameOfScene": "Check your surroundings for a key??? (Luck)",
+                                                        "theScene": [                                                
+                                                                    "StatCheck",
+                                                                    "Luck",
+                                                                    "25",
+                                                                    "LuckPass",
+                                                                    "Fail",
+                                                                    "LuckFail"
+                                                        ]
+                                                    },
+                                                            {
+                                                                "NameOfScene": "LuckPass",
+                                                                "theScene": [      
+                                                                            "Hurriedly, you search atop and behind the nearby paintings for a key, hoping to find a spare or something to that effect tucked away... And as luck would have it, your efforts pay off, your frantically questing fingers coming into contact with just such a key behind one of the smaller paintings!",
+                                                                            "DisplayCharacters",
+                                                                            "EndLoop",
+                                                                            "StopBGM",
+                                                                            "Opening your ultimate obstacle without a moment's delay, you get to enjoy instant relief as the illusions and music vanish as soon as you've stepped into what looks like a basement hallway and closed the door behind you, allowing you to stop and take a break in the fresher air in order to clear your head... But as for the key, when you go to pocket it for potential later use, you find it has somehow... vanished?",
+                                                                            "JumpToScene", "Escaped"
+                                                                ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "LuckFail",
+                                                                "theScene": [      
+                                                                            "But whether there wasn't actually a key to be found or you simply didn't look hard enough, your hasty searching doesn't pay off, leaving you at the mercy of the sensory harem's ongoing sultry temptations!",
+                                                                            "JumpToScene", "PaintingTrapProgress"
+                                                                ]
+                                                            },
+                                                    {
+                                                        "NameOfScene": "Escaped",
+                                                        "theScene": [      
+                                                                    "ChangeBG",  "Capital.png", "AllowInventory",
+                                                                    "ChangeBGM-List",
+                                                                        "music/Capital/STARLIGHT.mp3",
+                                                                        "music/Capital/Night_Floating.mp3",
+                                                                        "music/Capital/Nobody_City.mp3",  
+                                                                        "music/Forest/Starry sky.mp3",
+                                                                        "music/Loss/BGM03_Uncanny light.mp3",
+                                                                        "music/Relaxing/Purple Planet Music - Lanquidity (2 52) 110bpm.mp3",
+                                                                        "music/Emotional/Purple Planet Music - Emotional - Spiritual Moment (1_32) 90bpm (L).mp3",
+                                                                        "EndLoop",
+                                                                    "EndImagePulseLoopingList",
+                                                                    "IfInExploration", "EndEvent",
+                                                                    "Unsure of how to proceed now, you open the nearest door, and are comforted to see a rising staircase which you tentatively climb up to another door, this one thankfully opening onto the familiar vista of Adventurer Apartments' first floor...",                                                                    
+                                                                    "JumpToEventThenScene", "ApartmentsTrialFloor1", "EnterFromOtherFloor"
+                                                        ]
+                                                    },
+
+                                        {
+                                                "NameOfScene": "PaintingTrapProgress",
+                                                "theScene": [
+                                                            "IfChoice", "3", "TheEndIsNow", "TheEndIsNow",
+                                                            "IfChoice", "3", "FlauntingThighsAndPussy", "Melting",
+                                                            "IfChoice", "3", "Fragrance", "StareAndStare",
+                                                            "IfChoice", "3", "Nude", "IntensifyingFragrance",
+                                                            "IfChoice", "3", "WarmingUp", "CharmingReveal",
+                                                            "SetChoice", "3", "WarmingUp",
+                                                            "ApplyStatusEffect", "Cloying Mist", "ApplyStatusEffect",  "Harpies Song",
+                                                            "ChangeImageLayer", "Expression", "1", "Excited Blush",
+                                                            "ChangeImageLayer", "Expression", "2", "Excited Blush",
+                                                            "Trilling happily, the illusionary harpy duo coo and croon as they fly about you in a lazy windless circle, their dizzyingly captivating voices assailing you constantly while every inhale you take fills you with intoxicating warmth as a result of the hazy fragrance pervading the trapped basement...",
+                                                            "PlayImagePulseLoopingList", "6.0", "1.10", "0.8",
+                                                                "Monsters/Elizabeth/ElizabethCutInBustFocus.png",
+                                                            "EndLoop", 
+                                                             "DamagePlayerFromMonster", "Fashionable Succubus", "Valley Of Fascination",
+                                                            "But most attention-catching of all is the large animated painting with the busty draconic woman on display, the image's point of view smoothly sliding down to focus more on her heavy breasts which she flaunts with a giggling shake of her upper body, letting you fully appreciate their obvious softness and heft as they jiggle erotically before you...",
+                                                            "JumpToScene", "PaintingTrapMenu"
+                                                ]
+                                        },
+                                            {
+                                                    "NameOfScene": "CharmingReveal",
+                                                    "theScene": [
+                                                                "SetChoice", "3", "Nude",
+                                                                "ApplyStatusEffect",  "Harpies Song", "DamagePlayerFromMonster", "Fashionable Succubus", "Harpies Song",
+                                                                "ChangeImageLayer", "Expression", "1", "Lewd",
+                                                                "ChangeImageLayer", "Expression", "2", "Lewd",
+                                                                "Your eyes can't find the resolve to pull away from the large painting as its buxom occupant gives her prominent bust a shake side to side, all the while the two phantasmal harpies press to your sides with a rising cooing trill that fills your brain to the brim with staggering euphoria, the resulting break prompting the painted lady to bring her finely manicured hands up to the straining hem of her garment...",
+                                                                "ApplyStatusEffect", "Charm", "ApplyStatusEffect",  "Harpies Song", "ApplyStatusEffect",  "Harpies Song", "DamagePlayerFromMonster", "Fashionable Succubus", "Valley Of Fascination",
+                                                                "PlayImagePulseLoopingList", "6.0", "1.10", "0.8",
+                                                                    "Monsters/Elizabeth/ElizabethCutInBustFocusNude.png",
+                                                                "EndLoop", 
+                                                                "And pull off her dress in one smooth motion, leaving her bare breasts bouncing free with a captivating wobble just as the harpies' song hits a mind-blanking apex, leaving you hotly panting and haplessly charmed by both the brazenly raunchy view and the sweetly enchanting recital, an aching want to just lie back and {i}indulge{/i} melting through your libido...",
+                                                                "JumpToScene", "PaintingTrapMenu"
+                                                    ]
+                                            },
+                                            {
+                                                    "NameOfScene": "IntensifyingFragrance",
+                                                    "theScene": [
+                                                                "SetChoice", "3", "Fragrance",
+                                                                "ApplyStatusEffect", "Cloying Mist", "ApplyStatusEffect",  "Harpies Song",
+                                                                "As you heatedly stare at the painting's nakedly offered assets, the harpies' crooning siren song keeps going round and round in your utterly infatuated head, encouraging you to remain just where you are, vacantly and docilely enjoying the show...",
+                                                                "DamagePlayerFromMonster", "Fashionable Succubus", "Valley Of Fascination", "ApplyStatusEffect", "Cloying Mist", 
+                                                                "And as the woman in the painting shakes her plump bosom, running her long-nailed fingers over her wonderful assets while letting out a soundless moan as if to show off how much she wants you to just stay there and be spoiled rotten by the seductive spectacle she's putting on {i}just for you{/i}, the heady warm scent of spiced honey and sandalwood only grows stronger, leaving every breath you take filled with hot, oozing lust...",                                                                
+                                                                "JumpToScene", "PaintingTrapMenu"
+                                                    ]
+                                            },
+                                            {
+                                                    "NameOfScene": "StareAndStare",
+                                                    "theScene": [
+                                                                "SetChoice", "3", "FlauntingThighsAndPussy",
+                                                                "ApplyStatusEffect", "Cloying Mist", "ApplyStatusEffect", "Cloying Mist",  "ApplyStatusEffect",  "Harpies Song", "DamagePlayerFromMonster", "Fashionable Succubus", "Sexual Tempt",
+                                                                "ChangeImageLayer", "Expression", "2", "Embarrassed",
+                                                                "While the two harpies dart about in your periphery, cooing, whispering, and singing sweetly into your enchanted ears, the large painting's focus slowly trails down the dragon woman's form to let you see {i}more{/i} of her, further fueling your fascination with her sexily mature body!",
+                                                                "PlayImagePulseLoopingList", "6.0", "1.10", "0.8",
+                                                                    "Monsters/Elizabeth/ElizabethCutInHipsNude.png",
+                                                                "EndLoop", 
+                                                                "Thoughtlessly, your infatuated eyes drink in every detail of her plush frame, the curve of her wide hips and luscious thighs now dominating your vision and making a jolt of base need rush through you when, with a soundless purr, she brings her hand between her legs to showily spread her drooling pussy, lightly caressing the sides of her wet lips with a horny shiver that resonates from her to you...",                                                                
+                                                                "JumpToScene", "PaintingTrapMenu"
+                                                    ]
+                                            },
+                                            {
+                                                    "NameOfScene": "Melting",
+                                                    "theScene": [ "SetChoice", "3", "TheEndIsNow",
+                                                                "ApplyStatusEffect", "Cloying Mist", "ApplyStatusEffect", "Cloying Mist",  "ApplyStatusEffect",  "Harpies Song", "DamagePlayerFromMonster", "Fashionable Succubus", "Swaying Ass",
+                                                                "With a nimble pivot, the lusty lady turns around, incidentally revealing a long reptilian tail as she flaunts her plush ass, showing off her grabbable waist and generous hips coated in red scales. Feeling positively drunk off her alluring beauty, you take in the view in complete rapture, your increasingly quick and heated breathing keeping you filled with burning, melty euphoria as you indulge more and more in the entrancing moment...",  
+                                                                "ApplyStatusEffect", "Cloying Mist", "ApplyStatusEffect", "Cloying Mist",  "ApplyStatusEffect",  "Harpies Song", "DamagePlayerFromMonster", "Fashionable Succubus", "Valley Of Fascination",
+                                                                "ChangeImageLayer", "Expression", "1", "Excited Blush",
+                                                                "ChangeImageLayer", "Expression", "2", "Embarrassed",
+                                                                "PlayImagePulseLoopingList", "6.0", "1.10", "0.8",
+                                                                    "Monsters/Elizabeth/ElizabethCutInBustFocusNude.png",
+                                                                "EndLoop", 
+                                                                "But meanwhile, the illusory harpies don't remain idle, staying affectionately pressed to your sides as they gently chirp, kiss, and whisperingly sing into your ears while the painted scaled woman daintily flaps a pair of wings and turns back to face you in order to flaunt her heavy breasts again, smushing them tightly against the canvas as if in an effort to escape and join you...",                                                              
+                                                                "JumpToScene", "PaintingTrapMenu"
+                                                    ]
+                                            },
+                                            {
+                                                    "NameOfScene": "TheEndIsNow",
+                                                    "theScene": [  
+                                                                    "ChangeBGM", "music/Casino/BGM06_sink.mp3", 
+                                                                    "With one more inhale, you feel your resolve break, your entire body being now filled with relentless scalding arousal that you can no longer deny, leaving you an unresisting needy mess in the gently smiling harpies' tender grasp.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Excited Blush",
+                                                                    "ChangeImageLayer", "Expression", "2", "Excited Blush",
+                                                                    "Docilely, you go along with the bird women's coaxing motions as they guide you back into the bed, their phantasmal forms feeling all the more real now that your mind is a thoroughly intoxicated mush, your hot frame shivering as you inhale the heady creamy scent that's infused into the cushy bed while letting the gentle song indulgently wash over you....",
+                                                                    "Meanwhile, even though your lust-addled senses have reduced your sight to a blurry, hazy view, you {i}think{/i} you've just seen movement from the direction of the animated painting, and reflexively turn your body that way...",
+                                                                    "PlayImagePulseLoopingList", "5.0", "1.20", "0.8",
+                                                                        "Monsters/Elizabeth/ElizabethCutInBustFocusNude.png",
+                                                                    "EndLoop", 
+                                                                    "And freeze when, instead of just her painted depiction, you find the draconic woman's bust physically hanging over your face while the rest of her alluringly curvy frame looms over your unresisting form, the illusory lady slowly pressing down onto you to smother your face in her cleavage while rubbing her pussy against your twitching, needy erection, her lascivious approach instantly sending your simmering libido boiling over.",
+                                                                    "With frantic need, you try to greedily grab at the dragoness, but your hands somehow pass through her ethereal form, your reaction of dumbfounded surprise making it easy for her to catch your wrists in her grip and push them back down onto the bed with dominant force, as if she was actually there!",
+                                                                    "ChangeImageLayer", "Expression", "1", "Embarrassed",
+                                                                    "ChangeImageLayer", "Expression", "2", "Lewd",
+                                                                    "Confusion surging through you even in your completely befuddled state, you try to messily squirm against the woman's grasp, but the harpy duo's fluffy feathered wings immediately rub up along your sides as they cuddlingly press against you, all the while they let out cooing, crooning giggles and singsong tones, leaving you relaxing into their grasp and accepting your fate, looking up at the draconic matron in docile need.",
+                                                                    "Smiling dotingly at you, she lets out a silent happy purr... Then with a slam of her wide hips, your eyes roll up in utter euphoria as your twitching manhood is engulfed by her pussy without a sound, your assertive lover giving you nary a moment's rest before she starts to wildly swing her hips in greedy hunger!",
+                                                                    "Ravenously, her exquisite folds squeeze over your twitching dick, attacking your sensitized body with scalding rushes of raw pleasure while she keeps your charmed and captivated face half-buried between her pillowy tits, leaving just enough space for the harpies to keep trilling right into your ears, ensuring you remain a thoroughly captivated mess as you're tenderly and relentlessly fucked into the bed.",
+                                                                    "So utterly overloaded and overwhelmed with lust at this point by the barrage of sensual seductions you've been assailed by from every angle and in every way, the budding climax in your loins rapidly builds up with every weighty slam of your phantasmal partner's wide ass impacting against your thighs, her pussy thirstily clenching around your leaking cock as you melt in her warm, luxurious embrace.",
+                                                                    "PlayerOrgasm", "1",
+                                                                    "In no time, with a trembling jerk of your hips, you flood her with cum... or at least, your fresh semen spurts upwards through the illusionary woman only to be instantly absorbed by some magic process while she joyfully gasps and shivers, as if delighting in the feeling of it flowing into her!",
+                                                                    "The resulting exotically ethereal sensations prove as pleasurable as they are disorienting, but there is nothing you can do at this point but accept them with oozing ecstasy, the ongoing singing and nuzzling of your avian lovers encouraging you to just indulge in the moment, and in the grinding of the draconic beauty's wide hips as she coddles you with her pillowy cleavage, keeping your body awash in a euphoric afterglow.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Lewd",
+                                                                    "Dizzily, you take a huffing inhale, filling yourself with {i}more{/i} of her wonderfully heady fragrance, your unabating arousal keeping your erection achingly hard as the twin harpies coo into your ears with a singsong note that makes you twitch in mind-blanked delight and sends your hips reflexively thrusting into the dragoness' sumptuous sex, showing off your want for {i}more{/i} of her...",
+                                                                    "Letting out a greedy purr of approval at your wanton initiative, the womanly monster girl gently strokes your face and gives you a smooching kiss before she starts to bounce on your lap again, making you feel all the more lovingly claimed by her...",
+                                                                    "ChangeImageLayer", "Expression", "1", "Excited Blush",
+                                                                    "ChangeImageLayer", "Expression", "2", "Excited Blush",
+                                                                    "Feeling now thoroughly content to just let yourself be pampered rotten by the phantasmal trio affectionately smothering you, you just lie back with a vapid grin as you continue basking in the cuddly pair's melodious trills and feathery caresses, finding yourself wishing this would never end as you look up at the matronly lady who fondly smiles down at you as she continues making a mess out of you.",                                                    
+                                                                    "It's so wonderfully easy to follow along with her lead, drifting up a constantly rising wave of pleasure before crashing back down into a shuddering climax followed by a glorious afterglow... and then doing it all over again as the illusory dragoness mates with you on loop and the songstresses keep doting on you until you reach the peak of bliss again... and again... and again...",
+                                                                    "Shivering and gasping with an increasingly loose expression, you eventually feel yourself slowly fade away when your recall stone activates as a result of your looming unconsciousness, your vision swimming and swaying as your endurance reaches its limit.",
+                                                                    "As if sensing your exhaustion, your curvy lover leans down and catches you in a feverish makeout which you sloppily return with what little energy you have left while the giggling harpies join in by kissing your cheeks, submerging you completely in tender ecstasy as you cum one last time with thought-shattering intensity, surrendering all the cum you have left to the scaled lady who takes it all with a greedy happy purr.",
+                                                                    "Then, you clearly feel that your much-taxed strength cannot take any more and you let go with a woozy moan, letting your head lie limply back as you unresistingly allow yourself to drift away, your body and mind both completely drained... but {i}oh-so wonderfully fulfilled{/i}...",
+                                                                    "PlayBlackOut",      
+                                                                    "As your eyes close themselves, the last sight you catch is that of the bird duo waving you off as they fly back where they came from, as does the dragoness as she returns to her painting with a thoroughly satisfied expression, turning back just a moment to coquettishly blow you a kiss as you fade away for good...",
+                                                                    "...",                                                                    
+                                                                    "ChangeSensitivity", "Sex", "5",  
+                                                                    "ChangeSensitivity", "Seduction", "5",
+                                                                    "ChangeSensitivity", "Magic", "15",
+                                                                    "ChangeFetish", "Breasts", "5",
+                                                                    "ChangeFetish", "Sex", "5",
+                                                                    "GameOver"
+                                                    ]
+                                            },        
+ 
+                    {
+                      "NameOfScene": "PostEventStuffs",
+                      "theScene": [                                    
+                                   "IfInExploration", "EndEvent",
+                                   "AllowInventory",
+                                   "GoBackToStoredEvent"
+                                ]
+                    },
+                        {
+                        "NameOfScene": "EndEvent",
+                        "theScene": [    "Unsure of how to proceed now, you open the nearest door, and are comforted to see a rising staircase which you tentatively climb up to another door, this one thankfully opening into a new area! Despite the perilously lascivious experience you just went through, it looks like the trap actually was the way forward, somehow...",    
+                                        "UseHeldBG"
+                                    ]
+                        },
+
+                    {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [   "event broke."
+                                ]
+                    }
+                ]
+}

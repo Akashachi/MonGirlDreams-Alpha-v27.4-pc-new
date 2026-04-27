@@ -1,0 +1,89 @@
+{
+    "name": "The Oni Twins of Terror",
+    "CardType": "Quest",
+    "CardLimit": "0",
+    "Description": "The terrifying oni sisters, combined we are one of the Demon Queen's Commanders, and we wait for you at the end of this exploration, think you can handle us after a gauntlet?! - Himika \n\n There's no reward aside from whatever we 'drop', but we will let you fuck us both for fun if you win, though the gauntlet isn't needed for that really. - Mizuko",
+    "requires": [ "True Sigil Of Power"],
+    "Speakers": [
+                  {
+                    "name": "Mizuko",
+                    "postName": "",
+                    "SpeakerType": ""
+                  },
+                  {
+                    "name": "Himika",
+                    "postName": "",
+                    "SpeakerType": ""
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Fight both!",
+                        "theScene": [   "GetEventAndSetChoice", "Will-Power Final Boss", "5", "",
+                                          "Finally, after a long, arduous journey, you step into the open, arena-like depths of the temple, the ring adorned with an imposing pillar on either side, one red, one blue.",
+                                          "DisplayCharacters",
+                                                "1",
+                                                "2",
+                                              "EndLoop",
+
+                                          "ChangeImageLayer", "Expression", "Himika", "Cocky", "ChangeImageLayer", "Expression", "Mizuko", "Smug",
+                                          "Himika and Mizuko have been awaiting your arrival, and are standing in the center of the arena imposingly, clearly not interested in talking. The door slams shut behind you and you prepare yourself.",
+
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Mizuko",
+                                            "Himika",
+                                          "StartCombat",
+                                          "You have cleared through a small gauntlet and defeated the oni twins!",
+                                          "DisplayCharacters",
+                                                "1",
+                                                "2",
+                                              "EndLoop",
+                                          "ChangeImageLayer", "Expression", "Himika", "Shy", "ChangeImageLayer", "Face", "Himika", "Blush", "ChangeImageLayer", "Expression", "Mizuko", "Base",
+                                          "They come back out to the arena after a few moments, Mizuko with a small grin, and Himika with a rather shy blush.",
+
+                                          "Speaks2",
+                                          "I-I can't believe he actually managed to beat us after going through all that too!",
+                                          "ChangeImageLayer", "Expression", "Mizuko", "Amused",
+                                          "Speaks",
+                                          "It was rather impressive, hmhm, I'm sure he wants his {i}reward{/i} for his efforts...",
+                                          "Himika's face burns bright red as she realizes what her sister is implying.",
+                                          "ChangeImageLayer", "Expression", "Himika", "Pleasured",
+                                          "Speaks2",
+                                          "E-Eh?! Th-That- I mean... He did... So I guess we could...",
+                                          "ChangeImageLayer", "Expression", "Mizuko", "Smug",
+                                          "Speaks",
+                                          "So what do you say [ThePlayerName], interested in some victory sex?",
+                                          "ChangeProgress",
+                                          "1",
+                                          "Menu",
+                                            "Fuck the oni sisters!",
+                                            "I'll pass.",
+                                          "EndLoop"
+                                  ]
+                    },
+
+                    {
+                        "NameOfScene": "Fuck the oni sisters!",
+                        "theScene": [    "JumpToEventThenScene",
+                                        "Will-Power Final Boss",
+                                        "Fuck the oni sisters!"
+                                  ]
+                    },
+
+                    {
+                        "NameOfScene": "I'll pass.",
+                        "theScene": [   "ChangeImageLayer", "Expression", "Himika", "Pout", "ChangeImageLayer", "Face", "Himika", "",
+                                        "Speaks2",
+                                        "Oh...",
+                                        "ChangeImageLayer", "Expression", "Mizuko", "Base",
+                                        "Speaks",
+                                        "Well you seem pretty disappointed Himika.",
+                                        "ChangeImageLayer", "Expression", "Himika", "Shy",
+                                        "Speaks2",
+                                        "W-What?! No! D-Don't be ridiculous..."
+                                  ]
+                    }
+                ]
+}

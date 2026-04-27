@@ -1,0 +1,778 @@
+{
+    "name": "EnteringGuild",
+    "CardType": "Guild",
+    "CardLimit": "0",
+    "Description": "EnterArea",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Elena",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Elly",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EnteringArea",
+                        "theScene": [ "IfTimeIs", "NightTrue", "Closed",
+                                      "IfChoice", "1", "", "GuildIntro",
+                                      "IfChoice", "2", "", "TrueSigilCheck"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "GuildIntro",
+                                "theScene": [ "SetChoice", "1", "MetElena",
+                                            "GetEventAndSetProgress", "DebtCounter", "1000000",
+                                            "DisplayCharacters",
+                                              "1",
+                                              "EndLoop",
+                                            "ChangeImageLayer", "Expression", "1", "Smile",
+                                            "You walk into the guild hall, only to immediately be greeted by a smiling Elena as she waves at you from behind the guild counter.",
+                                             "Speaks",
+                                             "Oh! Hello again, [ThePlayerName]! Are you settling in well?",
+                                             "ChangeImageLayer", "Expression", "1", "SmileContent",
+                                             "You walk up to Elena as she continues to talk, and she casually leans on the counter, unintentionally bringing your attention to her chest as her breasts squish against the wood.",
+                                             "Speaks",
+                                             "I hope everything's been going well for you so far. Oh, and if you haven't done it yet, be sure to talk to everyone important in town, like the adventuring store's shopkeeper, the priestess at the church, me and Elly, even Vivian. We all usually...",
+                                             "ChangeImageLayer", "Expression", "1", "Embarrassed",
+                                             "She trails off abruptly as she straightens and gives you a faintly worried look.",
+                                             "Speaks",
+                                             "W-Wait, before I continue, {i}please{/i} tell me you haven't been going into people's homes and taking things at random, right?",
+                                             "You blink at her sudden question, taken off guard by the slight desperation in her voice.",
+                                             "PlayerSpeaks",
+                                             "No?",
+                                             "ChangeImageLayer", "Expression", "1", "Smile",
+                                             "Almost instantly, she heaves a huge sigh of relief as she brings up one hand to rest on her chest just over her heart while giving you an enormous smile.",
+                                             "Speaks",
+                                             "Oh, thank the Goddess! You would not {i}believe{/i} how much paperwork I've had to deal with when this kind of stuff happens. I swear, some adventurers think they have the right to just take everything they get their hands on....",
+                                              "ChangeImageLayer", "Expression", "1", "Frazzled",
+                                             "She trails off momentarily with an exhausted expression, muttering darkly under her breath.",
+                                             "ChangeImageLayer", "Expression", "1", "Smile",
+                                             "But only a few seconds later she remembers that she was talking to you and returns her attention to you with a cheerful if slightly forced smile as she broadly gestures to the interior of the building.",
+                                             "Speaks",
+                                             "But anyway, welcome to the guild hall of Lucidia! If you're looking for help with your adventures, you've come to the right place.",
+                                             "ChangeImageLayer", "Expression", "1", "Base",
+                                             "Speaks",
+                                             "Given how you've just started off, I would recommend just trying a few normal explorations through the forest to get a feel for things, as well as giving yourself the opportunity to gain a little bit of experience. Then, once you've done that, you can try to take on a quest or two. You can find those over there.",
+                                             "She directs your attention towards a small board off to one side with a few pieces of paper haphazardly tacked onto it, but you're too far away to read what they all say as you return your attention to Elena.",
+                                             "Speaks",
+                                             "Typically quests can also be accessed and accepted through your grimoire as well, but they're physically posted here in the guild hall. Quests usually require you to do specific things, and if you complete them, you'll be rewarded with usual things such as money, but oftentimes quests have secondary benefits, like unlocking more quests, different adventures, or even letting you access different parts of Lucidia!",
+
+                                             "IfHasItem", "Vandal Note", "FinishedTut",
+                                             "ChangeImageLayer", "Expression", "1", "Shy",
+                                             "Speaks",
+                                             "For example, I have a quest about a...",
+                                             "ChangeImageLayer", "Expression", "1", "Grumble",
+                                             "One of Elena's eyes twitches as she stares off at the quest board while her face briefly clouds in annoyance as if remembering something distasteful.",
+                                             "ChangeImageLayer", "Expression", "1", "Smile",
+                                            "But with a small sigh, she quickly returns to her businesslike cheer as she flashes you a smile.",
+                                             "GetAnEventsProgressThenIfEqualsOrGreater", "ForestTutorialEntry", "1", "postTutQuestBit",
+                                             "Speaks",
+                                             "...Slight problem that needs to be dealt with. If you can take care of it for me, I can get you the clearance needed to go to the Forest Dungeon located in the heart of the forest, and it would make my life just a little bit easier.",
+                                            "Despite her smile, she can't seem to take the edge out of her voice as she talks, and she takes a second to clear her throat before continuing.",
+                                            "Speaks",
+                                            "It's the one titled 'Stop The Vandal'. It's one of the only quests you can probably take early on, so you can't miss it. It shouldn't be {i}too{/i} hard for you, but I just want {i}someone{/i} to take care of it.",
+                                            "Speaks",
+                                            "And considering the fact that the Forest Dungeon has the first sigil you need for your adventure, I would recommend taking care of my quest as quickly as you can. Please.",
+                                            "ChangeImageLayer", "Expression", "1", "Grumble",
+                                            "After staring at you for a few long seconds to drive her message home, her gaze turns distant as she glances towards the quest board.",
+                                            "JumpToScene", "GuildIntroPt2"
+                                          ]
+                            },
+                                      {
+                                          "NameOfScene": "postTutQuestBit",
+                                          "theScene": [
+
+                                                        "Speaks",
+                                                        "...Slight problem I set your grimore to focus on dealing with. Remember once you've finished that initial run of the forest you'll be free to explore it as you want, and you will get the clearance needed to go to the Forest Dungeon located in the heart of the forest. Not to mention it would make my life just a little bit easier.",
+                                                       "Despite her smile, she can't seem to take the edge out of her voice as she talks, and she takes a second to clear her throat before continuing.",
+                                                       "Speaks",
+                                                       "So I would recommend taking care of that quest as quickly as you can. Please.",
+                                                       "ChangeImageLayer", "Expression", "1", "Grumble",
+                                                       "After staring at you for a few long seconds to drive her message home, her gaze turns distant as she glances towards the quest board.",
+                                                        "JumpToScene", "GuildIntroPt2"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "FinishedTut",
+                                          "theScene": [
+
+                                                        "Speaks",
+                                                        "For example, that quest I got you to do with your first run through the forest let you gain access to the rest of the forest, and gave you clearance for the Forest Dungeon. Not to mention made my life a whole lot easier.",
+                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                        "Elena lets out a cheerful sigh befrore giving you a rather serious look.",
+
+                                                        "JumpToScene", "GuildIntroPt2"
+                                                    ]
+                                      },
+
+
+                                {
+                                    "NameOfScene": "GuildIntroPt2",
+                                    "theScene": ["ChangeImageLayer", "Expression", "1", "Shy",
+                                                "Speaks",
+                                                "...Oh, and as a side note, if you see any quests posted by Vivian... Do be cautious of them. Her requests can be... unusual, compared to other postings.",
+                                                 "ChangeImageLayer", "Expression", "1", "SmileContent",
+                                                 "A few moments of silence pass as you watch Elena before she looks back at you and flashes you a small, much more natural-looking smile.",
+                                                 "Speaks",
+                                                 "Well, if you need any more help with anything, be sure to ask me and I'll answer all of your questions as best I can. I have some history with adventuring myself, after all. There's a lot to figure out, but I'm sure you'll get the hang of it. And keep your chin up! You're not going on this adventure completely alone, so don't be afraid to ask me anything.",
+                                                 "ChangeImageLayer", "Expression", "1", "Smile",
+                                                 "With that last comment, Elena turns her attention back to a large stack of papers sitting on her desk and reaches over towards it, but she abruptly stops as she brings her attention back to you with an excited smile.",
+                                                 "Speaks",
+                                                 "Oh! Right! The first thing you should probably do before you head out adventuring is buy some equipment or learn some skills with the money I gave you when you first arrived here. Amber's Adventuring shop has all the supplies you need, and while Amber herself is a little abrasive, she sells top quality gear, and can even teach you a clever skill or two.",
+                                                 "ChangeImageLayer", "Expression", "1", "Smug", "ChangeImageLayer", "Base", "1", "WorkClothes",
+                                                 "Elena straightens with a smile as she places her hands on her hips in a faintly smug manner.",
+                                                 "Speaks",
+                                                 "But if you {i}really{/i} want to learn all kinds of skills, I'm your gal. Trust me when I say that I know almost {i}all{/i} the tricks in the book. Of course, I may not be able to teach you all of them if you're not powerful enough to learn them, and for certain kinds of skills, some other people are better options than me. Like magic. I leave that to Elly over there. She's the guild's arch-mage.",
+                                                 "She gestures over towards a table near the far wall where a modest-looking woman with a witch's hat sits in a chair alone, totally absorbed in a dense book, and it's obvious to see that she's completely unaware that she's being talked about at the moment.",
+                                                 "ChangeImageLayer", "Expression", "1", "Base",
+                                                 "Speaks",
+                                                 "She'll talk to you if you walk up to her, but she gets lost in her own little world when she's reading. But anyway, like I said before, other people in town should be able to teach you skills as well, and they're usually more specialized in some way. There are two other people you should consider for that. I'd mentioned Amber already, but there's also... Well...",
+                                                 "ChangeImageLayer", "Expression", "1", "Depressed",
+                                                 "Elena gently sighs to herself before continuing.",
+                                                 "Speaks",
+                                                 "If you want to learn more... 'Seductive' techniques, you could go see Vivian. They're effective if used right, but I wouldn't recommend her particular methods. They're more likely to get you in trouble if you ask me.",
+                                                 "ChangeImageLayer", "Expression", "1", "Smile",
+                                                 "You think you can see the faintest blush of her cheeks as she smiles at you, but you can't be sure if it was there or not.",
+                                                 "Speaks",
+                                                 "Well that should be everyone that could help you, if you want to learn more skills. I don't think there's anyone... Wait, no, I suppose not...",
+                                                 "ChangeImageLayer", "Expression", "1", "Shy",
+                                                 "Speaks",
+                                                 "Lillian over at the church could probably teach you... {i}something{/i}, I think. {i}Maybe.{/i} She means well, but, I doubt whatever she teaches would be actually useful out there...",
+                                                 "ChangeImageLayer", "Expression", "1", "Base",
+                                                 "She leaves the comment hanging in the air as she trails off before shaking her head and turning back to her paperwork with a serious expression on her face.",
+                                                 "Speaks",
+                                                 "But really, that should {i}actually{/i} be everything this time. Just remember, don't hesitate to ask me for help if you ever need it, and I'll be sure to help out however I can."
+                                              ]
+                                },
+
+                          {
+                              "NameOfScene": "Nothing",
+                              "theScene": [
+
+                                        ]
+                          },
+
+
+                          {
+                              "NameOfScene": "TrueSigilCheck",
+                              "theScene": [
+                                            "GetEventAndIfChoice", "Head over to Elly's table.", "1", "", "Nothing",
+                                            "GetEventAndIfChoice", "Head over to Elly's table.", "5", "", "Nothing",
+                                            "IfHasItem", "True Sigil Of Power", "TrueSigilEllyConvo"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "TrueSigilEllyConvo",
+                                    "theScene": [
+                                                  "SetChoice", "2", "TrueSigil",
+                                                "DisplayCharacters",
+                                                   "2",
+                                                  "EndLoop",
+                                                 "ChangeImageLayer", "Expression", "1", "Serious", "ChangeImageLayer", "LeftArm", "1", "ArmLDown",
+                                                 "As you enter into the Guildhall Elly abruptly stands up from her table and marches over to you with a serious expression.",
+                                                 "Speaks2",
+                                                 "Come with me [ThePlayerName], we need to talk.",
+                                                 "Before you can ask why she already has your wrist in a surprisingly vice-like grip and is dragging you towards the back rooms of the guild, earning you a few surprised glances from other adventurers as you tag along behind Elly.",
+                                                 "She pulls you into a rather cramped room and shuts the door, leaving the two of you alone in its closet-like confines, barely even a foot from each other.",
+                                                 "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush", "ChangeImageLayer", "Glasses", "1", "GlassesShine",
+                                                 "Speaks2",
+                                                 "Now, show it to me.",
+                                                 "PlayerSpeaks",
+                                                 "I'm sorry, what?",
+                                                 "ChangeImageLayer", "Expression", "1", "Smile", "ChangeImageLayer", "RightArm", "1", "ArmRDown", "ChangeImageLayer", "Glasses", "1", "Glasses",
+                                                 "Speaks2",
+                                                 "There's no need to be shy about it [ThePlayerName].",
+                                                 "You barely know how to process what's happening with her so close to you and staring at you with such a reassuring smile, and her voice drops into a low whisper.",
+                                                 "ChangeImageLayer", "Expression", "1", "Happy",
+                                                 "Speaks2",
+                                                 "Well? Go on, show me the sigil. The {i}real{/i} one you acquired. I know you have it.♪ It's quite easy to detect something like that.",
+                                                 "You blink hard as everything quickly falls into place within your brain, and you pull out the small shining black disk with one half covered by a small curved teardrop ruby glimmering brilliantly, with a smaller circular sapphire ingrained into the large round portion of the ruby. Causing Elly to gasp with excitement.",
+                                                 "ChangeImageLayer", "Expression", "1", "Sparkling", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush", "ChangeImageLayer", "Glasses", "1", "GlassesShine",
+                                                 "Speaks2",
+                                                 "Oh {i}my!{/i} It's far larger than I expected!♪",
+                                                 "ChangeImageLayer", "Expression", "1", "Serious",  "ChangeImageLayer", "Glasses", "1", "Glasses",
+                                                 "Her voice drops low as she looks closer to inspect it.",
+                                                 "Speaks2",
+                                                 "Hm, it seems like the will half of the yin-yang symbol is missing. Though I'm sure that was fairly obvious to you.",
+                                                 "ChangeImageLayer", "Expression", "1", "Sparkling",  "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                 "With barely contained giddy excitement she reaches forward and runs a hand over it, her voice back to its regular volume.",
+                                                 "Speaks2",
+                                                 "Oh, it is absolutely {i}wondrous{/i} to touch. I can even feel the power radiating off it too.",
+                                                 "Elly's voice practically purrs with joy, and you're not sure if she's intentionally saying things the way she is or not.",
+                                                 "ChangeImageLayer", "Expression", "1", "Happy",
+                                                 "She then pulls her hands back and takes out a small notebook, quickly jotting down a few notes.",
+                                                 "Speaks2",
+                                                 "This is {i}well{/i} beyond my expectations [ThePlayerName].♪",
+                                                 "ChangeImageLayer", "Expression", "1", "Base",
+                                                 "Her voice drops low and thoughtful again as she continues to write things down and glance at the sigil.",
+                                                 "Speaks2",
+                                                 "Though until you, or someone else finds the other half I won't be able to get much more insight into how it works. But even just this is quite informative about the sigils, age-old artifacts... Oh this is {i}so{/i} cool. Really it is quite amazing the monsters managed to make the duplicate sigils. I wonder {i}why{/i} though?",
+                                                 "ChangeImageLayer", "Expression", "1", "Serious",
+                                                 "Speaks2",
+                                                 "Perhaps to draw in more adventurers? Maybe to keep the real sigils for their own use? Perhaps simple amusement or even for the advancement of knowledge?",
+                                                 "ChangeImageLayer", "Expression", "1", "Happy",
+                                                 "Speaks2",
+                                                 "Oh, my apologizes [ThePlayerName], I'm just speculating to myself, I've seen all I need to for now I think.",
+                                                 "Her voice perks up again to regular volume, filled with excited cheer while you put away the sigil, still a little lost.",
+                                                 "ChangeImageLayer", "Expression", "1", "Sparkling",
+                                                 "Speaks2",
+                                                 "All in all, this was absolutely {i}wonderful!{/i} I may need to bother you again to get a much more in {i}depth{/i} study of it in my research lab. But let's keep this our little secret, okay [ThePlayerName]? Don't tell anyone else about it, we don't want them to get jealous.",
+                                                 "She then opens up the door and waltzes out with a cheerful smile, completely unaware of the stares she's getting from other people in the guildhall... and as you slip out of the tiny room in turn, those stares soon turn to you.",
+                                                 "DisplayCharacters",
+                                                   "EndLoop",
+                                                    "GetEventAndChangeProgress", "Head over to Elly's table.", "5",
+                                                 "Elena meanwhile seems completely unaware of what happened or is pretending she heard nothing... Leaving you a little flush from embarrassment from what everyone else clearly thinks just happened, and unsure exactly of what you want to do next."
+                                               ]
+                                },
+
+
+
+                            {
+                                "NameOfScene": "Closed",
+                                "theScene": [
+                                              "GetEventAndIfChoice", "Head over to Elly's table.", "13", "NightAccessGiven", "Enter",
+                                              "GetEventAndIfChoice", "Urgent 'Mushroom' Investigation", "1", "UnlockedCandyStore", "Enter",
+                                              "You go to enter the guild, but it's closed for the night.",
+                                              "BumpToTown"
+                                          ]
+                            },
+                                    {
+                                        "NameOfScene": "Enter",
+                                        "theScene": [ "DisplayCharacters",
+                                                       "2",
+                                                      "EndLoop",
+                                                      "ChangeImageLayer", "Expression", "1", "BookLook",
+
+
+
+
+                                                      "IfChoice", "4", "", "YellyAtYouForTellingVeneficaItWasElly",
+                                                      "IfChoice", "5", "", "YellyAtYouForGettingBanned",
+                                                      "IfChoice", "3", "", "FirstTimeVeneficaReturn",
+                                                      "JumpToScene", "ClosedIntro"
+                                                  ]
+                                    },
+
+                                            {
+                                                "NameOfScene": "YellyAtYouForTellingVeneficaItWasElly",
+                                                "theScene": [
+
+                                                                "GetEventAndIfChoice", "'Bon Bon Bun'", "17", "Elly", "YellyAtYouForTellingVeneficaItWasEllyScene",
+                                                                "IfChoice", "5", "", "YellyAtYouForGettingBanned",
+                                                                "IfChoice", "3", "", "FirstTimeVeneficaReturn",
+                                                                "JumpToScene", "ClosedIntro"
+                                                          ]
+                                            },
+                                                    {
+                                                        "NameOfScene": "YellyAtYouForTellingVeneficaItWasEllyScene",
+                                                        "theScene": [   "SetChoice", "4", "EllyWasToldAbout",
+                                                                        "ChangeImageLayer", "Expression", "1", "Serious", "ChangeImageLayer", "LeftArm", "1", "ArmLDown",
+                                                                        "You go to enter the guild, and there's a small magical ping as you approach, leaving the door unlocked, letting you inside the vacant, candle and moon lit hall. Elly, who was sitting at her usual table, slams her book closed upon your entry and storms over to you with a serious glare.",
+                                                                        "ChangeImageLayer", "Expression", "1", "SpazYell",
+                                                                        "Speaks2",
+                                                                        "[ThePlayerName]! {i}Why{/i} in the arcane soaked {i}world{/i}- did you tell Venefica that {i}I{/i} sent you to her store?! Do you even have a {i}single{/i} clue on how this could jeopardize the mission?!",
+                                                                        "Despite her initially spastic outburst, she swiftly recomposes to a deadly serious glare.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Serious", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",
+                                                                        "Speaks2",
+                                                                        "{i}Explain yourself!{/i}",
+                                                                        "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                                        "GetEventAndChangeProgress", "Head over to Elly's table.", "-15",
+                                                                        "Menu",
+                                                                          "She saw through all my attempts to lie.",
+                                                                          "Sh-She's scary, okay?!",
+                                                                          "...Elly, has anyone ever told you, that you're very attractive when you're angry?",
+                                                                          "I didn't think it'd be that big of a deal?",
+                                                                        "EndLoop"
+
+                                                                  ]
+                                                    },
+                                                                          {
+                                                                              "NameOfScene": "...Elly, has anyone ever told you, that you're very attractive when you're angry?",
+                                                                              "theScene": [   "ChangeImageLayer", "Expression", "1", "SpazYell",  "ChangeImageLayer", "Base", "1", "Blush",
+                                                                                              "GetEventAndChangeProgress", "Head over to Elly's table.", "5",
+                                                                                              "Speaks2",
+                                                                                              "Wh- [ThePlayerName]! {i}Focus!{/i} This is important!",
+                                                                                              "ChangeImageLayer", "Expression", "1", "Awkward", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",
+                                                                                              "Speaks2",
+                                                                                              "Also no I don't think anyone has called me that before for being angry...",
+                                                                                              "ChangeImageLayer", "Expression", "1", "SpazYell", "ChangeImageLayer", "RightArm", "1", "ArmRDown", "ChangeImageLayer", "Base", "1", "Base",
+                                                                                              "Speaks2",
+                                                                                              "{i}But that's beside the point!{/i} Now give me a proper explanation about this mess up!",
+                                                                                              "Menu",
+                                                                                                "She saw through all my attempts to lie.",
+                                                                                                "Sh-She's scary, okay?!",
+                                                                                                "I didn't think it'd be that big of a deal?",
+                                                                                              "EndLoop"
+                                                                                        ]
+                                                                          },
+                                                              {
+                                                                  "NameOfScene": "She saw through all my attempts to lie.",
+                                                                  "theScene": [    "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",  "ChangeImageLayer", "Glasses", "1", "GlassesShine",
+                                                                                  "GetEventAndChangeProgress", "Head over to Elly's table.", "5",
+                                                                                  "IfChoice", "5", "", "LieBanCheck",
+                                                                                  "JumpToScene", "LieScene"
+                                                                            ]
+                                                              },
+                                                                    {
+                                                                        "NameOfScene": "LieBanCheck",
+                                                                        "theScene": [   "GetEventAndIfChoice", "'Bon Bon Bun'", "18", "BANNED", "YellyAtYouForGettingBanned LiesTransition",
+                                                                                        "JumpToScene", "LieScene"
+                                                                                  ]
+                                                                    },
+
+                                                              {
+                                                                  "NameOfScene": "LieScene",
+                                                                  "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                                                                  "Speaks2",
+                                                                                  "I see... She's much more insightful than I expected... You're going to have to tread {i}very{/i} carefully with her from now on. But the mission should be able to proceed still.",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Awkward",
+                                                                                  "Speaks2",
+                                                                                  "I think...",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Base",  "ChangeImageLayer", "RightArm", "1", "ArmRDown",  "ChangeImageLayer", "Glasses", "1", "Glasses",
+                                                                                  "JumpToScene", "PostEllyTruthScene"
+                                                                            ]
+                                                              },
+                                                                      {
+                                                                          "NameOfScene": "YellyAtYouForGettingBanned LiesTransition",
+                                                                          "theScene": [
+                                                                                          "Speaks2",
+                                                                                          "I see... She's much more insightful than I expected... Now, I'd say the mission should be able to proceed, if with great caution... However...",
+                                                                                          "Elly's voice trembles with no small amount of anger as her words continue.",
+                                                                                          "ChangeImageLayer", "Expression", "1", "SpazYell", "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                                                          "Speaks2",
+                                                                                          "You {i}somehow{/i} managed to get {i}BANNED{/i} from the store?!?!",
+                                                                                          "JumpToScene", "YellyAtYouForGettingBannedSceneMain"
+                                                                                    ]
+                                                                      },
+                                                              {
+                                                                  "NameOfScene": "Sh-She's scary, okay?!",
+                                                                  "theScene": [   "ChangeImageLayer", "Expression", "1", "SpazYell",
+                                                                                  "Speaks2",
+                                                                                  "Dang it [ThePlayerName]! Keep it together! You weren't supposed to bring any correlation between us on this!",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Awkward",
+                                                                                  "Speaks2",
+                                                                                  "Hm... Maybe I picked the wrong person for this...",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Thinking",
+                                                                                  "She lets out a mildly frustrated sigh as she thinks for a moment.",
+                                                                                  "IfChoice", "5", "", "YellyAtYouForGettingBanned ScaryTransition",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Base",  "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",  "ChangeImageLayer", "Glasses", "1", "Glasses",
+                                                                                  "JumpToScene", "PostEllyTruthScene"
+                                                                            ]
+                                                              },
+                                                                      {
+                                                                          "NameOfScene": "YellyAtYouForGettingBanned ScaryTransition",
+                                                                          "theScene": [   "GetEventAndIfChoice", "'Bon Bon Bun'", "18", "", "PostEllyTruthScene",
+                                                                                          "IfChoice", "5", "YouGotBanned", "BigDealOut",
+                                                                                          "ChangeImageLayer", "Expression", "1", "Serious",
+                                                                                          "Speaks2",
+                                                                                          "Because, not only did you expose me in all this...",
+                                                                                          "Elly's voice trembles with no small amount of anger as her words continue.",
+                                                                                          "ChangeImageLayer", "Expression", "1", "SpazYell", "ChangeImageLayer", "RightArm", "1", "ArmRDown", "ChangeImageLayer", "Glasses", "1", "GlassesShine",
+                                                                                          "Speaks2",
+                                                                                          "You {i}somehow{/i} managed to get {i}BANNED{/i} from the store?!?!",
+                                                                                          "JumpToScene", "YellyAtYouForGettingBannedSceneMain"
+                                                                                    ]
+                                                                      },
+
+                                                              {
+                                                                  "NameOfScene": "I didn't think it'd be that big of a deal?",
+                                                                  "theScene": [   "GetEventAndChangeProgress", "Head over to Elly's table.", "-5",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Serious",
+                                                                                  "Speaks2",
+                                                                                  "You didn't think it'd-!?!",
+                                                                                  "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",  "ChangeImageLayer", "Glasses", "1", "GlassesShine",
+                                                                                  "Speaks2",
+                                                                                  "No, I suppose you {i}didn't{/i} think, did you.",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Thinking",
+                                                                                  "She lets out a {i}very{/i} frustrated sigh.",
+                                                                                  "GetEventAndIfChoice", "'Bon Bon Bun'", "18", "BANNED", "YellyAtYouForGettingBanned ScaryTransition",
+                                                                                  "JumpToScene", "BigDealOut"
+                                                                            ]
+                                                              },
+                                                                    {
+                                                                        "NameOfScene": "BigDealOut",
+                                                                        "theScene": [
+                                                                                        "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "RightArm", "1", "ArmRDown",  "ChangeImageLayer", "Glasses", "1", "Glasses",
+                                                                                        "Speaks2",
+                                                                                        "But, this is... {i}fine.{/i} ...Not really. But provided you don't mess up more like this the mission should be able to proceed... {i}Probably{/i}...",
+                                                                                        "ChangeImageLayer", "Expression", "1", "Base",  "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",  "ChangeImageLayer", "Glasses", "1", "Glasses",
+                                                                                        "JumpToScene", "PostEllyTruthScene"
+                                                                                  ]
+                                                                    },
+                                                    {
+                                                        "NameOfScene": "PostEllyTruthScene",
+                                                        "theScene": [
+                                                                        "IfChoice", "3", "", "FirstTimeVeneficaReturnFuckUpTransition",
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",   "ChangeImageLayer", "LeftArm", "1", "ArmLBook",
+                                                                        "Elly then trudges back to her table without another word, and seats herself back down with a frown, opening her book to it's prior page.",
+                                                                        "ChangeImageLayer", "Expression", "1", "BookLook",
+                                                                        "Speaks2",
+                                                                        "I hope you at {i}least{/i} found out something more about her operation?",
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "You step over to her table as she takes a moment to look at you expectantly.",
+                                                                        "JumpToNPCEventThenScene", "Head over to Elly's table.", "VisitMenu"
+                                                                  ]
+                                                    },
+                                                          {
+                                                              "NameOfScene": "FirstTimeVeneficaReturnFuckUpTransition",
+                                                              "theScene": [
+                                                                              "Speaks2",
+                                                                              "But putting aside your... mishap.",
+                                                                              "JumpToScene", "PlayFirstVeneficaReturnScene"
+                                                                        ]
+                                                          },
+
+
+                                            {
+                                                "NameOfScene": "YellyAtYouForGettingBanned",
+                                                "theScene": [
+                                                                "GetEventAndIfChoice", "'Bon Bon Bun'", "18", "BANNED", "YellyAtYouForGettingBannedScene",
+                                                                "IfChoice", "3", "", "FirstTimeVeneficaReturn",
+                                                                "JumpToScene", "ClosedIntro"
+                                                          ]
+                                            },
+                                                    {
+                                                        "NameOfScene": "YellyAtYouForGettingBannedScene",
+                                                        "theScene": [   "ChangeImageLayer", "Expression", "1", "Serious", "ChangeImageLayer", "LeftArm", "1", "ArmLDown",
+                                                                        "You go to enter the guild, and there's a small magical ping as you approach, leaving the door unlocked, letting you inside the vacant, candle and moon lit hall. Elly, who was sitting at her usual table, slams her book closed upon your entry and storms over to you with a deadly glare of thinly veiled anger.",
+                                                                        "ChangeImageLayer", "Expression", "1", "SpazYell", "ChangeImageLayer", "RightArm", "1", "ArmRDown", "ChangeImageLayer", "Glasses", "1", "GlassesShine",
+                                                                        "Speaks2",
+                                                                        "{i}You got BANNED from the store?!?!{/i}",
+                                                                        "JumpToScene", "YellyAtYouForGettingBannedSceneMain"
+                                                                  ]
+                                                    },
+                                                    {
+                                                        "NameOfScene": "YellyAtYouForGettingBannedSceneMain",
+                                                        "theScene": ["ChangeImageLayer", "Expression", "1", "Serious", "ChangeImageLayer", "Glasses", "1", "Glasses",
+                                                                      "SetChoice", "5", "YouGotBanned",
+                                                                        "GetEventAndChangeProgress", "Head over to Elly's table.", "-25",
+                                                                        "Speaks2",
+                                                                        "I mean, you {i}DO{/i} realize the entire mission {i}hinges{/i} on being, you know, {i}NOT banned{/i} from the confectionary?!",
+                                                                        "Speaks2",
+                                                                        "There are absolutely {i}no{/i} valid excuses for this!",
+                                                                        "ChangeImageLayer", "Expression", "1", "Awkward",
+                                                                        "Speaks2",
+                                                                        "I mean... Honestly, I thought I could trust you with this...",
+                                                                        "ChangeImageLayer", "Expression", "1", "Serious",
+                                                                        "She lets out an exasperated and angry sigh, her gaze focusing on you.",
+                                                                        "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",
+                                                                        "Speaks2",
+                                                                        "You're {i}lucky{/i} I have plenty of experience dealing with these kinds of problems... I talked with Venefica, and it {i}is{/i} possible to get you unbanned from the store... By paying 50000 eros.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Awkward", "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                                        "Speaks2",
+                                                                        "Now, I can't exactly afford that.",
+                                                                        "ChangeImageLayer", "Expression", "1", "SpazYell",
+                                                                        "Speaks2",
+                                                                        "And {i}you're{/i} the one who messed this up!",
+                                                                        "She takes a calming breath to recompose herself.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Serious",
+                                                                        "Speaks2",
+                                                                        "So before we can properly continue this investigation, you're going to have to find the eros for a renewed membership. Let me know when you can afford to get this mission back on track.",
+
+                                                                        "IfChoice", "3", "", "FirstTimeVeneficaReturnBannedIntro",
+
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",  "ChangeImageLayer", "LeftArm", "1", "ArmLBook",
+                                                                        "Elly then trudges back to her table without another word, and seats herself back down with a frown, opening her book to it's prior page.",
+                                                                        "ChangeImageLayer", "Expression", "1", "BookLook",
+                                                                        "Speaks2",
+                                                                        "Despite this absolute catastrophe, I hope you at {i}least{/i} found out something more about her operation? {i}Anything?{/i}",
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "You step over to her table as she takes a moment to look at you exhausted, but very expectant.",
+                                                                        "JumpToNPCEventThenScene", "Head over to Elly's table.", "VisitMenu"
+                                                                  ]
+                                                    },
+                                                            {
+                                                                "NameOfScene": "FirstTimeVeneficaReturnBannedIntro",
+                                                                "theScene": [   "She lets out another frustrated sigh.",
+                                                                                "Speaks2",
+                                                                                "But putting aside this absolute catastrophe, you must have learned at least a {i}little{/i} bit about her...",
+                                                                                "JumpToScene", "PlayFirstVeneficaReturnScene"
+                                                                          ]
+                                                            },
+
+
+
+                                            {
+                                                "NameOfScene": "FirstTimeVeneficaReturn",
+                                                "theScene": [
+                                                                "GetEventAndIfChoice", "'Bon Bon Bun'", "1", "IntroDone", "PlayFirstVeneficaReturn",
+                                                                "JumpToScene", "ClosedIntro"
+                                                          ]
+                                            },
+                                                    {
+                                                        "NameOfScene": "PlayFirstVeneficaReturn",
+                                                        "theScene": [
+                                                                        "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "LeftArm", "1", "ArmLDown",
+                                                                        "You go to enter the guild, and there's a small magical ping as you approach, leaving the door unlocked, letting you inside the vacant, candle and moon lit hall. Elly, who was sitting at her usual table, gently closes her book upon your entry, sets it down, and walks over to you with a calculating look.",
+                                                                        "JumpToScene", "PlayFirstVeneficaReturnScene"
+                                                                  ]
+                                                    },
+                                                    {
+                                                        "NameOfScene": "PlayFirstVeneficaReturnScene",
+                                                        "theScene": [   "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",
+                                                                        "SetChoice", "3", "BackFromVene",
+                                                                        "Speaks2",
+                                                                        "So, what did you think of her? Of Venefica I mean.",
+                                                                        "Menu",
+                                                                          "I think I'm in love...",
+                                                                          "She's really sweet and adorable.",
+                                                                          "Have you {i}seen{/i} the size of her tits!?",
+                                                                          "She's really cold, and mean.",
+                                                                          "She's not my type.",
+                                                                          "She's really hard to get a read on...",
+                                                                        "EndLoop"
+                                                                  ]
+                                                    },
+                                                            {
+                                                                "NameOfScene": "I think I'm in love...",
+                                                                "theScene": [   "GetEventAndChangeProgress", "Head over to Elly's table.", "-5",
+                                                                                "ChangeImageLayer", "Expression", "1", "SpazYell", "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                                                "Elly sputters at you in exasperation before responding properly.",
+                                                                                "Speaks2",
+                                                                                "{i}[ThePlayerName]!{/i} She could be a {i}threat{/i} to the very world! {i}Don't fall for her wiles so easily!{/i}",
+                                                                                "ChangeImageLayer", "Expression", "1", "Awkward","ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",
+                                                                                "She lets out an {i}exasperated{/i} sigh.",
+                                                                                "Speaks2",
+                                                                                "{i}Seriously,{/i} I need you thinking {i}clearly{/i} for this mission. Use your {i}brain{/i}, not your heart or dick.",
+                                                                                "JumpToScene", "PlayFirstVeneficaReturnScene2"
+                                                                          ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "She's really sweet and adorable.",
+                                                                "theScene": [
+                                                                                "ChangeImageLayer", "Expression", "1", "Serious", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",
+                                                                                "Elly gives you a very concerned look.",
+                                                                                "Speaks2",
+                                                                                "...A-Are you {i}sure{/i} you went to the right candy store?",
+                                                                                "ChangeImageLayer", "Expression", "1", "Awkward",
+                                                                                "She looks away and continues to adjust her glasses.",
+                                                                                "Speaks2",
+                                                                                "N-No that's not possible, there's only {i}one{/i} candy store in the forest... D-Did she perhaps put an enchantment over you? No that's unlikely...",
+                                                                                "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                                                "Speaks2",
+                                                                                "We must have {i}very{/i} different views on what 'cute' is, [ThePlayerName]. Please don't let this perceived 'cuteness' interfere with the mission.",
+                                                                                "JumpToScene", "PlayFirstVeneficaReturnScene2"
+                                                                          ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "Have you {i}seen{/i} the size of her tits!?",
+                                                                "theScene": [   "GetEventAndChangeProgress", "Head over to Elly's table.", "-5",
+                                                                                "ChangeImageLayer", "Expression", "1", "Serious", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",
+                                                                                "One of Elly's eyes twitches with agitation.",
+                                                                                "Speaks2",
+                                                                                "Yes [ThePlayerName]. {i}Yes I have.{/i}",
+                                                                                "ChangeImageLayer", "Expression", "1", "Thinking",
+                                                                                "She lets out an {i}exasperated{/i} sigh.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Serious", "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                                                "Speaks2",
+                                                                                "I do hope you were {i}actually{/i} keeping an eye out for anything suspicious, and weren't {i}staring{/i} at her chest the entire time.",
+                                                                                "There's a hint of agitated disappointment in her voice.",
+                                                                                "JumpToScene", "PlayFirstVeneficaReturnScene2"
+                                                                          ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "She's really cold, and mean.",
+                                                                "theScene": [   "GetEventAndChangeProgress", "Head over to Elly's table.", "3",
+                                                                                "ChangeImageLayer", "Expression", "1", "Thinking", "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                                                "Elly gives you a solemn nod.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Base",
+                                                                                "Speaks2",
+                                                                                "She indeed has a very calculating, business like method to her. Be sure not to drop your guard, she's even more ruthless than she appears.",
+                                                                                "JumpToScene", "PlayFirstVeneficaReturnScene2"
+                                                                          ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "She's not my type.",
+                                                                "theScene": [   "GetEventAndChangeProgress", "Head over to Elly's table.", "-3",
+                                                                                "ChangeImageLayer", "Expression", "1", "SpazYell", "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                                                "Speaks2",
+                                                                                "I didn't send you there to try and pick her up for a {i}date{/i} [ThePlayerName]!",
+                                                                                "ChangeImageLayer", "Expression", "1", "Thinking",
+                                                                                "She lets out an {i}exasperated{/i} sigh.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Serious",
+                                                                                "Speaks2",
+                                                                                "You need to take this assignment seriously!",
+                                                                                "JumpToScene", "PlayFirstVeneficaReturnScene2"
+                                                                          ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "She's really hard to get a read on...",
+                                                                "theScene": [   "GetEventAndChangeProgress", "Head over to Elly's table.", "3",
+                                                                                "ChangeImageLayer", "Expression", "1", "Thinking", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",
+                                                                                "Elly gives you a thoughtful nod.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Base",
+                                                                                "Speaks2",
+                                                                                "Yes, indeed, it's very hard to tell what kind of machinations might be going on inside that witch's head. Which is why I find her activities so suspect.",
+                                                                                "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                                                "She lets out an worried sigh.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Thinking",
+                                                                                "Speaks2",
+                                                                                "I do hope I'm worrying over nothing though...",
+                                                                                "JumpToScene", "PlayFirstVeneficaReturnScene2"
+                                                                          ]
+                                                            },
+
+                                                    {
+                                                        "NameOfScene": "PlayFirstVeneficaReturnScene2",
+                                                        "theScene": [   "ChangeImageLayer", "Expression", "1", "Serious", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",
+                                                                        "There's a slight pause before Elly speaks again, adjusting her glasses with an intense gaze.",
+                                                                        "Speaks2",
+                                                                        "But I suppose I should have been a bit more specific with the meaning of my question. I meant does she seem suspect of any wrong doings to you? Not your inclination towards her.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Awkward", "ChangeImageLayer", "Glasses", "1", "Glasses",
+                                                                        "Speaks2",
+                                                                        "I-I knew what I meant in my head when I asked it before, apologies for being unclear. I got ahead of myself.",
+                                                                        "Menu",
+                                                                            "I think you're worrying about nothing. It's just a candy shop.",
+                                                                            "RequiresChoiceFromEvent", "'Bon Bon Bun'", "2", "Sampler",
+                                                                            "Well she does have really erotic magic candy... So I'm not sure.",
+                                                                            "She's definitely up to something...",
+                                                                            "Are you sure you're not just trying to learn her magical secrets or something?",
+                                                                        "EndLoop"
+                                                                  ]
+                                                    },
+                                                            {
+                                                                "NameOfScene": "I think you're worrying about nothing. It's just a candy shop.",
+                                                                "theScene": [
+                                                                                "ChangeImageLayer", "Expression", "1", "Thinking", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",
+                                                                                "Elly sighs deeply, taking a moment to think.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Awkward",
+                                                                                "Speaks2",
+                                                                                "I hope you're right...",
+                                                                                "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                                                "Speaks2",
+                                                                                "But this won't dissuade my suspicions. I want you to gather as much intel as you can on her operation. Just in case.",
+                                                                                "JumpToScene", "PlayFirstVeneficaReturnScenePost"
+                                                                          ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "Well she does have really erotic magic candy... So I'm not sure.",
+                                                                "theScene": ["GetEventAndChangeProgress", "Head over to Elly's table.", "2",
+                                                                                "ChangeImageLayer", "Expression", "1", "Serious", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",
+                                                                                "Speaks2",
+                                                                                "I did hear a {i}few{/i} snippets about those. But she refused to sell me any. I'm quite certain she's using dangerous practices to make these, not to mention the potential effects they could have.",
+                                                                                "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                                                "Speaks2",
+                                                                                "But... I'll need you to explain those erotically inclined candies in further detail later. As well as acquire me a few samples...",
+                                                                                "JumpToScene", "PlayFirstVeneficaReturnScenePost"
+                                                                          ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "She's definitely up to something...",
+                                                                "theScene": [ "GetEventAndChangeProgress", "Head over to Elly's table.", "3",
+                                                                                "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",  "ChangeImageLayer", "Glasses", "1", "GlassesShine",
+                                                                                "Speaks2",
+                                                                                "I'm glad you share my suspicions [ThePlayerName]. With both of us fully vigilant on this task, we should be able to figure out if there's anything amiss with Venefica's 'confectionary.'",
+                                                                                "ChangeImageLayer", "Expression", "1", "Awkward", "ChangeImageLayer", "RightArm", "1", "ArmRDown", "ChangeImageLayer", "Glasses", "1", "Glasses",
+                                                                                "Speaks2",
+                                                                                "I really hope there isn't. But I want to be very sure.",
+                                                                                "JumpToScene", "PlayFirstVeneficaReturnScenePost"
+                                                                          ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "Are you sure you're not just trying to learn her magical secrets or something?",
+                                                                "theScene": [ "GetEventAndChangeProgress", "Head over to Elly's table.", "-5",
+                                                                                "ChangeImageLayer", "Expression", "1", "SpazYell", "ChangeImageLayer", "RightArm", "1", "ArmRDown",  "ChangeImageLayer", "Glasses", "1", "Glasses",
+                                                                                "Elly is left sputtering in indignation and anger for a moment before she can collect herself.",
+                                                                                "Speaks2",
+                                                                                "Pf- Wh- I- that- {i}How dare you!{/i}",
+                                                                                "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",
+                                                                                "Speaks2",
+                                                                                "I am {i}not{/i} a witch! Nor do I have any inclination to become one! I have absolutely {i}zero{/i} interest in learning whatever dark magic she knows. Or even any of her {i}not{/i} dark magic!",
+                                                                                "ChangeImageLayer", "Expression", "1", "Serious", "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                                                "Elly lets out a calming breath and fixes you with an even, serious glare.",
+                                                                                "Speaks2",
+                                                                                "I just wish to ensure the town's safety. Perhaps even the {i}worlds{/i} safety. Depending on her intentions.",
+                                                                                "JumpToScene", "PlayFirstVeneficaReturnScenePost"
+                                                                          ]
+                                                            },
+                                                    {
+                                                        "NameOfScene": "PlayFirstVeneficaReturnScenePost",
+                                                        "theScene": [
+                                                                        "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "RightArm", "1", "ArmRDown",  "ChangeImageLayer", "Glasses", "1", "Glasses",
+                                                                        "Speaks2",
+                                                                        "But moving along. I'm sure by now you've realized why I didn't give you any details on Venefica before meeting her, as to make your reaction more natural.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Serious", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",  "ChangeImageLayer", "Glasses", "1", "GlassesShine",
+                                                                        "Speaks2",
+                                                                        "I mean, she is {i}the{/i} Venefica.",
+                                                                        "PlayerSpeaks",
+                                                                        "Uh...",
+                                                                        "ChangeImageLayer", "RightArm", "1", "ArmRDown",  "ChangeImageLayer", "Glasses", "1", "Glasses",
+                                                                        "Speaks2",
+                                                                        "Venefica. {i}The{/i} Venefica... {i}The{/i} Demon Lagomorph? ...The Demise of Fortune? ...{i}The Witch of Calamity?!{/i}",
+                                                                        "You think you distantly recall a story book you read long ago but not much else is ringing any bells. This leaves Elly sputtering in frustration.",
+                                                                        "ChangeImageLayer", "Expression", "1", "SpazYell",
+                                                                        "Speaks2",
+                                                                        "Wha- {i}She's Venefica, The Queen of Witches! Leader of Umbral Coven?! {b}How do you not know that!?{/b}{/i}",
+                                                                        "Well, the Umbral Coven sounds familiar. But you're pretty sure you've never really heard of Venefica before. Elly lets out a few noises of exasperation before composing herself.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Awkward", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",
+                                                                        "Speaks2",
+                                                                        "W- Buh- She's the most powerful witch ever known! I mean- Sure she's not had any recorded activity in over two hundred years- But you should still know abou-",
+                                                                        "ChangeImageLayer", "Expression", "1", "SpazYell", "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                                        "Speaks2",
+                                                                        "Hold on! You're from {i}Adventum!{/i} You can't seriously tell me they didn't teach you the history of witches and dark magic! For self protection reasons!",
+                                                                        "PlayerSpeaks",
+                                                                        "I... Don't think that was a course? We did have a lot of other history and magic courses though.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Awkward", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush",
+                                                                        "Speaks2",
+                                                                        "Wh- But- They got rid of my favorite course...?",
+                                                                        "PlayerSpeaks",
+                                                                        "You know, I think I remember one of the teachers mentioning that course getting removed many years prior? ...Something about an unauthorized experiment using dark magic gone over in the course that went badly? Like, {i}really{/i} badly?",
+                                                                        "ChangeImageLayer", "Expression", "1", "SpazYell", "ChangeImageLayer", "RightArm", "1", "ArmRDown",
+                                                                        "Elly coughs and sputters erratically, taking a moment to collect herself.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Awkward",
+                                                                        "Speaks2",
+                                                                        "I-I see! That's... Really unfortunate...",
+                                                                        "ChangeImageLayer", "Expression", "1", "Serious", "ChangeImageLayer", "RightArm", "1", "ArmRGlassesPush", "ChangeImageLayer", "Glasses", "1", "GlassesShine",
+                                                                        "Speaks2",
+                                                                        "W-Well, putting all that aside. I hope you now understand why I'm so concerned about Venefica's proximity to the town.",
+                                                                        "ChangeImageLayer", "RightArm", "1", "ArmRDown", "ChangeImageLayer", "Glasses", "1", "Glasses",
+                                                                        "ChangeImageLayer", "Expression", "1", "Thinking",
+                                                                        "Speaks2",
+                                                                        "Before we continue talking about that though, I think I need to sit down.",
+                                                                         "ChangeImageLayer", "LeftArm", "1", "ArmLBook",   "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Elly then walks back to her table without another word, taking a moment mid step to adjust her glasses before seating herself back down with a calm, thoughtful expression, opening her book to it's prior page.",
+                                                                        "ChangeImageLayer", "Expression", "1", "BookLook",
+                                                                        "Speaks2",
+                                                                        "So I'm going to guess you did find out a few details on her operation? Take your time to collect your thoughts before you tell me anything. I want all the details.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "You step over to her table as she takes a moment to look at you expectantly.",
+                                                                        "JumpToNPCEventThenScene", "Head over to Elly's table.", "VisitMenu"
+                                                                  ]
+                                                    },
+                                    {
+                                        "NameOfScene": "ClosedIntro",
+                                        "theScene": [
+                                                      "You go to enter the guild, and there's a small magical ping as you approach, leaving the door unlocked, letting you inside the vacant, candle and moon lit hall, the only other person here is Elly, who's sitting at her usual table.",
+                                                      "DisplayCharacters",
+                                                       "2",
+                                                      "EndLoop",
+                                                      "SwapLineIf", "Random",
+                                                        "She looks over at you and adjusts her glasses before giving you an idle wave, her gaze soon drifting back to her book.",
+                                                        "Elly sets her book aside as you get closer and picks up a new one, clearly she just finished it, but she gives you a wave with her free hand while she leans down to get the other book.",
+                                                        "She has her legs resting on the table as you get closer, but she clearly noted your entrance, and she slides them back under the table before adjusting her chair, never letting her eyes off her book.",
+                                                        "Elly seems to be glancing between a book she's reading and an artifact on her table. Intently studying its details before gently setting them aside at your approach.",
+                                                      "EndLoop",
+                                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                                      "Speaks2",
+                                                      "SwapLineIf", "OtherEventsProgress", "Head over to Elly's table.",
+                                                        "50", "|f|ChangeImageLayer|/|Expression|/|1|/|Happy|n|Good evening, [ThePlayerName].",
+                                                        "30", "|f|ChangeImageLayer|/|Expression|/|1|/|Base|n|Good evening, [ThePlayerName].",
+                                                        "10", "|f|ChangeImageLayer|/|Expression|/|1|/|Base|n|Ah, good evening, [ThePlayerName]... I hope this is important?",
+                                                        "0", "|f|ChangeImageLayer|/|Expression|/|1|/|BookLook|n|Hm? Oh, right, I forgot I allowed you in at night...",
+                                                      "EndLoop",
+                                                      "JumpToNPCEventThenScene", "Head over to Elly's table.", "PostIntroEvent"
+                                                  ]
+                                    },
+                            {
+                                "NameOfScene": "EventBRoke",
+                                "theScene": [ "EventBroke"
+                                          ]
+                            }
+                ]
+}

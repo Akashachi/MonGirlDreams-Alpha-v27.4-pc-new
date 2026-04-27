@@ -1,0 +1,1135 @@
+{
+  "name": "CerisCombatEvents",
+  "CardType": "",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [ ""],
+  "Speakers": [
+                {
+                  "name": "Ceris",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                }
+              ],
+  "EventText": [
+                  {
+                    "NameOfScene": "Intro",
+                    "theScene": [ "SetChoice", "6", "",
+                                  "CallSceneThenReturn", "MoonlitRemove",
+                                  "CallEventAndSceneThenReturn", "ShadowsTile", "ShadowRibbonCheck",
+                                  "CallSceneThenReturn", "GiveNursingSkills",
+                                  "Ceris prowls up to you with an amicable smile, but the glint in her burning eyes betrays her predatory sexual hunger!",
+                                  "IfProgressEqualsOrGreater", "1", "RampUpFight"
+                              ]
+                  },
+                          {
+                            "NameOfScene": "MoonlitRemove",
+                            "theScene": [
+                                          "IfInExploration", "Nothing",
+                                           "RemovePerkFromMonster", "Moonlit Allure",
+                                           "RemovePerkFromMonster", "Moonlit Glamour",
+                                           "RemovePerkFromMonster", "Moonlit Mystique"
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "RampUpFight",
+                            "theScene": [
+                                          "LevelUpMonster", "GoUpByProgress"
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "GiveNursingSkills",
+                            "theScene": [
+                                          "IfChoice", "5", "Milk", "MilkSkills",
+                                          "IfChoice", "5", "NoMilk", "NoMilkSkills"
+                                      ]
+                          },
+                                {
+                                  "NameOfScene": "MilkSkills",
+                                  "theScene": ["GiveSkillToMonster", "Infernal Embrace",
+                                                "GiveSkillToMonster", "Infernal Coaxing",
+                                                "GiveSkillToMonster", "Infernal Milking",
+                                                "GiveSkillToMonster", "Hellish Lactation"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "NoMilkSkills",
+                                  "theScene": ["GiveSkillToMonster", "Infernal Embrace",
+                                                "GiveSkillToMonster", "Smothering Pawjob",
+                                                "GiveSkillToMonster", "Infernal Pillows",
+                                                "GiveSkillToMonster", "Hellish Pampering"
+                                            ]
+                                },
+
+
+                        {
+                          "NameOfScene": "UpdatePower",
+                          "theScene": [
+                                      "IfChoice", "6", "", "UpdatePower25",
+                                      "IfChoice", "6", "Turn2", "UpdatePower20",
+                                      "IfChoice", "6", "Turn3", "UpdatePower15",
+                                       "ChangeProgress", "10"
+                                    ]
+                        },
+                              {
+                                "NameOfScene": "UpdatePower25",
+                                "theScene": [
+                                             "ChangeProgress", "25"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "UpdatePower20",
+                                "theScene": [
+                                             "ChangeProgress", "20"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "UpdatePower15",
+                                "theScene": [
+                                             "ChangeProgress", "15"
+                                          ]
+                              },
+
+                        {
+                          "NameOfScene": "CountPowerTurns",
+                          "theScene": [
+                                        "IfChoice", "6", "Turn3", "Turn3",
+                                        "IfChoice", "6", "Turn2", "Turn2",
+                                        "IfChoice", "6", "", "Turn1"
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "Turn1",
+                                  "theScene": [
+                                              "SetChoice", "6", "Turn2"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "Turn2",
+                                  "theScene": [
+                                              "SetChoice", "6", "Turn3"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "Turn3",
+                                  "theScene": [
+                                              "SetChoice", "6", "Turn4"
+                                            ]
+                                },
+
+
+
+
+                  {
+                    "NameOfScene": "OverheatContactTimer",
+                    "theScene": [ "CallSceneThenReturn", "CountPowerTurns",
+                                  "IfMonsterHasStance",   "Any",   "OverheatContactTick",
+                                  "SetChoice", "3", ""
+                              ]
+                  },
+                        {
+                          "NameOfScene": "OverheatContactTick",
+                          "theScene": [
+                                          "IfHasPerk", "Overheat", "OverheatWorsen",
+                                          "IfChoice", "3", "Three", "ApplyAndReset",
+                                          "IfChoice", "3", "Two", "Tick3",
+                                          "IfChoice", "3", "One", "Tick2",
+                                          "SetChoice", "3", "One",
+                                          "You can feel the pulsing heat from Ceris' soft body slowly seeping into yours, filling you with melting, needy desire."
+                                    ]
+                        },
+                                  {
+                                    "NameOfScene": "ApplyAndReset",
+                                    "theScene": [
+                                                    "CallSceneThenReturn", "ApplyOverheat",
+                                                    "You moan loudly as the close contact with Ceris' plush yet powerful body gets to you, hot need rampaging through your entire waist, leaving your cock throbbing in excitement.",
+                                                    "SetChoice", "3", "One"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "Tick3",
+                                    "theScene": [
+                                                    "SetChoice", "3", "Three"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "Tick2",
+                                    "theScene": [
+                                                    "SetChoice", "3", "Two"
+                                              ]
+                                  },
+
+                                  {
+                                    "NameOfScene": "OverheatWorsen",
+                                    "theScene": [
+                                                    "IfChoice", "3", "One", "TickHeat",
+                                                    "SetChoice", "3", "One",
+                                                    "The longer you're in contact with Ceris' body, the worse the throbbing warmth in your groin gets..."
+                                              ]
+                                  },
+                                        {
+                                          "NameOfScene": "TickHeat",
+                                          "theScene": [
+                                                        "ChangePerkDuration", "Overheat", "4"
+                                                    ]
+                                        },
+
+
+
+                  {
+                    "NameOfScene": "Nothing",
+                    "theScene": [
+                              ]
+                  },
+                  {
+                    "NameOfScene": "ApplyOverheat",
+                    "theScene": [ "IfHasPerk", "Overheat", "OverheatIncrease",
+                                  "GivePerkQuietly", "Overheat"
+                              ]
+                  },
+                        {
+                          "NameOfScene": "OverheatIncrease",
+                          "theScene": [ "ChangePerkDuration", "Overheat", "4"
+                                    ]
+                        },
+
+
+
+                  {
+                    "NameOfScene": "HeadpatReact",
+                    "theScene": [
+                                  "IfChoice", "4", "Patted", "PatReactAlt",
+                                  "SetChoice", "4", "Patted",
+                                  "ChangeImageLayer", "Expression", "Confused",
+                                  "Once you're done rubbing her head between her fluffy ears, Ceris stares at you in bafflement for a few moments.",
+                                  "FocusedSpeaks",
+                                  "...Huh...",
+                                  "ChangeImageLayer", "Expression", "Happy",
+                                  "FocusedSpeaks",
+                                  "That was actually kind of nice!♪",
+                                  "ChangeImageLayer", "Expression", "Sigh",
+                                  "ApplyStatusEffectToMonster", "Spank",
+                                  "FocusedSpeaks",
+                                  "Hmmm...♪ I actually just want to curl up and cuddle, now...",
+                                    "ChangeImageLayer", "Expression", "Caring",
+                                  "FocusedSpeaks",
+                                  "Feel free to run away if you want... {i}This{/i} time.♪"
+                              ]
+                  },
+                        {
+                          "NameOfScene": "PatReactAlt",
+                          "theScene": [
+                                        "ChangeImageLayer", "Expression", "Caring",
+                                        "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                          "You're so sweet.♪",
+                                          "Now I just wanna cuddle.♪",
+                                          "Hehe, should I rub your head too?♪",
+                                          "I'm not letting you off the hook for some headpats this time.♪",
+                                        "EndLoop"
+                                    ]
+                        },
+
+
+                {
+                    "NameOfScene": "SuckleCounter",
+                    "theScene": [
+                                  "IfMonsterHasStatusEffect", "Restrain", "Cant SuckleCounter",
+                                  "IfMonsterHasStatusEffect", "Sleep", "Cant SuckleCounter",
+                                  "IfMonsterHasStatusEffect", "Stun", "Cant SuckleCounter",
+                                  "IfChoice", "5", "Milk", "SuckleMilkDialogue",
+                                  "IfChoice", "5", "NoMilk", "SuckleDialogue",
+                                  "IfChoice", "5", "NoNursing", "AlreadyNursing",
+
+                                  "ChangeImageLayer", "Expression", "Horny",
+                                  "As you lick and suck on Ceris' pert nipple, she lets out a low growl of arousal, lovingly stroking the back of your head with a powerful claw.",
+                                  "ChangeImageLayer", "Expression", "Loving",
+                                  "FocusedSpeaks",
+                                  "Hey, [ThePlayerName], are you into drinking from lactating tits?♥",
+                                  "Menu",
+                                    "Yes-",
+                                    "No thanks-",
+                                  "EndLoop"
+                              ]
+                },
+                    {
+                        "NameOfScene": "No thanks-",
+                        "theScene": ["ChangeImageLayer", "Expression", "Happy",
+                                      "FocusedSpeaks",
+                                      "Haha, fine then, don't worry about it.♪",
+                                      "ApplyStance", "Nursing", "ChangeImageLayer", "Expression", "Pleasured",
+                                      "She says while pressing your face deeper into her soft teat, letting you easily lap at her stiff nipple, making her gasp and shiver with pleasure.",
+                                      "ChangeImageLayer", "Expression", "Horny",
+                                      "FocusedSpeaks",
+                                      "...But I'm not going to let you get away so easily.",
+                                      "SetChoice", "5", "NoMilk",
+                                      "GiveSkillToMonster", "Infernal Embrace",
+                                      "GiveSkillToMonster", "Smothering Pawjob",
+                                      "GiveSkillToMonster", "Infernal Pillows",
+                                      "GiveSkillToMonster", "Hellish Pampering"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Yes-",
+                        "theScene": ["ChangeImageLayer", "Expression", "LipLick",
+                                      "FocusedSpeaks",
+                                      "Wonderful.♥",
+                                      "ApplyStance", "Nursing", "ChangeImageLayer", "Expression", "Seductive", "ApplyStatusEffect", "HellMilk",
+                                      "While Ceris presses your face deeper into her soft teat, letting you easily lap at her stiff nipple, there's a sudden gush of warm, creamy milk that flows across your tongue, and as you thoughtlessly gulp it down, a hot, mind-numbing sensation fills your core...",
+                                      "ChangeImageLayer", "Expression", "Horny",
+                                      "FocusedSpeaks",
+                                      "Then I'll be sure to spoil you plenty.♥ Until {i}all{/i} you can think about is fucking me.♥",
+                                      "SetChoice", "5", "Milk",
+                                      "GiveSkillToMonster", "Infernal Embrace",
+                                      "GiveSkillToMonster", "Infernal Coaxing",
+                                      "GiveSkillToMonster", "Infernal Milking",
+                                      "GiveSkillToMonster", "Hellish Lactation"
+                                  ]
+                    },
+
+                    {
+                        "NameOfScene": "Cant SuckleCounter",
+                        "theScene": ["IfChoice", "5", "NoMilk", "Nothing",
+                                      "IfChoice", "5", "NoNursing", "Nothing",
+                                      "IfChoice", "5", "", "Nothing",
+                                      "ApplyStatusEffect", "HellMilk",
+                                      "With Ceris in no position to strike back, you get to greedily drink down more of her warm creamy milk, each gulp filling you with hot, throbbing desire."
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "SuckleDialogue",
+                        "theScene": ["IfMonsterHasStance", "Nursing", "AlreadyNursing",
+                                      "ApplyStance",   "Nursing",
+                                      "Using a powerful claw to press your face deeper into her soft teat while your tongue rolls around her stiff nipple, she lightly strokes the back of your head, gasping and shivering in pleasure.",
+                                      "ChangeImageLayer", "Expression", "Horny",
+                                      "FocusedSpeaks",
+                                      "SwapLineIf", "Random",
+                                        "I'm going to spoil you {i}so{/i} much.♥",
+                                        "Mmmmnn-♥ You know, my warmth is going to go straight to your head.♥",
+                                        "Hehe-♥ I'm going to pamper you silly-♥",
+                                        "Well, if you {i}want{/i} me to pamper you-♥",
+                                      "EndLoop"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "AlreadyNursing",
+                                "theScene": [
+                                              "ChangeImageLayer", "Expression", "Horny",
+                                              "FocusedSpeaks",
+                                              "SwapLineIf", "Random",
+                                                "Mnngg-♥ Keep at it.♥",
+                                                "Hahhh-♥ They're pretty sensitive, you know.♥",
+                                                "Mmmmnn-♥ I love the feeling of your tongue on my breasts-♥",
+                                                "Haaahhnn-♥ Y-You're making my head blank out-♥",
+                                                "This is so soothing-♥",
+                                                "I just wanna cuddle and pamper you now-♥",
+                                              "EndLoop"
+                                          ]
+                            },
+                    {
+                        "NameOfScene": "SuckleMilkDialogue",
+                        "theScene": [
+                                      "IfMonsterHasStance", "Nursing", "AlreadyNursingMilk",
+                                      "ApplyStance",   "Nursing",   "ApplyStatusEffect", "HellMilk", "ChangeImageLayer", "Expression", "LipLick",
+                                      "As Ceris uses a powerful claw to press your face deeper into her soft teat while your tongue rolls around her stiff nipple, there's a sudden gush of warm, creamy milk that flows across your tongue, a hot, mind-numbing sensation filling your core when you thoughtlessly gulp it down...",
+                                      "ChangeImageLayer", "Expression", "Horny",
+                                      "FocusedSpeaks",
+                                      "SwapLineIf", "Random",
+                                        "Hahh-♥ Drink all you want.♥",
+                                        "I'm going to spoil you so much.♥",
+                                        "Mmmmnn-♥ You know, if you drink too much,♥ you're going to end up a fuck-drunk pervert.♥",
+                                        "Hehe-♥ I'm going to pamper you silly-♥",
+                                      "EndLoop"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "AlreadyNursingMilk",
+                                "theScene": [
+                                              "ApplyStatusEffect", "HellMilk",
+                                              "ChangeImageLayer", "Expression", "LipLick",
+                                              "Suckling on Ceris' leaking teat, you greedily gulp down mouthfuls of her warm creamy milk, burying your face deeper into her soft flesh while your cock throbs with growing, molten-hot desire.",
+                                              "ChangeImageLayer", "Expression", "Horny",
+                                              "FocusedSpeaks",
+                                              "SwapLineIf", "Random",
+                                                "Mnngg-♥ Drink all you want.♥",
+                                                "Hahhh-♥ They're pretty sensitive, you know.♥",
+                                                "Mmmmnn-♥ I love this feeling-♥",
+                                                "Haaahhnn-♥ Y-You're making my head blank out-♥",
+                                                "This is so soothing-♥",
+                                                "I just wanna cuddle and pamper you now-♥",
+                                                "You must be thirsty.♥",
+                                              "EndLoop"
+                                          ]
+                            },
+
+                  {
+                      "NameOfScene": "NursingOrgasm",
+                      "theScene": [  "IfChoice", "5", "Milk", "NursingMilkOrgasm",
+                                    "ChangeImageLayer", "Expression", "Loving",
+                                    "SwapLineIf", "Random",
+                                      "As you suckle on Ceris' luscious breast, she lovingly strokes your throbbing cock with her powerful pawed hand, the unique texture only adding to the pleasure as your balls tense in excitement. Meekly, you keep lapping at her nipple, your mind blissfully fuzzy and empty, until with a muffled moan, your twitching cock spurts out a series of thick spurts for the hellhound woman who affectionately smiles down at you.[PlayerOrgasmLine]",
+                                      "You greedily lick and suck on Ceris' pert nipple, making her gasp and moan blissfully while your head blanks out with a warm lustful haze from the heat of her plush form, shivering with blossoming pleasure as she affectionately strokes the back of your head, until you let out a euphoric whimper and your spasming dick blows its messy load into the air.|n|With a satisfied groan, you slump into Ceris' curvy body, eager to just enjoy her comforting presence for a few moments.[PlayerOrgasmLine]",
+                                   "EndLoop"
+                                ]
+                  },
+                          {
+                              "NameOfScene": "NursingMilkOrgasm",
+                              "theScene": [ "ChangeImageLayer", "Expression", "Loving",
+                                            "SwapLineIf", "Random",
+                                            "As you suckle on Ceris' luscious breast, gulping down mouthfuls of her warm milk, she lovingly strokes your throbbing cock with her powerful pawed hand, the unique texture only adding to the pleasure as you balls tense in excitement. Meekly, you keep lapping at her leaking nipple, your mind blissfully fuzzy and empty, until with a muffled moan, your twitching cock spurts out a series of thick spurts for the hellhound woman who affectionately smiles down at you.[PlayerOrgasmLine]",
+                                            "You greedily lick and suck on Ceris' pert nipple, drinking as much of her warm milk as you can, making her gasp and moan blissfully while your head blanks out with a warm lustful haze that drifts through your body, shivering with blossoming pleasure as she affectionately strokes the back of your head and you suckle her teat to your heart's content, until you let out a euphoric whimper and your spasming dick blows its messy load into the air.|n|With a satisfied groan you slump into Ceris' curvy body, eager to just enjoy her comforting presence  for a few moments.[PlayerOrgasmLine]",
+                                          "EndLoop"
+                                        ]
+                          },
+
+
+
+                  {
+                    "NameOfScene": "HellishTemptation",
+                    "theScene": [
+                                "RemoveSkillFromMonster", "Hellish Temptation",
+                                "GiveSkillToMonster", "Hellish Surge",
+                                "HitPlayerWith", "Sexual Tempt",
+                                  "SetPostName", " - Hellish Temptation",
+                                  "ChangeImageLayer", "Expression", "Seductive",
+                                "FocusedSpeaksSkill",
+                                "Ceris turns around and bends over, tugging down her tight hotpants with a claw, revealing her drenched slit and plump ass. Purring lustfully, she lazily sways her womanly hips back and forth in tempting shakes, her large fluffy tail pointing up as it swishes along with her movements while a warm, erotic scent subtly fills the air.[DamageToPlayer]",
+                                "FocusedSpeaks",
+                                "SwapLineIf", "Random",
+                                  "Want to try fucking a hellhound into submission?♥",
+                                  "Am I getting you all hot and bothered?♥",
+                                  "Stick it in already. I know you want to.♥",
+                                  "I'm all yours, [ThePlayerName].♥",
+                                  "Come on, I'll go easy on you.♥",
+                                  "Mmmm,♥ I'm aching for you so bad.♥",
+                                "EndLoop",
+                                "SetPostName", "",
+                                "Menu",
+                                  "Ignore the temptation!",
+                                  "Fuck her!",
+                                "EndLoop"
+                              ]
+                  },
+                      {
+                        "NameOfScene": "Fuck her!",
+                        "theScene": [
+                                    "JumpToScene", "HellishTemptFail"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Ignore the temptation!",
+                        "theScene": [ "You try to ignore Ceris' seductively swaying hips, but the warm scent in the air mixed with throbbing heat in your groin leaves your decision-making increasingly flawed, a bubbling need to fuck her threatening to overtake you.",
+                                      "StatCheck",
+                                      "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "1",
+                                      "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "1",
+                                      "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "1",
+                                      "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "2",
+                                      "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                      "ChangeStatCheckDifficulty", "IfHasPerk", "Overheat", "10",
+                                      "Temptation",
+                                      "10",
+                                      "HellishTemptPass",
+                                      "Fail",
+                                      "HellishTemptFail"
+                                  ]
+                      },
+                          {
+                            "NameOfScene": "HellishTemptPass",
+                            "theScene": [  "ChangeImageLayer", "Expression", "Smug",
+                                        "You shake off the urge to go to town on the naughty woman and she sighs in mild disappointment, standing back up while she casually fixes her clothes, turning to face you again with a confident smirk."
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "HellishTemptFail",
+                            "theScene": ["HitPlayerWith", "Insert",
+                                        "ChangeImageLayer", "Expression", "LipLick",
+                                        "With your cock throbbing with excitement, the warm, sexual scent clouding your thoughts, and Ceris' tempting offer right in front of you, you stride forward without a second thought and grab her wide hips, thrusting into her drenched slit in a single stroke, both of you gasping out in shared pleasure.[DamageToPlayer]",
+                                        "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                          "Mmmm!♥ Now fuck me like you mean it.♥",
+                                          "Come on,♥ stir me up.♥",
+                                          "Ohhh-♥ Now don't hold back.♥ Go wild.♥",
+                                          "That's it,♥ fuck me like an animal.♥",
+                                          "Mpphh,♥ you can go slow if you want.♥",
+                                        "EndLoop",
+                                        "HitPlayerWith", "Infernal Grind",
+                                        "ChangeImageLayer", "Expression", "Pleasured",
+                                        "As you squeeze her plump ass with your fingers and start to swing your hips eagerly, warm radiating heat spreads through your entire waist, Ceris' fluffy tail brushing your chest softly in an affectionate caress.[DamageToPlayer]",
+                                        "JumpToScene", "HellishTemptSex"
+                                      ]
+                          },
+
+                      {
+                        "NameOfScene": "HellishTemptSex",
+                        "theScene": ["HitPlayerWith", "Infernal Grind",
+                                    "ChangeImageLayer", "Expression", "Pleasured",
+                                    "SwapLineIf", "Random",
+                                      "Ceris gyrates her waist in between your thrusts, rubbing her plump ass back and forth against your hips, varying the sensations each time you hilt yourself inside her, leaving you shivering in bliss from the feeling of each cushioned, jiggly meeting of your hips. Throwing you a sultry backwards gaze, she brushes her tail against your side teasingly and encouragingly.[DamageToPlayer]",
+                                      "You lift up one of Ceris' legs while you fuck her relentlessly, your other arm wrapped around her soft tail. Gasping out in pleasure as you strike her deepest parts with your manhood, the sultry woman carefully maintains her balance on one clawed foot, her pussy excitedly squeezing down around your girth.[DamageToPlayer]",
+                                      "Ceris swings her hips in time with your wanton thrusts, sending ricocheting melty pleasure radiating through your waist with each cushioned impact, spurring you to just keep pounding her, pulses of hot pleasure radiating deep into your core while she looks back at you with loving, hungry eyes.[DamageToPlayer]",
+                                      "You lean over Ceris amid your eager thrusting, indulging in her hot, tightly muscled pussy while you grope her heavy tits from behind, losing yourself in the soft pillowy feeling of her sinfully plush body while more molten heat builds in your loins with each deep thrust of your rigid dick into her.[DamageToPlayer]",
+                                    "EndLoop",
+                                    "IfPlayerOrgasm", "HellishTemptOrgasm",
+                                    "FocusedSpeaks",
+                                    "SwapLineIf", "Random",
+                                      "Don't stop!♥",
+                                      "More-!♥",
+                                      "You can do it.♥",
+                                      "Mmmm-♥ Your dick is so excited-♥",
+                                      "Come on-♥ I want more-♥",
+                                    "EndLoop",
+                                    "JumpToScene", "HellishTemptSexMenu"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "HellishTemptOrgasm",
+                              "theScene": ["ChangeImageLayer", "Expression", "LipLick",
+                                          "PlayerOrgasm", "1",
+                                          "SwapLineIf", "Random",
+                                            "You cry out in pleasure as your length strikes deep into the hellhound woman's powerfully squeezing pussy, Ceris letting out a pleasured growl and affectionately wiggling her wide hips against you, milking out a thick load of seed from your throbbing cock as the melty-hot pleasure in your waist erupts in a trembling explosion of bliss.",
+                                            "Wantonly swinging your hips, you gasp and moan in pleasure, dominantly leveraging your hold on the large hellhound woman and fiercely fucking her even as melty-hot pleasure swells up in your loins, making your sight go white with bliss. With a wet, final meeting of your hips, you unload thick ropes of seed into Ceris' womb, shivering and gasping as you keep weakly thrusting all through your mind-blanking climax.",
+                                            "Your entire body tenses up as you approach your limit, making Ceris grin with lustful excitement as she roughly slams her hips back into yours from her submissive position, the intense stimulation leaving you moaning out incoherently as you blow your load inside her. The insatiable woman doesn't give you a moment's rest, continually fucking your achingly erect manhood even as you twitch and cry out from the intense overstimulation.",
+                                            "Panting and gasping in pleasure, you eagerly knead and squeeze Ceris' pillowy breasts while you thoughtlessly fuck her like an animal, your thoughts a pleasure-soaked haze as you indulgently bask in the squeezing heat of her pussy, slamming your hips together until you finally cry out in climactic bliss, pouring a thick load of seed into her.",
+                                          "EndLoop",
+                                          "IfPlayerSpiritGone", "SexEndLoss",
+                                          "CallSceneThenReturn", "OverheatedCharm",
+                                          "CallSceneThenReturn", "ApplyOverheat",
+                                          "ChangeImageLayer", "Expression", "Pleasured",
+                                          "Even as your climax subsides, you can still feel an aching heat radiating within your waist, your rigid length twitching with the unabated need to fuck more and more, Ceris' squeezing pussy coaxing you to keep thrusting.",
+                                          "FocusedSpeaks",
+                                          "SwapLineIf", "Random",
+                                            "Mmmm,♥ you're not done yet, right?♥",
+                                            "Don't stop now.♥",
+                                            "Come on,♥ keep thrusting.♥",
+                                            "I want {i}more.♥{/i}",
+                                            "Hahhh,♥ you're making me feel so hot inside.♥",
+                                          "EndLoop",
+                                          "JumpToScene", "HellishTemptSexMenu"
+                                        ]
+                            },
+                                    {
+                                      "NameOfScene": "OverheatedCharm",
+                                      "theScene": [
+                                                    "IfHasPerk", "Overheat", "ApplyCharm"
+                                                ]
+                                    },
+                                            {
+                                              "NameOfScene": "ApplyCharm",
+                                              "theScene": [
+                                                            "ApplyStatusEffect", "Charm"
+                                                        ]
+                                            },
+                            {
+                              "NameOfScene": "SexEndLoss",
+                              "theScene": [  "ChangeImageLayer", "Expression", "Seductive",
+                                            "You crumple on top of Ceris, gasping heavily from sex-crazed exertion, your achingly hard cock throbbing inside her drooling pussy as she firmly milks out another thick load from your aching balls.",
+                                              "ChangeImageLayer", "Expression", "LipLick",
+                                            "She laughs playfully and lightly shunts you off her, laying you out on the floor while she stands over you with a hungry lick of her lips.",
+                                            "FocusedSpeaks",
+                                            "My turn.♥"
+                                        ]
+                            },
+                      {
+                        "NameOfScene": "HellishTemptSexMenu",
+                        "theScene": [
+                                    "Menu",
+                                      "Keep fucking her!",
+                                      "Pull out!",
+                                    "EndLoop"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "Keep fucking her!",
+                              "theScene": [
+                                          "JumpToScene", "HellishTemptSex"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Pull out!",
+                              "theScene": [ "You try to snap out of the enflamed sexual trance you have sunk into, struggling to ignore the raging heat in your groin telling you keep thrusting and fucking, and gritting your teeth as you attempt to pull away from Ceris' tempting, molten-hot pussy.",
+                                            "StatCheck",
+                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "1",
+                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "1",
+                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "1",
+                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "2",
+                                            "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                            "ChangeStatCheckDifficulty", "IfHasPerk", "Overheat", "5",
+                                            "Temptation",
+                                            "15",
+                                            "HellishTemptPass2",
+                                            "Fail",
+                                            "HellishTemptSex"
+                                        ]
+                            },
+                                {
+                                  "NameOfScene": "HellishTemptPass2",
+                                  "theScene": [  "ChangeImageLayer", "Expression", "SmugKnowing",
+                                              "As you pull your achingly hard dick free of Ceris' squeezing pussy and hastily stagger away, she stands up with a mild pout that quickly turns into a knowing smirk as she looks to your twitching cock.",
+                                              "FocusedSpeaks",
+                                              "SwapLineIf", "Random",
+                                                "We could have just kept going.♥",
+                                                "Mnn, next time I'll pin you down instead.♥",
+                                                "I still want {i}more.♥{/i}",
+                                                "I suppose we can change positions.♥",
+                                              "EndLoop"
+                                            ]
+                                },
+
+
+
+
+                  {
+                    "NameOfScene": "HellishSurge",
+                    "theScene": [ "RemoveSkillFromMonster", "Hellish Surge",
+                                  "GiveSkillToMonster", "Hellish Temptation",
+                                  "SetPostName", " - Hellish Surge",
+                                  "ChangeImageLayer", "Expression", "Predatory",
+                                "FocusedSpeaksSkill",
+                                "With an excited growl, Ceris drops down onto all four of her powerful claws before rushing towards you and leaping at you with her paws outstretched, an ominous, predatory glint in her eyes as she bares her teeth in a nigh manic grin.",
+                                "FocusedSpeaks",
+                                "SwapLineIf", "Random",
+                                  "You're mine!♥",
+                                  "I'm going to fuck you into the ground!♥",
+                                  "Start running!♥",
+                                  "I guess I'll come to {i}you{/i} instead!",
+                                "EndLoop",
+                                "SetPostName", "",
+                                "Menu",
+                                  "Shove her away! (Power)",
+                                  "Dodge her! (Technique)",
+                                  "Stand there and panic.",
+                                "EndLoop"
+
+                              ]
+                  },
+                  {
+                    "NameOfScene": "Stand there and panic.",
+                    "theScene": ["You're left wide open as you panic in place...",
+                                "JumpToScene", "HellishSurgeFailed"
+                              ]
+                  },
+                  {
+                    "NameOfScene": "Shove her away! (Power)",
+                    "theScene": [ "You brace yourself and prepare to shove away the bounding hellhound woman!",
+                                  "StatCheck",
+                                  "Power",
+                                  "30",
+                                  "HellishSurgePass",
+                                  "Fail",
+                                  "HellishSurgeFail"
+                              ]
+                  },
+                      {
+                        "NameOfScene": "HellishSurgePass",
+                        "theScene": ["ChangeImageLayer", "Expression", "Happy",
+                                    "You manage to catch the large hellhound woman and push her away... though you do skid back several feet from the impact! She smiles cheerfully at you for your efforts as she steps back.",
+                                    "FocusedSpeaks",
+                                    "Good job!♪",
+                                    "ChangeImageLayer", "Expression", "LipLick",
+                                    "FocusedSpeaks",
+                                    "It's going to be a lot more satisfying when I finally pin you down and {i}ravish{/i} you.♥"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "HellishSurgeFail",
+                        "theScene": ["But she easily overtakes you and bowls you over!",
+                                    "JumpToScene", "HellishSurgeFailed"
+                                  ]
+                      },
+                {
+                  "NameOfScene": "Dodge her! (Technique)",
+                  "theScene": [ "You try to dodge the incoming hellhound woman's predatory leap despite the tight hallway!",
+                                "StatCheck",
+                                "Technique",
+                                "25",
+                                "HellishSurgeTechPass",
+                                "Fail",
+                                "HellishSurgeTechFail"
+                            ]
+                },
+                    {
+                      "NameOfScene": "HellishSurgeTechPass",
+                      "theScene": ["ChangeImageLayer", "Expression", "Happy",
+                                  "You manage to dive to the side and leave Ceris soaring past you! She smiles cheerfully at you as she stands back up to her full height and brushes herself off with her claws.",
+                                  "FocusedSpeaks",
+                                  "SwapLineIf", "Random",
+                                    "Good job!♪",
+                                    "Keep it up!♪",
+                                    "Oh, I almost got you there, haha.♪",
+                                    "Ooooh, nice one!♪",
+                                  "EndLoop"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "HellishSurgeTechFail",
+                      "theScene": ["But you can't move fast enough to dodge her!",
+                                  "JumpToScene", "HellishSurgeFailed"
+                                ]
+                    },
+                {
+                  "NameOfScene": "HellishSurgeFailed",
+                  "theScene": [   
+                                  "ChangeImageLayer", "ImageSetDontCarryOver", "Sex", "ChangeImageLayer", "Motion", "Motion", "PlayMotionEffect", "Crash",
+                                  "ApplyStatusEffect", "HellhoundPin", "ApplyStance", "Sex", "ChangeImageLayer", "Expression", "LipLick",
+                                  "Bracing her huge clawed paws on your shoulders, Ceris pins you roughly to the ground, leaving you briefly stunned! Growling lustfully, she mounts you and interlocks her large bestial hands with yours, her bountiful breasts squishing against your chest when she leverages her dominant position to trap you under her muscular frame, your legs pointing upwards under her own powerful legs, locking you firmly in place.",
+                                  "ChangeImageLayer", "Expression", "Seductive",
+                                  "FocusedSpeaks",
+                                  "SwapLineIf", "Random",
+                                    "Caught you.♥",
+                                    "I hope your hips are ready.♥",
+                                    "Now, don't expect this to be cuddley.♪",
+                                    "Mmmm, your dick feels so hot inside me.♥ Are you excited?♥",
+                                    "Hehe.♥ Now, do your best to hold out, okay?♥",
+                                  "EndLoop",
+                                  "ChangeImageLayer", "Expression", "Predatory",
+                                  "You're given a few moments to bask in the feeling of being completely entrapped by Ceris' powerful yet soft body, her full weight and strength pressing down on you. Then, with an excited growl, she starts to wildly swing her wide hips at a frantic pace that leaves your entire lower body trembling in aching pleasure!"
+
+                            ]
+                },
+
+
+
+                  {
+                    "NameOfScene": "SwapToHellishInvitation",
+                    "theScene": [ "RemoveSkillFromMonster", "Gates of Hell",
+                                  "GiveSkillToMonster", "Hellish Invitation"
+                              ]
+                  },
+                  {
+                    "NameOfScene": "HellishInvitation",
+                    "theScene": [ "RemoveSkillFromMonster", "Hellish Invitation",
+                                  "GiveSkillToMonster", "Gates of Hell",
+                                  "HitPlayerWith", "Valley Of Fascination",
+                                    "SetPostName", " - Hellish Invitation",
+                                    "ChangeImageLayer", "Expression", "Seductive",
+                                  "SetChoice", "2", "",
+                                  "FocusedSpeaksSkill",
+                                  "Ceris hooks a claw under her skimpy top before pulling it up in a single smooth motion that leaves her pillowy tits bouncing free in a veritable jiggly burst of tempting flesh, and she spreads her arms wide in an inviting perverse hug, lightly swaying her heavy breasts back and forth to keep your eyes eagerly captivated, the temperature around her growing enticingly steamy-warm.[DamageToPlayer]",
+                                  "FocusedSpeaks",
+                                  "SwapLineIf", "Random",
+                                    "Cuddle break?♥",
+                                    "Come here, [ThePlayerName].♥",
+                                    "Don't you want to rest your head somewhere soft?♥",
+                                    "See something you like?♥",
+                                    "Let me pamper you.♥",
+                                  "EndLoop",
+                                  "SetPostName", "",
+                                  "Menu",
+                                    "Ignore Ceris' invitation!",
+                                    "Bury your face in her cleavage!",
+                                  "EndLoop"
+                              ]
+                  },
+                        {
+                          "NameOfScene": "Bury your face in her cleavage!",
+                          "theScene": [
+                                      "JumpToScene", "HellishInviteFail"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "Ignore Ceris' invitation!",
+                          "theScene": [ "You try to ignore the bouncing of Ceris' plush tits as she lovingly invites you closer, but the steamy air between you is intermixed with a sweet sexual scent that leaves your head spinning, only made worse by subtle pulses of fascinating magic the hellhound is using to alluringly draw you closer to her deep cleavage...",
+                                        "StatCheck",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "25", "1",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "50", "1",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "75", "1",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "100", "2",
+                                        "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                        "ChangeStatCheckDifficulty", "IfHasPerk", "Overheat", "10",
+                                        "Temptation",
+                                        "10",
+                                        "HellishInvitePass",
+                                        "Fail",
+                                        "HellishInviteFail"
+                                    ]
+                        },
+                            {
+                              "NameOfScene": "HellishInvitePass",
+                              "theScene": [  "ChangeImageLayer", "Expression", "SmugKnowing",
+                                          "Ceris lets out a mild sigh of disappointment as you disregard her teasing attempt to draw you in, and pulls her top back down, flashing you a smug smirk as she gives her tits one more tempting squeeze with her large paws."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "HellishInviteFail",
+                              "theScene": ["HitPlayerWith", "Breast Smother",
+                                          "ChangeImageLayer", "Expression", "Horny",
+                                          "PlayVisualEffect", "BlindingFlash", "Monsters/Ceris/GlassPressCG/CerisPressCloseUp.png",
+                                          "Caught in a horny daze, you stagger forward and bury your face between her huge, warm tits, sighing blissfully as you indulge in the softness of her skin. Ceris lets out a mild growl of arousal and wraps her powerful arms around your back and neck, pressing you deeper into her steamy-hot cleavage, her sweet erotic scent filling your senses.[DamageToPlayer]",
+                                          "ChangeImageLayer", "Expression", "Seductive",
+                                          "FocusedSpeaks",
+                                          "SwapLineIf", "Random",
+                                            "Nice and cozy.♥",
+                                            "Hehe, now to fry your mind into a horny mess.♥",
+                                            "Just relax.♥",
+                                            "Be as greedy as you want.♥",
+                                            "They're all yours,♥ hehe.♥",
+                                          "EndLoop",
+                                          "HitPlayerWith", "Breast Suffocation", "PlayVisualEffect", "BlindingFlash", "Monsters/Ceris/GlassPressCG/CerisPressCloseUp.png",
+                                          "The large hellhound woman giggles and uses a claw to pull her skimpy top back down over her overflowing breasts, trapping you in her pheromone-laden cleavage, her arms still firmly wrapped around you to ensure you're not going anywhere soon, your thoughts already starting to melt into a syrupy puddle of arousal as you nuzzle into her pillowy tits with a blissful smile.[DamageToPlayer]",
+                                          "JumpToScene", "HellishInviteSmother"
+                                        ]
+                            },
+
+                        {
+                          "NameOfScene": "HellishInviteSmother",
+                          "theScene": ["HitPlayerWith", "Breast Suffocation",
+                                      "ChangeImageLayer", "Expression", "Loving",
+                                      "PlayVisualEffect", "BlindingFlash", "Monsters/Ceris/GlassPressCG/CerisPressCloseUp.png",
+                                      "SwapLineIf", "Random",
+                                        "Ceris coos affectionately and strokes the back of your head through her straining top while you gasp heavily and eagerly rub your face into her plush cleavage, getting drunk off her soft skin and warm erotic scent, leaving your cock throbbing and twitching with growing excitement.[DamageToPlayer]",
+                                        "You moan out thoughtlessly as Ceris squeezes her huge tits together by shifting her shoulders forward while hugging you tighter, filling your senses with her steamy pheromones and warm pillowy softness. When she eases up her hold on you, you barely realize you're happily nuzzling her with a pleasure-drunk smile.[DamageToPlayer]",
+                                        "Ceris affectionately giggles as you thoughtlessly hump her powerful thighs while indulging in her incredibly deep cleavage, your thoughts drifting away in a hazy cloud of lust as your cock throbs and your hands wander over her warm, tempting skin, her steamy body heating you up to all new levels of desire with each passing moment.[DamageToPlayer]",
+                                        "Letting out a blissed-out sigh, you stay still for a few moments, taking slow, deep breaths of Ceris' warm steamy pheromones while indulging in the soothing heat of her body, each passing second leaving you hotter and hotter with needy desire, all the while Ceris simply looks down at you with a loving smile.[DamageToPlayer]",
+                                        "You're left dazed as Ceris shakes her tits back and forth, your mind spinning from the warmth and jiggly softness caressing you while you breathe in the hellhound's dizzyingly potent pheromones, each gasp and moan leaving you increasingly needier and more hesitant to end the intoxicating embrace.[DamageToPlayer]",
+                                      "EndLoop",
+                                      "IfPlayerOrgasm", "HellishInviteOrgasm",
+                                      "FocusedSpeaks",
+                                      "SwapLineIf", "Random",
+                                        "There, there,♥ just enjoy yourself.♥",
+                                        "Hehe, you look adorable.♥ ...I'm going to enjoy fucking you senseless afterward.♥",
+                                        "Hmmm?♥ Are you getting drunk off my tits?♥",
+                                        "Hey,♥ if you don't get away,♥ you're going to turn into a horny, needy mess.♥",
+                                        "My body heat is getting to you,♥ isn't it?♥ Or is it my scent?♥ Or do you just love my tits?♥",
+                                        "You're totally trapped between my tits.♥ You're not escaping until sex is the only thing left in that cute head of yours.♥",
+                                      "EndLoop",
+                                      "JumpToScene", "HellishInviteMenu"
+                                    ]
+                        },
+                              {
+                                "NameOfScene": "HellishInviteOrgasm",
+                                "theScene": ["PlayerOrgasm", "1",
+                                            "PlayVisualEffect2", "OrgasmPulse", "white.png",
+                                            "PlayVisualEffect", "BlindingFlash", "Monsters/Ceris/GlassPressCG/CerisPressCloseUp.png",
+                                            "PlayMotionEffect", "CrashSmol", 
+                                            "ChangeImageLayer", "Expression", "LipLick",                                            
+                                            "SwapLineIf", "Random",
+                                              "You shiver and gasp as you reach your limit, and when Ceris gently presses her thigh against your twitching erection, you eagerly thrust against her soft skin, your horny steamed mind blindly seeking release, making you wildly thrust against the womanly hellhound while you indulge in her soft, pheromone-laden tits until you erupt all over her leg with a cry of bliss, slumping against her for a few ecstatic shivering moments.",
+                                              "Pleasure swells within your hips as you take long, huffing breaths of Ceris' scent, her plump tits erotically comforting you as you lean against her for support, your dick spasmig with joy, until with one last euphoric inhale, the pleasure explodes inside your mind in a tingly burst of her pheromone-laden body scent, orgasmic release cascading all through you as your erection spurts out long ropes of cum onto Ceris' legs.",
+                                              "You moan and twitch from the sweet breastly pleasure overtaking your body, Ceris letting out a low growl as she uses her large claws to squeeze her huge tits together around your face and slowly roll them in gentle circles, leaving you shivering and gasping as she marks you with her steamy, erotic scent.|n|With one decisive, mind-melting squeeze of the hellhound's tits' plush embrace, your cock spurts from sheer sexual overexcitement, the large woman lovingly rewarding you with a teasing shake of her overflowing bust.",
+                                              "Completely lost in the buxom woman's indulgent warmth and sweet pheromones, you relax lazily in Ceris' grasp, languorous waves of lust and pleasure washing through you from head to toe as you idly rub against her soft skin and breathe in her pheromones, until a swelling orgasm overtakes you, leaving your dick spasming excitedly as it spurts out long ropes of cum.",
+                                            "EndLoop",
+                                            "IfPlayerSpiritGone", "SmotherEndLoss",
+                                            "ChangeImageLayer", "Expression", "Horny",
+                                            "FocusedSpeaks",
+                                            "SwapLineIf", "Random",
+                                              "Go on, [ThePlayerName],♥ don't stop there.♥",
+                                              "You've got more pent-up desires still,♥ don't you?♥",
+                                              "Indulge in my soft tits all you want.♥ Until sex is the only thing left in that head of yours.♥",
+                                              "Hehe, do you love my scent that much?♥",
+                                              "Hmm,♥ my tits are going to leave you a needy mess at this rate.♥",
+                                            "EndLoop",
+                                            "JumpToScene", "HellishInviteMenu"
+                                          ]
+                              },
+
+                              {
+                                "NameOfScene": "SmotherEndLoss",
+                                "theScene": [  "ChangeImageLayer", "Expression", "Seductive",
+                                              "You crumple into Ceris' gently unrelenting grasp, gasping heavily in a sexual daze, completely engrossed in her body, your achingly hard cock throbbing in slow, steady pulses as you breathe in her scent and indulge in her warmth.",
+                                                "ChangeImageLayer", "Expression", "LipLick",
+                                              "She seductively growls and gently pulls you free from her tits before laying you out on the floor while she stands over you with a hungry lick of her lips.",
+                                              "FocusedSpeaks",
+                                              "After all that pampering and snuggling, let's get to the main course, hm?♥"
+                                          ]
+                              },
+
+                        {
+                          "NameOfScene": "HellishInviteMenu",
+                          "theScene": ["CallSceneThenReturn", "SmotherProgression",
+                                      "IfPlayerHasStatusEffect", "Stun", "Nothing",
+                                      "Menu",
+                                        "Keep enjoying her tits...",
+                                        "Break away!",
+                                      "EndLoop"
+                                    ]
+                        },
+                              {
+                                "NameOfScene": "SmotherProgression",
+                                "theScene": [
+                                                "IfChoice", "2", "Step6", "SmotherStep6",
+                                                "IfChoice", "2", "Step5", "SmotherStep5",
+                                                "IfChoice", "2", "Step4", "SmotherStep4",
+                                                "IfChoice", "2", "Step3", "SmotherStep3",
+                                                "IfChoice", "2", "Step2", "SmotherStep2",
+                                                "IfChoice", "2", "", "SmotherStep1"
+                                          ]
+                              },
+                                      {
+                                        "NameOfScene": "SmotherStep1",
+                                        "theScene": [ "SetChoice", "2", "Step2",
+                                                      "ApplyStatusEffect", "CerisPheromone",
+                                                      "Your entire body shivers in delight as Ceris' heat slowly seeps into you and her warm fragrance melts into your senses, leaving you increasingly dazed and needy for more..."
+                                                  ]
+                                      },
+                                      {
+                                        "NameOfScene": "SmotherStep2",
+                                        "theScene": [ "SetChoice", "2", "Step3",
+                                                      "ApplyStatusEffect", "Charm",
+                                                      "You softly moan and whimper as your mind practically turns pink with desire, eagerly taking deep breaths of Ceris' intoxicating fragrance as you pamper yourself with her plump breasts, leaving you thoughtlessly charmed with her voluptuous body."
+                                                  ]
+                                      },
+                                      {
+                                        "NameOfScene": "SmotherStep3",
+                                        "theScene": [ "SetChoice", "2", "Step4",
+                                                      "ApplyStatusEffect", "CerisPheromone",
+                                                      "Your cock throbs and twitches as warm radiating heat pulses through your body, your mere contact with Ceris' soft skin filling you with hot, needy sexual desire. Mumbling giddily in dopey bliss, you drunkenly rub your face into her plush cleavage, shivering as you take in more of her pheromones... You feel that if you don't get away quickly, that throbbing heat in your groin is going to get unbearable..."
+                                                  ]
+                                      },
+                                      {
+                                        "NameOfScene": "SmotherStep4",
+                                        "theScene": [ "SetChoice", "2", "Step5",
+                                                      "CallSceneThenReturn", "ApplyOverheat",
+                                                      "With a thoughtless moan, you reach up and eagerly grope Ceris' heavy tits as you nuzzle them, greedily indulging in her soft yet powerful body as her steamy pheromones and sinfully warm body melt away your sense of reason until only pulsing needy desire is left, your twitching, leaky cock doing all the thinking for you."
+                                                  ]
+                                      },
+                                      {
+                                        "NameOfScene": "SmotherStep5",
+                                        "theScene": [ "SetChoice", "2", "Step6",
+                                                      "CallSceneThenReturn", "ApplyOverheat", "CallSceneThenReturn", "ApplyOverheat", "CallSceneThenReturn", "ApplyOverheat", "ApplyStatusEffect", "CerisPheromone",
+                                                      "The throbbing, twitching heat in your groin only gets worse and worse as you squirm against Ceris, raving and whimpering in need as you lose yourself in her pillowy cleavage, the horny hellhound licking her lips at the sight of you entirely lost to your desires, her erotic pheromones only driving you deeper into thoughtless sexual need..."
+                                                  ]
+                                      },
+                                      {
+                                        "NameOfScene": "SmotherStep6",
+                                        "theScene": [
+                                                      "ApplyStatusEffect", "PheromoneStun",
+                                                      "ChangeImageLayer", "Expression", "Horny",
+                                                      "You take another long, deep breath of Ceris' potent pheromones, and shiver and groan as your entire body is left a shivering needy mess, eagerly rubbing your dazed face against her warm tits with a slack, pleasure-drunk expression plastered on your face, thoughtlessly humping the hellhound woman's powerful thighs while she affectionately giggles and gives you free rein to keep breaking yourself against her.",
+                                                      "FocusedSpeaks",
+                                                      "SwapLineIf", "Random",
+                                                        "Looks like your head's completely steamed.♥",
+                                                        "Oh my,♥ your mind is totally fried now.♥",
+                                                        "Hmmm,♥ you need a bit more than {i}just{/i} some skin to skin.♥",
+                                                      "EndLoop",
+                                                      "JumpToRandomScene",
+                                                          "SmotherToTitfuck",
+                                                          "SmotherToSex",
+                                                      "EndLoop"
+                                                  ]
+                                      },
+                                              {
+                                                "NameOfScene": "SmotherToTitfuck",
+                                                "theScene": [
+                                                              "ApplyStance", "Titfuck",
+                                                              "ChangeImageLayer", "Expression", "LipLick",
+                                                              "With an excited growl, she pulls your head free of her huge breasts and tosses you to the ground, laying you flat in a twitching heap, humming happily as she settles between your legs and buries your throbbingly erect cock between her warm cleavage then immediately gets to enthusiastically milking you for all you're worth, bouncing and squeezing her pillowy mounds with her paws.",
+                                                              "ChangeImageLayer", "Expression", "Seductive",
+                                                              "FocusedSpeaks",
+                                                              "Thanks for the treat.♥"
+                                                          ]
+                                              },
+                                              {
+                                                "NameOfScene": "SmotherToSex",
+                                                "theScene": [
+                                                              "ApplyStance", "Sex",
+                                                              "ChangeImageLayer", "Expression", "LipLick",
+                                                              "With an excited growl, she pulls your head free of her huge breasts and tosses you to the ground, laying you flat in a twitching heap, humming happily as she straddles your waist and guides your throbbingly erect cock into her drooling pussy before, taking just a moment to enjoy the feeling of your cock entering her before slamming her hips down, riding you at a wild, mind-numbing pace.",
+                                                              "ChangeImageLayer", "Expression", "Seductive",
+                                                              "FocusedSpeaks",
+                                                              "I'd say you're good for at {i}least{/i} ten to twenty rounds?♥"
+                                                          ]
+                                              },
+
+                              {
+                                "NameOfScene": "Keep enjoying her tits...",
+                                "theScene": [
+                                            "JumpToScene", "HellishInviteSmother"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "Break away!",
+                                "theScene": [ "You struggle through the tempting cloud of arousal hazing your thoughts and try to resist the temptation of nuzzling back into Ceris' soft and enticing cleavage, even as the intoxicating heat of her body urges you to stay right where you are...",
+                                              "StatCheck",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "25", "1",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "50", "1",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "75", "1",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "100", "2",
+                                              "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                              "ChangeStatCheckDifficulty", "IfHasPerk", "Overheat", "10",
+                                              "Temptation",
+                                              "10",
+                                              "HellishInvitePass2",
+                                              "Fail",
+                                              "HellishInviteSmother"
+                                          ]
+                              },
+                                  {
+                                    "NameOfScene": "HellishInvitePass2",
+                                    "theScene": [  "ChangeImageLayer", "Expression", "SmugKnowing",
+                                                    "Getting ahold of yourself, you shove Ceris back, scampering away from the powerful hellhound who actually doesn't attempt to stop you, only smiling at you with lustful eyes.",
+                                                  "ChangeImageLayer", "Expression", "Seductive",
+                                                    "FocusedSpeaks",
+                                                    "SwapLineIf", "Random",
+                                                      "Aww, you got away.♥ Guess I'll need to try harder.♥",
+                                                      "Too bad, you looked really cute like that.♥",
+                                                      "Hehe, you sure you don't want to 'cuddle' more?♥",
+                                                      "Are you sure you don't want to find out what happens if I 'melt' you?♥",
+                                                    "EndLoop"
+                                              ]
+                                  },
+
+
+
+
+                        {
+                          "NameOfScene": "Purgatory Pin",
+                          "theScene": [
+                                        "SetPostName", " - Purgatory Pin",
+                                        "ChangeImageLayer", "Expression", "Predatory",
+                                        "FocusedSpeaksSkill",
+                                      "Ceris roughly shoves you to the ground and starts to force you into a very intimate and dangerously restraining position, interlocking her huge claws with your fingers as she pins you underneath her, her large fluffy tail wagging excitedly behind her.",
+                                      "FocusedSpeaks",
+                                      "SwapLineIf", "Random",
+                                        "Time to fuck your brains out!♥",
+                                        "You're going to love this!♥",
+                                        "I'm not going to let you go until your balls are empty!♥",
+                                        "Come on, struggle while I fuck you into the ground!♥",
+                                      "EndLoop",
+                                      "SetPostName", "",
+                                      "Menu",
+                                        "Break her oppressive hold! (Power)",
+                                        "Squirm out of her grasp! (Technique)",
+                                        "Convince her to cuddle! (Allure)(♥)",
+                                        "Be too stunned to resist.",
+                                      "EndLoop"
+                                    ]
+                        },
+                              {
+                                "NameOfScene": "Be too stunned to resist.",
+                                "theScene": [
+                                            "JumpToScene", "PurgatoryPinFailed"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "Break her oppressive hold! (Power)",
+                                "theScene": [ "You push back against Ceris' encroaching intimate embrace, struggling to force her back into a less dominant sexual position even as she puts every bit of her strength and large stature into pinning you to the floor!",
+                                              "StatCheck",
+                                              "Power",
+                                              "30",
+                                              "PurgatoryPinPass",
+                                              "Fail",
+                                              "PurgatoryPinFail"
+                                          ]
+                              },
+                                  {
+                                    "NameOfScene": "PurgatoryPinPass",
+                                    "theScene": ["ChangeImageLayer", "Expression", "Surprised",
+                                                "Though the two of you remain intimately connected, you manage to reject the swaying hold of Ceris' grabbing hands and plush body, much to her surprise.",
+                                                "ChangeImageLayer", "Expression", "Happy",
+                                                "FocusedSpeaks",
+                                                "Great job!♪",
+                                                "ChangeImageLayer", "Expression", "LipLick",
+                                                "FocusedSpeaks",
+                                                "It's going to be a lot more satisfying when I finally pin you down and {i}ravish{/i} you.♥"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "PurgatoryPinFail",
+                                    "theScene": ["But despite your best efforts, she won't budge even an inch!",
+                                                "JumpToScene", "PurgatoryPinFailed"
+                                              ]
+                                  },
+                            {
+                              "NameOfScene": "Squirm out of her grasp! (Technique)",
+                              "theScene": [ "Twisting away from Ceris' interlocking claws, you try to slip out of her heavy pinning grasp!",
+                                            "StatCheck",
+                                            "Technique",
+                                            "25",
+                                            "PurgatoryPinPass2",
+                                            "Fail",
+                                            "PurgatoryPinFail2"
+                                        ]
+                            },
+                                {
+                                  "NameOfScene": "PurgatoryPinPass2",
+                                  "theScene": ["ChangeImageLayer", "Expression", "Surprised",
+                                              "Using a smooth escape maneuver, you manage to slip your hands away from her huge claws, and surprise her by deftly repositioning your interlocked bodies into a sitting posture.",
+                                              "ChangeImageLayer", "Expression", "Happy",
+                                              "FocusedSpeaks",
+                                              "Great job!♪",
+                                              "ChangeImageLayer", "Expression", "LipLick",
+                                              "FocusedSpeaks",
+                                              "It's going to be a lot more satisfying when I finally pin you down and {i}ravish{/i} you.♥"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "PurgatoryPinFail2",
+                                  "theScene": ["But despite your best efforts, you can't get your hands free, much less the rest of your body!",
+                                              "JumpToScene", "PurgatoryPinFailed"
+                                            ]
+                                },
+
+                                {
+                                  "NameOfScene": "Convince her to cuddle! (Allure)(♥)",
+                                  "theScene": [ "ChangeImageLayer", "Expression", "Confused",
+                                                "SwapLineIf", "Perk",
+                                                  "Overheat", "You boldly try to tempt Ceris into just cuddling for the moment instead of pinning you down and fucking you into a stupor, but with how hot and bothered you are, you're not too convincing, your irresistible craving for sex written all over your face...",
+                                                 "",  "You boldly try to tempt Ceris into just cuddling for the moment instead of pinning you down and fucking you into a stupor!",
+                                                "EndLoop",
+                                                "StatCheck",
+                                                "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                                "ChangeStatCheckDifficulty", "IfHasPerk", "Overheat", "10",
+                                                "Allure",
+                                                "10",
+                                                "PurgatoryPinPass3",
+                                                "Fail",
+                                                "PurgatoryPinFail3"
+                                            ]
+                                },
+                                    {
+                                      "NameOfScene": "PurgatoryPinPass3",
+                                      "theScene": ["ChangeImageLayer", "Expression", "Happy",
+                                                  "FocusedSpeaks",
+                                                     "Awww.♥ Sure.♥ Let's take a quick breather.♥",
+                                                  "ChangeImageLayer", "Expression", "Seductive",
+                                                  "Ceris lets out a low growl of arousal as she eases up her oppressive hold, keeping you firmly inside her while she rolls onto her side, wrapping her arms around you. Caught in the romantic moment, you thoughtlessly do the same, the warmth of her alluring body inviting you to relax as she presses your face into her deep cleavage.",
+                                                    "HitPlayerWith", "Infernal Grind",
+                                                  "You moan softly when the lustful hellhound unconsciously gyrates her hips in gentle sways while she nuzzles against you with a happy sigh, your cock throbbing excitedly inside her molten-warm pussy as it squeezes and massages your length, your greedy hands drifting to idly grope her plush ass while her sinful heat seeps into you.[DamageToPlayer]",
+                                                  "HitPlayerWith", "Breast Suffocation",
+                                                  "With the heat from the large hellhound sinking into your body as you both peacefully lie in a loving embrace, you start to mindlessly rub your face against her huge, pillowy tits, their steamy pheromone-laden fragrance filling your lungs and getting a cooing giggle of approval from the curvaceous woman.[DamageToPlayer]",
+                                                  "HitMonsterWith", "Thrust",  "CallSceneThenReturn", "ApplyOverheat",
+                                                  "But quickly, despite the coziness of the soothing embrace, the throbbing heat in your groin gets achingly unbearable, your dick twitching and pulsing with need, and you can't help but eagerly thrust into Ceris' drooling pussy, which snaps her out of her giddy relaxation, her lips twisting in a bashful smile.[DamageToEnemy]",
+                                                  "ChangeImageLayer", "Expression", "Bashful",
+                                                  "FocusedSpeaks",
+                                                  "Oh, right, we're supposed to be 'fighting', aren't we?"
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "PurgatoryPinFail3",
+                                      "theScene": [  "FocusedSpeaks",
+                                                    "Hmmm... {i}Nah.♥{/i} I'm going to keep you nice and trapped under me while I fuck you silly.♥",
+                                                  "JumpToScene", "PurgatoryPinFailed"
+                                                ]
+                                    },
+
+                              {
+                                "NameOfScene": "PurgatoryPinFailed",
+                                "theScene": [   "ChangeImageLayer", "ImageSetDontCarryOver", "Sex", "ChangeImageLayer", "Motion", "Motion", "PlayMotionEffect", "Crash",
+                                                "ApplyStatusEffect", "HellhoundPin", "ChangeImageLayer", "Expression", "LipLick", "ClearStanceFromMonsterAndPlayer", "Nursing",
+                                                "With you powerless to get away from underneath her, the hellhound woman easily keeps your hands firmly interlocked in hers, rubbing her heavy tits against your chest while leveraging her dominant position to trap you under her muscular frame, your legs pointing upwards under her own powerful legs, locking you firmly in place.",
+                                                "ChangeImageLayer", "Expression", "Seductive",
+                                                "FocusedSpeaks",
+                                                "SwapLineIf", "Random",
+                                                  "I hope your hips are ready.♥",
+                                                  "Mmmm, your dick feels so hot inside me.♥ Are you excited?♥",
+                                                  "Hehe,♥ now do your best to hold out, okay?♥",
+                                                  "Time to milk you {i}dry{/i}.♥",
+                                                  "You're not getting {i}any{/i} rest.♥",
+                                                "EndLoop",
+                                                "ChangeImageLayer", "Expression", "Predatory",
+                                                "You're given a few moments to bask in the feeling of being completely entrapped by Ceris' powerful yet soft body, her full weight and strength pressing down on you. Then, with an excited growl, she starts to wildly swing her wide hips at a frantic pace that leaves your entire lower body trembling in aching pleasure!"
+                                          ]
+                              },
+
+
+
+
+
+                  {
+                    "NameOfScene": "EventBroke",
+                    "theScene": [   "Ceris combat event broke."
+                              ]
+                  }
+
+              ]
+}

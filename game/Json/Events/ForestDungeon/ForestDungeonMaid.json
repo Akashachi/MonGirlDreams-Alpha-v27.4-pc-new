@@ -1,0 +1,63 @@
+{
+    "name": "Forest Dungeon's Maid",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+
+                  {
+                    "name": "Ancilla",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [  "After journeying through the twisting paths of the dungeon, you finally reach a large, ornately gold trimmed metal door.",
+                                      "There is also a convenient metal plaque on the door that says 'Boss Room'.",
+                                      "ChangeBGM", "music/Caverns/Purple Planet Music - Tense - Melancholia (1_24) 96bpm.mp3",
+                                      "As you begin moving towards the door, a sudden chill goes down your spine as a monotone voice echoes through the hall.",
+                                      "IfProgressEqualsOrGreater",
+                                          "1",
+                                          "Second Meeting",
+                                      "ChangeProgress",
+                                      "1",
+                                      "Speaks",
+                                      "I am Ancilla, the maid of the mistress, and no one is to disturb her slumber.",
+                                      "You turn around to see the source of the voice, and instead see... a mattress flying at you?!",
+                                      "You twist, narrowly avoiding the cushiony attack out of sheer, confused panic.",
+                                      "Gasping from exertion, you turn to see your mystery assailant.",
+                                      "DisplayCharacters",
+                                        "1",
+                                        "EndLoop",
+                                      "Her demeanor is calm and collected, and as she starts to approach, you realize you will not be talking your way out of this.",
+                                      "CombatEncounter",
+                                        "NoRunning",
+                                        "Ancilla",
+                                        "StartCombat"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Second Meeting",
+                        "theScene": [  "Speaks",
+                                      "You are quite persistent.",
+                                      "You turn around to get a visual on Ancilla, and instead see... a mattress flying at you!",
+                                      "You twist, narrowly avoiding the cushiony attack! Looking around, you manage to locate your assailant.",
+                                      "DisplayCharacters",
+                                        "1",
+                                        "EndLoop",
+                                      "Her demeanor is calm and collected, and as she starts to approach, you realize you will not be talking your way out of this.",
+                                      "CombatEncounter",
+                                        "NoRunning",
+                                        "Ancilla",
+                                        "StartCombat"
+                                  ]
+                    }
+
+
+
+                ]
+}

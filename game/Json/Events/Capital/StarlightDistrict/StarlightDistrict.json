@@ -1,0 +1,114 @@
+{
+    "name": "StarlightDistrict",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Imp",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Catherine",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+
+                ],
+    "EventText": [
+                      {
+                        "NameOfScene": "EventCheck",
+                        "theScene": ["AllowInventory",
+                                      "IfTimeIs", "Night", "AltStarDistrictIntro",
+                                      "ChangeBG",  "CapitalPeople.png",
+                                      "ChangeBGM", "music/Capital/Smooth_City.mp3",  
+                                      "Finding your way into the Starlight District, you stride into a large plaza featuring rows of straight streets and towering metallic buildings, as well as a myriad of signs pointing to various landmarks and even featuring adventurer-specific directions. Despite the stark architecture, a few flower gardens break up the pavement, giving an almost a serene atmosphere to the place, only a few people loitering about and chatting here or there.",
+                                      "JumpToScene", "CheckForEvent"
+                                  ]
+                    },
+                          {
+                            "NameOfScene": "AltStarDistrictIntro",
+                            "theScene": [  
+                                          "ChangeBG",  "Capital.png",
+                                          "ChangeBGM", "music/Capital/03 illegal invasion.mp3",
+                                          "As if time finally resumed, you step into the Starlight District. An almost unnatural silence hangs in the air of the vacant plaza, only the lights of the towering metallic buildings indicating any presence, though illumination is thankfully provided on a number of signs displaying helpful directions. Still, even with the scattered flower gardens brightening up the area, the late night fills you with eerie tension...",
+                                          "JumpToScene", "CheckForEvent"
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "CheckForEvent",
+                            "theScene": [  
+                                          "StoreCurrentEventSpotSkippingLines", "3",
+                                          "JumpToEventThenScene", "CapitalTravelEncounters", "StarlightRNG",
+                                          "JumpToScene", "DistrictMenu"
+                                      ]
+                          },
+
+                   {
+                        "NameOfScene": "DistrictMenu",
+                        "theScene": [   "AllowInventory",
+                                        "Menu",
+                                          "Enter Adventure Apartments.",
+                                          "Look for trouble.",
+                                          "Travel to the Aphrodesia District. (Advances Time)",
+                                          "Travel to the Eros District. (Advances Time)",
+                                        "EndLoop"
+                                  ]
+                    },
+                                {
+                                    "NameOfScene": "Look for trouble.",
+                                    "theScene": [    
+                                                    "StoreCurrentEventSpotSkippingLines", "3",
+                                                    "JumpToEventThenScene", "CapitalTravelEncounters", "StarlightTrouble",
+                                                    "JumpToScene", "DistrictMenu"
+                                                ]
+                                },
+                                {
+                                  "NameOfScene": "Enter Adventure Apartments.",
+                                  "theScene": [  
+                                                "JumpToEventThenScene", "ApartmentsTrialFloor1", "StartEvent"
+                                            ]
+                                },
+                        {
+                          "NameOfScene": "Travel to the Aphrodesia District. (Advances Time)",
+                          "theScene": [ "PlayerStep",
+                                        "CallEventAndSceneThenReturn", "CapitalTimePassTracker", "TimeAdvance",
+                                        "StoreCurrentEventSpotSkippingLines", "3",
+                                        "JumpToEventThenScene", "CapitalTravelEncounters", "TravelRNG",
+                                        "JumpToEvent", "AphrodesiaDistrict"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "Travel to the Eros District. (Advances Time)",
+                          "theScene": [ "PlayerStep",
+                                        "CallEventAndSceneThenReturn", "CapitalTimePassTracker", "TimeAdvance",
+                                        "StoreCurrentEventSpotSkippingLines", "3",
+                                        "JumpToEventThenScene", "CapitalTravelEncounters", "TravelRNG",
+                                        "GetEventAndIfChoice", "CapitalTimePassTracker", "2", "MidnightOil", "AltErosDistrictIntro",
+                                        "ChangeBG",  "CapitalPeople.png",
+                                        "ChangeBGM", "music/Capital/night vision radio.mp3",
+                                        "You trek your way to the city's commercial district, the lengthy venture nonetheless passing by surprisingly quickly and promptly bringing you back to the busy shopping crossing where people come and go on their own schedules, carrying bags of recently purchased goods.",
+                                        "JumpToEventThenScene", "Eros District", "DistrictMenu"
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "AltErosDistrictIntro",
+                                  "theScene": [  
+                                                "ChangeBG",  "Capital.png",
+                                                "ChangeBGM", "music/Capital/03 illegal invasion.mp3",
+                                                "You trek your way to the city's commercial district, the lengthy venture feeling like it's dragging on for eternity in the seemingly deserted city streets, until you eventually reach the usually busy shopping crossing, only to find a quiet hush ominously weighing on the atmosphere under the light of the nigh-invisible nighttime stars.",
+                                                "JumpToEventThenScene", "Eros District", "DistrictMenu"
+                                            ]
+                                },
+
+
+                    {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [   "event broke."
+                                ]
+                    }
+                ]
+}

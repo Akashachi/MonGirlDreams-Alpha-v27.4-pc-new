@@ -1,0 +1,330 @@
+{
+    "name": "Starlit Window",
+    "CardType": "Event",
+    "CardLimit": "1",
+    "Description": "In the dead of the night, a mysterious woman flaunts her curvaceous silhouette at a passing adventurer from her window.",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "",
+                    "postName": "",
+                    "SpeakerType": ""
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [ "StoreCurrentBG",
+                                        "SetProgress", "0",
+                                      "ChangeBG",  "CapitalNight.png",
+                                      "As you take a turn through the shadowed, vacant streets of the Starlight District and let your gaze idly run along its dark, glass-walled, spire-like homes, something catches your eye: a single brightly lit window on the second floor of an apartment building, stark against the surrounding darkness.",
+                                      "Even more notable, however, is the silhouette of a curvaceous woman standing against the full-length window, her long hair spilling down her body like a messy veil, her hefty tits pressed showily against the glass. The striking play of shadows highlights her hourglass waist and wide hips as she gives them a small excited wiggle your way, having obviously noticed your attention.",
+                                      "ChangeBGM", "music/Casino/BGM sweet smell.mp3",
+                                      "One of her fingers traces a circle on the window while she continues to alluringly rub herself against the glass pane, each of her languid motions clearly made to captivate and arouse you, her stark sexy figure completely dominating your vision. Faintly, you feel charming magic start to operate on you, washing through your senses like a tingly pink haze while she pumps the air in an unambiguous invitation to masturbate to her curves.",
+                                      "IfPlayerOrgasm", "TooHornyToThink",
+                                      "Menu",
+                                        "Resist the tempting urge!",
+                                        "Just keep staring...",
+                                      "EndLoop"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "Resist the tempting urge!",
+                                "theScene": [   "StatCheck",
+                                                "Temptation",
+                                                "20",
+                                                "PassInitial",
+                                                "Fail",
+                                                "FailInitial"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "TooHornyToThink",
+                                        "theScene": [
+                                                        "Something within you is telling you that it would be unwise to listen to your libido and do as the mysterious woman is instructing, but as debilitatingly aroused as you are, you can't help but unresistingly let the magic take hold of you, its ethereal caress leaving you shivering in pliable delight as you keep vapidly staring in blind infatuation...",
+                                                        "JumpToScene", "FailInitialPost"
+                                                    ]
+                                    },
+                                    {
+                                        "NameOfScene": "Just keep staring...",
+                                        "theScene": [
+                                                        "JumpToScene", "FailInitialPost"
+                                                    ]
+                                    },
+                                    {
+                                        "NameOfScene": "PassInitial",
+                                        "theScene": [
+                                                    "With an effort of will, you manage to shake off the enchanting infatuation for the woman's alluring silhouette, blinking a few times and rubbing your eyes for good measure as you get ahold of yourself.",
+                                                    "When you look to the window again, the shadowy stranger is gone. Any light within the room has completely vanished, the street lighting just barely letting you see the clearly empty interior...",
+                                                    "A shiver runs down your spine at the revelation, and not feeling like investigating that mystery in the rather eerie darkness of the Ars Delusian night, you press on, leaving the starlit window and its oddities behind you.",
+                                                    "JumpToScene", "PostEventStuffs"
+                                                ]
+                                    },
+                    {
+                        "NameOfScene": "FailInitial",
+                        "theScene": [
+                                        "Despite your effort to resist the infatuating temptation creeping through your senses, the only thing you can do is vapidly stare at the teasing shadow-wreathed body, your concerns slowly and gently melting away as you indulgently enjoy the show. After all, where is the harm?",
+                                        "JumpToScene", "FailInitialPost"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "FailInitialPost",
+                        "theScene": [
+                                        "ChangeBGM", "music/Loss/reason.mp3",
+                                        "DamagePlayerFromMonster", "Fashionable Succubus", "Oral Tease",
+                                        "As you gaze up at the woman's intoxicating curves, she keeps making stroking motions with her hand while turning her head over to it to mimic licking. With the light sharply highlighting every detail of her seductive frame, you can see her tongue dart out in slurping motions, and can practically {i}feel{/i} it lapping at the tip of your twitching erection as it strains against your clothing, sending a mind-blanking shiver through your body.",
+                                        "DamagePlayerFromMonster", "Fashionable Succubus", "Handjob",
+                                        "Unable to look away from the obscene shadow as the charming bliss only intensifies, you frantically pull down your pants and free your trembling manhood to start excitedly pumping it on autopilot, unable to contain yourself a moment longer, any concern for possibly being seen by an onlooker or a passerby floating out of your lust-filled mind.",
+                                        "DamagePlayerFromMonster", "Fashionable Succubus", "Enamor",
+                                        "Looking back to you, she ends her tempting oral gesture only to instead resume lazily pressing herself against the window, gyrating her hips and bust in a languorous teasing dance that lets her plush tits showily rub against the glass, the silhouetted woman lifting her hands to toss some of her long locks of hair behind her in order to give you a better view, then alluringly lowering her palms back down her perfect bare hourglass frame.",
+                                        "IfPlayerOrgasm", "Just keep watching...",
+                                        "Meanwhile, you belatedly realize that you've been pumping your trembling erection harder and harder, your blatant arousal seeming to please her and encourage her to redouble the lasciviousness of her perverted spectacle. It's clear she's not going to stop teasing you until you go all the way over the edge and make a mess of yourself-!",
+                                        "JumpToScene", "ResistMenu"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "ResistMenu",
+                        "theScene": [   "Menu",
+                                          "Resist the masturbatory infatuation!",
+                                          "Just keep watching...",
+                                        "EndLoop"
+                                ]
+                    },
+                            {
+                                "NameOfScene": "Resist the masturbatory infatuation!",
+                                "theScene": [   "StatCheck",
+                                                "Temptation",
+                                                "25",
+                                                "PassInitial",
+                                                "Fail",
+                                                "Just keep watching..."
+                                        ]
+                            },
+                        {
+                            "NameOfScene": "ResistOMenu",
+                            "theScene": [   "Menu",
+                                                "Try to look away and snap out of it!",
+                                                "Just keep watching...",
+                                            "EndLoop"
+                                    ]
+                        },
+                                {
+                                    "NameOfScene": "Try to look away and snap out of it!",
+                                    "theScene": [   "StatCheck",
+                                                    "Temptation",
+                                                    "20",
+                                                    "PassInitial",
+                                                    "Fail",
+                                                    "Just keep watching..."
+                                            ]
+                                },
+                    {
+                        "NameOfScene": "Just keep watching...",
+                        "theScene": [
+                                          "JumpToRandomScene",
+                                              "SexFapping",
+                                              "TitillatingMasturbation",
+                                              "OralTease",
+                                              "AssSwing",
+                                          "EndLoop"
+                                  ]
+                      },
+                            {
+                                "NameOfScene": "SexFapping",
+                                "theScene": [
+                                            "DamagePlayerFromMonster", "Fashionable Succubus", "Handjob",
+                                            "Thoughtlessly, you keep working your leaking dick in response to the lewd nighttime show the sexy stranger is putting on just for you, the mysterious woman's hands playing with her hefty bust and fingering her clearly drooling pussy with silent whorish moans, as if overtly begging you to come fuck her, driving you to masturbate with even messier abandon as your imagination further ignites from the erotic sight of her raunchy motions.",
+                                            "DamagePlayerFromMonster", "Fashionable Succubus", "Sexual Tempt",
+                                            "Gasping and panting, you readily lose yourself in vivid fantasies of sex with her as the two of you wantonly masturbate to each other, phantom sensations of her pussy squeezing around your dick oozing through your senses as if you actually {i}were{/i} relentlessly pounding her with each stroke of your hand, each mating swing of your jolting hips sweetly accented by her demonstrative, soundless shivers of pleasure.",
+                                            "IfPlayerOrgasm", "FappingClimax",
+                                            "JumpToScene", "ResistMenu"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "FappingClimax",
+                                        "theScene": [
+                                                    "Soon, you end up completely drowning in sexual pleasure as you greedily keep stroking your dick without restraint, the ethereal feeling of fucking the shadowed woman's clenching pussy overwhelming your senses while she visibly trembles in delight at her own groping masturbation, climactic pleasure welling up within both of you as though you were truly having sex.",
+                                                    "CallSceneThenReturn", "OrgasmCounter",
+                                                    "Until finally, with an orgasmic full-body shudder and a wordless cry from her, you let out a low moan of delight, your trembling erection throbbing in euphoria as one more mind-blanking stroke leaves it spurting across the pavement while you twitch in climactic aftershocks, quasi-real fantasies and ethereal sensations of sweet lovemaking still lingering in your senses as the charming pleasure high ebbs away.",
+                                                    "IfPlayerSpiritGone", "OutOfSpirit",
+                                                    "Gasping and panting as your cock messily drools out the last of your ejaculation, you manage to briefly recollect yourself, even as your vision keeps swimming with the obscene sight of the shivering window exhibitionist who looks more than ready to carry on with the perverted play... assuming you are as well.♥︎",
+                                                    "JumpToScene", "ResistOMenu"
+                                                ]
+                                    },
+                            {
+                                "NameOfScene": "TitillatingMasturbation",
+                                "theScene": [
+                                            "DamagePlayerFromMonster", "Fashionable Succubus", "Valley Of Fascination",
+                                            "Emphatically grabbing her chest to let you see it in its full sizable, plush chiaroscuro glory, the starkly-lit woman leans away from the window while groping and squeezing her heavy breasts, hefting them up before letting them drop back down with an obscene jiggle, lazily shaking them side to side and flicking her own nipples with shivers of pleasure while you keep stroking your leaking erection in enchanted fascination.",
+                                            "DamagePlayerFromMonster", "Fashionable Succubus", "Valley Of Fascination",
+                                            "Then, as she presses her arms together against her shadowy cleavage and bounces it up and down at a captivating pace, you start to feel like every stroke of your hand is actually a squeezing bounce of her hefty bust smothering your twitching erection in a loving titfuck, the mysterious woman clearly determined to milk a {i}big{/i} load out of you.",
+                                            "IfPlayerOrgasm", "TitillatingClimax",
+                                            "JumpToScene", "ResistMenu"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "TitillatingClimax",
+                                        "theScene": [
+                                                    "With your arousal heating to a boiling point, you get helplessly lost in the ghostly fantasies and phantom sensations, pervertedly indulging in stroking yourself as the feeling of her plush pillowy breasts firmly embracing your dick keeps vividly superimposing on your own hand, the unrelenting press of the pillowy vice sending sweet climatic shocks twitching through your entire lower body.",
+                                                    "CallSceneThenReturn", "OrgasmCounter",
+                                                    "All the while, you continue rapturously watching her bounce her obscene perky tits against the glass, intoxicating enchantment leaving your brain blank as it only takes a few more pumps for your whole frame to tense up in an explosive orgasm that sends your seed splattering out on the ground, your distant lover accompanying each throb of your cock with a squeeze of her fantastic chest that milks another warm spurt out of you.",
+                                                    "IfPlayerSpiritGone", "OutOfSpirit",
+                                                    "Gasping and panting as you sigh at the momentarily receding feeling of the phantasmal titfuck, you manage to briefly recollect yourself while your vision swims with the wonderfully captivating sight of the window-veiled woman as she slows the rubbing of her plush bosom, only to segue into another erotic movement. You don't have much time to react if you want to escape this enthralling masturbatory infatuation!",
+                                                    "JumpToScene", "ResistOMenu"
+                                                ]
+                                    },
+                            {
+                                "NameOfScene": "OralTease",
+                                "theScene": [
+                                            "DamagePlayerFromMonster", "Fashionable Succubus", "Oral Tease",
+                                            "Her sensual lips curling into a barely visible smile, the unknown woman once again begins making obscene stroking motions with her hand while visibly licking at where your dick could be with her nimble tongue, the charming pulse of euphoric magic coaxing you into pumping your throbbing erection all the harder and faster in response to the almost tangible feeling of her tongue dancing across your tip.",
+                                            "DamagePlayerFromMonster", "Fashionable Succubus", "Oral Tease",
+                                            "As she elegantly brings her O-shaped fingers to her soft lips, you yelp as every thrust into your own hand suddenly starts feeling like you're fucking her slurping and sucking mouth, a low lusty purr cooing into your ear and reverberating through your body down into your dick as you can't help but momentarily indulge in the feeling of stuffing her throat over and over while you greedily keep drinking in her shadowy curves.",
+                                            "IfPlayerOrgasm", "OralClimax",
+                                            "JumpToScene", "ResistMenu"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "OralClimax",
+                                        "theScene": [
+                                                    "With a climax starting to well up in your groin, she notices your increasingly shaky movements and starts to pump her fingers while bobbing her head in tune with them in response, sending pulsing fantasies and sensations readily flooding your already intoxicated mind, your trembling dick leaking like a faucet as the ethereal feeling of the sultry woman's ravenous blowjob assaults you with her clinging lips and rolling tongue.",
+                                                    "CallSceneThenReturn", "OrgasmCounter",
+                                                    "As she sluttily moans into your ear and enticingly urges you on with wordless coos, a sudden surge of phantom stimuli and melty captivation overtakes you completely, making you throw your head back with a messy noise of bliss while your hips and hand slam into each other, as if you were actually ramming your manhood down her throat, the ghostly slurping milking out a thick cascade of semen out of you and onto the pavement.",
+                                                    "IfPlayerSpiritGone", "OutOfSpirit",
+                                                    "Gasping and panting as the tantalizingly wet embrace of her lips subsides with a parting kiss, you manage to briefly recollect yourself while your vision swims with the wonderfully captivating sight of the window-veiled woman as she seems to giggle while demonstratively licking her plump lips as if to thank you for your generous donation of delicious semen, before starting to gyrate her body anew...",
+                                                    "JumpToScene", "ResistOMenu"
+                                                ]
+                                    },
+                            {
+                                "NameOfScene": "AssSwing",
+                                "theScene": [
+                                            "DamagePlayerFromMonster", "Fashionable Succubus", "Swaying Ass",
+                                            "Pivoting around, the starkly-lit woman reaches behind her to part her long cascading hair, giving you an unobstructed view of her plump derriere as she shakes it side to side for your captivated enjoyment, the heart-racing spectacle of her bouncing ass keeping you worshipfully stroking into a deeper stupor, your mind filling with fantasies of how wonderfully {i}thick{/i} and {i}soft{/i} it must feel.",
+                                            "DamagePlayerFromMonster", "Fashionable Succubus", "Swaying Ass",
+                                            "Until she suddenly presses her cushy rear against the window and languidly rubs it up and down at a methodical pace, making you tense up in raw primal delight as the phantom feeling of her luscious butt grinding against your trembling dick floods your senses in a tempting mind-flooding fantasy, the ongoing hotdogging keeping you nicely immersed in wanton ass-loving ecstasy, making it harder and harder to resist...",
+                                            "IfPlayerOrgasm", "AssClimax",
+                                            "JumpToScene", "ResistMenu"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "AssClimax",
+                                        "theScene": [
+                                                    "Suddenly, to your budding confusion, she pulls her butt just slightly away from the glass, but just as you think the enchanting stimulation is going to ebb away, she gropes her full rear with her hands in an infatuatingly captivating display, showily caressing and fondling it, then giving a single spank to her ass that makes it jiggle obscenely and coaxes you into pumping your dick all the faster as pleasure surges anew in your groin.",
+                                                    "CallSceneThenReturn", "OrgasmCounter",
+                                                    "Then, once more, she catches you by surprise when she abruptly throws her hips back in a bouncy impact that makes the glass audibly vibrate and your brain go blank at the ghostly feeling of her ass firmly pressing against your twitching dick with a wobbly crash, the powerful stimulation sending a trembling quiver through you as your twitching erection unloads thick ropes of seed across the pavement in devotion to her enthralling rear.",
+                                                    "IfPlayerSpiritGone", "OutOfSpirit",
+                                                    "Gasping and panting as you bask in the fading sensation of her pillowy derriere smothering your manhood, you manage to briefly recollect yourself while your vision swims with the pendulous image of the shadow-veiled woman's plump captivating ass as she gives it one last wiggle before turning back to face you, pressing her curves against the window and rubbing her soft bust against the glass in a silent invitation to keep going.",
+                                                    "JumpToScene", "ResistOMenu"
+                                                ]
+                                    },
+
+                            {
+                                "NameOfScene": "OrgasmCounter",
+                                "theScene": [
+                                            "ChangeProgress", "1",
+                                            "IfProgressEqualsOrGreater", "5", "OrgasmCounter5",
+                                            "IfProgressEqualsOrGreater", "4", "OrgasmCounter4",
+                                            "IfProgressEqualsOrGreater", "3", "OrgasmCounter3",
+                                            "IfProgressEqualsOrGreater", "2", "OrgasmCounter2",
+                                            "PlayerOrgasm", "1"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "OrgasmCounter2",
+                                        "theScene": [
+                                                    "PlayerOrgasm", "2"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "OrgasmCounter3",
+                                        "theScene": [
+                                                    "PlayerOrgasm", "3"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "OrgasmCounter4",
+                                        "theScene": [
+                                                    "PlayerOrgasm", "4"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "OrgasmCounter5",
+                                        "theScene": [
+                                                    "PlayerOrgasm", "5"
+                                                ]
+                                    },
+
+
+
+
+                        {
+                            "NameOfScene": "OutOfSpirit",
+                            "theScene": [
+                                            "Twitching and gasping, completely spent from your unrestrained masturbation, you slump to the ground in a dazed, captivated mess, still staring slack-jawed up at the enchanting windowed woman even as you fall to your knees, the sexy stranger wordlessly continuing to sluttily press her curves against the glass and flaunt her body to you, making you tremble in euphoric bliss and unfulfilled desire for {i}more{/i}.",
+                                            "Your heart jumps with joy as you notice her shadowy shape beckon you to her with a sensual come-hither gesture, though in your exhausted state, there's no way you can move at much more than a stagger, let alone figure out how to get to her room, leaving you pitifully staring up at her in futile burning desire.",
+                                            "However, as if answering your craving, shadowy tendrils suddenly rush out of the lonely lady's room and coil you up before yanking you right up and into her window, the sudden extraordinary manifestation feeling like it took no more than a fraction of a second, finishing before you can even wonder what's happening to you.",
+
+                                            "Dazedly, you stagger and reel at the shift, and as you look around, you find yourself having a sort of strange out-of-body experience, like you're in two places at the same time: you're still crumpled right in front of the window, but {i}also{/i} standing right next to the mystery woman who approaches you and runs a hand along your cheek with a now audible coo that reverberates through your entire lust-charged being.",
+                                            "Despite your body still being out in the street, your 'disembodied self' can see from this strange third-person perspective and inside the oddly distorted space you seem to have been pulled in by your naughty temptress, her soft form smiling affectionately at you and letting out a gentle reassuring purr.",
+                                            "Though you can't distinctly see any part of her, as if she were entirely made of shadows, you can very much recognize her long luscious hair, curvy frame, pronounced waist, heavy breasts, plush butt, and elegant gestures... And as you blink a few times, you realize you've been literally pulled {i}into{/i} the window by some unknown magic, right into the habitat of your mysterious remote lover.",
+                                            "However, in your pleasure-addled state, you don't get to give it much thought as she wordlessly turns away from you and sluttily bends over, raising her wide hips and temptingly shaking them for you in both of your lucid dual perspectives, freshly alluring you with the raw beauty of her sexy bare body now highlighted by your close proximity.",
+                                            "Though you distantly feel that you should be alarmed, your libido completely smothers your sense of reason, the sight of the lascivious lady's offered pussy stoking your previously frustrated lust into a horny blaze that drowns out all other concerns, sending felicitous heart-racing shivers through your senses and making you immediately give in, already far too lost in her sexual charms and infatuating presence.",
+                                            "ChangeBGM", "music/Loss/BGM03_Uncanny light.mp3",
+                                            "With animalistic fervor, you pounce on the woman to grab her cushy rear and slam your dick into her in one smooth stroke, groping and squeezing at her now tangibly real shadowy curves in this odd two-dimensional space, a tender clench from her soft insides driving you to start frantically fucking her from behind, every impact making her ass wobble obscenely while her moans of wanton pleasure reverberate straight into your soul.",
+                                            "It's disorienting and alluringly strange watching your own shadowy shape ravish her like this, your attempts to focus on your dual self's first-person perspective sending you images that are hard to comprehend beyond the alluring flashes of her ethereal curvaceous body, quickly bringing you to give up on caring for anything but your otherworldly partner, greedily locking lips with her in a shared  moan as your thoughts fizzle out anew.",
+                                            "While it is difficult to read her feelings with her anatomy being as indistinct as it is, you get the unambiguous impression that she was looking forward to this just as much as you were, her muffled moans of joy intermixed with purrs of pleasure as she eagerly leans into your thrusts, her wanting pussy hungrily squeezing at your frenziedly pounding cock.",
+                                            "However, amid your frantic mating, you soon get the prickling feeling that you're being watched, and there's a ghostly titter from your spectral lover as your vision twists to make you look out from the window's point of view instead of at her, letting you see a number of blurry figures on the ground, the assembled watchers flushing as they voyeuristically watch you both anonymously go at it. It seems like you have an audience...",
+                                            "Before you can think more on this turn of events, your perspective shifts back to your 'front-row seat' view while your horny kidnapper moans at your interrupted thrusts and gives your shaft a demanding clench of her soft pussy, submerging your mind with a fresh influx of base lust and making you lose control of yourself all over again.",
+                                            "Without delay, you answer her mute request and excitedly resume pounding her from behind, a confused mix of different pleasures and excitements suffusing your entire being through the breathless makeout while euphoric primal ecstasy permeates your senses from the animalistic sex, your unthinking rutting swings rewarded by pleased cooing trills from the windowed entity as you keep fucking her with wild abandon...",
+                                            "Until with one more frantic impact of your hips, you tremble and unload thick ropes of cum deep into the ebony woman while she lowly moans into you, her evanescent voice like a full-body caress across your snatched self, her affirmations of affectionate bliss ricocheting right through everything you are and imbuing you with even more gratifying mind-blanking joy.",
+                                            "Then, as your orgasm ebbs away and you bask in the feeling of your pelvis staying glued to her plump butt as your seed finishes pouring into her, she suddenly sends you stumbling back with a bump of her ass, leaving you reeling in confusion... until you see by her indistinct smile and sashaying stride that the 'show' is far from over, the enchanting woman pushing you down on your back before lowering herself onto you with a lick of her lips.",
+                                            "Showily, she spreads her lower lips and lets you watch her greedy sex engulf your manhood once more, leaving you nicely in position for her to ravenously ride and claim while onlookers enjoy the sight of your constant mating, your curvy temptress swinging her wide hips at a constant tempo while her hands alternate between caressing your pinned form and tossing back her long locks of hair to keep them out of the way of your view.",
+                                            "Every downward slam of her shapely hips is accented by an alluring wiggle of her waist and the bouncing jiggle of her heavy breasts, the spectacle yours to admire both right in front of you and from your strange two-dimensional direct perspective, treating you to double the enchanting imagery to get lost in while your partner's mind-melting cries of lusty pleasure are yours only to hear as you readily thrust up into her.",
+                                            "As the perverted brazen sex goes on, more and more onlookers join to watch your shadowy show of sex while pleasure rises higher in your loins with each tightly squeezing impact of the windowed woman's pussy, your lover taking your hands into hers in a tight loving grip while the heart-capturing charm she placed on you redoubles, letting you lose yourself completely in her shadowy curves as raw euphoria submerges your waist.",
+                                            "Between her frantic pace and your infatuated intoxicated state, every swing of her wide hips inescapably draws you closer to climax at breakneck speed, her own body delightedly shivering and her voice rising louder with each mating squat, turning into obscene moans that pleasurably vibrate through your very soul like it was hit with a tuning fork, leaving your mind reeling as you sink deeper and deeper into the base joy of the eerie sex.",
+                                            "The two of you exchanging inarticulate cries and pants of bliss like so many wordless affirmations of mutual ecstatic glee, she continues slamming her perfect hips down onto yours with frenzied enthusiasm, until in one final hilting impact, she lets herself drop onto you with an unintelligible howl of rapture, her powerfully quivering and clenching sex immediately getting you to pour a second spurting load straight and deep into her.",
+                                            "Both of you gasp and tremble in the throes of ecstasy for a few long moments as she lowers herself onto you, cooing affectionately while rubbing her smooth body against yours and covering your face with sloppy kisses that you dazedly return, making it feel like she might be sated...",
+                                            "But you are quickly proven wrong as she soon dismounts you and draws back with snakelike agility, slipping between your legs to bury your shaft within her pillowy cleavage while sealing her soft lips around your tip with a demonstrative claiming smooch, squeezing and sucking and pumping your manhood for all it's worth while you can only dizzily indulge in her enchanting attentions and phantom-like embrace.",
+                                            "As she stares possessively at you with lust-filled unseen eyes, it becomes clear she has no intent of stopping anytime soon, all too happy to have claimed you as {i}hers{/i} and now determined to keep you as her partner for as long as you'll endure, making full use of you for her pleasure while being more than ready to return said pleasure in kind with her wondrous physique and peerless techniques.",
+                                            "Too maddeningly aroused and exhausted to deny her, you can only accept your role as her amorous guest... And so all through the night, you rotate through countless positions and acts with her, uncaring of who or how many watch your frantic lovers' tryst, your own mind blank of everything but her, her captivating body, and her sweet wordless moans, your erection never tiring in the slightest as you fuck to your hearts' content.",
+                                            "... Or at least, until the sun eventually starts to slowly rise on the horizon, reflecting against the window as your recall stone finally activates and you start to fade away while the dark woman seems content to let you leave after your night of lovely debauchery, cuddling with your exhausted form for a few more long moments before you part.",
+                                            "...",
+                                            "ChangeFetish", "Ass", "5",
+                                            "ChangeFetish", "Breasts", "5",
+                                            "ChangeFetish", "Kissing", "5",
+                                            "ChangeFetish", "Sex", "5",
+                                            "ChangeFetish", "Oral", "5",
+                                            "ChangeFetish", "Kissing", "5",
+                                            "ChangeFetish", "Monstrous", "5",
+                                            "ChangeSensitivity", "Seduction", "10",
+                                            "ChangeSensitivity", "Sex", "5",
+                                            "ChangeSensitivity", "Magic", "5",
+                                            "GameOver"
+                                        ]
+                            },
+
+
+
+
+                    {
+                        "NameOfScene": "PostEventStuffs",
+                        "theScene": [
+                                     "IfInExploration", "EndEvent",
+                                     "AllowInventory",
+                                     "GoBackToStoredEvent"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "EndEvent",
+                        "theScene": [    "UseHeldBG"
+                                  ]
+                      },
+
+
+                    {
+                        "NameOfScene": "EventBroke",
+                        "theScene": [  "Event Broke!!!"
+                                  ]
+                    }
+                ]
+}

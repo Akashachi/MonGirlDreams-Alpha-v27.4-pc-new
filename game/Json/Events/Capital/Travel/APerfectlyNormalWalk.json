@@ -1,0 +1,422 @@
+{
+  "name": "A Perfectly Normal Walk",
+  "CardType": "Event",
+  "CardLimit": "2",
+  "Description": "There's rumors in Ars Delusia that sometimes, when one walks isolated streets all alone, they can hear the {i}click-clack{/i} of someone's high heels chasing after them, the sound getting irresistibly closer and closer until it is too late...",
+  "requires": [ ""],
+  "Speakers": [
+                {
+                  "name": "",
+                  "postName": "",
+                  "SpeakerType": ""
+                }
+              ],
+  "EventText": [
+                  {
+                              "NameOfScene": "SuddenNight",
+                              "theScene": [ "StoreCurrentBG",
+                                            "ChangeBG",  "Capital.png",
+                                            "StopBGM",  "SetChoice", "1", "",    
+                                            "TimeBecomesNight",      
+                                            "As you traverse the Ars Delusian streets, you abruptly and unexplainably find your daytime urban stroll plunged into the eerie dark of the night, as if someone had simply and purely turned off the sun, the baffling change leaving your way lit up only by the surrounding buildings, and making the atmosphere of your walk a suddenly much tenser one...",        
+                                            "JumpToScene", "EventGogo"
+                                        ]
+                  },
+                  {
+                      "NameOfScene": "EventGogo",
+                      "theScene": [          
+                                    "StopBGM",
+                                    "Continuing to stride down the urban road on your lonesome, you find nary a split, crossing, or alleyway in sight as you look around, the wide concrete pathway ahead of and behind you somehow appearing to stretch on and on into the dark without end.",
+                                    "With nevertheless little choice but to carry on wherever your path may lead, you move onwards, step by step, the sounds of your own footsteps the only thing to keep you company through the seemingly interminable night.",
+                                    "Slowly, an eerie stillness settles over you as minute after minute passes and you still fail to see anything around you but the indifferent buildings that loom forebodingly over you and barely light your way with their stark windows and cold neon signs, leaving you feeling increasingly unnerved by how you don't appear to be going anywhere, not to mention how devoid of people or sound everything seems to be.",
+                                    "ChangeEnergyQuietly", "-50",
+                                    "But just as you start feeling physically and mentally fatigued from all this aimless wandering...",
+                                    "ChangeBGM", "music/Unknown/Horror-youiki.mp3", "PlayLoopingSoundEffect", "sfx/footstep.mp3",
+                                    "The sound of heels clicking on the pavement suddenly starts echoing behind you, sending a chill up your spine.",
+                                    "JumpToScene", "OptionMenu"
+                                ]
+                  },
+                        {
+                          "NameOfScene": "OptionMenu",
+                          "theScene": [ "IfProgressEqualsOrGreater", "3", "CaughtUp",
+                                        "Menu",
+                                          "Keep walking.",
+                                          "Stop walking.",
+                                          "Run.",
+                                          "Look behind you.",
+                                          "Move to the side and let whoever this is pass.",
+                                        "EndLoop"
+                                  ]
+                        },
+                            {
+                              "NameOfScene": "CaughtUp",
+                              "theScene": [ "In fact, you realize that the footsteps are now {i}right behind you{/i}, your own feet suddenly stopping against your will as a cold chill grips your very core, meanwhile whoever is following you also halts their heel-clicking steps, plunging the street back into total silence.",
+                                            "StopSoundEffectLoop", 
+                                            "PlayVisualEffect", "SuddenHaze", "darkHaze.png",
+                                            "Except now, you can {b}feel{/b} the oppressive presence behind you towering over you like a lead weight while dark flickers ominously dance along the edges of your vision, like {i}they{/i} are peeking around at you with curious intent.",
+                                            "JumpToScene", "Option2Menu"
+                                      ]
+                            },
+                        {
+                          "NameOfScene": "Look behind you.",
+                          "theScene": [  
+                                        "ChangeProgress", "2",
+                                        "StopSoundEffectLoop",  
+                                        "You look behind you to see who is there.\n\nThe only thing you see is the vacant urban vista you just walked past.\n\nThere is no one else here.",
+                                        "PlayLoopingSoundEffect", "sfx/footstep.mp3",
+                                        "Then just as you turn back, the sound of heels clicking against the pavement resumes, and continues to draw closer.",
+                                        "JumpToScene", "OptionMenu"
+                                  ]
+                        },
+                        {
+                          "NameOfScene": "Move to the side and let whoever this is pass.",
+                          "theScene": [                                          
+                                        "You move against one of the buildings that border the sidewalk in order to let the one behind you pass, a nerve-wracking, heart-racing tension tightening through your entire body as the sound of the heeled footsteps gets closer and closer, up to the point where it feels like whoever is making them is passing {i}right by you{/i}...",
+                                        "Until they eventually, {i}finally{/i} walk past you, and beyond still, slowly getting further and further away until the unnerving {i}click-clack{/i} fades away entirely.",
+                                        "ChangeEnergyQuietly", "-250",
+                                        "StopBGM", "StopSoundEffectLoop",
+                                        "After taking a moment to make sure that you are well and truly on your own again, you let out a breath you didn't realize you were holding and almost crumple on the spot as a sensation of intense pent-up exhaustion crashes into your entire body while the strange cold stillness in the air fades away, letting your heart rate quiet down to a more normal pace and allowing you to think clearly once more.",
+                                        "JumpToScene", "WalkToPostEventStuffs"
+                                  ]
+                        },
+                        {
+                          "NameOfScene": "Keep walking.",
+                          "theScene": [  
+                                        "ChangeProgress", "1", "ChangeEnergyQuietly", "-50",
+                                        "IfChoice", "1", "Walked2", "Walk3",
+                                        "IfChoice", "1", "Walked1", "Walk2",
+                                        "SetChoice", "1", "Walked1",
+                                        "Redoubling your pace, you keep walking forward down the seemingly endless street path.",
+                                        "It feels like the lights are getting dimmer.",
+                                        "The sound of footsteps slowly keeps growing closer to you while a tingling chill continues to creep over your body.",
+                                        "JumpToScene", "OptionMenu"
+                                  ]
+                        },
+                              {
+                                "NameOfScene": "Walk2",
+                                "theScene": [  
+                                              "SetChoice", "1", "Walked2",
+                                              "Despite the {i}click-clack{/i} of the heeled steps steadily getting closer to you, you keep adamantly walking forward.",
+                                              "The tingling chill continues to creep along your skin, turning into a cold tremor.",
+                                              "Everything keeps getting darker and darker, the road ahead seeming to stretch on and on into a pitch-black eternity.",
+                                              "JumpToScene", "OptionMenu"
+                                        ]
+                              },
+                                    {
+                                      "NameOfScene": "Walk3",
+                                      "theScene": [    
+                                                    "Persistently, you keep walking forward, keeping your focus entirely on the sidewalk ahead.",
+                                                    "The sound of heeled steps still draws closer and closer.",
+                                                    "Closer and closer, until with one decisive {i}clack{/i}, that chilling presence catches up to you!",
+                                                    "StopBGM", "StopSoundEffectLoop",
+                                                    "Then, somehow, with one more stubborn step on your part, it stops.",
+                                                    "The creeping, stilling chill vanishes as your foot hits the ground.",
+                                                    "The sound of heels is gone, the resulting silence feeling downright deafening, but also impossibly liberating at the same time, like you've just been freed from the influence of... something.",
+                                                    "JumpToScene", "WalkToPostEventStuffs"
+                                              ]
+                                    },
+                        {
+                          "NameOfScene": "Stop walking.",
+                          "theScene": [  
+                                        "Deciding to stand your ground, you stop trudging forward... but the sound of clicking heels does not.",
+                                        "ChangeEnergyQuietly", "-50",
+                                        "StopSoundEffectLoop",
+                                        "In what feels like the passing of a single heartbeat, as if all it had waited for was for you to halt, the {i}click-clack{/i} sound catches up to you, and stops behind you!",
+                                        "PlayVisualEffect", "SuddenHaze", "darkHaze.png",
+                                        "Whoever or whatever those footsteps belong to is now standing right at your back, and you can {b}feel{/b} their towering presence looming over you, their unseen gaze tangibly boring into you.",
+                                        "JumpToScene", "Option2Menu"
+                                  ]
+                        },
+
+                        {
+                          "NameOfScene": "Run.",
+                          "theScene": [   "ChangeEnergyQuietly", "-50",
+                                          "In a mad dash, you start to sprint down the street to get away from whoever is behind you... But to your increased fear, you can hear the gaps between their heel-clicking footfalls somehow lengthen rather than speed up as the looming presence seemingly works to keep pace with you!",                          
+                                          "StatCheck",
+                                          "Technique",
+                                          "30",
+                                          "PassedRun",
+                                          "Fail",
+                                          "FailedRun"
+                                  ]
+                        },
+                                {
+                                  "NameOfScene": "PassedRun",
+                                  "theScene": [ "StopBGM", "StopSoundEffectLoop",                                          
+                                                "As you keep rushing down the concrete street at all the speed that your legs can muster, the sound of the clicking heels slowly but surely grows ever more distant, until finally, it fades entirely, meanwhile that odd stillness that pervaded the air vanishes completely, its sudden absence bringing with it an incredible feeling of liberation that makes you feel mercifully alone and unfollowed once more.",
+                                                "Halting your run, you take just a moment to catch your breath and get your bearings, then you straighten back up and decide you shouldn't tarry, lest your strange pursuer somehow return.",
+                                                "JumpToScene", "WalkToPostEventStuffs"
+                                          ]
+                                },
+                        {
+                          "NameOfScene": "FailedRun",
+                          "theScene": [    
+                                          "No matter how fast you run, the footsteps seem to always get closer, meanwhile the concrete road ahead never seems to end, the nighttime darkness ever yawning before you, making for a foreboding, demoralizing sight that swiftly wears away at both your hope and endurance...",
+                                          "ChangeEnergyQuietly", "-500",
+                                          "Until you're eventually forced to stop and catch your breath, heaving exhaustion and instinctive panic pounding through every fiber of your being alongside the beating of your strained heart as you stand doubled over with your hands braced on your shaky legs.",                          
+                                          "StopSoundEffectLoop",
+                                          "Then, suddenly, you realize the {i}click-clack{/i} of the heels following you has stopped.",
+                                          "Because whoever or whatever they belong to is now standing {i}right behind you{/i}, looming over your vulnerable form as you desperately gasp for air.",
+                                          "PlayVisualEffect", "SuddenHaze", "darkHaze.png",
+                                          "You can {b}feel{/b} their tall presence against your back. Their unearthly weight is towering over you from behind, meanwhile shadowy flickers creep along the sides of your vision like {i}they{/i} are peeking over your head to curiously gaze at you.",
+                                          "JumpToScene", "Option2Menu"                                        
+                                  ]
+                        },
+
+
+
+
+                    {
+                    "NameOfScene": "Option2Menu",
+                    "theScene": [  
+                                  "Menu",
+                                    "Say 'Hello?'",
+                                    "Stay perfectly still.",
+                                    "RequiresEnergy", "200", "Run! (200 Energy)",
+                                    "Look behind you. ",  
+                                    "Scream.",
+                                  "EndLoop"
+                            ]
+                    },
+
+                    {
+                        "NameOfScene": "Say 'Hello?'",
+                        "theScene": [ "StopBGM",
+                                      "The echo of your tentative greeting is initially met with dead silence as the presence leans its tall frame forward without a sound, the resulting movement of chilling air ticklishly brushing against your ear while a sensation of heavy, plush softness insistently presses against your back, the assertive pressure unquestionably intimidating, but also oddly... comforting?",
+                                      "But before you can ponder those mixed feelings, a pair of long arms that you can't see but can {i}keenly{/i} feel suddenly reach over you and drape over your chest, grabbing you into a hold that somehow feels inescapably strong and impossibly gentle at the same time.",
+                                      "And then your mysterious stalker speaks, its voice feeling uncannily distant despite rising right behind you, weaving through the still air in a warbling, husky rasp that feels to your ears more like a sort of disembodied, repeated exhale than something normal vocal chords could make, the unknown creature's ethereal breath ticklishly dancing across your skin like a flurry of melting ice flakes as it coos.",
+                                      "Speak", "???",
+                                      "{alpha=0.9}{size=-10}{i}Hello.♥︎\n{/i}{/size}{/alpha}{alpha=0.6}{size=-5}{i}Hello.♥︎\n{/i}{/size}{/alpha}{alpha=0.3}{i}Hello.♥︎\n{/i}{/alpha}{alpha=0.1}{size=+5}{i}Hello.♥︎{/i}{/size}{/alpha}",
+                                      "ChangeBGM", "music/Casino/BGM06_sink.mp3",
+                                      "PlayVisualEffect", "SuddenHaze", "pinkHaze.png",
+                                      "The phantasmal, oddly captivating voice echoes and rings through your hypersensitive senses, that one spoken word reverberatingly drowning out your thoughts and steeping them in a curiously pleasant haze, as if your brain were being directly caressed and smothered in eldritch affection, the otherworldly feeling coaxing a strangely giddy smile onto your face while the entity lets out an eerie, musical giggle above you.",
+                                      "Then, without another word on their owner's part, the two arms draped over you turn you around to make you face your pursuer and pull you without further ado into a firm, comforting hug, your face instantly getting buried into an unearthily pale pillowy cleavage, the impossibly plush and large chest ahead of you only constrained by a pure-white sundress.",
+                                      "JumpToScene", "HugCont"
+                                ]
+                      },
+                     {
+                          "NameOfScene": "Stay perfectly still.",
+                          "theScene": [    "You stay perfectly still, beads of cold sweat trailing down your skin as the looming pressure hanging over you only grows stronger with each silently passing second, the feeling of an unseen gaze insistently boring into your back starkly clear to your racing mind, as if the hounding entity were thoroughly appraising you before making its move.",
+                                          "StopBGM",
+                                          "Then, a hand you can't see but can keenly feel reaches forward to curiously touch your cheek in a strangely gentle nail-dragging caress that sends shivers of chilling trepidation all across your entire body, freezing you in place with ever-mounting, limb-locking tension.",
+                                          "ChangeBGM", "music/Casino/BGM06_sink.mp3",
+                                          "PlayVisualEffect", "SuddenHaze", "pinkHaze.png",
+                                          "Soon, however, that one hand is joined by another that possessively wraps around your unmoving form, the entity's hold on you turning into a proprietorial grip as your eldritch stalker spins you in its direction and pulls you into a firm, comforting hug, your face instantly getting buried into an unearthly pale pillowy cleavage, the impossibly plush and large chest ahead of you only constrained by a pure-white sundress.",  
+                                          "JumpToScene", "HugCont"                         
+                                  ]
+                        },
+
+                     {
+                          "NameOfScene": "Run! (200 Energy)",
+                          "theScene": [   "ChangeEnergyQuietly", "-200",
+                                          "Your body shivers and twitches as it initially refuses to stir under the unearthly pressure bearing down on you from behind like a physical force, the creeping chill refusing to let go of you. You will have to muster all your will against this eldritch influence in order to get your body to move!",                          
+                                          "StatCheck",
+                                          "Willpower",
+                                          "35",
+                                          "PassedRun2",
+                                          "Fail",
+                                          "FailedRun2"
+                                  ]
+                        },
+                                {
+                                  "NameOfScene": "PassedRun2",
+                                  "theScene": [                                        
+                                                "With a supreme effort of willpower, you somehow manage to break off into a sprint despite the invisible hold over you, your heart racing with instinctive panic and blind fear as you try to put as much distance as possible between you and whoever that strange presence was...",
+                                                "StopBGM", "EndVisualEffect", "StopSoundEffectLoop", 
+                                                "Until finally, you feel {i}something{/i} lift from your shoulders as you seem to get out of reach of whatever {i}that{/i} was, leaving you ultimately stumbling to a stop and gasping for air, panting for long minutes until you have eventually regained enough of your breath and presence of mind to straighten back up and get a move on.",
+                                                "JumpToScene", "WalkToPostEventStuffs"
+                                          ]
+                                },
+                        {
+                          "NameOfScene": "FailedRun2",
+                          "theScene": [    
+                                          "But no matter how much you try to get your body to move, it just won't, leaving you purely and simply frozen in place, completely exposed.",
+                                          "ChangeBGM", "music/Casino/BGM06_sink.mp3",
+                                          "PlayVisualEffect", "SuddenHaze", "pinkHaze.png",
+                                          "And as if in response to your trembling inaction, two arms wrap around you from behind, simultaneously turning you towards your pursuer and pulling you into a firm, comforting hug, your face instantly getting buried into an unearthily pale pillowy cleavage, the impossibly plush and large chest ahead of you only constrained by a pure-white sundress.",
+                                          "JumpToScene", "HugCont"                                        
+                                  ]
+                        },
+
+                        {
+                          "NameOfScene": "Scream.",
+                          "theScene": [    
+                                        "ChangeBGM", "music/Casino/BGM06_sink.mp3",
+                                        "PlayVisualEffect", "SuddenHaze", "pinkHaze.png",
+                                        "Just as you open your mouth to cry out in panic, two arms wrap around you from behind, simultaneously turning you towards your pursuer and pulling you into a firm, comforting hug, your face instantly getting buried into an unearthily pale pillowy cleavage, the impossibly plush and large chest ahead of you only constrained by a pure-white sundress.",
+                                        "JumpToScene", "HugCont"
+                                  ]
+                        },
+                        {
+                          "NameOfScene": "Look behind you. ",
+                          "theScene": [    
+                                        "ChangeBGM", "music/Casino/BGM06_sink.mp3",
+                                        "PlayVisualEffect", "SuddenHaze", "pinkHaze.png",
+                                        "As you try to turn around to get a look at who or what's behind you, you only catch a brief glimpse pallid flash before two arms wrap around you and pull you into a firm, comforting hug, your face instantly getting buried into an unearthily pale pillowy cleavage, the impossibly plush and large chest ahead of you only constrained by a pure-white sundress.",
+                                        "JumpToScene", "HugCont"
+                                  ]
+                        },
+                            {
+                              "NameOfScene": "HugCont",
+                              "theScene": [  "ChangeArousalByPercent", "10",  "ChangeEnergyByPercent", "-25",   
+                                             "All at once, every bit of tension in your body melts away into hazy, dreamy comfort as your strange pursuer who is at least as tall as an oni coos softly at you while using one large, elegant hand to stroke your head, all the while she keeps your head snugly nestled against her bust, looking very much unwilling to let go of you now that she has you in her grasp.",
+                                             "ChangeArousalByPercent", "10", "ChangeEnergyByPercent", "-25",
+                                             "As you reflexively take a deep, gasping breath in response to the sudden smothering, your lungs fill with a sweet, gentle smell like clean vanilla and fresh laundry, further stifling your fear and worries and coaxing you into relaxing against the tall womanly figure, unable to remember why you were even running away in the first place.",
+                                             "ChangeArousalByPercent", "5",
+                                             "Everything now feels so wonderfully warm and floaty as you feel like you're hovering above the ground in soft bliss... until you distantly realize that your hugging huntress has picked you up off the ground and you're {i}actually{/i} standing in the air within her arms, leaving your feet limply dangling under you.",
+                                             "ChangeArousalByPercent", "10", "ChangeEnergyByPercent", "-50",
+                                             "With your head firmly nestled into the unearthly entity's breasts, you can't really get a good look at her, but you find yourself caring less and less about what she looks like or even what she is, all your senses awash in mind-dulling comfort that decisively washes away any and all panic within your body, trepidation swiftly giving way to hot arousal that pushes your blood into your cock to rapidly form a clothes-tenting erection.",
+                                             "Lifting your eyes to peek beyond the semi-transparent sea of marshmallowy softness you're getting cuddled into, all you can see is a hint of an eerie pitch-dark smile beyond a pair of beautiful black-painted lips, and stray locks of silky dark hair hiding a pair of eyes that look down at you dotingly.",
+
+                                             "ChangeArousalByPercent", "10",
+                                             "In a smooth, silent motion, the tall womanly creature leans in closer to you, and her eerie mouth purses into a kissy shape as she applies a lipstick-staining smooch to your forehead, the feeling of the sweetly predatory gesture and its accompanying sound of possessive affection sending echoing shivers of mind-numbing comfort irresistibly tingling all across your body, further burying your fearful agitation in loving pleasure.",
+                                             "ChangeArousalByPercent", "10",
+                                             "Your vision swimming as you let out woozy moan of growing defenselessness, you find your head dully settling back down into the curvy apparition's warm welcoming cleavage with a dazed huff while she lets out a strangely distorted giggle before speaking up, her husky, distant voice somehow dancing and reverberating through your captive senses like an overlapping chorus.",
+                                             "Speak", "???",
+                                             "{alpha=0.9}{size=-10}{i}So cute...♥︎ So needy.♥︎\n{/i}{/size}{/alpha}{alpha=0.6}{size=-5}{i}Are you lost?♥︎\n{/i}{/size}{/alpha}{alpha=0.3}{i}Do you want to walk with me?♥︎\n{/i}{/alpha}{alpha=0.1}{size=+5}{i}You can be all mine.♥︎{/i}{/size}{/alpha}",
+                                             "Menu", 
+                                                "Walk.♥︎",
+                                                "Try to look at her face.",
+                                                "Walk.♥︎",
+                                                "Walk.♥︎",
+                                                "Walk.♥︎",
+                                              "EndLoop"
+
+                                      ]
+                            },  
+
+
+                            {
+                              "NameOfScene": "Try to look at her face.",
+                              "theScene": [  
+                                            "Spurred by eager curiosity or concerned trepidation, you squirm against the wonderfully smothering comfort pressing against you and filling every fiber of your being, needing to strain against the leaden curvy weight you're getting cuddled into just to crane your head up and away from those pillowy acres of cleavage in an effort to get a peek at the strange ladylike figure's face.",
+                                            "The first thing you see is a pair of soft, full lips painted with jet-black lipstick, the left side of the sensual mouth adorned with a small beauty mark that only further highlights the unearthly whiteness of the ghostly pale, softly mature visage it belongs to, the tall creature's pearlescent mien draped over by locks of dark hair that somehow seem to move on their own, as if under the effect of a continued unfelt breeze.",
+                                            "StopBGM",
+                                            "But the moment you meet your womanly captor's eyes, you know that you can no longer look away. Her irises are pitch-black, lightless, holding your gaze like an infinitely deep abyss that you simply can't help but feel vertiginously drawn to, their twin surfaces shifting and dancing like cloudy ink that swallows your will with no hope of escape.",
+                                            "In response to your dangerous curiosity, the dual stygian pools before you seem to swirl with something like amusement while an otherworldly giggle echoes from the depths of their inhuman owner's body, the entity's softly doting expression suddenly turning into a sharp, greedy stare while her mouth forms an eerily widening smile as she discordantly croons.",
+                                            "ChangeBGM", "music/Loss/Falling Down.mp3",   
+                                            "Speak", "???",
+                                            "{alpha=0.9}{size=-10}{i}Naughty.♥︎\n{/i}{/size}{/alpha}{alpha=0.6}{size=-5}{i}Naughty.♥︎\n{/i}{/size}{/alpha}{alpha=0.3}{i}Naughty.♥︎\n{/i}{/alpha}{alpha=0.1}{size=+5}{i}Naughty.♥︎{/i}{/size}{/alpha}",
+                                            "Her distant-sounding, husky voice bounces around your captivated head as she lifts you higher while slowly leaning towards you, her mesmerizing pallid face drawing closer and closer to yours as she purses her pillowy lips, all the while something ineffable about her very existence seems to leave you all but completely frozen in place, unable to struggle or even look away.",
+                                            "Closer and closer, she keeps unhurriedly approaching, until finally, her soft lips lock with yours in a hungry, possessive makeout while her black eyes keep unblinkingly boring into yours with growing arousal, the eldritch lady's tongue easily breaching your unresisting mouth the better to claim all of you through that one voracious liplock.",
+                                            "Meanwhile, in your elevated, held-aloft position, you can feel the towering woman's huge breasts pressing against your still clothed and tenting erection, the covered tip of which snugly comes to rest right against the spot where the hounding creature's white dress meets her pale skin, your irresistibly engorged dick twitching excitedly in reaction to every languid, smooching lick and suck of the loving predation you're being subjected to.",
+                                            "Melodiously, your horny pursuer coos and titters into your mouth in giddy affection, her tongue ravenously dominating yours while her lips stain yours black with her lipstick, her strangely sweet, otherworldly taste permeating your mouth while her gaze keeps you inescapably caught in wide-eyed, paralyzed captivation, leaving you defenseless against the warm oozing pleasure that keeps building and melting through your senses.",
+                                            "Once she can see that she now has you fully unable to muster any fight against her, the grabby entity's long black hair somehow comes to life, suddenly rising and slithering across your skin to wrap around your frozen body in a tightly constricting embrace, all while she keeps breathlessly kissing you into an ever-deepening stupor.",
+                                            "Swaying and sinking into the enticing mire of her desire, you thoughtlessly let her snugly secure her hold all over you, her dark locks expertly trussing you up until they can keep you aloft on their own, leaving her hands free to caressingly retract from your frame only to swiftly pull off your pants in eager want of more of you, the freeing gesture letting your hopelessly stiff cock spring up against the silky fabric of her cleavage-flaunting sundress.",
+                                            "Letting out a hot pant of hungry lust, she then tugs down the straps of her top, letting her impossibly large, marshmallowy tits spill out to engulf your twitching erection in a firm smothering embrace as she deftly moves her hands to further push her soft breasts together, the grip of her binding hair tugging you closer to her body for more close-and-personal affections while she intensifies her tongue-entangling kiss in ever-mounting thirst for more.",
+                                            "Weightless and helpless as you are, the only thing you can do in your hazy, delirious state of powerless excitement is indulge in more and more of her doting, pampering love, your entire body alight with melty, mind-fizzing pleasure while your eyes remain lost in her ever-shifting black irises' boundless depths, your restrained form shivering with intoxicated moans under each squeezing stroke of your captor's bountiful pale cleavage.",
+                                            "For long, maddeningly blissful minutes, she keeps treating you to the dual ministrations of her devouring mouth and enveloping tits, all the while her enwrapping hair keeps rubbing and kneading all over you like an all-encompassing massage, further coaxing you into letting go {i}completely{/i} and surrendering yourself to the sweetly dominating woman's eerie attentions as she keeps making out with you and titfucking you with no end in sight.",
+                                            "Eventually, however, she does break the seemingly endless kiss... but only to rapidly pepper your face with staining, marking smooches while your freed mouth gapes wantonly as it rasps dizzily for air, the messy sounds turning into indulgent gasps as a single lock of her hair ticklishly caresses the underside of your tensing balls while she keeps squeezing and pumping your leaking manhood, relentlessly continuing to stimulate you all over.",
+                                            "With so much eldritch ecstasy being uninterruptedly lavished upon you, you can feel your orgasm approach at a swift pace, the fast rising rapture making your breathless gasps for breath turn into shivering moans of unearthly delight, all the while your gaze stays hopelessly glued to the lusty lady's mesmerizing inky irises, ensuring you remain nice and docile in her grasp as she keeps pleasuring you with single-minded assiduity.",
+                                            "As she takes a moment to just appreciate the sight of your bound self and stare amorously into your eyes, you feel with absolute certainty that you're thoroughly lost to her, adrift in a fathomless abyss of mounting climactic bliss with only her otherworldly gaze to keep you anchored, your buried erection twitching and leaking in maddening need for release with each obscene smush and jiggle of her tits while you hotly gasp in final abandon.",
+                                            "Seeing you so needily and desperately teetering on the edge, your inhuman lover ravenously presses her lips back against yours with a reverberating coo, meanwhile she tightens her binding black locks and gives her pillowy plush breasts a firm, decisive smothering squeeze to push you over the brink in a dizzying surge of pleasure, leaving your entire body jolting and shivering in broken ecstasy as you ruinously go over the edge.",
+                                            "PlayerOrgasm", "1",
+                                            "Readily, your wanton cock spurts rope after rope of cum straight into the eerie woman's ample cleavage while your eyes stay terminally lost within hers, making you feel like you're being pulled deeper and deeper into their depths with each jet of your seed you surrender to her, leaving you rapidly sinking into a sea of hot, swallowing, stygian rapture, perhaps never to return.",
+                                            "PlayerOrgasm", "1",
+                                            "A part of you knows that you should be alarmed at this sensation... but as you continue to gaze into her deep dark eyes, you feel so oddly distant and detached that you can only keep riding the waves of addictive euphoria as she greedily deepens her passionate kiss and keeps stroking her huge tits while her soft hair slithers across your skin from every angle, the manifold stimulation keeping your cock spurting and spurting on loop for her.",
+                                            "Speak", "???",
+                                            "{alpha=0.9}{size=-10}{i}Naughty.♥︎\n{/i}{/size}{/alpha}{alpha=0.6}{size=-5}{i}Naughty.♥︎\n{/i}{/size}{/alpha}{alpha=0.3}{i}Naughty.♥︎\n{/i}{/alpha}{alpha=0.1}{size=+5}{i}Naughty.♥︎{/i}{/size}{/alpha}",
+                                            "PlayerOrgasm", "1",
+                                            "Her tittering, loving voice somehow echoes all over your thoroughly melted mind even as she never parts her lips from yours, each of the black lipstick marks she's previously left on your face radiating enthralling warmth while her husky, sweetly crooning words keep bouncing around your enchanted head, keeping you adrift in the dark, boundless ocean of her eldritch affection, and always spurting out more for her.",
+                                            "PlayerOrgasm", "1",
+                                            "The more you cum, the more you feel like cumming again as you keep staring into her abyssal eyes, the elation of her doting, possessive embrace alongside the captivating haze of her mesmeric giggling tones proving more than enough to make you spill out even more of your seed across her pale breasts while you continue to sink and melt into her otherworldly embrace, completely addicted to her strange but {i}so{/i} wonderful attentions.",
+                                            "PlayerOrgasm", "1",
+                                            "PlayBlackOut", "EndVisualEffect",
+                                            "With every extra rope of cum you spurt into her cleavage, it's like you're falling further into the depths of her black irises, her pale seductive visage etching itself deep into your memory while everything around you grows darker and darker, until your consciousness finally winks out, leaving you blissfully drifting in a peaceful, comforting void of inky blackness...",
+                                            "...",
+                                            "ChangeFetish", "Kissing", "5",
+                                            "ChangeFetish", "Breasts", "5",
+                                            "ChangeFetish", "Monstrous", "10",
+                                            "JumpToScene", "PostSupernaturalLewding"
+                                      ]
+                            }, 
+                            {
+                              "NameOfScene": "Walk.♥︎",
+                              "theScene": [ "ChangeBGM", "music/Loss/BGM03_Uncanny light.mp3",                                            
+                                            "The pale lady lets out a musically echoing titter of approval at your decision while hugging you tighter with her long arms, the gesture squeezing you even more intimately against her while, in the process, her pale dress somehow begins to ethereally phase through you as you're drawn even closer to her bare curves, as if her clothes were no more than a thin barrier of cloudy substance that you're crossing inch by indulgently soft inch.",
+                                            "Meanwhile, to your growing woozy astonishment, her silky white outfit seems to reciprocally filter out your clothes on contact, your fast growing proximity dissolving the unimportant garments as you're getting pulled into her snug, welcoming embrace, until eventually, you're body to body with her, your head comfortingly entrapped within her tight, pillowy cleavage while your twitching cock throbs excitedly against her lower lips.",
+                                            "Warbling and purring in excitement, the towering woman's hands gently guide your dangling legs to wrap around her wide hips, meanwhile you're feeling so wonderfully dazed, warm, and cozy that you can't hold yourself back from eagerly wrapping your arms around the otherworldly woman's waist in mindless acceptance of her possessive hold on you, nor can you help but indulgently bury your face into her milky white bosom in raw need.",
+                                            "With you thus firmly secured against her imposingly tall curves and cozily tugged beneath her tightly hugging silky dress, she gives the top of your head a doting scritch with her long nails in a sweetly maternal gesture that sends melty shivers across your entire body, the oozing sensation overlapping with and enhancing the already permeating feeling of being enveloped in her floaty ethereal softness.",
+                                            "Letting out a low, distant-sounding hum, she moves on by setting a hand on your hips and guiding you to slowly thrust into her awaiting pussy, drawing out a dreamy, muffled moan from you as your eager erection is getting gradually surrounded by her pampering, squeezing folds, until a wonderful chill of wanton fulfillment runs up your spine as you finally, ecstatically find yourself fully hilted into the mysterious lady.",
+                                            "Spurred by the enticing feeling of the lovey-dovey sex, part of you wants to immediately begin thrusting madly into her, but for some reason, you feel utterly paralyzed within her intimate, all-consuming embrace, like being cradled against her indulgently soft body is what you were always meant to do and nothing can spur you to shake off this stupefying bliss, every moment spent in her doting presence filling you with intoxicating arousal.",
+                                            "PlaySoundEffect", "sfx/footstep.mp3",
+                                            "Then, now that she can be certain you're docilely hers, she takes a single heel-clicking step to start off your walk together, her wide hips swaying to the side as she moves, the simple movement making you bounce ever so slightly against her in your clinging position, that wobbly jolt incidentally making your hard dick shift within her while her hefty sundress-clad breasts jiggle obscenely around your face in an enchanting massage.",
+                                            "Woozily, you let out a rapturous sigh against her pillowy chest as time seems to slow down to let you appreciate every minute detail of her impossibly tall, impossibly sensual figure molding itself all over you, the full-body hug culminating into an all-encompassing jolt of melty ecstasy that runs through your entire frame and languorously soothes every nerve and every muscle within you, all from a single step.",
+                                            "PlayLoopingSoundEffect", "sfx/footstep.mp3",
+                                            "But of course, a walk isn't {i}just{/i} a single step, and so, as the towering woman keeps going, with every {i}click{/i} and {i}clack{/i} of her heels on the pavement, you're hit with another marshmallowy jolt of sweet pleasure, the sharp striding sound bouncing around your vapid tit-smothered head while you let out more muffled moans of euphoria, feeling like you're floatily being carried along in the most luxuriously comfortable of soft clouds.",
+                                            "Upon every bouncing, overstimulating step, you can feel your cock overeagerly twitch inside the luscious lady's clenching pussy, its continued rubbing and squeezing and clenching against your rigid shaft making your balls tightly tense more and more as the melty bliss keeps rising higher and higher inside you, making your eyes dizzily swoon while your tongue lolls out in complete pleasure-drunk intoxication.",
+                                            "With your resistance having been completely ground down by the naughty close-contact cuddling, and with your indulgently pampered mind making no effort at endurance, you can feel that it won't be long before you give in entirely, something which you have no problem with as you just embrace your eldritch lover's curvy form tighter in reaction to the mounting surge of sexual rapture, as if to silently signal your incoming release.",
+                                            "PlayerOrgasm", "1",
+                                            "And so, as the tall woman dotingly scritches your head with her long nails once more and lets out a distantly echoing, affectionate coo of permission, the shivers of coddling pleasure racing up and down your entire being push you over the brink into a shuddering climax, immediately coaxing you into surrendering to her in a scaldingly intense ejaculation that readily floods her snug, sweet pussy.",
+                                            "Shuddering and gasping in joy as she takes in your semen, the eerie lady keeps her hold on you as if to steady you through your powerful high, every thick rope of cum your spasming erection spurts into her greedy folds sending a fresh wave of intoxicating warm comfort across you while she throws back her head in ecstasy.",
+                                            "But even then, she doesn't stop walking, continuing to advance at a steady, decisive pace even as you both bask in wanton sexual bliss, her large strides imparting her sensual body with a swaying gait that keeps making her soft form shift and press all over you, the ongoing stimulation quickly making another orgasm rise within you straight in the wake of the first!",
+                                            "PlayerOrgasm", "1",
+                                            "Spastically, you further tighten your clinging hold over her as you ride out the overlapping, mind-blanking high of rapture, your eyes lost in the pale white sea of her jiggling breasts cradling your face amid your throes of climax, all the while she keeps slowly strutting onwards, keeping the wobbly jolts of pleasure hitting you and sumptuously extending your drawn out, dreamy climax.",
+                                            "Eventually, slowly, the orgasmic bliss starts ebbing away despite the constant {i}click-clack{/i} of the otherworldly woman's high-heeled steps continuing to bounce you against her curves, your dizzying post-climactic state giving way to a melty afterglow of ethereal cozy comfort laced with squeezing jolts of ecstasy that enticingly tickle up your spine and oozingly tingle across every part of your being.",
+                                            "Speak", "???",
+                                            "{alpha=0.9}{size=-10}{i}Good boy.♥︎\n{/i}{/size}{/alpha}{alpha=0.6}{size=-5}{i}Good boy.♥︎\n{/i}{/size}{/alpha}{alpha=0.3}{i}Good boy.♥︎\n{/i}{/alpha}{alpha=0.1}{size=+5}{i}Good boy.♥︎{/i}{/size}{/alpha}",
+                                            "Softly, your unearthly lover coos out in hushed, husky lust, her distant-sounding voice dancing through your vacant senses and putting a giddy pleasure-drunk smile on your face while she keeps walking, the curvy woman's strutting movements keeping your face wonderfully stuffed within her vanilla-scented cleavage and your cock rockingly thrusting into her, immersing you deep within a happy place of blissed-out complacency.",
+                                            "As she carries on moving forward, step by step, reemerging pleasure swiftly grows anew within your helpless body, leaving you hauntingly hooked on the constant {i}click-clacking{/i} stream of ecstasy, and wishing this dreamlike trip of ever-present, intimate lovey-dovey coddling would never end.",
+                                            "As this vapid thought floats into your head, you can hear the tall lady giggle above you as if she had heard it, and in your captivated daze of bliss, you can only watch as her black lips descend to press sweetly against your forehead in a darkly tender, staining smooch that spreads a chilliy jolt of erotic tension all across your pleasure-soaked form, the feeling building and building as she keeps her mouth against you without parting it.",
+                                            "PlayerOrgasm", "1",
+                                            "Until she eventually, wetly breaks the smooch with an echoing '{i}Mmwah.♥︎{/i}' that sends waves of pitch-black pleasure washing across your head amid the comforting white sea of indulgently soft curves enveloping you, the resulting jolting euphoria combined with the constant bouncing of her strutting steps pushing your trembling cock to obediently pour out another fresh load of cum into the large woman.",
+                                            "While she dotingly coos in satisfaction and looks down upon you with a gentle little caress against your trembling back to comfortingly support you through your consecutive felicitous high, you remain awash in your thought-frying climax, your sexual rapture seeming to somehow mount and mount, but never to decrease, ruinously sentencing you to an unabating pleasure high that your fizzling mind can't help but look forward to.",                                            
+                                            "As you gasp and moan, it feels like every step the woman takes is wringing out another spurt of your cum, each new hot release hitting your senses on ruinous loop, and making you only crave more of this seemingly endless abyss of pampering, leaving you wantonly sinking into her embrace with a dreamy moaning sigh that makes her dotingly coo and stroke your head with one hand while she happily carries on with your eternal walk.",
+                                            "PlayBlackOut", "EndVisualEffect",
+                                            "Before long, your eyes begin to heavily droop as the uninterrupted, wonderfully intense orgasms take their draining toll on you, the warm mire of dark pleasure you're sinking into intermixed with the soothing, cozy comforts of her soft pale body, leaving you blissfully smiling in total abandon and instinctively continuing to cling to your towering lover even as you drift off to sleep in her embrace...",
+                                            "StopSoundEffectLoop", 
+                                            "...",
+                                            "ChangeFetish", "Breasts", "10",
+                                            "ChangeFetish", "Monstrous", "5",
+                                            "ChangeSensitivity", "Sex", "5",
+                                            "JumpToScene", "PostSupernaturalLewding"
+                                      ]
+                            },
+                            {
+                              "NameOfScene": "PostSupernaturalLewding",
+                              "theScene": [ "StopBGM",
+                                            "IfPlayerSpiritGone", "GameOver",
+                                            "EndBlackOut",
+                                            "Shivering awake with a dazed gasp, you find yourself laid out on the sidewalk, your cock twitching achingly against your pants while debilitating exhaustion heavily weighs down on your entire body, the strangely mind-fogging, sinking sensation of all-encompassing spiritual enervation making you feel like you just went through the most delightfully harrowing, frightfully ecstatic waking nightmare.",
+                                            "Slowly and shakily, you eventually manage to get back to your feet, your wobbly legs gradually steadying as you endeavor to put your thoughts back in order and make sense of what just happened.",
+                                            "Distinctly remembering each and every moment spent with your ravenously loving pursuer, you trepidatiously look about, but find no signs of the woman, nor any indication that anything odd occurred at all, for that matter, aside from the lingering pleasure and chilling tiredness permeating you... along with the faint taste and smell of clean vanilla hauntingly teasing at your lips and nose...",
+                                            "JumpToScene", "WalkToPostEventStuffs"
+                                            ]
+                            },
+                            {
+                              "NameOfScene": "GameOver",
+                              "theScene": [  
+                                            "GameOver"
+                                            ]
+                            },
+ 
+
+
+                   {
+                          "NameOfScene": "WalkToPostEventStuffs",
+                          "theScene": [  "StopBGM",
+                                        "EndVisualEffect",
+                                        "All too eager to put this whole bizarre incident behind you, you resume walking on the double, and soon feel your heart soar in your chest as you hear the distant sounds of people milling about ahead of you, making you redouble your pace and melt with relief as you all at once find yourself back into a normal-looking street, finally able to put your chilling misadventure behind you.",
+                                        "JumpToScene", "PostEventStuffs"
+                                  ]
+                        },          
+                  {
+                      "NameOfScene": "PostEventStuffs",
+                      "theScene": [
+                                   "IfInExploration", "EndEvent",
+                                   "AllowInventory",
+                                   "GoBackToStoredEvent"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "EndEvent",
+                      "theScene": [    "UseHeldBG"
+                                ]
+                    },
+                  {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [  "Event Broke!!!"
+                                ]
+                  }
+              ]
+}

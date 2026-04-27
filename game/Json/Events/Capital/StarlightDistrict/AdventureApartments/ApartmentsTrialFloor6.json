@@ -1,0 +1,536 @@
+{
+    "name": "ApartmentsTrialFloor6",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Harpy",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                      "name": "Treasure Chest",
+                      "postName": "",
+                      "SpeakerType": "Monster"
+                    }  
+                ],
+    "EventText": [
+                   
+                     {
+                      "NameOfScene": "StartEvent",
+                      "theScene": [ "AllowInventory",                                    
+                                    "Stepping into the sixth floor of Adventure Apartments, you see that it consists of a straight hallway leading to a dead end, or more precisely to a locked door outfitted with a plaque that reads 'TENANTS ONLY'. In-between this floor's doors are 10 paintings of different, beautifully drawn natural vistas, each one featuring a harpy, sometimes as a distant silhouette, sometimes perched closer to the perspective.",
+                                    "JumpToScene", "EntryWayMenu"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "EntryWayMenu",
+                      "theScene": [   "AllowInventory",
+                                        "Menu",                                          
+                                          "Check one of the doors.",
+                                          "Inspect the paintings.",
+                                          "Stop and think...",
+                                          "Go to another floor.",
+                                        "EndLoop"
+                                ]
+                    },    
+                            {
+                            "NameOfScene": "Stop and think...",
+                            "theScene": [    
+                                            "JumpToEventThenScene", "ApartmentsTrialThinking", "Floor6Think"
+                                        ]
+                            },
+                            {
+                            "NameOfScene": "Go to another floor.",
+                            "theScene": [    
+                                            "Menu",    
+                                                "Go to the first floor.",                                    
+                                                "Go to the second floor.",
+                                                "Go to the third floor.",
+                                                "Go to the fourth floor.",
+                                                "Go to the fifth floor.",                                                
+                                                "Stay here.",
+                                            "EndLoop"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "Stay here.",
+                                        "theScene": [  
+                                                   "JumpToScene", "EntryWayMenu"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the first floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEventThenScene", "ApartmentsTrialFloor1", "EnterFromOtherFloor"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the second floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor2"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the third floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor3"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the fourth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor4"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the fifth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor5"
+                                                ]
+                                    },
+                            {
+                            "NameOfScene": "Check one of the doors.",
+                            "theScene": [    
+                                            "Menu",                                          
+                                                "Check door 601",
+                                                "Check door 602",
+                                                "Check door 603",
+                                                "Check door 604",
+                                                "Check door 605",
+                                                "Nevermind.",
+                                            "EndLoop"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "Nevermind.",
+                                        "theScene": [  
+                                                   "JumpToScene", "EntryWayMenu"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check another door.",
+                                        "theScene": [  
+                                                     "JumpToScene", "Check one of the doors."
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check door 601",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 601.",
+                                                        "Knock on door 601.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    }, 
+                                            {
+                                                "NameOfScene": "Knock on door 601.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 601"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 601.",
+                                                "theScene": [                                                              
+                                                            "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                            "JumpToScene", "Check door 601"
+                                                ]
+                                            }, 
+                                    {
+                                        "NameOfScene": "Check door 602",
+                                        "theScene": [  "As you approach the door, you notice it has stickers of little crabs, beach umbrellas, starfish, smiling suns, and waves stuck all across its surface.",
+                                                    "JumpToScene", "602Menu"
+                                        ]
+                                    }, 
+                                     {
+                                        "NameOfScene": "602Menu",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 602.",
+                                                        "Knock on door 602.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    }, 
+                                            {
+                                                "NameOfScene": "Knock on door 602.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "602Menu"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 602.",
+                                                "theScene": [                                                              
+                                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "Heather's Bed Temptation", "EventStart",
+                                                            "JumpToScene", "Check one of the doors."
+                                                ]
+                                            }, 
+                                    {
+                                        "NameOfScene": "Check door 603",
+                                        "theScene": [  "As you approach the door, you notice it has stickers of snowflakes, rocks, pine trees, and snowmen stuck all across its surface.",
+                                                    "JumpToScene", "603Menu"
+                                        ]
+                                    }, 
+                                    {
+                                        "NameOfScene": "603Menu",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 603.",
+                                                        "Knock on door 603.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "Knock on door 603.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "603Menu"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 603.",
+                                                "theScene": [                
+                                                            "IfChoice", "2", "TreasureGet", "Locked603",
+                                                            "SetChoice", "2", "TreasureGet",
+                                                            "When you try to open the door, you find that it clicks open without resistance, letting you swing it open to reveal-",
+                                                            "A small apartment room painted in stark whites and crisp blues, vacant of normal furniture, but adorned with prop rocks dotted about the place while little snowflake cutouts hang from the ceiling on little strings, giving the area an unexpected wintry atmosphere... In fact, there's even a slightly chilly breeze flowing through the premises, blowing from an unknown origin...",
+                                                            "DisplayCharacters",
+                                                              "2",
+                                                            "EndLoop",
+                                                            "However, the most eye-catching and prominent feature of the chamber is undoubtedly the wooden treasure chest proudly sitting in the center of the faux snowy landscape, adorned with a plaque etched onto its front that you're only able to read after stepping deeper into the room, driven by curiosity.",
+                                                            "Scanning the note cursively etched onto the box, you see that it reads: {i}'You found the secret Dragon Treasure of Harpy Mountain! Congratulations! Enjoy your reward, and always stay inquisitive. - E.R.'{/i}",
+                                                            "Increasingly feeling like this isn't some kind of multi-layered trap to sucker you in, but actually just a genuine nice surprise, you flip open the chest's lid and discover a number of what looks to be packs of 'Dragon Bubble Puzzle Gum', the name being written in big conspicuous letters on the colorful packaging.",
+                                                            "GiveItem", "5", "Dragon Bubble Puzzle Gum",
+                                                            "... And along with the strange candy, you also plunder a single, red reptilian scale, the item seeming to glow with a faint light and heat of its own, instilling you with a feeling of self-assurance as you grip it in your hand. Incidentally, you also notice that it seems to be just the right size to fit where you usually slot in your active runes in your Grimoire...",
+                                                            "GiveItem", "1", "Dragon Scale Rune",
+                                                            "DisplayCharacters",
+                                                            "EndLoop",
+                                                            "Stowing away the profitable if a bit strange windfall, you take a moment to survey the chilled room in order to make sure that you didn't miss anything, then with your inquisitiveness (and greed) sated, you leave the place, closing the door behind you while appreciating the warm glint of your rune-engraved prize as you pocket it among the rest of your belongings.",
+                                                            "JumpToScene", "Check one of the doors."
+                                                ]
+                                            }, 
+                                                    {
+                                                        "NameOfScene": "Locked603",
+                                                        "theScene": [                                                              
+                                                                    "You try to open the door, but the handle only rattles defiantly. It appears to be locked, as could be expected... No extra treasure for you, it seems!",
+                                                                    "JumpToScene", "Check one of the doors."
+                                                        ]
+                                                    },
+
+                                    {
+                                        "NameOfScene": "Check door 604",
+                                        "theScene": [  "As you approach the door, you notice it has stickers of trees, grass, flowers, and butterflies stuck all across its surface.",
+                                                    "JumpToScene", "604Menu"
+                                        ]
+                                    }, 
+                                    {
+                                        "NameOfScene": "604Menu",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 604.",
+                                                        "Knock on door 604.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    }, 
+                                            {
+                                                "NameOfScene": "Knock on door 604.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "604Menu"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 604.",
+                                                "theScene": [                                                              
+                                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "Voltlin Security Check", "EventStart",
+                                                            "JumpToScene", "Check one of the doors."
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Check door 605",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 605.",
+                                                        "Knock on door 605.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    }, 
+                                            {
+                                                "NameOfScene": "Knock on door 605.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 605"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 605.",
+                                                "theScene": [                                                              
+                                                            "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                            "JumpToScene", "Check door 605"
+                                                ]
+                                            },
+
+
+
+
+                             {
+                                "NameOfScene": "Inspect the paintings.",
+                                "theScene": [  
+                                            "SwapLineIf", "OtherEventsChoice", "ApartmentsTrialFloor1",
+                                                "1", "LetterGet", "There are 10 paintings of different, beautifully drawn natural vistas, each one featuring a single harpy, sometimes as a distant or nearly hidden silhouette, sometimes perched close to the perspective and sporting a happy smile brimming with life. You note that each painting was made by the same 'Anonymous Harpy Artist', and features a simple nameplate with a button above it.",
+                                                "1", "", "There are 10 paintings of different, beautifully drawn natural vistas, each one featuring a single harpy, sometimes as a distant or nearly hidden silhouette, sometimes perched close to the perspective and sporting a happy smile brimming with life. You note that each painting was made by the same 'Anonymous Harpy Artist', and features a simple nameplate.",
+                                            "EndLoop",
+                                            "Additionally, you notice that some of the harpies seem to be gesturing at something outside of the frame with a wing, as if directly pointing at one of the floor's doors.",
+                                            "JumpToScene", "PaintingCheckMenu"                                          
+
+                                ]
+                            },
+                            {
+                                "NameOfScene": "PaintingCheckMenu",
+                                "theScene": [  
+                                            "Menu",            
+                                                "FinalOption",  "Done checking the paintings.",  
+
+                                                "Check Painting 1 - 'Sunny Days'",
+                                                "Check Painting 2 - 'A Little Perspective'",
+                                                "Check Painting 3 - 'Almost too Dark'",
+                                                "Check Painting 4 - 'BEES'",
+                                                "Check Painting 5 - 'Seaside Relaxation'",                                                
+
+                                                "Check Painting 6 - 'Past the Cloudy Skies'",
+                                                "Check Painting 7 - 'Starry Night'",
+                                                "Check Painting 8 - 'Storm's Edge'",
+                                                "Check Painting 9 - 'Winter Joy'",                                                
+                                                "Check Painting 10 - 'Oops'",
+                                            "EndLoop"
+                                ]
+                            },
+                                    {
+                                        "NameOfScene": "Done checking the paintings.",
+                                        "theScene": [  
+                                                    "JumpToScene", "EntryWayMenu"      
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check another painting.",
+                                        "theScene": [  
+                                                    "JumpToScene", "PaintingCheckMenu"
+                                        ]
+                                    },
+
+                                    {
+                                        "NameOfScene": "Check Painting 1 - 'Sunny Days'",
+                                        "theScene": [  
+                                                    "A harpy is perched on a tree branch, smiling happily at the viewer. The sun shines overhead, bringing the picturesque valley of trees and rock to life with bright colors. The harpy is waving at the viewer, her whole attitude seeming to say: 'Enjoy the view with me!'.",
+                                                    "GetEventAndIfChoice", "ApartmentsTrialFloor1", "1", "", "PaintingCheckMenu",
+                                                    "Menu",            
+                                                        "Check another painting.",
+                                                        "Press the button on the 'Sunny Days' picture frame.",
+                                                    "EndLoop"        
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check Painting 9 - 'Winter Joy'",
+                                        "theScene": [  
+                                                    "A corner of this wintry scene features a harpy covered in snow, like a veritable snowman outfitted with wings and a cozy hat, her silhouette almost lost beneath the surrounding snow-covered pine trees and eye-catching cloud-covered sun. Despite the vivid cold, her red-cheeked face is sporting a beaming grin as she points in the direction of Door 603 with one feathered, frost-rimmed wing.",
+                                                    "GetEventAndIfChoice", "ApartmentsTrialFloor1", "1", "", "PaintingCheckMenu",
+                                                    "Menu",            
+                                                        "Check another painting.",
+                                                        "Press the button on the 'Winter Joy' picture frame.",
+                                                    "EndLoop"            
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check Painting 3 - 'Almost too Dark'",
+                                        "theScene": [  
+                                                    "A starkly dark, nighttime vista illuminated only by the moon and stars, with many looming trees and mountainous ranges that cast downright ominous shadows under the night sky's scant but stark lighting. It's hard to see, but you can make out the small, itsy-bitsy silhouette of a harpy perched on a faraway tree, like an indistinct tawny blot in the middle of all the blackness.",
+                                                    "GetEventAndIfChoice", "ApartmentsTrialFloor1", "1", "", "PaintingCheckMenu",
+                                                    "Menu",            
+                                                        "Check another painting.",
+                                                        "Press the button on the 'Almost too Dark' picture frame.",
+                                                    "EndLoop"    
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check Painting 4 - 'BEES'",
+                                        "theScene": [  
+                                                    "This picture appears to be one of a panicking harpy flying over a forest, holding a large honeycomb in her talons while a cloud of likely {i}very{/i} angry bees is giving chase. Despite the pursuit being the focus of the scene, a lot of attention has been given to the landscape, especially the sky which is alight with a medley of colors resulting from the glare of the distant setting sun whose glow seems to light up the forest.",
+                                                    "GetEventAndIfChoice", "ApartmentsTrialFloor1", "1", "", "PaintingCheckMenu",
+                                                    "Menu",            
+                                                        "Check another painting.",
+                                                        "Press the button on the 'BEES' picture frame.",
+                                                    "EndLoop"      
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check Painting 2 - 'A Little Perspective'",
+                                        "theScene": [  
+                                                    "Abundant verdure makes up most of the view of this scene depicted from a ground-level perspective. The sun is shining high overhead with not a cloud in sight, and the earth is bristling with vibrant grass, flowers in bloom, and a perched butterfly. Finally, up on a tree to the far right is a happy harpy who seems to be pointing at Door 602 with a relaxed wing.",
+                                                    "GetEventAndIfChoice", "ApartmentsTrialFloor1", "1", "", "PaintingCheckMenu",
+                                                    "Menu",            
+                                                        "Check another painting.",
+                                                        "Press the button on the 'A Little Perspective' picture frame.",
+                                                    "EndLoop"  
+                                        ]
+                                    },
+
+                                    {
+                                        "NameOfScene": "Check Painting 6 - 'Past the Cloudy Skies'",
+                                        "theScene": [  
+                                                    "Two mountains sit on the edge of the frame, sloping down towards a forested valley whose darkened boughs are only illuminated by the stars and moon above. Clouds sparsely blot the sky here and there, and the moon's glowing disk frames the silhouette of a harpy flying off towards the infinitely distant, silvery celestial body.",
+                                                    "GetEventAndIfChoice", "ApartmentsTrialFloor1", "1", "", "PaintingCheckMenu",
+                                                    "Menu",            
+                                                        "Check another painting.",
+                                                        "Press the button on the 'Past the Cloudy Skies' picture frame.",
+                                                    "EndLoop"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check Painting 7 - 'Starry Night'",
+                                        "theScene": [  
+                                                    "The shadowed silhouette of a harpy flies through the air past a cloud-covered moon, the dotting of stars brightening the skies and valley below to emphatically illuminate a mirror-like pond. Said pond's most notable features are a little frog sitting on a lily pad, and the reflection of the scenery above, which is reproduced in the still water with vivid aqueous shakiness.",
+                                                    "GetEventAndIfChoice", "ApartmentsTrialFloor1", "1", "", "PaintingCheckMenu",
+                                                    "Menu",            
+                                                        "Check another painting.",
+                                                        "Press the button on the 'Starry Night' picture frame.",
+                                                    "EndLoop"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check Painting 8 - 'Storm's Edge'",
+                                        "theScene": [  
+                                                    "Dark clouds cover the skies of a forested mountain valley where lightning dramatically splits the heavens, the stark bolts arcing through the scene and illuminating branch and rock alike... along with the shape of a panicked harpy erratically flapping her way to safety in the scattered downpour of rain.",
+                                                    "GetEventAndIfChoice", "ApartmentsTrialFloor1", "1", "", "PaintingCheckMenu",
+                                                    "Menu",            
+                                                        "Check another painting.",
+                                                        "Press the button on the 'Storm's Edge' picture frame.",
+                                                    "EndLoop"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check Painting 5 - 'Seaside Relaxation'",
+                                        "theScene": [  
+                                                    "A painting of a picturesque seaside beach with rocks, sand, a little crab scuttling along, and a sunglasses-wearing harpy lounging on a towel beneath an umbrella, one of her lazily lifted wings seeming to be pointing to Door 604. The sun's dazzling rays refract on the lapping water, out of which a fish is leaping out, splashingly jumping into the air.",
+                                                    "GetEventAndIfChoice", "ApartmentsTrialFloor1", "1", "", "PaintingCheckMenu",
+                                                    "Menu",            
+                                                        "Check another painting.",
+                                                        "Press the button on the 'Seaside Relaxation' picture frame.",
+                                                    "EndLoop"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check Painting 10 - 'Oops'",
+                                        "theScene": [  
+                                                    "This painting appears to be a bold rendition of a harpy crashing into the picture itself, her confused face and splayed wings smushed up against the canvas like a window. Past her dizzy features, you can only see sunny skies and drifting white clouds with nothing else to draw your gaze, making the blundering bird woman the centerpiece of the quirky work of art.",
+                                                    "GetEventAndIfChoice", "ApartmentsTrialFloor1", "1", "", "PaintingCheckMenu",
+                                                    "Menu",            
+                                                        "Check another painting.",
+                                                        "Press the button on the 'Oops' picture frame.",
+                                                    "EndLoop"
+                                        ]
+                                    },
+
+
+                                    {
+                                        "NameOfScene": "Press the button on the 'Past the Cloudy Skies' picture frame.",
+                                        "theScene": [  
+                                                    "IfChoice", "1", "PaintingFound", "YouAlreadyHaveIt",
+                                                    "SetChoice", "1", "PaintingFound",
+                                                    "When you press the button on the picture frame, a little slip of folded paper whirrs out from a hidden compartment which closes as fast as it opened, leaving you to pick up, unfold, and read the message which goes as follows:",
+                                                    "{i}Divide this sky by three to discover the constellation you must next seek, far down below the high skies, and of the two clashing thunders, appoint the victor.{/i}",
+                                                    "JumpToScene", "EntryWayMenu"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "YouAlreadyHaveIt",
+                                                "theScene": [    
+                                                            "When you press the button on the picture frame, nothing happens. The mechanism must be programmed in some way to not deliver the clue to the same person twice. You already have it, so if you want to go over it again, you need only take a moment to think and review your findings so far.",
+                                                            "JumpToScene", "PaintingCheckMenu"
+                                                ]
+                                            },
+
+                                    {
+                                        "NameOfScene": "Press the button on the 'Sunny Days' picture frame.",
+                                        "theScene": [  
+                                                    "JumpToScene", "WrongPainting"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Press the button on the 'Winter Joy' picture frame.",
+                                        "theScene": [  
+                                                    "JumpToScene", "WrongPainting"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Press the button on the 'Almost too Dark' picture frame.",
+                                        "theScene": [  
+                                                    "JumpToScene", "WrongPainting"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Press the button on the 'BEES' picture frame.",
+                                        "theScene": [  
+                                                    "JumpToScene", "WrongPainting"
+                                        ]
+                                    },                                    
+                                    {
+                                        "NameOfScene": "Press the button on the 'A Little Perspective' picture frame.",
+                                        "theScene": [  
+                                                    "JumpToScene", "WrongPainting"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Press the button on the 'Starry Night' picture frame.",
+                                        "theScene": [  
+                                                    "JumpToScene", "WrongPainting"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Press the button on the 'Storm's Edge' picture frame.",
+                                        "theScene": [  
+                                                    "JumpToScene", "WrongPainting"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Press the button on the 'Seaside Relaxation' picture frame.",
+                                        "theScene": [  
+                                                    "JumpToScene", "WrongPainting"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Press the button on the 'Oops' picture frame.",
+                                        "theScene": [  
+                                                    "JumpToScene", "WrongPainting"
+                                        ]
+                                    },
+
+
+
+ 
+                    {
+                                "NameOfScene": "WrongPainting",
+                                "theScene": [      
+                                            "JumpToEvent", "Dragon Painting's Plunge"                                     
+                                ]
+                    },  
+                                     
+                   
+
+                    {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [   "event broke."
+                                ]
+                    }
+                ]
+}

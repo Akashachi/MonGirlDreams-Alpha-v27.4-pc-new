@@ -1,0 +1,1448 @@
+{
+    "name": "Approach the Capital...",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Perpetua",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Dark Perpetua",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Voltlin",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+
+                  },
+                  {
+                    "name": "Dark Slime",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+
+                  },
+                  {
+                    "name": "Rika",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+
+                  },
+                  {
+                    "name": "???",
+                    "postName": "",
+                    "SpeakerType": "?"
+
+                  },
+                  {
+                    "name": "Black Knight",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [
+                                      "ChangeBG",  "dungeon.png",
+                                      "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                      "You return to the checkpoint gem at the end of the Labyrinth, and start pushing open the large stone doors, flinching slightly as the crack between the opening door throws what feels like a dazzling beam of outdoors light at you, you nevertheless press on, somewhat eager for open spaces after the stiflingly dark confines you've been wandering through.",
+                                      "ChangeBG",  "mountain.png",
+                                      "One arm raised protectively against the comparatively bright glow, your lungs gratefully filling with fresh air, you leave the shadowy tunnels of the Umbral labyrinth behind once more and step out onto a rocky outcropping on the other side of the Mountain, where you're met with a sprawling, looming vista of towering black spires and swirling miasmic clouds: the somewhat familiar sight of the monster girl Capital is in view.",
+                                      "JumpToScene", "Makeyourwaydown"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Makeyourwaydown",
+                        "theScene": [
+                                        "Turning to the winding, sloping pathway down the Mountain, you begin your trek down towards the Capital...",
+                                        "ChangeBG",  "forest.png",
+                                        "Time or perhaps space seems to slip by you as Lucidia's natural geographical strangeness soon brings you down below, into the sparse glades adjoining the immense city. Twisting clouds of pink smog haze the air, thick with an erotic scent that makes your heart race even at this distance, but you push on regardless, excitement and trepidation filling your mind with every step forward you take.",
+                                        "ChangeBGM", "music/Capital/Despair_City.mp3",
+                                        "Shortly, you reach a metal wall that clashes glaringly with the eroded forested land around. Its towering gates are tightly shut, but you quickly spot a small passageway large enough for a person, the human-sized entrance looking no bigger than a mouse hole compared to the immense doors looming in front of you, large enough for a giant.",
+                                        "IfChoice", "2", "RikaMet", "MakeyourwaydownNoRika",
+                                        "Pausing in front of the looming, fortress-like construction, you ponder what you should do next, the impressive sight starting to give you cold feet... when you realize someone seems to be walking out.",
+                                        "DisplayCharacters",
+                                          "5",
+                                        "EndLoop",
+                                        "ChangeImageLayer", "Expression", "Rika", "BunnyHoodSmile",
+                                        "Humming to herself, a lone, petite woman prances away from the small entryway, and as she idly looks around, her hood-shrouded gaze is drawn to you, the unexpected sight putting a smile on her face. Her long, ribbon-adorned, pointed tail flicking with excitement, she strides over to you at an elegant, even pace, but somehow, despite her harmless look, you can't help but feel an odd sense of trepidation at her sudden approach...",
+                                        "ChangeBGM", "music/Forest/Purple Planet Music - On Tiptoe (1 37) 100bpm.mp3",
+                                        "ChangeImageLayer", "Expression", "Rika", "Sparkling",
+                                        "Speak", "Rika",
+                                        "{i}Hi!♪{/i} I'm Rika!♪",
+                                        "She suddenly exclaims with sparkling excitement, waving her tightly gloved, dainty hands in cheery greeting, her sunny attitude a stark contrast to your grim surroundings. Looking at her joyful face adorned with an even bigger smile than before, you feel the coiling tension in your body relax, the ominous aura of the Capital somewhat offset by her peppy introduction.",
+                                        "ChangeImageLayer", "Expression", "Rika", "Joy",
+                                        "Speak", "Rika",
+                                        "You've never been to the Capital before, right?♪ It's {i}all over{/i} your face. What's your name, new guy?♪",
+                                        "Waiting for your answer, she cheerfully hums and sways in place, looking you up and down with keen interest, her loose bunny hoodie and curling hair bouncing along to her movements as you introduce yourself, doing your best to recollect yourself, act natural, and cast away the confusion and apprehension that still grip at you in such an unfamiliar environment.",
+                                        "ChangeImageLayer", "Expression", "Rika", "Smile",
+                                        "Speak", "Rika",
+                                        "[ThePlayerName], huh? Hmmm...♪",
+                                        "Raising her eyes to the sky as if in deep contemplation, she taps her chin thoughtfully, then returns her gaze to you, taking a playful conspiratorial air.",
+                                        "Speak", "Rika",
+                                        "Well♪, a word to the wise, monster layer: in the monster girl capital known as Ars Delusia, allll kinds of convergences can happen... What one might call {i}fated encounters{/i}. 'tis a place where rivals and lovers intertwine, and great ventures can begin and end in a heartbeat!",
+                                        "ChangeImageLayer", "Expression", "Rika", "Confident",
+                                        "She waggles her eyebrows with a sly smirk, looking like she's one dark room and one lone flickering candle away from waxing dramatic.",
+                                        "Speak", "Rika",
+                                        "And maybe some {i}horny{/i} and {i}hungry{/i} monster girl is waiting for green adventurers, ready to {b}pounce{/b} on them and drain them dry right out of the gate!",
+                                        "ChangeImageLayer", "Expression", "Rika", "LipLick",
+                                        "She raises her hands in threatening lewdness, a big lascivious grin showing off her sharp teeth, though the effect is rather offset by her unthreatening petite stature and overall cuteness, prompting you to blankly ask.",
+                                        "PlayerSpeaks",
+                                        "... Does that actually happen?",
+                                        "ChangeImageLayer", "Expression", "Rika", "Joy",
+                                        "Dropping her pose, she giggles cheerily at your flat skepticism.",
+                                        "Speak", "Rika",
+                                        "Not really... Well, I'm {i}pretty{/i} sure. At least... ninety five percent sure!♪",
+                                        "Leaning back, she concludes her cautioning lecture by standing straight and raising a professorial finger.",
+                                        "ForceAutoSave",
+                                        "Speak", "Rika",
+                                        "{i}So-{/i} Be super sure you're ready! No shame in heading back and preparing, you know. And if there's, like, any precautions or backup plans you could make, now would be a good time! But I'm only gonna warn you {i}once!♪{/i}",
+                                        "ChangeImageLayer", "Expression", "Rika", "Joy",
+                                        "She giggles excitedly as she prances in place, seemingly incapable of staying still as she bounces and twirls, her tail wildly swishing back and forth from her giddy movements before she freezes as something seems to strike her and she again looks you up and down curiously.",
+                                        "Speak", "Rika",
+                                        "SwapLineIf", "Level",
+                                         "75", "|f|ChangeImageLayer|/|Expression|/|Rika|/|BlankStare|n|Actually... Dude... Overprepared much? Level [PlayerLevel]? Seriously, man. Chill. Give the monsters a chance, you know? ...Oh well, at least, you'll deffo be fine.♪",
+                                         "40", "Then again, I'm sure a super cool adventurer who made it {i}this{/i} far is ready for anything!~♪",
+                                         "25", "Hmmmm, yeah, you should definitely put on an extra level or three if you don't wanna get gobbled up by some naughty monster gal...♪ Though I'm just saying. You do you.♪",
+                                         "0", "|f|ChangeImageLayer|/|Expression|/|Rika|/|BlankStare|n|...Actually, how did you even {i}get{/i} this far? You should definitely go back and, er, do some more pelvic training or something...",
+                                        "EndLoop",
+                                        "SetChoice", "2", "RikaMet",
+                                        "JumpToScene", "RikaMenu"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "RikaMenu",
+                        "theScene": [
+                                        "Menu",
+                                          "RequiresChoice", "1", "",
+                                          "Are you some kind of guide or...?",
+                                          "RequiresChoice", "1", "Guide",
+                                          "RequiresChoice", "3", "",
+                                          "You're an imp all the way out here?",
+
+                                          "I'm ready to go!",
+                                          "Maybe I should go prepare a bit more...",
+                                        "EndLoop"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "I'm ready to go!",
+                              "theScene": [
+                                              "ChangeImageLayer", "Expression", "Rika", "Sparkling",
+                                              "Speak", "Rika",
+                                              "Alright!♪ Go get'em, champ!♪",
+                                              "ChangeImageLayer", "Expression", "Rika", "Joy",
+                                              "Speak", "Rika",
+                                              "Me, I'm gonna resume my walk!♪ Toodles!~♪",
+                                              "DisplayCharacters",
+                                              "EndLoop",
+                                              "Looking back to give you a final wave, she prances away cheerfully into the Forest, letting you bravely proceed towards the looming walled entryway into the Capital...",
+                                              "ChangeBG",  "dungeon.png",
+                                              "ChangeBGM", "music/Capital/Despair_City.mp3",
+                                              "Leaving behind the outside air and open skies, you enter a hallway lined with strange light apparatuses enclosed in glass receptacles, the distant whirr and hiss of machinery echoing down the passageway along with the sound of your own footsteps...",
+                                              "JumpToScene", "VoltlinTime"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Maybe I should go prepare a bit more...",
+                              "theScene": [
+                                              "ChangeImageLayer", "Expression", "Rika", "Bored",
+                                              "SwapLineIf", "Level",
+                                              "40", "Rika lets out a mildly disappointed huff at your decision, before shrugging and beaming happily.",
+                                              "0", "Crossing her arms and putting on a serious face, she nods at your decision, before returning to an encouraging cherubic smile.",
+                                              "EndLoop",
+                                              "ChangeImageLayer", "Expression", "Rika", "Smile",
+                                              "Speak", "Rika",
+                                              "That's probably for the best, hm? ...Just don't put off fate too long, yaknow?♪",
+                                              "ChangeImageLayer", "Expression", "Rika", "Joy",
+                                              "Speak", "Rika",
+                                              "{i}Well!{/i} With that out of the way, I'm gonna resume my walk!♪ Toodles!~♪",
+                                              "DisplayCharacters",
+                                              "EndLoop",
+                                              "Looking back to give you a final wave, she prances away cheerfully into the Forest, letting you make your way back to the checkpoint and promptly teleport back to Town...",
+                                              "GoToTown"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Are you some kind of guide or...?",
+                              "theScene": [   "Rika shakes her head merrily at the question, daintily putting a hand in front of her mouth as she giggles as if you'd just said a good joke.",
+                                              "ChangeImageLayer", "Expression", "Rika", "Smile",
+                                              "Speak", "Rika",
+                                              "Nopity nope~♪ Just an ordinary imp who happens to be passing on by.♪",
+                                              "ChangeImageLayer", "Expression", "Rika", "Sigh",
+                                              "The petite woman sighs with a huff, the subject seemingly giving her an unpleasant recollection, peevishly twirling a lock of silky hair around a dainty finger as she goes on grumpily.",
+                                              "Speak", "Rika",
+                                              "I {i}kinda really{/i} needed a walk. Delusia can just get so {i}noisy{/i} and {i}musty{/i} and {i}peopley{/i} and just... {i}Eugh{/i}... Honestly kind of a dumpster of a city sometimes.",
+                                              "ChangeImageLayer", "Expression", "Rika", "Joy",
+                                              "Catching herself grousing, she bounces back with a cheery hop and waves her hands happily, almost apologetically, her joyful smile reappearing on her face in an instant.",
+                                              "Speak", "Rika",
+                                              "Oh!♪ But don't let {i}me{/i} get you down like some nagging old lady! It's deffo a {i}super{/i} impressive place! I'm sure it'll {i}blow{/i} your little adventurer mind!♪",
+                                              "ChangeImageLayer", "Expression", "Rika", "LipLick",
+                                              "Leaning forward with a hand to her cheek, she wags her eyebrows and smirks suggestively.",
+                                              "Speak", "Rika",
+                                              "Your mind and other parts of you too, I'm sure, Kyihi.♪",
+                                              "ChangeImageLayer", "Expression", "Rika", "Smile",
+                                              "She then returns to her previous pose, shifting back to a more conversational, debonair smile as she concludes.",
+                                              "Speak", "Rika",
+                                              "So I bet you're {i}burning{/i} to go check it out, huh?♪",
+                                              "SetChoice", "1", "Guide",
+                                              "JumpToScene", "RikaMenu"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "You're an imp all the way out here?",
+                              "theScene": [
+                                              "ChangeImageLayer", "Expression", "Rika", "Smile",
+                                              "She once more giggles playfully into her hand at your question before giving you a sparkling smile, seeming amused by the question rather than offended.",
+                                              "ChangeImageLayer", "Expression", "Rika", "Sparkling",
+                                              "Speak", "Rika",
+                                              "Yup!♪ I'm a sparkling beacon of impititude!♪",
+                                              "ChangeImageLayer", "Expression", "Rika", "Smile",
+                                              "Speak", "Rika",
+                                              "Though I'm not imp to the power of two, if you know what I mean.",
+                                              "She adds smoothly, leaving you quite confused as to what she means indeed, though she doesn't seem intent on elaborating, prancing in place and pointing back towards the towering haze-cloaked wall with a sweeping gesture.",
+                                              "ChangeImageLayer", "Expression", "Rika", "Joy",
+                                              "Speak", "Rika",
+                                              "But seriously, there's {i}allllll{/i} kindsa monsters living in the capital!♪ Cat girls, dog girls, succubi... a {i}whole lot{/i} of succubi, in fact... and a lot of Voltlins too, oh my!♪",
+                                              "ChangeImageLayer", "Expression", "Rika", "Smile",
+                                              "Speak", "Rika",
+                                              "So go on, adventurer boy, check it out!♪",
+                                              "Posing dramatically as if to conclude a sales pitch, she keeps her million-eros smile trained on you, some of her infectious enthusiasm rubbing off on you as you decide what to do next.",
+                                              "SetChoice", "3", "Imp",
+                                              "JumpToScene", "RikaMenu"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "MakeyourwaydownNoRika",
+                                      "theScene": [
+                                                      "Pausing in front of the looming, fortress-like construction, you ponder what you should do next, the impressive sight starting to give you cold feet...",
+                                                      "Staring at the imposing gate and looking around at your deserted surroundings, you can't help but be filled with trepidation...",
+                                                      "Menu",
+                                                        "I'm ready to proceed!",
+                                                        "Turn back...",
+                                                      "EndLoop"
+                                                ]
+                                  },
+                                              {
+                                                  "NameOfScene": "Turn back...",
+                                                  "theScene": [   "StopBGM",
+                                                                  "You decide to heed caution and make your way back to the check point just in case...",
+                                                                  "GoToTown"
+                                                            ]
+                                              },
+                                              {
+                                                  "NameOfScene": "I'm ready to proceed!",
+                                                  "theScene": [   "ChangeBG",  "dungeon.png",
+                                                                  "You cautiously enter the hallway lined with strange light apparatuses enclosed in glass receptacles, the distant whirr and hiss of machinery echoing down the passageway along with the sound of your own footsteps...",
+                                                                  "JumpToScene", "VoltlinTime"
+                                                            ]
+                                              },
+                          {
+                              "NameOfScene": "VoltlinTime",
+                              "theScene": [   "ChangeBG",  "dungeon.png",
+                                              "It's not very long before you reach what seems like a booth of sorts, though one that looks rather different from those you're used to, such as the Adventurer's Guild: whatever desk space there might be is hidden behind a semi-opaque glass pane fitted with a hole, and the way to it twists into a snaking path of metal blockades that branch out into several exits, presumably working as a waiting space for visitors to line up through.",
+                                              "However, it seems like you are the only one around, and the booth likewise appears empty, making you wonder if you should call out or even maybe let yourself in...",
+                                              "DisplayCharacters",
+                                                "3",
+                                              "EndLoop",
+                                              "ChangeBGM", "music/Capital/am_white.mp3",
+                                              "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                              "... until suddenly, as if on cue, a diminutive and {i}very{/i} curvy woman steps into view and peeks up from the edge of the counter before hopping up onto a chair to bring herself level with you, a cheery smile adorning her face as she takes you in while a hint of electricity crackles along her horns.",
+                                              "ChangeImageLayer", "Expression", "Voltlin", "JoyOpenEyes",
+                                              "Speak", "Voltlin",
+                                              "Greetings and salutations, adventurer! And welcome to Ars Delusia, Capital of monster girls! My name is Ampere and I will be your check-in Voltlin today.",
+                                              "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                              "You open your mouth to chime in, but before you can say anything, the peppy, fast-talking woman keeps going, her bright smile not leaving her face as she invitingly holds out a gloved hand in front of the pane's opening.",
+                                              "Speak", "Ampere",
+                                              "May I see your passport, dear visitor?",
+                                              "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                              "With a tinge of confusion before her cheerful alacrity, you gingerly take out the official-looking document and slide it through the gap in the glass for her to examine, Ampere promptly picking it up with a quick 'Thank you!', skimming through it with a relaxed hum, then sliding it back just as quickly.",
+                                              "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                              "Speak", "Ampere",
+                                              "Everything looks to be in order, [ThePlayerName]! Do you have any questions or concerns before proceeding?",
+                                              "Recovering your passport and still a bit dazed by the small woman's quick pace, you think about what to ask while she patiently looks at you with an amicable smile on her face.",
+                                              "JumpToScene", "VoltlinMenu"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "VoltlinMenu",
+                              "theScene": [
+                                              "Menu",
+                                                "What are you?",
+                                                "What is this place?",
+                                                "What kind of challenges await me?",
+                                                "Wanna fuck?",
+                                                "I'm good to go!",
+                                              "EndLoop"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "What are you?",
+                                      "theScene": [
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                                      "Speak", "Ampere",
+                                                      "I am a Voltlin, dear visitor! A demonic race possessed of electricity-producing abilities. You can very easily recognize us by our diminutive builds, naturally curvaceous bodies, colorful skin pigmentation, eye-catching markings, and of course our fetching horns, which do not pale before those of succubi, and act as conductors to our aforementioned sparkly skills to boot!♪",
+                                                      "She quips cheerfully, illustrating her point by making a few arcing sparks of lightning trail along her horns with no apparent effort on her part.",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                                      "Speak", "Ampere",
+                                                      "You are very likely to encounter more just like me in and around the Capital, as we hold a number of positions around the city. We are consummate engineers, tinkerers, craftswomen, artisans, inventors, and all-around technicians! Do not be afraid to approach us! I guarantee you we are very fond of visitors, particularly human ones, as we love to-",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Contemplating",
+                                                      "Ampere seems to catch herself and gives you a pensive look for a thoughtful moment, mouth agape in the middle of her sentence, tapping her fingers on the desk in front of her with nervous energy before carrying on with a slightly apologetic air.",
+                                                      "Speak", "Ampere",
+                                                      "Ahem... I could frankly talk your ear off about our species if you're interested, but I am unfortunately on the clock right now, and this is not a work-related topic, so...",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                                      "Speak", "Ampere",
+                                                      "Perhaps another time.♪ Any other questions?",
+                                                      "JumpToScene", "VoltlinMenu"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "What is this place?",
+                                      "theScene": [
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                                      "Speak", "Ampere",
+                                                      "Why this is Ars Delusia, Mister [ThePlayerName]! Proud Capital of monster girlkind and jewel of Lucidia! Did you perhaps get lost and come here by chance?",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                                      "You are about to retort when Ampere bursts out in a fit of good-humored giggles, batting her hand at you.",
+                                                      "Speak", "Ampere",
+                                                      "Ha ha ha, I jest, I jest! I do get your meaning, dear visitor.♪",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                                      "Her cherubic cheerfulness making it hard to get mad at her, you just wait for her to elaborate while she gives a little cough and starts over.",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                                      "Speak", "Ampere",
+                                                      "You are currently at a security station within the Capital city's outer wall. Just past the booth over there is the city itself.",
+                                                      "She says with a smile and leans forward bouncily to point over to the barred-off gates, before hopping back into her seat with a wiggle, the movement making her tightly-packed breasts jiggle briefly but quite pleasantly.",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                                      "Speak", "Ampere",
+                                                      "These stations are here for the purpose of guaranteeing that no unlawful, ill-intentioned, or dangerous persons step into our beautiful city, which helps ensure the safety of visitors, tourists, and civilians alike. Should you have questions, concerns, or need to report something of concern, please do not hesitate to direct yourself to the nearest of such stations, where you will be given advice and assistance.",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Contemplating",
+                                                      "Putting a finger on her mouth in contemplation, Ampere gives you a thoughtful and serious nod before continuing.",
+                                                      "Speak", "Ampere",
+                                                      "... Though you are quite frankly unlikely to run into any kind of trouble. We {i}do{/i} make sure that only those with the proper documentation or standing can enter or exit the city.",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                                      "Speak", "Ampere",
+                                                      "Such as yourself, brave adventurer!♪ My congratulations for making it this far, by the way!",
+                                                      "She finishes with a chipper tone and a wide heartwarming grin.",
+                                                      "JumpToScene", "VoltlinMenu"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "What kind of challenges await me?",
+                                      "theScene": [
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Thinking",
+                                                      "Speak", "Ampere",
+                                                      "That's- er- ...{i}complicated.{/i}",
+                                                      "She says in a slightly strained tone, visibly mulling something over before she resumes in a voice again steeped in easy cheerfulness.",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                                      "Speak", "Ampere",
+                                                      "While I am afraid I am not authorized to give you a complete rundown of the Capital and its dang- its {i}attractions{/i}, what with you being an adventurer and all, the best advice I can give you is to venture forth and take your time exploring the city to get your bearings, if you want to get the sigils that are kept here.",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                                      "Speak", "Ampere",
+                                                      "It's the largest settlement in Lucidia and full to the brim with all kinds of monsters of varying strengths, so you are sure to meet ladies that will suit your tastes and vice versa.~",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Contemplating",
+                                                      "She gives you a somewhat sleazy 'wink-wink, nudge-nudge' through the glass panel, then catches herself and hurriedly adds, a faint blush on her slate-gray cheeks.",
+                                                      "Speak", "Ampere",
+                                                      "But, uh, please keep in mind not to fuck in the open... if you can help it. Though Ars Delusia, like the rest of Lucidia, offers a {i}very{/i} warm welcome to human visitors... erm, it is still a city with people going about their lives, not a... metropolis-sized sex dungeon.",
+                                                      "She says while leaning forward to point to a sign at the edge of the booth, with text so small you didn't even realize it was there... In fact, even squinting at it, you can barely read it...",
+                                                      "What you {i}can{/i} make out sounds like more or less threatening technical jargon, with words like 'trespassers', 'repeated offenses', 'force majeure', 'expulsion', and other terms whose meaning eludes you and probably most other people, which Ampere seems quite aware of as she giggles before leaning back with a warm smile.",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                                      "Speak", "Ampere",
+                                                      "Just be wary when traveling into alleyways or other less open locations, as rowdy, hungry, or mischievous locals will most likely treat you as fair game. Most stores, however, are quite bor- {i}strict{/i} and have a zero-tolerance policy on sex within their premises, for reasons of hygiene, quietness, and professional...ness? Professionalism!... So be sure to check signage before entering.",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                                      "Speak", "Ampere",
+                                                      "I know that might seem like quite a light introduction, but considering you are a rather experienced adventurer already, I have no doubt that you will have no problem acquainting yourself with the lay of the land.♪ Back to our business, though, anything else I can help you with?♪",
+                                                      "JumpToScene", "VoltlinMenu"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Wanna fuck?",
+                                      "theScene": [
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                                      "Speak", "Ampere",
+                                                      "Of cour-!",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Pout",
+                                                      "Ampere immediately answers with obvious excitement, almost leaping off her chair before freezing and backpedaling with a huff, crossing her arms under her bouncing bust.",
+                                                      "Speak", "Ampere",
+                                                      "{i}{b}Ahem-{/b}{/i}. While I would {i}very much{/i} like to, [ThePlayerName], I am on the co- on the {i}clock{/i}, and it is against protocol to indulge in sexual activities unrelated to work.",
+                                                      "She groans emphatically as she slumps back into her chair, blowing a dejected raspberry while giving you a knowing look.",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Contemplating",
+                                                      "Speak", "Ampere",
+                                                      "And no, we cannot fake a work-related reason or we will both get into trouble... {i}serious{/i} trouble, in fact, like fines, suspension, or community service... and not the {i}fun{/i} kind either... and normally, I'd just suggest that you wait for me to check out, but I'm currently working a double shift because poor Lovol had an emergency to take care of... so waiting isn't an option.",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "LipLick",
+                                                      "Speak", "Ampere",
+                                                      "But if we see each other off-shift sometime, we can fuck alllll you want.♪",
+                                                      "She finishes with a horny purr, giving her soft lips a slow lick and alluringly pressing her overflowing bosom towards you as she looks you over, though she quickly catches herself again, clearing her throat and straightening her posture.",
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                                      "Speak", "Ampere",
+                                                      "{i}Ahem.{/i} Anything else?",
+                                                      "JumpToScene", "VoltlinMenu"
+                                                ]
+                                  },
+
+                                  {
+                                      "NameOfScene": "I'm good to go!",
+                                      "theScene": [
+                                                      "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                                      "Speak", "Ampere",
+                                                      "Then please proceed through the gate. I hope you enjoy your stay!",
+                                                      "Ampere presses a button on her side of the booth and the metallic bars across one of the lanes open up with an electric buzz, leaving you free to pass. The whole thing has barely taken a minute, and for a moment, you stand there in mild perplexity, until the Voltlin gatekeeper urges you onward with a brisk wave, prompting you to stow away the passport and carry onward.",
+                                                      "DisplayCharacters",
+                                                      "EndLoop",
+                                                      "JumpToScene", "PostVoltlin"
+                                                ]
+                                  },
+                          {
+                              "NameOfScene": "PostVoltlin",
+                              "theScene": [
+                                              "ChangeBGM", "music/Capital/Despair_City.mp3",
+                                              "Behind you, you hear the gate close back with a clang, along with a leathery squeak from the booth that points to the Voltlin having left her seat to focus her attention elsewhere. Gathering your wits after that surprisingly expeditious formality, you follow the path of guiding lights and cleanly painted arrows to find your way forward, the dim tunnel giving way to billowing misty smog...",
+                                              "ChangeBG",  "CapitalFogFilled.png",
+                                              "... which in turn opens into a heavily smoke-obfuscated vista of strange streets and buildings as you press onwards into Ars Delusia proper, the scent of {i}sex{/i} jumping at your senses while lights flare and pierce through the fog from all around and a clamor of bustling voices fills your ears, a far cry from the hushed stillness of the entryway...",
+                                              "ChangeBG",  "CapitalPeople.png",
+                                              "ChangeBGM", "music/Capital/Killer_Roll.mp3",
+                                              "As you keep marching on in slack-jawed awe, the choking smog parts, revealing glimmering spires of steel and spiderwebs of alleyways filled with crowds of monsters going about their day or hurrying to and fro. Looking around, you spot a human here and there amid the throngs of city-dwellers, most of them walking alongside one or several monster girls and looking quite acclimated to the place.",
+                                              "Your head quite literally spinning as you look around in wonder and confusion and take in all the new things you are suddenly introduced to, you struggle to fight off the massive sensory overload, your mind reeling as you try to process the drastic change in scenery compared to the locales you're used to.",
+                                              "Most of all, the {i}noise{/i} is disconcertingly omnipresent, whether it comes from the constantly moving mass of pedestrians, the loud chatting of disparate groups of locals, or the roaring music coming from several of the many establishments all around you, a peal of unfamiliar-sounding instruments booming out of what looks like a leisure area when a succubus opens the entry door to get in, the deafeningly high volume startling you.",
+                                              "As if in a trance, you step forward into the busy streets, passersby swerving around your confused, stunned ambling, few of them sparing you more than an odd glance or the occasional muttered 'Sorry.' or 'Excuse me.' as they walk past you.",
+                                              "Dropped in the middle of all this light, noise, and alien-looking architecture, you're not even sure where to start. The streets look like they stretch on and on, buildings taller than any tower rise into the clouds high above you, and the sky is almost completely hidden by the omnipresent purple smoke that ensconces the city like an entrapping gaseous cocoon, making you feel like you're not even in Lucidia anymore.",
+                                              "StopBGM",
+                                              "But just as you feel like thought paralysis is going to keep you standing there for the rest of eternity, a sense of familiarity hits you like a ton of bricks as a distinctive laugh rings through the air, piercing through even the din of the city chatter.",
+                                              "ChangeBGM", "music/Battle/bgm_maoudamashii_orchestra12.mp3",
+                                              "Speak", "???",
+                                              "MWAHAHAHA! [ThePlayerName], you fool!",
+                                              "Looking up along with some surprised bystanders, you see that the triumphant laughter is coming from the top of a metallic corner building that splits a street two ways. Predictably, above glimmering shifting signs and a bright neon heart, you spot the shaded silhouette of a diminutive slime woman looming proudly, arms crossed as errant gusts of smog-laced currents flit through her, making her red shape wobble dramatically.",
+                                              "DisplayCharacters",
+                                              "1",
+                                              "EndLoop",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Pride",
+                                              "Once she sees she got your attention, the one and only Perpetua boldly drops down along the side of the structure, leaving a red gooey trail in her wake and ultimately landing in front of you, gasps and chatter ringing out among onlookers.",
+                                              "Speak", "Random Catgirl",
+                                              "Are they filming a meowvie, nya?",
+                                              "Speak", "Random Voltlin",
+                                              "Who's the guy?",
+                                              "Speak", "Random Succubus",
+                                              "He's cute.♥",
+                                              "While you don't know whether you should feel flattered or embarrassed by so much sudden attention, Perpetua seems to be basking in it, her head raised high as she pretends not to notice your audience and dynamically points a finger at you.",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Joy",
+                                              "Speak", "Perpetua",
+                                              "I knew I'd find you stumbling in here eventually! Haha!",
+                                              "Unexpectedly, her prior despondency and sorrow seem to have turned around completely, the boisterous slime woman carrying on blithely while your small crowd looks on and comments animatedly, more rubberneckers joining in while others quickly get bored or move along hurriedly.",
+                                              "Menu",
+                                                "'Perpetua, you're okay!'",
+                                                "'Hold on, there's too many things going on already-!'",
+                                                "'Wait, didn't we {i}just{/i} do this?'",
+                                                "'Oh goddess we're in public.'",
+                                                "Blankly watch.",
+                                              "EndLoop"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "'Perpetua, you're okay!'",
+                                      "theScene": [
+                                                      "Your words are mostly lost amid the din of the onlookers, but the cherry-red slime clearly gets your meaning, shooting you a somewhat embarrassed smile before she hurriedly continues with her boisterous speech, apparently eager to sweep her past outburst under the rug.",
+                                                      "GetEventAndChangeProgress", "PerpetuaHouse", "1",
+                                                      "JumpToScene", "PerpCapital2"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "'Hold on, there's too many things going on already-!'",
+                                      "theScene": [
+                                                      "But with everyone around animatedly chattering, pointing, and commenting, Perpetua seems too caught up in her own hype to realize you're still rather overwhelmed from your fresh entry into the Capital, giving you no choice but to strap in for whatever she has in mind this time.",
+                                                      "JumpToScene", "PerpCapital2"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "'Wait, didn't we {i}just{/i} do this?'",
+                                      "theScene": [
+                                                      "ChangeImageLayer", "Expression", "Perpetua", "Base",
+                                                      "Perpetua just gives you a smug smirk and chuckle in retort before continuing on with her showy boisterous display, her proud demeanor and triumphant sweeping gestures radiating a mute 'This time will be different!', leaving you unsure of whether you should feel relieved, enthusiastic, annoyed, or afraid about this.",
+                                                      "JumpToScene", "PerpCapital2"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "'Oh goddess we're in public.'",
+                                      "theScene": [
+                                                      "ChangeImageLayer", "Expression", "Perpetua", "Base",
+                                                      "Your words are lost on your overexcited and hyped-up rival amid the noises of the crowd, leaving you to cringe silently at the awkward situation as she continues unabated. You would consider just sneaking away to spare yourself further embarrassment if you weren't now more or less surrounded by rubberneckers from every angle, even a harpy or two looking on from above.",
+                                                      "JumpToScene", "PerpCapital2"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Blankly watch.",
+                                      "theScene": [
+                                                      "JumpToScene", "PerpCapital2"
+                                                ]
+                                  },
+                          {
+                              "NameOfScene": "PerpCapital2",
+                              "theScene": [
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Laugh",
+                                              "Speak", "Perpetua",
+                                              "Tremble in awe, [ThePlayerName], for destiny smiled upon the great Perpetua! I shall now have my vengeance with newfound power! {i}Now{/i} we can have our rematch! {i}Mwahahaha!{/i}",
+                                              "Your spectators chatter on with a mix of confusion, excitement, bafflement, and amusement, some of them directly chiming in as more and more gather around the two of you.",
+                                              "Speak", "Random Imp",
+                                              "Are they gonna fight!?",
+                                              "Speak", "Random Dark Elf",
+                                              "Suck him dry!",
+                                              "Speak", "Random Succubus",
+                                              "Go, sister!",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Joy",
+                                              "Looking positively enchanted and literally vibrating with excitement, Perpetua carries on while you still wonder what you should do, a circle of bystanders having now taken shape around you, as if forming an improvised arena.",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Laugh",
+                                              "Speak", "Perpetua",
+                                              "Get ready now for-",
+                                              "ChangeBGM", "music/Capital/night vision radio.mp3",
+                                              "Speak", "???",
+                                              "Yo, the {b}hell{/b} do you think you're doing?!",
+                                              "DisplayCharacters",
+                                                "1",
+                                                "4",
+                                              "EndLoop",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                              "ChangeImageLayer", "Expression", "Dark Slime", "Frown",
+                                              "Looking around, you see the shouting is coming from a purple slime woman wearing some kind of cat-themed outfit who seems to sport a severe expression behind the mask she's wearing as she stalks forward on a gooey pair of legs with a flick of her tail, both limbs making her stand out from the slimes you've met so far. Startled by the sudden irruption, Perpetua looks around in sudden meekness, stammering flusteredly at the intrusion.",
+                                              "Menu",
+                                                "'Hey, we're in the middle of something...'",
+                                                "'Finally someone sane...'",
+                                                "Blankly watch. ",
+                                              "EndLoop"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "'Hey, we're in the middle of something...'",
+                                      "theScene": [   "ChangeImageLayer", "Expression", "Dark Slime", "Disgust",
+                                                      "Speak", "???",
+                                                      "It's okay, it'll only take a moment...",
+                                                      "Despite your words and glare, the purple slime pays you no heed aside from that quick dismissive retort and a brief annoyed glance, the brunt of her ire and focus seeming trained on Perpetua.",
+                                                      "JumpToScene", "PerpCapital3"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "'Finally someone sane...'",
+                                      "theScene": [
+                                                      "Breathing out a sigh of relief, you hope you can get out of this awkward situation soon with the newcomer weighing in on Perpetua's loud and proud babble... though speaking from experience, you also can't help but have something of a bad feeling about this...",
+                                                      "JumpToScene", "PerpCapital3"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Blankly watch. ",
+                                      "theScene": [
+                                                      "JumpToScene", "PerpCapital3"
+                                                ]
+                                  },
+                          {
+                              "NameOfScene": "PerpCapital3",
+                              "theScene": [
+                                              "Speak", "Perpetua",
+                                              "Guh!? Wh-Who dares-? I- Uh- Ah- S-S-Sorry?",
+                                              "ChangeImageLayer", "Expression", "Dark Slime", "Disgust",
+                                              "A few snickers flit out from the onlookers while flashes of light of unknown origin shine from the crowd and blind your vision, but the purple slime pays it no mind, carrying on toward Perpetua who visibly shrinks before her taller brethren's glare.",
+                                              "Speak", "???",
+                                              "You {i}should{/i} be! Honestly... you're doing the laugh {i}completely{/i} wrong!",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                              "Laughter rings out from the ring of spectators as more comments shoot out of the colorful bunch, prompting the red slime to raise her chest huffily, indignantly setting her fists on her hips.",
+                                              "Speak", "Random Voltlin",
+                                              "Woo-hoo, it's a comedy bit now!",
+                                              "Speak", "Random Imp",
+                                              "Heeey, less banter, more fucking!",
+                                              "Speak", "Perpetua",
+                                              "Wh- Now hold on, lady, I've practiced my evil laugh for {b}ages{/b}! There's nothing wrong with it!",
+                                              "ChangeImageLayer", "Expression", "Dark Slime", "Pout",
+                                              "Speak", "???",
+                                              "I mean, the laugh's fine, but it's the wrong {i}kind{/i} of laugh.",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                              "The cherry-red slime just looks further confused, baffled, and disconcerted, squirming in place as she glances around, seemingly looking for some kind of exit from the situation she's put herself in, looking over to you for a blank moment.",
+                                              "Menu",
+                                                "'I'm {i}so{/i} lost right now.'",
+                                                "'...Huh?'",
+                                                "Shrug.",
+                                                "Blankly watch.  ",
+                                              "EndLoop"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "'I'm {i}so{/i} lost right now.'",
+                                      "theScene": [
+                                                      "Finding you just as confused and helpless, Perpetua can do little but turn awkwardly back to the other slime woman, confusion plain all over her face.",
+                                                      "JumpToScene", "PerpCapital4"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "'...Huh?'",
+                                      "theScene": [
+                                                      "JumpToScene", "PerpCapital4"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Shrug.",
+                                      "theScene": [
+                                                      "As you too have no idea of what is happening or who the purple slime is or what she wants or what you or Perpetua should do, you helplessly shrug, prompting Perpetua to turn back to her gooey brethren.",
+                                                      "JumpToScene", "PerpCapital4"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Blankly watch.  ",
+                                      "theScene": [
+                                                      "Seeing that your gaze seems a bit glazed as you try to process everything, Perpetua turns awkwardly back to the other gooey woman.",
+                                                      "JumpToScene", "PerpCapital4"
+                                                ]
+                                  },
+                          {
+                              "NameOfScene": "PerpCapital4",
+                              "theScene": [
+                                              "Speak", "Perpetua",
+                                              "...Huh?",
+                                              "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                              "ChangeImageLayer", "Expression", "Dark Slime", "SmileConfident",
+                                              "Speak", "???",
+                                              "Yeah! If you're doing that pose, you're supposed to go {i}'Ohohoho!'{/i}, you know? The classic 'classy villain lady' shtick! Like Merida in {i}Lucidian Sweethearts: Rise of the Slimes{/i}.",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                              "Speak", "Perpetua",
+                                              "{i}Huh?!{/i}",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                              "ChangeImageLayer", "Expression", "Dark Slime", "Disgust",
+                                              "A few more snickers and laughs ring out from the crowd along with whistles and jeers, drawing the ire of the purple slime woman who gives them a furious growl and death glare, causing a few of the onlookers to flee the scene while the rest amusedly offer good-natured apologies and encouragement, which makes Perpetua untense slightly after wilting from the negative attention.",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Base",
+                                              "Speak", "Random Succubus",
+                                              "Don't mind them, love!",
+                                              "Speak", "Random Minotaur",
+                                              "Show him what you got!",
+                                              "Speak", "Random Imp",
+                                              "Suck his d- Hmph!?",
+                                              "ChangeImageLayer", "Expression", "Dark Slime", "Happy",
+                                              "Seeming content with the change of atmosphere, the still unidentified newcomer turns back to the two of you, gesturing at you with an air of impatient eagerness toward Perpetua.",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                              "Speak", "???",
+                                              "Well, come on, hurry up and do it! You're trying to flirt with your boyfriend or something, right?",
+                                              "ChangeImageLayer", "Expression", "Dark Slime", "Smug",
+                                              "Speak", "Perpetua",
+                                              "Wh- [ThePlayerName] isn't my boyfriend! He's my nemesis! Rival! We're fated to clash at every turn until-",
+                                              "Speak", "???",
+                                              "Yeah, whatever, do the laugh properly already.",
+                                              "Speak", "Perpetua",
+                                              "I, uh-...",
+                                              "ChangeBGM", "music/Capital/night vision radio.mp3",
+                                              "She looks shyly to the surrounding crowd who answers with cheers, the positive reaction seeming to embolden her, though she still looks rather awkward as she postures in front of her taller fellow slime.",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Laugh",
+                                              "Speak", "Perpetua",
+                                              "O-Ohoho?",
+                                              "ChangeImageLayer", "Expression", "Dark Slime", "Pout",
+                                              "Speak", "???",
+                                              "C'mon louder! Prouder! More energy! Like the laugh you did! And don't look at me, look at [ThePlayerName]! He's the one you're trying to seduce!",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                              "Speak", "Perpetua",
+                                              "{b}I'mnottryingtoseducehim!!!{/b}",
+                                              "Speak", "Random Lizard Girl",
+                                              "Who cares!? Knock his pants off!",
+                                              "Speak", "Random Catgirl",
+                                              "Show him what meow got!",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                              "ChangeImageLayer", "Expression", "Dark Slime", "Frown",
+                                              "Giving up on trying to set the record straight, Perpetua huffs and takes a deep breath to gather herself before turning toward you and giving you a sharp, decisive stare before posing emphatically.",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Laugh", "ChangeImageLayer", "Expression", "Dark Slime", "SmileConfident",
+                                              "Speak", "Perpetua",
+                                              "{i}Ohohohoho!{/i}",
+                                              "Congratulations, whistling, and clapping erupt good-humoredly from the rubberneckers in response to the more convincing peal of haughty laughter to which the purple slime nods approvingly.",
+                                              "Speak", "???",
+                                              "There ya go. Now then, what were you on about with your BF?",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                              "Speak", "Perpetua",
+                                              "{i}He's not my boyfriend.{/i}",
+                                              "ChangeImageLayer", "Mask", "Dark Slime", "MaskDown", "ChangeImageLayer", "Expression", "Dark Slime", "Lick", "ChangeImageLayer", "Candy", "Dark Slime", "Candy",
+                                              "Ignoring the grumbling, and content with the results of her intervention, the woman steps back among the spectators to look on curiously, sliding down her mask to lick at a lollipop. With that 'intermission' concluded, the small crowd's bustle drops to a hushed chatter, your audience just as curious to see what's about to happen as Perpetua focuses back on you, having seemingly gotten over her bout of stage fright.",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Base",
+                                              "Speak", "Perpetua",
+                                              "Alright, where was I...",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Laugh",
+                                              "ChangeBGM", "music/Battle/bgm_maoudamashii_orchestra12.mp3",
+                                              "Speak", "Perpetua",
+                                              "[ThePlayerName]! Now, we can finally have our rematch! Behold the source of my newfound power! {i}Ohohohoho!{/i}",
+                                              "ChangeImageLayer", "Expression", "Dark Slime", "Frown",
+                                              "With a flourish, she pulls out a pitch-black, purple-tinged crystalline sphere with an ominous heart inlaid within, which she holds above her head, making the crowd rustle with a perplexed murmur.",
+                                              "Speak", "Random Imp",
+                                              "What's that?",
+                                              "Speak", "Random Voltlin",
+                                              "An Arouse Orb?",
+                                              "Speak", "Random Lizard Girl",
+                                              "What, {i}that's{/i} her big ace up her slime?!",
+                                              "Speak", "???",
+                                              "Uh... What {i}is{/i} that? And where'd you get it?",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Joy",
+                                              "Speak", "Perpetua",
+                                              "I met a nice lady in a hood in an alleyway who gave it to me!",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "LipLick",
+                                              "Speak", "Perpetua",
+                                              "Now then, [ThePlayerName]! Everyone! Behold my evolution!",
+                                              "ChangeImageLayer", "Expression", "Dark Slime", "Disgust",
+                                              "Speak", "???",
+                                              "Hey- I don't think you sho-!",
+                                              "Menu",
+                                                "'Perpetua, wait-!'",
+                                                "Dive for the orb!",
+                                                "Blankly watch.   ",
+                                                "'Haha very funny-'",
+                                              "EndLoop"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "'Perpetua, wait-!'",
+                                      "theScene": [
+                                                      "Your words seemingly fall on deaf ears! Meanwhile, the purple slime moves forward, one hand held out as her lollipop dangles from her mouth, but Perpetua blithely pays her no mind either, too engrossed in the promising lure of victory to wait a second longer, activating the magically-charged sphere by squeezing it in her fist.",
+                                                      "JumpToScene", "PerpCapital5"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Dive for the orb!",
+                                      "theScene": [
+                                                      "You and the purple slime woman leap forward in unison, hands outstretched and lollipop dangling from her mouth, but Perpetua blithely pays you both no mind, too engrossed in the promising lure of victory to wait a second longer, activating the magically-charged sphere by squeezing it in her fist before you can reach her.",
+                                                      "JumpToScene", "PerpCapital5"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Blankly watch.   ",
+                                      "theScene": [
+                                                      "Still having little idea of what in Venereae is happening, you can only watch while the purple slime moves forward, one hand held out as her lollipop dangles from her mouth. Perpetua, however, blithely pays her no mind, too engrossed in the promising lure of victory to wait a second longer, activating the magically-charged sphere by squeezing it in her fist.",
+                                                      "JumpToScene", "PerpCapital5"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "'Haha very funny-'",
+                                      "theScene": [
+                                                      "Your words are lost amid the crowd's noises and Perpetua's gloating while the purple slime moves forward, one hand held out as her lollipop dangles from her mouth, though Perpetua blithely pays no mind to either your dry retort or her brethren's attempt to intervene, too engrossed in the promising lure of victory to wait a second longer, activating the magically-charged sphere by squeezing it in her fist.",
+                                                      "JumpToScene", "PerpCapital5"
+                                                ]
+                                  },
+                          {
+                              "NameOfScene": "PerpCapital5",
+                              "theScene": [
+                                              "DisplayCharacters",
+                                                "1",
+                                              "EndLoop",
+                                              "ChangeBGM", "music/Capital/Despair_City.mp3",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                              "PlayVisualEffect", "ScreenFlash", "Void.png",
+                                              "PlayMotionEffect", "LongExplosion",
+                                              "Immediately, with an ear-piercing rush of energy, a colossal shockwave sends everyone but you and her flying back, the cherry slime's expression switching from gloating triumph to flustered alarm as she struggles to hold the orb that now shines with a dark-purplish fel light, a heavy crushing pressure radiating in all directions, making your stomach drop and your breath catch in your lungs.",
+                                              "Speak", "Perpetua",
+                                              "Ghk?! I- Is it supposed to do that-?",
+                                              "PlayVisualEffect", "ScreenFlash", "Void.png",
+                                              "PlayMotionEffect", "Explosion",
+                                              "You can barely hear her above the thunderous rumble and struggle to keep your footing as a visible wave of demonic energy surges from the crystal and pours down into her arm, the sudden influx sending a tremor through her gooey form, panic and screams from the crowd around you nearly drowned out by the magic reverberation.",
+                                              "Speak", "Random Imp",
+                                              "What the heck!?",
+                                              "Speak", "Random Voltlin",
+                                              "Call security!",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Laugh",
+                                              "Speak", "Perpetua",
+                                              "Mwaha- I mean- {i}Ohohoho!{/i} I can feel the {b}power{/b} surg-ghnk-?!",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                              "PlayVisualEffect", "BlindingFlash", "Void.png",
+                                              "PlayMotionEffect", "LongExplosion",
+                                              "The already overwhelming waves of shadowy energy continue to flare out with somehow growing intensity, the sludgy black ooze creeping through Perpetua's body bit by bit and quickly spreading dark veins through her bright red form, leaving her reeling from the rapid, ominous-looking influence flowing through her gooey frame.",
+                                              "Speak", "Perpetua",
+                                              "Ac-Actually, th-this is starting to really h-hurt! I-It won't turn off- I-",
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Crying",
+                                              "StopBGM",
+                                              "PlayVisualEffect", "BlindingFlash", "Void.png",
+                                              "Speak", "Perpetua",
+                                              "H-Help- [TPN]-",
+                                              "DisplayCharacters",
+                                              "EndLoop",
+                                              "ChangeBG",  "combat.png",
+                                              "ChangeBGM", "music/Unknown/Dungeon-Rlyeh.mp3",
+                                              "PlayMotionEffect", "Quake",
+                                              "PlayVisualEffect", "BlindingFlash", "Void.png",
+                                              "Perpetua's voice is drowned out when the noxious energy finally erupts blindingly in every direction, shrouding your vision as an arcane shell surrounds the two of you like a swirling vortex of erotic depravity, a quick rush of arousal hitting you from the overwhelming presence of demonic energy, making you reel for a moment before you brace yourself and ready yourself for whatever is to come...",
+                                              "DisplayCharacters",
+                                                "2",
+                                              "EndLoop",
+                                              "ChangeImageLayer", "Expression", "Dark Perpetua", "EvilGrin",
+                                              "PlayVisualEffect", "ScreenFlash", "Void.png",
+                                              "PlayMotionEffect", "Explosion",
+                                              "As the radiating waves finally abate and part, you can see before you 'Perpetua'.",
+                                              "Somehow, the once diminutive slime woman is now a trio of curvy slime women lounging about in a massive collective body of alluringly cushy-looking goo, a sinking pull of obscene magic radiating off her. Thick tendrils languidly sweep through the air, making grabbing motions at you as all three 'Perpetuas' focus their attention on you and smile sultrily, their demeanor offering an eerie spectacle as they move and speak in unison...",
+                                              "Speak", "Perpetua?",
+                                              "Mhnm~ How wondrous!~",
+                                              "ChangeImageLayer", "Expression", "Dark Perpetua", "LipLick",
+                                              "The echoing slime woman (women?)'s voice is low and husky, a stark contrast to her previous high-energy gab, and so are her motions as the central Perpetua slowly caresses her other two selves with seductively smooth motions, the two sinfully soft-looking entities provocatively moaning as they lick their lips and shake their bodies for you.",
+                                              "Speak", "Perpetua?",
+                                              "Now then... Our darling [ThePlayerName], my beloved nemesis... my pet-to-be~",
+                                              "The unified voices echo and reverberate off eachother threateningly as the trio gazes at you with clear predatory hunger, the big gooey tendrils laying themselves before you welcomingly, as if to invite you to just give up immediately and accept Perpetua's embrace...",
+                                              "ChangeImageLayer", "Expression", "Dark Perpetua", "Laugh",
+                                              "Speak", "Perpetua?",
+                                              "First... we shall make you {i}ours.{/i} Then the entire world can drown in our magnificence! {i}Ohohohoho!{/i}",
+                                              "As the threefold peel of laughter echoes through the dark arena you're trapped in, you feel another surge of demonic energy rush through you. You're not entirely sure what the hell is going on, but you'll have to subdue Perpetua before this gets worse!",
+                                              "ChangeImageLayer", "Expression", "Dark Perpetua", "EvilGrin",
+                                              "... unless you just give up and surrender yourself to her possessive affection, leaving yourself fully open to what her three smooth, curvaceous bodies can offer, Perpetua's arousal-clouded eyes promising you untold pleasures if you just-",
+                                              "Shaking your head against the mind-clouding influence of the overwhelming lust in the air, you get ready to fight!",
+
+                                              "CombatEncounter",
+                                                "RunningWontSkipEvent",
+                                                "NoRunning",
+                                                "Dark Perpetua",
+                                              "StartCombat",
+
+                                              "DisplayCharacters",
+                                               "2",
+                                             "EndLoop",
+                                             "ChangeBGM", "music/Capital/Despair_City.mp3",
+                                             "ChangeImageLayer", "Expression", "Dark Perpetua", "Orgasm", "ChangeImageLayer", "Face", "Dark Perpetua", "BlushHeavy",
+                                             "PlayVisualEffect", "ScreenFlash", "Void.png",
+                                             "PlayMotionEffect", "Explosion",
+                                             "Upon the dark trio of Perpetuas' climax, the swirling, writhing realm of darkness surrounding you begins to undulate and visibly crack as the slime women moan and shiver together in continued ecstasy, their curvaceous forms swaying and bouncing alluringly as they seem to lose their substance, gradually fading away as if returning wherever they came from.",
+                                             "Speak", "Perpetua?",
+                                             "{b}Currrssseee you, [ThePlayerName]! Oooohhh!~ We will retur-!{/b}",
+                                             "DisplayCharacters",
+                                               "1",
+                                             "EndLoop",
+
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Pleasured",
+                                             "PlayVisualEffect", "BlindingFlash", "Void.png",
+                                             "PlayMotionEffect", "LongExplosion",
+                                             "Then with a resounding pop, the dark energy filling Perpetua's body dissipates all at once in a blinding eruption, leaving the gasping, reeling, but seemingly unhurt form of the diminutive cherry slime behind while the shell surrounding you continues to break down rapidly, fragments of solidified blackness crackling away into nothingness.",
+                                             "Speak", "Perpetua",
+                                             "Rnnn- Haa-? Gh-?!",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "Having switched from her previous state to her current one in an instant, Perpetua stays frozen in place for a moment... then the pleasure rampaging through her body vanishes just as suddenly, hitting her with a crushing wave of exhaustion that leaves her slumping to the ground in a barely cohesive gooey mess, coughing and sputtering in confusion.",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                             "Speak", "Perpetua",
+                                             "{i}Ghfhack-?!{/i} Guh- Ugh-",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "Speak", "Perpetua",
+                                             "Wh-What happened-? I-I feel like I ate a whole tub of spoiled alraune nectar or something...",
+                                             "Menu",
+                                               "'Are you okay!?'",
+                                               "'You're in {i}so{/i} much trouble.'",
+                                               "Hug her",
+                                               "Just leave",
+                                             "EndLoop"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "'Are you okay!?'",
+                             "theScene": [
+                                             "The slime girl turns to you blearily, needing to do a double take to fully focus her attention on you and reply.",
+                                             "Speak", "Perpetua",
+                                             "I... guess so? Uugh, I feel {i}awful{/i}... Physically, mentally... spiritually? B-But also about the whole-",
+                                             "GetEventAndChangeProgress", "PerpetuaHouse", "1",
+                                             "JumpToScene", "PostBattle"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "'You're in {i}so{/i} much trouble.'",
+                             "theScene": [
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                             "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                             "Hearing your stern, accusatory tone, Perpetua jumps in place, sudden panic plain on her face.",
+                                             "Speak", "Perpetua",
+                                             "I-I-I-I'm sorry!? Ididn'tmeantodoitIswearIjustwantedto-",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                             "Speak", "Perpetua",
+                                             "Hey! Wait a second! What are you, my {i}mom!?{/i} Th-The Great Perpetua will have you know that-",
+                                             "JumpToScene", "PostBattle"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "Hug her",
+                             "theScene": [
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                             "ChangeBGM", "music/Forest/Starry sky.mp3",
+                                             "The diminutive monster girl squeaks in surprise and immediate embarrassment as you walk up to her and tightly wrap your arms around her squishy form, the cherry slime wobbling indignantly in your embrace.",
+                                             "Speak", "Perpetua",
+                                             "Wh-Wh-What are you doing!? How dare you!? Let go of-",
+                                             "GetEventAndChangeProgress", "PerpetuaHouse", "1",
+                                             "JumpToScene", "PostBattle"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "Just leave",
+                             "theScene": [
+                                             "Deciding that you're done here, you start walking away, waiting for the darkness-infused shell holding the two of you prisoners to finish dissolving so that you can depart and get back on track. However, as you turn your back to Perpetua, you hear her indignantly shout after you.",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                             "Speak", "Perpetua",
+                                             "H-Hey! What gives!?",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "Speak", "Perpetua",
+                                             "I-I know that was a bad scene and all, but at least let me apol-",
+                                             "JumpToScene", "PostBattle"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "PostBattle",
+                             "theScene": [
+                                             "ChangeBG",  "Capital.png",
+                                             "StopBGMHard",
+                                             "PlayVisualEffect", "BlindingFlash", "Void.png",
+                                             "PlayMotionEffect", "LongExplosion",
+                                             "But before she can get another word in edgewise, the ethereal shell surrounding you finally collapses for good, shattering and dissolving as it folds inwards, returning you to the crowded city streets while Perpetua dazedly gets on her feet, or rather her slimy legs, wincing at the sudden influx of bright lights and noises.",
+                                             "DisplayCharacters",
+                                               "1",
+                                               "3",
+                                               "3",
+                                               "3",
+                                               "3",
+                                               "3",
+                                               "3",
+                                               "3",
+                                               "3",
+                                               "3",
+                                               "3",
+                                               "3",
+                                               "3",
+                                             "EndLoop",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "As you look around, blinking and still recovering from the demanding battle, you immediately notice that you're both surrounded by what must be some kind of security task force called in due to the noxious outsurge of magical energy and following unseen battle.",
+                                             "ChangeBGM", "music/Unknown/Brainwash.mp3",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                             "More Voltlins than you can count are encircling you, an impressive arc of electricity coursing from horns to horns in a closed circuit, the display making the air around you shimmer with almost palpable magical energy. You realize that one of the small curvy monster girls who seems to be leading the squad is talking, shouting orders in an authoritative voice to the rest of her squadron.",
+                                             "Speak", "Voltlin",
+                                             "-argets in sight-! Incapacitating! {b}{i}Release!{/i}{/b}",
+                                             "Speak", "Perpetua",
+                                             "Ghwu- {i}Waitwaitwait! I'm better now-!{/i}",
+                                             "Menu",
+                                               "'Stop!!!'",
+                                               "Run away",
+                                               "Freeze up",
+                                             "EndLoop"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "'Stop!!!'",
+                             "theScene": [
+                                             "Your shouting is unfortunately drowned by the growing buzzing noise from the Voltlins' conjured lightning, both your voice and Perpetua's failing to reach the ears of the monster girl squad who doesn't look like they are in a listening mood anyway!",
+                                             "JumpToScene", "VoltlinZap"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "Run away",
+                             "theScene": [
+                                             "Looking around in a panic, you're quickly forced to acknowledge that any escape attempt would most likely be doomed to failure: the Voltlins are forming a tight, watchful cordon around the two of you, and whatever you do, they are going to strike before you've gone three paces, particularly with you still feeling the post-combat fatigue from your fight with the Perpetuas...",
+                                             "JumpToScene", "VoltlinZap"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "Freeze up",
+                             "theScene": [
+                                             "Reflecting that this is really not how you pictured your entry into the Capital, you resign yourself to your fate while Perpetua wails powerlessly next to you.",
+                                             "Speak", "Perpetua",
+                                             "{b}Aaaaaah, I'm sorry [ThePlayerName]!{/b}",
+                                             "JumpToScene", "VoltlinZap"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "VoltlinZap",
+                             "theScene": [
+                                             "PlayVisualEffect", "BlindingFlash", "white.png",
+                                             "PlayMotionEffect", "Crash",                                             
+                                             "ChangeArousal", "9999",
+                                             "SetSpirit", "0",
+                                             "Speak", "",
+                                             "The Voltlins focus for just a moment and the electric loop between them narrows into a blinding bolt that shoots straight at the two of you, unerringly striking you and filling you with more pleasure than your body can handle, the brutal influx frying your brain with searing ecstasy and making you black out instantly.",
+                                             "PlayBlackOut", "StopBGMHard",
+                                             "...",
+                                             "EndBlackOut",
+                                             "ChangeBG",  "dungeon.png",
+                                             "SleepPlayer", "DelayNotifications",
+                                             "DisplayCharacters",
+                                             "EndLoop",
+                                             "Groggily, you dazedly awaken.",
+                                             "DisplayCharacters",
+                                               "1",
+                                             "EndLoop",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "Blinking and looking around with the feeling that your brain is sitting in your head topsy-turvy, you realize that you're sitting in a metallic chamber, positioned in front of a table with Perpetua next to you, the slime girl coming out of her unconsciousness as well and looking like she isn't feeling any perkier than you.",
+                                             "DisplayCharacters",
+                                               "1",
+                                               "3",
+                                             "EndLoop",
+                                             "ChangeBGM", "music/Capital/am_white.mp3",
+                                             "You also realize that a Voltlin is seated at the table across the two of you, apparently engrossed in a very thick book titled {i}Theoretical 8th Dimension Arcane Theory: A Simple Introduction{/i}. However, upon noticing that you're rousing, she promptly bookmarks her read and closes it, then primly rises to her full height.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                             "Speak", "Voltlin",
+                                             "Goooood morning, you two!",
+                                             "The small woman's voice feeling like it's piercing straight through your skull, you grimace in unison with Perpetua, though the slime's expression swiftly shifts to panic as she realizes where she is.",
+                                             "Speak", "Perpetua",
+                                             "Ghwuh-",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                             "Speak", "Perpetua",
+                                             "Wait-! I'm innocent! I didn't know! I wasn't myself! Things happened! {b}I don't wanna go to jail!!!{/b}",
+                                             "Quivering in terror, the gooey girl visibly shrinks into her chair as she stares imploringly at the Voltlin, but the jolly-looking woman just laughs in response, waving away Perpetua's fears.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "JoyOpenEyes",
+                                             "Speak", "Voltlin",
+                                             "Now, now, Miss Perpetua, you can calm down. The situation has been gone over thoroughly, and you will both be free to go once we have been through a few questions... Nothing too serious, I assure you. Just inquiries for the sake of assisting Ars Delusian authorities through the investigations we will be performing into the matter surrounding the strange manifestation that occurred.",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Shy",
+                                             "Speak", "Perpetua",
+                                             "... O-Oh. Okay... Right... Alright then.",
+                                             "Perpetua lets out a slow exhale of relief and slumps in her chair, completely exhausted from the day's ordeal and all the physical, sexual, and mental exhaustion she's been through, while the Voltlin nods in satisfaction.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                             "Speak", "Voltlin",
+                                             "Now then, without further ado!",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Base",
+                                             "With businesslike alacrity, she produces a clipboard and a pencil, and takes a quick look at her paper before asking, her writing implement primed for action.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Contemplating",
+                                              "ChangeBGM", "music/Capital/03 illegal invasion.mp3",
+                                             "Speak", "Voltlin",
+                                             "Do you know what that orb you used was?",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "Losing her cheeky expression, Perpetua squirms in her chair awkwardly for a moment, but the Voltlin's harmless, patient expression seems to reassure her and she meekly stammers.",
+                                             "Speak", "Perpetua",
+                                             "W-Well... N-No... Not really...?",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Contemplating",
+                                             "The woman nods and jots something down, then proceeds.",
+                                             "Speak", "Voltlin",
+                                             "Where did you get it?",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Shy",
+                                             "Speak", "Perpetua",
+                                             "From a lady in a black... hooded coat thing-?",
+                                             "Speak", "Voltlin",
+                                             "Did she divulge her name? Can you describe her in any amount of detail?",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "Speak", "Perpetua",
+                                             "N-Not really-? I got so excited about... Uhm... W-Well- She's... taller than me?",
+                                             "The slime woman responds with growing awkwardness, looking like she would like nothing more than to melt into the floor as the Voltlin dutifully records her testimony then reviews it with a frown, sighing heavily as she shoots Perpetua an unimpressed look above her clipboard, chidingly tapping her pencil on its wooden surface.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Thinking",
+                                             "Speak", "Voltlin",
+                                             "Didn't your parents ever tell you not to take things from strangers...",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                             "Perpetua looks blank for a moment, and you can imagine her thoughts flashing back to the rather serene forest you met her in, a far cry from the hustle and bustle of Ars Delusia, the slime girl's introspection concluding with a flustered, innocent.",
+                                             "Speak", "Perpetua",
+                                             "N-Not really?!",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Contemplating", "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "The Voltlin gives her a flat stare, sighs, reviews her notes once more, and doesn't hide a disappointed pout as she shifts her attention over to you with a hopeful gleam in her eye.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin", "ChangeImageLayer", "Expression", "Perpetua", "Neutral",
+                                             "Speak", "Voltlin",
+                                             "Now, [ThePlayerName]... Did you happen to see anyone suspicious at or around the scene?",
+                                             "Menu",
+                                               "Perpetua.",
+                                               "A Purple Slime?",
+                                               "Rika?",
+                                               "There were way too many people...",
+                                             "EndLoop"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "Perpetua.",
+                             "theScene": [
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                             "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                             "Speak", "Perpetua",
+                                             "Whu- {i}Hey!{/i}",
+                                             "While Perpetua sputters indignantly at your accusation, the Voltlin can't help but burst out in amused giggles before recollecting herself and gesturing for the fuming slime to calm down, the gooey girl shooting you an angry glare but settling for pouting huffily at you.",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                             "Speak", "Voltlin",
+                                             "Now now, while she {i}was{/i} the epicenter of the Demonic Convergence, we have established that she is at worst no more than an unwitting accomplice. She certainly was a victim of this event as much as you were.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                             "Speak", "Perpetua",
+                                             "Yeah! Come on, [ThePlayerName], don't throw me under the cart like that, this is serious!...",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Shy",
+                                             "Speak", "Perpetua",
+                                             "...Though I still {i}really{/i} don't have any idea of who this weird lady was and what her deal was either...",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Contemplating",
+                                             "The Voltlin officer nods understandingly at that, then offers a compassionate smile.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                             "Speak", "Voltlin",
+                                             "Indeed. Based on the picture we got of Miss Perpetua's character from the testimonies we've gathered, we are confident that she wouldn't be capable of that kind of... malevolent know-how.",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Joy",
+                                             "Speak", "Perpetua",
+                                             "Exactly!♪",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                             "Speak", "Perpetua",
+                                             "W-Wait! I-I'm plenty capable of evilness stuff!",
+                                             "JumpToScene", "InterrogationQuestion2"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "A Purple Slime?",
+                             "theScene": [
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                             "Upon you bringing up and describing the dark slime woman and her distinctive cat hoodie, Perpetua interjects with a huff.",
+                                             "Speak", "Perpetua",
+                                             "Oh, come on, she had nothing to do with it. For starters, she definitely didn't look a thing like the woman I met in that alleyway...",
+                                             "The Voltlin woman nods in agreement and attentively marks down something on her clipboard.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Contemplating",
+                                             "Speak", "Voltlin",
+                                             "Yes, there were quite a lot of bystanders, but although we are still in the middle of gathering testimonies and running interrogations, no one sticks out as a likely culprit or accomplice, including the woman you're describing.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                             "Speak", "Voltlin",
+                                             "But I don't blame you, Mister [ThePlayerName]. I'm sure that to someone new to the Capital, just about anyone could look suspicious.",
+                                             "JumpToScene", "InterrogationQuestion2"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "Rika?",
+                             "theScene": [
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                             "You describe the imp you met upon entering the Capital, and the Voltlin jots down something while turning her attention to Perpetua who thinks hard.",
+                                             "Speak", "Perpetua",
+                                             "That... doesn't {i}sound{/i} like the woman I met? She definitely was taller than an imp, and wasn't wearing a bunny hoodie thing... I mean, I know I was kinda all over the place, but even then, I'd have remembered {i}that{/i}.",
+                                             "The Voltlin hums thoughtfully as her pencil keeps flowing across the paper with a continued scratching sound.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin", "ChangeImageLayer", "Expression", "Perpetua", "Neutral",
+                                             "Speak", "Voltlin",
+                                             "Well, it's unlikely she's related to the case, then, but we can certainly look her up for some questions later, in case she saw anything.",
+                                             "JumpToScene", "InterrogationQuestion2"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "There were way too many people...",
+                             "theScene": [
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Contemplating",
+                                             "The Voltlin woman gives you a slightly dejected but understanding nod while Perpetua sulks, a little bummed out that neither you nor her have any seemingly useful information to offer.",
+                                             "Speak", "Voltlin",
+                                             "Well, that's alright. I expected as much. The Capital can be very overwhelming for newcomers, so don't feel bad for not catching anything that might have been out of place.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Joy", "ChangeImageLayer", "Expression", "Perpetua", "Neutral",
+                                             "Speak", "Voltlin",
+                                             "Annnnd conversely, it's entirely possible that something you {i}thought{/i} could be out of place actually wasn't, haha. So don't worry about it.",
+                                             "Speak", "Perpetua",
+                                             "I don't know if that makes me feel that much better, though...",
+                                             "The officer gives Perpetua a compassionate look, but since it doesn't look like the slime girl is really expecting an answer, she shifts her attention back to her notes.",
+                                             "JumpToScene", "InterrogationQuestion2"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "InterrogationQuestion2",
+                             "theScene": [   "ChangeBGM", "music/Capital/03 illegal invasion.mp3",
+                                             "Dragging her pencil down her clipboard, the Voltlin checks something, turns a page, then turns her gaze back on you.",
+                                             "Speak", "Voltlin",
+                                             "Now then, [ThePlayerName], have you seen anything like what happened with Perpetua before?",
+                                             "Menu",
+                                              "RequiresChoiceFromEvent", "ConfrontingVenefica", "3", "DefeatedCrazyVenefica",
+                                               "'Actually, yes!'",
+                                               "'No...'",
+                                             "EndLoop"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "'Actually, yes!'",
+                             "theScene": [
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Panic",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                             "ChangeBGM", "music/Capital/Despair_City.mp3",
+                                             "The Voltlin's expression instantly goes from businesslike casualness to wide-eyed surprise, the woman sputtering in disbelief and nearly dropping her notes as she blurts out a response, Perpetua just as panicked and flustered as she looks over at you.",
+                                             "Speak", "Voltlin",
+                                             "What, really?! When? Where!? Please, give me every detail you can!",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                             "While the Voltlin looks like she can barely hold herself back from jumping up on her seat, Perpetua manages to collect herself first as something seems to strike her, and gives you a pouty sideways glare while the diminutive officer rearranges her clipboard, her pencil raised and poised for note-taking, intently staring at you.",
+                                             "Speak", "Perpetua",
+                                             "What, do you have other rivals or something...",
+                                              "JumpToScene", "InterrogationQuestion2Menu"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "InterrogationQuestion2Menu",
+                             "theScene": [
+                                             "Menu",
+                                                "RequiresChoiceFromEvent", "ConfrontingVenefica", "3", "DefeatedCrazyVenefica",
+                                                "RequiresChoice", "5", "",
+                                               "'Venefica.'",
+                                               "RequiresChoice", "4", "GaveAwnser",
+                                               "'That's everything.'",
+                                             "EndLoop"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "'Venefica.'",
+                             "theScene": ["ChangeBGM", "music/Capital/Despair_City.mp3",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Thinking",
+                                             "You recount the tale of you and Elly investigating the Forest witch and witnessing something eerily similar firsthand, Venefica acting with the same single-minded predatoriness before you managed to bring her back to her senses.",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Joy",
+                                             "The Voltlin listens raptly and dutifully records your account, nodding along the twists and turns you experienced. Perpetua seems very taken by the story as well, obviously finding the adventure very engaging and even chiming in with a question or two.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Contemplating",
+                                             "Eventually, you reach the conclusion of your eventful quest, leaving a pause hanging in the air as the two monster girls digest this new information, the Voltlin chewing on her pencil for a bit before musing perplexedly.",
+                                             "Speak", "Voltlin",
+                                             "...Another cloaked woman that you couldn't get a proper view of... And the Queen of Witches of all people.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Panic",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                             "ChangeBGM", "music/Capital/03 illegal invasion.mp3",
+                                             "Speak", "Voltlin",
+                                             "Wait, {b}why{/b} didn't she contact {i}us{/i} about this?! Does she not trust Lucidia's very own official authorities or something? Ghhh- I swear, old-timers like her are a pain in the ass to deal with...",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Contemplating",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                             "The Voltlin lets out an annoyed sigh as she mulls over what you told her and the well of potential information they may have been left uninformed of, seemingly venting her frustration by spearing down a few more frustrated notes before taking a deep breath and returning her attention to you, smiling happily.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Neutral",
+                                             "Speak", "Voltlin",
+                                             "We'll have to cross-reference this to confirm what you just told me. Hopefully, it won't be too much of an ordeal to get this stubb- to get Miss Venefica to cooperate... At minimum, contacting Miss Elizabeth from the human settlement for her take should both confirm your testimony and bring some more insight into things.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                             "Speak", "Voltlin",
+                                             "But in the name of the Ars Delusian Security Force, thank you for telling me about this! Would you perhaps happen to know any more?",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "Perpetua, meanwhile, sighs and looks off to the side now that storytime is over, somewhat put out after listening to all of that.",
+                                             "Speak", "Perpetua",
+                                             "I wish I had a cool adventure like that... I just got out of the Forest, rained evil on that human Town for a bit, visited the Forest Dungeon and got shooed off by this straight-laced no-fun-allowed sheep lady, had to climb the whole Mountain, got chased around the Caves for who knows how long, crossed the Labyrinth without even getting to join the fun, and then, well...",
+                                             "She trails off despondently, letting silence return and leaving you to answer the Voltlin.",
+                                             "SetChoice", "4", "GaveAwnser",
+                                             "SetChoice", "5", "Venefica",
+                                              "JumpToScene", "InterrogationQuestion2Menu"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "'That's everything.'",
+                             "theScene": [  "ChangeBGM", "music/Capital/03 illegal invasion.mp3",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                             "Speak", "Voltlin",
+                                             "Well, that's way more than I ever expected to hear, so thank you very much! We'll be sure to look into it all.",
+                                             "She happily marks a few more things down in her notes, cheered up by this unexpected intelligence, then takes a moment to straighten out her paperwork while Perpetua awkwardly fidgets.",
+                                             "JumpToScene", "InterrogationConcludes"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "'No...'",
+                             "theScene": [
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Contemplating",
+                                             "Speak", "Voltlin",
+                                             "Well, that's to be expected, but I needed to check. Thank you for your cooperation.",
+                                             "She marks a few more things down in her notes, then takes a moment to straighten out her paperwork while Perpetua awkwardly fidgets.",
+                                             "JumpToScene", "InterrogationConcludes"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "InterrogationConcludes",
+                             "theScene": [
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                             "Seeming done with her inquiries, the Voltlin sets down her clipboard and pencil next to her book, folds her hands on the table, then gives you both a long look before lightly clearing her throat and addressing the two of you while Perpetua remains uncustomarily silent and crestfallen.",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Neutral",
+                                             "ChangeBGM", "music/Capital/Despair_City.mp3",
+                                             "Speak", "Voltlin",
+                                             "Owing to the two of you being new to the Capital, and to [ThePlayerName]'s status as an adventurer, I will offer a full explanation about today's events. Miss Perpetua, the orb you activated contained {i}highly{/i} illegal concentrations of demonic energy, gathered into such a portable form by use of an unknown method, by perpetrators yet to be caught or even reliably identified.",
+                                             "Speak", "Voltlin",
+                                             "These 'Demonic Convergence' events, as they have been dubbed, have been very rare incidents, primarily occurring within Delusia itself, though we have had reports of cases outside of the city as well. Yours is likely the worst case we've had yet, and by a very large margin... Thankfully, [ThePlayerName] was able to subdue you, or who knows what would have happened.",
+                                             "Speak", "Voltlin",
+                                             "These orbs, and other similar items that we've observed and recovered in some cases, infuse high amounts of demonic energy into the user, often heavily transforming them both in body and mind, regardless of whether they want to or not. And according to the reports we've gathered, they also usually instill a perverse feeling of affection towards someone, prompting the victim to pursue their lov-",
+                                             "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                             "Speak", "Perpetua",
+                                             "{i}He'snotmyboyfriendhe'smyrival!{/i}",
+                                             "Perpetua's shrunken body flares up indignantly as she cuts the Voltlin in the middle of her explanation, the woman's eyes opening wide in genuine confusion, prompting the slime girl to recede shamefully at her outburst.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Thinking", "ChangeImageLayer", "Expression", "Perpetua", "Shy",
+                                             "Speak", "Voltlin",
+                                             "{i}Oh!{/i} Given what happened, we assumed that... Hm, then we probably should have brought you in separate rooms for the testimony-taking...",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                             "Speak", "Voltlin",
+                                             "Oh well!~",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin", "ChangeImageLayer", "Expression", "Perpetua", "Neutral",
+                                             "ChangeBGM", "music/Capital/03 illegal invasion.mp3",
+                                             "She gives an apologetic nod after a tittering giggle, then professionally clears her throat before continuing with her debriefing.",
+                                             "Speak", "Voltlin",
+                                             "Anyway, that's more or less everything there is to say on the subject: unknown parties are distributing 'Demonic Ambrosia' to unwitting victims, prompting them to use it and undergo severe changes, resulting in mayhem. If you find information relating to this case, please inform security at the nearest station...",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Contemplating",
+                                             "Speak", "Voltlin",
+                                             "But mostly, try to stay out of trouble. As far as we're aware, the person or people behind these cases are extremely dangerous.",
+                                             "Having seemingly said all she had to say, the Voltlin leans back in her chair and gives you both a cordial smile.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                             "Speak", "Voltlin",
+                                             "Now then... Do either of you have any questions?",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "Perpetua meekly shakes her head, her mind most likely still heavy with everything that's happened so far, prompting the small security lady to turn to you.",
+                                             "JumpToScene", "InterrogationQuestionMenu"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "InterrogationQuestionMenu",
+                             "theScene": [
+                                             "Menu",
+                                               "'Was anyone hurt?'",
+                                               "'Was the electric super fry really needed???'",
+                                               "'How have you not caught them yet?'",
+                                               "'Ampere?'",
+                                               "'I think I'm good.'",
+                                             "EndLoop"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "'Was anyone hurt?'",
+                             "theScene": ["ChangeImageLayer", "Expression", "Voltlin", "Contemplating", "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "Upon your question, Perpetua tenses up with worry and panic at the idea that her antics may have gotten even further out of hand than she thought, already stammering excuses and apologies, but the Voltlin gives a negative shake of her head with a smile.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Joy", "ChangeImageLayer", "Expression", "Perpetua", "Neutral",
+                                             "Speak", "Voltlin",
+                                             "Nope, luckily! Just a few people shaken up by the outburst of demonic power, and some easily repaired property damage.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                             "Speak", "Voltlin",
+                                             "So aside from any stress, exhaustion, or frayed nerves either you or bystanders may have suffered, everything is hunky dory for everyone involved.",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Content",
+                                             "Perpetua sighs with relief, letting out a breath she had been holding for a few long moments while slumping back into her seat.",
+                                             "JumpToScene", "InterrogationQuestionMenu"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "'Was the electric super fry really needed???'",
+                             "theScene": [
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                             "Perpetua springs up in pouty agreement at your question.",
+                                             "Speak", "Perpetua",
+                                             "Yeah! That was overkill! I was totally harmless!",
+                                             "Though she initially seems startled by your combined complaint, the diminutive security officer lets out an amicable but serious laugh as she gives you both an understanding smile.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                             "Speak", "Voltlin",
+                                             "I get that it may not have been the most pleasant experience... but please understand that we couldn't take risks given the situation.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Contemplating", "ChangeImageLayer", "Expression", "Perpetua", "Neutral",
+                                             "Speak", "Voltlin",
+                                             "The readings we were getting from within that dark shell were four times the highest recorded, and the victim of that one was {i}hard{/i} to subdue, even after she was, er, done with the object of her affection. A preemptive strike was really the best thing we could do in such a situation.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                             "Speak", "Voltlin",
+                                             "Plus, the enchantment, combined with the harmless nature of Voltlin electricity, ensured your safety in the matter. I assure you, you were {i}verymostlikely{/i} never under any risk of permanent debilitation or injury.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                             "Speak", "Voltlin",
+                                             "But still, on behalf of the Ars Delusian Security Force, we're sorry for any discomfort you may have gone through from that mind-blanking instant climax.",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Shy",
+                                             "Perpetua crosses her arms with a thoughtful look, seemingly of two minds, probably proud that she warranted such a strong intervention while remaining peeved that she got unceremoniously blasted into unconsciousness.",
+                                             "JumpToScene", "InterrogationQuestionMenu"
+                                       ]
+                         },
+                        {
+                             "NameOfScene": "'How have you not caught them yet?'",
+                             "theScene": ["ChangeImageLayer", "Expression", "Voltlin", "Contemplating", "ChangeImageLayer", "Expression", "Perpetua", "Neutral",
+                                             "The Voltlin lets out a slightly offended but restrained huff, then puts her hands together with an air of professional seriousness as she goes into her explanation in a level tone.",
+                                             "Speak", "Voltlin",
+                                             "The Ars Delusian Security Force is doing all it can to keep the situation under control and get to the bottom of this criminal activity in order to put a stop to it... But frankly spoken, the perpetrators behind this are not stupid and have proven remarkably slippery. Every time we think we hit a lead, we run right into a dead end.",
+                                             "The Voltlin shifts in her chair with a grimace, not hiding her displeasure at her powerlessness as she half-reminisces, half-recounts.",
+                                             "Speak", "Voltlin",
+                                             "Initially, it seemed like an unremarkable case, kind of like a prankster having fun, but now, it's certainly gone well beyond that. The experts we've sent evidence to for analysis have either no clue of how it works, or have straight-out turned us down... And to be honest, as a task force, we're already strained by the everyday ongoings of the city, including repairs and maintenance.",
+                                             "Speak", "Voltlin",
+                                             "And while it may seem like it, these guys don't act at random. They always make sure to operate far enough from security stations and patrols that by the time we get there, they're long gone... And the testimonies we have on them aren't that helpful either, usually boiling down to 'Some girl.' or 'A lady in a big coat.' at best.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Thinking",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "Perpetua fidgets awkwardly in her seat at being reminded of her own lack of help in the matter, nervous apprehension clear on her face as she ruminates on what she has fallen into.",
+                                             "Speak", "Voltlin",
+                                             "So at the end of the day, while it may be frustrating to hear, despite our best efforts and much digging, we simply don't have much of a clue of who's behind this, or how to stop these attacks. The best we can do right now is continuing investigations and taking care of damage control.",
+                                             "JumpToScene", "InterrogationQuestionMenu"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "'Ampere?'",
+                             "theScene": ["ChangeImageLayer", "Expression", "Voltlin", "Contemplating", "ChangeImageLayer", "Expression", "Perpetua", "Neutral",
+                                          "ChangeBGM", "music/Forest/Purple Planet Music - On Tiptoe (1 37) 100bpm.mp3",
+                                             "The Voltlin gives you a blank look for a few moments, curiously processing your words before lighting up with a smile.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                             "Speak", "Voltlin",
+                                             "Ooooh! Nonono. Ampere is my {i}sister.{/i}",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                             "Slipping a hand into one of the pockets sewn into her uniform, she pulls out what appears to be a group photo of the Voltlin security team all huddled together, smiling.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "JoyOpenEyes",
+                                             "Speak", "Voltlin",
+                                             "There you have little Ampy! I'm surprised she didn't make more of an impression on you, she's easily the prettiest of us all!♥",
+                                             "With a proud grin, she points to one of the assembled curvy women, but for the life of you, you have no idea how she is able to tell any one of them apart, all of them looking equally cute and curvy. Roused from her dazed state, Perpetua peeks at the picture curiously, letting out a flat 'Huh.' that points to her being just as lost as you are.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin",
+                                             "Speak", "Voltlin",
+                                             "But I can understand your confusion, these uniforms and dress regulations make us all kinda blend together, haha.~ Big family, too!",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Contemplating",
+                                             "Giving the image one last fond look, she lets out a happy sigh, then briskly stows the picture away before clearing her throat and looking back to you with a now businesslike expression.",
+                                             "ChangeBGM", "music/Capital/03 illegal invasion.mp3",
+                                             "Speak", "Voltlin",
+                                             "So, any other questions? Ideally related to the case?",
+                                             "JumpToScene", "InterrogationQuestionMenu"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "'I think I'm good.'",
+                             "theScene": ["ChangeImageLayer", "Expression", "Voltlin", "Contemplating", "ChangeImageLayer", "Expression", "Perpetua", "Neutral",
+                                            "ChangeBGM", "music/Capital/am_white.mp3",
+                                             "She reacts with a prim professional nod, seems to mentally review your exchange, gives her clipboard one last look for good measure, then concludes with a cheery smile.",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                             "Speak", "Voltlin",
+                                             "Well then with all that said... You're both free to go!~",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Grin", "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "Briskly, she picks up her items, slides off her chair, and opens a nearby metallic door with the press of a button, before looking back to the two of you with a professional smile, patiently waiting for you both to shake off the aching noodliness in your bodies, Perpetua gathering herself with a miserable groan.",
+                                             "Speak", "Perpetua",
+                                             "Ghhnng... Goddess, my core is killing me...",
+                                             "Speak", "Voltlin",
+                                             "Don't worry, we gave you both a solid checkup and, luckily, thanks to [ThePlayerName]'s prompt intervention, you most likely won't suffer any aftereffects of the Demonic energy, or the... {i}ahem{/i} electro-incapacitation. Just take it easy for a day or two and you'll be right as rain.",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Shy",
+                                             "Speak", "Perpetua",
+                                             "Yeah... I think I'm gonna just... go home for a while. Enjoy the familiar coziness of the Forest and uh... chill for a bit...? Uff!",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Content",
+                                             "She hops off her seat with a wet slapping impact as she hits the steel ground, her entire body wobbling in almost comical fashion before she turns to you, her despondent expression unexpectedly turning into a faint smile as she looks up at you.",
+                                             "ChangeBGM", "music/Forest/Starry sky.mp3",
+                                             "Speak", "Perpetua",
+                                             "Would uh... you... wanna hang out later at my place, or something? I need a breather from all this... stuff.",
+                                             "Menu",
+                                               "'Sure, let's go!'",
+                                               "'Maybe later. I need to lie down...'",
+                                               "'No thanks.'",
+                                             "EndLoop"
+
+                                       ]
+                         },
+                        {
+                             "NameOfScene": "'Sure, let's go!'",
+                             "theScene": [
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                             "Perpetua sputters at your forthright enthusiasm in spite of everything that just happened and your prior rivalry.",
+                                             "Speak", "Perpetua",
+                                             "{i}Whugh-{/i} Not right now, you dunce! I need some {i}me{/i} time! And a nap! And a proper meal too!",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "There's a long pause as she looks down at the floor in sudden deep thought.",
+                                             "Speak", "Perpetua",
+                                             "I hadn't even realized how long it's been since I left home...",
+                                             "GetEventAndChangeProgress", "PerpetuaHouse", "1",
+                                             "JumpToScene", "PostPerpInvite"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "'Maybe later. I need to lie down...'",
+                             "theScene": [
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "Perpetua lets out an exhausted sigh of agreement, her slimy shoulders slumping.",
+                                             "Speak", "Perpetua",
+                                             "{i}Same.{/i} And uhm... Sorry about the whole... {i}thing{/i} that just happened... I just wanted to... you know...",
+                                             "JumpToScene", "PostPerpInvite"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "'No thanks.'",
+                             "theScene": [
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                             "Perpetua gives you a moody pout, but she doesn't press the issue, instead sighing forlornly.",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Depressed",
+                                             "Speak", "Perpetua",
+                                             "Argh... Listen... I don't know if you're angry, but... I'm sorry about the whole... turning-turbo-evil thing that just happened... I just wanted to... you know... have fun with a rival and have epic battles and... stuff...",
+                                             "JumpToScene", "PostPerpInvite"
+                                       ]
+                         },
+                         {
+                             "NameOfScene": "PostPerpInvite",
+                             "theScene": [
+                                              "ChangeImageLayer", "Expression", "Perpetua", "Pout",
+                                              "With a huff, she perks up and slaps her gooey cheeks, putting some pep back in her still tired but more springy-looking gooey body.",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Base",
+                                             "You expect her to leave it at that and make her exit, but instead, she hands you what looks like a small medal of sorts, seemingly made of crystallized slime and Venereae knows what else.",
+                                             "Speak", "Perpetua",
+                                             "Here! If you wanna visit your greatest rival sometime, you'll need this!",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Joy",
+                                             "ChangeBGM", "music/Forest Dungeon/New Step.mp3",
+                                             "Rather pushily, Perpetua shoves the glimmering gemlike item among your belongings where it magnetizes itself to your grimoire, whether you want it to or not...",
+                                             "GiveItem", "1", "Slime Badge",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "Joy",
+                                             "Looking quite happy with herself, Perpetua quickly scoots her way out of the door with a proud {i}'Ohohoho!~'{/i} under the warm smile of the Voltlin who seems to find your relationship quite cute. You hear the slime girl slosh down the adjoining hall...",
+                                             "ChangeImageLayer", "Expression", "Perpetua", "Panic",
+                                             "ChangeBGM", "music/Forest/Are-you-kidding.mp3",
+                                             "... then swiftly return, an expression of shameful panic flickering across her face.",
+                                            "Speak", "Perpetua",
+                                            "Wh-Which way is out!? This place looks like a maze! I don't wanna get lost again! What if I stumble into another lady who keeps wanting to lick me?!-",
+                                             "ChangeImageLayer", "Expression", "Voltlin", "JoyOpenEyes",
+                                             "Cutting her short, the Voltlin jovially grabs her by the shoulder and turns her back toward the hallway, pointing helpfully.",
+                                             "Speak", "Voltlin",
+                                             "Just down the left hall and to your right. There's a public travel gem there.",
+                                            "ChangeImageLayer", "Expression", "Perpetua", "Joy",
+                                            "Speak", "Perpetua",
+                                            "Thanks, lady!",
+                                            "ChangeImageLayer", "Expression", "Perpetua", "Laugh",
+                                            "Speak", "Perpetua",
+                                            "And farewell, [ThePlayerName]! {i}Ohohoho!~{/i}",
+                                            "This time for good, Perpetua slimes her way back out of sight while you get up from your seat to follow suit, stepping out of the metallic chamber with the diminutive security officer in tow who sees you off with a wave.",
+                                            "SetChoice", "7", "CapitalIntroDone",
+                                            "AdventureComplete", "Approach the Capital...",
+                                            "GoToTown"
+                                       ]
+                         }
+                ]
+}

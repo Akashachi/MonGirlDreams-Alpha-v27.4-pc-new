@@ -1,0 +1,45 @@
+{
+    "name": "Voracious Huntress Amy",
+    "CardType": "Quest",
+    "CardLimit": "0",
+    "Description": "Amy lurks at the end of your adventure, ready to pounce and milk you dry with her many tongues!",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Amy",
+                    "postName": "",
+                    "SpeakerType": ""
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Fight",
+                        "theScene": [      "ChangeBG",  "Caverns.png",
+                                          "As you keep trudging ever deeper into the inky darkness of the Labyrinth, you suddenly find yourself within the Caverns instead, surrounded on all sides by rocky pathways that snake and twist confusingly, forming a veritable natural maze.",
+                                          "Puzzled, you warily take in this new and unexpected environment, then suddenly tense at the distant sound of claws running over stone, the echoing grinding noise sending a shiver of primal fear up your spine!",
+                                          "DisplayCharacters",
+                                                "1",
+                                              "EndLoop",
+                                          "ChangeImageLayer", "Expression", "Amy", "Seductive",
+                                          "Before you can even decide what you're going to do, there's a sudden rush of movement and Amy leaps in front of you with a predatory purr, her eyes shining lustfully and her tail swaying excitedly behind her as she prowls closer, clearly more interested in milking you dry than in striking up a conversation!",
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Amy",
+                                          "StartCombat",
+                                          "IfChoice", "1", "ClearedLabyMatch", "PostWin",
+                                          "SetChoice", "1", "ClearedLabyMatch",
+                                          "GetEventAndChangeProgress", "Labyrinth Depths", "1",
+                                          "JumpToScene", "PostWin"
+
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "PostWin",
+                                "theScene": ["ChangeBG",  "Labyrinth.png",
+                                              "With Amy's climactic defeat, the rocky Caverns melt away all around you, returning you to the stark darkness of the deep Labyrinth where an encouraging light ahead finally signals the end of your exploration!"
+
+                                          ]
+                            }
+                ]
+}

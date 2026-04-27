@@ -1,0 +1,293 @@
+{
+  "name": "RedHeartTile",
+  "CardType": "Event",
+  "CardLimit": "20",
+  "Description": "",
+  "requires": [ ""],
+  "Speakers": [
+                {
+                  "name": "Ceris",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                }
+              ],
+  "EventText": [
+                  {
+                      "NameOfScene": "RedHeart",
+                      "theScene": [    "SpawnGridNPC", "RedHeartTrapDormant", "Here",
+                                    "RemoveGridNPC", "Current",
+                                      "SetProgress", "0",
+                                      "As you step onto the tile inlaid with a red heart, a warm flash of magic floods your vision and a shimmering barrier surrounds you in a spacious square, a warm sexual fragrance filling the steamy air.",
+                                      "DisplayCharacters",
+                                        "1",
+                                          "EndLoop",
+                                      "ChangeImageLayer", "Base", "Ceris", "Nude",
+                                      "ChangeImageLayer", "Expression", "Ceris", "Horny", "ChangeImageLayer", "Face", "Ceris", "Blush", "DamagePlayerFromMonster", "Ceris", "Sexual Tempt",
+
+                                      "However, more eye-catchingly, Ceris is also suddenly on the floor in front of you, her ass raised and her front low to the ground, presenting her thick rear with a tempting shake of her wide hips while her tail wags with horny excitement.[DamageToPlayer]",
+                                      "ChangeImageLayer", "Expression", "Ceris", "Bashful",
+                                      "Speaks",
+                                      "Oh nooo,♥ looks like you stepped on one of the trapped floors that lets you {i}fuck{/i} me to your heart's content.♥",
+                                      "ChangeImageLayer", "Expression", "Ceris", "Seductive",
+                                      "Speaks",
+                                      "Don't hold back.♥",
+                                      "DamagePlayerFromMonster", "Ceris", "Sexual Tempt",
+                                      "There's a tempting purr in her husky voice, and the magically encased chamber seems to ripple with a pulse of tantalizing magic, the edges of your vision starting to turn pink with enchanted desire and lust.[DamageToPlayer]",
+                                      "IfPlayerOrgasm", "TooHornyToRefuse",
+                                      "Menu",
+                                        "Ignore the temptation!",
+                                        "Fuck her!",
+                                      "EndLoop"
+                                ]
+                  },
+                        {
+                          "NameOfScene": "TooHornyToRefuse",
+                          "theScene": ["With your mind already spinning with dizzying arousal, there's no way you can even think of refusing the tempting, swaying sight in front of you! You {i}need{/i} to fuck her!",
+                                      "JumpToScene", "TemptFail"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "Fuck her!",
+                          "theScene": [
+                                      "JumpToScene", "TemptFail"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "Ignore the temptation!",
+                          "theScene": [ "You try to ignore Ceris' seductively swaying hips, but the warm scent wafting in the air mixed with the throbbing heat in your groin leaves your decision-making increasingly flawed, a bubbling need to fuck her threatening to overtake you.",
+                                        "StatCheck",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "1",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "1",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "1",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "2",
+                                        "ChangeStatCheckDifficulty", "IfHasPerk", "Overheat", "10",
+                                        "Temptation",
+                                        "15",
+                                        "TemptPass",
+                                        "Fail",
+                                        "TemptFail"
+                                    ]
+                        },
+                            {
+                              "NameOfScene": "TemptPass",
+                              "theScene": [
+                                          "You back away and shake off the alluring magic attempting to draw you to fuck the curvaceous hellhound, but somehow, the barrier and Ceris don't disappear immediately.",
+                                          "ChangeImageLayer", "Expression", "Ceris", "Smug",
+                                          "She pouts a little before staring straight into your eyes with a look of smoldering desire that sends a renewed twinge of lust down your stomach, Ceris using one clawed hand to teasingly grope her pillowy ass while she sways her curvy hips for you, the sight hard to look away from as the thick sexual fragrance in the air clouds your mind.",
+                                          "Speak", "Ceris",
+                                          "Hehe,♥ resist all you want.♥ You're just going to be {i}aching{/i} for sex.♥",
+                                          "CallEventAndSceneThenReturn", "CerisCombatEvents", "ApplyOverheat",
+                                          "ChangeImageLayer", "Expression", "Ceris", "SmugKnowing",
+                                          "Your cock turns achingly hard from her teasing words and the stiflingly lewd atmosphere, your breath turning heavy and ragged as the urge to fuck starts to overwhelm and melt your head... but before it overtakes you entirely, the teleporting magic flares up again, making the barrier and Ceris vanish with a few parting words.",
+                                          "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                          "Speak", "Ceris",
+                                          "See you soon.♪",
+                                            "CallSceneThenReturn",  "FixSpirit",
+                                          "DisplayCharacters",
+                                            "EndLoop"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "TemptFail",
+                              "theScene": ["ChangeImageLayer", "Expression", "Ceris", "LipLick",
+                                          "Your dick twitches and throbs with excitement as you rush forward and mount Ceris, plunging your length into her drooling, molten-hot pussy in a single stroke while you lean over her to greedily grope her heavy tits.",
+                                          "ChangeImageLayer", "Expression", "Ceris", "Horny",
+                                          "She lets out a low growl of sultry arousal as you start to eagerly thrust into her, a hot and heavy feeling settling in your aching loins with every impactful meeting of your hips, coaxing you to keep going, filling you with a craving for more.",
+                                          "ChangeImageLayer", "Expression", "Ceris", "Seductive",
+                                          "Ceris' large tail wraps around your back to help brace you and ensure you stay intimately connected, and she turns her head to face you with a lusty grin before lewdly offering her mouth to yours, wordlessly begging you for a kiss, her tongue slightly hanging out in a shamelessly horny show.",
+                                          "The sight makes something in your lust-driven brain click in place and you messily crash your lips into hers without a second thought, sloppily making out with the voluptuous woman while you swing your waist like a beast, sending hot waves of pleasure resonating through your entire body, all the while you thoughtlessly grope and knead her huge tits.",
+                                          "ChangeImageLayer", "Expression", "Ceris", "Pleasured",
+                                          "Speak", "Ceris",
+                                          "Mnnnn,♥ come on,♥ mnf,♥ give♥ it♥ to♥ {i}me.♥{/i}",
+                                          "She huskily whispers to you in between your heated saliva swapping, your tongues hungrily entangling, her words striking deep into your horny, desire-ridden mind, leaving your dick throbbing with growing overexcitement after each thrust, heat pulsing through your tensing groin as her powerful pussy squeezes tightly down on you.",
+                                          "PlayerOrgasm", "1",
+                                          "You let out a muffled groan into Ceris' mouth as you tightly squeeze her soft breasts, sinking your fingers deep into her pillowy flesh as you hilt yourself inside her and indulgently pour thick ropes of seed into her, losing yourself to the throes of climax and exchanging a flurry of passionate kisses with your hellhound lover.",
+                                          "ChangeImageLayer", "Expression", "Ceris", "Seductive",
+                                          "Eventually, gasping, the two of you break the kiss once your orgasm ebbs away, your head still spinning with lust, your throbbing cock aching for more of her, your infatuation only getting worse as she lewdly grinds her plump hips against you with a horny purr.",
+                                          "Speak", "Ceris",
+                                          "You've got another round in you, right?♥",
+                                          "CallEventAndSceneThenReturn", "CerisCombatEvents", "ApplyOverheat",
+                                          "Her drooling pussy gives your shaft a firm, tempting squeeze, and you mindlessly grope her tits while you try to collect your thoughts, your entire body aching with an imperious, throbbing heat for sex...",
+                                          "Menu",
+                                            "That's enough sex!",
+                                            "Keep fucking Ceris!",
+                                          "EndLoop"
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "Keep fucking Ceris!",
+                                    "theScene": [
+                                                "JumpToScene", "TemptFail2"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "That's enough sex!",
+                                    "theScene": [ "You try to pull away from Ceris' plush body to put a stop to the mating session, but the melty heat in your loins is making it hard to think straight, not to mention the feeling of her hot slit enveloping your raging erection...",
+                                                  "StatCheck",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "2",
+                                                  "ChangeStatCheckDifficulty", "IfHasPerk", "Overheat", "10",
+                                                  "Temptation",
+                                                  "10",
+                                                  "TemptPassSex",
+                                                  "Fail",
+                                                  "TemptFail2"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "TemptPassSex",
+                                    "theScene": [  "CallEventAndSceneThenReturn", "CerisCombatEvents", "ApplyOverheat",  "ChangeImageLayer", "Expression", "Ceris", "SmugKnowing",
+                                                "You manage to clear your head enough to pull your stiff, twitching cock free of Ceris' tempting pussy, then back away gasping and panting with needy arousal, the sex-scented air and warm pulsing heat in your groin keeping you in a dazed, horny mood that you just can't shake off.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smug",
+                                                "She pouts a little before staring straight into your eyes with a look of smoldering desire that sends a renewed twinge of lust down your stomach, Ceris using one clawed hand to teasingly grope her pillowy ass while she sways her curvy hips for you, the sight hard to look away from as the thick sexual fragrance in the air clouds your mind.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Seductive",
+                                                "Speak", "Ceris",
+                                                "Mnnn,♥ Well, that was fun.♥ See you again soon.♥",
+                                                "Her last few words are delivered with a deep seductive purr that sends a shiver through your overheated body as she winks out of sight along with the magical walls trapping you, returning her to wherever she was before, leaving you with a sense of unsatisfied longing...",
+                                                "CallSceneThenReturn",  "FixSpirit",
+                                                "DisplayCharacters",
+                                                  "EndLoop"
+                                              ]
+                                  },
+                            {
+                              "NameOfScene": "TemptFail2",
+                              "theScene": ["ChangeImageLayer", "Expression", "Ceris", "Horny",
+                                            "Giving in to the aching need in your twitching manhood, you resume thrusting, pressing your lips to Ceris' in a renewed make out session, roughly entangling your tongues while she lets out approving growls and moans of pleasure, your hands squeezing and kneading her heavy tits, eagerly toying with her erect nipples.",
+                                            "With a shivering moan, she shifts her position slightly, reaching behind herself with a clawed paw to wrap an arm around the back of your neck, ensuring you remain caught in a messy liplock with her while you fuck her like an animal. Indulgently, she rolls to lay more on her side, letting you stir up her pussy from a new angle.",
+                                            "ChangeImageLayer", "Expression", "Ceris", "Pleasured",
+                                            "Her soft, powerful pussy tightly squeezes your girth in time with your thrusts, the hot molten need in your waist growing warmer and more irrepressible by the second as more of her body heat spreads to yours with each and every pleasurable meeting of your hips. Sinking deeper into the torrid lovemaking, your greedy hands start to explore her soft skin and muscular form in between groping her pillowy tits.",
+                                            "ChangeImageLayer", "Expression", "Ceris", "Seductive",
+                                            "The two of you passionately kiss as her arm forcefully keeps you locked in a nearly breathless makeout session, only giving you brief moments of gasping respite before you get back to kissing each other senseless, your thoughts turning kiss-drunk and achingly hot and bothered, while Ceris lets out excited, pleasured moans into your mouth.",
+                                            "Speak", "Ceris",
+                                            "Mnn-♥ Keep it up-♥ Mnnph-♥ I'm sure I'll-♥ Hmnn-♥ be completely subdued by you soon.♥",
+                                            "ChangeImageLayer", "Expression", "Ceris", "Pleasured",
+                                            "With a muffled groan, you start to piston into her with increased speed, her seductive, teasing words urging you on, leaving you both moaning into the sloppy kiss as you wildly plow her sopping-wet, molten-hot pussy, your hands tightly squeezing her curvaceous body as you start to tense and gasp from the bubbling pleasure in your hips.",
+                                            "PlayerOrgasm", "1",
+                                            "ChangeImageLayer", "Expression", "Ceris", "Orgasm",
+                                            "Until with one more powerful swing of your hips, you hilt yourself deep inside her in an ecstatic impact. In unison, you both cry out in mind-numbing pleasure, your cock throbbing and pulsing euphorically as you fill your demonically insatiable lover with a thick load of your cum, her powerful internal muscles milking you for all you're worth.",
+                                            "PlayerOrgasm", "1", "CallEventAndSceneThenReturn", "CerisCombatEvents", "ApplyOverheat",
+                                            "Your heated kiss is drawn out all through your intense climax, your tongues entangling amid a raging sea of pleasure, and your overexcited libido leaves you thrusting shallowly into her, drawing out a new spurt of seed from your aching balls with each gyrating meeting of your hips, both of you moaning and mewling with decadent orgasmic pleasure.",
+                                            "ChangeImageLayer", "Expression", "Ceris", "Pleasured",
+                                            "Ceris can only whimper and growl in renewed excitement as your lips part again, both of you panting with melty-hot sexual need despite your recent climaxes, and she only manages one tempting word in her lust-ridden state, her eyes burning with inhuman lust and the air around you thick with the scent of sex.",
+                                            "Speak", "Ceris",
+                                            "More?♥",
+                                          "Menu",
+                                            "More!",
+                                            "No more!",
+                                          "EndLoop"
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "More!",
+                                    "theScene": [
+                                                "JumpToScene", "TemptFail3"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "No more!",
+                                    "theScene": [ "You try to collect your dazed, horny thoughts long enough to pull away from Ceris' voluptuous body, but the pulsing heat radiating through you and the feeling of her pussy tightly squeezing your cock makes it hard to not want {i}more{/i}.",
+                                                  "StatCheck",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "2",
+                                                  "ChangeStatCheckDifficulty", "IfHasPerk", "Overheat", "10",
+                                                  "Temptation",
+                                                  "10",
+                                                  "TemptPassSex",
+                                                  "Fail",
+                                                  "TemptFail3"
+                                              ]
+                                  },
+
+                            {
+                              "NameOfScene": "TemptFail3",
+                              "theScene": [   "ChangeImageLayer", "Expression", "Ceris", "Horny",
+                                              "With a shivering gasp, you resume swinging your hips, and Ceris lets out a content sigh of bliss before shifting her position again, rolling onto her back before pushing herself up and forward, sitting her large body in your lap, her powerful arms wrapping around you and her huge breasts squishing against you while she gazes into your eyes with lustful hunger.",
+                                              "ChangeImageLayer", "Expression", "Ceris", "Smug",
+                                              "Speak", "Ceris",
+                                              "Mmmm,♥ let's move together this time.♥",
+                                              "ChangeImageLayer", "Expression", "Ceris", "LipLick",
+                                              "The hellhound woman lets out a low purring growl before deeply kissing you anew, her fiery flickering eyes filling your vision as you passionately and messily make out, her waist lightly gyrating while your length is fully inside her, your hands taking a firm hold of her invitingly wide hips.",
+                                              "ChangeImageLayer", "Expression", "Ceris", "Pleasured",
+                                              "With a shared moan, you both start to slowly move in unison, gradually increasing the pace with each deep thrust, the wet sound of your hips' meeting echoing in the closed-off chamber filled with the thick fragrance of sex, Ceris' waist gyrating in small circles as she helps your stir up her drooling pussy, which firmly grips and squeezes your rigid manhood with unrelenting, unquenchable need.",
+                                              "Your sloppy kissing is only made messier as Ceris matches your frantic upward thrusts with a wildly intense pace, tirelessly riding your infernally rigid cock, the intensity of your lovemaking gradually forcing you to lean back in Ceris' powerful hold while you leverage you grasp on her plush hips to fuck her even harder, even as she leans over you.",
+                                              "You blissfully moan into each other's mouths in between swapping saliva as you wantonly fuck, your minds going completely blank aside from the melty-hot need to fuck as the pervading heat in your body somehow keeps growing hotter and hotter. Eagerly rubbing your bodies together like mating animals, you fully indulge in the feeling of her heavy tits against your skin, her hard nipples rubbing against your chest.",
+                                              "ChangeImageLayer", "Expression", "Ceris", "Seductive", "PlayerOrgasm", "1",
+                                              "The pressure in your hips only builds and builds with each heavy impact of your meeting hips, until with a final electrifying thrust upward, you erupt inside Ceris with a blissed-out moan, and she growls into your mouth as she only bounces harder and faster on your swollen cock, riding you into the ground as she savagely wrings out your semen.",
+                                              "ChangeImageLayer", "Expression", "Ceris", "Orgasm", "PlayerOrgasm", "1",
+                                              "Shamelessly getting herself off through your spurting orgasm, she lets out a muffled orgasmic cry into your mouth, powerfully slamming down her wide hips onto your spasming cock, somehow milking another thick load out of you as she reaches climax with you, the two of you thoughtlessly kissing and licking each other in a pleasure-soaked high.",
+                                              "ChangeImageLayer", "Expression", "Ceris", "Caring",
+                                              "Slowly, you both come down from your twitching, messy orgasms, and lazily break the deep kiss with gasping breaths, the curvy hellhound giving you an apologetic smile.",
+                                              "Speak", "Ceris",
+                                              "Mnnn...♥ Sorry, I got a little carried away, {i}you're{/i} supposed to be leading...♥",
+                                              "She keeps her firm hold on you as she leans away from you, until she's laying on her back with you directly on top of her, the pulsing, invasive warmth completely filling your body by this point.",
+                                              "ChangeImageLayer", "Expression", "Ceris", "Seductive",
+                                              "Speak", "Ceris",
+                                              "Now, where were we?♥ More sex?♥",
+                                              "ChangeImageLayer", "Expression", "Ceris", "Horny",
+                                              "Incapable of thinking of something else, you dumbly nod and start roughly swinging your hips, Ceris lazily locking her legs around your waist in response, keeping your firmly connected to her as you lose yourself to the molten, bestial heat inside your loins, again crashing your mouth into Ceris' as you resume your sloppy and passionate make out session, your hands and her claws interlocking possessively as you fuck.",
+                                              "PlayerOrgasm", "1", "ChangeImageLayer", "Expression", "Ceris", "Pleasured",
+                                              "With nothing but the thought of sex left in your horny, dazed mind, it's not long until you pour a thick load into Ceris, but  just keep thrusting even as you bask in the molten bliss, your hips seeming to have a mind of their own at this point, Ceris' happy moans encouraging you to keep up with your intensive mating, your bodies never parting as you easily work your way towards another mind-blanking climax... then another... then another...",
+                                              "PlayerOrgasm", "10", "ChangeImageLayer", "Expression", "Ceris", "Orgasm",
+                                              "Eventually, the two of you start cycling through multiple positions as you fuck in a seemingly endless cycle of thrusting and cumming, your cock throbbing with unnatural heat that leaves you craving more and more, while your hellhound partner is happy to give you what you want, smiling sweetly as you fuck her however you want, cumming over and over inside her.",
+                                              "SetSpirit", "0", "ChangeImageLayer", "Expression", "Ceris", "Pleasured",
+                                              "Until you eventually can't take it anymore and crumple on top of her, panting, nuzzling against her huge breasts while she lovingly holds you in a warm embrace.",
+                                              "ChangeImageLayer", "Expression", "Ceris", "SmugKnowing",
+                                              "Speak", "Ceris",
+                                              "Mmmm,♥ that was amazing...♥ Though I could go for {i}another{/i} round... Buuut you do seem completely {i}spent.♥{/i}",
+                                              "ChangeImageLayer", "Expression", "Ceris", "Seductive",
+                                              "She slowly and seductively purrs as she speaks, and you can only offer a dazed, half-asleep murmur in response.",
+                                              "Speak", "Ceris",
+                                              "Sadly, you still have to try and clear the labyrinth, or I'd just cuddle you for hours...",
+                                              "ChangeImageLayer", "Expression", "Ceris", "Caring",
+                                              "Speak", "Ceris",
+                                              "Good luck.♥",
+                                                "CallEventAndSceneThenReturn", "CerisCombatEvents", "ApplyOverheat",
+                                                "DisplayCharacters",
+                                                "EndLoop",
+                                                    "SetSpirit", "1",
+                                              "There's a flash of red light as Ceris and the barrier eventually vanish after a few more moments of blissful cuddling. Despite your still raging erection, you feel like you'd want nothing more than to just pass out, though you {i}can{/i} at least still move, even with your sore pelvis...",
+                                              "ChangeSensitivity", "Sex", "10",
+                                              "ChangeFetish", "Sex", "10"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "FixSpirit",
+                              "theScene": [
+                                              "IfPlayerSpiritGone", "Give1Spirit"
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "Give1Spirit",
+                                    "theScene": [
+                                                    "SetSpirit", "1",
+                                                    "Despite feeling completely exhausted from your intense sex with Ceris, the melty heat in your waist keeps you eager and ready for more..."
+                                              ]
+                                  },
+                            {
+                                "NameOfScene": "RedHeartTimer",
+                                "theScene": [
+                                              "ChangeProgress", "1",
+                                              "IfProgressEqualsOrGreater", "8", "ActiveTimerUp"
+                                          ]
+                            },
+                                    {
+                                        "NameOfScene": "ActiveTimerUp",
+                                        "theScene": [
+                                                      "SpawnGridNPC", "RedHeartTrap", "Here",
+                                                      "RemoveGridNPC", "Current"
+                                                  ]
+                                    },
+
+
+                  {
+                      "NameOfScene": "EventBreak",
+                      "theScene": [
+                                      "Evento broko"
+                                ]
+                  }
+              ]
+}

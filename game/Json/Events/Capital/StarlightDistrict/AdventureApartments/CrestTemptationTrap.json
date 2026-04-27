@@ -1,0 +1,162 @@
+{
+    "name": "Crest of Temptation Trap",
+    "CardType": "Event",
+    "CardLimit": "2",
+    "Description": "Some of the trapped doors in Ars Delusia's Adventure Apartments have been engraved with curse-infused sigils that will brand the afflicted with a mark of aching temptation that can only be cleansed at a Church.",
+    "requires": [ "Starlight District Stamp"],
+
+    "Speakers": [
+                  {
+                    "name": "Imp",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }  
+                ],
+    "EventText": [                    
+                            {
+                            "NameOfScene": "EventStart",
+                            "theScene": [  "StoreCurrentBG",
+                                            "ChangeBG", "Capital.png",
+                                           "IfInExploration", "AltIntroBit",                                                
+                                            "JumpToScene", "DoorOpen"
+                                        ]
+                            },
+                                     {
+                                    "NameOfScene": "AltIntroBit",
+                                    "theScene": [  
+                                                    "Traveling through a winding Ars Delusian building, you try door after door in an effort to continue moving through the labyrinthine depths, but find them all locked, until you eventually reach the end of a hallway featuring an umpteenth door as unremarkable as all the other ones you've seen so far, but which no less constitutes your last shot at progress, filling you with cautious hope as you grab the handle for one last try.",                                              
+                                                    "JumpToScene", "DoorOpen"
+                                                ]
+                                    },
+
+                            {
+                            "NameOfScene": "DoorOpen",
+                            "theScene": [   
+                                            "And as you turn the doorknobb, you hear a definite click that encourages you to proceed by pulling the door open, revealing...",
+                                            "A flat wall covered in intricate esoteric markings snaking all across the otherwise blank surface and up towards the ceiling, the sigillic arrangement definitely screaming 'Trap!' to your adventurer senses!",
+                                            "ChangeBGM", "music/Loss/BGM03_Uncanny light.mp3",
+                                            "Unfortunately, your surprised mind barely has the time to process this damning information before a pulse of activating energy courses through the mystical engravings, conjuring the apparition of an ominous magic circle right above you which gleams a naughty purple before immediately bursting downwards in a humming surge of released power!",
+                                            "IfInExploration", "WillpowerSave", 
+                                            "JumpToScene", "TrapWins"                                          
+                                        ]
+                            },
+                                 {
+                                  "NameOfScene": "WillpowerSave",
+                                  "theScene": [  "IfPlayerOrgasm", "TrapWins",
+                                                "StatCheck",
+                                                  "Willpower",
+                                                  "25",
+                                                  "PlayerWins",
+                                                  "Fail",
+                                                  "TrapWins"
+                                              ]
+                                  },
+                                         {
+                                        "NameOfScene": "PlayerWins",
+                                        "theScene": [
+                                                      "DamagePlayerFromMonster", "Fashionable Succubus", "Fascinate",
+                                                      "However, through a display of sheer steely will, you manage to stave off the depraved magic rushing across you, the arcane release only leaving behind it an aching, lingering feeling of arousal as it eventually powers off.",
+                                                      "JumpToScene", "EndEvent"
+                                                    ]
+                                        },
+
+
+                             {
+                            "NameOfScene": "TrapWins",
+                            "theScene": [    
+                                            "DamagePlayerFromMonster", "Fashionable Succubus", "Fascinate",
+                                            "Instantly, raw arousal pours over you from head to toe like intoxicatingly oozing honey, making your whole frame shiver and your dick jump with sudden excitement as your head gets flooded with raw enchanting intoxication that hotly tingles across your skin in shivery waves, ensuring you can't help but stay nailed in place by the forceful pleasure, your muscles momentarily refusing to obey under the influx of arcane titillation.",                                            
+                                            "DamagePlayerFromMonster", "Fashionable Succubus", "Fascinate",
+                                            "And while you have no choice but to stand there and ride the mind-numbing wave of teeth-clenching ecstasy, the magic circle not only pumps you full of intangible bliss, but seems to be focusing on your abdomen in particular, imbuing your lower body with an itchy sensation of concentrated erotic enchantment that proves at the same time concerning and enticing, the triggered trap definitely doing something more {i}lasting{/i} to you-!",
+                                            "As you look down amid dizzy rapture, you see your skin get suffused with a warm pink glow which promptly vanishes to leave behind it a heart-shaped mark right above your groin, the symbol conclusively glowing with unholy allure as if to assert its sway over your libido while your mind swoons with messy desire and a sudden surge of brain-scrambling fantasies, leaving you vacantly swaying in place even as the magic fades away...",
+                                            "IfHasPerk", "Crest of Temptation", "Overloaded",
+                                            "ChangeBGM-List",
+                                            "music/Capital/STARLIGHT.mp3",
+                                            "music/Capital/Night_Floating.mp3",
+                                            "music/Capital/Nobody_City.mp3",  
+                                            "music/Forest/Starry sky.mp3",
+                                            "music/Loss/BGM03_Uncanny light.mp3",
+                                            "music/Relaxing/Purple Planet Music - Lanquidity (2 52) 110bpm.mp3",
+                                            "music/Emotional/Purple Planet Music - Emotional - Spiritual Moment (1_32) 90bpm (L).mp3",
+                                            "EndLoop",
+                                            "GivePerkQuietly", "Crest of Temptation",
+                                            "Soon belatedly rousing from the lewd ordeal with a sharp inhale of sudden clarity, you hotly gasp as you recover from the raw wave of arcane pleasure... but even as you do your best to focus on self-control and reorganize your thoughts, you can feel your leaking, throbbing erection take a bit longer than normal to go down...",
+                                            "... and as the door closes back on its own, you somehow find the thought of triggering the trap again treacherously dancing in your lust-stained head, the prospect of going through the helpless cascade of arousing magic sounding particularly tempting at the moment for some reason...",
+                                            "... Or maybe you could instead just go and find someone who could relieve you of this {i}naughty{/i} need? Of course, a Church of Venereae could most likely help you with that, but you could assuage your lust in a much more {i}pleasant{/i} way, for example by seeking a sexy monster girl that you could fight... In fact, you wouldn't even need to fight. You could just as well throw the battle and let her have her way with-",
+                                            "You start as you realize what you've been thinking about, and shake your head in an effort to chase the unbidden raunchy scenario from your brain... But even then, you can feel the prodding temptation continue to lurk in a corner of your mind, sneakily and continuously instilled by the indelible mark on your abdomen.",
+                                            "Looks like this is something that you'll have to bear with until you can find an opportunity to remove it... Or not.♥︎",
+                                            "JumpToScene", "PostEventStuffs"
+                                        ]
+                            },
+
+
+
+                                    {
+                                    "NameOfScene": "Overloaded",
+                                    "theScene": [  
+                                                    "However, even as the initial influx subsides, you can feel that the extra helping of horny excitement on your already arousal-wracked body was too much, your overflowing lust triggering a sort of chain reaction within you that you have no way of stopping, giving you once more no choice but to ride it out!",
+                                                    "Again and again, pulses of remanent pleasure ooze through you, all the while the lewd heart mark right above your groin brightly flares with every cascading aftershock of magic that hits you, making your dick hotly throb along with the enchanted crest in rising anticipation for climax, your balls tightening as the urge to cum overtakes your brain in a melty sea of intoxicating bliss while erotic fantasies dance through your head on loop.",
+                                                    "All at once, it's like every fight, every lover, and every defeat you've experienced since you've set foot on Lucidia is replaying through your mind, helplessly making you crave all over again the sweet caresses, lecherous seductions, and forceful milking of your encountered partners, the impossibly vivid memories overloading your senses with the raunchy rondo of recurring reminiscences!",
+                                                    "PlayerOrgasm", "1",
+                                                    "Within moments, you yelp as your hips jerk forward on their own and you barely have the time to pull down your pants under the unmistakable rapture that rises through your loins, your freed cock uncontrollably throbbing and jumping as it spurts a single, copiously messy rope of cum across the runic marks on the wall, crassly marking the intricate arcane mechanism with your fresh seed.",
+                                                    "Moaning, you powerlessly bask in the abnormally potent euphoria that washes through you, a sloppy confused expression of vapid lust overtaking your face under the high of orgasm that rushes across your whole being... And yet, as your uncovered dick keeps frantically twitching in needy pleasure from the ongoing effects of the pulsing spell, you realize that just that one climax was not enough!",
+                                                    "Without a second thought, you grab your length and start frantically pumping it without a single ounce of restraint while the sigil just pulses brighter with pink mind-melting magic in response to your accidental gooey offering, keeping your head completely soaked in a constant stream of enticing remembrances and bubbling arousal that sinks down to the pulsing curse crest on your abdomen like a lewd anchor.",
+                                                    "Thoroughly losing yourself to the parade of erotic memories that rushes across your senses like a sexy slideshow, you surrender yourself entirely to the perverted flashbacks, reliving every wanton moment with a lascivious clarity that shuts out everything else around you, leaving you uncaring of anything but to enjoy the spectacle to the fullest while you stroke and stroke and stroke...",
+                                                    "PlayerOrgasm", "1",
+                                                    "Until the trembling, fragile dam in your loins breaks with a heady surge of lusty magic from the sigil above you in tandem with one more self-indulgent pump of your leaking manhood, the explosive surge of ecstasy making every muscle in your body tense as you jut your hips forward and messily blow one more load across the arcane-marked wall, your head feeling completely full of horny bliss, positively flooded with raw pleasure.",
+                                                    "PlayerOrgasm", "1",
+                                                    "Your ejaculation proving this time unexpectedly powerful from the vividness of your replaying adventures, your eyes roll up as you blindly let yourself be claimed by the intensely lewd fascination, spurting out more warm ropes of your seed over the mystical trap which diligently accompanies you through your tantric high, suffusing you with wave after wave of arousal that keeps you cumming and cumming...",
+                                                    "PlayerOrgasm", "1",
+                                                    "Until eventually, the exotic sensory experience abates as both the stream of kinky recollections and the influxes of raw stimulation come to an end, finally giving you some reprieve from the delightfully unstoppable torment of your own memories, and allowing your much-exerted manhood to restfully flag in momentary satisfaction.",
+                                                    "Reeling from the series of back-to-back climaxes, you slowly tumble backwards with a dazed exhale, having no choice but to take a moment to sit down while the trapped door shuts on its own, leaving you alone and hotly gasping on the floor, flushed with a gooey afterglow that keeps a blissfully vapid smile on your face that you just can't shake off...",
+                                                    "IfPlayerSpiritGone", "PassOut",
+                                                    "ChangeBGM-List",
+                                                    "music/Capital/STARLIGHT.mp3",
+                                                    "music/Capital/Night_Floating.mp3",
+                                                    "music/Capital/Nobody_City.mp3",  
+                                                    "music/Forest/Starry sky.mp3",
+                                                    "music/Loss/BGM03_Uncanny light.mp3",
+                                                    "music/Relaxing/Purple Planet Music - Lanquidity (2 52) 110bpm.mp3",
+                                                    "music/Emotional/Purple Planet Music - Emotional - Spiritual Moment (1_32) 90bpm (L).mp3",
+                                                    "EndLoop",
+                                                    "Still, slowly and shakily, you do eventually manage to get your bearings again, and laboriously bring yourself back up to a standing position, idly redressing yourself while still woozily basking in your arcane-induced afterglow.",
+                                                    "But even with your lust having been temporarily assuaged, the impossibly vivid reminiscences keep running through your mind with insistent clarity, making you crave to experience them all over again, a lingering temptation to indulge in raunchy debauchery with the nearest monster girl hanging in the back of your brain no matter how hard you try to focus on something else...",
+                                                    "ChangeSensitivity", "Magic", "10",
+                                                    "JumpToScene", "PostEventStuffs"
+                                                ]
+                                    },
+                                            {
+                                            "NameOfScene": "PassOut",
+                                            "theScene": [    
+                                                            "In fact, the more you pant and shiver in warm euphoria, the more apparent it becomes that you're in fact totally spent, leaving you slumping down with a moaning huff and just lying there in blissful contentment as you fade away, drifting along your heavenly afterglow tinged with the indulgent medley of perverted memories, the seductive urge to do it all over again remaining ingrained in your mind even as you pass out for good...",
+                                                            "...",
+                                                            "ChangeSensitivity", "Magic", "25",
+                                                            "GameOver"
+                                                        ]
+                                            },
+ 
+                    {
+                      "NameOfScene": "PostEventStuffs",
+                      "theScene": [                                    
+                                   "IfInExploration", "EndEvent",
+                                   "AllowInventory",
+                                   "GoBackToStoredEvent"
+                                ]
+                    },
+                        {
+                        "NameOfScene": "EndEvent",
+                        "theScene": [   
+                                        "StopBGM",
+                                        "While you recover from the lustfully taxing influx of depraved magic, you hear a series of clicks as all the doors behind you suddenly unlock and open, leaving you free to proceed!",
+                                        "Knowing that this sudden luxury of choice is probably deceitful, you don't bother to weigh out your options, instead picking a door at random to carry on with your exploration without further delay.",
+                                        "UseHeldBG"
+                                    ]
+                        },
+
+                    {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [   "event broke."
+                                ]
+                    }
+                ]
+}

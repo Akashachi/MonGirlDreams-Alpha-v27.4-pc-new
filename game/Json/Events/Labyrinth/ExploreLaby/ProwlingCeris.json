@@ -1,0 +1,37 @@
+{
+    "name": "Prowling Ceris",
+    "CardType": "Event",
+    "CardLimit": "3",
+    "Description": "Ceris is hunting for you in the Labyrinth, eager to fuck you into a mewling stupor.\n\n{i}There’s a small note on the page mentioning that unlike the regular Labyrinth challenge, the hellhounds won't get stronger in the course of your exploration, since their lustful inner flames have time to abate from one encounter to the next.{/i}",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Ceris",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Fight",
+                        "theScene": [
+                                        "DisplayCharacters",
+                                            "1",
+                                          "EndLoop",
+                                          "ChangeBG", "LabyrinthCeris.png",
+                                          "GetEventAndSetProgress", "CerisCombatEvents", "0",
+                                          "ChangeImageLayer", "Expression", "Ceris", "LipLick",
+                                          "As you trek ever deeper into the dark confines of the Labyrinth, Ceris suddenly bounds around the corner, lustfully licking her lips while billowing flames erupt all around the two of you, cutting off all escape!",
+                                          "Speaks",
+                                          "Ready or not, here I come!♥",
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Ceris",
+                                          "StartCombat",
+                                          "ChangeBG", "Labyrinth.png",
+                                          "With the horny hellhound momentarily sated, the flames flicker and vanish, leaving you free to proceed..."
+                                  ]
+                    }
+                ]
+}

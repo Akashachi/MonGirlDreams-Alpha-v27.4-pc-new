@@ -1,0 +1,867 @@
+{
+    "name": "Melody",
+    "IDname": "Melody",
+    "species": "Demon",
+    "gender": "female",
+    "description": "A cheery woman with two white horns sprouting from her mid-length, twintailed blonde hair accented by purple highlights. Her sapphire eyes sparkle with energy, and on one ear, she seems to be carrying some kind of curved stick ending in a sort of fuzzy nub held in front of her mouth, apparently designed to speak into it.\n\nShe wears a showy, slutty purple attire made of intermixing straps, fishnets, and sheer fabric, the brazen outfit barely concealing her smooth tanned skin and leaving her hefty breasts almost on full display. In addition, the scanty garment sports an inviting cleavage window eye-catchingly accented by a gleaming heart tattoo, the bra-like top held up by a choker around her neck decorated with a heart-shaped pendant.\n\nA pair of batlike wings stretch from her back, her fingers are entirely hidden by elegant stark-white gloves, and her lithe arms are clad in long, tight-fitting sleeves made of a mix of sheer fabric and fishnets, while the wrist parts consist of a layer of cutesy, fluffy material. The succubus' waist and hips are nearly on full display, her private parts only barely covered by shiny micro shorts that make no effort to hide the plainly visible straps of a thong and garters, the raunchy piece of clothing framing a simple, stylized heart tattoo that rests over her abdomen.\n\nBehind her curvy hips sways a demonic tail with a white spade and a discreet small ribbon tied to the end of it. Her long legs are covered by fishnet thigh-high garters quite similar in design to the arm parts, while her feet are concealed by a pair of white high heels with a purple bottom.",
+    "encyclopedia": ".",
+    "tags": "none",
+    "generic": "False",
+    "requires": [ ""],
+    "skillList": [ "Moxie Melody", "Captivating Chorus", "Aural Aria", "MelCaShowTime",     "Melodic Makeout", "Echoing Erotica", "Oral Octave",    "Ravishing Rave", "Ravishing Rave ", "Thumping Tempo", "Rhythmic Ride",      "Duet Drop", "Duet Drop ", "Sensory Serenade", "Tandem Tango", "Draining Duet",    "Sexual Switch"],
+    "perks": [ "Alluring", "Great Tits", "Great Ass", "Skilled Tongue", "Sex Adept", "Sex Expert", "Semen Eater", "Semen Frenzy", "Energy Drainer", "Loving", "Arcane Adept", "Arcane Expert", "Schemer", "Evasive", "Steady Pacing"],
+    "stats": { "lvl": "40",
+              "Exp": "650",
+              "max_hp": "550",
+              "max_ep": "150",
+              "max_sp": "1",
+              "Power": "10",
+              "Technique": "40",
+              "Intelligence": "30",
+              "Allure": "50",
+              "Willpower": "25",
+              "Luck": "20"
+    },
+    "Fetishes": [ ""],
+    "BodySensitivity": { "Sex": "75",
+              "Ass": "75",
+              "Breasts": "75",
+              "Mouth": "75",
+              "Seduction": "100",
+              "Magic": "125",
+              "Pain": "70",
+              "Holy": "150",
+              "Unholy": "50"
+    },
+    "resistancesStatusEffects": {
+              "Stun": "75",
+              "Charm": "-25",
+              "Aphrodisiac": "-25",
+              "Restraints": "75",
+              "Sleep": "75",
+              "Trance": "0",
+              "Paralysis": "0",
+              "Debuff": "-25"
+    },
+    "moneyDropped": "850",
+    "ItemDropList": [
+                      {
+                        "name": "Succubus Juice",
+                        "dropChance": "25"
+                      },
+                      {
+                        "name": "Trendy Rune",
+                        "dropChance": "10"
+                      }, 
+                      {
+                        "name": "Bottled Water",
+                        "dropChance": "5"
+                      },
+                      {
+                        "name": "Devil's Deal",
+                        "dropChance": "1"
+                      }                      
+                    ],
+    "lossScenes": [
+                    {
+                        "NameOfScene": "BothLossTransition",
+                        "move": "",
+                        "stance": "",
+                        "includes": [ "Melody", "Cadence"],
+                        "theScene": [ 
+                                     "IfPlayerHasStance", "Any", "TogetherDisentangleTransition",         
+                                    "JumpToEventThenScene", "MelcaLossScene", "StancelessLossBoth"
+                                ],
+                        "picture": ""
+                    },
+                                {
+                                    "NameOfScene": "TogetherDisentangleTransition",
+                                    "move": "",
+                                    "stance": "JumpOnly",
+                                    "includes": [ ""],
+                                    "theScene": [    
+                                                "JumpToEventThenScene", "MelcaLossScene", "TogetherDisentangleStart"
+                                            ],
+                                    "picture": ""
+                                },
+                    {
+                        "NameOfScene": "JustMeLossTransition",
+                        "move": "",
+                        "stance": "",
+                        "includes": [ "Melody"],
+                        "theScene": [  "IfPlayerHasStance", "Any", "SoloDisentangleTransition",
+                                    "JumpToEventThenScene", "MelcaLossScene", "StancelessLossMelodyOnly"
+                                ],
+                        "picture": ""
+                    },
+                                {
+                                    "NameOfScene": "SoloDisentangleTransition",
+                                    "move": "",
+                                    "stance": "JumpOnly",
+                                    "includes": [ ""],
+                                    "theScene": [    
+                                                "JumpToEventThenScene", "MelcaLossScene", "NoCadenceStart"
+                                            ],
+                                    "picture": ""
+                                }
+                  ],
+    "combatDialogue": [
+                        {
+                            "lineTrigger": "SetMusicTo",
+                            "move": "",
+                            "theText": [ "music/Capital/Night_Elopement.mp3"]
+                        },
+                        {
+                            "lineTrigger": "StartOfCombat",
+                            "move": "",
+                            "theText": [ "|f|CallCombatEventAndScene|/|MelcaCombatEvent|/|Intro|n|"]
+                        },
+                        {
+                            "lineTrigger": "EndOfRound",
+                            "move": "", 
+                            "theText": [ "|f|CallCombatEventAndScene|/|MelcaCombatEvent|/|EndOfRound|n|"]
+                        },
+
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Holy Headpat",
+                            "theText": [
+                                            "|f|ChangeImageLayer|/|Expression|/|XD|n|'Whao! That's tingly!~♪'",
+                                            "|f|ChangeImageLayer|/|Expression|/|XD|n|'Ahaha, is that actually a holy technique? It feels so weird!♪'"
+                            ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Electrify",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'E-Eh-?♥ Lightning? Are you an honorary Livewire or something-?'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'O-Ooohhhh, that's weirrrd-♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Dizzy|n|'Gehhhii?!-♥ Wh-Wow-???♥'"
+                        ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Spank",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Fondle, grope, spank, all to your heart's content.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Oooh-♥ Don't be afraid to do that again, I can take it.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Ehehe.♪ Sinful succubus bodies are made to be played with.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Mmmmh,♥ someone's {i}naughty{/i}.♥'"
+                                        ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Whip"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'Ki-Kinky adventurer alert!?'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'H-Hey, I'm not a lion, tiger!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'E-Easy! I'm already dancing my heart out here!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mmmh... Pain and pleasure, melting together...♥'"
+                                        ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Demon Layer"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Wh-Whoa... Holy energy really feels... divine.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'O-Ooohh-?!♥ Wh-What a rush...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Hiiii~?!♥ Aaahh, f-fuck...♥ {size=-10}Where can I buy one of those...?{/size}'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Head- going- blank~♥'",
+                                       
+                                        "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Y-You just made my assets jiggle so much.♥'"
+                                        ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Bondage Net", "Magical Binding", "Pin"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'G-Guh-! I c-can't dance like this!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Dizzy|n|'Ahaha... Y-You actually caught me???'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Dizzy|n|'Oh, I might be in trouble now...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Gasp|n|{size=-10}'M-Maybe I can honey trap my way out of this?'{/size}",
+                                        "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'H-Hey! Don't stop the music!'"
+                                        ]
+                        },  
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Sleep",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Dizzy|n|'B-Buh!? But I had so many energy drinks-???'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'H-Huh??? N-No, the show's gotta keep going-! No time for a nap!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'F-Fortunately, I've got a Night Bane in my back pocket! ... B-But what if I need it later?!'"
+                                        ]
+                        },
+                        {
+                        "lineTrigger": "HitWith",
+                        "move": ["Enfeeble", "Sensitize"],
+                        "theText": [ "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Haaahh... Everything feels so warm now...♥'",
+                                    "|f|ChangeImageLayer|/|Expression|/|Dizzy|n|'Y-You're planning all kinds of naughty things, aren't you...♥'"
+                                     ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Disarming Appeal"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Aw, music's going too fast for you? ... Wellll, I guess I can ease up a {i}little{/i}.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Don't worry, if you're not a fan of 'fast and hard', you can instead get melted nice and slowww.~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Awww, I can't resist a cute face...~ I'll pamper you plenty, okay?♥'"]
+                        },
+                        {
+                        "lineTrigger": "HitWith",
+                        "move": ["Lewd Bottle", "Cloying Mist", "Placebo Pheromone"],
+                        "theText": [ "|f|ChangeImageLayer|/|Expression|/|Dizzy|n|'Oooh...♥ I'm gonna get really drunk off this stuff...♥'",
+                                    "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Haaahh...♥ Aphrodisiacs are so much fun-♥'",
+                                    "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'G-Gimme more?♥ I shouldn't, but... I want {i}more{/i}.♥'",
+                                    "|f|ChangeImageLayer|/|Expression|/|Dizzy|n|'Oohmmmhhh...♥ I feel so giddy and melty already-♥'"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": [ "Arouse", "Arousara", "Arousero"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Mhhh-!♥ Just as addictive as music...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Aaaah... Feels so good to let it wash over me.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Haaahh, tingly all over.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Oooh, intense...~♥ Give me another.♥'"  
+                                    ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": [ "Seduce", "Ear Tease", "Enamor", "Smoldering Seduction", "Smoldering Flaunt", "Massaging Seduction", "Mass Seduction"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mhhhh... Two can play at that game, hot shot.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Oooh.♥ With you being so into it, this is going to be fun.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Let's dance word for word.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Ehehe, you've got moves.♥ Mmmm...♥'"                            
+                                ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Pinch Nipples",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mhmhmh.~♥ You're so rough.♥'",
+
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Oooh, feeling handsy, aren't we?♥ Don't be shy, I can take it.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Sinful succubus bodies are made to be played with.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Mmmmh,♥ someone's {i}naughty{/i}.♥'"
+                                        ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Kiss"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'A chaste peck like that won't do, oh no no no.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Oh, that {i}really{/i} lacked oomph... You {i}need{/i} a melty auditory makeout.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'You're not gonna outkiss me like that.♪'"
+                                        ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Make Out"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Ooooh, coming on to me?♪ You're not gonna regret this, mmmmhhh.~♥'",
+                                            "|f|ChangeImageLayer|/|Expression|/|TeaseWink|n|'Let's tango with our tongues.♥'",
+                                            "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Oh, I'm gonna kiss you {i}senseless.♥{/i}'",
+                                            "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Addicted to succubus smooches?♥ Fine by me.♥'"
+                                            ]
+                        },
+
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Deep Kiss", "Lovingly Rough Kiss", "Skillfully Passionate Kiss", "Misty Kiss", "Sensually Seductive Kiss"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Sho good, right?~♥'",
+                                            "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'You tashte really good~♥'",
+                                            "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'We can mahke out as lohng ash youh want.♥'",
+                                            "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmmhhh,♥ don't stop...♥'"
+                                             ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Finger",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Ooooh,♥ getting ready to fuck me silly?♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Mmmm,♥ not bad... {i}Gimme more.♥{/i}'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Touch me as much as you want.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Feels nice, doesn't it?♪ Just imagine how good your dick will feel once it's in there.♥'"
+                                    ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Dildo",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Oooh? That's pretty nice.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Wouldn't you rather I ride yours?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Mhhhh...♥ Putting on a show with this kind of 'prop' could be fun.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooh, nice model! I have one just like that.♪'"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Grope Ass", "Squeeze Ass", "Massage Ass", "Fondle Ass", "Breast Caress", "Suckle", "Breast Massage", "Breast Knead", "Breast Fondle"],
+                            "theText": [
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Mmmmh- You can't keep your hands off me, can you?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Do you like how your fingers just {i}sink in{/i}? I sure do.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Squeeze, knead, and massage allll you want.~♥ Just don't stop.♥'",
+
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Fondle, grope, spank, all to your heart's content.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Sinful succubus bodies are made to be played with.♥'"
+                                ]
+                        },      
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Penetrate",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mmmh...♥ So eager...♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|TeaseWink|n|'Body-to-body dancing?♥ I'm not shy.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Cheerful|n|'Wanting to tango, huh?♪ Let's see if you can keep up with my rhythm!'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Does the adventurer think he can outfuck a succubus?♥ Let's find out.♥'"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Thrust", "Channeling Thrust"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Hmmh, that feels niiiice.♥ Keep~ It~ Up~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Swaying, gyrating, thrusting, fucking... So nice.~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Fuck me more and more and more...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'That's it.♪ Follow the rhythm.♥'"
+                        ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Pound", "Multi Thrust", "Empowered Thrust", "Carrying Fuck"],
+                            "theText": [
+                                            "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Aaahn-♥ Come on.~ Get me hooked on your rhythm.♥'",
+                                            "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Oooooh yeahhhh-♥ Harderrr.♥'",
+                                            "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mhhhhhfffh... So deliciously rough.~♥'",
+                                            "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Look at us.♥ Getting so lost to the music.~♥'",
+                                             
+                                            "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Swaying, gyrating, thrusting, fucking... So nice.~♥'"
+                                        ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Tantric Thrust", "Passionate Lovemaking"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'I won't lose at my own game!~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Ooooh,♥ you sure are good at using your body.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|TeaseWink|n|'Mmmmhhh, we might {i}both{/i} melt if you keep this up.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Keep it up.~♪ Keep it up.~♪'"
+                        ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Anal Penetration",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mmmh...♥ So eager...♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|TeaseWink|n|'Body-to-body dancing?♥ I'm not shy.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|XD|n|'More into butt stuff, huh? I'm fine with that too!♪'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Does the adventurer think he can outfuck a succubus?♥ Let's find out.♥'"
+                                        ]
+                        },
+                        {
+                            "lineTrigger": "HitWithA",
+                            "move": ["Thrust", "Channeling Thrust"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Hmmh, that feels niiiice.♥ Keep~ It~ Up~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Swaying, gyrating, thrusting, fucking... So nice.~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Fuck me more and more and more...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'That's it.♪ Follow the rhythm.♥'"]
+                        },
+                        {
+                            "lineTrigger": "HitWithA",
+                            "move": ["Pound", "Multi Thrust", "Empowered Thrust", "Carrying Fuck", "Anal Piston"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Aaahn-♥ Come on.~ Get me hooked on your rhythm.♥'",
+                                            "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Oooooh yeahhhh-♥ Harderrr.♥'",
+                                            "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mhhhhhfffh... So deliciously rough.~♥'",
+                                            "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Look at us.♥ Getting so lost to the music.~♥'",
+                                             
+                                            "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Swaying, gyrating, thrusting, fucking... So nice.~♥'" ]
+                        },
+                        {
+                            "lineTrigger": "HitWithA",
+                            "move": ["Tantric Thrust", "Passionate Lovemaking"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'I won't lose at my own game!~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Ooooh,♥ you sure are good at using your body.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|TeaseWink|n|'Mmmmhhh, we might {i}both{/i} melt if you keep this up.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Keep it up.~♪ Keep it up.~♪'"]
+                        },  
+                        {
+                            "lineTrigger": "Escape",
+                            "move": ["Distract", "Teleport"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'Whoa-?!'|f|ChangeImageLayer|/|Expression|/|LipLick|n|'W-Well, if you just wanna watch the show, that works too...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|XD|n|'Near or far, my voice will catch you!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Awwww, come back... Don't you want to thrust and fuck and kiss and get {i}totally{/i} lost in the moment with your favorite cutie succubus dancer?♥'"
+                                         ]
+                        },
+
+
+
+
+
+
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Captivating Chorus",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Don't look away now.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Wink|n|'My time to shine!♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|TeaseWink|n|'Feel the rhythm.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Enjoying the show?♪'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Wink|n|'Up and down, round and round.~♥'"
+                            ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Aural Aria",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Near or far, you can't escape my voice.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Just relax.~♥ Mmmmwhah.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Your brain is gonna become mushhhh.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Stop.♥ Stare.♥ Enjoy.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Echoing round and round...~♥ Mwah.~♥'"
+                            ]
+                        }, 
+
+ 
+
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Melodic Makeout",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Dance.♥ With.♪ Me.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Just a little kiss.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|TeaseWink|n|'Time for a private show.~♪'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Caught.~♥ You.~♥'"
+                            ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": ["Echoing Erotica", "Oral Octave"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smile|n|'{i}Mmmmwhah.~♥{/i}'",
+                                         "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mwhah.♥ Mmmmmmhhf...~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Mhhhh...~♥ You're getting lost in my kisses.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'You're gonna...~♥ {i}Mmmmwah~♥{/i} ...go blank.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Tease|n|'This tune is gonna get stuck in your head.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mmmmmffhh...~♥ Hehehe,~♥ I'm gobbling you up.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Smile|n|'More and more and more and {i}mmmmmwaaaahhh.~♥{/i}'"
+                            ]
+                        },
+
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": ["Ravishing Rave", "Ravishing Rave "],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'You're so lost in the music.~♪'",
+                                         "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Time to gobble you up.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|TeaseWink|n|'The show's just getting {i}started.♥{/i}'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Wink|n|'Let's dance all night long.♥♪'"
+                            ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": ["Thumping Tempo", "Rhythmic Ride"],
+                            "theText": [
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Up and down and {i}allll{/i} around.~♪♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mmmmh...♥ Can't get enough of this pounding beat.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Wink|n|'Keep~ It~ Up~♥! Keep~ It~ Up~!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Just get lost in the music with me.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Tease|n|'You should just lie back and {i}enjoy{/i}.~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mmmmh... We're gonna fuck till we're drunk.~♥'"
+                            ]
+                        },
+
+
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": ["Duet Drop", "Duet Drop "],
+                            "theText": [
+                                        "|f|ChangeImageLayer|/|Expression|/|Wink|n|'Time for you to be this show's stage.~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Wink|n|'May we have this dance?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'You're going to get tooootally drunk.~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Aurally and physically cornered.~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|TeaseWink|n|'Sorry, noooo breaks!~♥'"
+                            ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": ["Sensory Serenade", "Tandem Tango"],
+                            "theText": [
+                                        "|f|ChangeImageLayer|/|Expression|/|Wink|n|'We've got you now, handsome.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Let's sink in dancing bliss together.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Tease|n|'How succubus-drunk are you?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Wink|n|'Relax.~♥♪ We'll show you paradise.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Drifting up,♪ down,♥ and {i}alllll{/i} around.♥♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Wanna be our boy toy after this?♥'"
+                            ]
+                        },
+
+                        {
+                            "lineTrigger": "UsesMovePre",
+                            "move": "Draining Duet",
+                            "theText": [ "|f|ChangeEnergyByPercent|/|-25|n|"]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": ["Draining Duet"],
+                            "theText": [
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mmmmm!♥ Give us everything you've got!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Aaahn!♥♪ Here comes the crescendo!~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Aaaaah!♥ Soooo delicious!~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Time for a neverending high.♥♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Oooohh,♪ you're so lost and needy.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|TeaseWink|n|'A nonstop finale!♥♪'"
+                            ]
+                        },
+ 
+
+
+                         {
+                            "lineTrigger": "LowHealth",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Dizzy|n|'I-I don't think I can take much more!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'I-If this keeps up, my head is gonna be the one going blank-♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'N-Not yet! Th-The show must go on-!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Dizzy|n|'Everything's spinning so wonderfully...♥'"                            
+                            ]
+                        },
+                        {
+                            "lineTrigger": "PlayerLowHealth",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'You're~ Gonna~ Cum.~♥♪'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Wink|n|'Don't be shy, cum as much as you want.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'You're getting totally lost in the rhythm.~♪'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Sweeter than any siren, riiight?~♥'"
+                            ]
+                        },
+
+
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": ["Duet Drop", "Duet Drop ", "Sensory Serenade", "Tandem Tango", "Draining Duet"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Seductive|n|The succubus duo keep sensually gyrating their hips even as you rapidly reach your limit amid the thumping ambient music and their own cooing breaths, licks, and kisses against your ears, all the while your face is kept snugly pressed against the softness of the dancer's demonic sex and buried in the plushness of her sinful ass, meanwhile her partner's clenching folds blissfully massage every inch of your entrapped cock.|f|ChangeImageLayer|/|Expression|/|LipLick|n|The neverending dance of depravity loops in on itself as the lustful performers wiggle and sway atop you, using you as both a sex toy and a dance floor, letting the euphoria of their bodies and voices hotly seep into every part of you, slowly and sweetly bringing your bubbling arousal to a melty boil that leaves your balls eagerly tensing and your hips irresistibly thrusting back into the delightful succubus pussy atop you.|f|ChangeImageLayer|/|Expression|/|Smile|n|Then, as the duo suddenly stop moving and the music stalls, you're left feeling like you're floating in space in a strange state of sensory blackout... until a slow sinful pulse of draining magic hits you as the beat rushes back and they both whisper '{i}Cum.♥~{/i}' into your ears, instantly tipping you over the brink straight into a spurting messy climax right into the succubus riding you!|n|Pulse after pulse and whisper after whisper wash over you in tingly waves, flooding you with raw euphoria as you momentarily abandon yourself to the pleasure and lose yourself in the feeling of each skillful hip gyration atop you, your throbbing erection begging for more even as your twitching climax ebbs away amid the continued, combined rapture of the enchanting song's beat and the dancing duo's fervid lovemaking.",
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|While one succubus bounces on your cock at a frantic pace that matches the thumping music, the other deftly presses her pillowy ass more firmly down onto your face, not only flooding your senses with her intoxicating succubus scent, but also boxing you in the better for you to listen to their lustful moaning lyrics pouring into your ears in-between ethereal smooches and coos, rapidly smothering your brain in hot waves of ecstasy!|f|ChangeImageLayer|/|Expression|/|Seductive|n|Your entire body is left feeling like a singular pleasure nerve as the music keeps pounding amid the dancers' frenetic fucking and rapturous auditory assault, which rapidly reaches its apex as the one bouncing in your lap vigorously slams her ass down alongside a resounding beat drop, punctuating the powerful hilting with a demanding squeeze as well as a heady, tingly energy-draining pulse!|f|ChangeImageLayer|/|Expression|/|LipLick|n|Under the relentless, greedily passionate sex performance, your resistance shatters spectacularly, wringing out a hip-twitching, spurting orgasm right into the lasciviously purring demoness while her partner lifts her rear off your face to give it a teasing wiggle for the enjoyment of your eyes, heightening your climactic pleasure and leaving you messily moaning and 'singing' along with them in woozy bliss.|f|ChangeImageLayer|/|Expression|/|Tease|n|However, you're not given more than a brief reprieve before the succubus hovering over your head plops her ass back down onto your face as the music regains its tempo, prompting the one still stuffed with your shaft to do the same, the swaying and bouncing of her hips slowly building up in tune with the music, promising more obscene sensory delights...",
+                                        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|As you struggle to keep your mounting arousal from tipping over, the duo suddenly lean into each other atop you, their lips locking in a passionate kiss while they gently rock their hips atop you, their aural magic instantly entrapping your hearing between their tongues and mouths like your mind is directly in the middle of their heated makeout session, the intoxicating audio show inescapable as you remain pinned beneath them.|f|ChangeImageLayer|/|Expression|/|Tease|n|Then, when the one riding your cock clenches her pussy with an intense pull of draining magic, your entire pleasure-soaked body tenses as you go over the edge in a veritable bath of melty sexual pleasure, leaving you spurting spectacularly in mind-emptied abandon, your wanton release flooding the sultry singer with cum and energy to her lustful content.|f|ChangeImageLayer|/|Expression|/|Smile|n|However, the duo do not stop at just that, the cloud nine you're resting in only rising higher as they lasciviously swap your swallowed energy back and forth between themselves through their tongue-entangling makeout, the raunchy shared feasting sending pulse after pulse of succubus magic into your senses in echoing bliss, leaving them sweetly giggling as they happily make a well-loved mess of both your body and mind.|n|For a moment, it feels like they might just continue like that and carry on keeping you hopelessly trapped underneath them in kissy heaven, but you're finally given a respite as they part their lips with a hot drunken sigh that brushes against your ears, the lingering ecstasy making all three of you stay still for a moment as you revel in the wonderful afterglow of perverted sensations and lewd gratification."
+
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "Face Sit",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Seductive|n|Teetering on the brink of climax as you are, all it takes to send you over the edge is a sensual wiggle of [AttackerName]'s hips onto your pleasure-drunk face along with a unified coo to your ears, the final push to your boiling lust leaving your hips climactically jerking up as your untouched manhood tremblingly spurts hot ropes of fresh cum into the air."
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "Sex",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Tease|n|As your arousal nears its peak, the music's pace amps up as if on cue, bringing the succubus to excitedly ride you faster and faster in tune with the mesmerizing basses, each obscenely audible slap of her shapely rear and every moaning gasp from either of you intermixing with the resounding beat as it oozes deeper and harder into your senses, rapidly drawing you closer to an entranced climax!|f|ChangeImageLayer|/|Expression|/|Seductive|n|... Only for the music to suddenly fade and stall in abrupt cliffhanging silence while Melody tantalizingly hovers over your length with a lustful smile, a mix of scalding denial and heart-throbbing anticipation simmering through you as the music already starts to ominously swell back in.\n\n'Get ready...♥ {i}Here it comes!♪♥{/i}'|f|ChangeImageLayer|/|Expression|/|Wink|n|Then, as the reverberating beat powerfully returns with a single, bone-deep boom, she firmly slams her hips down, deafeningly punctuating the ringing note with an orgasmic shockwave as your length is all at once hilted deep within her squeezing pussy, white-hot bliss rushing through every part of you as you unload spurt after spurt of cum deep into the ecstatic succubus who ravenously takes in every drop, then huffs out rapturously.|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mmmmmhh!~♥ Thanks for the meal, handsome.♥ As thanks, I'll {i}gladly{/i} treat you to another dance.♥ Ehehehe.♪'",
+                                         "|f|ChangeImageLayer|/|Expression|/|LipLick|n|With your resistance helplessly breaking down, Melody sways her hips back and forth in teasing, metronomic gyrations to match the rhythmic beat of the music, each pleasurable pulse of her hungry squeezing filling your mind alongside a flurry of hot cooing kisses to your ears opposite the way she wiggles her alluring rear, leaving you blissfully spacing out as the pleasure high rapidly submerges your thoughts while she happily chants.|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Back and forth...~♥ side to side...~♥ Mmmmhh, you can't take any more, can you?♥ That's fine, handsome... Give♥ it♥ to♥ me.♥'|f|ChangeImageLayer|/|Expression|/|Tease|n|You can physically feel her tongue remotely run along the rim of your ears in unison with her temptingly dominant words, followed by a duo of resounding first-class kisses straight into your ears while she keeps wantonly swaying her hips to the music, leaving your trembling erection utterly lost in a sea of aural and sexual ecstasy, leaking and twitching as the euphoria overtakes you.|f|ChangeImageLayer|/|Expression|/|LipLick|n|With your body and brain conquered by the passionate dancer's unrelenting lovemaking, you have no choice but to surrender to her fully and give her just what she wants, your libido betraying you in a delightful moment of hot rapture as your hips jerk up against Melody's and you ejaculate thick ropes of cum deep into the ravenous succubus who happily sighs in satisfaction from the sensation of your hot seed filling her.|f|ChangeImageLayer|/|Expression|/|Tease|n|'Ooooh... Delicious...♥ How about another?♥♪'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|With the performer's passionate lovemaking overloading your senses, you soon find yourself unable to do anything but desperately try to hold fast while the ambient music gently abates to a treacherously languorous tempo, making Melody slow her hip gyrations and ear kisses down to an intimately doting pace, seductively easing you into wanton relaxation while she looks down at you with a sweet wordless giggle.|f|ChangeImageLayer|/|Expression|/|Smile|n|Gently, languidly, she coos and sighs against you while her tenderly squeezing folds lavish your throbbing manhood with lovely pleasure, and before you know it, you've fully surrendered to her, letting go of your resistance with a dizzy moan as you release nice and deep into her while your eyes momentarily glaze over in woozy fascination, your show of rapt fascination alongside your indulgent ejaculation making her purr happily.|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Aaaaah.~♥ I do so love an attentive audience...♪♥ Keep up that attitude, and I can treat you to plenty more orgasms, okay?~♪'"
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "Anal",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Tease|n|As your arousal nears its peak, the music's pace amps up as if on cue, bringing the succubus to excitedly ride you faster and faster in tune with the mesmerizing basses, each obscenely audible slap of her shapely rear and every moaning gasp from either of you intermixing with the resounding beat as it oozes deeper and harder into your senses, rapidly drawing you closer to an entranced climax!|f|ChangeImageLayer|/|Expression|/|Seductive|n|... Only for the music to suddenly fade and stall in abrupt cliffhanging silence while Melody tantalizingly hovers over your length with a lustful smile, a mix of scalding denial and heart-throbbing anticipation simmering through you as the music already starts to ominously swell back in.\n\n'Get ready...♥ {i}Here it comes!♪♥{/i}'|f|ChangeImageLayer|/|Expression|/|Wink|n|Then, as the reverberating beat powerfully returns with a single, bone-deep boom, she firmly slams her hips down, deafeningly punctuating the ringing note with an orgasmic shockwave as your length is all at once hilted deep within her squeezing ass, white-hot bliss rushing through every part of you as you unload spurt after spurt of cum deep into the ecstatic succubus who ravenously takes in every drop, then huffs out rapturously.|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mmmmmhh!~♥ Thanks for the meal, handsome.♥ As thanks, I'll {i}gladly{/i} treat you to another dance.♥ Ehehehe.♪'",
+                                         "|f|ChangeImageLayer|/|Expression|/|LipLick|n|With your resistance helplessly breaking down, Melody sways her hips back and forth in teasing, metronomic gyrations to match the rhythmic beat of the music, each pleasurable pulse of her hungry squeezing filling your mind alongside a flurry of hot cooing kisses to your ears opposite the way she wiggles her alluring rear, leaving you blissfully spacing out as the pleasure high rapidly submerges your thoughts while she happily chants.|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Back and forth...~♥ side to side...~♥ Mmmmhh, you can't take any more, can you?♥ That's fine, handsome... Give♥ it♥ to♥ me.♥'|f|ChangeImageLayer|/|Expression|/|Tease|n|You can physically feel her tongue remotely run along the rim of your ears in unison with her temptingly dominant words, followed by a duo of resounding first-class kisses straight into your ears while she keeps wantonly swaying her hips to the music, leaving your trembling erection utterly lost in a sea of aural and sexual ecstasy, leaking and twitching as the euphoria overtakes you.|f|ChangeImageLayer|/|Expression|/|LipLick|n|With your body and brain conquered by the passionate dancer's unrelenting anal lovemaking, you have no choice but to surrender to her fully and give her just what she wants, your libido betraying you in a delightful moment of hot rapture as your hips jerk up against Melody's and you ejaculate thick ropes of cum deep into the ravenous succubus who happily sighs in satisfaction from the sensation of your hot seed filling her.|f|ChangeImageLayer|/|Expression|/|Tease|n|'Ooooh... Delicious...♥ How about another?♥♪'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|With the performer's passionate anal lovemaking overloading your senses, you soon find yourself unable to do anything but desperately try to hold fast while the ambient music gently abates to a treacherously languorous tempo, making Melody slow her hip gyrations and ear kisses down to an intimately doting pace, seductively easing you into wanton relaxation while she looks down at you with a sweet wordless giggle.|f|ChangeImageLayer|/|Expression|/|Smile|n|Gently, languidly, she coos and sighs against you while her tenderly squeezing rear lavishes your throbbing manhood with softly gripping pleasure, and before you know it, you've fully surrendered to her, letting go of your resistance with a dizzy moan as you release nice and deep into her while your eyes momentarily glaze over in woozy fascination, your show of rapt fascination alongside your indulgent ejaculation making her purr happily.|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Aaaaah.~♥ I do so love an attentive audience...♪♥ Keep up that attitude, and I can treat you to plenty more orgasms, okay?~♪'"
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "Making Out",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|LipLick|n|Just as you think Melody's chorus of kisses is about to ebb away, the lusty succubus amps up her passionate smooching with a hungry purr, twirling your tongues together while her lips somehow press against both of your ears at the same time, peppering them with ghostly smacks in a threefold rhythmic assault that your bliss-addled body can't hope to escape or keep up with!|f|ChangeImageLayer|/|Expression|/|Tease|n|Over and over, her intermixing loop of ethereal and physical smooching melodically fills your head with growing intensity, the peppy performer following the thumping beat of the music as she rapidly wears down every ounce of your flagging endurance, leaving your erection excitedly twitching and throbbing to the pace of her fervent ministrations as your climax draws closer and closer...|f|ChangeImageLayer|/|Expression|/|LipLick|n|Until all at once, with a final drawn-out kiss to your ears and lips, she turns your euphoric crescendo of pleasure into a messy, full-body orgasm, your cock going on a hands-free spurting spree as it indulgently shoots out long, warm ropes of cum to the tune of Melody's continued smooches, the demoness accompanying your ejaculation with continued binaural pampering all the way through, then dotingly giggling once it abates.|f|ChangeImageLayer|/|Expression|/|Smile|n|'{i}Mmwah.~{/i} you taste {i}wonderful{/i} when you're cumming your brains out.♥'\nShe punctuates the words with a sweet little titter after parting her lips from your mouth with a heated sigh, taking a moment to nuzzle against you in lustful affection as she gives you a moment to recover... right before eagerly locking lips with you anew.",
+                                         "|f|ChangeImageLayer|/|Expression|/|Tease|n|Even as Melody's fresh smooches still ring dizzyingly through your senses, she continues to slowly lavish you with her sweet lips' attentions in time with the entrancing music, her tongue languorously waltzing with your own while her breathy coos and light kisses phantasmally brush and smack against your vulnerable ears, rhythmically building up your already simmering arousal towards a hot, euphoria-soaked finale.|f|ChangeImageLayer|/|Expression|/|LipLick|n|And as the beat picks up, so too does her increasingly ravenous makeout, her rapturously relentless smooching, licking, and cooing brushing across your mouth and ears in magical tandem, and coalescing into an inescapable tide of raw, musically charged bliss that turns your head pure white in orgasmic delight, leaving your dick spasming and spurting excitedly as you ride the aural high for what feels like an eternity.|f|ChangeImageLayer|/|Expression|/|Cheerful|n|With the waves of mind-blanking pleasure washing over you again and again and keeping you in an intoxicated state of dreamy delight, you barely even register your climax ending, your state of stupefied ecstasy leaving you blearily blinking as it becomes apparent that Melody has withdrawn her lips from yours in order to let you come back down from the enchanting ride, the succubus staring at you sweetly as she caresses your cheek.|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Ehehe,♪ looks like you enjoyed that plenty... and also like you're good for another performance.♥'"
+                                      ]
+                        }, 
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Tease|n|As your arousal nears its limit and the succubus continues to alluringly shake her curvaceous body for your captivated enjoyment, each thumping beat of the ambient music feels like a jolt of raw pleasure that oozes through your senses, the song's melody melting into a constant flow of touchless stimulation for you to euphorially ride.|n|Higher and higher, the physical, primal rapture keeps rising, until you're finally hit with a resonating, dropping crescendo of enrapturing bass while the demonic performer's voice hotly sighs directly into your ears, setting off fireworks of orgasmic bliss that leave your body jolting and quivering in tune with the music, all the while your trembling erection throbs in a sensory overload and spurts thick ropes of cum into the air!|f|ChangeImageLayer|/|Expression|/|Wink|n|'Nice to see you're enjoying the show, handsome...♥♪ 'cause it's not over yet.♪'\n\nGiggling, she blows you a teasing kiss, then smoothly runs her hands across her curvy body, ready to resume her entrancing display...",
+                                         "|f|ChangeImageLayer|/|Expression|/|LipLick|n|Seeing you struggling to contain your lust, the succubus leans forward with a lewdly open mouth and her tongue pushed out temptingly as she moans wantonly, the sound of her hot sigh pouring into both of your ears at once despite the distance between you, filling you with head-fogging, inescapable arousal.|f|ChangeImageLayer|/|Expression|/|Tease|n|With how close to the brink you are, you're utterly unable to resist gawking at her obscene movements, leaving you unresistingly indulging in the coos and kisses she's distantly pressing to your ears while continuing to croon and giggle, each melodious trill on her part imbuing you with more erotic infatuation.|f|ChangeImageLayer|/|Expression|/|TeaseWink|n|Capitalizing on your lust-struck state, the sinful woman wraps an arm under her hanging bosom to flaunt and squeeze her tits while she continues canting her hips back and forth, each beat-matching movement thumping into your rapidly peaking libido on loop, until you're overwhelmed in a spurting, shivery hands-free climax that fills your head with dizzying, sticky afterimages of her movements and the echoes of her voice.|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Niiiiice.~♪ Let your moans join the song's chorus.♥ Make a total, {i}shameless{/i} mess.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|Twirling, swaying, and shaking her body back and forth in a perfectly flowing dance you can't manage to look away from, the succubus makes a full, raunchy display of her erotic prowess while continuing to enchantingly sing, her every spoken word another sweetly tempting phoneme that slips right into your senses while you watch in utter captivation, thoughtlessly letting her stoke your lustful intoxication hotter and hotter...|f|ChangeImageLayer|/|Expression|/|Wink|n|Until, in time with the swelling music, she bouncily strikes a kiss-blowing pose while twinned auditory smooches on her part simultaneously hit your ears, pushing you over the edge into mind-blanking climax, sending you messily ejaculating while you continue simmering in still rapturously pulsing arousal under her ongoing flaunting and smooching.|f|ChangeImageLayer|/|Expression|/|TeaseWink|n|'Mmmmhwah!♥ Oooohh...♥ You're {i}really{/i} enjoying this, mhm.~♥ That's... honestly super hot.♥'"
+                                      ]
+                        },
+
+
+                       {
+                            "lineTrigger": "OnOrgasm",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Orgasm|n|'{i}K-Kyaaaahhhnnnn!!!~♥♥♥{/i}'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Orgasm|n|'{i}A-Amaziiinnng!!!~♥♥♥{/i}'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Orgasm|n|'A-Ah?! Already?! {i}I-I want an encoooore!~♥♥♥{/i}'"
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnSurrender",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Oh {i}my,{/i} somebody's so horny they just can't resist, it seems.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Wink|n|'Ooohohooh?♥ Well, I promise you won't regret throwing the towel.♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Aww~.♪ Here I was hoping to put on a whole show, and you're already giving in.♥'"
+                            ]
+                        },
+
+
+                        {
+                            "lineTrigger": "StanceStruggle",
+                            "move": "Face Sit",
+                            "theText": [ "[ThePlayerName] tries to push [AttackerName] off of his succubus-entrapped frame..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFail",
+                            "move": "Face Sit",
+                            "theText": [ "But just before you manage to shove her away, her lively partner starts to frantically bounce on your cock, sending hot shockwaves of pleasure rushing across your entire body in oozing pulses of raw sexual bliss that you can't help but momentarily bask in... and with that lapse in concentration, [AttackerName] can firmly press her derriere back down onto your face with a domineering wiggle, decisively shutting down your attempt!",
+                                         "But as you grab at her plush ass, the warm pleasure of the two succubi riding both your cock and face suddenly intermixes with the hot coos of their voices flowing directly into your ears as they intensify their enchanting aural attentions, leaving you instead just idly groping the woman atop you in indulgent, greedy gratification.",
+                                         "But immediately, your resolve melts away and you find yourself unwilling to move as the sensations of the dancing duo's aural and sexual ministrations blissfully wash up and down your supine body, their grinding curves keeping you captive as both their stage and audience, letting you ultimately just lie there and wantonly ride the waves of lecherous musical delights that they continuously pour into your head.",
+                                         "But just as you start to squirm away from the dancer, she and her partner suddenly press their lips together in a passionate kiss, the unexpected act flooding your head with the raunchily demonstrative sounds of their smooching, as if your very thoughts were entrapped between their interlocking lips and tongues, leaving you shivering and twitching underneath them with any idea of escape momentarily gone from your mind.",
+                                         "But in reaction, her tail immediately coils possessively around your neck while she firmly presses her plush ass more assertively into your face with a domineering gyration, keeping you right where she wants you while her partner keeps frantically bouncing on your cock."
+                        ]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleComment",
+                            "move": "Face Sit",
+                            "theText": [
+                                        "|f|ChangeImageLayer|/|Expression|/|TeaseWink|n|'Oh, come on, don't be a killjoy: 'dancing' with two lovely ladies like us has to be a dream come true.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Don't fight off the pleasure...♪ We're gonna keep dancing till all three of us drop in twitching bliss.♥'",
+
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Come on, just a {i}liiiittle{/i} bit more.~♥'",                                        
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Ah.~ Ah.~ Ah.~♥ Show's not over yet, handsome.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Wink|n|'Come oooonnn, just keep dancing with us.~♥'"
+                                        ]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFree",
+                            "move": "Face Sit",
+                            "theText": [ "And with a heave of effort, you manage to free yourself from the succubus' intoxicating rear!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFreeComment",
+                            "move": "Face Sit",
+                            "theText": [
+                                        "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'Y-You seriously wanted to stop???'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'Wh- But we were just getting to the good part-!'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Smile|n|'But why... Oooohh! I bet you just wanted to watch me dance more, riiiiiighhhht?~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Oh, you prefer more hands-free stimulation, huh?♥ Naughty.~♥'"
+                        ]
+                        },
+
+
+
+                        {
+                            "lineTrigger": "StanceStruggle",
+                            "move": "Sex",
+                            "theText": [ "[ThePlayerName] tries to pull out of [AttackerName]'s tight pussy..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFail",
+                            "move": "Sex",
+                            "theText": [ "But as she keeps energetically bouncing in your lap to the pulsing beat of the frantic music, you feel yourself powerlessly slump back to instead enjoy the feeling of her ass impacting against you and her succubus folds tightly squeezing your length, the delightful cocktail of demonic sensations too pleasurable for you to put an end to it.",
+                                         "But just as you start to get away from her, the succubus' voice remotely coos right into your ears, followed by a unified auditory smooch that leaves you dazed just long enough for her to assertively swing her curvy hips back down in time with the drop of the beat, letting her fully reengulf your cock deep inside her so as to snugly ensure you're not going anywhere.",
+                                         "But as your hands reflexively grab onto her hips for leverage, you find your fingers instead slipping back along her toned lower back in order to indulgently grope her temptingly plush butt as it jiggles under your wanton grasp with every swing of her waist, leaving you helplessly spacing out as you mindlessly fondle and squeeze it, shamelessly basking in the depraved sexual sensations amplified by the thumping music all around you.",
+                                         "But in reaction to your attempt, she starts to gyrate and sway her hips against yours in a tightly hilting dance, making you tense up from the indulgent sensation of her squeezing folds massaging every inch of your length from every angle, her shameless moans and the continued beat of the ambient music reverberating along your shaft and into the rest of your body in mind-blanking tingly waves."
+                        ]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleComment",
+                            "move": "Sex",
+                            "theText": [
+                                        "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Hmmmm...♥ I don't think your dick wants to leave.~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Come on, just a {i}liiiittle{/i} bit more.~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Wouldn't you rather fuck me back?♪ I so {i}looooove{/i} feeling your dick pound into me.~♥'",
+
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Ah.~ Ah.~ Ah.~♥ Show's not over yet, handsome.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Wink|n|'Come oooonnn, just keep dancing with me.~♥'"
+                                        ]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFree",
+                            "move": "Sex",
+                            "theText": [ "And you manage to free yourself from the succubus' rhythmic lovemaking!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFreeComment",
+                            "move": "Sex",
+                            "theText": [
+                                        "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'Y-You seriously wanted to stop???'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'Wh- But we were just getting to the good part-!'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Smile|n|'But why... Oooohh! I bet you just wanted to watch me dance more, riiiiiighhhht?~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Oh, you prefer more hands-free stimulation, huh?♥ Naughty.~♥'"
+                        ]
+                        },
+
+                        {
+                            "lineTrigger": "StanceStruggle",
+                            "move": "Anal",
+                            "theText": [ "[ThePlayerName] tries to pull out of [AttackerName]'s tight rear..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFail",
+                            "move": "Anal",
+                            "theText": [ "But as she keeps energetically bouncing in your lap to the pulsing beat of the frantic music, you feel yourself powerlessly slump back to instead enjoy the feeling of her ass impacting against you while her tight insides snugly squeeze your length, the delightful cocktail of demonic sensations too pleasurable for you to put an end to it.",
+                                         "But just as you start to get away from her, the succubus' voice remotely coos right into your ears, followed by a unified auditory smooch that leaves you dazed just long enough for her to assertively swing her curvy hips back down in time with the drop of the beat, letting her fully reengulf your cock deep inside her so as to snugly ensure you're not going anywhere.",
+                                         "But as your hands reflexively grab onto her hips for leverage, you find your fingers instead slipping back along her toned lower back in order to indulgently grope her temptingly plush butt as it jiggles under your wanton grasp with every swing of her waist, leaving you helplessly spacing out as you mindlessly fondle and squeeze it, shamelessly basking in the depraved sexual sensations amplified by the thumping music all around you.",
+                                         "But in reaction to your attempt, she starts to gyrate and sway her hips against yours in a tightly hilting dance, making you tense up from the indulgent sensation of her squeezing ass massaging every inch of your length from every angle, her shameless moans and the continued beat of the ambient music reverberating along your shaft and into the rest of your body in mind-blanking tingly waves."
+                        ]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleComment",
+                            "move": "Anal",
+                            "theText": [
+                                        "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Hmmmm...♥ I don't think your dick wants to leave.~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Come on, just a {i}liiiittle{/i} bit more.~♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Wouldn't you rather fuck me back?♪ I so {i}looooove{/i} feeling your dick pound into me.~♥'",
+
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Ah.~ Ah.~ Ah.~♥ Show's not over yet, handsome.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Wink|n|'Come oooonnn, just keep dancing with me.~♥'"
+                                        ]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFree",
+                            "move": "Anal",
+                            "theText": [ "And you manage to free yourself from the succubus' rhythmic riding!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFreeComment",
+                            "move": "Anal",
+                            "theText": [
+                                        "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'Y-You seriously wanted to stop???'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'Wh- But we were just getting to the good part-!'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Smile|n|'But why... Oooohh! I bet you just wanted to watch me dance more, riiiiiighhhht?~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Oh, you prefer more hands-free stimulation, huh?♥ Naughty.~♥'"
+                        ]
+                        },
+
+                        {
+                            "lineTrigger": "StanceStruggle",
+                            "move": "Making Out",
+                            "theText": [ "[ThePlayerName] tries to break out of the musically charged makeout with [AttackerName]..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFail",
+                            "move": "Making Out",
+                            "theText": [ "But the thirsty demoness tightens her arms around your shoulders while pressing her sinful curves intimately close to you as she greedily deepens the passionate kiss, both of your ears continuing to get magically subjected to her smooches' enchanting oral assault as she fervently pampers your mouth without giving you a moment's rest, leaving you dazed and thoughtlessly drifting back into the enthralling makeout session.",
+                                         "But all of a sudden, you freeze in trembling pleasure under a sudden breathy coo against both of your ears that sends a dizzying shiver of tingles all across your body, punctuated by a three-way aural smooch that leaves you hopelessly engrossed in the moment...",
+                                         "But as the succubus continues to kiss and rub herself against you in time with the entrancing beat of the erotically thumping music, you find yourself getting lost in the moment all over again, thoughtlessly making out with your passionate partner while her heated sighs and coos graze ethereally across your ears in a head-fogging phantasmal embrace.",
+                                         "But as she gyrates and grinds against you in a dazzlingly doting dance while still relentlessly locking lips with you and tongue-wrestling with you, you find yourself getting caught back in her flow, indulgently letting yourself savor [AttackerName]'s lovely smooching for {i}just a moment longer{/i}, her parade of kisses matching the beat pressing to your ears in a constant mesmerizing thrum, as if to reward you for your docile enthusiasm."
+                            ]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleComment",
+                            "move": "Making Out",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Ah.~ Ah.~ Ah.~♥ Show's not over yet, handsome.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Wink|n|'Come oooonnn, just keep dancing with me.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Oh no you dont!♥ I'm getting you nice and kiss-drunk.~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Tease|n|'Mmmh, don't squirm so much.~♥ Why not just grab and fondle my ass instead?♥'"
+                                        ]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFree",
+                            "move": "Making Out",
+                            "theText": [ "And with a dazey pant, you manage to free yourself from [AttackerName]'s ravenously rhythmic kiss!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFreeComment",
+                            "move": "Making Out",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'Y-You seriously wanted to stop???'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Gasp|n|'Wh- But we were just getting to the good part-!'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Smile|n|'But why... Oooohh! I bet you just wanted to watch me dance more, riiiiiighhhht?~♥'",
+                                         "|f|ChangeImageLayer|/|Expression|/|Seductive|n|'Oh, you prefer more hands-free stimulation, huh?♥ Naughty.~♥'"
+                        ]
+                        }
+                      ],
+  "victoryScenes": [
+            {
+                "NameOfScene": "",
+                "move": "",
+                "stance": "",
+                "includes": [ ""],
+                "theScene": [ ""
+                          ],
+                "picture": ""
+            }
+        ],
+        "pictures": [
+            {
+                      "Name": "Base",
+                      "Set":  [
+                      {
+                          "Name": "Base",
+                          "StartOn": "1",
+                          "AlwaysOn": "1",
+                          "IsScene": "0",
+                          "TheBody": "1",
+                          "Overlay": "No",
+                          "setXalign": "0.0",
+                          "setYalign": "0.21",
+                          "Images": [
+                            {
+                                "Name": "Clothed",
+                                "File": "Monsters/DancerSuccubusA/DancerSuccA_Body.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            } 
+                        ]
+                      },  
+                      {
+                          "Name": "Expression",
+                          "StartOn": "1",
+                          "AlwaysOn": "1",
+                          "IsScene": "0",
+                          "TheBody": "0",
+                          "Overlay": "No",
+                          "setXalign": "0.0",
+                          "setYalign": "0.0",
+                          "Images": [
+                            {
+                                "Name": "Cheerful",
+                                "File": "Monsters/DancerSuccubusA/DancerSuccA_Expression_Cheerful.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Dizzy",
+                                "File": "Monsters/DancerSuccubusA/DancerSuccA_Expression_Dizzy.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Gasp",
+                                "File": "Monsters/DancerSuccubusA/DancerSuccA_Expression_Gasp.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "LipLick",
+                                "File": "Monsters/DancerSuccubusA/DancerSuccA_Expression_LipLick.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Orgasm",
+                                "File": "Monsters/DancerSuccubusA/DancerSuccA_Expression_Orgasm.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Pleasured",
+                                "File": "Monsters/DancerSuccubusA/DancerSuccA_Expression_Pleasured.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Seductive",
+                                "File": "Monsters/DancerSuccubusA/DancerSuccA_Expression_Seductive.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Smile",
+                                "File": "Monsters/DancerSuccubusA/DancerSuccA_Expression_Smile.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Tease",
+                                "File": "Monsters/DancerSuccubusA/DancerSuccA_Expression_Tease.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "TeaseWink",
+                                "File": "Monsters/DancerSuccubusA/DancerSuccA_Expression_TeaseWink.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Wink",
+                                "File": "Monsters/DancerSuccubusA/DancerSuccA_Expression_Wink.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "XD",
+                                "File": "Monsters/DancerSuccubusA/DancerSuccA_Expression_XD.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            }       
+                          ]
+                    } 
+                ]
+            }   
+                    ]
+
+    }

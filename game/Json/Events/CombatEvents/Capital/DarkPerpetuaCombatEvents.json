@@ -1,0 +1,1117 @@
+{
+    "name": "DarkPerpetuaCombatEvent",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Dark Perpetua",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+
+                  {
+                    "NameOfScene": "EndOfTurn",
+                    "theScene": [
+                                  "CallNextSceneJumpThenReturn", "IfPlayerHasStatusEffect", "Charm", "SetCharmed",
+                                  "CallNextSceneJumpThenReturn", "IfChoice", "1", "Charmed", "CheckCharmed",
+                                  "CallSceneThenReturn", "SinkCheck",
+                                  "CallSceneThenReturn", "TideRising",
+                                  "IfMonsterHasStatusEffect", "Debuffs", "CheckLaughRemoval",
+                                  "IfPlayerHasStatusEffect", "Buffs", "CheckLaughRemoval",
+                                  "JumpToScene", "CallAttack"
+                              ]
+                  },
+                  {
+                    "NameOfScene": "CallAttack",
+                    "theScene": [
+                                  "CallMonsterAttack"
+                              ]
+                  },
+                              {
+                                "NameOfScene": "SetCharmed",
+                                "theScene": [
+                                              "SetChoice", "1", "Charmed"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "CheckCharmed",
+                                "theScene": [
+                                              "IfPlayerHasStatusEffect", "Charm", "Nothing",
+                                              "SetChoice", "1", ""
+                                          ]
+                              },
+                  {
+                    "NameOfScene": "CheckLaughRemoval",
+                    "theScene": [
+                                  "JumpToRandomScene",
+                                      "CallAttack",
+                                      "CallAttack",
+                                      "CallAttack",
+                                      "CallAttack",
+                                      "ClearDebuffs",
+                                      "ClearDebuffs",
+                                  "EndLoop"
+                              ]
+                  },
+                  {
+                    "NameOfScene": "ClearDebuffs",
+                    "theScene": [
+                                  "SetPostName", " - Laugh of Overflowing Evil",
+                                  "ChangeImageLayer", "Expression", "Laugh",
+                                  "RemoveStatusEffectFromMonster", "Debuffs",
+                                  "RemoveStatusEffect", "Buffs",
+                                  "FocusedSpeaksSkill",
+                                  "The air trembles as the trio of slime women let out a resounding peal of unholy haughty laughter that echoes ominously through the air, dispersing their ailments and neutralizing your empowerments amid a threefold chorus of 'Ohohohohohoh!'",
+                                  "SetPostName", ""
+                              ]
+                  },
+
+                  {
+                    "NameOfScene": "Nothing",
+                    "theScene": [
+
+                              ]
+                  },
+                  {
+                    "NameOfScene": "CheckCGStance",
+                    "theScene": [
+                                  "IfPlayerHasStance", "Sex", "Nothing",
+                                  "IfPlayerHasStance", "Anal", "Nothing",
+                                  "PlayMotionEffect", "Crash",
+                                  "ChangeImageLayer", "ImageSetDontCarryOver", "DarkPerpo"
+                              ]
+                  },
+
+
+                  {
+                    "NameOfScene": "SinkCheck",
+                    "theScene": [
+                                  "IfPlayerHasStance", "Making Out", "SinkCheck2",
+                                  "IfPlayerHasStance", "Sex", "SinkCheck2",
+                                  "IfPlayerHasStance", "Anal", "SinkCheck2"
+                              ]
+                  },
+                        {
+                          "NameOfScene": "SinkCheck2",
+                          "theScene": [
+                                        "IfPlayerHasStance", "Slimed 25%", "SinkFrom25%",
+                                        "IfPlayerHasStance", "Slimed 50%", "Nothing",
+                                        "IfPlayerHasStance", "Slimed 75%", "Nothing",
+                                        "IfPlayerHasStance", "Slimed 100%", "Nothing",
+                                        "ApplyStance", "Slimed 50%",
+                                        "SetProgress", "-1",
+                                        "With you deeply and intimately entangled with Dark Perpetua, she lets out a sinister lustful purr as her vast gooey form easily engulfs you up to your waist while the other two curvy villainesses slip to your sides with evil giggles."
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "SinkFrom25%",
+                          "theScene": [
+                                        "ClearStanceFromMonsterAndPlayer", "Slimed 25%",
+                                        "ApplyStance", "Slimed 50%",
+                                        "SetProgress", "-1",
+                                        "With you deeply and intimately entangled with Dark Perpetua, she lets out a sinister lustful purr as her gooey ooze rises up from your knees up to your waist while the other two curvy villainesses slip to your sides with evil giggles."
+                                    ]
+                        },
+
+                {
+                  "NameOfScene": "TideRising",
+                  "theScene": [
+                                 "ChangeProgress", "1",
+                                 "IfProgressEqualsOrGreater", "4", "AdvanceTide"
+                            ]
+                },
+                      {
+                        "NameOfScene": "AdvanceTide",
+                        "theScene": [
+                                         "GivePerkToMonster", "Schemer", "GivePerkToMonster", "Schemer", "GivePerkToMonster", "Schemer",
+                                        "The longer the depraved battle goes on, the heavier the swirling atmosphere gets, growing denser with sweet tempting corruptive energy. Dark Perpetua's insidious powers keep growing along with her ravenous tide of clinging goo, making her dangerously enticing charms and malevolent influence all the more potent.",
+                                        "IfPlayerHasStance", "Slimed 25%", "To50%",
+                                        "IfPlayerHasStance", "Slimed 50%", "To75%",
+                                        "IfPlayerHasStance", "Slimed 75%", "To100%",
+                                        "IfPlayerHasStance", "Slimed 100%", "Nothing",
+                                        "ApplyStance", "Slimed 25%",
+                                        "SetProgress", "0",
+                                        "Subtly and slowly, the oozing tide of demonic slime creeps and flows over the area, a shivering realization shooting through you as Perpetua's gelatinous form submerges your legs up to your knees in a viscous goo that greedily clings to you, drawing you in closer and closer until you are brought within reach of the three lustful ladies who lick their lips in hunger!"
+                                  ]
+                      },
+                              {
+                                "NameOfScene": "To50%",
+                                "theScene": [
+                                                "ClearStanceFromMonsterAndPlayer", "Slimed 25%",
+                                                "ApplyStance", "Slimed 50%",
+                                                "SetProgress", "0",
+                                                "Knee-high in the dark slimy goo, you find the living amorphous liquid hungrily tugging at your limbs and body, pulling you bit by bit toward the center of the gooey amalgamation while enveloping you up to your waist, leaving you surrounded by the three gooey women who giggle in delight at your growing predicament."
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "To75%",
+                                "theScene": [
+                                                "ClearStanceFromMonsterAndPlayer", "Slimed 50%",
+                                                "ApplyStance", "Slimed 75%",
+                                                "SetProgress", "0",
+                                                "With you surrounded and up to your waist in oozing slime, the trio of women easily lavish and coat you with more of the entrapping goo, the living liquid tugging and restraining you as it creeps across your body, the large slime sea around you slowly rising and constantly reshaping..."
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "To100%",
+                                "theScene": [
+                                                "ClearStanceFromMonsterAndPlayer", "Slimed 75%",
+                                                "ApplyStance", "Slimed 100%",
+                                                "SetProgress", "0",
+                                                "With sucking, moving ooze surrounding you from every angle and rising higher by the second, you soon find yourself almost entirely entrapped in a veritable bed of wicked gooey comfort, the threefold villainesses purring in delight as your arms and legs sink into them almost to the point of total immobilization, your complete confinement drawing closer by the moment..."
+                                          ]
+                              },
+
+
+
+                    {
+                      "NameOfScene": "DistractCheck",
+                      "theScene": [
+                                    "IfPlayerHasStance", "Slimed 100%", "TooStuckToDistract",
+                                    "IfPlayerHasStance", "Slimed 75%", "TooStuckToDistract",
+                                    "IfPlayerHasStance", "Slimed 50%", "TooStuckToDistract"
+                                ]
+                    },
+                          {
+                             "NameOfScene": "TooStuckToDistract",
+                             "theScene": [
+                                           "SkipPlayerAttack",
+                                           "ChangeImageLayer", "Expression", "EvilGrin",
+                                           "Delightfully plunged in viscous goo as you are, you quickly realize that distracting Perpetua will be of no use, the trio giggling ominously as you squirm fruitlessly within the all-surrounding lake of slime."
+                                       ]
+                           },
+
+
+
+                  {
+                    "NameOfScene": "MiringPseudopodSurge",
+                    "theScene": [
+                                  "SetPostName", " - Miring Pseudopod Surge",
+                                    "ChangeImageLayer", "Expression", "EvilGrin",
+                                "FocusedSpeaksSkill",
+                                "The massive writhing tendrils surrounding the trio of smugly giggling Perpetuas lunge out towards you with sweeping entangling lashes, trying to grab and drag you in while the domineering slime girls taunt, tease, and entice you with sultry promises of pleasure, their voices intermingling ominously!",
+                                "FocusedSpeaks",
+                                "SwapLineIf", "Random",
+                                     "Come here, my love slave to be.♥",
+                                      "Your struggle is futile, [ThePlayerName]. I’ll drown all that pitiful resistance in a sea of ecstasy.",
+                                      "The moment we catch you, we shall squeeze and {i}milk{/i} and {i}drain{/i} you in an instant.",
+                                      "Be all {i}mine{/i}. All {i}ours!{/i}",
+                                      "Behold your gooey undoing!",
+                                      "Struggle and dance against the inevitable! It will make wringing you dry all the more {i}entertaining{/i}, ohohoho!~",
+                                "EndLoop",
+                                "SetPostName", "",
+                                "Menu",
+                                  "Struggle! (Power)",
+                                  "Dodge! (Technique)",
+                                  "Barrier! (Intelligence)",
+                                  "Run towards them!",
+                                "EndLoop"
+
+                              ]
+                  },
+                  {
+                    "NameOfScene": "Run towards them!",
+                    "theScene": ["You rush towards the sticky tendrils, briefly wondering why you thought this was a good idea as the Perpetuas' eyes gleam with malevolent lustful glee.",
+                                "JumpToScene", "PseudopodSurgeFailed"
+                              ]
+                  },
+                  {
+                    "NameOfScene": "Struggle! (Power)",
+                    "theScene": [ "As the slimy limbs latch onto you and threaten to engulf you, you roughly struggle against their gooey hold, gathering your strength to escape their grasp before they can reel you in!",
+                                  "StatCheck",
+                                  "Power",
+                                  "20",
+                                  "PseudopodSurgePass",
+                                  "Fail",
+                                  "PseudopodSurgeFail"
+                              ]
+                  },
+                      {
+                        "NameOfScene": "PseudopodSurgePass",
+                        "theScene": ["ChangeImageLayer", "Expression", "Pout",
+                                    "With soft slimy noises, the tendrils break and slide powerlessly over your resisting limbs, leftover gooey bits crawling back to the domineering trio who huffs and pouts rather childishly for how dark and queenly they look."
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "PseudopodSurgeFail",
+                        "theScene": ["But despite your best efforts, you're helplessly yanked towards the giant slimy blob and the waiting hold of the villainous seductresses!",
+                                    "JumpToScene", "PseudopodSurgeFailed"
+                                  ]
+                      },
+                {
+                  "NameOfScene": "Dodge! (Technique)",
+                  "theScene": [ "You attempt to weave and leap through the sweeping tentacles as they slither, lash, and wriggle at you in their efforts to grab hold of you!",
+                                "StatCheck",
+                                "Technique",
+                                "20",
+                                "PseudopodSurgeTechPass",
+                                "Fail",
+                                "PseudopodSurgeTechFail"
+                            ]
+                },
+                    {
+                      "NameOfScene": "PseudopodSurgeTechPass",
+                      "theScene": ["ChangeImageLayer", "Expression", "Pout",
+                                  "Despite their numbers and swiftness, the pseudopods are thwarted at every turn by your speed and agility as you elegantly leap, roll, and bounce away from their gooey grasp! Skidding to a stop, you finish your daring acrobatics away from the many tendrils' reach with a stylish flourish, the domineering trio fumingly glaring at you with huffy pouts before your defiance."
+                                ]
+                    },
+                    {
+                      "NameOfScene": "PseudopodSurgeTechFail",
+                      "theScene": ["But just as you think you're about to make it, one tendril too many blindsides you, coiling around you with unyielding strength and yanking you towards the slimy villain!",
+                                  "JumpToScene", "PseudopodSurgeFailed"
+                                ]
+                    },
+                {
+                  "NameOfScene": "Barrier! (Intelligence)",
+                  "theScene": [ "Thinking fast, you gather your power and try to generate a magical shield to ward off the grasping tentacles lunging at you!",
+                                "StatCheck",
+                                "Intelligence",
+                                "20",
+                                "PseudopodSurgeIntPass",
+                                "Fail",
+                                "PseudopodSurgeIntFail"
+                            ]
+                },
+                    {
+                      "NameOfScene": "PseudopodSurgeIntPass",
+                      "theScene": ["ChangeImageLayer", "Expression", "Pout",
+                                  "Despite the slimy appendages battering your barrier with all their might, your improvised protection holds them off long enough for you to step away from their reach, leaving the Perpetuas huffily pouting at you in a... rather unimposing and childish way."
+                                ]
+                    },
+                    {
+                      "NameOfScene": "PseudopodSurgeIntFail",
+                      "theScene": ["The many slime tentacles' overwhelming numbers and strength quickly prove to be too much for you! In no time, they crash through your barrier with ease and wrap around you tightly before yanking you towards the triumphant trio!",
+                                  "JumpToScene", "PseudopodSurgeFailed"
+                                ]
+                    },
+                {
+                  "NameOfScene": "PseudopodSurgeFailed",
+                  "theScene": [
+                                  "ApplyStance", "Slimed 75%",
+                                  "ChangeImageLayer", "Expression", "LipLick",
+                                  "The Perpetuas purr and lick their lips as you're forcefully dragged into their warm gooey pool, an irresistible surge of pleasure and relaxation oozing up your spine as you find yourself more than up to your waist in the thick viscous slime, surrounded by the curvy bodies of the temptresses who predatorily coo and lick their lips at their catch.",
+                                  "ChangeImageLayer", "Expression", "EvilGrin",
+                                  "SetProgress", "-1",
+                                  "FocusedSpeaks",
+                                  "SwapLineIf", "Random",
+                                    "My foolish beloved nemesis, you’re going to make such a wonderful mewling sex pet.",
+                                    "Mfuhu, how delightful to see you struggle so valiantly and {i}fruitlessly{/i} inside me.",
+                                    "Drown and sink into depravity, {i}hero.{/i}",
+                                    "We shall milk you again and {i}again{/i} until we are- {i}I{/i} am {i}all{/i} you can think about.",
+                                    "Ohoho~ Whatever shall I do with this poor {i}helpless{/i} little hero?♪",
+                                    "Enjoy your last moments of sanity before I turn you mad with pleasure. Mffhuhuha {i}haha!{/i}",
+                                  "EndLoop"
+                            ]
+                },
+
+
+          {
+            "NameOfScene": "RuinWaveCharmStun",
+            "theScene": [
+                            "IfChoice", "1", "Charmed", "RuinWaveStun",
+                            "ApplyStatusEffect", "Melting Depravity",
+                            "The magically-charged gooey waves of euphoria wash over you again and again in a pulsing rippling loop that leaves you constantly moaning and mewling with a slack pleasure-drunk smile on your now helplessly charmed-senseless face..."
+                      ]
+          },
+                {
+                  "NameOfScene": "RuinWaveStun",
+                  "theScene": [
+                                  "IfHasPerk", "Stun Immune", "Nothing",
+                                  "ApplyStatusEffect", "Spank",
+                                  "ApplyStatusEffect", "Spank",
+                                  "With you already charmed into a horny mess, the magically-charged gooey waves of euphoria quickly render you completely incoherent as they wash over you again and again in a pulsing, rippling, mind-bending loop, leaving you unable to do anything against the overwhelming tide of bliss other than to keep moaning and mewling with a slack, messy pleasure-drunk expression for the entertainment of the slimy seductresses..."
+                            ]
+                },
+
+
+
+                {
+                  "NameOfScene": "TemptGeneral",
+                  "theScene": [
+                                "IfChoice", "1", "Charmed", "TemptCloserGeneral",
+                                "The infatuating sight of the slimy villainesses flaunting their obscene bodies for you to ogle leaves your mind turning pink, your thoughts dizzily spinning with charmed gooey arousal that makes your cock needily throb."
+                            ]
+                },
+                    {
+                      "NameOfScene": "TemptCloserGeneral",
+                      "theScene": [
+
+                                    "ChangeImageLayer", "Expression", "LipLick",
+                                    "With you already blissfully charmed by the alluring gooey seductresses, a few cooing purrs and some sultry come-hither finger-crooking is all it takes to fill your enchanted mind with the sinfully tingly temptation to step closer, straight into their gelatinous domain, to be the willing, docile recipient of their lavishing attentions...",
+                                    "FocusedSpeaks",
+                                    "SwapLineIf", "Random",
+                                      "Come here and let us melt you.",
+                                      "Stare and sink into my beauty.",
+                                      "Don't you want to milked dry and flooded with pleasure?",
+                                      "Come closer, beloved nemesis.",
+                                      "There's no need to be shy.",
+                                    "EndLoop",
+                                    "Menu",
+                                      "Ignore the seductive invitation!",
+                                      "Yes...",
+                                    "EndLoop"
+
+                                ]
+                    },
+                            {
+                              "NameOfScene": "Yes...",
+                              "theScene": [
+                                            "JumpToScene", "TemptCloserGeneralFail"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Ignore the seductive invitation!",
+                              "theScene": [
+                                              "StatCheck",
+                                              "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "15", "1",
+                                              "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "30", "2",
+                                              "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "50", "2",
+                                              "ChangeStatCheckDifficulty", "IfHasPerk", "Trickling Corruption", "1",
+                                              "ChangeStatCheckDifficulty", "IfHasPerk", "Seeping Corruption", "2",
+                                              "ChangeStatCheckDifficulty", "IfHasPerk", "Sigil of Corruption", "3",
+                                              "ChangeStatCheckDifficulty", "IfHasPerk", "Oozing Sigil of Corruption", "4",
+                                              "ChangeStatCheckDifficulty", "IfHasPerk", "Queen's Sigil of Corruption", "5",
+                                              "Temptation",
+                                              "20",
+                                              "TemptCloserGeneralPass",
+                                              "Fail",
+                                              "TemptCloserGeneralFail"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "TemptCloserGeneralPass",
+                              "theScene": [  "ChangeImageLayer", "Expression", "Base",
+                                             "They let out a combined sultry sigh of disappointment as you manage to shake off the insidious temptation, wisely refusing to get closer to their dangerously slick, soft, alluring, welcoming curves..."
+                                        ]
+                            },
+                    {
+                      "NameOfScene": "TemptCloserGeneralFail",
+                      "theScene": [
+                                    "ApplyStance", "Slimed 25%",
+                                    "ChangeImageLayer", "Expression", "EvilGrin",
+                                    "With a captivated smile, you step closer and closer, straight into their gooey pool, willingly letting it engulf you up to your knees, sinking deeper into constant aching desire..."
+                                ]
+                    },
+
+
+
+              {
+                  "NameOfScene": "ButtTempt",
+                  "theScene": [
+                                "IfChoice", "1", "Charmed", "TemptCloserButt",
+                                "With the Perpetuas' wide hips and seductively full butts alluringly bouncing and jiggling for you, your stare quickly devolves into a blissfully infatuated lust-clouded gaze, your cock throbbing and twitching with needy desire..."
+                            ]
+                },
+                      {
+                        "NameOfScene": "TemptCloserButt",
+                        "theScene": [
+                                      "ChangeImageLayer", "Expression", "LipLick",
+                                      "With your mind already spinning with enchanted melty desire, a few tempting spanks of the Perpetuas' plump butts and some eager flaunting spreading of their drooling pussies is all it takes to make your thoughts threaten to blank out, the trio's wanton moans and enticements sultrily coaxing you into their embrace...",
+                                      "FocusedSpeaks",
+                                      "SwapLineIf", "Random",
+                                        "Come here and let us melt you.",
+                                        "Stare and sink into my beauty.",
+                                        "Don't you want to milked dry and flooded with pleasure?",
+                                        "Come closer, beloved nemesis.",
+                                        "There's no need to be shy.",
+                                      "EndLoop",
+                                      "Menu",
+                                        "Ignore their seductively swinging hips!",
+                                        "Yes... ",
+                                      "EndLoop"
+
+                                  ]
+                      },
+                              {
+                                "NameOfScene": "Yes... ",
+                                "theScene": [
+                                              "JumpToScene", "TemptCloserButtFail"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "Ignore their seductively swinging hips!",
+                                "theScene": [
+                                                "StatCheck",
+                                                "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "15", "1",
+                                                "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "30", "2",
+                                                "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "50", "2",
+                                                "ChangeStatCheckDifficulty", "IfHasPerk", "Trickling Corruption", "1",
+                                                "ChangeStatCheckDifficulty", "IfHasPerk", "Seeping Corruption", "2",
+                                                "ChangeStatCheckDifficulty", "IfHasPerk", "Sigil of Corruption", "3",
+                                                "ChangeStatCheckDifficulty", "IfHasPerk", "Oozing Sigil of Corruption", "4",
+                                                "ChangeStatCheckDifficulty", "IfHasPerk", "Queen's Sigil of Corruption", "5",
+                                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Ass", "25", "1",
+                                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Ass", "50", "1",
+                                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Ass", "75", "1",
+                                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Ass", "100", "2",
+                                                "Temptation",
+                                                "20",
+                                                "TemptCloserButtPass",
+                                                "Fail",
+                                                "TemptCloserButtFail"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "TemptCloserButtPass",
+                                "theScene": [  "ChangeImageLayer", "Expression", "Base",
+                                               "They let out a combined sultry sigh of disappointment as you manage to shake off the insidious temptation, wisely refusing to get closer to their dangerously slick, soft, alluring, welcoming curves..."
+                                          ]
+                              },
+                      {
+                        "NameOfScene": "TemptCloserButtFail",
+                        "theScene": [
+                                      "IfPlayerHasStance", "Slimed 25%", "TemptedIntoSex",
+                                      "ApplyStance", "Slimed 25%",
+                                      "ChangeImageLayer", "Expression", "EvilGrin",
+                                      "With a captivated smile, you step closer and closer, straight into their gooey pool, willingly letting it engulf you up to your knees while you dumbly watch the plump, bouncing asses luring you deeper and deeper into ass-loving surrender..."
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "TemptedIntoSex",
+                              "theScene": [
+
+                                            "ClearStanceFromMonsterAndPlayer", "Slimed 25%",
+                                            "ApplyStance", "Slimed 50%",
+                                            "ApplyStance", "Sex",
+                                            "ChangeImageLayer", "ImageSetDontCarryOver", "DarkPerpoSexRed",
+                                            "ChangeImageLayer", "Expression", "LipLick",
+                                            "ChangeImageLayer", "Pussy", "Pussy", "ChangeImageLayer", "Motion", "", "ChangeImageLayer", "Climax", "",
+                                            "PlayMotionEffect", "Crash",
+                                            "Thoughtless and stupefyingly horny, you step deeper and deeper into the gooey pool until it's up to your waist, blindly reaching out for one of the curvy butts alluringly offered to you. Gropingly grabbing the plump slimy ass, you don't even stop to reconsider before eagerly plunging your aching erection straight into one of the offered pussies, the Perpetuas purring and cooing malevolently in response to your indulgent thrusting..."
+                                        ]
+                            },
+
+
+
+
+                  {
+                    "NameOfScene": "BoobaTempt",
+                    "theScene": [
+                                  "IfChoice", "1", "Charmed", "TemptCloserBoobs",
+                                  "The sight of the trio's bountiful breasts weighs heavily on your captivated senses, each swaying bounce rippling mesmerizingly through your thoughts, until you can't help but keep staring vapidly, letting the obscene show enthrall your vulnerable mind..."
+                              ]
+                  },
+                        {
+                          "NameOfScene": "TemptCloserBoobs",
+                          "theScene": [
+                                        "ChangeImageLayer", "Expression", "LipLick",
+                                        "With you already enchanted by the curvy trio's bouncing breasts, a few tempting shakes of their heavy tits and some sultrily tempting words is all it takes to lure you closer, the sight of their soft jiggly busts inviting you to give in to their melty embrace...",
+                                        "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                          "Come here and let us melt you.",
+                                          "Stare and sink into my beauty.",
+                                          "Don't you want to milked dry and flooded with pleasure?",
+                                          "Come closer, beloved nemesis.",
+                                          "There's no need to be shy.",
+                                        "EndLoop",
+                                        "Menu",
+                                          "Ignore their alluringly bouncing tits!",
+                                          "Yes...  ",
+                                        "EndLoop"
+
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "Yes...  ",
+                                  "theScene": [
+                                                "JumpToScene", "TemptCloserBoobsFail"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "Ignore their alluringly bouncing tits!",
+                                  "theScene": [
+                                                  "StatCheck",
+                                                  "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "15", "1",
+                                                  "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "30", "2",
+                                                  "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "50", "2",
+                                                  "ChangeStatCheckDifficulty", "IfHasPerk", "Trickling Corruption", "1",
+                                                  "ChangeStatCheckDifficulty", "IfHasPerk", "Seeping Corruption", "2",
+                                                  "ChangeStatCheckDifficulty", "IfHasPerk", "Sigil of Corruption", "3",
+                                                  "ChangeStatCheckDifficulty", "IfHasPerk", "Oozing Sigil of Corruption", "4",
+                                                  "ChangeStatCheckDifficulty", "IfHasPerk", "Queen's Sigil of Corruption", "5",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "25", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "50", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "75", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "100", "2",
+                                                  "Temptation",
+                                                  "20",
+                                                  "TemptCloserBoobsPass",
+                                                  "Fail",
+                                                  "TemptCloserBoobsFail"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "TemptCloserBoobsPass",
+                                  "theScene": [  "ChangeImageLayer", "Expression", "Base",
+                                                 "They let out a combined sultry sigh of disappointment as you manage to shake off the insidious temptation, wisely refusing to get closer to their dangerously slick, soft, alluring, welcoming curves..."
+                                            ]
+                                },
+                        {
+                          "NameOfScene": "TemptCloserBoobsFail",
+                          "theScene": [
+                                        "IfPlayerHasStance", "Slimed 25%", "Temptedto50byboobs",
+                                        "ApplyStance", "Slimed 25%",
+                                        "ChangeImageLayer", "Expression", "EvilGrin",
+                                        "With a dazed expression stuck on your face, you blindly stride into their gooey pool, letting their slime engulf you up to your knees while you dumbly watch their captivating breasts, the mesmerizing swaying and bouncing drawing you closer and closer..."
+                                    ]
+                        },
+                              {
+                                "NameOfScene": "Temptedto50byboobs",
+                                "theScene": [
+                                              "ChangeImageLayer", "Expression", "LipLick",
+                                              "ClearStanceFromMonsterAndPlayer", "Slimed 25%",
+                                              "ApplyStance", "Slimed 50%",
+                                              "ApplyStatusEffect", "Erosion Lotion Lathering", "ApplyStatusEffect", "Erosion Lotion Lathering",
+                                              "Thoughtless and stupefyingly horny, you step deeper and deeper into the gooey pool until it's up to your waist, walking straight into their outstretched arms as they congratulate and welcome you with cooing snickers. With you snugly stuck between them, they rewardingly rub their slick breasts against you with evil giggles, slathering sweet aphrodisiac onto your skin while you indulge in their slippery softness..."
+                                          ]
+                              },
+
+
+
+
+                  {
+                    "NameOfScene": "CorruptionStack",
+                    "theScene": [
+                                  "IfHasPerk", "Queen's Sigil of Corruption", "Nothing",
+                                  "IfHasPerk", "Oozing Sigil of Corruption", "Queen's Sigil of Corruption",
+                                  "IfHasPerk", "Sigil of Corruption", "Oozing Sigil of Corruption",
+                                  "IfHasPerk", "Seeping Corruption", "Sigil of Corruption",
+                                  "IfHasPerk", "Trickling Corruption", "Seeping Corruption",
+                                  "GivePerkQuietly", "Trickling Corruption"
+                              ]
+                  },
+                        {
+                          "NameOfScene": "Seeping Corruption",
+                          "theScene": [ "RemovePerkQuietly", "Trickling Corruption",
+                                        "GivePerkQuietly", "Seeping Corruption"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "Sigil of Corruption",
+                          "theScene": [ "RemovePerkQuietly", "Seeping Corruption",
+                                        "GivePerkQuietly", "Sigil of Corruption"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "Oozing Sigil of Corruption",
+                          "theScene": [ "RemovePerkQuietly", "Sigil of Corruption",
+                                        "GivePerkQuietly", "Oozing Sigil of Corruption"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "Queen's Sigil of Corruption",
+                          "theScene": [ "RemovePerkQuietly", "Oozing Sigil of Corruption",
+                                        "GivePerkQuietly", "Queen's Sigil of Corruption"
+                                    ]
+                        },
+                  {
+                    "NameOfScene": "QueensCorruption",
+                    "theScene": [
+                                  "CallSceneThenReturn", "CorruptionStack",
+                                  "ChangeImageLayer", "Expression", "Laugh",
+                                  "SwapLineIf", "Perk",
+                                   "Queen's Sigil of Corruption", "The trio of villainesses excitedly purr and laugh with haughty triumphant delight as they channel the roiling pulses of corruptive energy from your demonically-charged environment, and the lust crest on your abdomen flares as it takes on a regal shape while sending mind-numbing tingles all over your body, your manhood eagerly twitching and leaking as it begs for attention, your thoughts filled with fantasies of sex with Perpetua...",
+                                   "Oozing Sigil of Corruption", "The trio of villainesses purr and laugh with haughty delight as they channel the roiling pulses of corruptive energy from your demonically-charged environment, and the red crest adorning your skin pulses hotly as the eroding giddy tingles grow even more intense, fogging up your head with a vapid haze and leaving you eager for release...",
+                                   "Sigil of Corruption", "The trio of villainesses purr and laugh with haughty delight as they channel the roiling pulses of corruptive energy from your demonically-charged environment, making you tremble and gasp as the swelling corruption coalesses into an aching lust crest on your abdomen, your dick eagerly leaking a steady stream of precum while your balls achingly churn, a drunken smile slipping onto your face at the mind-numbing sensations...",
+                                   "Seeping Corruption", "The trio of villainesses purr and laugh with haughty delight as they channel the roiling pulses of corruptive energy from your demonically-charged environment, their gooey curvy presence only adding to the mind-melting feeling as the tempting ruin seeps deeper into you, leaving your thoughts hazy and your cock eagerly throbbing with building excitement...",
+                                   "Trickling Corruption", "The trio of villainesses purr and laugh with haughty delight as they channel the roiling pulses of corruptive energy from your demonically-charged environment, their gooey curvy presence only adding to the mind-melting feeling as a feeling of tempting ruin starts to trickle into you, making you space out for a moment...",
+                                  "EndLoop"
+                                  ]
+                  },
+
+
+                        {
+                          "NameOfScene": "CorruptiveKissCharm",
+                          "theScene": ["ChangeImageLayer", "Expression", "LipLick",
+                                        "IfChoice", "1", "Charmed", "KissCorruption",
+                                        "As the passionate makeout keeps going and the sweet chorus of gooey sweet whispers melt through your senses, you can only shiver and dumbly kiss back, a charming haze settling over your mind from the ceaseless indulgent smooching..."
+                                    ]
+                        },
+                              {
+                                "NameOfScene": "KissCorruption",
+                                "theScene": [
+                                              "IfHasPerk", "Queen's Sigil of Corruption", "Nothing",
+                                              "With you already charmed and kiss-drunk, the trio's sweet smooches and cloying whispers coil tighter and tighter around your mind like an indulgently pillowy embrace, drawing you deeper and deeper into sweet sticky kissy sin as more and more demonic energy wears away at you with every touch, kiss, rub, and caress...",
+                                              "Menu",
+                                                "Steel yourself!",
+                                                "Eagerly kiss back...",
+                                              "EndLoop"
+
+                                          ]
+                              },
+                                      {
+                                        "NameOfScene": "Eagerly kiss back...",
+                                        "theScene": [
+                                                      "JumpToScene", "KissCorruptionFail"
+                                                  ]
+                                      },
+                                      {
+                                        "NameOfScene": "Steel yourself!",
+                                        "theScene": [
+                                                        "StatCheck",
+                                                        "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "10", "1",
+                                                        "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "25", "2",
+                                                        "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "40", "2",
+                                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Kissing", "25", "1",
+                                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Kissing", "50", "1",
+                                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Kissing", "75", "1",
+                                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Kissing", "100", "2",
+                                                        "Temptation",
+                                                        "20",
+                                                        "KissCorruptionPass",
+                                                        "Fail",
+                                                        "KissCorruptionFail"
+                                                  ]
+                                      },
+                                      {
+                                        "NameOfScene": "KissCorruptionPass",
+                                        "theScene": [
+                                                       "Gathering your wits and self-control, you manage to resist the creeping encroachment of sweetly corruptive energy temptingly trying to turn you into a horny boy toy!"
+                                                  ]
+                                      },
+                              {
+                                "NameOfScene": "KissCorruptionFail",
+                                "theScene": [
+                                              "CallSceneThenReturn", "CorruptionStack",
+                                              "RemoveStatusEffect", "Charm",
+                                              "ChangeImageLayer", "Expression", "EvilGrin",
+                                              "In the end, all you can manage is to 'counterattack' by eagerly kissing Perpetua back! Stoked by the increasingly feverish makeout, the creeping charming corroding dark energy addling your senses swirls inside you with a tingly burst of corruptive magic as the charm 'detonates', making you feel swooningly empty-headed and horny from the messy, passionate kiss, even as the enchanting feeling clouding your thoughts clears..."
+                                          ]
+                              },
+
+
+
+                      {
+                          "NameOfScene": "DepravityAssjobCharm",
+                          "theScene": ["ChangeImageLayer", "Expression", "EvilGrin",
+                                        "IfChoice", "1", "Charmed", "AssjobCorruption",
+                                        "As the charming magic settles captivatingly into your mind, your resistance falters and you relax with a vapid sigh, your hands unconsciously grabbing the luscious asses of the pink and purple slime women as you sink into depraved indulgence, spurred by their giggling encouragement..."
+                                    ]
+                        },
+                              {
+                                "NameOfScene": "AssjobCorruption",
+                                "theScene": [
+                                              "IfHasPerk", "Queen's Sigil of Corruption", "Nothing",
+                                              "Lost in a charming haze, you thoughtlessly grope the luscious asses of the two Perpetuas at your sides, the duo whispering a constant string of magically-charged temptations into your ears, the tingly auditory doting keeping you docile and pliant as the third keeps bouncing and grinding her plump bubble butt along your leaking erection, a sinful corruptive feeling seeping bit by bit into your core...",
+                                              "Menu",
+                                                "Push back the haze!",
+                                                "Vapidly relax into the pleasure...",
+                                              "EndLoop"
+
+                                          ]
+                              },
+                                      {
+                                        "NameOfScene": "Vapidly relax into the pleasure...",
+                                        "theScene": [
+                                                      "JumpToScene", "AssCorruptionFail"
+                                                  ]
+                                      },
+                                      {
+                                        "NameOfScene": "Push back the haze!",
+                                        "theScene": [
+                                                        "StatCheck",
+                                                        "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "10", "1",
+                                                        "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "25", "2",
+                                                        "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "40", "2",
+                                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Ass", "25", "1",
+                                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Ass", "50", "1",
+                                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Ass", "75", "1",
+                                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Ass", "100", "2",
+                                                        "Temptation",
+                                                        "20",
+                                                        "AssCorruptionPass",
+                                                        "Fail",
+                                                        "AssCorruptionFail"
+                                                  ]
+                                      },
+                                      {
+                                        "NameOfScene": "AssCorruptionPass",
+                                        "theScene": [
+                                                       "You manage to endure the tempting tingling whispers coiling around your thoughts and the plump, soft sensations assailing your cock and groping hands, rejecting the encroaching tide of corruptive magic!"
+                                                  ]
+                                      },
+                              {
+                                "NameOfScene": "AssCorruptionFail",
+                                "theScene": [
+                                              "CallSceneThenReturn", "CorruptionStack",
+                                              "RemoveStatusEffect", "Charm",
+                                              "ChangeImageLayer", "Expression", "LipLick",
+                                              "As the charming magic coalesces with the dark energy swirling deep inside you, all you can manage is to moan vapidly and to keep thoughtlessly humping Perpetua's hotdogging bubble butt... With each luxuriously squeezing thrust, you feel like your sense of rationality is leaking right out of your cock, all the while the other two Perpetuas' whispery coos keep melting your mind..."
+                                          ]
+                              },
+
+
+
+                  {
+                    "NameOfScene": "SexRideCharm",
+                    "theScene": ["ChangeImageLayer", "Expression", "EvilGrin",
+                                  "IfChoice", "1", "Charmed", "SexRideCorruption",
+                                  "Every gooey slap of Perpetua's regal cock-riding is accented by the melty whispers of the other two slimy seductresses kissing and cooing into your ears, rapidly turning you into a slack-jawed, charmed-senseless mess..."
+                              ]
+                  },
+                        {
+                          "NameOfScene": "SexRideCorruption",
+                          "theScene": [
+                                        "IfHasPerk", "Queen's Sigil of Corruption", "Nothing",
+                                        "Charmed and empty-headed as you are, every gooey slap of Perpetua's plump ass against your waist cascades corruptively through your senses while the duo's ear-kissing cooing whispers seductively coil tighter and tighter around your mind, eagerly opening you up to their sweetly debilitating magic...",
+                                        "Menu",
+                                          "Endure the mind-blanking sex!",
+                                          "Relax and melt...",
+                                        "EndLoop"
+
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "Relax and melt...",
+                                  "theScene": [
+                                                "JumpToScene", "SexRideCorruptionFail"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "Endure the mind-blanking sex!",
+                                  "theScene": [
+                                                  "StatCheck",
+                                                  "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "10", "1",
+                                                  "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "25", "2",
+                                                  "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "40", "2",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "2",
+                                                  "Temptation",
+                                                  "20",
+                                                  "SexRideCorruptionPass",
+                                                  "Fail",
+                                                  "SexRideCorruptionFail"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "SexRideCorruptionPass",
+                                  "theScene": [
+                                                 "Focusing your will, you manage to endure the constant pulses of sinful depravity trying to fill your body with dangerously tempting, intoxicating pleasure, every swing of Perpetua's wide hips and every kiss of her soft lips still threatening to push you over the edge!"
+                                            ]
+                                },
+                        {
+                          "NameOfScene": "SexRideCorruptionFail",
+                          "theScene": [
+                                        "CallSceneThenReturn", "CorruptionStack",
+                                        "RemoveStatusEffect", "Charm",
+                                        "ChangeImageLayer", "Expression", "LipLick",
+                                        "Defeated by Perpetua's wanton bouncing mating, you can only ride the constant waves of sinful pleasure as you continue to be used like a dildo and a throne, your sense of reason leaking out of you as the charm addling your thoughts overcomes your resilience and solidifies the corruption slowly overtaking you, more delightful poison oozing into you with each sweet whisper the Perpetuas pour into your ears like intoxicating honey."
+                                    ]
+                        },
+
+
+                {
+                  "NameOfScene": "SexEntanglingCharm",
+                  "theScene": ["ChangeImageLayer", "Expression", "EvilGrin",
+                                "IfChoice", "1", "Charmed", "SexEntanglingCorruption",
+                                "As you're made to thrust into the purple slime woman's soft jiggly pussy, sultry words and kisses from the other two Perpetuas keep assailing your ears, making you docilely moan and indulgently grope her plump ass while you keep swinging your hips with increasingly charmed eagerness..."
+                            ]
+                },
+                      {
+                        "NameOfScene": "SexEntanglingCorruption",
+                        "theScene": [
+                                      "IfHasPerk", "Queen's Sigil of Corruption", "Nothing",
+                                      "Entangled with the purple Perpetua and charmed silly, you can't stop yourself from indulging with greedy gropes and pleasure-seeking thrusts, the gooey villainesses' cooing words only melting you more and more as their sinful encouragement and promises ooze through your ears, sweet corruptive ecstasy threatening to overtake you and make you sink further into depravity...",
+                                      "Menu",
+                                        "Resist the seductive entanglement!",
+                                        "Thrust Thrust Thrust...",
+                                      "EndLoop"
+
+                                  ]
+                      },
+                              {
+                                "NameOfScene": "Thrust Thrust Thrust...",
+                                "theScene": [
+                                              "JumpToScene", "SexEntanglingCorruptionFail"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "Resist the seductive entanglement!",
+                                "theScene": [
+                                                "StatCheck",
+                                                "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "10", "1",
+                                                "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "25", "2",
+                                                "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "40", "2",
+                                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "1",
+                                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "1",
+                                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "1",
+                                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "2",
+                                                "Temptation",
+                                                "20",
+                                                "SexEntanglingCorruptionPass",
+                                                "Fail",
+                                                "SexEntanglingCorruptionFail"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "SexEntanglingCorruptionPass",
+                                "theScene": [
+                                               "With a heroic effort, you manage to reject the encroaching corruptive magic miring your mind and body with cascades of tingly euphoria, barely pushing back the teasing temptation to just give in and keep thrusting and melting!"
+                                          ]
+                              },
+                      {
+                        "NameOfScene": "SexEntanglingCorruptionFail",
+                        "theScene": [
+                                      "CallSceneThenReturn", "CorruptionStack",
+                                      "RemoveStatusEffect", "Charm",
+                                      "ChangeImageLayer", "Expression", "LipLick",
+                                      "Any resistance you might have tried to muster proves fruitless when, with a pleasurable burst, the melty charm erupts across your addled senses, urging you to thrust harder and faster, even as each jiggly impact keeps eroding away at your will to resist. With a last wave of bliss, the enchanting feeling fades... but the sweet gooey whispers and ear kisses continue, once more threatening to turn your thoughts blank and vapid."
+                                  ]
+                      },
+
+
+              {
+                "NameOfScene": "MeltyMatingCorruption",
+                "theScene": ["ChangeImageLayer", "Expression", "Kiss",
+                              "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "30", "MeltyMatingCorruptionCheck",
+                              "JumpToScene", "MeltyMatingCorruptionAphro"
+                          ]
+              },
+                    {
+                      "NameOfScene": "MeltyMatingCorruptionAphro",
+                      "theScene": [
+                                    "The longer you're inside the slimy villainess, the more of her slippery aphrodisiac goo seeps into your achingly hard cock, flooding you with sinful heat while tingly bliss oozily radiates all through your waist..."
+                                ]
+                    },
+                    {
+                      "NameOfScene": "MeltyMatingCorruptionCheck",
+                      "theScene": [
+                                    "IfHasPerk", "Queen's Sigil of Corruption", "MeltyMatingCorruptionAphro",
+                                    "The more of the slimy temptresses' aphrodisiac soaks into your aching erection, the harder it becomes to shake off the sweet seductive cooing whispers in your ears, their malevolently cajoling enticement tempting you to relax and let them lavish you with their pleasurably corruptive attentions to their heart's content...",
+                                    "Menu",
+                                      "Endure the intoxicating bliss!",
+                                      "Feels so good...",
+                                    "EndLoop"
+
+                                ]
+                    },
+                            {
+                              "NameOfScene": "Feels so good...",
+                              "theScene": [
+                                            "JumpToScene", "MeltyMatingCorruptionFail"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Endure the intoxicating bliss!",
+                              "theScene": [
+                                              "StatCheck",
+                                              "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "1",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "1",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "1",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "2",
+                                              "Temptation",
+                                              "20",
+                                              "MeltyMatingCorruptionPass",
+                                              "Fail",
+                                              "MeltyMatingCorruptionFail"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "MeltyMatingCorruptionPass",
+                              "theScene": [
+                                             "Gritting your teeth, you manage to ignore the constant leaking throbbing in your loins and to disperse the seductively creeping magical influence trying to make you an eagerly spurting boy toy!"
+                                        ]
+                            },
+                    {
+                      "NameOfScene": "MeltyMatingCorruptionFail",
+                      "theScene": [
+                                    "CallSceneThenReturn", "CorruptionStack",
+                                    "ChangeImageLayer", "Expression", "EarLick",
+                                    "Despite your best effort of self-control, all you can ultimately manage is to moan sloppily and dumbly keep thrusting up into the waiting gooey confines massaging and milking your length. The more you thrust, the more the aphrodisiac-laden corruptive euphoria solidifies within you, sweet whispering kisses in your ears urging you to fall even further into depravity."
+                                ]
+                    },
+
+
+                    {
+                      "NameOfScene": "DestructiveMatingCorruption",
+                      "theScene": ["ChangeImageLayer", "Expression", "EarLick",
+                                    "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "30", "DestructiveMatingCorruptionCheck",
+                                    "JumpToScene", "DestructiveMatingCorruptionAphro"
+                                ]
+                    },
+                          {
+                            "NameOfScene": "DestructiveMatingCorruptionAphro",
+                            "theScene": [
+                                          "The longer you remain stuck in this luxurious loop of indulgent slimy mating, the more of Perpetua's insidious, slippery aphrodisiac goo seeps into your achingly hard and throbbing erection, flooding you with sinful heat while tingly bliss oozily radiates all through your waist..."
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "DestructiveMatingCorruptionCheck",
+                            "theScene": [
+                                          "IfHasPerk", "Queen's Sigil of Corruption", "DestructiveMatingCorruptionAphro",
+                                          "As you stay indulgently stuck in the loop of indulgent gooey mating, your mind keeps spinning in a floaty daze, so much slippery aphrodisiac goo soaking your aching erection... The dizzy haze makes it sound {i}so{/i} easy and appealing to just sink and melt into the sweet seductive whispers breathily brushing against your ears, tempting you to relax and let them lavish you with their pleasurably corruptive attentions to their heart's content.",
+                                          "Menu",
+                                            "Endure the intoxicating bliss! ",
+                                            "Feels so good... ",
+                                          "EndLoop"
+
+                                      ]
+                          },
+                                  {
+                                    "NameOfScene": "Feels so good... ",
+                                    "theScene": [
+                                                  "JumpToScene", "DestructiveMatingCorruptionFail"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "Endure the intoxicating bliss! ",
+                                    "theScene": [
+                                                    "StatCheck",
+                                                    "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "1",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "1",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "1",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "2",
+                                                    "Temptation",
+                                                    "25",
+                                                    "DestructiveMatingCorruptionPass",
+                                                    "Fail",
+                                                    "DestructiveMatingCorruptionFail"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "DestructiveMatingCorruptionPass",
+                                    "theScene": [
+                                                   "Gasping and squirming in desperation, you manage to ignore the constant leaking throbbing in your loins and to disperse the seductively creeping magical influence trying to make you an eagerly spurting boy toy, hanging on to your lucidity even as the gooey women sandwich you from every angle with plush, slippery softness!"
+                                              ]
+                                  },
+                          {
+                            "NameOfScene": "DestructiveMatingCorruptionFail",
+                            "theScene": [
+                                          "CallSceneThenReturn", "CorruptionStack",
+                                          "ChangeImageLayer", "Expression", "Kiss",
+                                          "But you soon find your thoughts spacing out more and more with giddy pleasure as you indulgently stay locked in the veritable prison of gooey mating, your cock throbbing harder and harder as the villainesses' depraved curse settles into your loins along with the delightfully fizzy feeling of the slippery aphrodisiac corroding your rationality, a kiss to both your ears leaving you swooning and shivering submissively."
+                                      ]
+                          },
+
+
+                    {
+                      "NameOfScene": "DepravedEntanglingCharm",
+                      "theScene": ["ChangeImageLayer", "Expression", "EarLick",
+                                    "IfChoice", "1", "Charmed", "DepravedEntanglingCorruption",
+                                    "As you remain immersed in the entangling gooey embrace of the slimy trio, you find yourself feeling more and more hopelessly charmed and infatuated, vapidly groping and squeezing the purple Perpetua's plump ass as she rides your length into total submission, your thoughts turning melty with pleasure as the other two keep whispering and kissing you into an increasingly docile mess..."
+                                ]
+                    },
+                          {
+                            "NameOfScene": "DepravedEntanglingCorruption",
+                            "theScene": [
+                                          "IfHasPerk", "Queen's Sigil of Corruption", "Nothing",
+                                          "Entangled with the purple Perpetua and charmed silly, you can't stop yourself from vapidly indulging in her curvy body with greedy gropes and pleasure-seeking thrusts. Giggling malevolently, she brings her body up and down in time with the swinging of your hips, leaving you ever more achingly sensitive and submissive, the constant string of seductive words filling your ears burying you deeper and deeper into mindless depravity...",
+                                          "Menu",
+                                            "Resist the seductive entanglement! ",
+                                            "Thrust Thrust Thrust... ",
+                                          "EndLoop"
+                                      ]
+                          },
+                                  {
+                                    "NameOfScene": "Thrust Thrust Thrust... ",
+                                    "theScene": [
+                                                  "JumpToScene", "DepravedEntanglingCorruptionFail"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "Resist the seductive entanglement! ",
+                                    "theScene": [
+                                                    "StatCheck",
+                                                    "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "10", "1",
+                                                    "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "25", "2",
+                                                    "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "40", "2",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "1",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "1",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "1",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "2",
+                                                    "Temptation",
+                                                    "25",
+                                                    "DepravedEntanglingCorruptionPass",
+                                                    "Fail",
+                                                    "DepravedEntanglingCorruptionFail"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "DepravedEntanglingCorruptionPass",
+                                    "theScene": [
+                                                   "With a desperate heroic effort, you manage to reject the encroaching corruptive magic miring your mind and body with cascades of tingly euphoria, barely pushing back the teasing temptation to just give in and keep thrusting and melting!"
+                                              ]
+                                  },
+                          {
+                            "NameOfScene": "DepravedEntanglingCorruptionFail",
+                            "theScene": [
+                                          "CallSceneThenReturn", "CorruptionStack",
+                                          "RemoveStatusEffect", "Charm",
+                                          "ChangeImageLayer", "Expression", "Kiss",
+                                          "Trying to think proves futile: every wetly slapping impact of the purple Perpetua's curves crashing into your waist sends an irresistible sinful burst of pleasure through your entire waist, leaving you dumbly thrusting in time with her while a rising chorus of whispers and kisses into your ears leaves you drifting along on a blank and vapid blissful ride, the corruptive energy solidifying more inside you with each passing second."
+                                      ]
+                          },
+
+
+                  {
+                    "NameOfScene": "RuinousRideCharm",
+                    "theScene": ["ChangeImageLayer", "Expression", "EvilGrin",
+                                  "IfChoice", "1", "Charmed", "RuinousRideCorruption",
+                                  "Perpetua laughs, gloats, and moans blissfully as she relentlessly keeps bouncing on you with a lust-crazed expression, every powerful gooey slap of her regal cock-riding accented by the melty whispers of the other two slimy seductresses kissing and cooing into your ears, rapidly breaking your self-control and turning you into a slack-jawed, charmed-senseless worshipful mess..."
+                              ]
+                  },
+                        {
+                          "NameOfScene": "RuinousRideCorruption",
+                          "theScene": [
+                                        "IfHasPerk", "Queen's Sigil of Corruption", "Nothing",
+                                        "Charmed and empty-headed as you are, every gooey slap of Perpetua's thick royal ass against your waist cascades corruptively through your senses while her domineering laughter and the duo's ear-kissing cooing whispers seductively coil tighter around your mind, eagerly opening you up to their sweetly debilitating magic and to the increasingly wonderful idea of being the Great Perpetua's eager devoted consort...",
+                                        "Menu",
+                                          "Endure the mind-blanking sex! ",
+                                          "Relax and melt... ",
+                                        "EndLoop"
+
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "Relax and melt... ",
+                                  "theScene": [
+                                                "JumpToScene", "RuinousRideCorruptionFail"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "Endure the mind-blanking sex! ",
+                                  "theScene": [
+                                                  "StatCheck",
+                                                  "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "10", "1",
+                                                  "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "25", "2",
+                                                  "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "40", "2",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "1",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "2",
+                                                  "Temptation",
+                                                  "25",
+                                                  "RuinousRideCorruptionPass",
+                                                  "Fail",
+                                                  "RuinousRideCorruptionFail"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "RuinousRideCorruptionPass",
+                                  "theScene": [
+                                                 "Focusing your will, you manage to endure the constant pulses of sinful depravity trying to fill your body with dangerously tempting, intoxicating pleasure, every swing of Perpetua's wide hips and every kiss of her soft lips still threatening to push you over the edge! She stares evilly at you with feverish eyes, your resistance seeming to make her all the more determined to sweetly break your will and make you hers..."
+                                            ]
+                                },
+                        {
+                          "NameOfScene": "RuinousRideCorruptionFail",
+                          "theScene": [
+                                        "CallSceneThenReturn", "CorruptionStack",
+                                        "RemoveStatusEffect", "Charm",
+                                        "ChangeImageLayer", "Expression", "LipLick",
+                                        "Overwhelmed by Perpetua's wanton mating, you drown in the constant waves of sinful pleasure as you helplessly embrace your role as your Mistress' pleasure slave, losing your sense of reason as the charm addling your thoughts breaks your resilience and solidifies the corruption slowly overtaking you, more delightful poison oozing into you with each sweet whisper the villainesses pour into your ears like intoxicating honey."
+                                    ]
+                        }
+
+
+
+
+                ]
+}

@@ -1,0 +1,439 @@
+{
+    "name": "MatangoCombatEvents",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Matango",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                  {
+                      "NameOfScene": "Intro",
+                      "theScene": [  "ChangeImageLayer", "Expression", "Drunk", 
+                                    "You encounter a Matango!"
+                                ]
+                  },
+
+                  {
+                      "NameOfScene": "AutoFuck",
+                      "theScene": [     "IfMonsterHasStance", "Sex", "Fucking",
+                                        "IfMonsterHasStance", "Ass", "FuckingAnal"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "Fucking",
+                            "theScene": [  "JumpToRandomScene",
+                                              "intimate",
+                                              "willinginglyThrust",
+                                              "mindlesslyFucking",
+                                          "EndLoop"
+                                    ]
+                        },
+                                {
+                                    "NameOfScene": "intimate",
+                                    "theScene": [    "HitPlayerWith", "Grind",
+                                                    "So intimately intertwined with the Matango, you're left helpless against her lust-inducing spores, and you find yourself thrusting thoughtlessly into her tight pussy as it squeezes your length, tempting you to fill her with your seed again and again.[DamageToPlayer]"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "willinginglyThrust",
+                                    "theScene": [    "HitPlayerWith", "Grind",
+                                                    "You find yourself willingly thrusting into the Matango's tight pussy as a burst of her spores from her mushroom cap floods your lungs, you're too close to her to stop yourself from breathing them in, and she cuddles closer to you with an erotic sigh that makes your cock twitch with need.[DamageToPlayer]"  ]
+                                },
+                                {
+                                    "NameOfScene": "mindlesslyFucking",
+                                    "theScene": [    "HitPlayerWith", "Grind",
+                                                    "More of the Matango's spores fill your lungs as you gasp in pleasure from her squeezing tight pussy, and you find yourself bucking your hips mindlessly seeking more pleasure, the aching need to fill her with your cum taking hold of your mind.[DamageToPlayer]"  ]
+                                },
+
+                        {
+                            "NameOfScene": "FuckingAnal",
+                            "theScene": [     "JumpToRandomScene",
+                                              "intimateA",
+                                              "willinginglyThrustA",
+                                              "mindlesslyFuckingA",
+                                          "EndLoop"
+                                    ]
+                        },
+                                {
+                                    "NameOfScene": "intimateA",
+                                    "theScene": [    "HitPlayerWith", "Grind",
+                                                    "So intimately intertwined with the Matango, you're left helpless against her lust-inducing spores, and you find yourself thrusting thoughtlessly into her tight ass as it squeezes your length, tempting you to fill her with your seed again and again.[DamageToPlayer]"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "willinginglyThrustA",
+                                    "theScene": [    "HitPlayerWith", "Grind",
+                                                    "You find yourself willingly thrusting into the Matango's tight rear as a burst of her spores from her mushroom cap floods your lungs, you're too close to her to stop yourself from breathing them in, and she cuddles closer to you with an erotic sigh that makes your cock twitch with need.[DamageToPlayer]"  ]
+                                },
+                                {
+                                    "NameOfScene": "mindlesslyFuckingA",
+                                    "theScene": [    "HitPlayerWith", "Grind",
+                                                    "More of the Matango's spores fill your lungs as you gasp in pleasure from her squeezing tight rear, and you find yourself bucking your hips mindlessly seeking more pleasure, the aching need to fill her with your cum taking hold of your mind.[DamageToPlayer]"  ]
+                                },
+
+
+                                {
+                                    "NameOfScene": "CGToggleCheck",
+                                    "theScene": [   
+                                                  "IfMonsterHasStance", "Sex", "Sex",
+                                                  "IfMonsterHasStance", "Anal", "Sex",
+                                                  "IfMonsterHasStance", "Making Out", "NoGuyLayer",
+                                                  "ChangeImageLayer", "ImageSetDontCarryOver", "Normal",
+                                                  "RoledCGEnd"
+                                    ]
+                                },
+                                        {
+                                            "NameOfScene": "Sex",
+                                            "theScene": [   
+                                                          "ChangeImageLayer", "ImageSetRoleStart", "SexCG",
+                                                          "ChangeImageLayer", "Player", "Base" 
+                                            ]
+                                        },
+                                        {
+                                            "NameOfScene": "NoGuyLayer",
+                                            "theScene": [   
+                                                          "IfMonsterHasStance", "Sex", "Sex",
+                                                          "IfMonsterHasStance", "Anal", "Sex",
+                                                          "ChangeImageLayer", "ImageSetRoleStart", "SexCG",
+                                                          "ChangeImageLayer", "Player", ""
+                                            ]
+                                        },
+
+
+
+                        {
+                            "NameOfScene": "Mushroom Temptation",
+                            "theScene": [ "SetPostName", " - Mushroom Temptation",
+                                        "ChangeImageLayer", "Expression", "Drunk", "ChangeImageLayer", "Blush", "BlushLight",
+                                        "HitPlayerWith", "Seduce",
+                                        "PlayVisualEffect2", "BlindingFlash", "Monsters/Matango/CG/MatangoCG_Haze.png",
+                                        "FocusedSpeaksSkill",
+                                        "While a pink cloud of spores wafts down from the Matango's mushroom cap, she sways in place with a horny smile before spreading her drooling pussy and giving her hips a tempting shake among the misty aphrodisiac haze, trying to stoke your desire to fuck her.[DamageToPlayer]",
+                                        "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                          "Don't you want to fuck me all day long?♥",
+                                          "Come onnnn♥ give it to me!♥♥♥",
+                                          "I want your thick mushroom soooo baaaad.♥♥♥",
+                                          "My pussy is aching so much for your cock!♥",
+                                          "Fuck me,♥ please?♥",
+                                        "EndLoop",
+                                        "SetPostName",
+                                        "",
+                                        "IfHasPerk", "Mushroom Head", "ForcedFail",
+                                        "IfFetishLevelEqualOrGreater", "Ass", "25", "ForcedCheck",
+                                        "IfFetishLevelEqualOrGreater", "Sex", "25", "ForcedCheck",
+                                        "IfPlayerHasStatusEffect", "Charm", "ForcedCheck",
+                                         "JumpToScene", "TemptedMenu"
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "ForcedCheck",
+                                  "theScene": [
+                                                  "Your mind swims with erotic desire from the alluring shake of the Matango's hips, making your cock twitch with need to give in to her lewd offer.",
+                                                  "StatCheck",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Ass", "50", "2",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Ass", "75", "3",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Ass", "100", "5",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "2",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "3",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "5",
+                                                    "ChangeStatCheckDifficulty",  "IfPlayerHasStatusEffect", "Charm", "4",
+                                                    "Temptation",
+                                                    "5",
+                                                    "TemptedMenu",
+                                                    "Fail",
+                                                    "Fuck her!"
+                                              ]
+                                },
+                                {
+                                  "NameOfScene": "ForcedFail",
+                                  "theScene": [    "HitPlayerWith", "Seduce", 
+                                                  "The mere sight of her dripping pussy and ample hips instantly shuts off any reason in your brain as your painfully rigid cock throbs with need, the swollen head of your manhood twitching as it leaks precum in anticipation.[DamageToPlayer]",
+                                                  "HitPlayerWith", "Grind",                                                  
+                                                   "ApplyStance", "Sex", 
+                                                   "CallEventAndSceneThenReturn", "MatangoCombatEvents", "CGToggleCheck",
+                                                   "ChangeImageLayer", "Expression", "Gasping", "ChangeImageLayer", "Blush", "Blush",
+                                                   "You rush forward and plunge your aching dick into her wonderfully tight pussy, kissing her womb with the tip of your manhood, sighing happily as her orifice tightens around your twitching cock with a welcoming squeeze that makes you feel like it's home.[DamageToPlayer]"
+                                              ]
+                                },
+                        {
+                          "NameOfScene": "TemptedMenu",
+                          "theScene": [   "Menu",
+                                           "Fuck her!",
+                                           "Ignore her.",
+                                         "EndLoop"
+                                      ]
+                        },
+                        {
+                          "NameOfScene": "Ignore her.",
+                          "theScene": [ "ChangeImageLayer", "Expression", "Submissive",
+                                       "You completely ignore the Matango's temptation, and she finally manages to snap out of her lust driven stupor.",
+                                       "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                          "I- ah uhm...",
+                                          "Am... Am I not attractive..?",
+                                          "S-Sorry!",
+                                        "EndLoop"
+                                      ]
+                        },
+                        {
+                          "NameOfScene": "Fuck her!",
+                          "theScene": [   "HitPlayerWith", "Grind",                                       
+                                       "ApplyStance", "Sex", 
+                                        "CallEventAndSceneThenReturn", "MatangoCombatEvents", "CGToggleCheck",
+                                        "ChangeImageLayer", "Expression", "Gasping", "ChangeImageLayer", "Blush", "Blush",
+                                       "You rush forward and plunge your cock into her tight pussy, and you sigh happily as it tightens around your aching erection with a welcoming squeeze.[DamageToPlayer]"
+                                      ]
+                        },
+
+
+
+
+
+                        {
+                          "NameOfScene": "ToxicSpores",
+                          "theScene": [  "SetPostName", " - Lecherous Spores",
+                                        "PlayVisualEffect2", "BlindingFlash", "Monsters/MatangoToxic/CG/MatangoCG_Haze.png",
+                                        "ApplyStatusEffect",   "Charm",
+                                        "ChangeImageLayer", "Expression",  "DominantHappy",
+                                        "FocusedSpeaksSkill",
+                                        "SwapLineIf", "Random",
+                                          "'Take a nice deep breath.♥' The Toxic Matango lets out a burst of purple spores, and as you breathe them in, your body slowly grows hotter as it's filled with aching desire!",
+                                          "'My spores will help energize you.♥' The Toxic Matango lets out a burst of purple spores, and as you breathe them in, your body slowly grows hotter as it's filled with aching desire!",
+                                          "'Mmmm,♥ I can see your cock getting harder.♥' The Toxic Matango lets out a burst of purple spores, and as you breathe them in, your body slowly grows hotter as it's filled with aching desire!",
+                                          "'Come a little closer.♥' The Toxic Matango lets out a burst of purple spores, and as you breathe them in, your body slowly grows hotter as it's filled with aching desire!",
+                                          "'Hehehe,♥ are your balls full and aching?♥' The Toxic Matango lets out a burst of purple spores, and as you breathe them in, your body slowly grows hotter as it's filled with aching desire!",
+                                          "'If you're starting to feel horny... feel free to fuck me as much as you want.♥' The Toxic Matango lets out a burst of purple spores, and as you breathe them in, your body slowly grows hotter as it's filled with aching desire!",
+                                          "'You wouldn't mind sticking around a little while longer, would you?♥' The Toxic Matango lets out a burst of purple spores, and as you breathe them in, your body slowly grows hotter as it's filled with aching desire!",
+                                        "EndLoop",
+                                        "SetPostName",
+                                        ""
+
+                                      ]
+                        },
+
+                        {
+                          "NameOfScene": "ToxicOrgasm",
+                          "theScene": [ "ChangeImageLayer", "Expression",  "DominantHappy",
+                                        "ApplyStance",   "Sex",
+                                        "SwapLineIf", "Random",
+                                          "You're left far too horny to think straight as the matango's spore fill the room, making your cock throb and ache with desire. So as soon as she invitingly spreads her drooling pussy you can't stop yourself from rushing forwards and plunging your raging erection into her, instantly unloading a thick stream of semen into her womb.[PlayerOrgasmLine]",
+                                          "You sway back and forth in a pleasure drunk daze, and the matango spreads her drooling pussy and too lost to your lusts you helplessly move in and penetrate her tight slit, and your cock is too achingly aroused that it instantly unloads your seed into her.[PlayerOrgasmLine]",
+                                          "The matango spreads her drooling pussy with a lewd smile, and her spores have left you so horny you can't think straight, so you rush forwards and plunge your aching manhood into her, instantly unloading your twitching balls thick load into her wonderfully tight slit.[PlayerOrgasmLine]",
+                                        "EndLoop"
+
+                                      ]
+                        },
+
+
+
+                        {
+                            "NameOfScene": "Toxic Temptation",
+                            "theScene": [ "SetPostName", " - Toxic Temptation",
+                                        "HitPlayerWith", "Seduce",
+                                        "ChangeImageLayer", "ImageSetDontCarryOver", "SexCG",
+                                        "PlayMotionEffect", "ScreenSway", 
+                                        "ChangeImageLayer", "Expression",  "Lewd",
+                                        "FocusedSpeaksSkill",
+                                        "The Matango spreads her drooling pussy with an obscene smile, temptingly swaying her hips back and forth, trying to entice your desire to fuck her.[DamageToPlayer]",
+                                        "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                          "You look a little hot and bothered.♥ Want me to take care of it?♥",
+                                          "Don't hold back.♥ Fuck me.♥",
+                                          "Come on,♥ ravish my pussy.♥",
+                                          "Don't you {i}want{/i} to pump me full of cum?♥",
+                                          "A stud like you wouldn't turn down a pussy to fuck,♥ would you?♥",
+                                          "Breed me,♥ I know you want to.♥",
+                                          "You look so pent up.♥ You can pour it {i}all{/i} inside me.♥",
+                                          "My pussy is aching for you to fill it with your big cock.♥",
+                                        "EndLoop",
+                                        "SetPostName",
+                                        "",
+                                        "IfHasPerk", "Mushroom Head", "ForcedFailToxic",
+                                        "IfFetishLevelEqualOrGreater", "Ass", "25", "ForcedCheckToxic",
+                                        "IfFetishLevelEqualOrGreater", "Sex", "25", "ForcedCheckToxic",
+                                        "IfPlayerHasStatusEffect", "Charm", "ForcedCheckToxic",
+                                         "JumpToScene", "TemptedMenuToxic"
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "ForcedCheckToxic",
+                                  "theScene": [
+                                                  "Your mind swims with erotic desire from the alluring sight of the Matango presenting her pussy to you, making your cock twitch with need, aching to give in to her lewd offer.",
+                                                  "StatCheck",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Ass", "50", "2",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Ass", "75", "3",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Ass", "100", "5",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "2",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "3",
+                                                    "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "5",
+                                                    "ChangeStatCheckDifficulty",  "IfPlayerHasStatusEffect", "Charm", "4",
+                                                    "Temptation",
+                                                    "10",
+                                                    "TemptedMenuToxic",
+                                                    "Fail",
+                                                    "Fuck her! "
+                                              ]
+                                },
+                                {
+                                  "NameOfScene": "ForcedFailToxic",
+                                  "theScene": [    "HitPlayerWith", "Seduce",
+                                                  "The mere sight of her dripping pussy and swaying hips instantly shuts off any reason in your brain as your painfully rigid cock throbs with need, the swollen head of your manhood twitching as it leaks precum in anticipation.[DamageToPlayer]",
+                                                  "HitPlayerWith", "Grind",
+                                                   "ApplyStance", "Sex",
+                                                   "PlayMotionEffect", "Crash", 
+                                                   "ChangeImageLayer", "FuckOrifice", "Pussy", 
+                                                   "You rush forward and plunge your aching dick into her wonderfully tight pussy, kissing her womb with the tip of your manhood, sighing happily as her orifice tightens around your twitching cock with a welcoming squeeze that makes you feel like it's home.[DamageToPlayer]"
+                                              ]
+                                },
+                        {
+                          "NameOfScene": "TemptedMenuToxic",
+                          "theScene": [   "Menu",
+                                           "Fuck her! ",
+                                           "Ignore her. ",
+                                         "EndLoop"
+                                      ]
+                        },
+                        {
+                          "NameOfScene": "Ignore her. ",
+                          "theScene": ["ChangeImageLayer", "ImageSetDontCarryOver", "Normal", "ChangeImageLayer", "Expression", "Dominant",
+                                       "You completely ignore the Toxic Matango's temptation, and she gives you an annoyed glare before a lecherous smile creeps back over her face.",
+                                       "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                          "How much longer do you think you can resist?♥",
+                                          "You can't deny your lust forever.♥",
+                                          "Hehe, maybe some more spores will change your mind.♥",
+                                        "EndLoop"
+                                      ]
+                        },
+                        {
+                          "NameOfScene": "Fuck her! ",
+                          "theScene": [   "HitPlayerWith", "Grind",                                       
+                                        "ApplyStance", "Sex",  
+                                        "PlayMotionEffect", "Crash", 
+                                        "ChangeImageLayer", "FuckOrifice", "Pussy", 
+                                        "ChangeImageLayer", "Expression", "Lewd", 
+                                       "You rush forward and plunge your cock into her tight pussy, and you sigh happily as it tightens around your aching erection with a welcoming squeeze.[DamageToPlayer]"
+                                      ]
+                        },
+
+
+
+                        {
+                            "NameOfScene": "IntroToxic",
+                            "theScene": [ 
+                                          "IfPlayerHasStance", "Sex", "SexStart",  
+                                          "You encounter a Toxic Matango who gives you a lasciviously sweet grin!",                                          
+                                          "IfHasPerk", "Mushroom Head", "WeaktoTheDick"
+                                      ]
+                        },
+                              {
+                                  "NameOfScene": "WeaktoTheDick",
+                                  "theScene": [  "ChangeMonsterFetish", "Sex", "50"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "SexStart",
+                                  "theScene": [  "ChangeImageLayer", "ImageSetDontCarryOver", "SexCG",
+                                                "ChangeImageLayer", "FuckOrifice", "Pussy",  
+                                                "ChangeImageLayer", "Expression", "Smug",
+                                                "IfHasPerk", "Mushroom Head", "WeaktoTheDick"
+                                            ]
+                              },
+
+                        {
+                              "NameOfScene": "Penetrate",
+                              "theScene": [ "IfHasPerk", "Mushroom Head", "PenetrateWeaktoTheDick",
+                                          "ChangeImageLayer", "Expression",  "Lewd",
+                                          "FocusedSpeaks",
+                                          "SwapLineIf", "Random",
+                                            "'You can be as rough as you want.♥'",
+                                            "'Be sure to take nice deep breaths while you fuck me.♥' You can see more of her spores already floating down...",
+                                            "'You're going to break my pussy if you fuck it with that.♥' Her expression is a rather evil sneer.",
+                                            "'Oh no, I don't know if I can take that big cock.♥' Her lewd smile says otherwise...",
+                                          "EndLoop"]
+                          },
+                                {
+                                    "NameOfScene": "PenetrateWeaktoTheDick",
+                                    "theScene": ["ChangeImageLayer", "Expression",  "Lewder",
+                                                "FocusedSpeaks",
+                                                "SwapLineIf", "Random",
+                                                  "'A-Ah?♥ W-Wait why is your tip pressing so much against my womb-♥'",
+                                                  "'H-How is your dick making my pussy feel so...♥'",
+                                                  "'S-So thick-♥ Ah?-♥ Y-You're going to break my pussy if you fuck it with that thing!♥' Her expression is rather excited.",
+                                                  "'O-Oh no,♥ I don't know if I can take your big cock!♥' Her expression is a little nervous, but erotically excited.",
+                                                "EndLoop"]
+                                },
+
+
+                         {
+                              "NameOfScene": "Thrust",
+                              "theScene": [ "IfHasPerk", "Mushroom Head", "ThrustWeaktoTheDick",
+                                            "ChangeImageLayer", "Expression", "Lewd",
+                                          "FocusedSpeaks",
+                                          "SwapLineIf", "Random",
+                                            "'You're sooo big.♥'",
+                                            "'Fuck me all day!♥'",
+                                            "'Don't ever pull out!♥'",
+                                            "'M-My heart's racing...♥' Her evil smile says other wise.",
+                                            "'Come on,♥ harder!♥'",
+                                          "EndLoop"]
+                          },
+                          {
+                               "NameOfScene": "Empowered Thrust",
+                               "theScene": [ "IfHasPerk", "Mushroom Head", "ThrustWeaktoTheDick",
+                                            "ChangeImageLayer", "Expression", "Lewder",
+                                           "FocusedSpeaks",
+                                           "SwapLineIf", "Random",
+                                             "'A-Ahh-♥ Th-That's playing dirty!♥'",
+                                             "'Ohhh!♥ F-Fuck me all day!♥'",
+                                             "'Y-You're making my brain mellllt!♥'",
+                                             "'A-Ah! F-Feels so good!♥♥♥'",
+                                             "'H-Harder!♥ Break me!♥'",
+                                           "EndLoop"]
+                           },
+                           {
+                                "NameOfScene": "Tantric Thrust",
+                                "theScene": [ "IfHasPerk", "Mushroom Head", "ThrustWeaktoTheDick",
+                                              "ChangeImageLayer", "Expression", "Lewd",
+                                            "FocusedSpeaks",
+                                            "SwapLineIf", "Random",
+                                                "'Hehe, I love you too...♥' Her evil smile says other wise.",
+                                                "'Ah...♥ Don't stop...♥' She seems fairly unaffected...",
+                                                "'M-My heart's racing...♥' Her evil smile says other wise.",
+                                                "'You're sooo big.♥'",
+                                            "EndLoop"]
+                            },
+                                {
+                                    "NameOfScene": "ThrustWeaktoTheDick",
+                                    "theScene": [ "ChangeMonsterFetish", "Sex", "25",
+                                                  "ChangeImageLayer", "Expression", "PleasureStruck",
+                                                "FocusedSpeaksSkill",
+                                                "SwapLineIf", "Random",
+                                                  "'Y-You're so big!♥ I can feel you slamming into my cervix!♥♥♥' Your every thrust makes her weaker to your swollen cock!",
+                                                  "'F-Fuck me!♥ Fuck me all day!♥' Your every thrust makes her weaker to your stiff cock!",
+                                                  "She can only moan sloppily as your every thrust makes her weaker to your swollen dick!",
+                                                  "'Y-You're making my brain mellllt!♥' Your every thrust makes her weaker to your stiff cock!",
+                                                  "'Ahhhh!♥ I-I can't think!♥♥♥' Your every thrust makes her weaker to your stiff cock!",
+                                                  "'Come on,♥ harder!♥ Break me!♥' Your every thrust makes her weaker to your stiff cock!",
+                                                  "'A-Ahhh!♥ I'm gonna become your cock-sleeve!♥♥♥' Your every thrust makes her weaker to your swollen dick!",
+                                                  "'T-The head of your cock!♥♥♥ It's gonna break my womb!♥♥♥' Your every thrust makes her weaker to your swollen dick!",
+                                                "EndLoop"]
+                                },
+
+
+                        {
+                          "NameOfScene": "eventbreak",
+                          "theScene": [
+                                        "event broke"
+
+                                      ]
+                        }
+                ]
+}

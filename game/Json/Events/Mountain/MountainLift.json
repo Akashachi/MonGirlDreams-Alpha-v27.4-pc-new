@@ -1,0 +1,254 @@
+{
+	"name": "Mountain Lift",
+	"CardType": "Event",
+	"CardLimit": "0",
+	"Description": "",
+	"requires": [ ""],
+	"Speakers": [
+              	{
+                	"name": "Perpetua",
+                	"postName": "",
+                	"SpeakerType": "Monster"
+              	},
+              	{
+                	"name": "???",
+                	"postName": "",
+                	"SpeakerType": "?"
+
+              	},
+              	{
+                	"name": "Black Knight",
+                	"postName": "",
+                	"SpeakerType": "Monster"
+              	}
+
+            	],
+	"EventText": [
+                	{
+                    	"NameOfScene": "EventStart",
+                    	"theScene": ["IfProgressEqualsOrGreater", "1", "Get to climbing.",
+                                  	"ChangeProgress",   "1",
+                                  	"ChangeBG", "forest.png",
+                                  	"After a short trip through the now familiar Forest, the foliage progressively grows sparser as you get closer to the towering Mountain.",
+                                  	"ChangeBG", "mountain.png",
+                                  	"Gradually, the lush grass gives way to dry, hard ground, while the trees and bushes get replaced by rocks, rocks... and more rocks. All around the steep stony elevation ahead, the land is pockmarked with deep fissures, though the path snaking out of the woods remains even and unbroken, allowing for steady progress.",
+                                  	"As you approach the foot of the Mountain, however, you find that the road splits abruptly, one fork branching off further into the heights while the other... just stops a few feet away from the cliff face?",
+                                    "Looking around in confusion, and wondering if you should start looking for a secret passage of some sort, you have the pleasant surprise of instead seeing a lift descend towards you on its own, floating gently downwards through the action of no mechanical means that you can discern, leading you to conclude that it must instead be powered by some form of magic.",
+                                  	"Staring at the descending platform, you see that it consists of a flat white stone base surrounded by exotic-looking wooden arches painted red, plus a low wooden railing, presumably included to stop people from falling off.",
+                                  	"However, as you wait for the smoothly moving elevator to get to your level, you realize that there's already someone riding it. Someone who turns out to be none else than...",
+                                  	"ChangeBGM", "music/Battle/bgm_maoudamashii_orchestra12.mp3",
+                                  	"Speaks2",
+                                  	"Hmhmhm... {b}Mwahahaaa, foolish hero!{/b}",
+                                  	"DisplayCharacters",
+                                    	"1",
+                                    "EndLoop",
+                                    "ChangeImageLayer", "Expression", "1", "Laugh",
+                                  	"Perpetua herself, your (self-appointed) archenemy!",
+                                  	"ChangeImageLayer", "Expression", "1", "LipLick",
+                                  	"Gazing down at you pridefully, the gung-ho slime girl eagerly licks her lips as she takes you in with absolute confidence, her previous defeats not seeming to have marred her usual cockiness in the slightest as she stentoriously declares.",
+                                    "ChangeImageLayer", "Expression", "1", "Joy",
+                                  	"Speaks",
+                                  	"I'm back, and this time, you have {i}no hope{/i} of defeating me!",
+                                  	"ChangeImageLayer", "Expression", "1", "Base",
+                                  	"She pauses after that theatrical line, looking at you expectantly as she awaits your comeback.",
+                                  	"Menu",
+                                  	 "'Bring it on!'",
+                                  	 "'Oh, come on! Already?!'",
+                                  	 "'No! Not my gooey doom, Perpetua!'",
+                                  	 "'You know you're just going to lose again, right?'",
+                                  	"EndLoop"
+                              	]
+                	},
+
+                	{
+                    	"NameOfScene": "'Bring it on!'",
+                    	"theScene": ["ChangeImageLayer", "Expression", "1", "Laugh",
+                                    "Speaks",
+                                    "Hehehe, undaunted, are you? But foolish fool that you are, that overconfidence shall be your doom against the unrivaled might of {b}Perpetua Level Sev-{/b}",
+                                    "GetEventAndChangeProgress", "PerpetuaHouse", "1",
+                                    "JumpToScene", "Cont"
+                              	]
+                	},
+
+                	{
+                    	"NameOfScene": "'Oh, come on! Already?!'",
+                    	"theScene": ["ChangeImageLayer", "Expression", "1", "Laugh",
+                                    "Speaks",
+                                    "Yes, 'already', foolish [ThePlayerName]! Whatever you do, wherever you go, remember that you shall never escape the slimy clutches of {b}Perpetua Level Sev-{/b}",
+                                    "JumpToScene", "Cont"
+                              	]
+                	},
+
+                	{
+                    	"NameOfScene": "'No! Not my gooey doom, Perpetua!'",
+                    	"theScene": ["ChangeImageLayer", "Expression", "1", "Laugh",
+                                    "Speaks",
+                                    "Mwahaha! That's right, {i}be afraid{/i}! Shiver and quaver, for as soon as this lift lands, you will face the gooey wrath of {b}Perpetua Level Sev-{/b}",
+                                    "GetEventAndChangeProgress", "PerpetuaHouse", "1",
+                                    "JumpToScene", "Cont"
+                              	]
+                	},
+
+                	{
+                    	"NameOfScene": "'You know you're just going to lose again, right?'",
+                    	"theScene": ["ChangeImageLayer", "Expression", "1", "Pout",
+                                    "Speaks",
+                                    "N-No I'm not!? {i}Rude!{/i} Y-You may have prevailed upon our previous confrontations out of {i}sheer luck{/i}, but this time, you will have no such chance, for you are facing off against {b}Perpetua Level Sev-{/b}",
+                                    "GetEventAndChangeProgress", "PerpetuaHouse", "-1",
+                                    "JumpToScene", "Cont"
+                              	]
+                	},
+                	{
+                    	"NameOfScene": "Cont",
+                    	"theScene": [
+                                  	"But suddenly, a booming, commanding, yet unmistakably feminine voice rings out, echoing spectacularly off the Mountain's walls and cutting off Perpetua's ranting!",
+                                  	"ChangeImageLayer", "Expression", "1", "Panic",
+                                  	"ChangeBGM", "music/Battle/battle-dark_loop.ogg",
+                                  	"Speaks2",
+                                  	"{size=+5}{b}Foolish hero!{/b} Did you really think your adventure would go so smoothly?!{/size}",
+                                  	"Jumping in surprise, the gooey girl loses her composure for a moment at the unexpected interruption, but her sputtering shock is quick to give way to righteous indignation.",
+                                  	"ChangeImageLayer", "Expression", "1", "Pout",
+                                  	"Speaks",
+                                  	"Wh- HEY! Who dares steal my thun-",
+                                  	"She abruptly cuts off as she looks to the source of the voice, who menacingly stands on the mountainside above the lift.",
+                                  	"DisplayCharacters",
+                                    	"1",
+                                    	"3",
+                                    "EndLoop",
+                                  	"ChangeImageLayer", "Expression", "1", "StarryAwe",
+                                  	"ChangeImageLayer", "Aura", "Black Knight", "Aura",
+                                  	"Standing straight, attired head to toe in intricate mastercraft armor that thoroughly conceals her body save for an intimidatingly reddish glare barely perceptible through her slitted helmet, the newly revealed woman cuts a formidable figure, one hand resting on a clearly enchanted blade while the other is raised in an imperious gesture.",
+                                  	"Meanwhile, as soon as Perpetua's eyes rest on her, the slime woman's jaw drops while her eyes come aglow with unmistakable adoration, your jiggly rival seeming to have completely forgotten about you as she squeals giddily.",
+                                  	"ChangeImageLayer", "Expression", "1", "StarryJoy",
+                                  	"Speaks",
+                                  	"Oh... {i}Oh my gosh, it's the Black Knight!{/i} The Demon Queen's right-hand woman! The greatest villainess that monsterkind {i}has ever known{/i}! {b}Eeeee!{/b} Can I-",
+                                  	"ChangeImageLayer", "Expression", "1", "Pride",
+                                  	"Speaks",
+                                  	"Wait, I have to calm down... Play it cool, Perpetua... Play it cool-",
+                                  	"ChangeImageLayer", "Expression", "1", "StarryJoy",
+                                  	"Speaks",
+                                    "But when will I ever get the chance to meet her again?! Forget it! {b}Lady Black Knight, I'm your biggest fan! Can I have your autograph?!{/b}",
+                                  	"ChangeImageLayer", "Aura", "Black Knight", "AuraIntense",
+                                    "However, despite Perpetua's animated shouting and gesticulating, the Black Knight doesn't look to be paying attention to her at all, her focus seeming to be entirely on you as she keeps starkly glaring down at you, the palpable aura of power around her intensifying as she seems to be gathering energy while her voice lowers threateningly.",
+                                  	"Speaks3",
+                                  	"Your journey ends here, human. I will crush any hope you have of even getting {i}near{/i} the Demon Queen.",
+                                  	"ChangeImageLayer", "Orb", "Black Knight", "OrbOn",
+                                  	"ChangeImageLayer", "Expression", "1", "Panic",
+                                  	"With a sharp crackle, a twisting ball of dark magic coalesces in her gauntleted hand as she aims it at the lift, making its rider flail in sudden panic.",
+                                  	"Speaks",
+                                  	"Eh- W-Wait, d-doesn't she realize I'm up here?!",
+                                    "PlaySoundEffect", "sfx/Magic/steam01.mp3",
+                                    "PlayMotionEffect", "Explosion",
+                                    "ChangeImageLayer", "Orb", "Black Knight", "",
+                                  	"Without hesitation, the Black Knight fires the gathered magical blast at the lift, and before Perpetua can even attempt to jump off, the lift spectacularly explodes in a massive plume of dark fire and begins to slide down the Mountain at a breakneck pace, whooshing past you as it flies off towards one of the large ravines nearby.",
+                                  	"ChangeImageLayer", "Expression", "1", "CryingComical",
+                                  	"As it passes you by, you fleetingly catch sight of the hapless slime girl who is clinging to the broken railing for dear life, somehow untouched by the ruinous detonation.",
+                                  	"Speaks",
+                                  	"{size=+5}Aaaaa{/size}aaaaaa{size=-5}aaaaa{/size}{size=-10}aaaaahhh!!!!-{/size}",
+                                  	"DisplayCharacters",
+                                    	"3",
+                                    "EndLoop",
+                                  	"ChangeImageLayer", "Aura", "Black Knight", "Aura",
+                                  	"Then she's gone. Her voice trails off fainter and fainter as she plummets down, and ultimately gets abruptly cut when the wrecked lift crashes cataclysmically at the bottom of the chasm, obliterating the ill-fated magic transport for good.",
+                                    "ChangeImageLayer", "Expression", "Black Knight", "WideEyed",
+                                    "Silence follows the breathtaking show of destruction, the Black Knight's half-hidden eyes seeming to be blinking in sudden realization as she sheepishly thinks aloud.",
+                                  	"Speaks3",
+                                  	"Wait... Was... Was someone on there?",
+                                  	"ChangeImageLayer", "Aura", "Black Knight", "",
+                                  	"In reaction, Perpetua's voice echoes up from the ravine, the gooey woman's red shape barely visible among the jumble of smashed elevator parts and plumes of shaken-up rocky dust, but looking to be unhurt despite the scale of the disaster.",
+                                  	"Speaks",
+                                  	"{size=-10}I-I'm okay!{/size}",
+                                  	"Speaks3",
+                                  	"...Well. Alright. ...If you have any complaints, please send them to the Demon Queen's Bureau in Ars Delusia for possible compensation.",
+                                  	"Speaks",
+                                  	"{size=-10}O-Okay!{/size}",
+                                  	"ChangeImageLayer", "Expression", "Black Knight", "Base",
+                                  	"ChangeImageLayer", "Aura", "Black Knight", "Aura",
+                                  	"With that out of the way, the Black Knight leaps from her perch, gracefully falling for several long seconds before somehow landing with perfect poise before you amid a picturesque cloud of dust, then slowly straightening back up and assuming an intimidating combat stance, flipping her sword in her hand with a simple practiced flick of the wrist and pointing its blade at you menacingly, its red runes glowing brighter with energy.",
+                                  	"Speaks3",
+                                  	"Now, you will face a horrifically humiliating defeat by my hand.",
+                                  	"ChangeImageLayer", "Aura", "Black Knight", "AuraIntense",
+                                  	"With the way that she almost tangibly exudes power, and with how unfathomably high-quality her equipment looks, you're sadly inclined to believe her. You can almost feel her menacing grin behind her plated visor as she slowly approaches you, prompting you to desperately try and prepare for what is to come... Given how combat works here, how are you even supposed to 'fight' her when she's wearing full armor!?",
+                                  	"ChangeBGM", "music/Mountain/Wheat, salmon, spices and meat.mp3",
+                                  	"ChangeImageLayer", "Aura", "Black Knight", "Aura", "ChangeImageLayer", "Expression", "Black Knight", "WideEyed",
+                                  	"Then, suddenly, a... cheery tune starts playing?",
+                                  	"ChangeImageLayer", "Aura", "Black Knight", "", "ChangeImageLayer", "Expression", "Black Knight", "Thinking",
+                                  	"At the unexpected sound, the Black Knight instantly stops striding your way, a barely perceptible sigh echoing from her helmet as she lifts a hand in timeout.",
+                                  	"ChangeImageLayer", "Expression", "1", "Base",
+                                  	"Speaks3",
+                                  	"...Hold on, I have to take this... Just stay there.",
+                                    "PlayMotionEffect", "Crash",
+                                  	"ChangeImageLayer", "Expression", "Black Knight", "Base",
+                                  	"With an idle, almost dismissive flick of her raised gauntleted hand, a sudden immeasurable weight descends upon you, forcing you to your hands and knees, the effortless show of force making it all the more obvious how crushing the difference of power between the two of you must be. Are you really supposed to fight the Demon Queen's second-in-command this early? Is this supposed to be happening!?",
+                                  	"Barely managing to lift your head against the immense pressure pushing you down, you see the armored woman nonchalantly pull out a small, black, oddly shaped rock from somewhere in her outfit and hold it up to her head, the cheerful jingle stopping as she speaks.",
+                                  	"ChangeBGM", "music/Forest/nandesuto.mp3",
+                                  	"Speaks3",
+                                  	"What is it? I'm kind of in the middle of- ...Yes... I know you are... {i}Hrmph.{/i} Extra cheese? Again? Are you sure you don't want seme- But it's healthy for you! You- ...{i}Fine.{/i} Fine, I'll drop it.",
+                                  	"You're not even sure what's happening anymore, your opponent now just casually standing there as she keeps talking to whoever is connected to the device she's using, all the while you're still nailed to the ground, incapable of even raising a hand.",
+                                  	"ChangeImageLayer", "Expression", "Black Knight", "WideEyed",
+                                  	"Speaks3",
+                                  	"Thin crust, right? Okay. Yes. And by the way, you know I can't keep- ...And she hung up on me...",
+                                  	"ChangeBGM", "music/Mountain/Purple Planet Music - Chilled - Desert Winds (3_12).mp3",
+                                  	"ChangeImageLayer", "Expression", "Black Knight", "Thinking",
+                                  	"After a few long moments staring blankly at the now inert stone in her grasp, she lets out a pained huff and stows the strange device back within her armor before turning to you again.",
+                                  	"ChangeImageLayer", "Expression", "Black Knight", "Base",   "ChangeImageLayer", "Aura", "Black Knight", "Aura",
+                                  	"Speaks3",
+                                  	"You got lucky, {i}hero{/i}. I have to run an errand for the Demon Queen. I suppose having to climb the Mountain by foot while ruminating on how {i}weak{/i} you truly are will have to do for now.",
+                                  	"ChangeImageLayer", "Aura", "Black Knight", "AuraIntense",
+                                  	"ChangeBG", "darkCombat.png",
+                                  	"With no visible strain on her part, a huge portal of swirling darkness appears behind her as she turns to depart, leaving you still struggling to just keep your head up as you remain oppressively pushed down by her magic, unable to do anything but watch her stride off without paying you any more attention.",
+                                  	"DisplayCharacters",
+                                    	"EndLoop",
+                                  	"ChangeBG", "mountain.png",
+                                  	"As soon as she's stepped through, the portal disappears as if it had never been there and the magic affecting you ends, leaving you gasping for air as you recover, your whole body shaking under the physical stress and intense pressure you just experienced...\nBut at least, you're unhurt, which you apparently have the Demon Queen to thank for?",
+                                  	"Getting back up, you take stock of your present situation: the lift is now in pieces at the bottom of the nearby ravine along with Perpetua, which leaves you with an old-fashioned trek as your only possible avenue of progress... Though you could also just return to Town.",
+                                  	"Menu",
+                                    	"Check on Perpetua.",
+                                    	"Get to climbing.",
+                                    	"Go back to Town.",
+                                    "EndLoop"
+                              	]
+                	},
+                	{
+                    	"NameOfScene": "Check on Perpetua.",
+                    	"theScene": [  "You head to the chasm the lift fell into with Perpetua still on it. Looking down, as before, you can barely spot her perched on the shattered remnants of the magic construction, and shout to her to get her attention.",
+                                  	"PlayerSpeaks",
+                                  	"{size=+5}Perpetua! Are you okay?{/size}",
+                                  	"ChangeBGM", "music/Forest/nandesuto.mp3",
+                                  	"Speaks",
+                                  	"{size=-5}Y-Yeah, I'm fine... {b}But that was soooo cool! Did you see that!? She blew me up!{/size}{i}Eeeeee!!!{/i}{size=-5} The Black Knight blew me up! This is the best day ev- Ack!{/b}{/size}",
+                                  	"GetEventAndChangeProgress", "PerpetuaHouse", "3",
+                                  	"Dancingly flailing and jiggling in celebration, the slime girl slips off the lift remnant she was standing on, tumbling down and splatting onto the ground below... Though just like at the Forest Dungeon, the accident doesn't seem to be much of a problem for her and she quickly reassumes her normal shape, giving you a reassuring wave.",
+                                  	"Speaks",
+                                  	"{size=-5}I-I'm still okay! ...But I'm gonna get away from this thing, now... And then, I'm going to find a way up there! And we'll have our rematch, [ThePlayerName], mark my words!{/size}",
+                                  	"Looking around, she tries to find a way up, but it appears that the stony walls are too sheer for her to climb, the only way forward at her disposal seeming to be a fissure in the rock that leads straight within the Mountain itself, making her groan impatiently.",
+                                  	"Speaks",
+                                  	"{size=-5}Urgh... That may take a while... But just you wait, I bet we'll have our dramatic rematch at the top of the Mountain! ...I just hope that this cave does lead somewhere... {b}And stop caring about me, I'm your rival... Wait! Make that {i}nemesis{/i}!{/b}{/size}",
+                                  	"You sigh as you watch her slip into the crevice in a way that only a slime girl could, swiftly disappearing into the underground depths.\n\n\nWell, at least, she {i}is{/i} okay.",
+                                    "As for you, you contemplate whether you should now head up the Mountain or take a break from all this madness.",
+                                  	"Menu",
+                                    	"Get to climbing.",
+                                    	"Go back to town.",
+                                  	"EndLoop"
+                              	]
+                	},
+                	{
+                    	"NameOfScene": "Get to climbing.",
+                    	"theScene": [  "ChangeBG",
+                                  	"mountain.png",
+                                  	"ChangeBGM", "music/Mountain/Purple Planet Music - Chilled - Desert Winds (3_12).mp3",
+                                  	"You begin your ascent of the Mountain, taking the long way up since the lift is no longer an option."
+                              	]
+                	},
+                	{
+                    	"NameOfScene": "Go back to Town.",
+                    	"theScene": [  "StopBGM",
+                                  	"Deciding that was enough excitement for the day, you return to Town, fortunately with no further incidents.",
+                                  	"GoToTown"
+                              	]
+                	}
+
+
+
+            	]
+}

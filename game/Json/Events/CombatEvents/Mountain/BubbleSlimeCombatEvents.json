@@ -1,0 +1,74 @@
+{
+    "name": "BubbleSlimeCombatEvent",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Bubble Slime",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EndOfTurn",
+                        "theScene": [
+                                      "IfPlayerHasStatusEffect", "Restrain", "DraggedCloser"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "DraggedCloser",
+                                "theScene": [
+                                              "IfMonsterHasStance", "Making Out", "Nothing",
+                                              "IfMonsterHasStance", "Sex", "Nothing",
+                                              "IfMonsterHasStance", "Anal", "Nothing",
+                                              "IfMonsterHasStance", "Slimed", "Nothing",
+                                              "IfMonsterHasStance", "Slimed 50%", "Nothing",
+                                              "IfMonsterHasStance", "Slimed 100%", "Nothing",
+                                              "IfProgressEqualsOrGreater", "4", "Nothing",
+                                              "ChangeProgress", "1",
+                                              "IfProgressEqualsOrGreater", "4", "FullSlimePress",
+                                              "SwapLineIf", "Progress",
+                                                "3", "So deep in the pool of soothingly bubbling slime, you're easily drawn to the very center of it, and the gooey, voluptuous woman slowly moves to straddle your waist while her goo works to firmly submerge and restrain your limbs...",
+                                                "2", "With your body covered in her gooey slime, you're drawn into the bubbling goo, and she gives you a lazy smile as the fizzing liquid submerges your body up to your chest, and you're drawn closer to the center of the pool...",
+                                                "1", "With your body covered in her gooey slime, it slowly draws you closer to the fizzing pool of goo...",
+                                              "EndLoop"
+
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "FullSlimePress",
+                                      "theScene": [ "RemoveStatusEffect", "Restrain",
+                                                    "ApplyStance", "Sex",
+                                                    "ApplyStance", "Slimed",
+                                                    "ClearStanceFromMonsterAndPlayer", "Slimed",
+                                                    "ApplyStance", "Slimed 50%",
+                                                    "ClearStanceFromMonsterAndPlayer", "Slimed 50%",
+                                                    "ApplyStance", "Slimed 100%",
+                                                    "ApplyStatusEffect", "Fizzing Pool Entrapment",
+                                                    "HitPlayerWith", "Bubbly Bounce",
+                                                    "ChangeImageLayer", "Expression", "Lazy",
+                                                    "With a lazy and horny smile the Bubble Slime slams her hips down on your rigid cock while her pool of viscous liquid fully constricts your body, keeping your legs and arms trapped in its squishy confines as she starts to lazily swing her hips in a steady, melty rhythm.[DamageToPlayer]",
+                                                    "HitPlayerWith", "Fizzy Kiss",
+                                                    "ApplyStatusEffect", "Fizzy Kiss",
+                                                    "ApplyStance", "Making Out",
+                                                    "ChangeImageLayer", "Expression","Kiss",
+                                                    "Then with a blissful sigh she lays down atop you, pressing her heavy breasts against your chest as she start to make out with you, entangling her gooey tongue in your mouth, letting her fizzing slime pour gently into you, making your shiver from the slightly apple hinted slime as it fizzes and pops inside you, slowly filling you with a bubbling aphrodisiac.[DamageToPlayer]"
+                                                ]
+                                  },
+
+                    {
+                        "NameOfScene": "Nothing",
+                        "theScene": [
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Debug",
+                        "theScene": [
+                                        "Event machine broke"
+                                  ]
+                    }
+                ]
+}

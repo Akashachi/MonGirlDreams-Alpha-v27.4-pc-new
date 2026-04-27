@@ -1,0 +1,62 @@
+{
+    "name": "CapitalTimePassTracker",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Imp",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  } 
+                ],
+    "EventText": [
+                    {
+                      "NameOfScene": "TimeAdvance",
+                      "theScene": [  
+                                    "IfTimeIs", "Midnight", "StayMidnight",
+                                    "AdvanceTime", "1"
+                                ]
+                    },
+                            {
+                              "NameOfScene": "StayMidnight",
+                              "theScene": [ "ChangeBG",  "Capital.png",
+                                            "ChangeBGM", "music/Capital/03 illegal invasion.mp3",
+                                            "IfChoice", "2", "MidnightOil", "Nothing",
+                                            "SetChoice", "2", "MidnightOil",                                           
+                                            "Strangely, no matter how much time passes as you wander the starlit and increasingly vacant streets, day never seems to come, leaving an ominous heavy feeling in the air..."
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "Nothing",
+                                    "theScene": [  
+                                              ]
+                                  },
+
+                    {
+                      "NameOfScene": "TimeHalfAdvance",
+                      "theScene": [  
+                                    "IfChoice", "1", "Half", "FullAdvance",
+                                    "SetChoice", "1", "Half"
+                                ]
+                    },
+                   {
+                            "NameOfScene": "FullAdvance",
+                            "theScene": [  
+                                          "SetChoice", "1", "",
+                                          "IfTimeIs", "Midnight", "StayMidnight",
+                                          "AdvanceTime", "1",
+                                          "Despite your shortcut, time continues to pass..."
+                                      ]
+                          },
+
+
+                     {
+                       "NameOfScene": "EventBroke",
+                       "theScene": [   "event broke."
+                                 ]
+                     }
+                ]
+}

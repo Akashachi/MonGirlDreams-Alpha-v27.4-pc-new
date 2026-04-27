@@ -1,0 +1,191 @@
+{
+  "name": "Ars Delusian Fog",
+  "CardType": "Event",
+  "CardLimit": "2",
+  "Description": "A haze of pink fog clouds the streets in a thick patch of intoxicating aphrodisiacs, leaving the unprepared at risk of being turned into horny messes just from inhaling the potent fumes.",
+  "requires": [ ""],
+  "Speakers": [
+                {
+                  "name": "",
+                  "postName": "",
+                  "SpeakerType": ""
+                }
+              ],
+  "EventText": [
+                  {
+                      "NameOfScene": "EventStart",
+                      "theScene": [ "StoreCurrentBG",
+                                    "ChangeBG",  "CapitalFogFilled.png",
+                                    "Forced to follow adventurer-specific pathways as you make your way through the streets to your next destination, you eventually find yourself faced with a visible, air-staining haze of pink fumes drifting through, the thick obscene fog almost entirely blocking your vision... You could bravely keep striding through it with perhaps a safeguard of some sort, or safely and painstakingly wait for it to pass.",                                  
+                                    "Menu",
+                                      "Hold your breath and run. (Tech)",
+                                      "Create an air-filtering barrier with magic. (Int)",
+                                      "Steel yourself and rush through. (Willpower)",
+                                      "Brazenly proceed without a care.",
+                                      "Wait out the smog. (Advances Time)",
+                                    "EndLoop"
+                                ]
+                  },
+                        {
+                          "NameOfScene": "Hold your breath and run. (Tech)",
+                          "theScene": [   "StatCheck",
+                                          "Technique",
+                                          "20",
+                                          "Passed",
+                                          "Fail",
+                                          "Failed"
+                                  ]
+                        },
+                        {
+                          "NameOfScene": "Create an air-filtering barrier with magic. (Int)",
+                          "theScene": [   "StatCheck",
+                                          "Intelligence",
+                                          "20",
+                                          "Passed",
+                                          "Fail",
+                                          "Failed"
+                                  ]
+                        },
+                        {
+                        "NameOfScene": "Steel yourself and rush through. (Willpower)",
+                        "theScene": [   "StatCheck",
+                                        "Willpower",
+                                        "20",
+                                        "Passed",
+                                        "Fail",
+                                        "Failed"
+                                ]
+                       },
+                       {
+                        "NameOfScene": "Brazenly proceed without a care.",
+                        "theScene": [  
+                                      "ApplyStatusEffect", "Cloying Mist", "ApplyStatusEffect", "Cloying Mist",
+                                      "ChangeArousalByPercent", "15",
+                                      "Only a few steps in, you already find yourself overwhelmed by the haze of pheromonal aphrodisiacs, the cloyingly sweet air filling your lungs and immediately sending your mind swimming with syrupy arousal from the wonderfully sweet intoxication, leaving you thoughtlessly moving forward as if in a dream, your entire body soaking with lust as you make your way through.",
+                                      "JumpToScene", "MistWalk"
+                                ]
+                      },
+                      {
+                        "NameOfScene": "Wait out the smog. (Advances Time)",
+                        "theScene": [  
+                                      "It takes a long, {i}long{/i} while, but eventually, the depravedly-scented fog finishes rolling past, allowing you to proceed onwards without worry of aphrodisiacs.\n\nHopefully, you weren't in a rush to get somewhere.",
+                                      "CallEventAndSceneThenReturn", "CapitalTimePassTracker", "TimeAdvance",
+                                      "JumpToScene", "PostEventStuffs"
+                                ]
+                      },
+                      {
+                        "NameOfScene": "Passed",
+                        "theScene": [  
+                                      "Fortunately, you didn't overestimate your abilities, and by dint of your daring efforts, you manage to get through the depraved haze unafflicted by the mind-addling pheromonal aphrodisiacs! With the fog bank still rolling this way and that as if under the push of unseen winds, however, you don't push your luck and hastily proceed onwards lest the environmental danger catch up with you.",
+                                      "JumpToScene", "PostEventStuffs"
+                                ]
+                      },
+                      {
+                        "NameOfScene": "Failed",
+                        "theScene": [
+                                      "ApplyStatusEffect", "Cloying Mist", "ApplyStatusEffect", "Cloying Mist",
+                                      "ChangeArousalByPercent", "15",
+                                      "But your efforts unfortunately fail and you are overwhelmed by the haze of pheromonal aphrodisiacs, the cloyingly sweet air  helplessly filling your mouth and flowing down into your lungs, your mind immediately starting to swim with arousal from the unavoidable aphrodisiacs, prompting you to hastily press on despite the danger, as you're already too far in to back out now.",
+                                      "JumpToScene", "MistWalk"
+                                ]
+                      },
+                      {
+                        "NameOfScene": "MistWalk",
+                        "theScene": [
+                                       "ChangeArousalByPercent", "15", "ApplyStatusEffect", "Cloying Mist",
+                                      "Every moment that passes in the obscene haze melts through your senses like pure sinful euphoria, the shifting erotic fragrance all the sweeter with every breath, the breeze brushing across you with the misty clouds feeling like countless ethereal caresses while your thoughts keep drifting back to sex, the aphrodisiac-borne urge turning into ever more of an obsession with each minute spent within the arousing smog.",
+                                      "ChangeArousalByPercent", "20", "ApplyStatusEffect", "Cloying Mist", "ApplyStatusEffect", "Cloying Mist",
+                                      "IfPlayerOrgasm", "NightCheck",
+                                      "In a daze, you eventually manage to stumble out of the pink fog, but your head feels like it's been filled to the brim with pink bliss and your dick is throbbingly twitching for attention as it strains against your clothes, your body swaying dizzily as sexual fantasies dance through your mind... But you {i}did{/i} make it!",
+                                      "JumpToScene", "PostEventStuffs"
+                                ]
+                      },
+                            {
+                              "NameOfScene": "NightCheck",
+                              "theScene": [
+                                            "IfTimeIs", "Night", "NightHazeClimax",
+                                            "You're completely and utterly steeped in pink bliss as you stumble forward with a twitching, straining erection, feeling a hair's breadth away from cumming... but right as it seems like your very next aphrodisiac-stained breath is going to bring you over the teetering edge of climax and make you spurt on the spot, you finally stagger out of the cloudy haze and get a sudden, sobering inhale of fresh air!",
+                                            "For a moment, you sway and shiver in place, your lust-soaked mind laboriously registering that you made it through the enticing smog, leaving you feeling wonderfully dizzy, but also terribly vulnerable, at the mercy of any opportunistic monster girl who might chance upon you in such a compromising position...",
+                                            "But luckily, or perhaps unluckily, the glimmering daytime streets are starkly vacant, devoid of anything or anyone to push you over the brink, which should hopefully give you all the time you need to get your bearings and catch your breath.",
+                                            "JumpToScene", "PostEventStuffs"
+                                      ]
+                            },
+                            {
+                              "NameOfScene": "NightHazeClimax",
+                              "theScene": [ 
+                                            "You're completely and utterly steeped in pink bliss as you stumble forward with a twitching, straining erection, every laborious breath of the aphrodisiac haze feeling like it could take you over the edge and send you spurting, leaving you unsteadily tottering on in seemingly hopeless arousal...",
+                                            "However, as you take one more stumbling step forward, you blearily notice that the mist is beginning to thin, and catch encouraging glimpses of the shimmering moon and street lights ahead, signaling that you're nearly free! Just a little more, and-",
+                                            "ChangeBGM", "music/Loss/Do not yarn.mp3",
+                                            "All of a sudden, previously unseen hands abruptly grab you from behind, making you gasp in surprise and sending a fearful shock of arousal through your dizzy system as the ethereal, smoky appendages descend upon you, possessively gripping at your limbs, waist, neck, mouth, face, and cock, all firmly yanking you back into the depths of the obscene smog with nary a sound.",
+                                            "Taken completely off-guard in your aphrodisiac-drunk state, you barely have time to process what's happening, reflexively letting out hand-muffled moans and haggard pants as the spectral fingers dotingly massage your helpless body all over, greedily yanking down your pants to start firmly pumping your overstimulated, trembling erection.",
+                                            "PlayerOrgasm", "1",
+                                            "With your oversensitive manhood having already been on the edge of orgasm to begin with, there is nothing you can do to oppose the invisible gropers' ravenous ministrations as they lavish you with their thirsty attentions, only a few smooth strokes sufficing to set you off in twitching, mind-blanking rapture, immediately causing you to ejaculate in a sloppy stream of hot cum that splatters messily onto the pavement in front of you.",
+                                            "ApplyStatusEffect", "Cloying Mist",
+                                            "Yet, even as a pleasant warm afterglow settles over you, you're given no time to rest, your climax only egging on the unknown monster girl... or girls, as you're unable to tell from the myriad of feminine fingers that run teasingly across your skin, wordlessly indulging in you with uninhibited ardor.",
+                                            "Somehow unimpeded by your clothing, your lewd assailant hungrily caresses your thighs, arms, shoulders, waist, and more all at once in an expert full-body massage, meanwhile your every shivering breath further soaks your senses with more of the obscene smog, flooding you with more sensitive bliss and leaving you slumping in the manifold grasps with a confused mewl of euphoria.",
+                                            "Unrelentingly, skillful touches keep running up and down your length as the hands work in perfect unison, spectral nails gently caressing and scritching your throbbing shaft, dribbling head, and tensing balls, already making a hot surge of orgasmic rapture rise in your loins all over again.",
+                                            "Sensing you approaching the brink anew, a smooth, single fingertip teasingly loops around the tip of your trembling dick while multiple hands gently grip and stroke your length at different rhythms all at once, somehow unimpeded by their ghostly kin as they overwhelm your twitching manhood with constant attention.",                                            
+                                            "Frozen in place by the relentless pampering, you're utterly lost in the pleasure-soaked moment as the silent hands grope, tease, and trail over your frame while unstoppably carrying on massaging your trembling erection into a tensing, needy mess, your every breath keeping the blissful buzz of ecstasy constantly rising in your lust-soaked form.",
+                                            "PlayerOrgasm", "1", "ApplyStatusEffect", "Cloying Mist",
+                                            "With the constantly increasing aphrodisiac heat and the incessant pleasure of the endless tactile attentions making short work of your resistance, you soon find your hips instinctively jerking in helpless delight as another orgasm claims you, sending you spurting a second thick load into the pink-colored air, your semen quickly disappearing into the obfuscating roiling mass as if swallowed by the cloudy mists themselves...",
+                                            "IfPlayerSpiritGone", "FullLossScene",
+                                            "There's a long spell of melty afterglow as your thirsty assailants dotingly continue caressing you and massaging you, seeming to have gotten their fill of you and now gently bringing you down from the rough and sudden back-to-back climaxes, coaxing you into relaxing with a vacant smile on your face as you feel like you're getting wonderfully cradled in a pleasant, all-encompassing cloud of soft tenderness.",
+                                            "For a moment, as the countless fingers carry on spoiling you with affectionate pats and strokes, you wonder if they're ever going to stop or if they're going to instead resume their previous hungry groping, the idea leaving you shivering in both trepidation and need at the prospect of being made to cum again and again like this until you can't take any more...",
+                                            "StopBGM",
+                                            "Only for the haze and hands to both suddenly vanish as quickly as they appeared, leaving you gasping in shock and jarringly slumping onto the ground without the unseen grabbers to support you, your cock still achingly hard and needy as it throbs and twitches in the now clean air as if in a plea for more intoxicating tactile ministrations.",
+                                            "Still dizzy and soaked with arousal, you take a much-needed moment to gather your wits, then tiredly stagger back to your feet and fix your clothing, looking about the vacant night-lit city street as if expecting the strange manifestation to surge back all over again...",
+                                            "However, even as minutes pass and you return to a more stable state of mind, silence continues to loom over you while nothing around you hints at the handsy debauchery that just took place, your innocently empty surroundings leaving a part of you wondering if you didn't somehow hallucinate what just happened despite the vivid sensations sticking to your senses as you carry on with your interrupted progress...",
+                                            "JumpToScene", "PostEventStuffs"
+                                      ]
+                            },
+                                  {
+                                    "NameOfScene": "FullLossScene",
+                                    "theScene": [                                                 
+                                                  "ChangeBGM", "music/Loss/Falling Down.mp3",
+                                                  "Shivering and gasping in the ethereal grasp of the mysterious multiple hands after your mind-blanking climax, you find yourself unable to muster the strength to shake them off as they keep dotingly caressing you all over, tenderly easing you down into a euphoric afterglow with gentle rubs and gropes and scritches, ensuring you can enjoy yourself to the fullest... and sink all the more readily into hedonistic abandon.",
+                                                  "Bathed in the veritable cortege of delicate attentions, you feel your body slacken on its own in pleasurable defeat, your every haggard breath filling you to the brim with the all-consuming sweet haze that continues to cloud the air, helplessly and delightfully imbuing you with raw intoxicating bliss and the indulgent craving for more of this wonderful treatment.",
+                                                  "Sensing your surrender, your amorous captor, or perhaps captors, slide their many shiver-inducing fingers all across your vulnerable frame, sensually coaxing you into yielding completely to their touch while others of the hands firmly grip you and unifiedly hoist you up into the air like a claimed trophy, carrying you deeper into the misty cloud as it slowly rolls along the city street, making you disappear into its foggy mass for good.",
+                                                  "Yet, despite being now surrounded by impenetrable pinkness, you feel no panic as you're comfortingly held by your loving kidnapper... although in truth, the term 'held' no longer feels like it applies, as the sensation of being smoothly carried along a sea of gentle touches all over your frame intermixed with slow strokes at your aching manhood feels instead like you're drifting along a current of wind or water in endless dreamy waves...",
+                                                  "Everything feels so fuzzy and cozy and good, like you're enveloped in a tangible fluffy cloud, every gasping inhale you take laced with more euphoria-inducing aphrodisiacs as you float along at the whims of your victorious ambushers, practically robbed of your senses as you're unresistingly ferried through the smothering pink haze with the opaque cloud acting like an airy blindfold.",
+                                                  "All along, the strangely cradling feeling of being safely carried amid unceasing pampering ensures you keenly enjoy every tender stroke as it teasingly runs along your skin, the phantasmal caresses being all you can feel aside from the slow swirling of air around you, all the while your ears are exclusively filled with the sound of your own heavy breathing and the soft rubbing of the ethereal fingers running across your body.",
+                                                  "Suddenly, it dawns on you that, at this point, you don't even know where you are anymore, but with every part of you feeling so wonderfully sensitive with melty bliss, and with the countless hands steadily continuing to dote on you with loving strokes and pumps at your leaking dick, you realize you actually don't even care. Only this heavenly, ecstatic here-and-now matters...",
+                                                  "As you comfortably lie back in your mattress of palms, more unseen touches rewardingly brush across your cheeks, neck, and shoulders in a slow, sensual massage while others trace up and down your waist, arms, and thighs, diligently seeing to it that you remain ever surrounded in pervasive euphoria, fanning your burning libido hotter and hotter.",
+                                                  "Soon enough, this purposefully languid fondling starts growing tantalizing, and you find yourself craving {i}more{/i} than the ghostly teasing you're subjected to, leaving you shamelessly thrusting your hips in needy search of more stimulation... but to no avail, as the hands immediately draw back from your swinging, only to return a moment later as you stop in confused want with a begging moan, your captor perfectly reacting to your squirming.",
+                                                  "Instinctively acknowledging that there is nothing you can do but follow the pace that's been set for you, you docilely ease up and let yourself be mischievously pampered by the parade of fingers as they slowly and sweetly massage your tensing balls and drooling erection, their implicit gentle domination forcing you to bear with your ever-mounting sexual tension even as the urge to cum dominates your mind more and more.",
+                                                  "In this metaphorical and literal pink haze of arousal, cumming quickly becomes the only thing you can think about, even the relaxation of the drifting, floaty feeling of being soothingly carried along doing nothing to slow your quickening breathing and boiling lust, leaving you craving your deliberately delayed release with increasing desperation.",
+                                                  "Yet, as the ethereal full-body massage continues to drag on and on for what feels like a hazy eternity, you feel yourself gradually embrace and relish the luxurious, skillfully imparted edging sensation, the burning, crackling tantric rapture tingling over every hapless inch of your being through the erotic fog ride, your kidnapper's slow, tempting pace coaxing you along with shivery pleasure that rises higher and higher and higher...",
+                                                  "Teasing, circling touches of fingertips across your length keep pushing you ever closer to the brink, while other hands dotingly worship your aching testes, or simply rub up and down your waist, thighs, or arms, no part of your body ever getting any rest from the multitude of touches lavishing your entire form.", 
+                                                  "This time, your unseen lovers seem committed to taking you all the way to the finish line, their expert unified movements not slowing down as you go past the point of no return, making the imperious, rampaging urge to spurt rapidly consume you with desperate twitching and shivering and moaning as you {i}finally{/i} feel yourself get all the way there...",
+                                                  "Until, all at once, the coiling tension within you finally explodes in a rapturous, full-body climax that leaves your throbbing cock shooting out long, thick ropes of semen into the pink void that surrounds you while you cry out in incoherent abandon, trembling helplessly as ecstasy rocks through your entire frame in a cascade of orgasmic bursts erupting through your very being.",
+                                                  "While you gasp and moan and shudder in mind-blanking climax, the ghostly hands gently slow their loving touches to coaxingly guide you through the all-consuming high of pleasure you're riding, bit by bit bringing you back to earth while continuing to tenderly milk you to the last drop, leaving a sloppy, blissed-out smile stuck on your face as you hotly pant and gasp under the aftershocks of your intense orgasm that keep jolting through you.",
+                                                  "However, as you relax against your captors' combined grasp and laboriously try to regain your breathing amid head-spinning felicity, you soon find out that your ravenously affectionate tormentors seem to have no intent of stopping there, the flurry of hands already starting to slowly and sweetly caress you all over anew!",
+                                                  "Reflexively, you feebly mewl and squirm against their relentless ministrations, but all too quickly, you can only acknowledge that there is no denying them, and so you once more surrender yourself entirely to them as they slowly work you back up towards the same wonderful high as before, keeping you riding cloud nine in a drifting haze of floaty overloaded euphoria, completely lost to their delightful attentions...",
+                                                  "Soon, you lose all notion of time and even space as you reach tantric climax after climax, the phantasmal hands managing to continue sexually stimulating you even after your dick can no longer spurt out any more of your seed for them, making you feel like you've been turned into a bundle of raw pleasure receptors for them to continue skillfully teasing without end.",
+                                                  "But eventually, you do grow utterly and completely spent and simply do not even have any energy left to climax any more, at which point they stop massaging and milking you, instead switching to dotingly cradling you in the air as you slowly slip into unconsciousness, all your stress, cares, and worries utterly blown away in post-chain-orgasmic bliss, letting you peacefully slip into cozy slumber in their cloudy embrace...",
+                                                  "...",
+                                                  "ChangeSensitivity", "Sex", "5",
+                                                  "ChangeSensitivity", "Magic", "15",
+                                                  "ChangeFetish", "Monstrous", "5",  
+                                                  "GameOver"
+                                            ]
+                                  },
+                  {
+                      "NameOfScene": "PostEventStuffs",
+                      "theScene": [
+                                   "IfInExploration", "EndEvent",
+                                   "AllowInventory",
+                                   "GoBackToStoredEvent"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "EndEvent",
+                      "theScene": [    "UseHeldBG"
+                                ]
+                    },
+                  {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [  "Event Broke!!!"
+                                ]
+                  }
+              ]
+}

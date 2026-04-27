@@ -1,0 +1,869 @@
+{
+    "name": "ApartmentsTrialFloor2",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+
+    "Speakers": [
+                 {
+                    "name": "Voltlin",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },  
+                  {
+                    "name": "Voltlin Livewire",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }  
+                ],
+    "EventText": [
+                   
+                     {
+                      "NameOfScene": "StartEvent",
+                      "theScene": [ "AllowInventory",                                    
+                                    "Stepping into the second floor of Adventure Apartments, you find a long hallway with numbered doors lining it. Individual paintings have been hung on the walls between each door, and while most of them look like abstract or perhaps merely shoddy depictions of landscapes, two of them are distinctively portraits.",
+                                    "One features a punkish voltlin backdropped by a splashy mix of colors, while the other looks more orderly and shows a cheerful security voltlin. Finally, one door in the back looks like it sections off part of the building, and has a plaque that reads 'TENANTS ONLY'.",
+                                    "JumpToScene", "EntryWayMenu"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "EntryWayMenu",
+                      "theScene": [   "AllowInventory",
+                                        "Menu",                                                                                  
+                                          "Check one of the doors.",  
+                                          "Inspect the paintings.",
+                                          "Stop and think...",
+                                          "Go to another floor.",
+                                        "EndLoop"
+                                ]
+                    },    
+                            {
+                            "NameOfScene": "Stop and think...",
+                            "theScene": [    
+                                            "JumpToEventThenScene", "ApartmentsTrialThinking", "Floor2Think"
+                                        ]
+                            },
+                            {
+                            "NameOfScene": "Go to another floor.",
+                            "theScene": [    
+                                            "Menu",    
+                                                "Go to the first floor.",                                    
+                                                "Go to the third floor.",
+                                                "Go to the fourth floor.",
+                                                "Go to the fifth floor.",
+                                                "Go to the sixth floor.",                                                
+                                                "Stay here.",
+                                            "EndLoop"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "Stay here.",
+                                        "theScene": [  
+                                                   "JumpToScene", "EntryWayMenu"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the first floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEventThenScene", "ApartmentsTrialFloor1", "EnterFromOtherFloor"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the third floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor3"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the fourth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor4"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the fifth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor5"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the sixth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor6"
+                                                ]
+                                    },
+                            {
+                            "NameOfScene": "Check one of the doors.",
+                            "theScene": [    
+                                            "Menu",                                          
+                                                "Check door 201",
+                                                "Check door 202",
+                                                "Check door 203",
+                                                "Check door 204",
+                                                "Check door 205",
+                                                "Nevermind.",
+                                            "EndLoop"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "Nevermind.",
+                                        "theScene": [  
+                                                   "JumpToScene", "EntryWayMenu"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check another door.",
+                                        "theScene": [  
+                                                     "JumpToScene", "Check one of the doors."
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check door 201",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 201.",
+                                                        "Knock on door 201.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    }, 
+                                            {
+                                                "NameOfScene": "Knock on door 201.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 201"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 201.",
+                                                "theScene": [  
+                                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "Voltlin Security Check", "EventStart", 
+                                                            "JumpToScene", "Check door 201"
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Check door 202",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 202.",
+                                                        "Knock on door 202.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    }, 
+                                            {
+                                                "NameOfScene": "Knock on door 202.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 202"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 202.",
+                                                "theScene": [  
+                                                            "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                            "JumpToScene", "Check door 202"
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Check door 203",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 203.",
+                                                        "Knock on door 203.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    }, 
+                                            {
+                                                "NameOfScene": "Knock on door 203.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 203"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 203.",
+                                                "theScene": [                                                              
+                                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "Heather's Sweet Temptation", "EventStart",
+                                                            "JumpToScene", "Check one of the doors."
+                                                ]
+                                            }, 
+                                    {
+                                        "NameOfScene": "Check door 204",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 204.",
+                                                        "Knock on door 204.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    }, 
+                                            {
+                                                "NameOfScene": "Knock on door 204.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 204"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 204.",
+                                                "theScene": [  
+                                                            "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                            "JumpToScene", "Check door 204"
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Check door 205",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 205.",
+                                                        "Knock on door 205.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    }, 
+                                            {
+                                                "NameOfScene": "Knock on door 205.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 205"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 205.",
+                                                "theScene": [  
+                                                            "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                            "JumpToScene", "Check door 205"
+                                                ]
+                                            },
+
+
+
+
+ 
+
+                             {
+                                "NameOfScene": "Inspect the paintings.",
+                                "theScene": [  
+                                            "As you look over the paintings decorating the hallway, you find nameplates informing you of their titles, as well as the identities of their respective artists. A recurring mention of an 'Adventure Apartments Artist Competition' makes it pretty clear that they were all made by the complex's tenants.",
+                                            "JumpToScene", "InspectPaintMenu"                                          
+
+                                ]
+                            },
+                            {
+                                "NameOfScene": "InspectPaintMenu",
+                                "theScene": [  
+                                            "Menu",                                          
+                                                "Check 'Interpretation of Heaven'",
+                                                "Check 'Mountaintop Vista'",
+                                                "Check 'Forest Pathway'",
+                                                "Check 'Cheerful Sparking Guardian'",
+                                                "Check 'Living Electric Graffiti'",
+                                                "Nevermind.",
+                                            "EndLoop"      
+                                ]
+                            },
+                                    {
+                                        "NameOfScene": "Check another painting.",
+                                        "theScene": [  
+                                                     "JumpToScene", "InspectPaintMenu"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check 'Interpretation of Heaven'",
+                                        "theScene": [  
+                                                    "ChangeBG", "heaven.png",
+                                                    "A bright, warm, ethereal picture of swirling, fluffy paint splashes depicting what one might imagine the divine realm of the goddess to be like.",
+                                                    "ChangeBG", "Capital.png",
+                                                    "JumpToScene", "InspectPaintMenu"        
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check 'Mountaintop Vista'",
+                                        "theScene": [  
+                                                    "ChangeBG", "mountainOld.png",
+                                                    "A rather... interesting attempt at drawing and coloring a view of what seems to be Lucidia's Mountain. The artist's talent or sense of aesthetics is rather questionable, the distant trees looking more like a mass of grass and hills, while the rocky pathway consists of strange curves and cracks that confuse your sense of perspective.",
+                                                    "ChangeBG", "Capital.png",
+                                                    "JumpToScene", "InspectPaintMenu"        
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check 'Forest Pathway'",
+                                        "theScene": [  
+                                                    "ChangeBG", "forestOld.png",
+                                                    "A basic watercolor painting of a forest pathway somewhere... Perhaps the Mystic Forest your journey started with? The only notable feature is the end of the road, which is wreathed in stark, dark shadows, possibly to give a sense of mystery, menace, or adventure.",
+                                                    "ChangeBG", "Capital.png",
+                                                    "JumpToScene", "InspectPaintMenu"        
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check 'Cheerful Sparking Guardian'",
+                                        "theScene": [  
+                                                    "DisplayCharacters",
+                                                    "1",
+                                                    "EndLoop",
+                                                    "ChangeImageLayer", "Expression", "1", "Joy",
+                                                    "SwapLineIf", "OtherEventsChoice", "ApartmentsTrialFloor6",
+                                                        "1", "PaintingFound", "A well-made, carefully drawn portrait of a happy, brightly smiling security voltlin surrounded by painted sparkles and sparkling glitter. Contrastingly, the street view backdropping her is rather drab and featureless, making her feel like a shining beacon of safety and warmth. It appears that it tied for first place with 'Living Electric Graffiti' according to its nameplate, next to which you notice an inconspicuous-looking button.",
+                                                        "1", "", "A well-made, carefully drawn portrait of a happy, brightly smiling security voltlin surrounded by painted sparkles and sparkling glitter. Contrastingly, the street view backdropping her is rather drab and featureless, making her feel like a shining beacon of safety and warmth. It appears that it tied for first place with 'Living Electric Graffiti' according to its nameplate.",
+                                                    "EndLoop",
+                                                    "DisplayCharacters",
+                                                    "EndLoop",
+                                                    "IfChoice", "2", "ClueGet", "InspectPaintMenu",
+                                                    "GetEventAndIfChoice", "ApartmentsTrialFloor6", "1", "", "InspectPaintMenu",
+                                                    "Menu",            
+                                                        "Check another painting.",
+                                                        "Press the button next to the 'Cheerful Sparking Guardian' nameplate.",
+                                                    "EndLoop"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check 'Living Electric Graffiti'",
+                                        "theScene": [  
+                                                    "DisplayCharacters",
+                                                    "2",
+                                                    "EndLoop",
+                                                    "ChangeImageLayer", "Expression", "1", "Smug",  "ChangeImageLayer", "Mask", "1", "",
+                                                    "SwapLineIf", "OtherEventsChoice", "ApartmentsTrialFloor6",
+                                                        "1", "PaintingFound", "A splashy, erratic mix of neon colors form a splattered backdrop for a smugly grinning, wild and free-looking voltlin Livewire tugging her mask down with a domineering grin, the strangely harmonious chromatic mess behind her conferring her quite the striking presence. It appears that it tied for first place with 'Cheerful Sparking Guardian' according to its nameplate, next to which you notice an inconspicuous-looking button.",
+                                                        "1", "", "A splashy, erratic mix of neon colors form a splattered backdrop for a smugly grinning, wild and free-looking voltlin Livewire tugging her mask down with a domineering grin, the strangely harmonious chromatic mess behind her conferring her quite the striking presence. It appears that it tied for first place with 'Cheerful Sparking Guardian' according to its nameplate.",
+                                                    "EndLoop",
+                                                    "DisplayCharacters",
+                                                    "EndLoop",
+                                                    "IfChoice", "2", "ClueGet", "InspectPaintMenu",
+                                                    "GetEventAndIfChoice", "ApartmentsTrialFloor6", "1", "", "InspectPaintMenu",
+                                                    "Menu",            
+                                                        "Check another painting.",
+                                                        "Press the button next to the 'Living Electric Graffiti' nameplate.",
+                                                    "EndLoop"      
+                                        ]
+                                    },
+
+
+
+
+                                    {
+                                        "NameOfScene": "Press the button next to the 'Cheerful Sparking Guardian' nameplate.",
+                                        "theScene": [  "SetChoice", "1", "SecurityPicture",
+                                                  "StopBGM",
+                                                    "When you push the button next to the painting of the beaming security guard, a shrill whistle instantly emanates from the frame! Instinctively, the unpleasant sound makes you recoil in fear of some kind of trap, but instead, you hear a jovial cry from one of the nearby apartments whose door bursts open.",
+                                                     "DisplayCharacters",
+                                                        "1",
+                                                    "EndLoop",
+                                                    "ChangeImageLayer", "Expression", "1", "Joy",
+                                                  "ChangeBGM", "music/Capital/am_white.mp3",
+                                                    "Speak", "A voltlin like a bolt from the blue!",
+                                                    "I knew it! I absolutely {i}knew{/i} it would be the winner!♪",
+                                                    "DisplayCharacters",
+                                                        "1",
+                                                        "2",
+                                                    "EndLoop",
+                                                    "ChangeImageLayer", "Expression", "1", "Joy",                                                    
+                                                    "ChangeImageLayer", "Expression", "2", "Annoyed",  "ChangeImageLayer", "Mask", "2", "",
+                                                    "As if on cue, the trumpeting irruption is immediately followed by another door opening with just as much gusto, letting through a disgruntled, huffy Livewire who strides out to join her compatriot with her arms grumpily crossed under her heavy breasts.",
+                                                    "Speak", "Grumpy Livewire",
+                                                    "Yeah, {i}yeah{/i}... but don't go getting all high and mighty on me! 's'just one vote. Wait for the final tally before getting the party poppers out!",
+                                                    "ChangeImageLayer", "Expression", "1", "Grin",
+                                                    "While the heckled voltlin just responds to the lecture with an innocent smile and an easygoing giggle, her peer doesn't skip a beat and turns towards you with a harrumph, gesturing to you as she goes on.",    
+                                                    "ChangeImageLayer", "Expression", "2", "Smug",
+                                                    "Speak", "Grumpy Livewire",
+                                                    "'sides, he might not even have realized what he was doing! Wouldn't be the first time that some adventurer just went and randomly pressed every button they came across, heh.",
+                                                    "ChangeImageLayer", "Expression", "1", "Thinking",
+                                                    "Speak", "Happy Security Voltlin",
+                                                    "Hmm, you think so...? Well, I guess we should make sure and ask, then...",
+                                                    "ChangeImageLayer", "Expression", "1", "Base",  "ChangeImageLayer", "Expression", "2", "Base",
+                                                    "With that, the shortstacked duo turn to you with amicable smiles but serious stares, their gazes boring into you as they ask together.",
+                                                    "Speak", "Both",
+                                                    "Who made the better painting?",
+                                                    "JumpToScene", "PickFavePainting"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Press the button next to the 'Living Electric Graffiti' nameplate.",
+                                        "theScene": [  
+                                                    "SetChoice", "1", "LivewirePicture",
+                                                  "StopBGM",
+                                                    "When you push the button next to the painting of the neon-backdropped Livewire, a shrill guitar riff instantly emanates from the frame! Instinctively, the unpleasant sound makes you recoil in fear of some kind of trap, but instead, you hear a jovial cry from one of the nearby apartments whose door bursts open.",
+                                                    "DisplayCharacters",
+                                                        "2",
+                                                    "EndLoop",
+                                                    "ChangeImageLayer", "Mask", "1", "",
+                                                    "ChangeImageLayer", "Expression", "1", "Sparkling",
+                                                  "ChangeBGM", "music/Capital/Nobody_City.mp3",
+                                                    "Speak", "A Livewire like a bolt from the blue!",
+                                                    "Booyah!♪ I told her it was the real winner, haha!♪",
+                                                    "DisplayCharacters",
+                                                        "1",
+                                                        "2",
+                                                    "EndLoop",
+                                                    "ChangeImageLayer", "Mask", "2", "",  "ChangeImageLayer", "Expression", "2", "Sparkling",
+                                                    "ChangeImageLayer", "Expression", "1", "Contemplating",
+                                                    "However, her bombastic, fist-pumping entrance is soon followed up by another, much quieter one, another nearby door gently opening to let through a pensively humming security voltlin who struts out with her hands on her wide hips and positions herself next to her still grinning peer while calmly musing.",
+                                                    "ChangeImageLayer", "Expression", "1", "Thinking",
+                                                    "Speak", "Pensive Security Voltlin",
+                                                    "Perhaps, perhaps... But, if I may be so bold as to ask, did our dear adventurer even know what he was doing? I don't mean to assume or think ill of his dedication, but perhaps he got confused by the instructions, or perhaps even possibly just pushed a button at random?",
+                                                    "ChangeImageLayer", "Expression", "2", "Smug",
+                                                    "Speak", "Smug Livewire",
+                                                    "Hah, you think so, {i}huh?{/i} ... Well, let's just ask the big guy directly to make sure, then!",
+                                                    "ChangeImageLayer", "Expression", "1", "Base",  "ChangeImageLayer", "Expression", "2", "Base",
+                                                    "With that, the shortstacked duo turn to you with amicable smiles but serious stares, their gazes boring into you as they ask together.",
+                                                 
+                                                    "Speak", "Both",
+                                                    "Who made the better painting?",
+                                                    "JumpToScene", "PickFavePainting"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "PickFavePainting",
+                                                "theScene": [  
+                                                            "Menu",
+                                                                "The Security Voltlin's painting is better.",
+                                                                "The Livewire's painting is better.",
+                                                                "Both of your paintings are really good!",
+                                                                "What if I liked one of the other paintings better?",                                        
+                                                                "...Is this part of getting the Intelligence Sigil?",
+                                                            "EndLoop"      
+                                                ]
+                                            },
+                                                    {
+                                                        "NameOfScene": "Both of your paintings are really good!",
+                                                        "theScene": [   "ChangeImageLayer", "Expression", "1", "Joy","ChangeImageLayer", "Expression", "2", "Annoyed",
+                                                                        "One of the voltlins responds to your choice with a good-humored laugh while the other grinds her teeth in overt annoyance.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Grin",
+                                                                    "Speak", "Security Voltlin",
+                                                                    "Ha ha, nope!♪ Sorry to pressure you, dear adventurer, but you need to pick one!",
+                                                                    "Speak", "Livewire",
+                                                                    "Yeah, don't cop out on us! We need to know! We're keeping score on it!",
+                                                                    "JumpToScene", "PickFavePainting"
+                                                        ]
+                                                    },
+                                                    {
+                                                        "NameOfScene": "What if I liked one of the other paintings better?",
+                                                        "theScene": [  "ChangeImageLayer", "Expression", "2", "PanicComical",
+                                                                    "Speak", "Livewire",
+                                                                    "S-Say what?!? How could you like one of those {i}daubs{/i} better than our works of art?! We poured our hearts and souls into those, I'll have you know!",
+                                                                    "ChangeImageLayer", "Expression", "1", "Joy", "ChangeImageLayer", "Expression", "2", "Annoyed",
+                                                                    "Speak", "Security Voltlin",
+                                                                    "Pffthahaha~ They do say art is subjective.♪",
+                                                                    "While the prim official seems to be taking well to what is possibly a faux pas on your part, her fellow resident's expression tells you she has something more foul-mouthed to say on the matter, though before she gets to do so, the uniformed woman adds brightly yet hastily.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Grin",
+                                                                    "Speak", "Security Voltlin",
+                                                                    "But to keep things simple, dear adventurer, this isn't about them, this is about which of {i}our{/i} paintings is better.",
+                                                                     "ChangeImageLayer", "Expression", "2", "Base",
+                                                                     "Speak", "Livewire",
+                                                                    "Y-Yeah! So come on out with it!",
+                                                                    "JumpToScene", "PickFavePainting"
+                                                        ]
+                                                    },
+                                                    {
+                                                        "NameOfScene": "...Is this part of getting the Intelligence Sigil?",
+                                                        "theScene": [
+                                                                     "ChangeImageLayer", "Expression", "1", "Contemplating",   "ChangeImageLayer", "Expression", "2", "AvertingGaze",
+                                                                    "They both glance away in opposite directions with an awkward noise at your question, and coincidentally mirror each other's movements as they set one hand on their waist while nervously scratching a cheek with the other.",
+                                                                    "Speak", "Livewire",
+                                                                    "Uhhhh- N-Not {i}exactly{/i}... But also yes?",
+                                                                    "ChangeImageLayer", "Expression", "1", "Thinking",
+                                                                    "Speak", "Security Voltlin",
+                                                                    "Hm... You see, dear adventurer, as part of setting up the Stamp Hunt for this area, an art competition was held, and the two of us ended up on equal footing...",
+                                                                    "ChangeImageLayer", "Expression", "2", "Annoyed",
+                                                                    "Speak", "Livewire",
+                                                                    "Yeah! We tied! And instead of actually declaring a winner, they decided to use our paintings for some riddle-slash-block puzzle! Insulting, I'm telling you...",
+                                                                    "ChangeImageLayer", "Expression", "1", "Joy",
+                                                                    "Speak", "Security Voltlin",
+                                                                    "But truth be told, we don't really care about the Sigil Hunt, so we... {i}ahem{/i}... momentarily put said puzzle on hold. We just want to know whose work you liked more. Then we can send you on your way and let you proceed with your adventures.♪",
+                                                                    "ChangeImageLayer", "Expression", "1", "JoyOpenEyes",
+                                                                    "Speak", "Security Voltlin",
+                                                                    "There's no right or wrong answer, so just listen to your heart and let us know your judgment! No pressure.♪",
+                                                                    "ChangeImageLayer", "Expression", "1", "Grin", "ChangeImageLayer", "Expression", "2", "Smug",
+                                                                    "... She might be saying that, but with the way they're expectantly staring and grinning at you, you can't help but feel {i}some{/i} pressure...",
+                                                                    "JumpToScene", "PickFavePainting"
+                                                        ]
+                                                    },
+
+
+                                                    {
+                                                        "NameOfScene": "The Security Voltlin's painting is better.",
+                                                        "theScene": [  
+
+                                                                    "IfChoice", "1", "SecurityPicture", "Picked Security Twice",
+                                                                    "IfChoice", "1", "LivewirePicture", "Picked Security then Livewire"
+                                                        ]
+                                                    },
+                                                            {
+                                                                "NameOfScene": "Picked Security Twice",
+                                                                "theScene": [    "SetChoice", "3", "SecurityComplains",      
+                                                                            "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                                                            "ChangeImageLayer", "Expression", "1", "Panic", "ChangeImageLayer", "Expression", "2", "Smug",
+                                                                            "Speak", "Security Voltlin",
+                                                                            "Wh- {i}Seriously-?{/i} You think the garish mess I made for her is {i}better{/i}? But you picked the wonderful portrait she did of me first!",
+                                                                            "ChangeImageLayer", "Expression", "2", "Sparkling",
+                                                                            "Speak", "Livewire",
+                                                                            "Wahaha!♪ I told you a wild graffiti painting of me would be way more popular than some glittery snoozefest I'd make, even with you as the model!♪",
+                                                                            "JumpToScene", "WaitWatMenu"
+                                                                ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "Picked Security then Livewire",
+                                                                "theScene": [     "SetChoice", "3", "LivewireComplains",  
+                                                                            "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                                                            "ChangeImageLayer", "Expression", "1", "Grin", "ChangeImageLayer", "Expression", "2", "Annoyed",
+                                                                            "Speak", "Security Voltlin",
+                                                                            "Ehehe, see? Now you can't deny it! {i}Your{/i} painting of me reigns supreme in our little competition.♪",
+                                                                             "ChangeImageLayer", "Expression", "2", "AvertingGaze",
+                                                                            "Speak", "Livewire",
+                                                                            "Wh-What- There's no way... {i}Wait-{/i} Hold on- We never actually told him who did which- Did he know-? How did he know?!",
+                                                                            "ChangeImageLayer", "Expression", "1", "JoyOpenEyes", "ChangeImageLayer", "Expression", "2", "Panic",
+                                                                            "While the sharp-horned voltlin appears to be losing her mind over your decision and is getting comforting back pats from her peer, you're not sure what to think yourself, though you're at least pretty sure that some wires got crossed...",         
+                                                                            "JumpToScene", "WaitWatMenu"
+                                                                ]
+                                                            },
+                                                    {
+                                                        "NameOfScene": "The Livewire's painting is better.",
+                                                        "theScene": [  
+                                                                    "IfChoice", "1", "LivewirePicture", "Picked Livewire Twice",
+                                                                    "IfChoice", "1", "SecurityPicture", "Picked Livewire then Security"
+                                                        ]
+                                                    },
+                                                                {
+                                                                    "NameOfScene": "Picked Livewire Twice",
+                                                                    "theScene": [    "SetChoice", "3", "LivewireComplains",                                                                     
+                                                                                "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                                                                "ChangeImageLayer", "Expression", "2", "PanicComical",
+                                                                                "Speak", "Livewire",
+                                                                                "{i}Buhguh-?!{/i} You think {i}my{/i} work is better-?! But you picked the painting she did of {i}me{/i} at first!",
+                                                                                "ChangeImageLayer", "Expression", "1", "JoyOpenEyes",
+                                                                                "Speak", "Security Voltlin",
+                                                                                "Ehe.♪ Now, don't be a sore loser. I told you a semi-classical painting of me would be much more successful than whatever neon splatter I could dish out!",
+                                                                                "JumpToScene", "WaitWatMenu"
+                                                                    ]
+                                                                },
+                                                                {
+                                                                "NameOfScene": "Picked Livewire then Security",
+                                                                "theScene": [ "SetChoice", "3", "SecurityComplains",                                                                    
+                                                                            "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                                                            "ChangeImageLayer", "Expression", "2", "Mocking",
+                                                                            "Speak", "Livewire",
+                                                                            "See! {i}See???{/i} He's confirming his choice. {i}Your{/i} painting of me is {i}way{/i} better.",
+                                                                            "ChangeImageLayer", "Expression", "1", "Panic",
+                                                                            "Speak", "Security Voltlin",
+                                                                            "Guh... That's... W-Wait now, hold on a tick- We've been moving so fast we never even explained the whole how and why of it to him, did we?- So how could he...?",
+                                                                            "ChangeImageLayer", "Expression", "1", "Contemplating", "ChangeImageLayer", "Expression", "2", "Base",
+                                                                            "While the uniformed monster girl sputters and her peer lays a confident hand on her shoulder as if to magnanimously tell her to let it go, you're not too sure what to think of this development yourself, your mind still catching up with the new information...",                                                                    
+                                                                            "JumpToScene", "WaitWatMenu"
+                                                                ]
+                                                            },
+                                                    {
+                                                        "NameOfScene": "WaitWatMenu",
+                                                        "theScene": [  
+                                                                    "Menu",
+                                                                        "Wait. What?",
+                                                                        "I think my brain just melted.",
+                                                                        "Okay, so... Can I get the next clue?",
+                                                                    "EndLoop"
+                                                        ]
+                                                    },
+                                                            {
+                                                                "NameOfScene": "Wait. What?",
+                                                                "theScene": [  
+                                                                            "JumpToScene", "I think my brain just melted."
+                                                                ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "I think my brain just melted.",
+                                                                "theScene": [ "ChangeImageLayer", "Expression", "1", "Thinking",   "ChangeImageLayer", "Expression", "2", "AvertingGaze",
+                                                                            "The voltlin duo pause for an awkward moment and avert their gazes from your clearly baffled face, the two of them chuckling nervously before the quieter of the pair looks back to you with an apologetic smile.",
+                                                                            "ChangeBGM", "music/Capital/night vision radio.mp3",
+                                                                            "ChangeImageLayer", "Expression", "1", "Grin",
+                                                                            "Speak", "Security Voltlin",
+                                                                            "Wellll- We should {i}probably{/i} have explained this from the start, but back when we got news of the art contest, my Livewire friend here dared me to paint her in Graffiti Queen fashion, which inspired me to conversely challenge her to make a classical portrait of me.",
+                                                                            "JumpToScene", "SceneCont"
+                                                                            
+                                                                ]
+                                                            },
+                                                            {
+                                                                "NameOfScene": "SceneCont",
+                                                                "theScene": [ 
+                                                                             "ChangeImageLayer", "Expression", "2", "Sparkling",
+                                                                            "Speak", "Livewire",
+                                                                            "Yeah, it was tough having to let go of the spray can and use brushes and watercolors instead, but it was fun...♪ Though I couldn't resist adding some glitter 'cause she shines so bright, y'know?",
+                                                                            "ChangeImageLayer", "Face", "1", "Blush", "ChangeImageLayer", "Expression", "2", "Smug",
+                                                                            "The two of them exchange a glance, the uniformed woman proving unable to hold back a blush at the compliment while her jacketed peer gives her a wink before turning back to you and carrying on.",
+                                                                            "ChangeImageLayer", "Expression", "2", "Base",
+                                                                            "Speak", "Livewire",
+                                                                            "But point is! Her painting of me obviously turned out {i}way{/i} better than the one I did of her, and yet, she just won't see it!",
+                                                                            "ChangeImageLayer", "Face", "1", "", "ChangeImageLayer", "Expression", "1", "Pout",
+                                                                            "Speak", "Security Voltlin",
+                                                                            "And I keep telling you: {i}your{/i} painting of me turned out {i}far{/i} superior. No contest.",
+                                                                             "ChangeImageLayer", "Expression", "2", "Annoyed",
+                                                                            "The two of them glare daggers at each other for a moment, and look like their objections are soon going to devolve into bickering, though the moment of tense silence gives you an opportunity to interject again before it gets to that.",
+                                                                            "JumpToScene", "LastMenu"
+                                                                ]
+                                                            },
+                                                            {
+                                                                "NameOfScene":  "Okay, so... Can I get the next clue?",
+                                                                "theScene": [  
+                                                                            "IfChoice", "3", "SecurityComplains", "SecurityPipesUp",
+                                                                            "IfChoice", "3", "LivewireComplains", "LivewirePipesUp"
+                                                                ]
+                                                            },
+
+                                                           
+                                                                    {
+                                                                        "NameOfScene": "SecurityPipesUp",
+                                                                        "theScene": [   "ChangeImageLayer", "Expression", "2", "Sparkling",
+                                                                                    "Speak", "Livewire",
+                                                                                    "Sure thing, big guy!♪",
+                                                                                    "ChangeImageLayer", "Expression", "1", "Pout",
+                                                                                    "The Livewire happily exclaims as she starts to rummage around in her hoodie, only for the Security Voltlin to put an arm up in front of her with an affronted look.",
+                                                                                    "Speak", "Security Voltlin",
+                                                                                    "W-Wait! Hold on! Don't jump to conclusions just yet- I don't think we explained the situation properly-",
+                                                                                    "ChangeImageLayer", "Expression", "2", "AvertingGaze",
+                                                                                    "Speak", "Livewire",
+                                                                                    "... Didn't we?",
+                                                                                    "ChangeImageLayer", "Expression", "1", "Thinking",
+                                                                                    "Speak", "Security Voltlin",
+                                                                                    "Not really... We both got a little overexcited and skipped a few, {i}probably{/i} important pieces of information...",
+                                                                                    "JumpToScene", "AltTransition"
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "NameOfScene": "LivewirePipesUp",
+                                                                        "theScene": [   "ChangeImageLayer", "Expression", "1", "Joy",
+                                                                                    "Speak", "Security Voltlin",
+                                                                                    "Right you are, sir!♪",
+                                                                                    "ChangeImageLayer", "Expression", "2", "Annoyed",
+                                                                                    "The Security Voltlin exclaims as she starts to rummage around in her outfit, only for the Livewire to hop in front of her and wave her arms with a discontent frown.",
+                                                                                    "Speak", "Livewire",
+                                                                                    "Whoa, whoa, whoa! Hold it right there! He might actually be talking out of his ass! ... Come to think of it, I don't think we ever actually told him what's what!?",
+                                                                                     "ChangeImageLayer", "Expression", "1", "Thinking",
+                                                                                     "Speak", "Security Voltlin",
+                                                                                    "... Didn't we?",
+                                                                                     "ChangeImageLayer", "Expression", "2", "AvertingGaze",
+                                                                                    "Speak", "Livewire",
+                                                                                    "N-No... Not really... We, huh, kinda both jumped the paint gun.",
+                                                                                    "JumpToScene", "AltTransition"
+                                                                        ]
+                                                                    },
+                                                                            {
+                                                                                "NameOfScene": "AltTransition",
+                                                                                "theScene": [   "ChangeImageLayer", "Expression", "1", "Grin", "ChangeImageLayer", "Expression", "2", "Base",
+                                                                                            "Taking this realization with a nervous smile, the uniformed woman lets out an awkward cough then turns to you in order to explain while her competitor just silently stuffs her hands in her pockets, definitely seeming to be more nonchalant about the whole mixup.",
+                                                                                            "ChangeBGM", "music/Capital/night vision radio.mp3",
+                                                                                            "Speak", "Security Voltlin",
+                                                                                            "Hm! Well then-! To clear things up: back when we got news of the art contest, my Livewire friend here dared me to paint her in Graffiti Queen fashion, which inspired me to conversely challenge her to make a classical portrait of me.",
+                                                                            "JumpToScene", "SceneCont"
+                                                                                ]
+                                                                            },
+
+
+                                        {
+                                            "NameOfScene": "LastMenu",
+                                            "theScene": [    
+                                                        "Menu",
+                                                            "Alright, then my {i}final{/i} conclusion is that the Livewire's painting of the Security Voltlin is better.",
+                                                            "Alright, then my {i}final{/i} conclusion is that the Security Voltlin's painting of the Livewire is better.",
+                                                            "... Are you sure this isn't actually some kind of puzzle-???",
+                                                            "This is extremely adorable.",
+                                                            "Shouldn't you two get a room?",
+                                                        "EndLoop"
+                                            ]
+                                        },
+                                                {
+                                                    "NameOfScene": "... Are you sure this isn't actually some kind of puzzle-???",
+                                                    "theScene": [  "ChangeImageLayer", "Expression", "1", "Panic",   "ChangeImageLayer", "Expression", "2", "PanicComical",
+                                                                "Your query instantly makes them turn back to you, the tension in their stares instantly dissolving as they both sputter.",
+                                                                 "ChangeImageLayer", "Expression", "2", "AvertingGaze",
+                                                                "Speak", "Livewire",
+                                                                "N-No? I mean... {i}yes?{/i} It {i}is{/i} in the context of the whole Sigil Hunt thing, but the question we're asking isn't {i}really{/i} a puzzle? It's just... y'know, us trying to solve a problem, I guess?",
+                                                                "ChangeImageLayer", "Expression", "1", "JoyOpenEyes",
+                                                                "Speak", "Security Voltlin",
+                                                                "Haha,♪ I suppose it {i}is{/i} a little confusing...♪ But to answer your question: no, this isn't a test. This is just to sort things out between the two of us... Though for the record, regardless of what my esteemed competitor is saying, I'm still {i}positive{/i} that {i}her{/i} painting turned out better.",
+                                                                "ChangeImageLayer", "Expression", "2", "Annoyed",
+                                                                "Speak", "Livewire",
+                                                                "This again?- Listen- There just ain't no way! Yours is better!",
+                                                                "ChangeImageLayer", "Expression", "1", "Pout",
+                                                                "Speak", "Security Voltlin",
+                                                                "Absolutely not! Even if we just compare the composition, it's obvious that...",
+                                                                "They both start to rapid-fire arguments at each other, sending you right back to where you started. You should probably say something or they'll most likely be at it for a long while...",
+                                                                "JumpToScene", "LastMenu"
+                                                    ]
+                                                },
+                                                 {
+                                                    "NameOfScene": "Alright, then my {i}final{/i} conclusion is that the Livewire's painting of the Security Voltlin is better.",
+                                                    "theScene": [  "ChangeBGM", "music/Capital/am_white.mp3",
+                                                                "ChangeImageLayer", "Expression", "2", "PanicComical",
+                                                                "Speak", "Livewire",
+                                                                "{i}Nooooooooooooo-!{/i}",
+                                                                "The Livewire exclaims in overdramatic and quite paradoxical defeat, raising her fists to the skies while falling to her knees at having been declared winner of the competition by you, meanwhile the Security Voltlin diminutively towers over her with a triumphant smile.",
+                                                                "ChangeImageLayer", "Expression", "1", "JoyOpenEyes",
+                                                                "Speak", "Security Voltlin",
+                                                                "Ah-ha! Told you.♪",
+                                                                "ChangeImageLayer", "Expression", "2", "Annoyed",
+                                                                "Speak", "Livewire",
+                                                                "Mnhghngrr- Damn {i}philistine...{/i}",
+                                                                "She stays down as she grumbles huffily about your apparently questionable artistic judgment, leaving the Security Voltlin to titter merrily and fish around in her outfit until she pulls out a neatly folded slip of paper which she hands over to you.",
+                                                                "ChangeImageLayer", "Expression", "1", "Grin",
+                                                                "Speak", "Security Voltlin",
+                                                                "And here you are, sir.♪ I hope you enjoy the rest of your stay in Adventure Apartments and in our good city of Ars Delusia! I'll just get her out of the way for you now, and leave you to get back to the Sigil Hunt.",
+                                                                "ChangeImageLayer", "Expression", "1", "Joy",
+                                                                "Merrily, the shortstack firmly grabs the Livewire by the hoodie and drags her off into one of the apartments they came out of before pulling the door back shut with a parting wave, all the while the sore winner never stops grumbling about how much adventurers suck and can't be relied upon.",
+                                                                "JumpToScene", "ClueGetScene"
+                                                    ]
+                                                },
+                                                {
+                                                    "NameOfScene": "Alright, then my {i}final{/i} conclusion is that the Security Voltlin's painting of the Livewire is better.",
+                                                    "theScene": [ "ChangeBGM", "music/Capital/Nobody_City.mp3",
+                                                                "ChangeImageLayer", "Expression", "1", "Panic", "ChangeImageLayer", "Face", "1", "Blush",
+                                                                "Speak", "Security Voltlin",
+                                                                "B-But it's so... so {i}needlessly colorful{/i}- and garish-",
+                                                                "ChangeImageLayer", "Expression", "1", "Thinking", "ChangeImageLayer", "Face", "1", "", "ChangeImageLayer", "Expression", "2", "Sparkling",
+                                                                "The Security Voltlin mumbles in crumpling defeat under the shock of having been decisively declared the winner of the competition, despondently letting her head lean against a nearby wall where her horns gently thunk into the hard plaster while the Livewire proudly stands tall with a boisterous laugh.",
+                                                                "Speak", "Livewire",
+                                                                "Wahaha! There you have it! No more denial, sweetheart!♪",
+                                                                "ChangeImageLayer", "Expression", "1", "Pout",
+                                                                "Speak", "Security Voltlin",
+                                                                "Mrgrgrgr... The System has failed us...",
+                                                                "ChangeImageLayer", "Expression", "2", "Base",
+                                                                "She mutters peevishly while staying disconsolately slumped against the wall, leaving the Livewire free to wordlessly and smugly fish around in her hoodie to ultimately pull out a slip of messily crumpled paper which she hands over to you.",
+                                                                "Speak", "Security Voltlin",
+                                                                "And here you go, big guy.♪ Have fun with the rest of the riddles and junk! As for us, we'll just get out of your hair.",
+                                                                "Merrily, the shortstack gently grabs the defeated security guard by the wrist and drags her off into one of the apartments they came out of before pulling the door shut with a parting wave, all the while the sore winner keeps droning on about the failure of the ADS.",
+                                                                "JumpToScene", "ClueGetScene"
+                                                    ]
+                                                },
+                                                {
+                                                    "NameOfScene": "This is extremely adorable.",
+                                                    "theScene": [   
+                                                                "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                                                 "ChangeImageLayer", "Expression", "2", "Annoyed",
+                                                                "Speak", "Livewire",
+                                                                "Wha- Th-The hell it is, you moron! This is {i}serious busi-!{/i}",
+                                                                "ChangeImageLayer", "Expression", "1", "Thinking",
+                                                                "Speak", "Security Voltlin",
+                                                                "... I mean... Maybe he has a point?",
+                                                                 "ChangeImageLayer", "Expression", "2", "PanicComical",
+                                                                "Speak", "Livewire",
+                                                                "Say what---?!",
+                                                                "ChangeImageLayer", "Expression", "1", "Contemplating",
+                                                                "Speak", "Security Voltlin",
+                                                                "Maybe... Um... Maybe we're taking this a {i}bit{/i} too far? Our artistic convictions shouldn't get in the way of our friendship, after all... Because we {i}are{/i} friends, right?",
+                                                                "ChangeImageLayer", "Expression", "1", "Grin", "ChangeImageLayer", "Expression", "2", "AvertingGaze",
+                                                                "Speak", "Livewire",
+                                                                "Wh-What're you getting all mushy on me for!? I-I mean... Yeah, we {i}are{/i}... And I guess we {i}have{/i} been kinda... at odds lately, what with this whole art contest business...",
+                                                                "ChangeImageLayer", "Expression", "1", "Panic", "ChangeImageLayer", "Expression", "2", "Sparkling",
+                                                                "Speak", "Livewire",
+                                                                "In fact, come to think of it, we haven't actually banged in weeks by now, huh?♪",
+                                                                "ChangeImageLayer", "Face", "1", "Blush", "ChangeImageLayer", "Expression", "2", "LickLips",
+                                                                "Speak", "Security Voltlin",
+                                                                "Bhghu-!?! D-Don't just say that out loud in front of the adventurer-!",
+                                                                "ChangeImageLayer", "Expression", "1", "Contemplating", "ChangeImageLayer", "Expression", "2", "Sparkling", 
+                                                                "She sputters with a pout and a fierce blush for a moment, but a brazen laugh from the Livewire in response to her reaction quickly dissolves her scandalized grimace into a heavy, lenient sigh.",
+                                                                "JumpToScene", "CompromisePath"
+                                                    ]
+                                                },
+                                                {
+                                                    "NameOfScene": "Shouldn't you two get a room?",
+                                                    "theScene": [ "ChangeBGM", "music/Forest/nandesuto.mp3",
+                                                                 "ChangeImageLayer", "Expression", "1", "Panic", "ChangeImageLayer", "Face", "1", "Blush", "ChangeImageLayer", "Expression", "2", "PanicComical",
+                                                                "At your straightforward recommendation, the two voltlins instantly choke on the tension they'd been holding, both turning to you with sputtering, deeply blushing faces.",
+                                                                "Speak", "Security Voltlin",
+                                                                "Th-That is {i}not{/i} what this is about-!",
+                                                                "ChangeImageLayer", "Expression", "1", "Pout", "ChangeImageLayer", "Expression", "2", "Annoyed",
+                                                                "Speak", "Livewire",
+                                                                "Y-Yeah, get your head out of your ass! We're just really close friends!",
+                                                                "ChangeImageLayer", "Expression", "1", "Panic", "ChangeImageLayer", "Expression", "2", "AvertingGaze",
+                                                                "Speak", "Livewire",
+                                                                "... Who sometimes bang... and go on dinner dates?",
+                                                                "Speak", "Security Voltlin",
+                                                                "D-Don't just go and tell him about that kind of personal information, dummy-!",
+                                                                "ChangeImageLayer", "Expression", "1", "Pout", "ChangeImageLayer", "Expression", "2", "AvertingEyes",
+                                                                "The Security Voltlin's peeved glare has her peer look away and clear her throat awkwardly, the Livewire sheepishly offering excuses in an indistinct mumble, but soon rallying with a smile after a moment of thought.",
+                                                                "ChangeImageLayer", "Expression", "2", "Base", 
+                                                                "Speak", "Livewire",
+                                                                "Okay, okay, I get it... But I also think he... kinda has a point? Lately, we've sorta been letting this painting competition thing get in the way of stuff, like going on dates, or just spending time together... Y'know, as opposed to just watching each other like hawks and tallying votes like it's a matter of life or death...",
+                                                                "JumpToScene", "CompromisePath"
+                                                    ]
+                                                },
+                                                        {
+                                                            "NameOfScene": "CompromisePath",
+                                                            "theScene": [ "ChangeImageLayer", "Expression", "1", "Thinking", "ChangeImageLayer", "Face", "1", "",   "ChangeImageLayer", "Expression", "2", "AvertingGaze",
+                                                                     "ChangeBGM", "music/Capital/Smooth_City.mp3",
+                                                                        "With that out of the way, silence follows as the two of them take a moment to pause and think, before rummaging in their respective outfits to both pull out a slip of paper which they hand you in unison.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",   "ChangeImageLayer", "Expression", "2", "Smug",
+                                                                        "Speak", "Both",
+                                                                        "Here you-",
+                                                                        "ChangeImageLayer", "Expression", "1", "Joy",   "ChangeImageLayer", "Expression", "2", "Sparkling",
+                                                                        "They both perplexedly pause and stare at each other for a moment before bursting into giggles and exchanging a complicated series of fist bumps, hand contacts, and finger signs in what seems to be a personal greeting of theirs, seeming to momentarily forget all about the Sigil Hunt...",
+                                                                        "ChangeImageLayer", "Expression", "1", "Grin", "ChangeImageLayer", "Expression", "2", "Base",
+                                                                        "But soon recomposing themselves and handing both of their notes to you, which seem to be the same upon a passing inspection... except that the Security Voltlin's one has been neatly typed and folded while the Livewire's is in chicken scratch and seems to be written on the back of a Harpizza receipt... Still, it ultimately makes no difference, though you refrain from pointing it out as they both look up at you with warm, content smiles.",
+                                                                        "Speak", "Livewire",
+                                                                        "Well, King, thanks for the solid. Even if ya didn't mean it, I think you helped us sort some stuff out.♪",
+                                                                        "ChangeImageLayer", "Expression", "1", "Thinking", 
+                                                                        "Speak", "Security Voltlin",
+                                                                        "Indeed... And now, we should {i}really{/i} set up the puzzle that's supposed to be here, or we might actually get in trouble if an ADS supervisor pops up...",
+                                                                        "ChangeImageLayer", "Expression", "2", "LickLips",
+                                                                        "Speak", "Livewire",
+                                                                        "... And do we do that before or after the make-up sex?~",
+                                                                        "ChangeImageLayer", "Expression", "1", "Pout",
+                                                                        "Speak", "Security Voltlin",
+                                                                        "You- We are currently not off-shift, I should remind you!",
+                                                                         "ChangeImageLayer", "Expression", "2", "Smug",
+                                                                        "Speak", "Livewire",
+                                                                        "'After' it is, then.♪",
+                                                                        "ChangeImageLayer", "Expression", "1", "Panic", "ChangeImageLayer", "Face", "1", "Blush", 
+                                                                        "The Security Voltlin starts to sputter all over again, but before she can get a word in edgewise, her compatriot grabs her by the shoulder and proceeds to drag her squeaking and blushing into one of their rooms, the rakish Livewire offering you a wink and a bright smile as they cross the threshold.",
+                                                                        "ChangeImageLayer", "Expression", "2", "Sparkling",
+                                                                        "Speak", "Livewire",
+                                                                        "Have fun with the rest of the apartment stuff, dude!",
+                                                                        "ChangeImageLayer", "Expression", "1", "Condescending",
+                                                                        "Speak", "Security Voltlin",
+                                                                        "A-Ah, yes! Sorry for the hassle, sir, and thank you again!",
+                                                                        "They both give you a parting wave as the door shuts behind them, and you let out a breath you didn't realize you were holding...",
+                                                                        "JumpToScene", "ClueGetScene"
+                                                            ]
+                                                        },
+
+                                                       
+ 
+
+
+
+
+                                    {
+                                        "NameOfScene": "ClueGetScene",
+                                        "theScene": [   "DisplayCharacters",
+                                                    "EndLoop",
+                                                    "SetChoice", "2", "ClueGet",
+                                                    "Left on your own and finally able to collect your thoughts after that hectic dispute, you unfold the piece of paper and read the next clue...",
+                                                    "{i}From moonlit skies, you've traveled down to jolting clashing volts. Now, you must count the succubus stars glimmering in the night to find your destination, and knock on their door before entering!{/i}",
+                                                    "You also notice that another mention has been included, most likely by the voltlin you got the clue from, this one sounding less official:\n\n{i}There should be only one puzzle left after this 'succubus stars' one before you get to the stamp. Hang in there and good luck!{/i}",
+                                                    "Thoughtfully, you pocket the note. Time to think about your next step now.",
+                                                    "ChangeBGM-List",
+                                                        "music/Capital/STARLIGHT.mp3",
+                                                        "music/Capital/Night_Floating.mp3",
+                                                        "music/Capital/Nobody_City.mp3",  
+                                                        "music/Forest/Starry sky.mp3",
+                                                        "music/Loss/BGM03_Uncanny light.mp3",
+                                                        "music/Relaxing/Purple Planet Music - Lanquidity (2 52) 110bpm.mp3",
+                                                        "music/Emotional/Purple Planet Music - Emotional - Spiritual Moment (1_32) 90bpm (L).mp3",
+                                                    "EndLoop",
+                                                    "JumpToScene", "EntryWayMenu"
+
+                                        ]
+                                    },
+
+
+                                   
+                                           
+
+                    {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [   "event broke."
+                                ]
+                    }
+                ]
+}

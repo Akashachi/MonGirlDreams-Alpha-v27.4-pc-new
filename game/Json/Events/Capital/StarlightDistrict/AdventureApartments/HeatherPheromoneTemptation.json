@@ -1,0 +1,494 @@
+{
+    "name": "Heather's Sweet Temptation",
+    "CardType": "Event",
+    "CardLimit": "2",
+    "Description": "Within Ars Delusia's Adventure Apartments, Heather lies in wait of any misstep on your part, ready to tempt you into pheromone-laden submission as the price of your recklessness...",
+    "requires": [ "Starlight District Stamp"],
+
+    "Speakers": [
+                  {
+                    "name": "Heather",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                            {
+                            "NameOfScene": "EventStart",
+                            "theScene": [  "StoreCurrentBG",
+                                            "ChangeBG", "Capital.png",
+                                            "IfInExploration", "AltIntroBit",
+                                            "JumpToScene", "OpeningDoor"
+                                        ]
+                            },
+                                        {
+                                        "NameOfScene": "AltIntroBit",
+                                        "theScene": [
+                                                        "Passing through doorway after doorway in a seemingly endless maze of passageways snaking through an impossibly large Ars Delusian building you've found yourself in, you finally come upon what looks to be the exit!",
+                                                        "JumpToScene", "OpeningDoor"
+                                                    ]
+                                        },
+                            {
+                            "NameOfScene": "OpeningDoor",
+                            "theScene": [
+                                            "As you turn the doorknob, there's a click of unlocking, prompting you push the door open-",
+                                            "DisplayCharacters",
+                                                "1",
+                                            "EndLoop",
+                                            "ChangeImageLayer", "Base", "Heather", "BodySuitTempting",
+                                            "ChangeImageLayer", "Expression", "Heather", "ClosedEyeSmileSmall",
+                                            "ApplyStatusEffect", "Cloying Mist", "DamagePlayerFromMonster", "Fashionable Succubus", "Enamor",
+                                            "ChangeBGM", "music/Casino/BGM sweet smell.mp3",
+                                            "Only to be instantly hit with an intoxicating, cloying haze thickly drifting out of the room, and welcomed by the obscene sight of Heather standing in the tight closet-sized chamber with the front of her bodysuit indecently unzipped while she lightly fans herself with a hand, beads of trickling sweat lightly trailing down her pillowy cleavage and plush abdomen as she treats you to a sweet smile and singsongs innocently.",
+                                            "ChangeImageLayer", "Expression", "Heather", "ClosedEyeSmile",
+                                            "Speak", "Heather",
+                                            "Oh, my.♪ Looks like you opened the wrong door, [ThePlayerName].♥",
+                                            "ChangeImageLayer", "Expression", "Heather", "AraAra",
+                                            "ApplyStatusEffect", "Cloying Mist", "DamagePlayerFromMonster", "Fashionable Succubus", "Valley Of Fascination",
+                                            "While you're still reeling from the large succubus' surprise reveal and enticingly wafting fragrance, her playful grin shifts into a smolderingly lusty one, her knowing deep-blue eyes gazing down at you as she languidly slides her palms beneath her huge bust, hefting it up slowly before letting it drop back down with a sinful, captivating wobble while she coos out in a sultry whisper.",
+                                            "Speak", "Heather",
+                                            "But since you're here now, would you like to join me in here for a break? I'm feeling sooo antsy... you wouldn't leave a lady wanting, would you?♥",
+                                            "ApplyStatusEffect", "Cloying Mist",
+                                            "Sliding a hand invitingly down her midriff and up to her barely covered pussy while continuing to gropingly flaunt her breasts with her other hand, she lets the lecherous offer hang temptingly in the air while you find yourself struggling to muster a rational response, your hard cock straining against your clothes while Heather's potent mind-fogging pheromones continue to erode away at your clarity of mind with burning desire...",
+                                            "IfPlayerOrgasm", "CantThink",
+                                            "JumpToScene", "DoorMenu"
+                                        ]
+                            },
+                                {
+                                "NameOfScene": "DoorMenu",
+                                "theScene": [
+                                                 "Menu",
+                                                    "Shut the door! (Temptation)",
+                                                    "Fight her?!",
+                                                    "Join her...",
+                                                "EndLoop"
+                                            ]
+                                },
+                                        {
+                                            "NameOfScene": "Shut the door! (Temptation)",
+                                            "theScene": [
+                                                        "StatCheck",
+                                                        "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "90", "5",
+                                                        "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Trance", "10", "5",
+                                                        "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                                        "ChangeStatCheckDifficulty", "IfHasFetish", "Breasts", "5",
+                                                        "Temptation",
+                                                        "20",
+                                                        "ClosedDoor",
+                                                        "Fail",
+                                                        "YouFail"
+                                            ]
+                                        },
+                                                {
+                                                    "NameOfScene": "ClosedDoor",
+                                                    "theScene": [
+                                                                "DisplayCharacters",
+                                                                "EndLoop",
+                                                                "StopBGM",
+                                                                "Resolutely shutting out the tempting offer, you force yourself to close the door on the large succubus who lets out a pouty 'Aw...' in reaction, but does nothing to stop you, leaving you to gasp and pant hotly as you recover from the sensory assault.",
+                                                                "Just to be on the safe side, you step away from the trapped door and keep an eye on it as you get your thoughts back into order, but it appears Heather didn't intend to do more than just tempt you, your surroundings remaining quiet and undisturbed to the point that you wonder if she's even here anymore, or if she just teleported back where she came from or something...",
+                                                                "PlayerStep",
+                                                                "JumpToScene", "PostEventStuffs"
+                                                    ]
+                                                },
+
+                                        {
+                                            "NameOfScene": "YouFail",
+                                            "theScene": [
+                                                        "ApplyStatusEffect", "Cloying Mist", "ApplyStatusEffect", "Charm",
+                                                        "ChangeImageLayer", "Expression", "Heather", "AraAra",
+                                                        "SwapLineIf", "Random",
+                                                            "|f|DamagePlayerFromMonster|/|Fashionable Succubus|/|Enamor|n|But despite your resolve to escape Heather, all you can manage to do is instead to stand slack-jawed in the doorway and gawkingly look up and down at her in her erotic, invitingly open skintight bodysuit, her heavy breasts nearly spilling out of the sexy outfit while her obscene pheromones continue to waft out of the small room for you to thoughtlessly breathe in and out with ever-mounting lust...",
+                                                            "|f|DamagePlayerFromMonster|/|Fashionable Succubus|/|Valley Of Fascination|n|But all you can do as you grip the door handle is to stand there in an ogling daze, struck with shivering, twitching lust as you greedily watch Heather give her huge tits a lazy side-to-side shake, making them sway and jiggle obscenely for the pleasure of your increasingly mushy mind, your every heated breath filling you with her intoxicating scent while increasingly unbridled fantasies plague your thoughts...",
+                                                            "|f|DamagePlayerFromMonster|/|Fashionable Succubus|/|Enamor|n|But as you hesitatingly stand there on the room's threshold, Heather leans ever so slightly forward with a warm smile, her heavy bust pendulously bouncing from the movement and nearly slipping free of its confines as she gives you a tempting come-hither gesture, making your heart rate and breathing quicken as her enticing succubus pheromones continue to fill your senses with hot need...",
+                                                        "EndLoop",
+                                                        "PlayerStep",
+                                                        "IfPlayerOrgasm", "CantThink",
+                                                        "JumpToScene", "DoorMenu"
+                                            ]
+                                        },
+
+                                        {
+                                            "NameOfScene":  "Fight her?!",
+                                            "theScene": [
+                                                        "ChangeImageLayer", "Expression", "Heather", "ClosedEyeSurprise",
+                                                        "As you take a combat stance, Heather's eyes widen in surprise.",
+                                                        "Speak", "Heather",
+                                                        "You want to fight me? Hm... This isn't exactly the time or place for that...",
+                                                        "ChangeImageLayer", "Expression", "Heather", "Caring",
+                                                        "Speak", "Heather",
+                                                        "After all, I'm not blocking your way, I'm not hiding anything... I'm not even attacking you.♥ I'm simply standing here and making you an offer.♥",
+                                                        "ChangeImageLayer", "Expression", "Heather", "AraAra",
+                                                        "Speak", "Heather",
+                                                        "Of course, if you're just being a naughty, horny adventurer who wants to punish the evil succubus with his mighty sexual prowess, I suppose I can't stop you from fucking me to your heart's content, can I?♥",
+                                                        "ApplyStatusEffect", "Charm", "DamagePlayerFromMonster", "Fashionable Succubus", "Sexual Tempt",
+                                                        "Her husky words are laced with teasing lust as she leans back and invitingly spreads her legs, making the imprint of her waiting pussy brazenly visible behind the barely covering bodysuit, the tempting seductress setting her hands on her thighs and slowly trailing them up along her curves before setting them behind her head to highlight her raunchy pose, flauntingly presenting her waiting lower body in a wanton display.",
+                                                        "ChangeImageLayer", "Expression", "Heather", "LipLick", "ApplyStatusEffect", "Cloying Mist",
+                                                        "You can feel your mind spin and your heart race at the succubus' new and equally vulgar offer, another thoughtlessly dizzy inhale of her pheromones that keep drifting out of the cramped room making it seem more and more like a {b}{s}terrible{/s}{/b} {i}wonderful{/i} idea to accept the salacious proposal and partake in frantic aphrodisiac-charged sex with the large curvy demoness.",
+                                                        "PlayerStep",
+                                                        "IfPlayerOrgasm", "CanOnlyThinkOfSex",
+                                                        "JumpToScene", "SexTemptMenu"
+                                            ]
+                                        },
+                                                {
+                                                "NameOfScene": "SexTemptMenu",
+                                                "theScene": [
+                                                                "Menu",
+                                                                    "Fuck Heather!",
+                                                                    "Sex with Heather!",
+                                                                    "I want to fuck Heather!",
+                                                                    "Reconsider-!",
+                                                                    "You will definitely defeat Heather with your mighty sexual prowess!",
+                                                                    "Sex!!!!!",
+                                                                "EndLoop"
+                                                            ]
+                                                },
+                                                {
+                                                "NameOfScene": "Reconsider-!",
+                                                "theScene": [
+                                                                "Seeing your obstinate reluctance despite your visibly aroused state, Heather giggles sweetly and lazily shifts back to a more relaxed standing pose... And it doesn't seem like she intends to do more than that, which nevertheless still leaves the problem of her sultry body and heady scent continuing to tempt you to change your mind more and more insistently with each passing second!",
+                                                                "JumpToScene", "DoorMenu"
+                                                            ]
+                                                },
+                                                        {
+                                                        "NameOfScene": "CanOnlyThinkOfSex",
+                                                        "theScene": [
+                                                                        "... And with you being so worked up, horny, and single-mindedly focused on sex owing to your boiling libido, there's no way you can refuse such a direct invitation to fuck the wanton succubus-!",
+                                                                        "JumpToScene", "Fuck Heather!"
+                                                                    ]
+                                                        },
+                                                        {
+                                                        "NameOfScene": "Sex with Heather!",
+                                                        "theScene": [
+                                                                        "JumpToScene", "Fuck Heather!"
+                                                                    ]
+                                                        },
+                                                        {
+                                                        "NameOfScene": "I want to fuck Heather!",
+                                                        "theScene": [
+                                                                        "JumpToScene", "Fuck Heather!"
+                                                                    ]
+                                                        },
+
+                                                        {
+                                                        "NameOfScene": "You will definitely defeat Heather with your mighty sexual prowess!",
+                                                        "theScene": [
+                                                                        "JumpToScene", "Fuck Heather!"
+                                                                    ]
+                                                        },
+
+                                                        {
+                                                        "NameOfScene": "Sex!!!!!",
+                                                        "theScene": [
+                                                                        "JumpToScene", "Fuck Heather!"
+                                                                    ]
+                                                        },
+
+                                                        {
+                                                        "NameOfScene": "Fuck Heather!",
+                                                        "theScene": [
+                                                                        "ChangeBGM", "music/Loss/Falling Down.mp3",
+                                                                        "Without hesitation, you dive into the room, embracing Heather and burying your face into her pillowy cleavage while fumbling with your clothing to free your impossibly stiff erection before immediately plunging it into her offered pussy, your demonstration of unbridled libido earning you a lusty sigh from the large woman as you fill her drooling demonic folds, then instantly start thrusting into her without restraint.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "ClosedEyeSurprise",
+                                                                        "Speak", "Heather",
+                                                                        "Oh my-♥ Mhh-♥ How vigorous... You must have been {i}very{/i} pent up-",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "Caring",
+                                                                        "As you keep greedily sinking into the taller succubus' plush curves while pounding her from below in your erotic standing position, you hear the door behind you slam shut, sending a foreboding chill up your spine as the room is suddenly filled with an intimately dim, pink lighting and the cramped space's tight confines become all the more apparent, even to your lust-drunk senses.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "LipLick",
+                                                                        "You feel like that should {i}probably{/i} worry you, but in your current state of unchecked wanton arousal, you can barely bring yourself to care as you keep getting high off Heather's big soft body and intoxicating scent, especially as she coaxingly moans and sighs from your eager fucking, egging you on with a downright predatory expression of lecherous approval while warmly purring.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "Hungry",
+                                                                        "Speak", "Heather",
+                                                                        "Mmmmaaah...~♥ Well, there's no longer any need to hold back now, is there?-♥ So go on, [ThePlayerName]: thrust~ thrust~ {i}thrust~♥{/i}",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "LipLick",
+                                                                        "Without breaking her raunchily offered pose, she swings her wide hips back into your frantic movements, each lewdly slapping meeting of your bodies vulgarly echoing about the chamber, the succubus' fragrance only getting more potent with each passing moment in the now fully enclosed room, making it all the more mind-scramblingly addictive to huff her pheromones directly from her pillowy cleavage while you nuzzle her huge breasts.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "Caring",
+                                                                        "Speak", "Heather",
+                                                                        "Ahhhh...♥ It feels {i}so{/i} good, doesn't it?♥ Just indulging in each other, without thinking- Mhhhh-♥ about anything else.♥",
+                                                                        "Driven by her lascivious words and cooing moans as you let them unresistingly coil around your head and ensnare your captivated thoughts, you responsively tighten your arms around her waist as you thirstily go with the obscene flow, driving yourself closer and closer to climax with blind glee, every thrust into your large lover's wonderful curves sending hot pleasure oozing through your waist in melty waves.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "LipLick",
+                                                                        "All the while, the firmly squeezing yet impossibly tender vice of Heather's exquisite pussy lovingly coils around your throbbing manhood with each sloppily wet piston movement, reminding you each time of her innately perverted succubus nature, her entire body being clearly made for sex and for dragging her partners into debauched bliss...",
+                                                                        "Thoroughly and utterly lost to her expert wiles, you keep willingly and gladly breaking yourself against her tall, plush frame, and sigh with ecstatic lust as you can already sense your climax approach fast, your balls tightening in anticipation and your eyes thoughtlessly rolling back from the rapture of the pheromone-charged fuck spreading throughout your senses.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "Hungry",
+                                                                        "Speak", "Heather",
+                                                                        "Mhhhhhmmm~♥ Getting close?♪ Don't worry, [ThePlayerName], no need to hold back- Give~ it~ to~ me~♥",
+                                                                        "Her sultrily cooing whispers melt through your euphoria-permeated mind like warm honey, driving you to indulgently bury your face into her soft breasts while hilting yourself deep into her clenching pussy to pour load after load of eager cum into her, hot gooey surges of raw bliss washing through every fiber of your body as you completely submerge yourself in the crashing feeling of climax.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "AraAraGlow", "ChangeImageLayer", "Aura", "Heather", "Aura",
+                                                                        "However, the already intense, intoxicating sensation only continues to rapidly escalate as a warm glow suffuses Heather, pulsing draining waves radiating from her to completely surround you and wreathe you in comforting cozy warmth, the suddenly heightened pleasure making you throw your head back with an inarticulate mewl of overstimulated delight.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "HungryGlow",
+                                                                        "And through it all, the demoness doesn't give you a break, continuing to swing her wide hips into yours to better lavish your tense and trembling erection with hungrily squeezing ecstasy, skillfully coaxing more of your seed out of your wonderfully overwhelmed cock, the ravenously loving lady positively drowning you in her erotic charms while purring out in predatory affection.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "LipLickGlow",
+                                                                        "Speak", "Heather",
+                                                                        "Mmmmmmmm-!~♥ You're {i}so{/i} delicious, [ThePlayerName].♥♥♥",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "HungryGlow",
+                                                                        "Speak", "Heather",
+                                                                        "Give me {b}more{/b}.~♥",
+                                                                        "She stresses her sweetly spoken demand by dotingly draping her arms over you and pushing your pleasure-slack face deep into her pillowy, perfumed cleavage, making pure perverted softness and hotly raw bliss permeate every part of you as your orgasm feels like it keeps going for an impossibly felicitous eternity, your achingly tensing balls working on overdrive to offer up every drop they can to the seemingly insatiable woman.",
+                                                                        "ChangeImageLayer", "Aura", "Heather", "", "ChangeImageLayer", "Expression", "Heather", "AraAraGlow",
+                                                                        "Slowly but surely, though, the draining pulses eventually dim and the drowning waves of pleasure start to ebb away from your trembling, tensing body, Heather letting out a low, gentle sound of lascivious tenderness as you needily tremble in her embrace, all the while her pussy continues to tightly clench around your twitching cock, clearly refusing to let go of you and insistently keeping you tightly hilted within her.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "Caring",
+                                                                        "Even as you float back down from your intense, mind-searing high and return to earth in an oozing afterglow, every shivering breath you take fills your senses with her potent, alluring pheromones, leaving you woozily swooning and thoughtlessly thrusting into her with your still achingly hard manhood, letting out an exhausted bliss-soaked noise muffled by her ample bust as she coos sweetly down at you and dotingly caresses your scalp.",
+                                                                        "Speak", "Heather",
+                                                                        "Oh dear, you look like you {i}really{/i} enjoyed that... I hope you weren't underestimating succubi, mh?♥",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "AraAra",
+                                                                        "Her initially caring tone quickly shifts back into lecherous thirst as she playfully speaks while continuing to receptively move back in time with your wanton hip-swinging and carries on soothingly patting you, making sure to keep you awash in delightfully ruinous ecstasy as she goes on to explain.",
+                                                                        "Speak", "Heather",
+                                                                        "After all, my pheromones can get quite {i}potent{/i} if they get to build up... especially in a tight room like this.♥ Why don't you take another deep breath and see for yourself?♥ Come on, [ThePlayerName]... In...~♥ Out...~♥",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "LipLick",
+                                                                        "In a vacant, lust-ridden daze, you obediently follow along with her words and slowly inhale the wonderful fragrance permeating the room, filling yourself to the brim with raw tingly euphoria, the aphrodisiac influx somehow reigniting your freshly assuaged arousal all over again and already making another surge of climax rise in your loins!",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "AraAra",
+                                                                        "Speak", "Heather",
+                                                                        "Yes, just like that... Go on, [ThePlayerName]... In...~♥ Out...~♥",
+                                                                        "Despite the toll that the back-to-back orgasms are taking on you, you find yourself unable to deny both Heather's hypnotic instructions and the addictive bliss you're soaked in, and as you shiveringly keep breathing in and out while continuing to metronomically thrust, you happily break again, your twitching erection pouring another thick load into her while you weakly shudder against her in rapture and she sighs in loving content.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "LipLick",
+                                                                        "Speak", "Heather",
+                                                                        "Goooood boyyyyy~♥",
+                                                                        "Her honeyed praise melts through your pleasure-drunk mind in an intoxicating wave that floods you with oozing warmth, every doting touch of her gentle hands sending tingles across your skin that keep you docilely glued to her ample curves while her soft pussy stays clenched around your wonderfully tamed cock, your drained vigor sending you slowly crumpling and swooning against the larger woman even as you keep weakly thrusting.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "Caring",
+                                                                        "All the while, the sweet-smelling demoness makes sure to continue lavishing you with coaxing caresses and hair-ruffling, ensuring that you remain hopelessly under her raunchy spell and that you thoughtlessly go along with her perverted urging as she whispers.",
+                                                                        "Speak", "Heather",
+                                                                        "You're doing such a {i}great job{/i} being a lovely horny adventurer for me and giving me so much of your delicious cum... But you still have more, don't you?♥ We {i}definitely{/i} need to take care of all that naughty vigor.♥",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "AraAra",
+                                                                        "Setting her hands on your shoulders, she pushes her large plush frame forward against your enfeebled form, and in an instant, you find yourself lying on your back with the big succubus now resting atop you, her pillowy curves smothering you all over with her indulgent softness along with her divinely erotic fragrance, your affectionately dominant partner giggling as she lazily rubs and grinds her obscene body against your prone form.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "AraAraGlow",
+                                                                        "Positively drowning in her voluptuous charms, you instinctively thrust up into her, drawing out a reciprocative coo from her as she starts to swing her wide, heavy hips with excited gusto in response, a hungry gleam in her eyes as she keeps enveloping your trembling length in maddening clenching ecstasy over and over, her thick ass resoundingly impacting against your thighs with every weighty swing of her waist.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "LipLickGlow",
+                                                                        "Speak", "Heather",
+                                                                        "Oooooh...♥ Yes...♥ Relax and let me take care of you, [ThePlayerName].♥ Mhhhhfff-♥ You're going to feel {i}soooo{/i} good.♥",
+                                                                        "She gives her heavy breasts a tempting, jiggly shake into your face while you let out drunken, muffled moans, completely overtaken by lust, exhaustion, and sinking captivation for the addictive demoness that you can't get enough of, feeling perfectly happy to just lie there in thorough surrender and let her continue making an absolute mess out of you.",
+                                                                        "Shivering as you lose yourself to her pampering lovemaking, you can tangibly feel the succubus' now familiar aura of mounting energy start to build up in tandem with your rapidly rising orgasm, feeling yourself get lured closer and closer to indulgent ruin with every slapping meeting of your hips.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "AraAraGlow",
+                                                                        "With the large woman's impossibly plush curves smothering you all over, everything is {i}so{/i} soft, warm, and intoxicatingly plump, divinely cozy ecstasy keeping a tight hold on everything you are and imbuing you with hot felicity to your very core, making everything in the world feel distant and unimportant compared to the wonderful here-and-now of your lover's relentlessly tender ministrations.",
+                                                                        "Your expression having long devolved into a sloppy look of vacant abandon, you wholeheartedly embrace your hopeless infatuation with Heather, and as you take another, long and deep breath of her potent, sweet natural scent, you feel an overwhelming rush of giddy pleasure flood every part of you, further heightening the wanton rapture of your already melted senses.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "HungryGlow",
+                                                                        "Speak", "Heather",
+                                                                        "Ohhhhh-♥ Here~ it~ comes.~♥",
+                                                                        "ChangeImageLayer", "Aura", "Heather", "Aura", "ChangeImageLayer", "Expression", "Heather", "CaringGlow",
+                                                                        "As you breathe out in a woozy gasp, she slams her hips down in one final, mind-blanking jiggly impact, making the addictive sexual euphoria that's filled you to the brim explode into a cascade of crackling, ecstatically charged fireworks, Heather's draining, comforting aura of succubus magic gloriously contrasting the overwhelming sensations of climax, and melding with them in back-and-forth waves of searingly raw bliss.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "Pleasured",
+                                                                        "As you lie there and cum to your heart's content, every spurt into her clenching pussy sends another rush of explosive pleasure throughout your body, meanwhile every slight interval between each rope of freshly ejaculated seed shifts you back into her smothering breasts' heavenly intoxication, the alternating felicitous sensations leaving your expression loose and your head empty as you keep climaxing with dual intensity.",
+                                                                        "ChangeImageLayer", "Aura", "Heather", "",   "ChangeImageLayer", "Expression", "Heather", "LipLick",
+                                                                        "With ruinously intense orgasmic rapture coursing through you in an ever-repeating loop, it feels like this impossibly delightful experience is never going to end... but eventually, the ongoing chain of spurting ecstasy does gradually slow down, gently easing you down into a twitching afterglow of thoroughly intoxicated bliss, leaving you feeling completely emptied of anything but warm beatitude.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "Hungry",
+                                                                        "Looking quite happy with your performance herself, Heather stays lazily lounging atop you as she basks in her own libidinous satisfaction, letting out a low, long coo of pleasured satiety before sweetly caressing and patting your head to further help ease you down from your wonderful high while you nuzzle into her comforting cleavage in blind affectionate need.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "Caring",
+                                                                        "Speak", "Heather",
+                                                                        "Oh my... that was fantastic.♥ We should {i}definitely{/i} do this more often, [ThePlayerName].♥",
+                                                                        "Lightly humming, she shifts to her side to give you a bit of room to breathe, allowing you to enjoy the view of her still half-naked body while she restfully trails her fingers up and down your prone form with doting tenderness, the lascivious sight and touches making a part of you already raring to go again... and it very much seems that the same goes for Heather, though she shows a miffed pout as she regretfully muses.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "ClosedEyePout",
+                                                                        "Speak", "Heather",
+                                                                        "Now, I would {i}love{/i} to keep going, but...",
+                                                                        "She lets out a slight sigh of mild disappointment as it becomes apparent you're fading away from a mix of exhaustion, overstimulation, and general oversexing, giving you only a few more moments of languorous rest with the plush succubus' pillowy body before you'll vanish for good.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "Wink",
+                                                                        "Speak", "Heather",
+                                                                        "Hm, what a shame... Well, actually, I could always just take away your Recall Stone to keep you here for more... but I would get in {i}big{/i} trouble for that, and that would make the challenge pretty unfair anyway.",
+                                                                        "ChangeImageLayer", "Expression", "Heather", "ClosedEyeSmileOpen",
+                                                                        "You're not sure whether you should feel aroused by the forbidden prospect or a bit scared that Heather actually seems to have considered it, though she breezily puts the idea aside with an easy smile, giving you one last gentle pat while smoothly singsonging.",
+                                                                        "Speak", "Heather",
+                                                                        "So instead... don't be a stranger, okay, [ThePlayerName]?♪ We can do this all over again whenever you want, hehe.♥",
+                                                                        "She giggles innocently while gazing down at you warmly right before you pass out completely, leaving you to fall into a restful sleep filled with seductively insistent images and sensations of your overwhelmingly affectionate lover's addictively soft body, exquisitely ravenous pussy, and intoxicatingly sweet pheromones...",
+                                                                        "...",
+                                                                        "ChangeSensitivity", "Seduction", "10",
+                                                                        "ChangeFetish", "Breasts", "10",
+                                                                        "ChangeFetish", "Sex", "10",
+                                                                        "GameOver"
+                                                                    ]
+                                                        },
+
+
+
+                                                        {
+                                            "NameOfScene": "Join her...",
+                                            "theScene": [
+                                                        "ChangeBGM", "music/Loss/reason.mp3",
+                                                        "ChangeImageLayer", "Expression", "Heather", "Caring", "ApplyStatusEffect", "Cloying Mist", "DamagePlayerFromMonster", "Fashionable Succubus", "Valley Of Fascination",
+                                                        "Giving in to your lust, you stagger thoughtlessly into the small room and embrace Heather with a dazed moan as her body's luscious softness presses back against you, coaxing a lazy sigh out of you and urging you to take a deep breath of her sweet-smelling pheromones, the wanton inhale flooding your senses with lewd warmth that makes you further nuzzle into her enticing plushness.",
+                                                        "DamagePlayerFromMonster", "Fashionable Succubus", "Enamor",
+                                                        "Giggling playfully at your overt show of indulgence, Heather coos lovingly as she dotingly drapes her arms over you, pushing your face deeper into her cleavage while scritching your scalp with her skillful fingers, the demonstration of affection sending tingly, dizzying relaxation that oozes across your spine and washes through you from head to toe, blissfully instilling you with luxurious happiness.",
+                                                        "Behind you, you hear the sound of the door you just crossed closing behind you, but you absolutely can't be bothered to give it any mind, the imprisoning predicament feeling oh so distant and unimportant in comparison to the enchantment of the tall lady's gentle voice as she praisingly murmurs.",
+                                                        "ChangeImageLayer", "Expression", "Heather", "ClosedEyeSmileOpen",
+                                                        "Speak", "Heather",
+                                                        "Ah,♪ you're so adorable...♥ Hmmm, you {i}love{/i} feeling so nice and cozy, don't you?",
+                                                        "Vapidly, you nod against her without a word, prompting a contented purr from the large succubus who does little in response other than to hold you in a warm hug against her voluptuous curves and slowly cradle you left to right in her embrace, letting you languidly nestle and squeeze yourself tight against her comforting, overflowing pillowiness, the wonderful sensation leaving the two of you sighing out in placid joy.",
+                                                        "ChangeImageLayer", "Expression", "Heather", "AraAra",
+                                                        "Speak", "Heather",
+                                                        "That's it, don't worry about anything and just appreciate the moment...♪ In fact, why don't you also take a nice, deep breath to help you relax even more?♥",
+                                                        "ApplyStatusEffect", "Cloying Mist", "ApplyStatusEffect", "Cloying Mist",
+                                                        "Her sugary, doting words melt right through your dizzy senses, and in your lust-filled, indulgently cushy state, you happily follow along with her suggestion and take a long, slow inhale, the better to leisurely flood your senses with her sweet and steamy pheromones straight from her ample bosom, filling your increasingly vacant head to the brim with fluffy euphoria.",
+                                                        "With your arousal mounting higher and higher, your cock achingly strains and twitches from the needy influxes you take of Heather's lewd scent, but despite your very visible erection, the succubus does not act on your vulnerably lusting state, instead just continuing to lightly run her hands across the back of your head and neck while you drunkenly nuzzle her plush breasts, letting you comfortably simmer in her pampering presence.",
+                                                        "ChangeImageLayer", "Expression", "Heather", "LipLick",
+                                                        "Speak", "Heather",
+                                                        "See? Aren't you feeling soooo good?♥ Go on, [ThePlayerName]...♥ Breathe in...♥ and out...♥ in...♥ out...♥",
+                                                        "ApplyStatusEffect", "Cloying Mist", "ApplyStatusEffect", "Cloying Mist",
+                                                        "Thoughtlessly, you obey her sweet guiding voice, dazedly taking another slow inhale of her intoxicating scent and savoring the feeling of it flooding your head with raw bliss... before slowly exhaling and letting all your unimportant thoughts and worries drift out of you in the process, the better to make room for even more of Heather's addictively pillowy softness.",
+                                                        "ChangeImageLayer", "Expression", "Heather", "Caring",
+                                                        "Speak", "Heather",
+                                                        "Thaaaaat's it... Feels great, right?♪ Doesn't it just make you want this to last forever?♥",
+                                                        "ApplyStatusEffect", "Cloying Mist",
+                                                        "Sleepily, you murmur out an unintelligibly approving response into her bosom, which she seems to be perfectly happy with, not saying anything else and just letting this heavenly moment stretch on as she carries on rocking you into a tantric stupor.",
+                                                        "Everything feels so dreamy, hazy, and soaked with pleasure that you just go with the flow, your resistance draining out of you as you continue willingly succumbing to the loving demoness' charms, every part of you feeling tenderly pervaded in her dozy cuddly warmth...",
+                                                        "Meanwhile, your dick throbs and leaks needily from the lusty bliss permeating your entire body as you languidly hug Heather and keep breathing in her succubus pheromones at a steady pace, but you're so lost in cloud nine that you can't even bring yourself to care about getting off... Why would you, when you could instead just continue getting ecstatically melted by Heather?",
+                                                        "ChangeImageLayer", "Expression", "Heather", "LipLick", "ApplyStatusEffect", "Cloying Mist",
+                                                        "As if sensing that very thought from you, the lady in question coos dotingly and continues to let you bask in her comforting plushness, her wonderful scent, and her steamy warmth, just maintaining the cozy standing hug all the while you deeply breathe her enchanting smell in and out, sinking deeper and deeper in fragrance-induced euphoria and carelessly letting time slip away from you...",
+                                                        "...",
+                                                        "ChangeBGM", "music/Loss/Falling Down.mp3",
+                                                        "ChangeImageLayer", "Expression", "Heather", "Caring",
+                                                        "CallSceneThenReturn", "TimeAdvance",
+                                                        "CallSceneThenReturn", "PheromoneSteaming",
+                                                        "ChangeImageLayer", "Expression", "Heather", "AraAra",
+                                                        "After a long, luxuriously idle spell of that lewdly pampering relaxation, you're left woozily gasping, panting, and thoughtlessly rubbing your face against Heather's soft breasts in-between long, indulgent inhales of her thick pheromones, your brain now utterly soaked with her obscene scent from how long you've willingly remained stuck in this small room, just huffing and nuzzling her with shameless abandon...",
+                                                        "And through it all, even though the two of you have done nothing but continue to hug and cuddle, your arousal has kept rising from the bath of aphrodisiac perfume and the succubus' coaxing words and caresses, leaving your dick desperately twitching and dribbling precum, openly aching for attention with an insistence that the tall woman notices with a caring coo.",
+                                                        "ChangeImageLayer", "Expression", "Heather", "ClosedEyeSurprise",
+                                                        "Speak", "Heather",
+                                                        "Oh my, you're really craving some {i}release{/i} right now, aren't you?",
+                                                        "ChangeImageLayer", "Expression", "Heather", "Caring",
+                                                        "Speak", "Heather",
+                                                        "You should have told me sooner, [ThePlayerName]. There's no need to be shy about what you want.♥",
+                                                        "ChangeImageLayer", "Expression", "Heather", "AraAra", "ChangeImageLayer", "Aura", "Heather", "Aura",
+                                                        "As your only response to that tantalizingly enticing proposal, you let out an inarticulate lusting noise while you keep basking in completely melted pervy euphoria, prompting Heather to knowingly giggle and gradually flood your body with raw pleasure as a gleaming glow starts to surround her pillowy curves, making you swoon in rising climactic ecstasy in her careful embrace while she lecherously grins.",
+                                                        "ChangeImageLayer", "Expression", "Heather", "HungryGlow",
+                                                        "Speak", "Heather",
+                                                        "Well... Since you've been such a good, docile adventurer, I'll go ahead and reward you by draining out every drop of pent-up cum you've been storing up, okay?♥",
+                                                        "ChangeImageLayer", "Expression", "Heather", "LipLickGlow",
+                                                        "She coos dotingly while greedily licking her soft lips, using one hand to press your face into her bosom more assertively while running her nails grazingly across your scalp, meanwhile her other hand reaches down to trail a single finger along the underside of your cock from base to tip, the sultry seductress finishing the gesture by temptingly twirling her index around your cockhead and gently rubbing at its sensitive crown.",
+                                                        "ChangeImageLayer", "Expression", "Heather", "AraAraGlow",
+                                                        "Under those simple, playfully light ministrations, your eyes roll as it feels like just that mere touch has ignited a fuse in your loins, molten ecstasy readily alighting and rapidly spreading from your length all through your entire lower body, until soon, each and every slight caress from her relentlessly teasing finger feels like it's sending explosive shocks of hot tingling euphoria across your entire being.",
+                                                        "PlayerOrgasm", "2",
+                                                        "Shivering, you cling to Heather's pillowy curves as you ride the maddening jolts of ecstasy blitzing through your manhood in twitchy rushing waves of scalding rapture, until your leaking erection finally surrenders to the all-consuming bliss, spasming and throbbing as it spurts thick ropes of cum across Heather's legs, your seed instantly evaporating under each heady pulse of succubus magic heightening and feeding off your climax.",
+                                                        "PlayerOrgasm", "2", "ChangeImageLayer", "Expression", "Heather", "CaringGlow",
+                                                        "Somehow, every minute touch of Heather's single finger feels like it's leisurely drawing out an entirely new, fresh orgasm out of you while you remain hopelessly lost in the warm intoxicating embrace of the pillowy succubus' curves, every breath of her you continue to take flooding you to the brim with renewed intoxicating euphoria that keeps you sloppily moaning against her all through your seemingly endless orgasm.",
+                                                        "ChangeImageLayer", "Expression", "Heather", "LipLick", "ChangeImageLayer", "Aura", "Heather", "",
+                                                        "Skillfully sustaining and prolonging your high, Heather keeps you profusely climaxing for what feels like entire minutes... until ever so gently, the chain of spurting ecstasy abates until your emptied dick is merely shuddering blankly, prompting her to gather some of your seed on her stroking index and curiously slurp it with an appreciative expression.",
+                                                        "Speak", "Heather",
+                                                        "Mmmh... Yummy~♪ The way your cum's been simmering for so long sure has given it a nice flavor.♥",
+                                                        "ChangeImageLayer", "Expression", "Heather", "Caring",
+                                                        "While Heather giggles contently, you keep holding tightly onto her voluptuous body as you twitch with aftershocks of your intense orgasm that's left you with a swooning, pleasure-drunk expression on your dizzily flushed face, still insistently nuzzling her plush cleavage like an addict in search of more of the object of his sinful fascination, all the while she continues to pamperingly rub the back of your head with a low happy coo.",
+                                                        "IfPlayerSpiritGone", "LossFromCozyTrap",
+                                                        "ChangeImageLayer", "Expression", "Heather", "LipLick",
+                                                        "Speak", "Heather",
+                                                        "Oh my, you've really fallen for my tits completely, haven't you... Or is it my sweet scent...?♥ Well, regardless, it would be so easy to finish you off right now... but don't worry, that's not the point of this trap.♥",
+                                                        "ChangeImageLayer", "Expression", "Heather", "AraAra",
+                                                        "You hear her open the door behind you before she takes ahold of your shoulders and briskly spins you around, gently pushing you back into the open hallway full of sobering, fresh air, helpfully holding onto you as you drunkenly teeter in place until you find your balance and can stand on your own, even as every part of you still feels oh so wonderfully filled to the brim with warm, lusty euphoria that keeps a dopey smile stuck to your face.",
+                                                        "ChangeImageLayer", "Expression", "Heather", "Wink",
+                                                        "Speak", "Heather",
+                                                        "Now, off you go, and have a nice adventure! I hope you enjoyed the break...♪ But of course, don't be shy, and don't hesitate to purposefully fall for another trap if you want {i}more{/i} of this kind of thing.♥",
+                                                        "DisplayCharacters",
+                                                        "EndLoop",
+                                                        "She gives your dazed head a parting ruffle before she steps back into the room, giving you a prim wave before shutting the door behind her with a light click, leaving you woozily standing here with a still aching hard-on and a warm, bliss-soaked feeling oozing all over you, making it hard to think straight as your wits slowly gather back together in the aftermath of the supremely indulgent pampering session...",
+                                                        "PlayerStep",
+                                                        "Shivering from the arousal and lingering fragrant aphrodisiacs that stick to you like an enchanting spell left on you by Heather, you do your best to collect your thoughts despite how {i}hard{/i} it proves to be, the memories of the tall succubus' pillowy softness hauntingly clinging to your mind even once you've fully cleared your head... or at least, cleared it as much as you feel like it can be right now.",
+                                                        "ChangeSensitivity", "Magic", "5",
+                                                        "ChangeSensitivity", "Seduction", "5",
+                                                        "ChangeFetish", "Breasts", "5",
+                                                        "JumpToScene", "PostEventStuffs"
+                                        ]
+                                    },
+                                                {
+                                        "NameOfScene": "LossFromCozyTrap",
+                                        "theScene": [
+                                                        "ChangeImageLayer", "Expression", "Heather", "ClosedSmileOpen",
+                                                        "Speak", "Heather",
+                                                        "Well now, it's time for you to-",
+                                                        "ChangeBGM", "music/Loss/Do not yarn.mp3",
+                                                        "ChangeImageLayer", "Expression", "Heather", "ClosedEyeSurprise",
+                                                        "Speak", "Heather",
+                                                        "Oh dear... Maybe I actually overdid it a little...",
+                                                        "You blink blearily, confused by what she means given how {i}wonderful{/i} you feel right now, feeling instead like you could precisely do with {i}more{/i} of what you just experienced... but as a wave of crashing lethargy runs through you in the aftermath of your consecutive orgasms, it soon becomes readily apparent that you're actually utterly spent and now fading away, only managing to keep standing owing to Heather supporting you.",
+                                                        "ChangeImageLayer", "Expression", "Heather", "Hungry",
+                                                        "Feeling more dispirited by the prospect of being soon parted from her than by the idea of having been lured into surrendering to her charming wiles, you let out a wanting sigh before needily nuzzling back into Heather, indulgently intent on enjoying her presence for as long as you can, your needy reaction eliciting a fond smile from the succubus who giggles sweetly before lustfully licking her lips with a hungry gleam in her eyes.",
+                                                        "ChangeImageLayer", "Expression", "Heather", "LipLickGlow",
+                                                        "Speak", "Heather",
+                                                        "Well then... We may as well send you home with a bang, now, hmmm?♥",
+                                                        "ChangeImageLayer", "Aura", "Heather", "Aura",
+                                                        "All at once, before you can even react, Heather's comforting, draining aura of magic surrounds the two of you anew, meanwhile the tall woman wraps her full hand around your trembling, defeated erection to deftly pump it at a quick pace, sending hot shocks of pleasure ricocheting through your lower body all over again, making your eyes go wide in surprise and swiftly brimming arousal!",
+                                                        "ChangeImageLayer", "Expression", "Heather", "AraAraGlow",
+                                                        "Speak", "Heather",
+                                                        "You know what to do, [ThePlayerName]: in...~♥ out...~♥ in...~♥ out...~♥",
+                                                        "Shivering, you drunkenly follow along with her alluring instructions even as you feel yourself fade away, her fingers leading you along by your cock as you take a long, shaky inhale of her heady pheromones, flooding yourself head to toe with intoxicating, warm euphoria-!",
+                                                        "ChangeImageLayer", "Expression", "Heather", "HungryGlow",
+                                                        "PlayBlackOut",
+                                                        "Then, as you exhale, the draining pulses of Heather's magic hit you and you immediately start ejaculating while she coos lovingly and you already breathe in again on obedient instinct, determined to eagerly drag yourself even deeper into comforting depravity for as long as you can, spurting load after load into the soft hand skillfully jerking you off while you rapidly black out from the crushing combination of pleasure and exhaustion.",
+                                                        "Speak", "Heather",
+                                                        "Bye byeeeee~♥♥♥ Have a nice rest and come again soon, [ThePlayerName].♥",
+                                                        "...",
+                                                        "Drifting into dreamy unconsciousness, all you can think about as you fitfully sleep in a woozy haze of post-orgasmic ecstasy is Heather, her softly addictive succubus curves, and her intoxicating pheromones, the memory of her lovely pampering ministrations staining your mind in wonderful, melty, relaxing euphoria that makes you crave to experience her luscious charms all over again...♥",
+                                                        "ChangeSensitivity", "Magic", "10",
+                                                        "ChangeSensitivity", "Seduction", "10",
+                                                        "ChangeFetish", "Breasts", "10",
+                                                        "GameOver"
+                                                    ]
+                                        },
+
+
+                                        {
+                                                "NameOfScene": "PheromoneSteaming",
+                                                "theScene": [
+                                                                "IfHasPerk", "Pheromone-Steamed", "IncreaseSteamDuration",
+                                                                "GivePerkQuietly", "Pheromone-Steamed"
+                                                            ]
+                                        },
+                                                  {
+                                                          "NameOfScene": "IncreaseSteamDuration",
+                                                          "theScene": [
+                                                                          "ChangePerkDuration", "Pheromone-Steamed", "2"
+                                                                      ]
+                                                  },
+
+
+                                        {
+                                                "NameOfScene": "TimeAdvance",
+                                                "theScene": [
+                                                                "IfTimeIs", "Midnight", "Nothing",
+                                                                "RestPlayer"
+                                                            ]
+                                        },
+                                                        {
+                                                                "NameOfScene": "Nothing",
+                                                                "theScene": [
+
+                                                                            ]
+                                                        },
+
+
+
+
+                                        {
+                                            "NameOfScene": "CantThink",
+                                            "theScene": [
+                                                         "With the big succubus' sweet-smelling pheromones and temptingly plush frame invading your desperately aroused mind and filling it with raging lust to the point of mindless need, you're so debilitatingly horny that her tempting offer completely smothers your rationality, leaving you unable to resist her a second longer...",
+                                                         "JumpToScene", "Join her..."
+                                            ]
+                                        },
+
+
+                    {
+                      "NameOfScene": "PostEventStuffs",
+                      "theScene": [
+                                   "IfInExploration", "EndEvent",
+                                   "ChangeBGM-List",
+                                   "music/Capital/STARLIGHT.mp3",
+                                   "music/Capital/Night_Floating.mp3",
+                                   "music/Capital/Nobody_City.mp3",
+                                   "music/Forest/Starry sky.mp3",
+                                   "music/Loss/BGM03_Uncanny light.mp3",
+                                   "music/Relaxing/Purple Planet Music - Lanquidity (2 52) 110bpm.mp3",
+                                   "music/Emotional/Purple Planet Music - Emotional - Spiritual Moment (1_32) 90bpm (L).mp3",
+                                   "EndLoop",
+
+                                   "AllowInventory",
+                                   "GoBackToStoredEvent"
+                                ]
+                    },
+                        {
+                        "NameOfScene": "EndEvent",
+                        "theScene": [   "Thankfully, as you hurry on your way, you eventually find the real exit to the maze and can keep moving onwards, leaving the tall succubus' sultry charms behind you...",
+                                        "UseHeldBG"
+                                    ]
+                        },
+
+                    {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [   "event broke."
+                                ]
+                    }
+                ]
+}

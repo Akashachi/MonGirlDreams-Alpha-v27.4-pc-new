@@ -1,0 +1,58 @@
+{
+    "name": "Venefica's Lingering Sweetness",
+    "CardType": "Quest",
+    "CardLimit": "0",
+    "Description": "As you browse your options for your exploration of the Labyrinth, you come upon a strange black page within your Grimoire, its flowing eldritch script glowing with formidable demonic energy, like a lingering nightmare... It feels like you could encounter something familiar within the depths of this place, something that is supposed to have been placated... 'Witch Queen Venefica.'",
+    "requires": [ ""],
+    "requiresEvent": [
+                {
+                    "NameOfEvent": "ConfrontingVenefica",
+                    "Progress": "0",
+                    "ChoiceNumber": "3",
+                    "Choice": "DefeatedCrazyVenefica"
+                }
+            ],
+    "Speakers": [
+                  {
+                    "name": "Venefica",
+                    "postName": "",
+                    "SpeakerType": ""
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Fight!",
+                        "theScene": [     "ChangeBG",  "Caverns.png",
+                                          "Progressing onward, you find yourself within the depths of the Caverns, a thick miasma of strangely sweet-smelling demonic essence drifting through the air...",
+                                          "DisplayCharacters",
+                                                "1",
+                                              "EndLoop",
+                                          "ChangeImageLayer", "ImageSet", "1", "Tattoos", "ChangeImageLayer", "Expression", "Venefica", "Predatory",
+                                          "Then with a shuddering swirling roil of darkness, Venefica appears before you, adorned in familiar obsidian markings, wreathed in quaking magical energy, and very much looking like she has no intent to waste any time on pleasantries, her love-crazed eyes piercing into you greedily as she licks her lips like a starving predator!",
+                                          "ChangeImageLayer", "Expression", "2", "LongTongue",
+                                          "Speak", "Venefica",
+                                          "Hahhh,♥ there you are, [ThePlayerName]...♥ I'll drown you in my {i}love{/i}, until you're melting in ecstasy.♥",
+                                          "GetEventAndSetChoice", "VeneficaCombatEvents", "2", "",
+                                          "GetEventAndSetChoice", "VeneficaCombatEvents", "1", "NotHoldingback",
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Venefica",
+                                          "StartCombat",
+
+                                          "ChangeBG",  "dungeon.png",
+                                          "IfChoice", "1", "ClearedLabyMatch", "PostWin",
+                                          "SetChoice", "1", "ClearedLabyMatch",
+                                          "GetEventAndChangeProgress", "Labyrinth Depths", "1",
+                                          "JumpToScene", "PostWin"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "PostWin",
+                                "theScene": [
+                                              "With the illusionary Venefica's climactic defeat, you are returned to the dark halls of the Labyrinth, a comforting light ahead finally signaling the end of your arduous travels!"
+
+                                          ]
+                            }
+                ]
+}

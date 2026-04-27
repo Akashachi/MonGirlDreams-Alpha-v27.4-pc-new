@@ -1,0 +1,643 @@
+{
+    "name": "Lumiren's Song",
+    "CardType": "Event",
+    "CardLimit": "2",
+    "Description": "A Lumiren has ascended from the deep underwater caves within the caverns to lure adventurers into her loving embrace with her mesmerizing voice and captivating eyes.",
+    "requires": [ "Labyrinth Checkpoint Gem"],
+    "Speakers": [
+                  {
+                    "name": "Lumiren",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "LumirenHidden",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+      {
+          "NameOfScene": "EventStart",
+          "theScene": [ "StoreCurrentBG",
+                        "As you move through the winding passages dipping deeper down below the mountain, it gets darker and wetter, dripping water the only sound you can hear in between your steps through the stone tunnel.",
+                        "ChangeBG", "CavernsLumiren.png",
+                        "DisplayCharacters",
+                          "2",
+                          "EndLoop",
+                          "ChangeBGM", "music/Caverns/New-Paradise.mp3",
+                          "ChangeImageLayer", "Expression","1", "BaseGlow",
+                        "Then you enter into a small chamber, noting one corner is completely covered in dark, deep water and a few rocks nestled in the pool, but most noticeable of all is the clearly aquatic woman with her hips completely hidden in the depths, leaning on the edge of the pool with a sweet smile, her golden glowing bioluminescence drawing your eyes to her alluring form as you enter.",
+                        "ApplyStatusEffect",  "Harpies Song",  "DamagePlayerFromMonster", "Lumiren", "Harpies Song",
+                        "ChangeImageLayer", "Expression","1", "SingingGlow", "ChangeImageLayer", "Singing","1", "Sing",
+                        "She giggles melodiously as you take a few steps into the room, and starts to gently sing in a silvery voice that echoes through the room and all on its own, she speaks no words in her song but it reverberates to your core all the same.[DamageToPlayer]",
+                        "ApplyStatusEffect",  "Harpies Song",  "DamagePlayerFromMonster", "Lumiren", "Harpies Song",
+                        "ChangeImageLayer", "Expression","1", "SingingEyesClosed",
+                        "IfChoice", "2", "ExtraTrance", "MoreTrance",
+                        "You blink in mild confusion as it seems to wash away your thoughts and leaves your cock swelling in desire for her supple body, you're going to need to act fast! Or... Maybe just keep listening to her bliss-inducing voice...[DamageToPlayer]",
+                        "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Trance", "11", "TooHypnotisedToRefuse",
+                        "IfPlayerOrgasm", "TooHornyToRefuse",
+                        "JumpToScene", "ReactionOptions"
+                    ]
+      },
+
+      {
+    "NameOfScene": "MoreTrance",
+    "theScene": [
+                  "In fact, as you can't help but idly stare at her, you notice that her singing has only been intensifying since you stepped into her chamber, filling your mind with more mesmerizing bliss that seems to enthrallingly caress you all over from within and without, making you feel {i}wonderfully{/i} pleasured and captivated...[DamageToPlayer]",
+                  "ChangeImageLayer", "Expression","1", "PredatoryGlow",
+                  "ApplyStatusEffect",  "Harpies Song",  "DamagePlayerFromMonster", "Lumiren", "Harpies Song",
+                  "And as she opens her eyes and stares at you with a wide grin, you belatedly remember her parting words back when you last left her domain, and realize that she clearly meant them, the lumiren looking determined to really make you fall for her this time! Even the mischievous giggle that she lets out is charged with musically hypnotic allure, making you irresistibly fall even deeper in entranced rapture![DamageToPlayer]",
+                "ChangeImageLayer", "Expression","1", "SingingEyesClosed",
+                  "ApplyStatusEffect",  "Harpies Song",  "DamagePlayerFromMonster", "Lumiren", "Harpies Song",
+                  "Closing her eyes back to focus on her enchanting performance, she fills your ears with more of her blissfully ethereal voice, tempting you to just stand there and keep listening until your resistance has been melted into putty and you can no longer think about anything but her, your present state of fascination leaving you struggling to even muster the will to consider what you should do.[DamageToPlayer]",
+                  "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Trance", "11", "TooHypnotisedToRefuse",
+                  "IfPlayerOrgasm", "TooHornyToRefuse",
+                  "JumpToScene", "ReactionOptions"
+              ]
+},
+
+                  {
+                      "NameOfScene": "TooHornyToRefuse",
+                      "theScene": [
+                                  "Your overwhelming arousal consumes your thoughts, and as the aquatic woman teasingly spreads her pussy, singing sweet seduction to your horny mind, any remaining thoughts of resistance are completely washed away...",
+                                  "JumpToScene", "Give in..."
+                                ]
+                  },
+                  {
+                      "NameOfScene": "TooHypnotisedToRefuse",
+                      "theScene": [
+                                  "Your mind is left completely empty and entranced by her hypnotic song, so achingly horny for her, washed away in her captivatingly sweet voice...",
+                                  "JumpToScene", "Give in..."
+                                ]
+                  },
+      {
+          "NameOfScene": "ReactionOptions",
+          "theScene": [  "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Trance", "11", "TooHypnotisedToRefuse",
+                        "IfPlayerOrgasm", "TooHornyToRefuse",
+                        "Menu",
+                          "Attack her!",
+                          "Run!",
+                          "RequiresChoiceFromEvent", "Voracious Huntress", "19", "LumiChecked", "RequiresChoice", "2", "", "'... Hi?'",
+                          "Just keep listening...",
+                          "Give in...",
+                        "EndLoop"
+                    ]
+      },
+              {
+                  "NameOfScene": "Run!",
+                  "theScene": [
+                                "StatCheck",
+                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "HypnosisAddict", "25", "5",
+                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "HypnosisAddict", "50", "2",
+                                "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "HypnosisAddict", "75", "3",
+                                "Temptation",
+                                "10",
+                                "RanAway",
+                                "Fail",
+                                "CantRun"
+                            ]
+              },
+                    {
+                        "NameOfScene": "CantRun",
+                        "theScene": [   "But her wonderful singing keeps you locked in place, the sweet serenade melting away your mind with a sea of wonderful bliss...",
+                                      "JumpToScene", "Just keep listening..."
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "RanAway",
+                        "theScene": [  "ApplyStatusEffect",  "Harpies Song",  "DamagePlayerFromMonster", "Lumiren", "Harpies Song",
+                                          "ChangeImageLayer", "Expression","1", "SingingGlow",
+                                      "And you manage to run out of the chamber into the next set of tunnels, her voice hauntingly echoing behind you, filling your brain with wonderful bliss as it reverberates in your mind, tempting you to turn back...[DamageToPlayer]",
+                                      "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Trance", "11", "TooHypnotisedToRun",
+                                      "IfPlayerOrgasm", "TooHornyToRun",
+                                      "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                      "DisplayCharacters",
+                                        "EndLoop",
+                                      "UseHeldBG",
+                                      "SetChoice", "2", "",
+                                      "But you shake off the temptation and keep moving until her sweet siren song is no longer assailing you, taking a moment to catch your breath before continuing onwards."
+
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "TooHornyToRun",
+                                "theScene": [
+                                            "Your overwhelming arousal consumes your thoughts, and before you realize what you're even doing, you're staggering back towards the woman and her sweet bliss-inducing voice. As you re-enter the chamber you're greeted with the mind-melting sight of her teasingly spreading her pussy for you, still singing sweet seduction to your horny mind, snuffing out any remaining resistance from your mind...",
+                                            "JumpToScene", "Give in..."
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "TooHypnotisedToRun",
+                                "theScene": [
+                                            "Your mind is left completely empty and entranced by her hypnotic song, and before you realize what you're even doing, you're staggering back towards the woman and her sweet bliss-inducing voice. As you re-enter the chamber you're greeted with the mind-melting sight of her teasingly spreading her pussy for you, still singing sweet seduction to your horny mind, snuffing out any remaining resistance from your mind...",
+                                            "JumpToScene", "Give in..."
+                                          ]
+                            },
+            {
+                "NameOfScene": "Just keep listening...",
+                "theScene": [ "ApplyStatusEffect",  "Harpies Song",  "DamagePlayerFromMonster", "Lumiren", "Harpies Song",
+                            "ChangeImageLayer", "Expression","1", "SingingGlow",
+                            "SwapLineIf", "Random",
+                                  "Her sweet song bounces around the small room, echoing and reverberating inside your mind in a constant loop of pure bliss that leaves you smiling happily, eager to listen just a little more...[DamageToPlayer]",
+                                  "The aquatic woman's siren song leaves your body trembling with pleasure and your thoughts drifting away in a sea of bliss, making you twitch and shiver with desire for her supple body...[DamageToPlayer]",
+                                  "She gently trails her hands over her chest as she sweetly sings, and your brain just seems to freeze for a moment at the sight of her soft breasts, letting her melodious voice wash away more of your thoughts...[DamageToPlayer]",
+                                  "Her alluring hypnotic song just seems to wash away your thoughts, keeping you focused on her sensual curves as her hands glide up and down her body slowly, letting her echoing voice seep into your captivated mind...[DamageToPlayer]",
+                                  "You find your hand drifting down to your straining erection as the woman sings, flooding your entire body with captivating desire, making you twitch with need, letting you fully appreciate her lovely curves while she dissolves your resistance...[DamageToPlayer]",
+                                  "The woman gently sways her lithe body back and forth as she sings, and you find yourself thoughtlessly following her movements, your mind drifting away in a wave of bliss from her sweet voice, her glowing lines of bioluminescence completely captivating your eyes...[DamageToPlayer]",
+                            "EndLoop",
+                            "JumpToScene", "ReactionOptions"
+                          ]
+            },
+
+            {
+                "NameOfScene": "Attack her!",
+                "theScene": [ "ApplyStatusEffect",  "Harpies Song",  "DamagePlayerFromMonster", "Lumiren", "Harpies Song",
+                            "ChangeImageLayer", "Expression","1", "SingingGlow",
+                            "You rush forward to attack her, and the effects of her melodious voice seem to only intensify, making you shiver with bliss as you draw near, her supple body captivating your eyes completely as her song echoes in your mind...[DamageToPlayer]",
+                            "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Trance", "11", "TooHypnotisedToRefuse", "IfPlayerOrgasm", "TooHornyToRefuse",
+                            "ApplyStatusEffect",  "Harpies Song",  "DamagePlayerFromMonster", "Lumiren", "Harpies Song",
+                            "As you reach the water to get closer to her she slightly backs up in the pool, but continues singing sweetly, clearly completely confident in her voice's abilities to melt your thoughts away, and the waves of bliss pouring into your brain just don't stop, it keeps getting harder and harder to think...[DamageToPlayer]",
+                            "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Trance", "11", "TooHypnotisedToRefuse", "IfPlayerOrgasm", "TooHornyToRefuse",
+                            "ChangeImageLayer", "Expression","1", "Panic", "ChangeImageLayer", "Singing","1", "",
+                            "But you manage to resist her siren song long enough to reach the aquatic woman, and she starts to submerge herself in a mild surprised panic!",
+                            "Menu",
+                              "Quickly grab her! (Technique)",
+                              "Pin her! (Power)",
+                              "Let her swim away.",
+                            "EndLoop"
+                          ]
+            },
+                    {
+                        "NameOfScene": "Quickly grab her! (Technique)",
+                        "theScene": [
+                                      "StatCheck",
+                                      "Technique",
+                                      "15",
+                                      "CaughtHer",
+                                      "Fail",
+                                      "SheGetsAway"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Pin her! (Power)",
+                        "theScene": [
+                                      "StatCheck",
+                                      "Power",
+                                      "15",
+                                      "CaughtHer",
+                                      "Fail",
+                                      "SheGetsAway"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Let her swim away.",
+                        "theScene": [  "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                      "DisplayCharacters",
+                                        "EndLoop",
+                                      "UseHeldBG",
+                                      "SetChoice", "2", "",
+                                      "She dives into the dark depths of the pool, swimming far too deep for you to possibly follow her. So you get out of the pool a little damper than you arrived and try to calm down your aching dick to little avail, her sweet song still seeming to ring inside your mind..."
+
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "SheGetsAway",
+                        "theScene": [   "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                      "DisplayCharacters",
+                                        "EndLoop",
+                                      "UseHeldBG",
+                                      "SetChoice", "2", "",
+                                      "Despite your best efforts she slips away and dives into the dark depths of the pool, swimming far too deep for you to possibly follow her. So you get out of the pool a little damper than you arrived and try to calm down your aching dick to little avail, her sweet song still seeming to ring inside your mind..."
+                                  ]
+                    },
+
+            {
+                "NameOfScene": "CaughtHer",
+                "theScene": [
+                            "She lets out a yelp of surprise as you grab her by the wrist and pin her against one of the rocks, she looks up into your eyes with her gleaming, golden irises that seem to gently ripple like a pond, making you almost space out for a moment despite your now dominant position.",
+                            "DisplayCharacters",
+                              "1",
+                              "EndLoop",
+                            "ChangeImageLayer", "Expression","1", "Panic",
+                            "You also notice past her waist that she has long sinuous tentacles that were hidden beneath the dark depths of the water.",
+                            "ChangeImageLayer", "Expression","1", "Loving",
+                            "Speaks",
+                            "Oh my, I didn't think you'd resist my song, let alone catch me.♥",
+                            "ChangeImageLayer", "Expression","1", "LipBite",
+                            "She bites her lip with an aroused blush, her long tentacles gently wrapping around your waist and legs as her voice seems to echo slightly as she speaks.",
+                            "ChangeImageLayer", "Expression","1", "Loving",
+                            "Speaks",
+                            "I just wanted your cum deep inside me.♥ If you want to be in charge, I really don't mind.♥ Besides,♥ A wonderful adventurer like you deserves a reward for catching me.♥ Right?♥",
+                            "Your cock throbs inside your pants as she seductively speaks, her faintly echoing voice urging you to fuck her pussy and pour her full of your seed, leaving your balls aching for relief...",
+                            "Menu",
+                              "Fuck her!",
+                              "Let her go.",
+                            "EndLoop"
+                          ]
+            },
+                      {
+                          "NameOfScene": "Let her go.",
+                          "theScene": [  "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                          "ChangeImageLayer", "Expression","1", "Pout",
+                                        "You let her go and she gives you a little pout before diving into the dark depths of the water without another word, swimming far too deep for you to possibly follow her. ",
+                                        "DisplayCharacters",
+                                          "EndLoop",
+                                        "UseHeldBG",
+                                        "SetChoice", "2", "",
+                                        "So you get out of the pool a little damper than you arrived, and try to calm down your raging erection to little avail, her sweet song still seeming to ring inside your mind..."
+                                    ]
+                      },
+
+                      {
+                          "NameOfScene": "Fuck her!",
+                          "theScene": [ "ChangeBGM", "music/Loss/reason.mp3",
+                                      "ChangeImageLayer", "Expression","1", "LovingGlow",
+                                      "You free your aching erection from its confines and the woman gazes into your eyes eagerly, gently spreading her pale blue pussy for you with her fingers, and you gasp as you plunge your length into its wet confines. Her vaginal walls are coated in small cilia that massage every inch of your twitching cock.",
+                                      "Almost mindlessly you pound her drooling wet pussy, reveling in its wonderfully textured interior as it squeezes and milks your stiff erection in time with your thrusts, every time your tip kisses her cilia coated cervix a bolt of hot ecstasy strikes through your aching dick into your hips, making your balls already tense with the desire to pump her full of cum.",
+                                      "ChangeImageLayer", "Expression","1", "PleasuredGlow",
+                                      "Speaks",
+                                      "Mmmm,♥ d-don't hold back.♥ Ah!♥♥♥ M-Mate with me to your heart's content.♥",
+                                      "ChangeImageLayer", "Expression","1", "LipLickGlow",
+                                      "Her erotic gasps and seductive words gently echo in your mind as you fuck her harder, and she firmly wraps her tentacles and arms around you, bringing her face close to yours, leaving you gazing into her glimmering golden eyes, her inky black sclera making her irises all the more captivating as they ripple and pulse with light.",
+                                      "ChangeImageLayer", "Expression","1", "KissGlow",
+                                      "You initially try to push her away as your thoughts start to blank out, but as the rippling lights flood your brain with bliss and the desire to breed her hard and fast you let the glimmering lights take hold, your horny sex-craving mind only desiring more. You force her into a passionate kiss, enjoying the feeling of her soft breasts pressing against you as you grab her arms and pin her against the rock a little more firmly.",
+                                      "She moans in surprise as you aggressively pound her cilia-filled pussy, its interior perfectly working to pleasure your throbbing cock, massaging and milking your length all over with every thrust like hundreds of tiny tongues. Her eyes roll as she blinks hard, the pleasure of your thrusts overwhelming her with ecstasy, slightly freeing you from her eyes' mesmerizing influence.",
+                                      "ChangeImageLayer", "Expression","1", "PleasuredGlow",
+                                      "The woman gasps and whimpers as her tentacles desperately cling to you, helping you ravish her tight pussy with your stiff manhood, leaving her shivering with bliss, the wet meetings of your hips sending electric pleasure into both of you, and slowly you find your hands and hers gingerly interlocked and you continue to fuck her senseless, both of you completely losing yourself in the desire for sex.",
+                                      "ChangeImageLayer", "Expression","1", "SmugGlow",
+                                      "Her lustful moans echo in your mind as they get more and more desperate, but she manages to regain steady eye contact with you once more as you continue to aggressively make out with her, her irises rippling with glowing patterns and a seductive glint.",
+                                      "The lumiren's shimmering golden eyes flood your mind with melty bliss that leaves you hammering her spasming pussy as hard as you can, sending waves of climactic ecstasy through both of you, and you both quiver and moan together as you fall into an abyss of pleasure.",
+                                      "PlayerOrgasmNoSpiritLoss",
+                                      "ChangeImageLayer", "Expression","1", "Orgasm",
+                                      "With a final resounding thrust you both cry out in ecstasy, your entire mind going blank as her shining golden eyes go wild with shimmering ripples of light, keeping you spurting into her womb far longer than you should, climactic waves washing though you almost constantly as you pour your seed into her spasming womb, the light dancing in her eyes instilling an aching need to mate with her, to {i}breed{/i} her senseless.",
+                                      "You both break the kiss gasping for air in a pleasure drunk daze, her tight cilia-filled pussy still gently milking your rock hard cock, if anything it's even harder than before. You thoughtlessly start to fuck her again as the aching need to mate she implanted blows all other thoughts away. She gently squirms a little with a gasp, and tries to slightly shift over while still lovingly clinging to you.",
+                                      "ChangeImageLayer", "Expression","1", "PleasuredGlow",
+                                      "Speaks",
+                                      "Mnn!♥♥♥ Ah!♥ I-I don't mind if we keep going-♥ Ohhh!♥ B-But can you at least lay me in th-the shallows?♥ Th-This rock isn't exactly comfortable-",
+                                      "ChangeImageLayer", "Expression","1", "LovingGlow",
+                                      "You grunt and shift her off of the rock, her mesmerizing voice echoing in your mind as you pin her in the shallow water and continue to take her tight pussy from above. She gazes up at you blissfully, trembling from your every thrust, her glimmering eyes keeping your gaze as you dominate her rippling pussy.",
+                                      "She smiles and gasps sweetly as you keep her firmly pinned, letting out a blissful whimper every time your tip strikes her womb, your cock throbbing with ecstasy as the tiny tongues coating her pussy stroke and tease your entire length with your every thrust, urging you to pour her full with more of your seed.",
+                                      "ChangeImageLayer", "Expression","1", "PleasuredGlow",
+                                      "Her long tentacles desperately cling to you as she trembles with pleasure, eagerly losing herself in the sexual pleasure you're giving her, and she cries out in ecstasy as you finally slam your hips into hers and erupt in her, unloading thick ropes of cum directly into her womb, her eyes closing as she's lost in her orgasmic throes, her melodious voice reverberating hot bliss directly into your brain while you spurt your semen into her.",
+                                      "ChangeImageLayer", "Expression","1", "LovingGlow",
+                                      "The two of you slowly come down from your orgasmic highs, gasping and panting, her expression a little loose as her head sways back and forth in a daze, the golden lights in her eyes seeming to flicker. You pull your spent cock free of her constantly teasing slit, her tentacles gently untangling from you, and sit in the shallow water, trying to physically and mentally recover from that orgasm, tempted to pin her down again and keep going.",
+                                      "Speaks",
+                                      "Ah...♥ Th-That was wonderful...♥ I can feel your warmth inside me...♥",
+                                      "She glances over at you with a loving smile, slowly running her webbed hands over her body as she languidly stretches and gradually sits up.",
+                                      "ChangeImageLayer", "Expression","1", "Base",
+                                      "Speaks",
+                                      "Mmmm...♥ Be sure to mate with me again sometime.♥",
+                                      "Her cooing voice echoes in your mind, sending a tempting shiver down your spine, making your cock start to swell back up from its semi-erect state, but she teasingly giggles and gently slips into the depths of the pool, disappearing into the deep waters with a smile.",
+                                      "DisplayCharacters",
+                                        "EndLoop",
+                                      "You let out a shivering sigh as you get out of the pool of water. Thoughts of coming back to mate with her again dancing through your mind...",
+                                        "ChangeFetish", "Sex", "5",
+                                        "ChangeSensitivity", "Sex", "5",
+                                        "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                      "UseHeldBG",
+                                      "SetChoice", "2", "",
+                                      "After trying to shake the thoughts off, you continue on your way through the dark caverns..."
+
+                                    ]
+                      },
+
+
+
+
+            {
+                "NameOfScene": "Give in...",
+                "theScene": ["ChangeImageLayer", "Expression","1", "SingingGlow",
+                            "The woman continues to sweetly sing her bliss inducing song, gently caressing her own sensual curves with a webbed hand as she gestures you closer, and you stagger forward mindlessly, stripping off your clothes, tossing them aside as you step deeper into the pool.",
+                            "Your cock twitches with need as her captivating voice resonates deep inside your mind, only growing more powerful and seductive as you get closer to her. Her golden irises quickly take hold of your vision, deep pools of glimmering, pulsing light, surrounded by her inky black sclera, only growing more fascinating the closer you get to her, and the more her beautiful song pulses bliss into your mind.",
+                            "Waist deep in the water you're finally close enough to touch the woman as she sings her sweet siren song, and you can't help but smile as she gently runs one of her fingers under your chin, drawing you even closer to her sensual form, your thoughts completely empty except for the aching need for her body.",
+                            "You mindlessly embrace her, wrapping your arms around her waist as she slowly and teasingly drapes hers around your neck and shoulders, your movements seeming to match the pace of her melodious voice's slow teasing notes as they echo inside your horny brain, her golden eyes gazing into yours with a hypnotic ripple that just leaves you so docile and aroused.",
+                            "DisplayCharacters",
+                              "1",
+                              "EndLoop",
+                            "ChangeImageLayer", "Expression","1", "SingingGlow", "ChangeImageLayer", "Singing","1", "Sing",
+                            "You're so lost in her deep mesmerizing eyes and mind melting voice, you only faintly notice the long tentacles rising out of the water, gently wrapping around your waist and legs, clearly part of her lower body, pulling you closer to her body. You gasp with blissful pleasure as your stiff cock finally penetrates her pale blue pussy, bringing you into a lovingly intimate embrace while your rigid manhood is pulled deep into her squeezing orifice.",
+                            "As her tight slit starts to gently churn and writhe around your aching erection your mind seems to freeze up for a moment, unable to think at all as the feeling of many tiny tongues inside her orifice massage your entire length, her seductive song reaching a mind melting peak, and her mesmerizing eyes pulse with a golden glimmer that leaves your entire body submersed in warm ecstasy.",
+                            "ChangeImageLayer", "ImageSetDontCarryOver", "1", "CloseUp", "ChangeImageLayer", "Expression","1", "LovingGlow",
+                            "PlayMotionEffect", "CrashSmol",
+                            "Her many long tentacles have firmly wrapped around your waist and legs, ensuring you're firmly locked together with her sensual form, and she smiles as her song comes to an end, pressing her soft breasts against you with teasing caress, gently stroking your back with her webbed hands while her cilia-filled pussy massages your every sensitive inch.",
+                            "ChangeImageLayer", "Expression","1", "SmugGlow",  
+                            "PlayImagePulseLoopingList", "5.0", "1.15", "0.8",
+                                      "Monsters/Lumiren/CG/LumirenEyeGlow.png",
+                                "EndLoop", 
+                            "Even with her song over, her voice seems to resonate and echo inside your empty, pleasure-drunk mind. Her deep golden eyes so close to yours, they're the only thing you can see, the pulsing and scattered pond-like ripples consuming your vision, sending waves of bliss into your helpless brain. Amidst the veritable sea of pleasure you barely even register how deep into the pool she's brought you, the water is up to your neck now.",
+                            "ChangeImageLayer", "Expression","1", "KissGlow",
+                            "She coos sweetly in an echoing note that bounces around your empty head, as her wonderful pussy gives your raging cock a loving squeeze, the many tiny tongues making gentle ripples up and down your entire length, focusing on teasing your tip as it stays firmly pressed against her cilia coated cervix, tempting your vacant horny mind to pour every drop your balls have into her.",
+                            "Her glimmering eyes keep every one of your thoughts melting away into a burning molten need for her body, the shimmering golden reflections flooding your brain to the brim with bliss as she pulls you into a deep kiss, firmly sealing your lips together as her tongue seductively entangles with yours.",
+                              "ChangeImageLayer", "Expression","1", "PredatoryGlow",
+                            "She tightly squeezes you in her embracing arms and tentacles while you drift away in a hypnotic sea of pleasure, her churning pussy milking your twitching cock without needing to move, her eyes, shining pools of entrancing golden light leaving you so blissful, docile, and achingly horny for her.",
+                            "ChangeImageLayer", "Expression","1", "KissGlow", "ChangeBG", "Underwater.png", "PlayMotionEffect", "CrashSmol",
+                            "Then you're pulled under the water, sinking deeper down into the depths in her caring embrace, your eyes still locked with her mesmerizing golden irises as she lovingly pours air into your lungs as you kiss with every breath, gently matching up with your breathing.",
+                            "PlayVisualEffect", "StartHaze", "darkHaze.png",                            
+                            "Some distant part of you feels like you should be panicking as you're pulled deeper and deeper into the depths of the dark waters, but you just feel so perfectly safe in her warm embrace, her lovely golden eyes shining with affection as she gazes into your eyes, the rippling pulses of light melting away all your cares and worries, while her tight cilia-filled pussy squeezes and massages your twitching manhood.",
+                              "ChangeImageLayer", "Expression","1", "LovingGlow",
+                              "PlayVisualEffect", "GrowingHaze", "darkHaze.png",
+                            "The deeper you sink into the dark caves the emptier your mind feels, sinking deeper into this blissful trance as your body goes further down into the depths of this inky aquatic abyss, lost in her caring, tight embrace, her pussy churning around your aching manhood, bringing you closer and closer to an explosive orgasm from its lovingly squeezing insides.",
+                            "ChangeImageLayer", "Expression","1", "SmugGlow",
+                            "PlayVisualEffect", "IncreasingHaze", "darkHaze.png",
+                            "Time just seems to fade away as you stare into her glimmering eyes, endlessly sinking into the almost endless underwater cavern, and as you reach the edge of climactic release you find yourself gently resting on a bed of coral at the bottom of this aquatic cave, distantly aware that even if you escaped from her, there would be no way to safely return to the surface...",
+                            "ChangeImageLayer", "Expression","1", "KissGlow",
+                            "She sighs sweetly as she continues to give you air with her loving kiss, and you whimper with need, your cock throbbing inside her squeezing pussy as the many tiny tongues gently massage every inch, keeping you right on the edge as she sits the two of you in a chair-like portion of the surprisingly soft coral, with her in your lap.",
+                            "PlayerOrgasm", "1", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect3", "ScreenPulse", "white.png",
+
+                            "You moan as her golden eyes pulse and ripple with her now gently gyrating hips, instantly drawing out a thick rope of seed from your twitching balls into her waiting womb, your overstimulated manhood spasming as it pours spurt after spurt into her, her cilia coaxing out more and more as they ripple and massage your aching length.",
+                            "ChangeImageLayer", "Expression","1", "LipLickGlow",
+                            "She giggles sweetly into your mouth, her lovingly firm kiss giving you bliss inducing breaths of air as you recover from your mind-blanking orgasm, your thought still completely lost in pleasure, and her eyes deep pools of golden light as they shimmer hypnotically.",
+                            "ChangeImageLayer", "Expression","1", "KissGlow",
+                            "As she continues to gently sway and gyrate her hips, adding to the pleasure her internal muscles and cilia are inducing in your twitching length. On instinct and aching need you start to thrust up in time with her swaying hips, eliciting a gasp from the aquatic woman into your mouth as you start to fuck her, the desire to pour more of your semen into her flooding your mind as her eyes pulse and ripple with golden light.",
+                            "ChangeImageLayer", "Expression","1", "SingingGlow",
+                            "She coos sweetly, tightening her tentacles hold on your legs, and her arms wrapped around your back, delightfully rubbing her soft breasts against you as you eagerly pound her tight pussy, its squirming insides constantly teasing your every thrust, coaxing you to unload more into her as she rocks her curvy hips in time with your movements, losing herself in the pleasures of sex with you.",
+                            "ChangeImageLayer", "Expression","1", "LovingGlow",
+                            "Your lustful mating leaves your mind completely focused on the need to fuck, her pulsing glimmering eyes gazing affectionately into yours dissolve anything else that manages to bubble up in your mind, keeping you needy, horny and eager to breed her tight pussy. This lets you revel in the pleasure of the Lumiren's pussy squeezing tightly every time you thrust into her, every little cilia's pleasure inducing caress brought into focus.",
+                            "With every meeting of your hips your tip hits her cilia covered cervix, and a mind melting jolt of ecstasy strikes through both of you, leaving you gasping into each other in your romantically deep kiss, her glimmering golden eyes flooding your brain with blissful need as they ripple with light, the glimmering shine pulsing faster and faster as the need to cum fills you and her.",
+                            "PlayerOrgasm", "2", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect3", "OrgasmPulse", "white.png",
+                            "ChangeImageLayer", "Expression","1", "PleasuredGlow", "ChangeImageLayer", "Blush","1", "Blush",
+                            "She cries out into you as your hips slam into each other, sending a wave of orgasmic ecstasy through your entire body as you hilt your twitching manhood deep inside her, pouring your seed directly into her womb as her golden irises go wild with shimmering, rippling lights, deeply instilling a need to fuck her, mate with her, and breed her inside your brain as it drowns in pleasure, keeping you spurting inside her far longer than normal.",
+
+                            "Slowly, the climactic pleasure ebbs away and you take gasping breaths of air that you didn't realize you needed as she takes her own shivering breaths to give you air, her body still quivering in ecstasy, her golden eyes surrounded in inky pools of black sclera, a little out of it even as they ripple with light.",
+                              "ChangeImageLayer", "Expression","1", "KissGlow",
+                            "The need to fuck is all you can think about, her captivating gaze melting away everything but the need to mate with her, the Lumiren moaning sweetly as you roll her over on the coral and start to pound her cilia-coated pussy, making her gasp and moan with delight into the caring kiss she's giving you while pulses of ecstasy wash through you with every meeting of your hips, her internal, tiny teasing tongues caressing your whole length.",
+                            "ChangeImageLayer", "Expression","1", "PleasuredGlow",
+                            "She tightens her hold on you as you fuck her relentlessly, rubbing her soft body against you as you senselessly mate with her, every strike to her womb sending a delightful pulse through your fuck-drunk body, your cock spasming with the need to fill her over and over. She quivers and moans as you plow her tight pussy, focusing only on breathing air into you as she tenses with pleasure from your intense thrusts.",
+                            "PlayerOrgasm", "1", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect3", "OrgasmPulse", "white.png",
+                            "You moan blissfully as her rippling golden eyes shining pulses of light send you over the edge, and with a hilting thrust you unload another spurting climax into her, pouring your seed into her womb as you both tremble with ecstasy from your rampant mating, and her tiny cilia coated pussy keeps your twitching erection achingly hard and stimulated, craving more.",
+                            "ChangeImageLayer", "Expression","1", "KissGlow",
+                            "She gently rolls back on top of you with a giggle while you try to catch your breath from her kiss, and she gently rolls her hips to slowly milk out your next load, purring in delight from the pleasure and semen you've given her, her pulsing eyes lulling you into a state of horny docility, to keep you from overexerting yourself and running out of much-needed air.",
+                            "ChangeImageLayer", "Expression","1", "SmugGlow",
+                            "You sigh blissfully as she does all the work to milk you dry, her golden, rippling irises constantly filling you with bliss and the aching need to fill her, while her churning, tiny tongue filled pussy keeps milking and teasing your spasming cock as she rides you.",
+                            "PlayerOrgasm", "1", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect3", "ScreenPulse", "white.png",
+                            "ChangeImageLayer", "Expression","1", "LovingGlow",
+                            "Her tentacles and hands gently caress your body, helping you unwind while she lovingly kisses you, making you moan as her tight slit milks out another load of your seed into her womb, leaving you feeling so tired and safe with her, her sweet caress slowly bringing you down into a wonderful state of relaxation.",
+                            "ChangeImageLayer", "Blush","1", "BlushHeavy", "PlayVisualEffect3", "OrgasmPulse", "white.png", "PlayMotionEffect", "Crash",
+                            "Even as she wrings out load after load of your semen you lay back in a blissed-out trance, eager to give her every drop, your eyes slowly drifting closed from how sleepy you're getting from all the sexual exertion, her affectionate kiss and rippling golden eyes helping ease you into a blissful slumber...",
+                            "SetSpirit", "0", "PlayBlackOut",
+                            "...",
+                            "ChangeFetish", "Sex", "25",
+                            "ChangeFetish", "Monstrous", "5",
+                            "ChangeSensitivity", "Sex", "10",
+                            "SetChoice", "2", "",
+                            "GameOver"
+                          ]
+            },
+
+            {
+    "NameOfScene": "'... Hi?'",
+    "theScene": [ "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                    "ChangeImageLayer", "Expression", "1", "Singing", "ChangeImageLayer", "Singing", "1", "",
+                  "The familiar-looking lumiren abruptly stops singing at your surprisingly casual greeting in the middle of her enthralling recital, taking you in with blinking eyes that soon widen in recognition.",
+                    "ChangeImageLayer", "Expression", "1", "Curious",
+                  "Speak", "Lumiren",
+                  "Ah, it's you!",
+                    "IfChoice", "1", "Hi", "HiAgain",
+                    "ChangeImageLayer", "Expression", "1", "Pout",
+                  "Speak", "Lumiren",
+                  "And it really seems like you're determined to make light of my performances, hmph!",
+                  "Your previous encounter alongside Amy having seemingly not left her with the best of memories, she indignantly crosses her arms over her bare chest and pouts emphatically while her tentacles send around a few splashes of water in idle agitation...",
+                    "ChangeImageLayer", "Expression", "1", "SingingEyesClosed",
+                    "... but her anger appears to be short-lived, the aquatic monster girl's tetchy harrumph soon segueing into a quieter sigh as she collects herself and muses.",
+                  "Speak", "Lumiren",
+                  "Then again, you didn't do anything {i}too{/i} untoward back then, so I presume it's all fine...",
+                    "ChangeImageLayer", "Expression", "1", "Smug",
+                  "Speak", "Lumiren",
+                  "And I assume that you returning here must mean that you {i}do{/i} very much enjoy my singing, and couldn't wait to both hear it and see me again, didn't you?♪",
+                    "ChangeImageLayer", "Expression", "1", "SmugGlow",
+                    "ApplyStatusEffect",  "Harpies Song",
+                    "Looking like she has pridefully made up her mind on the subject, she giggles musically as she buoyantly prances in front of you, her graceful movements flaunting her alluringly water-slicked, supple body while her enchanting voice echoes musically around the cavernous room and in your mind, the enrapturing sound sneakily immersing you further in hypnotic relaxation as she crooningly goes on.",
+                    "ChangeImageLayer", "Expression", "1", "Loving",
+                  "Speak", "Lumiren",
+                  "Well, let me tell you what: since you're such a {i}fan{/i} of me, how about we have a {i}lovely{/i} intimate time, you and I? We can have gentle, tender, passionate sex, sweetly indulging in each other's bodies, cumming again and again in a lustful trance...",
+                  "As she describes the enticing scenario, she continues dancing before you, her languidly aquatic motions drawing your gaze to her fetchingly wet curves, her shapely bare breasts, her smoothly flowing hair, and her mesmerizingly golden eyes...",
+                  "ChangeImageLayer", "Expression", "1", "LovingGlow",
+                    "ApplyStatusEffect",  "Harpies Song",
+                  "And all the while, her melodious tones keep softly drifting into your ears, making you feel more and more peaceably horny and inclined to accept her proposition without even thinking about it...",
+                    "ChangeImageLayer", "Expression", "1", "Loving",
+                  "Speak", "Lumiren",
+                  "So what do you say? I can even promise it will be entirely consensual.♥ I won't entrance your mind {size=-10}too much{/size}, and after we've had our fill of each other, you can go on your way with us both feeling {i}wonderfully{/i} satisfied.♪",
+                    "SetChoice", "1", "Hi",
+                  "Menu",
+                    "'Yes...'",
+                    "'I just came here to chat, actually...'",
+                    "'I'd rather just go on my way.'",
+                  "EndLoop"
+              ]
+},
+
+{
+    "NameOfScene": "HiAgain",
+    "theScene": [ "ChangeImageLayer", "Expression", "1", "SmugGlow",
+                    "ApplyStatusEffect",  "Harpies Song",
+                    "Smiling mischievously and with unambiguous desire in her deep eyes, she swims over to you with smoothly languorous motions clearly meant to captivate and entice you, the sensual swaying of her supple body alongside the golden brilliance of her shining markings and glowing irises leaving you vapidly staring as she rests her upper body on the rocky floor in front of you, watching you playfully as she queries.",
+                  "Speak", "Lumiren",
+                  "What brings you here? Eager for passionate loving sex with me, I assume?♪",
+                    "ChangeImageLayer", "Expression", "1", "LovingGlow",
+                  "She giggles melodiously as she flauntingly runs a hand over her alluring curves, just waiting for you to say the word...",
+                  "Menu",
+                    "'Yes...'",
+                    "'I just came here to chat, actually...'",
+                    "'I'd rather just go on my way.'",
+                  "EndLoop"
+              ]
+},
+
+{
+    "NameOfScene": "'I just came here to chat, actually...'",
+    "theScene": [ "ChangeImageLayer", "Expression", "1", "Smug",
+                  "Speak", "Lumiren",
+                  "{i}Really now?{/i}",
+                  "Tittering knowingly, the lumiren floats up to you, taking you in with rather obvious lecherous interest while thrusting out her shapely chest at you, displaying her naked body even more brazenly for your viewing pleasure while she goes on.",
+                    "ChangeImageLayer", "Expression", "1", "SmugGlow",
+                  "Speak", "Lumiren",
+                  "Let's not be coy, now.♪ Don't tell me you actually came here, {i}on purpose and on your own{/i}, just for a 'chat'... Plus, haven't you had enough of that back with your friend? I know that what {i}I{/i} want right now is not a conversation, it's {i}you{/i}.♥",
+                    "ChangeImageLayer", "Expression", "1", "LipLickGlow",
+                    "ApplyStatusEffect",  "Harpies Song",
+                  "That final, lust-charged word rings tantalizingly in the air as she drifts as close to you as she can without outright leaving her pool, filling your field of view with the sight of her alluring bare form and her eye-catching luminous markings, all the while she brings one of her hands to rest on your chest and dancingly tap and caress it, the cadence of her lascivious motions accompanying that of her lilting voice as she concludes.",
+                    "ChangeImageLayer", "Expression", "1", "BaseGlow",
+                  "Speak", "Lumiren",
+                  "Don't be shy: all you need to do is say 'Yes.', and I'll give you the most {i}enchanting{/i} of times.♥",
+                  "Menu",
+                    "'Yes...'",
+                    "'I'd rather just go on my way.'",
+                  "EndLoop"                	]
+},
+
+{
+    "NameOfScene": "'I'd rather just go on my way.'",
+    "theScene": [ "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Trance", "11", "AreYouSure?",
+                  "JumpToScene", "Leave."
+      ]
+},
+
+{
+    "NameOfScene": "AreYouSure?",
+    "theScene": [ "As you open your mouth to give your answer, you find yourself struggling to voice it, your thoughts erring and fizzling as your gaze irresistibly drifts over the lumiren's desirable body, leaving you increasingly eager to see, hear, and {i}feel{/i} more of her, leaving you reluctant to part from her so soon.",
+                  "Even though you know that your present befuddled state is due to her entrancing singing and appearance, you all the same can't deny your attraction to her, making you hesitate to actually brush her off...",
+                  "Menu",
+                    "Change your mind and accept.",
+                    "Leave.",
+                  "EndLoop"
+        ]
+},
+
+{
+    "NameOfScene": "Change your mind and accept.",
+    "theScene": [ "JumpToScene", "'Yes...'"
+        ]
+},
+
+{
+    "NameOfScene": "Leave.",
+    "theScene": [ "ChangeImageLayer", "Expression", "1", "Panic",
+                  "The seductive monster girl seems downright shocked at your rejection, recoiling in a tizzy and looking about to indignantly object...",
+                    "ChangeImageLayer", "Expression", "1", "Curious",
+                    "... but instead recomposing herself and smoothing out her flustered expression into a confused one as she rather meekly answers.",
+                  "Speak", "Lumiren",
+                  "Well... If you're sure...",
+                  "Dejectedly, she draws back and retreats into the cavernous waters, her body smoothly and quickly sinking back into its natural element... though right as she is about to disappear for good, a thought appears to strike her and she turns around to face you with a grin.",
+                    "ChangeImageLayer", "Expression", "1", "LipBite",
+                  "Speak", "Lumiren",
+                  "But if you're going to play hard to get, then mark my words: next time we meet, I'll make sure to put extra effort into my singing, in order to ensure that you're {i}head over heels{/i} for me. Don't say I didn't warn you.♥",
+                  "DisplayCharacters",
+                    "EndLoop",
+                    "With those parting words, she giggles mischievously as she dives underwater and her receding form soon vanishes from your sight altogether, leaving you alone in the now strangely empty cavern...",
+                    "And without anything else to do here now that the lumiren is gone, you go on your way as well, the amphibious woman's enchanting singing still echoing in your mind and making your gait somewhat unsteady as you carry on with your exploration, idly wondering if you should be feeling enticed or worried about the 'threat' she just issued...",
+                    "UseHeldBG",
+                    "SetChoice", "2", "ExtraTrance"
+        ]
+},
+
+{
+    "NameOfScene": "'Yes...'",
+    "theScene": [
+                    "ChangeImageLayer", "Expression", "1", "SmugGlow",
+                    "ChangeBGM", "music/Caverns/New-Paradise.mp3",
+                    "Openly displaying her content with a pleased smile at your horny captivated acceptance, the lumiren titters happily as you give in to her enchanting voice and supple curves, watching you walk to her in a half-daze with overt relish.",
+                    "As you do so, however, you feel your feet begin to splash into the underground lake's edge, and a twinge of uncertain trepidation runs through you, a still alert part of your brain wondering if she is going to take advantage of your vulnerability to drag you down into the depths, and starting to suspect it was even perhaps her plan all along...",
+                    "DisplayCharacters",
+                      "1",
+                    "EndLoop",
+                    "ChangeImageLayer", "Expression", "1", "SmugGlow",
+                    "But it appears she is willing to instead meet you halfway into her aqueous domain, the amphibious monster girl swimming up to you and dragging part of her water-dwelling body out of the pond in the process, thus showing off her tentacled lower form which leisurely lies in the lake's shallows, allowing her a modicum of floaty comfort while letting you come to her on your own two feet.",
+                    "ChangeImageLayer", "Expression","1", "BaseGlow",
+                    "The previous shade of worry in your mind fading under the mesmerizing glow of her alluring eyes, you continue approaching her, each woozily deliberate step bringing you closer to her in a lewd half-trance, your arousal steadily building up while time seems to slow down, more and more of the sweetly smiling lumiren filling up your vision and entrancing your senses.",
+                    "ChangeImageLayer", "Expression","1", "KissGlow",
+                    "Once you're but a few strides away from her, she suddenly holds out her arms while puckering up enticingly, the sensual wordless invitation making a thrum of desire course through you and further encouraging you to cast away all doubt and delightedly return her gesture, reaching for her in turn while bringing your mouth to hers with lustful gusto.",
+                    "ChangeImageLayer", "ImageSetDontCarryOver", "1", "CloseUp", "ChangeImageLayer", "Expression","1", "KissGlow",
+                      "PlayMotionEffect", "CrashSmol",
+                  "As your lips meet and the lumiren's hugging embrace closes upon you, you feel a pulse of gratifying fulfillment claim you, the emotion blissfully melting through you and further immersing you in heady felicity, a downright electric sensation of pleasure coursing through your increasingly relaxed frame as a result of the simple passionate touch.",
+                    "ChangeImageLayer", "Expression", "1", "LipLickGlow",
+                  "That initial contact leaving you all the more eager to indulge in your tentacled lover's body, you deepen the kiss which quickly turns into a romantic makeout as she gladly returns your affections, your lips mutually parting in order to let your questing tongues through, your partner's swiftly nimble one deftly entangling with yours and possessively claiming it with thirsty fervor.",
+                  "ChangeImageLayer", "Expression","1", "SingingEyesClosed",
+                  "Closing her eyes to better enjoy the experience, the lumiren leans intimately into you while her lower tendrils tenderly wrap over you, all the while she lets out a sweetly moaning exhale whose fleeting sound and warm feeling seem to flow straight into your brain, further fogging it up with wonderfully entranced bliss and driving you to redouble your kissing attentions while adoringly tightening your hold on her in return.",
+                  "ChangeImageLayer", "Expression", "1", "LipLick",
+                  "For a few deliciously languorous moments, you keep up the liplock which turns increasingly hot and messy as seconds pass, each sloppy smooch further stoking your desires and making your want for the sexy monster girl's smooth body rise higher and higher, which she can't but readily notice with a playful giggle as she slowly breaks up the kiss to the lewdly wet sound of your softly parting lips.",
+                    "ChangeImageLayer", "Expression", "1", "LipLickGlow", "ChangeImageLayer", "Blush","1", "Blush",
+                  "Speak", "Lumiren",
+                  "Mmmh, I do so {i}love{/i} being intimately entangled like this.♥",
+                    "ChangeImageLayer", "Expression", "1", "SmugGlow",
+                  "Speak", "Lumiren",
+                  "But even so... being out in the open like this is quite chilly... So how about you help me warm up even more?♥",
+                    "Letting out a lascivious purr, she glances down to your pants which, you now notice, are tenting showily from the push of your hard cock, your manhood having been teased into a full erection by your constantly mounting lust, which has only kept running hotter and hotter from your close-contact affections with the lumiren and the continued titillating influence of her enticing beauty and captivating voice.",
+                    "ChangeImageLayer", "Expression", "1", "LipLickGlow",
+                    "Eagerly answering her invitation once more, you draw back just long enough to hurriedly undo your lower garments and drop them to let your twitching member spring free, your hungry partner gazing at it with undisguised appetite and reacting to the sight by bringing one of her hands to her pussy which she demonstratively spreads, her tentacles fully parting to welcomingly give you open access to her wet slit.",
+                  "Speak", "Lumiren",
+                  "Come to me.♥ I'm all ready for-",
+                    "ChangeImageLayer", "Expression", "1", "Orgasm", "ChangeImageLayer", "Blush","1", "BlushHeavy",
+                    "PlayMotionEffect", "CrashSmol", 
+                    "Her sultry crooning gets cut short into a high-pitched gasp as you respond to her wanton display by giving free rein to your desires without a moment's delay, quickly ramming your rigid shaft into her drenched folds which accept your length without resistance, immediately closing in upon you in instinctive thirst while their owner moans in rapturous surprise, clearly having not expected such an aggressive reaction from you.",
+                    "The blissful sound of her pleasured cry ringing, echoing, and rebounding through your mesmerized frame, you can't help but stay still for a moment as you bask in the luxurious ecstasy of her cilia-coated walls enclosing your dick. With their delightful pressure being enhanced by your hypnotically sensitized nerves, the intense sensation is leaving your manhood throbbing giddily, almost cumming on the spot from the sudden surge of stimulation.",
+                    "ChangeImageLayer", "Expression", "1", "PleasuredGlow",
+                    "Meanwhile, promptly recovering from her shivery high, your aquatic lover is quick to take things in stride and resume the previously interrupted makeout, her hungry lips claiming yours all over again while her arms and tentacles close upon you tighter than ever, possessively bringing you back in their inescapably passionate hold.",
+                    "Woozily, you let out a muffled breath into the horny lumiren's mouth who returns it with an alluring pant of her own, her lust-fogged eyes and feverish kisses alongside the demanding squeezes of her ravenous pussy silently pleading for more of your cock.",
+                    "Gladly, you grant her what she's asking for, starting to thrust your hips back and forth with animalistic vigor, the incomparable sensation of her cilia-covered insides assailing your readily twitching dick with divine pleasure and seeming to beg for your cum with every intense suck and clench they give you, all the while your hot and heavy liplock with the marine beauty continues unabated.",
+                    "With your body being constantly hit by rushes of sexual bliss from your partner's manifold stimulations, and with your mind floating in entranced euphoria, you can feel that it won't be long before you hit the brink...",
+                    "Yet, in your state of mesmerized rapture, you find no reason to pace yourself and delay the inevitable, instead feeling all too eager to answer your fervid lover's demands as she keeps wordlessly asking for your seed with her delicate mouth's messy smooches and her entrapping folds' greedy embrace, driving you to cast away all inhibition and hilt yourself deep into the lumiren with full wanton abandon.",
+                    "ChangeImageLayer", "Expression", "1", "Orgasm",
+                    "PlayerOrgasm", "1", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect3", "ScreenPulse", "white.png",
+                    "Trembling ecstatically under your assertive thrust, the thirsty monster girl cries out climactically as you let yourself go, pouring your awaited semen into her voracious confines which hungrily drink in your generous ejaculation, the tentacled woman's pussy slurping and squeezing on its own at your manhood the better to milk your cumshot for all it's worth, luxuriously drawing out long, thick ropes of warm seed out of you.",
+                    "PlayMotionEffect", "CrashSmol", "PlayVisualEffect3", "ScreenPulse", "white.png",
+                    "... And just as you start to feel your high abate and begin relaxing into your happily moaning partner, you suddenly feel her insides clamp onto your shaft with renewed strength, all the while her cilia rub and wriggle all over it, attacking your vulnerable dick with renewed pleasure right in the middle of your afterglow, clearly not satisfied with just one load and demanding more!",
+                    "ChangeImageLayer", "Expression", "1", "PleasuredGlow",
+                    "PlayerOrgasm", "1", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect3", "ScreenPulse", "white.png",
+                    "Your eyes go wide as you can only surrender to the powerful stimulation, your breathing catching in your throat in a blissful choked gasp that gets quickly muffled into a whimpering mumble as the lumiren smothers you with more kissy affection right in the middle of your back-to-back ejaculations, making you melt into her embrace while you woozily return her smooches, giddily sinking into mesmerized hedonistic glee.",
+                    "ChangeImageLayer", "Expression", "1", "LovingGlow",
+                    "Kept afloat in mind-blanking euphoria, you gladly let your wantonly spurting cock get wrung dry, your limp body kept securely in the hold of your lover's arms and tentacles as she sweetly supports you and keeps showering you with her delicately ravenous ministrations, allowing you to ecstatically ride your overlapping orgasms to a felicitous finish.",
+                    "ChangeImageLayer", "Expression", "1", "LipLickGlow",
+                    "Only once your consecutive climaxes have been thoroughly milked does the lumiren finally give you a break and lets you part from her lips with a dizzy exhale, permitting you to laboriously regain some of your wits while your greedy partner licks her chops with an expression of deep content.",
+                    "ChangeImageLayer", "Expression", "1", "BaseGlow",
+                  "Speak", "Lumiren",
+                  "Mmh, that was {i}wonderful{/i}.♪ I really can't get enough of you.♥",
+                  "Her loving compliments and praising tone ooze through you warmly, filling you with more all-pervading gratification as you rapturously bask in your afterglow and rest in your lover's cradle of tentacles... but as you process what she just said, you can't help but feel alerted by her hunger-laced last words...",
+                    "ChangeImageLayer", "Expression", "1", "PredatoryGlow",
+                  "And that nudging suspicion gets confirmed when you see her happy smile turn into a predatory grin as she squeezes you possessively in her embrace, all the while her insatiable pussy unrelentingly keeps its hold on your manhood!",
+                  "Speak", "Lumiren",
+                  "Surely, you're up for more, hm?♥",
+                  "ChangeImageLayer", "Expression", "1", "LipLickGlow",
+                  "Confused feelings of concerned alarm and thirsty arousal battle in your mind upon the situation you now find yourself in... but as the lumiren tenderly kisses you on the lips and lets out a little giggle in her alluring voice which melts through your senses, lust handily wins over worry, all the more so when she comfortingly looks upon you with pampering affection and adds softly.",
+                    "ChangeImageLayer", "Expression", "1", "LovingGlow",
+                  "Speak", "Lumiren",
+                  "Don't worry, I will be {i}very{/i} gentle and will make sure not to go overboard, I promise.♥",
+                  "With her sweetly doting face filling your field of view, and with mesmerized rapture keeping its fuzzy hold on you, you find yourself unable to refuse her alluring enticements, your body leaning almost on its own back against her as you renew your wanton lovemaking with deep, steady thrusts into her delightful folds, immersing yourself all over again in the ecstasy of the greedy monster girl's exotic pussy and blissfully moaning kisses.",
+                    "ChangeImageLayer", "Expression", "1", "LipLickGlow",
+                    "PlayerOrgasm", "1", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect3", "ScreenPulse", "white.png",
+                  "Woozily, you lose track of time as you continue to fuck and smooch and lick and caress and hug and mate with the lumiren, your now completely unresisting cock quickly surrendering another load to her which she takes in with as much appetite as before, your hypnotic paramour treating you once again to a wonderfully intense ejaculation as you all but melt against her, embracing her tightly as you fill her with more of your warm cum...",
+                    "ChangeImageLayer", "Expression", "1", "PredatoryGlow",
+                    "PlayerOrgasm", "1", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect3", "ScreenPulse", "white.png",
+                  "And yet, it's once more not enough, the enchanting monster girl slipping back into predatory ravenousness as her unique cilia-covered sex pumps and milks you gluttonously, all the while she keeps you in her arms and tentacles' conjoined embrace, ensuring that you're not going anywhere and that you don't need to do anything except continue to swing your hips and lock lips with her, gleefully feeding her more cum for your mutual pleasure.",
+                    "PlayerOrgasm", "1", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect3", "ScreenPulse", "white.png",
+                    "ChangeImageLayer", "Expression", "1", "LovingGlow",
+                    "Nevertheless, even as she drains you to the ends of your endurance and beyond still, she never loses her tenderness towards you, continuing to lavish you with gentle nuzzling and cuddling and fondling as you all but lose your mind to her incomparable affections, leaving you ever-assured that you're safe with her and that you can just keep enjoying her presence to the fullest.",
+                    "PlayerOrgasm", "1", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect3", "ScreenPulse", "white.png",
+                    "ChangeImageLayer", "Expression", "1", "Orgasm",
+                    "Through it all, she is clearly not indifferent to your own ministrations, her body shivering happily and her limbs squeezing amorously over you whenever you treat her to a particularly fervent kiss, or whenever your manhood hits an especially sensitive spot within her, or whenever you hilt yourself nice and deep within her to spurt more semen into her, load after load of hot cum getting coaxed out of you seemingly without end...",
+                    "AdvanceTime", "1", 
+                    "DisplayCharacters",
+                      "1",
+                    "EndLoop",
+                    "ChangeImageLayer", "Expression", "1", "Pleasured",
+                    "Until eventually, after more smooches, more caresses, and more orgasms than you can count, she finally relinquishes you, seeming to be both satiated by your prodigal amount of ejaculations and fatigued from the exertion of your constant sex, gently letting go of you and resting you on a nearby rock before lying at your side with a thoroughly content expression.",
+                    "ChangeBGM", "music/Relaxing/Purple Planet Music - Lanquidity (2 52) 110bpm.mp3",
+                    "ChangeImageLayer", "Expression", "1", "Loving",
+                    "As she looks at you lovingly and keeps you in her doting embrace, you both regain your breathing in panting heaves, feeling completely and {i}wonderfully{/i} drained, a mesmerized part of you still craving more passionate mating with the lumiren, all the while knowing there is no way you could muster the strength to keep going, leaving you perfectly satisfied to just enjoy this moment.",
+                    "RestPlayer",
+                    "ChangeSpiritQuietly", "2",
+                    "ChangeImageLayer", "Expression", "1", "Base",
+                    "Eventually, after a delightfully idle spell of not doing anything but hugging each other and exchanging the occasional affectionate kiss while restfully lounging in your isolated love nest, you feel like you've recovered enough that you can get up on your own, the aquatic monster girl responding to your returned vigor by drawing away from you and giggling in glowing satisfaction.",
+                  "Speak", "Lumiren",
+                  "Thank you for that, it was truly... {i}amazing{/i}.♥",
+                    "ChangeImageLayer", "Expression", "1", "Kiss",
+                  "Smiling tenderly, she gives you one last smooch as she clambers back into the water, the parting peck imbuing you with a tinge of resparked fascination that keeps your eyes on her beautiful body as she happily returns into her element, your amphibious lover seeming quite flattered to be the object of so much enraptured attention from you and commenting breezily.",
+                    "ChangeImageLayer", "Expression", "1", "Loving",
+                  "Speak", "Lumiren",
+                  "I guess that kind of romantic sex isn't bad, every now and then... I think I'll be keeping it as our own exclusive thing, though.♥",
+                    "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                  "DisplayCharacters",
+                    "2",
+                    "EndLoop",
+                  "Winking, she starts lowering herself back into the cavernous lake as she gets ready to presumably make her way back home, though just before she has completely sunken into the waters, she adds with a mischievous grin.",
+                  "ChangeImageLayer", "Expression", "1", "LipBiteGlow",
+                  "Speak", "Lumiren",
+                  "Oh, and don't go thinking that just because you got some {i}special treatment{/i} from me, it means you're safe from my singing. As you know, I do so {i}love{/i} watching you fall for my enchanting voice and body.♥",
+                  "DisplayCharacters",
+                    "EndLoop",
+                    "And with that and a proud titter, she disappears into the depths... It very much seems that for how much she appears to have a soft spot for you, she still has her own proclivities that will keep getting in the way of your peregrinations whenever you venture into her 'territory'... But then again, that may not be a bad thing, a part of you already looking forward to your next encounter with the lumiren and her hypnotic charms...",
+                    "For the time being, however, you must carry on with your present foray, and so after fixing yourself up as best you can, you go on your way, leaving the underground lake behind you and venturing further into the subterranean tunnels...",
+                    "UseHeldBG"
+
+                            ]
+},
+
+
+
+
+          {
+            "NameOfScene": "Event broke",
+            "theScene": [ "Event BROKE!"
+                        ]
+          }
+                ]
+}

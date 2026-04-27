@@ -1,0 +1,309 @@
+{
+    "name": "TenguHarpyCombatEvents",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "TenguHarpy",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "SongCheck",
+                        "theScene": [ "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Trance", "11", "Fully hypnotized",
+                                      "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Trance", "5", "Half way hypnotized",
+                                      "JumpToScene", "Not hypnotized"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Not hypnotized",
+                        "theScene": [  "Your head feels warm and empty as the tengu harpy's sweet song echoes in your mind..."
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Half way hypnotized",
+                        "theScene": [
+                                  "JumpToRandomScene",
+                                      "Not hypnotized",
+                                      "CharmCheck",
+                                  "EndLoop"
+                                  ]
+                    },
+                        {
+                            "NameOfScene": "CharmCheck",
+                            "theScene": [
+                                          "IfPlayerDoesntHaveStatusEffect", "Charm", "Charmed",
+                                          "JumpToScene", "fantasy"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "Charmed",
+                            "theScene": [  "ApplyStatusEffect", "Charm",
+                                          "The sweet siren's song of the tengu harpy echoes in your already entranced thoughts, lovingly enchanting your mind and charming you..."
+
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "fantasy",
+                            "theScene": [  "HitPlayerWith", "Harpies Song",
+                                          "The sweet siren's song of the tengu harpy echoes in your head, lovingly enchanting your infatuated mind, making your entire body ache with need...[DamageToPlayer]"
+                                      ]
+                        },
+                  {
+                      "NameOfScene": "Fully hypnotized",
+                      "theScene": [ "IfPlayerDoesntHaveStatusEffect", "Charm", "Charmed",
+                                   "IfMonsterHasStance", "Sex", "InfatuatedSex",
+                                   "JumpToScene", "fantasy"
+                                ]
+                  },
+                      {
+                          "NameOfScene": "InfatuatedSex",
+                          "theScene": [  "IfPlayerHasStance", "Face Sit", "DoubleHarpyInfatuation",
+                                        "HitPlayerWith", "Bounce",
+                                        "As the sweet siren's song of the tengu harpy echoes in your head, she grinds and bounces her hips against your aching manhood...[DamageToPlayer]",
+                                        "HitPlayerWith", "Bounce",
+                                        "Every time her hips meet yours, your cock kisses her cervix, sending a jolt of infatuating pleasure running through your manhood, and the need to pump her full of cum builds inside your twitching balls...[DamageToPlayer]"
+                                    ]
+                      },
+                      {
+                          "NameOfScene": "DoubleHarpyInfatuation",
+                          "theScene": [
+                                        "HitPlayerWith", "Harpies Song",
+                                        "The two harpies sing in sweet unison, making your body ache with each note you hear, you can feel your mind melting away, getting replaced with a burning love for the two bird women...[DamageToPlayer]",
+                                        "HitPlayerWith", "Face Grind",
+                                        "Your first harpy lover playfully grinds her drooling pussy into your face, forcing you to drink her sweet juices while you stare at her wonderfully shaped rear...[DamageToPlayer]",
+                                        "HitPlayerWith", "Bounce",
+                                        "The harpy that's riding your manhood, your loving mate, shakes her waist energetically in time with her mind-numbing song, and every time her hips meet yours, your cock kisses her cervix, sending a jolt of infatuating pleasure running through your manhood, and the need to give in, to pump her womb full of cum, builds inside your twitching balls...[DamageToPlayer]",
+                                        "Your heart's throbbing in your chest, and you're not sure how much longer you can hold out against this..."
+                                    ]
+                      },
+
+                {
+                    "NameOfScene": "HarpyDuet",
+                    "theScene": [
+                                "IfPlayerHasStance", "Any", "AbortDuet",
+                                "EncounterSizeGreaterOrEqualTo", "2", "HarpyDuetGo",
+                                
+                                "JumpToScene", "AbortDuet"
+                            ]
+                },
+                        {
+                            "NameOfScene": "AbortDuet",
+                            "theScene": [
+                                        "CallMonsterAttack"
+                                    ]
+                        },
+                        {
+                            "NameOfScene": "HarpyDuetGo",
+                            "theScene": [                                        
+                                         "HitPlayerWith", "Harpies Song",
+                                         "FocusOnMonster", "1",  "ChangeImageLayer", "Expression", "Singing",
+                                         "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "SingingExcited",
+                                         "SetPostName", " - Harpy Duet Invitation",
+                                         "FocusedSpeaksSkill",
+                                         "With your mind already ensnared by the duo's entrancing singing, the two harpies attempt to capitalize on your weakness by doubling down on their enticing melodious ministrations, firmly pressing their lithe bodies together in a lascivious show while their delightful recital hits a shiver-inducing high note of captivating auditory euphoria that blissfully melts through your senses.[DamageToPlayer]",
+                                         "FocusedSpeaksSkill",
+                                         "And while you struggle to recover from that sweet aural surge of musical delight, they welcomingly spread their wings open, coaxing you into entering their enchanting embrace for more intimate and personal attentions...",
+                                         "SetPostName", "",
+                                         "Menu",
+                                            "Try to get ahold of yourself!",
+                                            "Walk closer...",
+                                          "EndLoop"
+                                    ]
+                        },
+                                {
+                                    "NameOfScene": "Try to get ahold of yourself!",
+                                    "theScene": [
+                                                  "StatCheck",
+                                                  "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Trance", "11", "5",
+                                                  "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "HypnosisAddict", "50", "2",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "HypnosisAddict", "75", "3",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "HypnosisAddict", "75", "5",
+                                                  "Temptation", "10",  
+                                                  "Resisted!",
+                                                  "Fail",
+                                                  "FailedTempt"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "Walk closer...",
+                                    "theScene": [
+                                                  "JumpToScene", "FailedTempt"
+                                              ]
+                                },
+                                 {
+                                    "NameOfScene": "Resisted!",
+                                    "theScene": [
+                                                  "FocusOnMonster", "1",  "ChangeImageLayer", "Expression", "Embarrassed",
+                                                  "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Embarrassed",
+                                                  "With an effort of will, you manage to fight off the tempting lure of the harpy duo, your demonstration of restraint leaving the avian duet stammering in flustered embarrassment before their failure!"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "FailedTempt",
+                                    "theScene": [
+                                                  "FocusOnMonster", "1",  "ChangeImageLayer", "ImageSetDontCarryOver", "WingJobDouble",
+                                                  "FocusOnMonster", "2",  "ChangeImageLayer", "ImageSetDontCarryOver", "WingJobDouble",
+                                                  "FocusOnMonster", "1", 
+                                                  "PlayMotionEffect", "CrashSmol",
+                                                  "HitPlayerWith", "Enchanting Feather Job",
+                                                  "ChangeImageLayer", "LeftHarpyExpression", "Wink",
+                                                  "ChangeImageLayer", "RightHarpyExpression", "Smug",
+                                                  "ApplyStatusEffect", "Harpies Song",
+                                                  "Thoughtlessly, you step into the bird women's feathered embrace, letting them tightly wrap their wings around you with a proud unified coo, the eager songstresses swiftly burying your twitching erection in their fluffy plumage in order to lavish it with tender, languid strokes while they continue to sing straight into your ears, drawing you ever deeper into enthralled captivation...[DamageToPlayer]",
+                                                  "IfPlayerOrgasm", "StrokeSongClimax",
+                                                  "JumpToScene", "DuetMenuLoop"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "DuetMenuLoop",
+                                    "theScene": [  
+                                                  "Menu",
+                                                    "Try to break free!",
+                                                    "Just relax...",
+                                                  "EndLoop"
+                                              ]
+                                },
+
+                                {
+                                    "NameOfScene": "Try to break free!",
+                                    "theScene": [
+                                                  "StatCheck",
+                                                  "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Trance", "11", "5",
+                                                  "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "HypnosisAddict", "50", "2",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "HypnosisAddict", "75", "3",
+                                                  "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "HypnosisAddict", "75", "5",
+                                                  "Temptation", "10",  
+                                                  "Escaped!",
+                                                  "Fail",
+                                                  "FailedTempt2"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "Escaped!",
+                                    "theScene": [
+                                                   "FocusOnMonster", "1",  "ChangeImageLayer", "ImageSetDontCarryOver", "Normal",
+                                                   "FocusOnMonster", "2",  "ChangeImageLayer", "ImageSetDontCarryOver", "Normal",
+                                                   "PlayMotionEffect", "CrashSmol",
+                                                   "FocusOnMonster", "1",  "ChangeImageLayer", "Expression", "Embarrassed",
+                                                   "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Embarrassed",
+                                                   "With a start, you manage to snap out of your entranced bliss and quickly back out of the cuddly harpies' embrace, causing the lascivious duo to flutter away from you in squawking panic, the two of them sheepishly huddling while muttering to each other in embarrassment about what they might have done wrong."
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "Just relax...",
+                                    "theScene": [
+                                                  "JumpToScene", "FailedTempt2"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "FailedTempt2",
+                                    "theScene": [
+                                                    "JumpToRandomScene",
+                                                        "Serenade",
+                                                        "Alternating",
+                                                        "StrokeSong",
+                                                    "EndLoop"
+                                              ]
+                                },
+                                        {
+                                            "NameOfScene": "Serenade",
+                                            "theScene": [
+                                                        "ChangeImageLayer", "LeftHarpyExpression", "Singing",
+                                                        "ChangeImageLayer", "RightHarpyExpression", "SingingExcited",
+                                                        "HitPlayerWith", "Harpies Song", "ApplyStatusEffect", "Harpies Song",
+                                                        "The two bird women press their lithe curves tighter to your sides while they serenade you together with their alluring wordless melody, their every note coiling around your mind like a euphoria-inducing caress, the enchanting duo only pausing their recital to intermittently give your ears dainty smooches along with warm coos that further immerse you in sweet captivation.[DamageToPlayer]",
+                                                        "ChangeImageLayer", "LeftHarpyExpression", "SingingExcited",
+                                                        "ChangeImageLayer", "RightHarpyExpression", "Singing",
+                                                        "HitPlayerWith", "Harpies Song", "ApplyStatusEffect", "Harpies Song",
+                                                        "As seconds go by and turn into blissful minutes, the song loops in on itself, every passing moment feeling even more wonderfully relaxing than the last between the bird women, their cooing voices making your cock twitch eagerly in appreciation of  their alluring charms without them even needing to touch it, leaving you melting more and more into intoxicating infatuation.[DamageToPlayer]",
+                                                        "IfPlayerOrgasm", "SerenadeClimax",
+                                                        "JumpToScene", "DuetMenuLoop"                                                        
+                                                    ]
+                                        },
+                                                {
+                                                    "NameOfScene": "SerenadeClimax",
+                                                    "theScene": [
+                                                                "And as you rapidly reach the limits of your hot, aurally induced arousal, the two bird women slowly raise their voices towards an enthralling, mind-blanking crescendo, their crystal-clear high notes softly colliding into the center of your brain in an echoing, repeating thrum of ecstasy...",
+                                                                "ChangeImageLayer", "LeftHarpyExpression", "Smug",
+                                                                "ChangeImageLayer", "RightHarpyExpression", "Tease",
+                                                                "PlayerOrgasm", "1", "ApplyStatusEffect", "Harpies Song", "ChangeImageLayer", "Semen", "Semen", "PlayMotionEffect", "CrashSmol",
+                                                                "Until finally, the climactic melodious bliss boils over completely and your hips helplessly thrust up in vacuous abandon, your untouched erection erratically twitching as it spurts thick ropes of cum into the air and across your songstresses' feathers, your orgasm redoubling and stoking your pleasure into a flood of cozy warm captivation that leaves you delightfully woozy and eager to hear even more of their wonderful duet.",
+                                                                "ChangeImageLayer", "Semen", "",
+                                                                "IfPlayerSpiritGone", "LosesToSong",
+                                                                "JumpToScene", "DuetMenuLoop"
+                                                            ]
+                                                },
+
+                                        {
+                                            "NameOfScene": "Alternating",
+                                            "theScene": [
+                                                        "ChangeImageLayer", "LeftHarpyExpression", "Tease",
+                                                        "ChangeImageLayer", "RightHarpyExpression", "SingingExcited",
+                                                        "HitPlayerWith", "Enchanting Feather Job",  "ApplyStatusEffect", "Harpies Song", 
+                                                        "Helplessly charmed by the duo's singing as you are, you can only indulge in their cuddly embrace as they take turns alternating between one stroking your twitching cock with her downy feathers while the other keeps tenderly singing to you, the constant shiver-inducing back and forth making you feel so {i}wonderfully{/i} trapped in a neverending, dizzying whirlwind of pleasure...[DamageToPlayer]",
+                                                        "IfPlayerOrgasm", "AlternatingClimax",
+                                                        "JumpToScene", "DuetMenuLoop"
+                                                    ]
+                                        },
+                                                {
+                                                    "NameOfScene": "AlternatingClimax",
+                                                    "theScene": [
+                                                                "Before long, you can take no more of the harpies' back-and-forth affections flooding you with floaty dizzy bliss, your simmering arousal making your cock throb and leak in impending orgasm that they swiftly pick up on, firmly sandwiching your dick between their wings to lovingly stroke it up and down while they punctuate the swan song of your resistance with a unified duet of their enchanting voices.",
+                                                                "ChangeImageLayer", "LeftHarpyExpression", "SingingExcited",
+                                                                "ChangeImageLayer", "RightHarpyExpression", "Smug",
+                                                                "PlayerOrgasm", "1", "ApplyStatusEffect", "Harpies Song",  "ChangeImageLayer", "Semen", "Semen", "PlayMotionEffect", "CrashSmol",
+                                                                "With both of them thus working in tandem, the lustful fire they've kept stoking within you quickly reaches its boiling point in a mind-blanking surge of hot melty climax, your hips eagerly thrusting on their own against their soft feathers as you spurt load after load of seed across them, your aurally enhanced climax leaving your thoughts all the blanker as you let their charms overfill your head for a lovely indulgent moment.",
+                                                                "ChangeImageLayer", "Semen", "",
+                                                                "IfPlayerSpiritGone", "LosesToSong",
+                                                                "JumpToScene", "DuetMenuLoop"
+                                                            ]
+                                                },
+                                        {
+                                            "NameOfScene": "StrokeSong",
+                                            "theScene": [
+                                                        "ChangeImageLayer", "LeftHarpyExpression", "Singing",
+                                                        "ChangeImageLayer", "RightHarpyExpression", "SingingExcited",
+                                                        "HitPlayerWith", "Enchanting Feather Job",  "ApplyStatusEffect", "Harpies Song",
+                                                        "Languorously cuddling against you, the duo of harpies slowly pump your length with their feathery wings while they keep sweetly singing their charming song straight into your enchanted ears, the gentle pace of their languid ministrations letting them closely synchronize their teasing melody into a smoothly unified duet, each softly delivered verse leaving your cock trembling and leaking in feathery heaven.[DamageToPlayer]",
+                                                        "IfPlayerOrgasm", "StrokeSongClimax",
+                                                        "JumpToScene", "DuetMenuLoop"
+                                                    ]
+                                        },
+                                                    {
+                                                        "NameOfScene": "StrokeSongClimax",
+                                                        "theScene": [
+                                                                    "Drifting in a cozy haze of charmed-silly, hopelessly entranced pleasure, you happily indulge in every passing moment of the gentle harpies' feathery stroking as they continue to skillfully tease your dribbling manhood, the duo's sweet song of infatuation soothingly looping around in your mind over and over as you're filled to the brim with giddy euphoria...",
+                                                                    "ChangeImageLayer", "LeftHarpyExpression", "Base",
+                                                                    "ChangeImageLayer", "RightHarpyExpression", "Smug",
+                                                                    "PlayerOrgasm", "1", "ApplyStatusEffect", "Harpies Song",  "ChangeImageLayer", "Semen", "Semen", "PlayMotionEffect", "CrashSmol",
+                                                                    "Until the drifting, wonderful heaven of fluffy pleasure you're bundled up in is pushed beyond the limits of what your libido can endure, the slow languid strokes of the harpies' feathers alongside the enchanting notes of their combined voices pushing you over the brink in an ooey-gooey orgasm that coaxes rope after rope of semen out of you, leaving you adrift in raw climactic bliss while their charming tones soak into you verse by verse.",
+                                                                    "ChangeImageLayer", "Semen", "",
+                                                                    "IfPlayerSpiritGone", "LosesToSong",
+                                                                    "JumpToScene", "DuetMenuLoop"
+                                                                ]
+                                                    },
+                                {
+                                    "NameOfScene": "LosesToSong",
+                                    "theScene": [
+                                                   "SkipPlayerAttack",
+                                                   "Unable to muster any more resistance against the melodic duo's captivating song and teasing feathers milking you senseless, you helplessly slump into their enchanting embrace, your body too exhausted to oppose them any longer, and your mind all too giddily eager to be the recipient of more of their ecstatic aural ministrations...",
+                                                   "FocusOnMonster", "1",  "ChangeImageLayer", "ImageSetDontCarryOver", "Normal",
+                                                   "FocusOnMonster", "2",  "ChangeImageLayer", "ImageSetDontCarryOver", "Normal"
+                                              ]
+                                }
+
+
+
+
+
+
+
+                ]
+}

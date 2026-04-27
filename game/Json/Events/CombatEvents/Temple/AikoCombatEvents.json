@@ -1,0 +1,1661 @@
+{
+    "name": "AikoCombatEvents",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Aiko",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                      {
+                        "NameOfScene": "No Anal",
+                        "theScene": [ "SkipPlayerAttack",
+
+                                    "IfMonsterHasStatusEffect", "Restrain",   "Insert Anal!",
+                                    "IfMonsterHasStatusEffect",   "Sleep", "Insert Anal!",
+                                    "IfMonsterHasStatusEffect",   "Stun", "Insert Anal!",
+                                    "IfMonsterHasStatusEffect",   "Charm", "Let's you anal!",
+                                      "ChangeImageLayer", "Expression", "AraAra",
+                                      "You try to plunge your shaft into Aiko's shapely rear, but her tightly fitting kimono stands between you and her ass, making it impossible to penetrate her! She lets out a sly giggle at your failed attempt as she turns to face you again."
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "Insert Anal!",
+                              "theScene": [ "ApplyStance",   "Anal",
+                                           "HitMonsterWith", "Thrust",
+                                           "ChangeImageLayer", "Expression", "Pleasured", "ChangeImageLayer", "BodyExtra", "Blush",
+                                          "You deftly roll Aiko onto her belly as you open up her kimono. Her motionless form offers no resistance as you reveal her curvy ass and raise it into the air, and you eagerly thrust into her inviting hole.[DamageToEnemy]"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Let's you anal!",
+                              "theScene": [ "ChangeImageLayer", "Expression", "AraAra","ChangeImageLayer", "BodyExtra", "Blush",
+                                          "Aiko flushes deeply as you try to plunge your shaft into her shapely rear, and she gasps as your press you hot manhood against the silky kimono tightly fitting her ass. She looks back at you biting her lip before she gets down on all fours in the snow with her plump butt raised in the air.",
+                                          "Speaks",
+                                          "Oh dear...♥ I just can't contain myself...♥ I want you so bad.♥",
+                                          "She slowly and sensually pulls her kimono up, revealing her plump ass with an enticing jiggle, and she invitingly sways her hips filling you with burning need.",
+                                          "ApplyStance",
+                                            "Anal",
+                                           "HitMonsterWith", "Thrust",
+                                            "ChangeImageLayer", "Expression", "Pleasured",
+                                           "Aiko moans loudly as you plunge your aching cock into her warm ass, and her butt jiggles delightfully with every thrust you make, emphasized by her lewd gasps and whimpers.[DamageToEnemy]"
+                                         ]
+                            },
+
+
+
+
+                      {
+                        "NameOfScene": "FightIntro",
+                        "theScene": [ "SetProgress", "0",   "ChangeImageLayer", "Expression", "AraAra",
+                                      "The freezing wind and snow swirls around you and Aiko as she slowly approaches you..."
+                                     ]
+                      },
+                      {
+                        "NameOfScene": "Insert!",
+                        "theScene": [ "ApplyStance",
+                                      "Sex",
+                                     "HitMonsterWith", "Thrust",
+                                    "You deftly open up Aiko's kimono. Her motionless form offers no resistance as you reveal her curvy body before you eagerly thrust into her inviting pussy."
+                                  ]
+                      },
+
+
+
+                      {
+                        "NameOfScene": "Annoying",
+                        "theScene": [ "ChangeProgress", "2",
+                                      "IfProgressEqualsOrLess", "-1", "calmedTooFar"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Rage",
+                        "theScene": [ "ChangeProgress", "4",
+                                      "IfProgressEqualsOrLess", "-1", "calmedTooFar"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "CalmingDown",
+                        "theScene": [ "ChangeProgress", "-1",
+                                    "IfProgressEqualsOrLess", "-1", "calmedTooFar"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "calmedTooFar",
+                              "theScene": [ "SetProgress", "0"
+                                        ]
+                            },
+                      {
+                        "NameOfScene": "Anger Check",
+                        "theScene": ["CallNextSceneJumpThenReturn", "JumpToScene", "CalmingDown",
+                                    "IfMonsterHasStance",   "Titfuck",   "WarmTitfucking",
+                                    "IfMonsterHasStance",   "Anal",   "WarmAnal",
+                                    "IfProgressEqualsOrGreater", "2", "SheAnnoyed",
+                                      "ChangeEnergyQuietly", "-10",
+                                      "PlayVisualEffect", "ScreenPulse", "Monsters/Aiko/frigidHaze.png",
+                                      "The blizzard swirls around you and Aiko, sapping your warmth and energy...",
+                                      "IfPlayerEnergyGone", "TOOCOLD!",
+                                      "IfPlayerEnergyLessThanPercent", "35", "GettingLow"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "GettingLow",
+                        "theScene": [
+                                      "You shiver from the freezing cold, you're running out of energy and warmth..."
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "WarmTitfucking",
+                              "theScene": [
+                                            "ChangeEnergyQuietly", "5",
+                                            "With Aiko's voluptuous breasts wrapped around your manhood, the blizzard swirling around you fades into the background while your cock throbs with the warmth from her soft tits..."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "WarmAnal",
+                              "theScene": [
+                                            "ChangeEnergyQuietly", "5",
+                                            "With your cock lodged inside Aiko's tight ass, and her wide curvy hips tempting you to grope her plush butt, the blizzard swirling around you fades into the background..."
+                                          ]
+                            },
+
+                          {
+                            "NameOfScene": "SheAnnoyed",
+                            "theScene": [ "IfProgressEqualsOrGreater", "8", "SheMad",
+                                          "ChangeEnergyQuietly", "-15",
+                                          "PlayVisualEffect", "ScreenPulse", "Monsters/Aiko/frigidHaze.png",
+                                          "The blizzard howls around you and Aiko, sapping your warmth and energy. Aiko's face occasionally slips into a slight frown...",
+                                          "IfPlayerEnergyGone", "TOOCOLD!",
+                                          "IfPlayerEnergyLessThanPercent", "35", "GettingLow"
+                                      ]
+                          },
+                                {
+                                  "NameOfScene": "SheMad",
+                                  "theScene": [ "IfMonsterHasStatusEffect", "Restrain", "SheMadAlt",
+                                                  "IfMonsterHasStatusEffect", "Sleep", "SheMadAlt",
+                                                  "IfMonsterHasStatusEffect", "Stun", "SheMadAlt",
+                                                  "IfMonsterHasStance",   "Anal",   "SheMadAlt",
+                                                  "IfMonsterHasStance",   "Sex",   "SheMadAlt",
+                                                  "IfMonsterHasStance",   "Making Out",   "SheMadAlt",
+                                                  "IfMonsterHasStance",   "Titfuck",   "SheMadAlt",
+
+                                                "IfProgressEqualsOrGreater", "15", "SheFurious",
+                                                "ChangeEnergyQuietly", "-20",
+                                                "PlayVisualEffect", "ScreenPulse", "Monsters/Aiko/frigidHaze.png",
+                                                "ChangeImageLayer", "Expression", "Stern",
+                                                "The glacial blizzard howls around you and Aiko as the frigid hellscape you're in gets colder and colder, quickly draining your warmth and energy, and her face seems to be stuck in an uncharacteristic frown...",
+                                                "IfPlayerEnergyGone", "TOOCOLD!",
+                                                "IfPlayerEnergyLessThanPercent", "35", "GettingLow"
+                                            ]
+                                },
+                                          {
+                                            "NameOfScene": "SheMadAlt",
+                                            "theScene": [
+                                                          "ChangeEnergyQuietly", "-20",
+                                                          "PlayVisualEffect", "ScreenPulse", "Monsters/Aiko/frigidHaze.png",
+                                                          "The glacial blizzard howls around you and Aiko as the frigid hellscape you're in gets colder and colder, quickly draining your warmth and energy...",
+                                                          "IfPlayerEnergyGone", "TOOCOLD!",
+                                                          "IfPlayerEnergyLessThanPercent", "35", "GettingLow"
+                                                      ]
+                                          },
+                                      {
+                                        "NameOfScene": "SheFurious",
+                                        "theScene": [ "SetProgress", "0",
+                                                      "ChangeEnergyQuietly", "-20",
+                                                      "PlayVisualEffect", "ScreenPulse", "Monsters/Aiko/frigidHaze.png",
+                                                      "ChangeImageLayer", "Expression", "Stern",  "ChangeImageLayer", "BodyExtra", "Scary",
+                                                      "Aiko gives you a cold and furious glare, her body practically quaking with anger, and the frozen blizzard howls louder and loud as the area gets darker from the sheer amount of snow and wind.",
+                                                      "Speaks",
+                                                      "{b}That is {i}enough!!!{/b}{/i}",
+                                                      "ChangeEnergyQuietly", "-50",
+                                                      "PlayMotionEffect", "Explosion",
+                                                      "PlayVisualEffect", "BlindingFlash", "Monsters/Aiko/frigidHaze.png",
+                                                      "PlayVisualEffect2", "StartHaze", "Monsters/Aiko/frigidHaze.png",
+                                                      "An intense blast of sheer cold wind knocks you onto your back into the cold snow, leaving you shivering and freezing, but oddly your cock remains achingly hard.",
+                                                      "HitPlayerWith", "Foot Grind",
+                                                        "ChangeEnergyQuietly", "-50",
+                                                      "PlayMotionEffect", "Crash",
+                                                      "Before you can start to try and get up from the cold snow, you see Aiko standing over you with a stern glare in her eyes, and she firmly steps down on your rigid erection with her bare foot, and you cry out from the glacial freezing touch as she grinds her foot down hard...[DamageToPlayer]",
+                                                      "Speaks",
+                                                      "I was just trying to be nice and keep you warm! But you just had to be rude and mean about it!",
+                                                        "PlayMotionEffect", "Crash",
+                                                        "ChangeEnergyQuietly", "-100",
+                                                        "HitPlayerWith", "Foot Grind",
+                                                      "You let out a voiceless scream as your body heat is drained out through your shaft into the icy sole of her foot, the howling blizzard, and freezing snow only helping to drain your warmth, and yet the agonizing cold only leaves your cock throbbing under Aiko's foot.[DamageToPlayer]",
+                                                      "PlayMotionEffect", "Crash",
+                                                      "Speaks",
+                                                      "Clearly you need to be punished until you understand what's good for you!",
+                                                      "PlayMotionEffect", "Crash",
+                                                      "PlayVisualEffect2", "GrowingHaze", "Monsters/Aiko/frigidHaze.png",
+                                                      "ChangeEnergyQuietly", "-250",
+                                                      "HitPlayerWith", "Foot Grind",
+                                                      "Your hips buck uncontrollably into her foot as she presses it down harder and your arms and legs go numb from the freezing cold, leaving you to shiver with a mixture of pleasure and creeping icy cold while your cock throbs with a combination of pain and pleasure from Aiko's rough treatment.[DamageToPlayer]",
+                                                      "PlayMotionEffect", "Crash",
+                                                      "ChangeEnergyQuietly", "-999",
+                                                      "PlayVisualEffect2", "IncreasingHaze", "Monsters/Aiko/frigidHaze.png",
+                                                      "HitPlayerWith", "Foot Grind",
+                                                      "ChangeImageLayer", "Expression", "Embarrassed",  "ChangeImageLayer", "BodyExtra", "BlushMild",
+                                                      "She firmly presses her frigid foot down onto your aching shaft with the intensity of a crashing glacier, leaving you spasming with freezing ecstasy as your vision darkens, and your entire body feels numb... But she suddenly pulls her foot away and you faintly see a guilty expression on her face.[DamageToPlayer]",
+                                                      "Speaks",
+                                                      "O-Oh dear... I went and lost my temper... I-I'm so sorry... You didn't deserve all of that... Here, I'll warm you back up.",
+                                                      "PlayVisualEffect2", "DecreasingHaze", "Monsters/Aiko/frigidHaze.png",
+                                                      "ChangeEnergyQuietly", "5",
+                                                      "HitPlayerWith", "Breast Smothering",
+                                                      "PlayMotionEffect", "SwayOnce",
+                                                      "ChangeImageLayer", "ImageSetDontCarryOver", "HugCloseUp",
+                                                      "Unable to even move she easily wraps you up in her kimono, pressing you close to her warm plump body, you let out a mindless whimper as you nuzzle your head into her soft breasts as she tightly closes the kimono around you, trapping you inside its warm confines.[DamageToPlayer]",
+                                                      "PlayVisualEffect2", "FadingHaze", "Monsters/Aiko/frigidHaze.png",
+                                                      "ChangeEnergyQuietly", "10",
+                                                      "HitPlayerWith", "Breast Smothering",
+                                                      "You can feel her gently stroking the back of your head through the silky fabric, trying her best to soothe you back to coherence while you snuggle into her soft and warm body, her lovey minty scent filling your lungs with each shivering breath you take.[DamageToPlayer]",
+                                                      "EndVisualEffect2",
+                                                      "PlayVisualEffect3", "BlackOut", "Monsters/Aiko/Hug/AIKOHUG_CloseUp_Steam.png",
+                                                      "ChangeEnergyQuietly", "15",
+                                                      "HitPlayerWith", "Breast Smothering",
+                                                      "Slowly but surely you feel warmth returning to your body, and you happily sigh and nuzzle deeper into her soft inviting cleavage, and you can feel her gently shift your legs so they're firmly wrapped around her curvy hips.[DamageToPlayer]",
+                                                      "ChangeEnergyQuietly", "25",
+                                                      "HitPlayerWith", "Breast Smothering",
+                                                      "As you gradually feel warmth return to your limbs you instinctively wrap your arms around her waist, but she gently guides your hands to snake down to her plump ass, and your hands sink into her soft butt, and you sigh happily, breathing in Aiko's minty scent while you indulge in the feeling of her warm body.[DamageToPlayer]",
+                                                      "Speaks",
+                                                      "There, isn't this so much better than struggling and being bad? Oh, I almost forgot one last thing to help you warm up.♥",
+                                                      "PlayMotionEffect", "SwayOnce",
+                                                      "ChangeEnergyQuietly", "25",
+                                                      "HitPlayerWith", "Bounce",
+                                                      "CallEventAndSceneThenReturn", "Bed Mimic", "AikoHugToggleCheckCombat",
+                                                      "PlayImagePulseLoopingList", "7", "1.1", "0.40",
+                                                      "Monsters/Aiko/Hug/AIKOHUG_CloseUp.png", "EndLoop",
+                                                      "PlayMotionEffectLoop", "RideSlow",
+                                                      "She grabs ahold of your hips and gently guides you until your cock thrusts inside of her impossibly warm pussy, and you sigh happily before you start to thrust into her of your own volition and nuzzle your face into her soft pillowy tits, seeking more warmth from her plush body.[DamageToPlayer]",
+                                                      "Speaks",
+                                                      "There!♥ Perfectly snuggled up now.♥",
+                                                      "ChangeEnergyQuietly", "25",
+                                                      "CallEventAndSceneThenReturn", "Bed Mimic", "AikoHugToggleCheckMotion",
+                                                      "You can feel your coherence slowly return as your body warms up from eagerly fucking her pussy and indulging in her plump body, you sigh happily and wonder if you should even bother fighting back anymore...[DamageToPlayer]",
+                                                      "IfPlayerOrgasm",   "PostRageOrgasm",
+                                                      "JumpToScene",
+                                                      "PostLoopCheck"
+                                                  ]
+                                      },
+                                            {
+                                              "NameOfScene": "PostRageOrgasm",
+                                              "theScene": [ "A moan escapes you as pleasure overwhelms your thoughts, the blissful warmth in your hips washes over you in waves as you thoughtlessly thrust into her tight pussy, and she gently squeezes your head between her plump tits, melting you away with ecstasy.",
+                                                            "PlayerOrgasm", "1", "ChangeEnergyQuietly", "25",
+                                                            "PlayVisualEffect", "DoublePulse", "white.png",
+                                                            "EndMotionEffect",
+                                                            "PlayMotionEffect", "SwayOnce",
+                                                            "Climactic pleasure surges through you manhood with one final thrust as you erupt inside of Aiko, pumping load after load of thick cum into her, your mind going blank as you lovingly nuzzle her soft breasts while your body shakes with warm orgasmic bliss.",
+                                                            "You sigh blissfully, deeply breathing in Aiko's minty scent while a warm afterglow of pleasure fills you, and Aiko lovingly caresses the back of your head through her silky kimono with a gentle giggle, giving you a short rest before she continues keeping you warm...",
+                                                            "JumpToScene",
+                                                            "PostLoopCheck"
+                                                        ]
+                                            },
+
+                                      {
+                                        "NameOfScene": "DoNothing",
+                                        "theScene": [
+                                                  ]
+                                      },
+                                      {
+                                        "NameOfScene": "TOOCOLD!",
+                                        "theScene": [ "IfMonsterHasStatusEffect",
+                                                        "Restrain",
+                                                        "DoNothing",
+                                                        "IfMonsterHasStatusEffect",
+                                                        "Sleep",
+                                                        "DoNothing",
+                                                        "IfMonsterHasStatusEffect",
+                                                        "Stun",
+                                                        "DoNothing",
+                                                        "ChangeImageLayer", "Expression", "Embarrassed",
+                                                        "ClearStances",
+                                                      "PlayVisualEffect2", "SuddenHaze", "Monsters/Aiko/frigidHaze.png",
+                                                      "You fall shivering into the cold snow, your body feels frigid and a creeping numbness is spreading through your exhausted form...",
+                                                      "Aiko looks down at you with her eyes full of deep concern, slowly leaning down as her kimono starts to slip open.",
+                                                      "ChangeImageLayer", "Expression", "Base", "ChangeImageLayer", "BodyExtra", "BlushMild", "ChangeImageLayer", "Base", "Seduce",
+                                                      "Speaks",
+                                                      "Oh my, you poor thing... Here, I'll help you warm back up.♥",
+                                                      "PlayVisualEffect2", "DecreasingHaze", "Monsters/Aiko/frigidHaze.png",
+                                                      "ChangeEnergyQuietly", "5", "ChangeArousalByPercent", "5",
+                                                      "ChangeImageLayer", "ImageSetDontCarryOver", "HugCloseUp",
+                                                        "ChangeBG", "Monsters/Aiko/Hug/AIKOHUG_CloseUp_BG.png",
+                                                        "PlayMotionEffect", "BounceOnce",
+                                                      "Far too cold and tired to offer any resistance, Aiko easily wraps you up in her kimono, pulling you close to her plush body and forcing your head between her soft tits and your cock between her inviting thighs.",
+                                                      "PlayVisualEffect2", "FadingHaze", "Monsters/Aiko/frigidHaze.png",
+                                                      "ChangeEnergyQuietly", "5", "ChangeArousalByPercent", "5",
+                                                      "PlayMotionEffect", "SwayOnce",
+                                                      "You take a shivering and shaky breath, and find yourself breathing in her minty feminine scent, and you nuzzle your head happily between her warm cleavage.",
+                                                      "EndVisualEffect2",
+                                                      "PlayVisualEffect3", "BlackOut", "Monsters/Aiko/Hug/AIKOHUG_CloseUp_Steam.png",
+                                                      "ChangeEnergyQuietly", "5", "ChangeArousalByPercent", "10",
+                                                      "PlayMotionEffect", "BounceOnce",
+                                                      "Eagerly you wrap your arms around her waist seeking to feel as much of her warm body as you can, and she gently guides your hands down to her plump rear where your fingers sink into her delightfully soft flesh.",
+                                                      "ChangeEnergyQuietly", "5", "ChangeArousalByPercent", "10",
+                                                      "PlayMotionEffect", "SwayOnce",
+                                                      "CallEventAndSceneThenReturn", "Bed Mimic", "AikoHugToggleCheckCombat",
+                                                      "Aiko then shifts your legs so you have them wrapped around her curvy hips so you no longer have to stand in the cold snow, and you cling tighter to her with a whimper of appreciation.",
+                                                      "ChangeEnergyQuietly", "10", "ChangeArousalByPercent", "20",
+                                                      "PlayMotionEffect", "BounceOnce",
+                                                      "She has you completely wrapped up in her warm embrace, her kimono keeping you tight to her plush body, and she gently guides your hips until your manhood slips into her warm and inviting pussy.",
+                                                      "Speaks",
+                                                      "There,♥ nice and snug, you'll be warm in no time.♥",
+                                                      "ChangeEnergyQuietly", "10", "ChangeArousalByPercent", "20",
+                                                      "PlayMotionEffectLoop", "RideSlow",
+                                                      "You let out a happy sigh of pleasure as you start to thrust your hips, mindlessly seeking more warmth from Aiko's curvy body, eagerly rubbing your face between her tits and groping her plush butt.",
+                                                      "Speaks",
+                                                      "Oh my, you're acting so spoiled now.♥ Don't worry, I'll pamper you until you're completely satisfied.♥",
+                                                      "ChangeEnergyQuietly", "20", "ChangeArousalByPercent", "20",
+                                                      "Your cock feel's like it's wrapped up in a warm cozy heaven that fills you with bliss every time you thrust, and still recovering from the freezing cold you feel like you're melting away from the hot ecstasy spreading through you.",
+                                                      "ChangeEnergyQuietly", "20", "ChangeArousalByPercent", "20",
+                                                      "Trapped in confines of her kimono you start to warm back up in an intoxicating manner, her minty fragrance filling your lungs while you indulge in her plush body, mindlessly fucking her warm squeezing pussy.",
+                                                      "PlayerOrgasm", "1",
+                                                      "PlayVisualEffect", "DoublePulse", "white.png",
+                                                      "ChangeProgress", "-1","ChangeEnergyQuietly", "20",
+                                                      "EndMotionEffect",
+                                                      "PlayMotionEffect", "BounceOnce",
+                                                      "Aiko gently squeezes her tits together and smothering orgasmic pleasure washes through your entire being, and with a final thrust you erupt inside of her heavenly pussy with a blissful moan, filling her with your hot cum.",
+                                                      "You shiver with pleasure for a few moments, tightly clinging to Aiko's plush body while she gently strokes the back of your head through her kimono with a happy sigh.",
+                                                      "With warm pleasure radiating through you as your senses return, you wonder if you should even bother fighting back...",
+                                                           "JumpToScene",
+                                                      "PostLoopCheck"
+
+                                          ]
+                                      },
+
+
+
+
+                      {
+                        "NameOfScene": "Get Wrapped Up From Sex",
+                        "theScene": [ "SkipPlayerAttack",
+
+                                    "IfMonsterHasStatusEffect",   "Restrain", "Insert!",
+                                    "IfMonsterHasStatusEffect",   "Sleep", "Insert!",
+                                    "IfMonsterHasStatusEffect", "Stun",   "Insert!",
+                                      "ChangeImageLayer", "Expression", "AraAra",  "ChangeImageLayer", "Base", "Seduce",
+                                      "You move to penetrate Aiko's pussy, but as you get closer to her she eagerly opens up her silken kimono, revealing her curvaceous form and suddenly embracing you!",
+                                      "CallEventAndSceneThenReturn", "Bed Mimic", "AikoHugToggleCheckCombat",
+                                      "PlayImagePulseLoopingList", "7", "1.1", "0.40",
+                                          "Monsters/Aiko/Hug/AIKOHUG_CloseUp.png", "EndLoop",
+                                      "PlayMotionEffect", "SwayOnce",
+                                      "Her luscious breasts abruptly press up against your face, muffling your sudden yelp of surprise, and you can feel the heat of her pussy radiating onto your shaft.",
+                                      "JumpToScene",
+                                      "Insertion"
+                                  ]
+                      },
+
+                      {
+                        "NameOfScene": "Get Wrapped In Silky Sex",
+                        "theScene": [ "SkipPlayerAttack",
+                                      "ChangeImageLayer", "Expression", "AraAra",  "ChangeImageLayer", "Base", "Seduce",
+                                      "Aiko giggles as you thrust into her pussy, she eagerly uses her loose silken kimono to suddenly embrace you tightly and forces your face between her luscious breasts muffling your sudden yelp of surprise!",
+
+                                      "ChangeBG", "Monsters/Aiko/Hug/AIKOHUG_Outside_BG.png",
+                                      "CallEventAndSceneThenReturn", "Bed Mimic", "AikoHugToggleCheckCombat",
+                                      "PlayImagePulseLoopingList", "7", "1.1", "0.40",
+                                          "Monsters/Aiko/Hug/AIKOHUG_CloseUp.png", "EndLoop",
+                                      "PlayMotionEffect", "SwayOnce",
+                                      "Her kimono tightly wraps around you, forcing you to be firmly trapped inside its silken confines and pressed tightly to her soft body with your cock firmly inside her warm pussy.",
+                                      "JumpToScene",
+                                      "Snuggling Up"
+                                  ]
+                      },
+
+                      {
+                        "NameOfScene": "Get Wrapped Up From Kiss",
+                        "theScene": [  "ChangeImageLayer", "Expression", "Kiss",  "ChangeImageLayer", "Base", "Seduce",
+                                    "As you deeply kiss Aiko, you find yourself in a pleasant haze as her lipstick tingles on your face, and she giggles before quickly wrapping you up in her kimono!",
+
+                                    "ChangeBG", "Monsters/Aiko/Hug/AIKOHUG_Outside_BG.png",
+                                    "CallEventAndSceneThenReturn", "Bed Mimic", "AikoHugToggleCheckCombat",
+                                    "PlayImagePulseLoopingList", "7", "1.1", "0.40",
+                                        "Monsters/Aiko/Hug/AIKOHUG_CloseUp.png", "EndLoop",
+                                      "PlayMotionEffect", "SwayOnce",
+                                      "Her bare body is suddenly pressed against you, and you find yourself nuzzling into her luscious breasts as you feel the heat of her pussy radiating onto your shaft.",
+                                      "JumpToScene",
+                                      "Insertion"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Kissing Temptation",
+                        "theScene": [   "ChangeImageLayer", "Expression", "Kiss",  "ChangeImageLayer", "Base", "Seduce",
+                                      "PlayVisualEffect", "Kiss", "screenKissAiko.png",
+                                      "While Aiko lovingly kisses you, she sensually opens up the front of her kimono, revealing her curvy body as she starts to wrap you up in her silky kimono.",
+                                      "PlayVisualEffect", "Kiss", "screenKissAiko.png",
+                                      "FocusedSpeaks",
+                                      "Mmmmwah!♥ This will help you stay warm.♥ So don't struggle.♥",
+                                      "PlayImagePulseLoopingList", "8", "1.8", "0.9",
+                                          "screenKissAiko.png", "EndLoop",
+                                      "You shiver from a mixture of arousal and cold, your head is spinning from her tingly warm lipstick marks, your mouth is tinged with the flavor of mint, and it's hard to even contemplate saying no to her enticing embrace...",
+                                      "IfInExploration", "noKotoneCheckKiss",
+                                      "IfHasPerk", "Kotone's Hypno Lover", "noKotoneCheckKiss",
+                                      "GetAnEventsProgressThenIfEqualsOrGreater", "KitsunesMentalHelp", "5", "HypnoKiss",
+                                      "GetAnEventsProgressThenIfEqualsOrGreater", "KitsunesMentalHelp", "1", "HypnoKissCheck",
+                                      "StatCheck",
+                                          "Temptation",
+                                          "15",
+                                          "PassKissCheck",
+                                          "Fail",
+                                          "More warm kisses..."
+                                  ]
+                      },
+                                {
+                                  "NameOfScene": "noKotoneCheckKiss",
+                                  "theScene": [ "StatCheck",
+                                                "Temptation",
+                                                "15",
+                                                "PassKissCheck",
+                                                "Fail",
+                                                "More warm kisses..."
+                                            ]
+                                },
+
+
+
+                            {
+                              "NameOfScene": "HypnoKiss",
+                              "theScene": [ "Kotone's voice gently whispers inside your dazed head, echoing through your skull and saying how nice it would be to be warm instead of cold as a silly smile spreads across your kiss marked face...",
+                                            "JumpToScene",
+                                            "More warm kisses..."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "HypnoKissCheck",
+                              "theScene": [ "GetEventAndSetChoice", "KitsunesMentalHelp", "8", "Suspicion",
+                                          "You suddenly hear Kotone's voice faintly echoing inside your dazed mind, saying how much nicer it would be if you were warm instead of cold right now...",
+                                            "StatCheck",
+                                                "Temptation",
+                                                "20",
+                                                "PassKissCheck",
+                                                "Fail",
+                                                "More warm kisses..."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "PassKissCheck",
+                              "theScene": [ "You manage to think clearly enough to make a decision.",
+                                          "Menu",
+                                            "More warm kisses...",
+                                            "Struggle!",
+                                          "EndLoop"
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "Struggle!",
+                                    "theScene": [  "EndImagePulseLoopingList",
+                                                  "ChangeImageLayer", "Base", "Clothed", "ChangeImageLayer", "Expression", "Pout",
+                                                  "Aiko pouts as you struggle against her, and she deftly wraps herself back up in her silken kimono.",
+                                                  "ChangeProgress", "1"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "More warm kisses...",
+                                    "theScene": [ "EndImagePulseLoopingList",
+                                                "HitPlayerWith", "Warming Kisses",
+                                                "SkipPlayerAttack",
+                                                "ChangeImageLayer", "Base", "Clothed",
+                                                "ChangeImageLayer", "ImageSet", "FaceCloseUp",
+                                                "ChangeImageLayer", "Expression", "Kiss",
+                                                "PlayCustomBarrage", "0.8", "0.9",
+                                                  "screenKissAiko.png", "screenKissAiko2.png", "screenKissAiko3.png", "screenKissAiko4.png", "screenKissAiko5.png",
+                                                  "EndLoop",
+                                                "PlayMotionEffect", "SwayOnce",
+                                                "You let Aiko pull you closer, pressing her plush tits against your chest and she bundles the two of you tightly together in her kimono, trapping your cock between her thighs, and she leans in with pursed lips as she starts to gently plant warm lipstick coated kisses all over your face.[DamageToPlayer]",
+                                                  "JumpToScene",
+                                                  "KissingLoop"
+                                              ]
+                                  },
+
+
+
+                                  {
+                                    "NameOfScene": "KissingLoop",
+                                    "theScene": [ "PlayCustomBarrage", "0.8", "0.9",
+                                      "screenKissAiko.png", "screenKissAiko2.png", "screenKissAiko3.png", "screenKissAiko4.png", "screenKissAiko5.png",
+                                      "EndLoop",
+                                                  "JumpToRandomScene",
+                                                    "TrailOfKisses",
+                                                    "DeepMeltyKiss",
+                                                    "LipStickAssault",
+                                                "EndLoop"
+                                              ]
+                                  },
+                                        {
+                                            "NameOfScene": "TrailOfKisses",
+                                            "theScene": [  "HitPlayerWith", "Warming Kisses",
+                                                          "ChangeEnergyQuietly", "5",
+                                                          "Aiko sensually kisses her way up your neck with her plump lips, leaving a trail of warm tingly kiss marks as she goes until she's lovingly kissing your ear...[DamageToPlayer]",
+                                                          "HitPlayerWith", "Warming Kisses",
+                                                          "ChangeEnergyQuietly", "5",
+                                                          "All the while she gently grinds her plump body against you, squeezing your aching erection between her thighs and tightly pressing her soft breasts against you as she persistently kisses you...[DamageToPlayer]",
+                                                          "IfPlayerOrgasm",
+                                                          "TrailOfKissesOrgasm",
+                                                          "JumpToScene",
+                                                          "RandomKissTease"
+                                                      ]
+                                        },
+                                              {
+                                                  "NameOfScene": "TrailOfKissesOrgasm",
+                                                  "theScene": [
+                                                                "You softly moan as you approach your limit, your cock pulsing with orgasmic pleasure between Aiko's soft thighs, her loving and whispery kiss to your ear is making your entire head tingle with pleasure.",
+                                                                "PlayerOrgasm", "1",
+                                                                "PlayVisualEffect", "DoublePulse", "white.png",
+                                                                "The mere feeling of her warm lips on your ear as she whispers sweet nothings to you becomes too much to bear and you dick throbs with intense pleasure as it spurts thick loads of cum all over Aiko's deliciously plump thighs and her silky kimono...",
+                                                                "Aiko holds you tighter as you finish cumming, gently stroking the back of your head before she starts to lean back in for more kisses as her body and clothing completely absorb every drop of your cum.",
+                                                                "ChangeEnergyQuietly", "25",
+                                                                "ChangeProgress", "-1",
+                                                                "You let out a happy sigh as her lips meet yours, and you feel so warm and blissful...",
+                                                              "JumpToScene",
+                                                                "RandomKissOrgasmTease"
+                                                            ]
+                                              },
+                                          {
+                                               "NameOfScene": "DeepMeltyKiss",
+                                               "theScene": [  "HitPlayerWith", "Warming Kisses",
+                                                             "ChangeEnergyQuietly", "5",
+                                                             "Aiko locks her lips with yours, gazing with such intense affection into your eyes that you feel like you're being overwhelmed with warm love as her tongue entangles with yours and her plush lips press against you...[DamageToPlayer]",
+                                                             "HitPlayerWith", "Warming Kisses",
+                                                             "ChangeEnergyQuietly", "5",
+                                                             "Your mind melts away from her loving lips, leaving you dazed, warm, and happy inside as your heart aches for her even as she wetly breaks the kiss, leaving you smiling at her a little love-struck...[DamageToPlayer]",
+                                                             "IfPlayerOrgasm",
+                                                             "DeepMeltyKissOrgasm",
+                                                             "JumpToScene",
+                                                             "RandomKissTease"
+                                                         ]
+                                           },
+                                                 {
+                                                     "NameOfScene": "DeepMeltyKissOrgasm",
+                                                     "theScene": [  "You whimper and squirm with desperation, on the brink of orgasm, and Aiko gives you a sweet smile before leaning back towards with her lips pursed, ready to seal your fate with a loving kiss.",
+                                                                   "PlayerOrgasm", "1",
+                                                                   "PlayVisualEffect", "DoublePulse", "white.png",
+                                                                   "Her plump lips meet yours in a deep loving kiss, and every part of you melts away with blissful orgasmic pleasure, leaving your mind blank and focused on Aiko's loving gaze while you spurt your thick load all over her thighs and kimono...",
+                                                                   "ChangeEnergyQuietly", "10",
+                                                                   "Aiko gently scratches the back of your head as your orgasm ebbs away, still keeping your lips locked tightly together, her tongue gently caressing yours as your entire body is submerged with warmth while her plush body and silky kimono absorb every drop of your cum.",
+                                                                    "ChangeEnergyQuietly", "15",
+                                                                    "ChangeProgress", "-1",
+                                                                   "She finally breaks the kiss with a wet affectionate 'mwah' before taking a moment to smile gently at you, and lovingly caress one of the cheeks on your kiss drunk face while you feel completely filled with happy warmth...",
+                                                                   "Aiko slides her hand behind your neck and starts to lean in to kiss you again...",
+                                                                   "JumpToScene",
+                                                                   "RandomKissOrgasmTease"
+                                                               ]
+                                                 },
+                                        {
+                                            "NameOfScene": "LipStickAssault",
+                                            "theScene": [  "HitPlayerWith", "Warming Kisses",
+                                                          "ChangeEnergyQuietly", "5",
+                                                          "Aiko holds you tightly in her embrace while she showers your face with warm lipstick coated kisses, each leaving behind a warm tingly kiss mark that leaves you whimpering with lust...[DamageToPlayer]",
+                                                          "HitPlayerWith", "Warming Kisses",
+                                                          "ChangeEnergyQuietly", "5",
+                                                          "As her kisses overlap the lipstick marks your mind feels like it's melting away as jolts of warm pleasure directly hit your brain with each affectionate kiss...[DamageToPlayer]",
+                                                          "IfPlayerOrgasm",
+                                                          "LipStickAssaultOrgasm",
+                                                          "JumpToScene",
+                                                          "RandomKissTease"
+                                                      ]
+                                        },
+                                              {
+                                                  "NameOfScene": "LipStickAssaultOrgasm",
+                                                  "theScene": [   "Aiko doesn't let up her lipstick laced assault, planting hot kiss after hot kiss on your face, leaving your mind electrified with white-hot ecstasy to the point you're helplessly thrusting your cock between her plush thighs.",
+                                                                "PlayerOrgasm", "1",
+                                                                "PlayVisualEffect", "DoublePulse", "white.png",
+                                                                "It doesn't take long for your throbbing manhood to start to spurt hot cum all over her thighs from the combined sensation of her soft thighs enveloping your dick and her relentless loving kisses, and even as you twitch and cum she keeps kissing your face all over leaving even more of her warm tingly kiss marks on your face.",
+                                                                "ChangeEnergyQuietly", "25",
+                                                                "ChangeProgress", "-1",
+                                                                "She finally relents her warm lipstick coated kisses form a moment with a soft giggle while you twitch with pleasure in her tight embrace and her body and kimono absorb every drop of your cum. A warm bliss floods your entire being, you can't help but smile at her as she starts to lean back in for another kiss...",
+                                                                "JumpToScene",
+                                                                "RandomKissOrgasmTease"
+                                                            ]
+                                              },
+
+
+
+                                  {
+                                      "NameOfScene": "RandomKissTease",
+                                      "theScene": [ "EndCustomBarrage",
+                                                    "JumpToRandomScene",
+                                                    "SoCute",
+                                                    "WarmKiss",
+                                                    "DontStruggleKiss",
+                                                    "LickLips",
+                                                  "EndLoop"
+                                                ]
+                                  },
+                                        {
+                                            "NameOfScene": "SoCute",
+                                            "theScene": [ "FocusedSpeaks",
+                                                        "You look so cute covered in my lipstick.♥",
+                                                        "JumpToScene",
+                                                        "PostKissLoopCheck"
+                                                      ]
+                                        },
+                                        {
+                                            "NameOfScene": "WarmKiss",
+                                            "theScene": [ "FocusedSpeaks",
+                                                        "I'll make sure to keep you very warm.♥",
+                                                        "JumpToScene",
+                                                        "PostKissLoopCheck"
+                                                      ]
+                                        },
+                                        {
+                                            "NameOfScene": "DontStruggleKiss",
+                                            "theScene": [ "FocusedSpeaks",
+                                                        "Now don't think of trying to get away. You're much safer here with me.♥",
+                                                        "She gently caresses the back of your head with her soft hands...",
+                                                        "JumpToScene",
+                                                        "PostKissLoopCheck"
+                                                      ]
+                                        },
+                                        {
+                                            "NameOfScene": "LickLips",
+                                            "theScene": [ "Aiko licks her lips with a rather aroused look in her eyes...",
+                                                        "JumpToScene",
+                                                        "PostKissLoopCheck"
+                                                      ]
+                                        },
+
+                                  {
+                                      "NameOfScene": "RandomKissOrgasmTease",
+                                      "theScene": [ "EndCustomBarrage",
+                                                    "JumpToRandomScene",
+                                                    "CumAllYouWantKiss",
+                                                    "HeartThrob",
+                                                    "ForeheadKiss",
+                                                    "MintyKiss",
+                                                  "EndLoop"
+                                                ]
+                                  },
+                                        {
+                                            "NameOfScene": "CumAllYouWantKiss",
+                                            "theScene": [ "ChangeImageLayer", "Expression", "Base",
+                                                        "Aiko softly giggles while gently gazing into your eyes.",
+                                                        "ChangeImageLayer", "Expression", "AraAra",
+                                                        "FocusedSpeaks",
+                                                        "You can cum as much as you want.♥ I'll keep giving you lots of love.♥",
+                                                        "JumpToScene",
+                                                        "PostKissLoopCheck"
+                                                      ]
+                                        },
+                                        {
+                                            "NameOfScene": "HeartThrob",
+                                            "theScene": [ "ChangeImageLayer", "Expression", "Base",
+                                                        "Aiko gives you a gentle loving smile and you can only gaze back with a love struck smile as post orgasmic bliss fills you.",
+                                                        "JumpToScene",
+                                                        "PostKissLoopCheck"
+                                                      ]
+                                        },
+                                        {
+                                            "NameOfScene": "ForeheadKiss",
+                                            "theScene": [ "While you're bathing in the afterglow of your orgasm, Aiko gives you a gentle kiss to the forehead with her plush lips.",
+                                                        "JumpToScene",
+                                                        "PostKissLoopCheck"
+                                                      ]
+                                        },
+                                        {
+                                            "NameOfScene": "MintyKiss",
+                                            "theScene": [ "You gasp in the afterglow of pleasure as Aiko's minty flavor permeates your mouth, and you're overpowered with a dizzy light headed feeling, aching for another kiss.",
+                                                        "JumpToScene",
+                                                        "PostKissLoopCheck"
+                                                      ]
+                                        },
+                                  {
+                                    "NameOfScene": "PostKissLoopCheck",
+                                    "theScene": ["ChangeImageLayer", "Expression", "Kiss",
+                                                "IfPlayerSpiritGone",
+                                                "Kissing Loss",
+                                                "IfInExploration", "noKotoneCheckKissLoop",
+                                                "IfHasPerk", "Kotone's Hypno Lover", "noKotoneCheckKissLoop",
+                                                "GetAnEventsProgressThenIfEqualsOrGreater", "KitsunesMentalHelp", "5", "HypnoLoopKissCheck",
+                                                "Menu",
+                                                  "Try and break away! (Power)",
+                                                  "Try and slip away! (Technique)",
+                                                  "Just a few more kisses...",
+                                                "EndLoop"
+                                              ]
+                                  },
+                                          {
+                                            "NameOfScene": "noKotoneCheckKissLoop",
+                                            "theScene": [
+                                                        "Menu",
+                                                        "Try and break away! (Power)",
+                                                        "Try and slip away! (Technique)",
+                                                          "Just a few more kisses...",
+                                                        "EndLoop"
+                                                      ]
+                                          },
+                                  {
+                                    "NameOfScene": "Try and break away! (Power)",
+                                    "theScene": [ "IfHasPerk", "Escape Artist", "NeedAwayKissPlusPow",
+                                                  "StatCheck",
+                                                  "Power",
+                                                  "15",
+                                                  "BreakFree",
+                                                  "Fail",
+                                                  "KissingLoop"
+                                              ]
+                                  },
+                                      {
+                                        "NameOfScene": "NeedAwayKissPlusPow",
+                                        "theScene": [  "Your skills as an escape artist should help you escape...",
+                                                      "StatCheck",
+                                                      "Power",
+                                                      "10",
+                                                      "BreakFree",
+                                                      "Fail",
+                                                      "KissingLoop"
+                                                  ]
+                                      },
+                                  {
+                                    "NameOfScene": "Try and slip away! (Technique)",
+                                    "theScene": [ "IfHasPerk", "Escape Artist", "NeedAwayKissPlus",
+                                                  "StatCheck",
+                                                  "Technique",
+                                                  "15",
+                                                  "BreakFree",
+                                                  "Fail",
+                                                  "KissingLoop"
+                                              ]
+                                  },
+                                        {
+                                          "NameOfScene": "NeedAwayKissPlus",
+                                          "theScene": [  "Your skills as an escape artist should help you escape...",
+                                                        "StatCheck",
+                                                        "Technique",
+                                                        "10",
+                                                        "BreakFree",
+                                                        "Fail",
+                                                        "KissingLoop"
+                                                    ]
+                                        },
+                                  {
+                                    "NameOfScene": "HypnoLoopKissCheck",
+                                    "theScene": [  "JumpToRandomScene",
+                                                    "HypnoKissLoop1",
+                                                    "HypnoKissLoop2",
+                                                    "HypnoKissLoop3",
+                                                    "HypnoKissLoop4",
+                                                  "EndLoop"
+
+                                              ]
+                                  },
+                                        {
+                                          "NameOfScene": "HypnoKissLoop1",
+                                          "theScene": [   "You sigh happily as Aiko and Kotone's voices gently swirl and mix inside your head, making it so hard to think straight anymore...",
+                                                        "StatCheck",
+                                                        "Temptation",
+                                                        "20",
+                                                        "HypnoKissLoopPass",
+                                                        "Fail",
+                                                        "KissingLoop"
+                                                    ]
+                                        },
+                                        {
+                                          "NameOfScene": "HypnoKissLoop2",
+                                          "theScene": [   "You smile happily at Aiko, your head feels so empty and warm... Wasn't there something you should be trying to do...?",
+                                                        "StatCheck",
+                                                        "Temptation",
+                                                        "20",
+                                                        "HypnoKissLoopPass",
+                                                        "Fail",
+                                                        "KissingLoop"
+                                                    ]
+                                        },
+                                        {
+                                          "NameOfScene": "HypnoKissLoop3",
+                                          "theScene": [   "Kotone's sweet voice echoes in your mind, drawing your focus to the warmth and pleasure Aiko is giving you... It's so tempting to just relax and give in...",
+                                                        "StatCheck",
+                                                        "Temptation",
+                                                        "20",
+                                                        "HypnoKissLoopPass",
+                                                        "Fail",
+                                                        "KissingLoop"
+                                                    ]
+                                        },
+                                        {
+                                          "NameOfScene": "HypnoKissLoop4",
+                                          "theScene": [   "You can hardly think straight as Aiko's warm, soft, and sexy body rubs up against yours... You sigh happily as you feel your mind slowly melting away...",
+                                                        "StatCheck",
+                                                        "Temptation",
+                                                        "20",
+                                                        "HypnoKissLoopPass",
+                                                        "Fail",
+                                                        "KissingLoop"
+                                                    ]
+                                        },
+                                  {
+                                    "NameOfScene": "HypnoKissLoopPass",
+                                    "theScene": [
+                                                  "You manage to collect your thoughts enough to think...",
+                                                  "Menu",
+                                                    "Try and break away! (Power)",
+                                                    "Try and slip away! (Technique)",
+                                                    "Just a few more kisses...",
+                                                  "EndLoop"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "Just a few more kisses...",
+                                    "theScene": [ "JumpToScene",
+                                                  "KissingLoop"
+                                              ]
+                                  },
+
+
+
+
+
+
+                      {
+                        "NameOfScene": "Invitation Temptation",
+                        "theScene": [ "HitPlayerWith", "Seduce",   "ChangeImageLayer", "Base", "Seduce", "ChangeImageLayer", "Expression", "AraAra",
+                                      "Aiko opens the front of her kimono wide, giving her shapely hips and plump chest an enticing shake.[DamageToPlayer]",
+                                      "FocusedSpeaks",
+                                      "Come here, let me warm you up.",
+                                      "You shiver from a mixture of arousal and cold, and it's hard to even contemplate saying no to her enticing invitation...",
+                                      "IfInExploration", "noKotoneCheck",
+                                      "IfHasPerk", "Kotone's Hypno Lover", "noKotoneCheck",
+                                      "GetAnEventsProgressThenIfEqualsOrGreater", "KitsunesMentalHelp", "5", "HypnoWarm",
+                                      "GetAnEventsProgressThenIfEqualsOrGreater", "KitsunesMentalHelp", "1", "HypnoWarmCheck",
+                                      "StatCheck",
+                                          "Temptation",
+                                          "15",
+                                          "PassResistCheck",
+                                          "Fail",
+                                          "Warmth..."
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "noKotoneCheck",
+                              "theScene": [  "StatCheck",
+                                              "Temptation",
+                                              "15",
+                                              "PassResistCheck",
+                                              "Fail",
+                                              "Warmth..."
+                                        ]
+                            },
+
+
+                          {
+                            "NameOfScene": "HypnoWarm",
+                            "theScene": [ "Kotone's voice gently whispers inside your head, echoing through your skull and saying how nice it would be to be warm instead of cold as a silly smile spreads across your face...",
+                                          "JumpToScene",
+                                          "Warmth..."
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "HypnoWarmCheck",
+                            "theScene": [
+                                        "GetEventAndSetChoice", "KitsunesMentalHelp", "8", "Suspicion",
+                                        "You suddenly hear Kotone's voice faintly echoing inside your mind, saying that it would be so much nicer if you were warm instead of cold right now...",
+                                          "StatCheck",
+                                              "Temptation",
+                                              "20",
+                                              "PassResistCheck",
+                                              "Fail",
+                                              "Warmth..."
+                                      ]
+                          },
+
+
+
+
+                      {
+                        "NameOfScene": "PassResistCheck",
+                        "theScene": [ "You manage to think clearly enough to make a decision.",
+                                    "Menu",
+                                      "Warmth...",
+                                      "No!",
+                                    "EndLoop"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "No!",
+                              "theScene": [ "CallEventAndSceneThenReturn", "Bed Mimic", "GoToThicknessInCombat",
+                                            "EndImagePulseLoopingList",
+                                            "ChangeImageLayer", "Base", "Clothed", "ChangeImageLayer", "Expression", "Pout",
+                                          "Aiko pouts, then wraps herself back up in her silken kimono.",
+                                            "ChangeProgress", "2"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Warmth...",
+                              "theScene": [ "SkipPlayerAttack",
+                                          "ChangeImageLayer", "Base", "Clothed",
+                                          "CallEventAndSceneThenReturn", "Bed Mimic", "AikoHugToggleCheckCombat",
+                                          "PlayImagePulseLoopingList", "7", "1.1", "0.40",
+                                              "Monsters/Aiko/Hug/AIKOHUG_CloseUp.png", "EndLoop",
+                                          "PlayMotionEffect", "SwayOnce",
+                                          "You approach Aiko and enter into her warm embrace, and she quickly wraps you up in her kimono with a smile before shoving your face between her massive breasts while your shaft throbs happily against her soft thighs.",
+                                            "JumpToScene",
+                                            "Insertion"
+                                        ]
+                            },
+
+
+
+
+
+                      {
+                        "NameOfScene": "Insertion",
+                        "theScene": [ "HitPlayerWith", "Grind",
+                                    "ChangeEnergyQuietly", "5",
+                                    "Aiko grabs ahold of your hips through her silken kimono, carefully guiding your manhood into her warm pussy, and you let out a soft moan as it snugly clings to your shaft.[DamageToPlayer]",
+                                    "GetAnEventsProgressThenIfEqualsOrGreater", "KitsunesMentalHelp", "5", "So warm and comfortable...",
+                                    "Menu",
+                                      "Try and struggle free! (Power)",
+                                      "Try and escape! (Technique)",
+                                      "So warm and comfortable...",
+                                    "EndLoop"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Try and struggle free! (Power)",
+                        "theScene": [ "IfHasPerk", "Escape Artist", "NeedAwayInsertPlusPow",
+                                      "StatCheck",
+                                      "Power",
+                                      "15",
+                                      "BreakFree",
+                                      "Fail",
+                                      "Snuggling Up"
+                                  ]
+                      },
+                          {
+                            "NameOfScene": "NeedAwayInsertPlusPow",
+                            "theScene": [  "Your skills as an escape artist should help you escape...",
+                                          "StatCheck",
+                                          "Power",
+                                          "10",
+                                          "BreakFree",
+                                          "Fail",
+                                          "Snuggling Up"
+                                      ]
+                          },
+                      {
+                        "NameOfScene": "Try and escape! (Technique)",
+                        "theScene": [ "IfHasPerk", "Escape Artist", "NeedAwayInsertPlus",
+                                      "StatCheck",
+                                      "Technique",
+                                      "15",
+                                      "BreakFree",
+                                      "Fail",
+                                      "Snuggling Up"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "NeedAwayInsertPlus",
+                              "theScene": [  "Your skills as an escape artist should help you escape...",
+                                            "StatCheck",
+                                            "Technique",
+                                            "10",
+                                            "BreakFree",
+                                            "Fail",
+                                            "Snuggling Up"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "So warm and comfortable...",
+                              "theScene": [ "JumpToScene",
+                                            "Snuggling Up"
+                                        ]
+                            },
+
+
+                            {
+                              "NameOfScene": "BreakFree",
+                              "theScene": [ "EndImagePulseLoopingList",
+                                            "EndAllVisualEffects",
+                                            "ChangeBG", "templeBlue.png",
+                                            "CallEventAndSceneThenReturn", "Bed Mimic", "GoToThicknessInCombat",
+                                            "ChangeImageLayer", "Expression", "Pout",
+                                            "ChangeImageLayer", "Base", "Base",
+                                            "You manage to break free from Aiko's ensnaring kimono and her warm, curvaceous body! She gives you a little pout as she covers herself back up, and you shiver a little in the freezing air...",
+                                            "ChangeProgress", "1"
+                                        ]
+                            },
+
+                      {
+                        "NameOfScene": "Snuggling Up",
+                        "theScene": [ "ChangeImageLayer", "BodyExtra", "BlushMild",
+                                    "You find your arms unconsciously snaking under Aiko's kimono to wrap themselves around her waist before they slide down and start groping her plump rear. Aiko then gently grabs your legs and makes you wrap them around her curvy hips, taking your feet off of the cold snow.",
+                                    "HitPlayerWith", "Grind",
+                                    "ChangeEnergyQuietly", "5",
+                                    "A content sigh escapes your lips as you snuggle into Aiko's plush body as your cock throbs inside of her with your body completely held up by her arms and kimono...[DamageToPlayer]",
+                                    "IfInExploration", "noKotoneCheckLoop",
+                                    "IfHasPerk", "Kotone's Hypno Lover", "noKotoneCheckLoop",
+                                    "GetAnEventsProgressThenIfEqualsOrGreater", "KitsunesMentalHelp", "5", "HypnoLoopCheck",
+                                    "Menu",
+                                      "Need to struggle free! (Power)",
+                                      "Need to slip free from her! (Technique)",
+                                      "Just a bit longer...",
+                                    "EndLoop"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "Just a bit longer...",
+                              "theScene": [ "JumpToScene",
+                                            "SexLoop"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Need to struggle free! (Power)",
+                              "theScene": [ "IfHasPerk", "Escape Artist", "NeedAwayInsert2PlusPow",
+                                            "StatCheck",
+                                            "Power",
+                                            "15",
+                                            "BreakFree",
+                                            "Fail",
+                                            "SexLoop"
+                                        ]
+                            },
+                                {
+                                  "NameOfScene": "NeedAwayInsert2PlusPow",
+                                  "theScene": [  "Your skills as an escape artist should help you escape...",
+                                                "StatCheck",
+                                                "Power",
+                                                "10",
+                                                "BreakFree",
+                                                "Fail",
+                                                "SexLoop"
+                                            ]
+                                },
+                            {
+                              "NameOfScene": "Need to slip free from her! (Technique)",
+                              "theScene": [ "IfHasPerk", "Escape Artist", "NeedAwayInsert2Plus",
+                                            "StatCheck",
+                                            "Technique",
+                                            "15",
+                                            "BreakFree",
+                                            "Fail",
+                                            "SexLoop"
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "NeedAwayInsert2Plus",
+                                    "theScene": [  "Your skills as an escape artist should help you escape...",
+                                                  "StatCheck",
+                                                  "Technique",
+                                                  "10",
+                                                  "BreakFree",
+                                                  "Fail",
+                                                  "SexLoop"
+                                              ]
+                                  },
+
+                            {
+                              "NameOfScene": "HypnoLoopCheck",
+                              "theScene": [  "JumpToRandomScene",
+                                              "HypnoLoop1",
+                                              "HypnoLoop2",
+                                              "HypnoLoop3",
+                                              "HypnoLoop4",
+                                            "EndLoop"
+
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "HypnoLoop1",
+                                    "theScene": [   "You sigh happily as Aiko and Kotone's voices gently swirl and mix inside your head, making it so hard to think straight anymore...",
+                                                  "StatCheck",
+                                                  "Temptation",
+                                                  "20",
+                                                  "HypnoLoopPass",
+                                                  "Fail",
+                                                  "SexLoop"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "HypnoLoop2",
+                                    "theScene": [   "You gleefully nuzzle into Aiko's chest, and your head feels so empty and warm... Wasn't there something you should be trying to do...?",
+                                                  "StatCheck",
+                                                  "Temptation",
+                                                  "20",
+                                                  "HypnoLoopPass",
+                                                  "Fail",
+                                                  "SexLoop"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "HypnoLoop3",
+                                    "theScene": [   "Kotone's sweet voice echoes in your mind, drawing your focus to the warmth and pleasure Aiko is giving you... It's so tempting to just relax and give in...",
+                                                  "StatCheck",
+                                                  "Temptation",
+                                                  "20",
+                                                  "HypnoLoopPass",
+                                                  "Fail",
+                                                  "SexLoop"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "HypnoLoop4",
+                                    "theScene": [   "You can hardly think straight as Aiko's warm, soft, and sexy body rubs up against yours... You sigh happily as you feel your mind slowly melting away...",
+                                                  "StatCheck",
+                                                  "Temptation",
+                                                  "20",
+                                                  "HypnoLoopPass",
+                                                  "Fail",
+                                                  "SexLoop"
+                                              ]
+                                  },
+                            {
+                              "NameOfScene": "HypnoLoopPass",
+                              "theScene": [
+                                            "You manage to collect your thoughts enough to think...",
+                                            "Menu",
+                                              "Need to struggle free! (Power)",
+                                              "Need to slip free from her! (Technique)",
+                                              "Just a bit longer...",
+                                            "EndLoop"
+                                        ]
+                            },
+
+
+
+
+
+
+                      {
+                        "NameOfScene": "SexLoop",
+                        "theScene": [ "JumpToRandomScene",
+                                        "BreastNuzzlingSex",
+                                        "SilkenWrappedSex",
+                                        "HelplessThrusting",
+                                    "EndLoop"
+                                  ]
+                      },
+                            {
+                                "NameOfScene": "BreastNuzzlingSex",
+                                "theScene": [  "EndMotionEffect",
+                                              "HitPlayerWith", "Breast Smothering",
+                                              "ChangeEnergyQuietly", "5",
+                                              "PlayMotionEffect", "SwayOnce",
+                                              "Aiko shakes, jiggles, and squeezes her large bosom as she rubs your face between her deep cleavage, and you sigh in contentment...[DamageToPlayer]",
+                                              "HitPlayerWith", "Breast Smothering",
+                                              "ChangeEnergyQuietly", "5",
+                                              "PlayMotionEffect", "SwayOnce",
+                                              "Without even thrusting your hips, your cock twitches and throbs in Aiko's pussy while you nuzzle her soft chest...[DamageToPlayer]",
+                                              "IfPlayerOrgasm",
+                                              "BreastNuzzlingSexOrgasm",
+                                              "JumpToScene",
+                                              "RandomSexTease"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "BreastNuzzlingSexOrgasm",
+                                      "theScene": [  "EndMotionEffect",
+                                                    "PlayMotionEffect", "SwayOnce",
+                                                    "You softly moan as you approach your limit, and your cock aches and pulses with orgasmic pleasure as Aiko squeezes your head between her tits.",
+                                                    "PlayMotionEffect", "SwayOnce",
+                                                    "PlayerOrgasm", "1",
+                                                    "PlayVisualEffect", "DoublePulse", "white.png",
+                                                    "Your dick throbs and twitches with intense pleasure as it spurts thick loads of cum into Aiko's deliciously warm pussy...",
+                                                    "ChangeEnergyQuietly", "25",
+                                                    "ChangeProgress", "-1",
+                                                    "Aiko only seems to hold you tighter after you finish cumming inside her... But despite your orgasm, not only you do feel a little warmer, you also feel oddly energized.",
+                                                    "JumpToScene",
+                                                    "RandomSexOrgasmTease"
+                                                ]
+                                  },
+                            {
+                                "NameOfScene": "SilkenWrappedSex",
+                                "theScene": [  "HitPlayerWith", "Grind",
+                                              "ChangeEnergyQuietly", "5",
+                                              "CallEventAndSceneThenReturn", "Bed Mimic", "AikoHugToggleCheckMotionSlow",
+                                              "While you're trapped in the tight confines of her silken kimono, Aiko grinds her hips against you, stirring up her insides with your throbbing manhood as a pleasant warmth spreads through your hips in response...[DamageToPlayer]",
+                                              "HitPlayerWith", "Grind",
+                                              "ChangeEnergyQuietly", "5",
+                                              "Her silken kimono seems to caress your skin in time with her movements, tightening around you while she moves, and you find yourself gripping onto Aiko's body more strongly and gently thrusting into her warm and inviting pussy yourself...[DamageToPlayer]",
+                                              "IfPlayerOrgasm",
+                                              "SilkenWrappedSexOrgasm",
+                                              "JumpToScene",
+                                              "RandomSexTease"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "SilkenWrappedSexOrgasm",
+                                      "theScene": [  "EndMotionEffect",
+                                                    "You shiver blissfully as your shaft throbs in overwhelming pleasure, and Aiko's pussy suddenly squeezes down tightly on your manhood.",
+                                                    "PlayerOrgasm", "1",
+                                                    "PlayVisualEffect", "DoublePulse", "white.png",
+                                                    "PlayMotionEffect", "SwayOnce",
+                                                    "Your cock pulses from the delightful sensation and pumps Aiko's womb full of your hot seed, and you find yourself gently nuzzling into her plush body as you gently tremble with pleasure...",
+                                                    "ChangeEnergyQuietly", "25",
+                                                    "ChangeProgress", "-1",
+                                                    "A happy murmur escapes your lips as you feel Aiko's kimono slowly tighten around your tingling skin as you feel warm and energized in her arms...",
+                                                    "JumpToScene",
+                                                    "RandomSexOrgasmTease"
+                                                ]
+                                  },
+                            {
+                                "NameOfScene": "HelplessThrusting",
+                                "theScene": [  "HitPlayerWith", "Bounce",
+                                              "ChangeEnergyQuietly", "5",
+                                              "CallEventAndSceneThenReturn", "Bed Mimic", "AikoHugToggleCheckMotion",
+                                              "You find yourself overcome with the warmth of Aiko's body, and thrust eagerly into her pussy, sending jolts of pleasure into your body...[DamageToPlayer]",
+                                              "HitPlayerWith", "Bounce",
+                                              "ChangeEnergyQuietly", "5",
+                                              "Firmly groping Aiko's shapely rear, you easily leverage your thrusts into her, making her plush body jiggle with every powerful move you make, and she smiles gently as she squeezes your head between her tits for your efforts...[DamageToPlayer]",
+                                              "IfPlayerOrgasm",
+                                              "HelplessThrustingOrgasm",
+                                              "JumpToScene",
+                                              "RandomSexTease"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "HelplessThrustingOrgasm",
+                                      "theScene": [ "CallEventAndSceneThenReturn", "Bed Mimic", "AikoHugToggleCheckMotionFast",
+                                                    "Pleasure cascades over your body as you piston into Aiko, and you start to thrust faster and faster into her delightfully warm pussy.",
+                                                    "PlayerOrgasm", "1",
+                                                    "PlayVisualEffect", "DoublePulse", "white.png",
+                                                    "EndMotionEffect",
+                                                    "PlayMotionEffect", "BounceOnce",
+                                                    "With a final blissful movement you hilt yourself into her tight slit, and your throbbing manhood paints her insides a white warm as you shudder in orgasm.",
+                                                    "ChangeEnergyQuietly", "25",
+                                                    "ChangeProgress", "-1",
+                                                    "CallEventAndSceneThenReturn", "Bed Mimic", "AikoHugToggleCheckMotionSlow",
+                                                    "You softly moan and continue to gently thrust your hips into Aiko's as pleasure radiates from your groin, and you feel so warm and full of energy in her arms...",
+                                                    "JumpToScene",
+                                                    "RandomSexOrgasmTease"
+                                                ]
+                                  },
+
+
+
+                      {
+                          "NameOfScene": "RandomSexTease",
+                          "theScene": [ "JumpToRandomScene",
+                                        "WarmingUp",
+                                        "TightSqueeze",
+                                        "DontStruggle",
+                                        "Humming",
+                                      "EndLoop"
+                                    ]
+                      },
+                            {
+                                "NameOfScene": "WarmingUp",
+                                "theScene": [ "FocusedSpeaks",
+                                            "You're warming up so fast.♥",
+                                            "JumpToScene",
+                                            "PostLoopCheck"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "TightSqueeze",
+                                "theScene": [ "FocusedSpeaks",
+                                            "I'll make sure you're comfortable.♥",
+                                            "Aiko tightly squeezes you closer to her plush body, and you end up groping her curvy rear and nuzzling her soft chest even more...",
+                                            "JumpToScene",
+                                            "PostLoopCheck"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "DontStruggle",
+                                "theScene": [ "FocusedSpeaks",
+                                            "Now don't think of trying to get away. You're much safer here with me.♥",
+                                            "She gently caresses you through the silken fabric of her kimono with her soft hands...",
+                                            "JumpToScene",
+                                            "PostLoopCheck"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Humming",
+                                "theScene": [ "Aiko softly hums a sweet and gentle tune...",
+                                            "JumpToScene",
+                                            "PostLoopCheck"
+                                          ]
+                            },
+
+                      {
+                          "NameOfScene": "RandomSexOrgasmTease",
+                          "theScene": [ "JumpToRandomScene",
+                                        "CumAllYouWant",
+                                        "ThereThere",
+                                        "Kiss",
+                                        "Minty",
+                                      "EndLoop"
+                                    ]
+                      },
+                            {
+                                "NameOfScene": "CumAllYouWant",
+                                "theScene": [ "Aiko softly giggles while gently caressing your body through her silken kimono.",
+                                            "FocusedSpeaks",
+                                            "Go on, cum as much as you want.♥",
+                                            "JumpToScene",
+                                            "PostLoopCheck"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "ThereThere",
+                                "theScene": [ "Aiko softly strokes the back of your head through her silken kimono.",
+                                            "FocusedSpeaks",
+                                            "There there, let it all out.♥",
+                                            "JumpToScene",
+                                            "PostLoopCheck"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Kiss",
+                                "theScene": [ "PlayVisualEffect", "BlindingFlash", "screenKissAiko.png",
+                                              "While you're bathing in the afterglow of your orgasm, Aiko briefly frees your head from her kimono and kisses you on the forehead with her plush lips before sealing you back up within her robes again.",
+                                            "JumpToScene",
+                                            "PostLoopCheck"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Minty",
+                                "theScene": [ "PlayVisualEffect", "BlindingFlash", "pinkHaze.png",
+                                              "You gasp in the afterglow of pleasure as you remain confined within Aiko's kimono, and you inhale her feminine and rather minty scent. A light headed feeling overpowers your mind as you shaft throbs within her pussy, and you nuzzle into her soft chest with a sigh.",
+                                            "JumpToScene",
+                                            "PostLoopCheck"
+                                          ]
+                            },
+
+
+
+                      {
+                        "NameOfScene": "PostLoopCheck",
+                        "theScene": [ "IfPlayerSpiritGone", "Loss",
+                                    "IfInExploration", "noKotoneCheckLoop",
+                                    "IfHasPerk", "Kotone's Hypno Lover", "noKotoneCheckLoop",
+                                    "GetAnEventsProgressThenIfEqualsOrGreater", "KitsunesMentalHelp", "5", "HypnoLoopCheck",
+                                    "Menu",
+                                      "Need to struggle free! (Power)",
+                                      "Need to slip free from her! (Technique)",
+                                      "Just a bit longer...",
+                                    "EndLoop"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "noKotoneCheckLoop",
+                              "theScene": [
+                                          "Menu",
+                                            "Need to struggle free! (Power)",
+                                            "Need to slip free from her! (Technique)",
+                                            "Just a bit longer...",
+                                          "EndLoop"
+                                        ]
+                            },
+
+
+
+
+
+
+
+                      {
+                        "NameOfScene": "Loss",
+                        "theScene": [
+                                    "You let out a happy whimper as you relax into Aiko's arms, completely exhausted and unable to even contemplate resisting her any longer...",
+                                    "ClearMonsterEncounter",
+                                    "EndVisualEffect3",
+                                    "JumpToEventThenScene", "The Frozen Room", "Stay with Aiko..."
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Kissing Loss",
+                        "theScene": [  "ChangeImageLayer", "ImageSet", "FaceCloseUp",
+                                      "ChangeImageLayer", "Expression",  "Kiss", "ChangeImageLayer", "BodyExtra", "BlushMild",
+                                      "PlayCustomBarrage", "0.8", "0.9",
+                                             "screenKissAiko.png", "screenKissAiko2.png", "screenKissAiko3.png", "screenKissAiko4.png", "screenKissAiko5.png",
+                                             "EndLoop",
+                                    "You let out a happy whimper as Aiko gives you a deep loving kiss, and you find yourself letting go completely limp in her grasp as her tongue dominates yours and her plump lips press against your mouth, leaving your mind in a pleasant minty pink haze.",
+                                    "She doesn't give your weakening mind a moment to recover, and you let out a moan as she gently rubs her soft tits against you, while also grinding her soft thighs against your throbbing erection as it's bathed in the warmth of her pussy just above it.",
+                                    "You're left short of breath as she refuses to break the mind-melting make out session, her minty flavor taking over your senses, and as one of her hands lovingly scratches the back of your head, heavenly shivers trail through your entire body as she teases and pampers you with her warm body.",
+                                    "Pleasure builds in your aching manhood as she keeps your mouth locked to her plump lips, and each teasing twirl of her tongue, the simple sensation of her breasts rubbing against your chest, or a soft squeeze of her thighs, only doubles the sweet bliss growing inside your cock.",
+                                    "You feebly squirm with building mind melting ecstasy in the tight confines of her silken kimono that's trapping you against her enticingly plump body, every little teasing movement of her tongue feels like it could set off a climactic orgasm as it dominates your mouth.",
+                                    "Her warmth completely permeates your body in this sweet embrace, and her minty saliva is the only thing you can taste, every squeeze of her thighs sends a jolt of wonderful ecstasy through your manhood that leaves you moaning happily into her loving kiss.",
+                                    "EndCustomBarrage",
+                                    "PlayVisualEffect", "BlindingFlash", "screenKissAiko.png",
+                                    "PlayerOrgasmNoSpiritLoss",
+                                    "PlayVisualEffect2", "DoublePulse", "white.png",
+                                    "She suddenly intensifies the kiss with loving intensity, before finally breaking the intoxicating minty kiss with a definite 'Mwah', and every fiber of your being is instantly electrified with mind-blanking climactic bliss, setting your cock aflame with pleasure as it spurts thick ropes of cum all over her thighs and kimono.",
+                                    "As your orgasm dies down she smiles sweetly at you as her outfit and body quietly absorbs your semen, while you twitch with an ecstatic mindless smile in Aiko's gentle embrace as her lipstick tingles warmly on your lips.",
+                                     "ChangeImageLayer", "Expression",  "AraAra",
+                                     "Speaks",
+                                    "Ahhh...♥ You look so happy and warm now.♥ But I know you want {i}more{/i} of my warm kisses.♥",
+                                    "ChangeImageLayer", "Expression",  "Kiss",
+                                    "PlayCustomBarrage", "0.8", "0.9",
+                                           "screenKissAiko.png", "screenKissAiko2.png", "screenKissAiko3.png", "screenKissAiko4.png", "screenKissAiko5.png",
+                                           "EndLoop",
+                                    "She purses her plump lips and starts to lean in, and you're unable to even contemplate trying to resist her warm comforting embrace or the loving kisses she offers. She gives you a warm kiss on the lips, leaving another tingling lipstick mark on your mouth before she starts to pepper your face gently with lipstick coated kisses, each sending a warming jolt of pleasure directly into your brain.",
+                                    "EndCustomBarrage",
+                                    "You let out a happy moan or whimper with each warm kiss, and she abruptly stops her kisses with a loving giggle as she looks at her handiwork, your face completely covered in scattered blue kiss marks, all warmly tingling on your face, leaving your body burning with a craving for more as your cock pulses hotly with need.",
+                                    "ChangeImageLayer", "Expression",  "Base",
+                                    "Speaks",
+                                    "Hmmm,♥ as fun as this is, we should move somewhere more warm and cozy than this cold wintery room, don't you agree?♥",
+                                    "CallEventAndSceneThenReturn", "Bed Mimic", "GoToThicknessInCombat",
+                                    "You eagerly nod in agreement, a dopey smile plastered on your face, unable to care about anything other than more warm pleasure.",
+                                    "ChangeImageLayer", "Expression",  "AraAra",
+                                    "She smiles sweetly before gently moving your legs so they're firmly wrapped around her wide hips, you tightly hug her soft body as she slowly walks towards the room you entered in from.",
+                                    "You happily nuzzle into her neck with a sigh while she walks, reveling in the feeling of her warm tingly lipstick marks on your face, and the minty flavor still permeating your mouth.",
+                                    "ChangeImageLayer", "Base", "Nude",
+                                    "Barely coherent you don't even realize you've reached the warm and lavishly decorated room until you're sat on to edge of the room's wonderfully plush queen sized bed, Aiko sensually slips out of her tight form fitting kimono in front of you, looking down at you with a warm smile.",
+                                    "ChangeImageLayer", "ImageSetDontCarryOver", "FaceCloseUp",
+                                      "ChangeImageLayer", "Base", "Nude",
+                                      "ChangeImageLayer", "BodyExtra", "BlushMild",
+                                    "PlayVisualEffect", "Kiss", "screenKissAiko.png",
+                                    "ChangeImageLayer", "Expression",  "Kiss",
+                                    "She gives your forehead a loving kiss that sends a warm pleasant shiver through you before she gently guides you further onto the bed, and wrapping you both in its luxurious soft blankets as she cuddles up to your side.",
+                                    "Her soft breasts are pressed against you, and she warps one of her leg's around yours interlocking your bodies closer as one of her hand's trails down your torso towards your still throbbing erection.",
+                                    "ChangeImageLayer", "Expression",  "AraAra",
+                                    "Speaks",
+                                    "There,♥ nice and cozy.♥",
+                                    "PlayVisualEffect", "Kiss", "screenKissAiko.png",
+                                    "Her sweet whisper in your ear makes you shiver with pleasure, and that pleasant shiver only intensifies as she kisses your ear.",
+                                    "Speaks",
+                                    "But we should take care of {i}this{/i} before we get any sleep.♥",
+                                    "PlayVisualEffect", "Kiss", "screenKissAiko.png",
+                                    "You moan as her hand finishes teasingly trailing down your body, and gently warps its fingers around your aching and pulsing dick.",
+                                    "ChangeImageLayer", "Expression", "Kiss",
+                                    "PlayCustomBarrage", "0.8", "0.9",
+                                           "screenKissAiko.png", "screenKissAiko2.png", "screenKissAiko3.png", "screenKissAiko4.png", "screenKissAiko5.png",
+                                           "EndLoop",
+                                    "She starts to slowly and gingerly pump your twitching cock, all while she gives your face a gentle barrage of lipstick coated kisses, each kiss mark warmly tingling on your skin.",
+                                    "You let out a desperate whimper and turn your face towards her, each gentle stroke of her hand on your cock fills your groin with heavenly sweet pleasure, and the warm embrace fills your very core with loving warmth.",
+                                    "ChangeImageLayer", "Expression", "AraAra",
+                                    "EndCustomBarrage",
+                                    "Speaks",
+                                    "Oh dear,♥ you really want to cum.♥ Well then,♥ cum as much as you want [ThePlayerName].♥",
+                                    "PlayCustomBarrage", "0.8", "0.9",
+                                           "screenKissAiko.png", "screenKissAiko2.png", "screenKissAiko3.png", "screenKissAiko4.png", "screenKissAiko5.png",
+                                           "EndLoop",
+                                      "ChangeImageLayer", "Expression",  "Kiss",
+                                    "Her hand starts to slowly increase its pace, sending waves of warm pleasure through you, and she gently leans in and locks your lips with hers, giving you a deep romantic kiss, filling your brain with minty bliss as her tongue dominates yours.",
+                                    "Ecstasy builds in your hips with each soft teasing stroke of her hand, and her sweet loving kiss melts away your pleasure drunk mind with its blissful warmth.",
+                                    "Your cock throbs and twitches as it nears the edge of climactic bliss, but right before you cum her hand lets go of your manhood, leaving you on the brink of orgasm.",
+                                    "But Aiko doubles her loving kiss, gently rubbing her soft breasts against you while her warm cozy make out session with you slowly edges you closer and closer to climax.",
+                                    "Her gentle and sweet gaze is locked with yours and her plump lips feel so soft and mind-numbing pressed against your mouth, and her gentle loving affection slowly overwhelms your mind as warm minty bliss overflows your brain.",
+                                    "The sweet syrupy pleasure flows down your head into your neck, warm loving ecstasy slowly taking over you the longer she affectionately kisses you with her heavenly soft lips, each caress of her tongue gently pushes the sweet ecstasy onwards through your body.",
+                                    "Aiko's passionate kiss becomes the only thing that matters to you in this moment, and as the warm pleasure flows over your chest you heart races with love, and as the syrupy warmth gets closer to your hips your cock pulses and throbs harder and faster with jolts of building pleasure.",
+                                    "Your entire body is shivering with soft bliss as the warm kiss induced ecstasy starts to flow into your aching dick, pulses of mind-blanking pleasure hitting you over and over as the syrupy ecstasy makes its way through your manhood towards the tip.",
+                                    "The minty kiss and Aiko's loving gaze becomes your world, and you moan happily as the wonderful tingly pleasure fills your aching balls, eager to blow your hot steamy load for Aiko.",
+                                    "Finally as the syrupy pleasure overtakes your entire body, and reaches the head of your cock, your vision goes white with ecstasy, your hips bucking mindlessly into the soft blankets as your cock erupts cum explosively onto the bedding and Aiko.",
+                                    "PlayVisualEffect", "DoublePulse", "white.png",
+                                    "Time seems to stretch on as Aiko continues to kiss you with her plump lipstick coated lips, your entire body electrified with white-hot pleasure, a seemingly endless orgasm tearing through your body as you continue to cum more and more.",
+                                    "PlayVisualEffect", "DoublePulse", "white.png",
+                                    "Aiko giggles sweetly while you drown in warm ecstasy, and her hand teasingly returns to stroke your cock a few times, the ecstasy from each stroke almost makes you black out from the pleasure as you cum more and more.",
+                                    "EndCustomBarrage",
+                                    "CallEventAndSceneThenReturn", "Bed Mimic", "GoToThicknessInCombat",
+                                    "ChangeImageLayer", "Expression",  "Base",
+                                    "ChangeImageLayer", "Base", "Nude",
+                                    "Her body and the bedding greedily soak in each and every drop of your semen, and slowly your mind melting orgasm ebbs away, and Aiko stops gently stroking your still twitching shaft and gently breaks the romantic kiss with a gentle smile.",
+                                    "Your entire body is flooded with a warm sleepy afterglow, and you feel completely blissful and happy in the soft embrace you're sharing with Aiko in this luxurious bed, a pleasure drunk expression dominating your face.",
+                                    "ChangeImageLayer", "Expression",  "AraAra",
+                                    "Speaks",
+                                    "Good job.♥ Now, I bet you need some rest after that.♥",
+                                    "You dumbly nod and she gently snuggles closer to you, and it doesn't take you long to drift off in this warm cozy embrace...",
+                                    "ChangeFetish",
+                                    "Kissing",
+                                    "10",
+                                    "GameOver"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Anal Victory Scene",
+                        "theScene": [  "DisplayCharacters",
+                                      "1",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression","1", "Orgasm", "ChangeImageLayer", "BodyExtra","1", "BlushSevere",
+                                      "Aiko howls with ecstasy as you keep thrusting into her tight ass while she spasms with orgasmic bliss.",
+                                        "Driven by lustful instinct you unrelentingly fuck her, making her plush ass bounce and jiggle delightfully even as you grope her soft butt.",
+                                        "ChangeImageLayer", "Expression","1", "Pleasured",  "ChangeImageLayer", "BodyExtra","1", "Blush",
+                                        "Her tight rear spasms around your throbbing manhood each time you roughly slam your hips into her pillowy butt, and she lets out lewd incoherent moans.",
+                                        "You notice she's starting to fade away from the near constant orgasmic high you're giving her, and with desperation to cum you thrust harder and faster, pistoning into her leaving her moaning even louder as her body quivers with pleasure in the snow.",
+                                        "PlayerOrgasmNoSpiritLoss",
+                                        "PlayVisualEffect", "DoublePulse", "white.png",
+                                        "ChangeImageLayer", "Expression","1", "Orgasm", "ChangeImageLayer", "BodyExtra","1", "BlushSevere",
+                                        "With a few final definitive and loud thrusts you cum explosively inside her warm rear, leaving you both crying out in ecstasy as you fill her with cum.",
+                                        "You both gasp trying to catch your breath, indulging in a warm pleasurable afterglow, and you find your hands lovingly groping her warm plush body even as she fades away.",
+                                        "ChangeImageLayer", "Expression","1", "AraAra",
+                                        "Aiko manages to look back at you with a lustful and loving smile, her face deeply flush, before she vanishes from her multitude of orgasms, leaving you alone in the howling blizzard."
+                                  ]
+                      },
+
+
+
+
+                      {
+                        "NameOfScene": "Temptation Victory Scene",
+                        "theScene": [  "DisplayCharacters",
+                                      "1",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression","1", "Pleasured", "ChangeImageLayer", "BodyExtra","1", "Blush", "ChangeImageLayer", "Base","1", "Nude",
+                                       "Aiko collapses backwards onto the snowy ground gasping with pleasure, her kimono slipping open revealing her luscious cleavage, her smooth womanly curves, and her steaming hot pussy, twitching open to invite you inside.",
+                                      "The freezing wind blows making you shiver while you contemplate if you should take advantage of the plush woman's warm body...",
+                                      "Menu",
+                                        "Keep moving!",
+                                        "Fuck her!",
+                                      "EndLoop"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "Keep moving!",
+                              "theScene": [ "EndAllVisualEffects",
+                                            "You ignore the temptation of Aiko's plush body, and she fades away from her recent orgasm, still gasping with arousal."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Fuck her!",
+                              "theScene": [    "ChangeImageLayer", "Expression","1", "Base", "ChangeImageLayer", "BodyExtra","1", "BlushSevere",
+                                              "You get on top of Aiko's prone form with lust burning in your groin, and she gives you a shy, but knowing smile, her face flushed with need.",
+                                                  "ChangeEnergyQuietly", "5", "ChangeArousalByPercent", "10",
+                                                  "ChangeImageLayer", "Expression","1", "Pleasured",
+                                              "Aiko moans loudly as you plunge your twitching erection inside of her warm inviting pussy, and it gives your shaft a welcoming squeeze before you start to thrust.",
+                                                "ChangeEnergyQuietly", "15", "ChangeArousalByPercent", "15",
+                                              "Warmth floods your body as you fuck her, making the cold blizzard around you all but irrelevant, and you let your hands wander over her soft curves, making her gasp as you play with her warm breasts.",
+                                                "ChangeEnergyQuietly", "15", "ChangeArousalByPercent", "15",
+                                                "She cutely gasps with your each and every thrust, loving every moment of your dominant sexual attentions, and your cock pulses with warm need each time you hilt yourself inside her squeezing pussy.",
+                                              "ChangeEnergyQuietly", "15", "ChangeArousalByPercent", "30",
+                                              "The inside of her pussy is steamy warm, it needily clings to your shaft as if desperate to keep you inside, and it's intoxicating heat drives you to thrust back into her as soon as possible, leaving her breasts to bounce delightfully every time you do thrust.",
+                                              "ChangeEnergyQuietly", "15", "ChangeArousalByPercent", "30",
+                                              "EndCustomBarrage", "PlayVisualEffect2", "BlindingFlash", "screenKissAiko.png",
+                                              "Aiko manages to wrap her arms around your neck with a love drunk expression on her face as you continue to fuck her, and she pulls you in for a sloppy romantic kiss that leaves your mouth tingling from her lipstick.",
+                                              "EndCustomBarrage", "PlayVisualEffect2", "BlindingFlash", "screenKissAiko5.png",
+                                                "PlayerOrgasm", "1", "ChangeImageLayer", "Expression","1", "Orgasm",
+                                                "PlayVisualEffect", "DoublePulse", "white.png",
+                                              "You moan loudly as Aiko's romantic kiss sends you over the edge, your cock is pulsing from her simple romantic gesture and you thrust one last time as her pussy squeezes your manhood like a warm vice, milking out a thick load of cum from your balls as you twitch and shudder with climactic bliss.",
+                                              "ChangeImageLayer", "Expression","1", "Pleasured",
+                                              "EndImagePulseLoopingList",
+                                              "Finally the two of you break the kiss, gasping for air with heavy breaths, and Aiko stares into your eyes, her expression of lust and gentle affection, wordlessly begging you to stay in her warm embrace.",
+                                                "IfPlayerSpiritGone", "CantStopFucking1",
+                                              "Menu",
+                                                "Keep moving.",
+                                                "Fuck her more!",
+                                              "EndLoop"
+
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Keep moving.",
+                              "theScene": [   "ChangeImageLayer", "Expression","1", "Pout",
+                                            "EndAllVisualEffects",
+                                            "You regretfully pull away from Aiko's plush and invitingly warm body, and she gives you a small pout as she fades away, still flush with arousal."
+                                        ]
+                            },
+                                {
+                                  "NameOfScene": "CantStopFucking1",
+                                  "theScene": [  "Left gasping, you feel oddly light-headed from your recent orgasm, but with your cock lodged inside her warm pussy you can't think of any good reason to stop now, the mere idea of getting up sounds too tiring and cold.",
+                                                "JumpToScene", "Fuck her more!"
+                                            ]
+                                },
+                            {
+                              "NameOfScene": "Fuck her more!",
+                              "theScene": [     "ChangeEnergyQuietly", "15", "ChangeArousalByPercent", "10",
+                                                "PlayVisualEffect", "Kiss", "screenKissAiko.png",
+                                                  "PlayCustomBarrage", "0.8", "0.9",
+                                                  "screenKissAiko.png", "screenKissAiko2.png", "screenKissAiko3.png", "screenKissAiko4.png", "screenKissAiko5.png",
+                                                  "EndLoop",
+                                              "You resume thrusting into Aiko, and she sighs blissfully before giving your face a shower of warm kisses from her pillowy lips, leaving warm tingly kiss marks where ever she decides to smooch you.",
+                                                "ChangeEnergyQuietly", "15", "ChangeArousalByPercent", "15",
+                                              "Aiko gently wraps her legs around your waist, pulling you even closer to her wonderfully plump body, keeping your cock firmly lodged inside her while you thrust into her over and over.",
+                                                "ChangeEnergyQuietly", "15", "ChangeArousalByPercent", "15",
+                                                "You slide your arms underneath her to tighten the embrace even further seeking more of her plush body, and her soft tits squish against you delightfully, all while she lovingly kisses your face and neck, and you continue to fuck her warm squeezing pussy.",
+                                              "ChangeEnergyQuietly", "15", "ChangeArousalByPercent", "30",
+                                              "EndCustomBarrage", "PlayVisualEffect2", "BlindingFlash", "screenKissAiko.png",
+                                              "Finally she kisses you deeply on the lips, pressing her pillowy lips against your mouth, teasingly invading your mouth with her tongue, letting it romantically dance with yours while she gazes lovingly into your eyes, and you find your heart racing in your chest.",
+                                              "ChangeEnergyQuietly", "15", "ChangeArousalByPercent", "30",
+                                              "You can't stop yourself from roughly pistoning your cock into her steamy hot pussy, leaving your manhood pulsing with each thrust and your balls twitching with need to fill her with your seed.",
+                                              "PlayerOrgasm", "1",
+                                              "PlayVisualEffect", "DoublePulse", "white.png",
+                                              "PlayVisualEffect2", "BlindingFlash", "screenKissAiko.png",
+                                              "The overwhelming warmth and pleasure overtake you as a mind-blanking orgasm cascades across your entire body with one final thrust as your cock pumps load after load of your thick cum into her.",
+                                              "PlayerOrgasm", "1",
+                                              "PlayVisualEffect", "DoublePulse", "white.png",
+                                              "PlayVisualEffect2", "BlindingFlash", "screenKissAiko.png",
+                                              "ChangeImageLayer", "Expression","1", "Orgasm",
+                                              "You both loudly moan as you spasm with pleasure, and she tightens her loving grip on your body, her legs locked around you keeping your throbbing cock inside her while you continue to powerfully spurt your semen into her.",
+                                              "ChangeImageLayer", "Expression","1", "Pleasured",
+                                              "PlayVisualEffect2", "BlindingFlash", "screenKissAiko.png",
+                                              "Finally the kiss breaks and you both gasp for air faces deeply flushed with warm arousal, Aiko tightly squeezes her arms and legs around you, pulling you closer to her curvy body with a loving smile.",
+                                              "ChangeImageLayer", "Expression","1", "AraAra",
+                                              "Speaks",
+                                              "Don't go [ThePlayerName], just stay here with me, I'll keep you warm.♥",
+                                              "Your cock throbs and twitches inside of her, her words alone felt like were going to make you cum inside her again.",
+                                              "IfPlayerSpiritGone", "CantStopFucking2",
+                                              "Menu",
+                                                "Keep moving.",
+                                                "Don't stop fucking her.",
+                                              "EndLoop"
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "CantStopFucking2",
+                                    "theScene": [    "Your head is left blissfully spinning from your recent powerful orgasm, and as her warm pussy squeezes your aching shaft, you can't think of any good reason to stop now, fucking her is a much better alternative to the cold blizzard.",
+                                            "JumpToScene", "Don't stop fucking her."  ]
+                                  },
+                            {
+                              "NameOfScene": "Don't stop fucking her.",
+                              "theScene": [    "ChangeEnergyQuietly", "15", "ChangeArousalByPercent", "10",
+                                              "ChangeImageLayer", "Expression","1", "Pleasured",
+                                              "You press her into the kiss this time and she moans with surprise, her legs tightly squeezing around your waist as you thrust into her warm pussy once more, doing your best to hit her deeply as possible with your throbbing erection.",
+                                                "ChangeEnergyQuietly", "15", "ChangeArousalByPercent", "15",
+                                              "Aiko moans happily into your aggressive kiss with your every thrust, and she tightly clings to you, pressing her plush breasts against you, and you shiver from the feeling of her warm lipstick marks still tingling on your face.",
+                                                "ChangeEnergyQuietly", "15", "ChangeArousalByPercent", "15",
+                                              "Your cock twitches blissfully inside her heavenly warm pussy as it softly squeezes your length as you no longer do long full thrusts, now content to light ones, keeping your shaft deep inside her warm pussy as her legs tighten more around your waist, leaving you madly humping her.",
+                                              "ChangeEnergyQuietly", "15", "ChangeArousalByPercent", "30",
+                                              "PlayVisualEffect2", "BlindingFlash", "screenKissAiko.png",
+                                              "Sweet pleasure jolts into your groin with each rapid-fire thrust and your mind feels like it's melting from the pleasure and Aiko's loving kiss as you find yourself lost in her minty flavor and running short of breath.",
+                                              "ChangeEnergyQuietly", "15", "ChangeArousalByPercent", "30", "ChangeImageLayer", "Expression","1", "AraAra",
+                                              "You hear her giggle seductively as you keep thrusting into her warm heavenly pussy, any reason but more warm pleasure fading from your mind as a cataclysmic orgasm builds inside your hips with each shallow thrust you make.",
+                                              "PlayerOrgasm", "1",
+                                              "PlayVisualEffect", "DoublePulse", "white.png",
+                                              "As Aiko's tongue dances around yours in a slow sensual circle, your cock spasms with orgasmic pleasure and you pour a thick hot load inside of her, your mind-blanking out from the ecstatic pleasure washes over you, and your hips refuse to stop thrusting, seeking more of this warm heavenly bliss.",
+                                              "PlayerOrgasm", "1",
+                                              "PlayVisualEffect", "DoublePulse", "white.png",
+                                              "You moan incoherently into Aiko's mouth as your orgasm refuses to stop, and she shivers with her own climactic bliss, your unrelenting fucking taking its toll on her too, but the jolts of pleasure hitting your manhood with your each and every thrust leave you cumming like a broken faucet inside her.",
+                                              "PlayerOrgasm", "1", "ChangeImageLayer", "Expression","1", "Kiss",
+                                              "PlayVisualEffect", "DoublePulse", "white.png",
+                                              "PlayVisualEffect2", "Kiss", "screenKissAiko.png",
+                                                "PlayCustomBarrage", "0.8", "0.9",
+                                                  "screenKissAiko.png", "screenKissAiko2.png", "screenKissAiko3.png", "screenKissAiko4.png", "screenKissAiko5.png",
+                                                  "EndLoop",
+                                              "Aiko's loving affections feel like they're overwhelming you as she keeps the romantic kiss going all through your mind melting orgasm, and you can't bring yourself to stop fucking the curvy woman even if you wanted to.",
+                                              "ChangeArousalByPercent", "25",
+                                              "Even as your orgasm slowly ebbs away you can't stop thrusting, and Aiko's arms locked around your neck refuse to let you break the kiss, her legs firmly keeping you from pulling away.",
+                                              "ChangeArousalByPercent", "25", "ChangeImageLayer", "Expression","1", "AraAra", "ChangeImageLayer", "Base","1", "Seduce",
+                                              "Aiko's eyes have a naughty gleam in them as you gaze into them, and you feel her kimono magically wrap around you, helping to keep you warm, help keep you pressed against her plump body.",
+                                              "ChangeArousalByPercent", "25",
+                                              "ChangeImageLayer", "ImageSetDontCarryOver", "HugCloseUp",
+                                              "ChangeBG", "Monsters/Aiko/Hug/AIKOHUG_CloseUp_BG.png",
+                                              "PlayMotionEffect", "SwayOnce",
+                                              "But you can hardly bring yourself to care, too lost in the warm intoxicating pleasure of her body, it's too cold away from her anyways. The long drawn out kiss with her is leaving your head spinning from lack of air and excessive pleasure.",
+                                              "ChangeArousalByPercent", "25",
+                                              "PlayMotionEffect", "RideSlow",
+                                              "Only for a brief few seconds, she'll give you to try and catch your breath before crashing her pillowy lips back into your mouth, leaving your cock already pulsing with orgasmic ecstasy with every thrust.",
+                                              "PlayerOrgasm", "2",
+                                              "PlayMotionEffect", "BounceOnce",
+                                              "PlayVisualEffect", "DoublePulse", "white.png",
+                                              "PlayVisualEffect3", "BlackOut", "Monsters/Aiko/Hug/AIKOHUG_CloseUp_Steam.png",
+                                              "You moan incoherently as your throbbing manhood begins to spurt inside her again, filling her with a fresh load of your thick cum, maybe even more than last time, but you still can't stop, her body is too temptingly warm, and you're too lost in sweet pleasure.",
+                                              "PlayMotionEffect", "RideSlow",
+                                              "Even as your vision starts to swirl at the edges you keep thrusting, another orgasm building inside already, and you're eager to feel that warm bliss again, so you thrust more and more leaving your mind blank except for Aiko and the warm pleasure her body is giving you.",
+                                              "PlayerOrgasm", "2",
+                                              "PlayMotionEffect", "BounceOnce",
+                                              "PlayVisualEffect", "DoublePulse", "white.png",
+                                              "The world drains away as your body trembles with climactic ecstasy, and you pour another thick load of semen into her warm inviting pussy as it squeezes around your shaft, and the taste of mint overwhelms your tongue.",
+                                              "PlayerOrgasm", "3",
+                                              "PlayMotionEffect", "BounceOnce",
+                                              "PlayVisualEffect", "DoublePulse", "white.png",
+                                              "PlayMotionEffect", "RideSlow",
+                                              "As darkness takes your vision, you see Aiko starting to fade away, but you can still feel her kissing you senseless as your vision completely fades away, and her pussy as you thrust madly into it, cumming over and over into her warm greedy sex.",
+                                              "SetSpirit", "0",
+                                              "PlayBlackOut",
+                                              "You don't stop fucking her womanly body until you both fade away together completely, melting away with blissful pleasure...",
+                                              "EndCustomBarrage",
+                                              "...",
+                                              "ChangeFetish", "Sex", "5",
+                                              "ChangeFetish", "Kissing", "5",
+                                              "ChangeSensitivity",
+                                              "Sex",
+                                              "5",
+                                              "EndAllVisualEffects",
+                                              "GameOver"
+                                        ]
+                            }
+
+
+                ]
+}

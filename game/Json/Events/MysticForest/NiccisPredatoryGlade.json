@@ -1,0 +1,45 @@
+{
+    "name": "Nicci's Predatory Glade",
+    "CardType": "Event",
+    "CardLimit": "1",
+    "Description": "Nicci awaits in her flowery glade. She'll happily milk you dry, pampering you with her nectar.♥",
+    "requires": [ ""],
+    "requiresEvent": [
+        {
+            "NameOfEvent": "Nectar Delivery",
+            "Progress": "1",
+            "ChoiceNumber": "-1",
+            "Choice": ""
+        }
+    ],
+    "Speakers": [
+                  {
+                    "name": "Nicci",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Fight",
+                        "theScene": [
+                                        "DisplayCharacters",
+                                            "1",
+                                          "EndLoop",
+                                          "StoreCurrentBG",
+                                          "ChangeBG", "forest.png",
+                                          "ChangeImageLayer", "Expression", "Nicci", "SmileSeductive",
+                                          "As you stride through the dark depths of the Labyrinth, you suddenly find yourself in a grassy field with Nicci at the center, the tall alraune gazing at you lustfully for a moment before smiling and trailing her hands over her curvaceous, sweet-smelling body.",
+                                          "Speaks",
+                                          "Come here, cutie. Why not have a break and take a nice nectar bath? This is going to feel so good.♥",
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Nicci",
+                                          "StartCombat",
+                                          "With the voluptuous flower woman defeated, you find yourself thrown back from the verdant glade into the Labyrinth, unsure whether that actually happened...",
+                                          "UseHeldBG"
+                                  ]
+                    }
+                ]
+}

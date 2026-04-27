@@ -1,0 +1,635 @@
+{
+    "name": "Bar Glory Hole Manticore",
+    "CardType": "GloryHoleShift",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "???",
+                    "postName": "",
+                    "SpeakerType": "?"
+                  },
+                  {
+                    "name": "Belle",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Kaia",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Manticore",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+
+                ],
+    "EventText": [
+                      {
+                          "NameOfScene": "EventStart",
+                          "theScene": [  "GetEventAndIfChoice", "Sleeping Manticore", "5", "FirstNameBasis", "SetToKaia",
+                                        "SetChoice", "3", "The Manticore",
+                                        "SetFlexibleSpeaker", "1",
+                                        "ChoiceToDisplayMonster", "3",
+                                        "GetAnEventsProgressThenIfEquals", "Sleeping Manticore", "0", "MetHereFirst",
+                                        "JumpToScene",
+                                        "CheckProgress"
+                                    ]
+                      },
+                          {
+                              "NameOfScene": "SetToKaia",
+                              "theScene": [
+                                            "SetChoice", "3", "Kaia",
+                                            "ChoiceToDisplayMonster", "3",
+                                              "SetFlexibleSpeaker", "3",
+                                            "JumpToScene",
+                                            "CheckProgress"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "MetHereFirst",
+                              "theScene": [  "SetChoice", "4", "MetAtBrothelFirst",
+                                            "JumpToScene",
+                                            "CheckProgress"
+                                        ]
+                          },
+
+
+
+                          {
+                            "NameOfScene": "CheckProgress",
+                            "theScene": [  "IfProgressEqualsOrGreater", "3", "RoomRentCheck",
+                                          "GetAnEventsProgressThenIfEqualsOrGreater", "Sleeping Manticore", "15", "RoomRentCheck",
+                                          "JumpToScene", "RunEvent"
+                                      ]
+                          },
+                                {
+                                  "NameOfScene": "RoomRentCheck",
+                                  "theScene": [  "IfChoice", "5", "", "RoomRentalScene",
+                                                "IfChoice", "3", "Kaia", "Player Chooses Scene",
+                                                "JumpToRandomScene",
+                                                      "RoomRentalScene",
+                                                      "RunEvent",
+                                                  "EndLoop"
+                                            ]
+                                },
+                                    {
+                                      "NameOfScene": "Player Chooses Scene",
+                                      "theScene": [  "As you wait in the stall, you can't help but feel a bit of anticipation as you wonder what's going to happen...",
+                                                    "Menu",
+                                                      "Kaia shows up after I get blowjobs from countless women...",
+                                                      "Kaia hires me for a night of pleasure...",
+                                                    "EndLoop"
+                                                ]
+                                    },
+                                          {
+                                            "NameOfScene": "Kaia shows up after I get blowjobs from countless women...",
+                                            "theScene": [  "JumpToScene", "RunEvent"
+                                                      ]
+                                          },
+                                          {
+                                            "NameOfScene": "Kaia hires me for a night of pleasure...",
+                                            "theScene": [  "JumpToScene", "RoomRentalScene"
+                                                      ]
+                                          },
+
+
+
+                      {
+                        "NameOfScene": "RunEvent",
+                        "theScene": [
+                                    "DisplayCharacters",
+                                        "EndLoop",
+                                    "The only thing you can hear is the occasional muffled chatter through the wall.",
+                                    "ChangeBGM", "music/Casino/red room.mp3",
+                                    "Nothing happens for a while and you're left idly wondering if anything is actually going to happen, but then you suddenly feel a soft hand grab and start to stroke your cock!",
+                                    "Not soon after, while you are still starting to get hard, a wet mouth engulfs your shaft and starts to work on your shaft with a skilled tongue.",
+                                    "It doesn't take long for your manhood to give the hungry mouth what it wants, and you can hear pleased moans as whoever on the other side noisily gulps down your seed.",
+                                    "As your orgasm ends, the mouth releases its grip on your cock, leaving it covered in saliva, twitching in the open air for a brief moment before another mouth takes the place of the last mouth and coaxes another orgasm out of you.",
+                                    "You manage to feed two more hungry mouths before your shaft finally starts to flag, much to the frustration of the fifth girl as she starts to roughly stroke your manhood in an attempt to get it hard again.",
+                                    "Speaks",
+                                    "C'monnn! You can't be emptyyyy! Ahm not that bad at orallll...",
+                                    "ChangeBGM", "music/Loss/Falling Down.mp3",
+                                    "GetAnEventsProgressThenIfEqualsOrGreater",
+                                    "Sleeping Manticore",
+                                    "1",
+                                    "familiar Intro",
+                                    "IfProgressEqualsOrGreater",
+                                    "1",
+                                    "familiar Intro",
+                                    "You hear another voice talk to her, much more sober, and she sounds almost... sinister?",
+                                    "JumpToScene",
+                                    "TailSex"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "familiar Intro",
+                        "theScene": [
+                                    "You hear another, eerily familiar voice talk to her, much more sober, and she sounds a bit sinister...",
+                                    "JumpToScene",
+                                    "TailSex"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "TailSex",
+                        "theScene": [ "FlexibleSpeaks",
+                                  "Hey there ladies, you look like you need some help over here. How about I give him some of {i}this{/i}, you get your load, and then you let me have a turn with him?",
+                                  "Speaks",
+                                  "I... Surreee!",
+                                  "You cry out as you feel a sharp pain jab into the underside of your manhood, but the pain is quickly replaced with a tingling sensation.",
+                                  "Your shaft starts to swell back up and the drunken woman eagerly takes it into her wet mouth, sucking and stroking it.",
+                                  "As she continues to give you a blowjob, your balls are suddenly filled with a pleasurable ache, building and building until you finally unleash a massive torrent of cum down the woman's gullet, which she greedily drinks down.",
+                                  "FlexibleSpeaks",
+                                  "So a deal's a deal, right?",
+                                  "The drunken woman releases your aching shaft.",
+                                  "Speaks",
+                                  "Yeaahhh... I shuppose...",
+                                  "You are still panting in the dark box as you try to recollect yourself from the sudden orgasm when you feel another jab hit the underside of your dick, making your cry out once more, but this time not in pain but in pleasure.",
+                                  "SwapLineIf", "Choice",
+                                    "3", "Kaia", "Soon after, [DisplayMonsterChoice]'s unnaturally textured tail pussy envelopes your cock, the lack of vision with it only adding to the sensations.",
+                                    "6", "Met",  "Soon after, [DisplayMonsterChoice]'s unnaturally textured tail pussy envelopes your cock, the lack of vision with it only adding to the sensations.",
+                                    "6", "" , "Soon after, {i}something{/i} envelopes your cock, and you don't know WHAT it is, but it is definitely not a mouth.",
+                                  "EndLoop",
+                                  "The tight orifice feels like it has been lined with numerous tongues and its walls move unnaturally, tightening and constricting around your shaft.",
+                                  "SwapLineIf", "Choice",
+                                    "3", "Kaia", "You cry out and instinctively thrust your hips as the squeezing orifice suddenly puts suction on your cock.",
+                                    "6", "Met",  "You cry out and instinctively thrust your hips as the squeezing orifice suddenly puts suction on your cock.",
+                                    "6", "" , "You cry out and instinctively thrust your hips as the thing suddenly puts suction on your cock.",
+                                  "EndLoop",
+                                  "Its insides start to make milking motions around your manhood as the many tongues start to lick the entire length of your shaft.",
+                                  "IfFetishLevelEqualOrGreater", "Manticore Venom", "25", "TailSexfamiliar",
+                                  "FlexibleSpeaks",
+                                  "Hahaha. You sound adorable in there.",
+                                  "SwapLineIf", "Choice",
+                                    "6", "Met",    "Her tail pussy is unlike any mouth or any normal orifice for that matter, leaving your only response to moan as the opening of the tight orifice clamps down like a vice before it starts to pull away to the head of your cock.",
+                                    "6", "" ,   "Whatever is on your cock is definitely not her mouth, but your only response is a moan as the opening of the tight orifice clamps down like a vice before it starts to pull away to the head of your cock.",
+                                  "EndLoop",
+                                  "PlayerOrgasmNoSpiritLoss",
+                                  "It slams back to the base and follows up with a single milking motion and your cock erupts into orgasm, forcing you to feed the strange orifice as it greedily gulps down your cum.",
+                                  "FlexibleSpeaks",
+                                  "Hmmm... I'd say with my aphrodisiacs going through you, you have at least... ten more loads like that left?",
+                                  "PlayerSpeaks",
+                                  "T-Ten?! Are yo-",
+                                  "Your complaints quickly transform into a groan as the orifice resumes its milking of your oversensitive cock.",
+                                  "FlexibleSpeaks",
+                                  "Aww, don't be scared. This is gonna feel so good! Or are you afraid that you're going to get addicted to this, hmm?♥",
+                                  "The orifice twists and churns around your shaft, and you spurt out another large load into her.",
+                                  "FlexibleSpeaks",
+                                  "Maybe you're already hooked on the pleasure and you don't even know it yet. Can you still even think straight?",
+                                  "PlayerSpeaks",
+                                  "St-Stop, p-please!",
+                                  "Her wet orifice keeps milking your shaft, forcing out another load of your cum.",
+                                  "FlexibleSpeaks",
+                                  "I'm pretty sure your dick is asking for more. It just keeps cumming into my tail!",
+                                  "FlexibleSpeaks",
+                                  "Your perverted penis just loves getting milked dry like this, doesn't it? The way I have it so gently wrapped up, the lovely churning sensations, I bet you feel like you could just melt right now...",
+                                  "FlexibleSpeaks",
+                                  "You're going to be dreaming about this pleasure for weeks, aren't you? Mmm♥ there goes another load!",
+                                  "FlexibleSpeaks",
+                                  "I kind of wish I could see your face right now. Maybe I should see if I can hire you and we can continue this in a room?",
+                                  "PlayerOrgasmNoSpiritLoss",
+                                  "You can only whimper in response as your body is forced to another orgasm, your mind-blanking out from the incredible pleasure.",
+                                  "FlexibleSpeaks",
+                                  "Heyyy you still okay? Aww, did I break you already? You're only about halfway done!",
+                                  "You cry out as she starts to put more effort into milking your cock, using her muscles to make the orifices' walls ripple as it strokes you shaft.",
+                                  "She keeps applying different sensations to your cock to keep you cumming again and again, overwhelming your brain with so much pleasure that you can't even keep track of what's going on anymore beyond the heavenly sensations emanating from your groin",
+                                  "You don't know how long you've been in the booth, but it feels like an eternity. You're pretty sure she's made you cum far more than ten times at this point.",
+                                  "Eventually, not even the powerful drug coursing through your veins is enough to keep you going any longer and your cock finally starts to go soft.",
+                  "The orifice eventually slows down its oral assault on your aching manhood and pulls off with a wet pop, making you shudder as your shaft is exposed to the open air of the brothel.",
+                                  "FlexibleSpeaks",
+                                  "Hahhh... That was fun. Let's do this again sometime, I know your cock wants to.",
+                                  "She leaves with a slightly sadistic laugh, and shortly after she leaves the bartender comes and opens up your stall.",
+                                  "JumpToScene",
+                                  "sceneEnd"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "TailSexfamiliar",
+                        "theScene": [
+                                  "FlexibleSpeaks",
+                                  "Hmhmh, remember me? I can tell it's you, my little cum pump. Fuck, you sound so adorable in there.",
+                                  "SwapLineIf", "Choice",
+                                    "3", "Kaia", "Her tail pussy is unlike any mouth or any normal orifice for that matter, leaving your only response to moan as the opening of the tight orifice clamps down like a vice before it starts to pull away to the head of your cock.",
+                                    "6", "Met",    "Her tail pussy is unlike any mouth or any normal orifice for that matter, leaving your only response to moan as the opening of the tight orifice clamps down like a vice before it starts to pull away to the head of your cock.",
+                                    "6", "" ,   "Whatever is on your cock is definitely not her mouth, but your only response is a moan as the opening of the tight orifice clamps down like a vice before it starts to pull away to the head of your cock.",
+                                  "EndLoop",
+                                  "PlayerOrgasmNoSpiritLoss",
+                                  "It slams back to the base before following up with a single milking motion, forcing your cock into an orgasm as the strange orifice greedily gulps down your cum.",
+                                  "FlexibleSpeaks",
+                                  "Hmmm... I'd say with my aphrodisiacs going through you, you have at least... ten more loads like that left?",
+                                  "PlayerSpeaks",
+                                  "D-Don't stop! Please!",
+                                  "You hear her laugh as the orifice resumes milking your cock, making you moan.",
+                                  "FlexibleSpeaks",
+                                  "SwapLineIf", "Choice",
+                                    "3", "Kaia", "Hehehe, you're completely addicted to this sensation, I know you are.♥",
+                                    "6", "" ,   "Aww, you do remember me! You're getting addicted to this sensation, aren't you?",
+                                  "EndLoop",
+                                  "PlayerOrgasmNoSpiritLoss",
+                                  "The orifice twists and churns around your shaft, and you spurt out another large load into her.",
+                                  "FlexibleSpeaks",
+                                  "SwapLineIf", "Choice",
+                                    "3", "Kaia", "So come on, drown in ecstasy until my tail pussy is the only thing you can think about!♥",
+                                    "6", "" ,   "I can tell you're already hooked on the pleasure. I'm going to drown you in ecstasy until it's the only thing you can think about!",
+                                  "EndLoop",
+                                  "PlayerSpeaks",
+                                  "Y-Yes, more!♥",
+                                  "Her wet orifice keeps milking your shaft, forcing out another load of your cum.",
+                                  "FlexibleSpeaks",
+                                  "That's it, beg for more, and keep cumming into my tail!",
+                                  "FlexibleSpeaks",
+                                  "Your perverted penis just loves getting milked dry like this, doesn't it? The way I have it so gently wrapped up, the lovely churning sensations, I bet you feel like you could just melt right now...",
+                                  "FlexibleSpeaks",
+                                  "You're going to be dreaming about this pleasure for weeks, aren't you? Mmm♥ there goes another load!",
+                                  "FlexibleSpeaks",
+                                  "I kind of wish I could see your face right now. Maybe I should see if I can hire you and we can continue this in a room?",
+                                  "PlayerOrgasmNoSpiritLoss",
+                                  "You can only whimper in delight as your body is forced to another orgasm, your mind-blanking out from the incredible pleasure.",
+                                  "FlexibleSpeaks",
+                                  "SwapLineIf", "Choice",
+                                    "3", "Kaia", "Heyyy you okay? Is your mind melting away already? You're only about halfway done!♥",
+                                    "6", "" ,   "Heyyy you still okay? Aww, did your mind break already? You're only about halfway done!",
+                                  "EndLoop",
+                                  "You cry out as she starts to put more effort into milking your cock, using her muscles to make the orifices' walls ripple as it strokes you shaft.",
+                                  "She keeps applying different sensations to your cock to keep you cumming again and again, overwhelming your brain with so much pleasure that you can't even keep track of what's going on anymore beyond the heavenly sensations emanating from your groin.",
+                                  "You don't know how long you've been in the booth, but it feels like an eternity. You're pretty sure she's made you cum far more than ten times at this point.",
+                                  "Eventually, not even the powerful venom coursing through your veins is enough to keep you going any longer and your cock finally starts to go soft.",
+                                  "The orifice eventually slows down its oral assault on your aching manhood and pulls off with a wet pop, making you shudder as your shaft is exposed to the open air of the brothel.",
+                                  "FlexibleSpeaks",
+                                  "SwapLineIf", "Choice",
+                                    "3", "Kaia", "Hahhh...♥ That was so fun. Hehehe, I'm sure we'll be seeing each other again soon [ThePlayerName].",
+                                    "6", "" ,   "Hahhh...♥ That was so fun. I'll be sure to see you again, my favorite semen dispenser.",
+                                  "EndLoop",
+                                  "Her voice sounds fairly affectionate as she talks to you through the wall, and she leaves with a quiet laugh, and shortly after she leaves the bartender comes and opens up your stall.",
+                                  "JumpToScene",
+                                  "sceneEnd"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "sceneEnd",
+                        "theScene": [
+                                  "DisplayCharacters",
+                                      "2",
+                                      "EndLoop",
+                                  "StopBGM",
+                                  "ChangeImageLayer", "Expression", "1", "Shock",
+                                  "Belle seems rather shocked upon seeing the twitching, trembling mess you've become after your intense experience working at the glory hole.",
+                                  "ChangeImageLayer", "Expression", "1", "Sigh",
+                                  "Speaks2",
+                                  "Fucking manticores... C'mon [ThePlayerName], you're fine... Okay, you {i}will{/i} be fine.",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "She gently gets you out of the restraints before taking you to the showers to wash you off.",
+                                  "ChangeBG", "InnPlayerRoom.png",
+                                  "After cleaning you off, Belle carefully carries your limp body to one of the bedrooms in the brothel and places you on one of the soft beds before locking the door behind her as she returns to the bar. Your exhausted body almost immediately falls into a deep sleep...",
+                                  "DisplayCharacters",
+                                    "EndLoop",
+                                  "...",
+                                  "SleepPlayer", "DelayNotifications",
+                                  "SwapLineIf", "Choice",
+                                    "3", "Kaia", "You awake the next day exhausted and pleasurably sore from your experiences yesterday, and you flush as you realize you did actually have dreams about Kaia's unnaturally textured tail despite never seeing her or it's lewd interior.",
+                                    "3", "" ,  "You awake the next day exhausted and pleasurably sore from your experiences yesterday, and you flush as you realize you did actually have dreams about the tail despite never seeing its owner.",
+                                  "EndLoop",
+                                  "ChangeBG", "Inn.png",
+                                  "ChangeBGM", "music/Town/casino.mp3",
+                                  "SwapLineIf", "Choice",
+                                    "3", "Kaia", "But you manage to shake off your arousal even as your heart thrums in your chest, and head downstairs and get your pay.",
+                                    "3", "" ,  "A bit shaken, you head downstairs and get your pay.",
+                                  "EndLoop",
+                                  "ChangeBG", "Inn.png",
+                                  "ChangeEros", "500",
+                                  "GiveExp", "50",
+                                  "ChangeFetish", "Oral", "5",
+                                  "ChangeFetish", "Monstrous", "5",
+                                  "ChangeFetish", "Manticore Venom",   "15",
+                                  "ChangeSensitivity", "Sex", "10",
+                                  "ChangeProgress", "1",
+                                  "GetAnEventsProgressThenIfEqualsOrGreater", "Sleeping Manticore", "1", "gainAffection"
+
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "gainAffection",
+                        "theScene": [
+                                    "GetEventAndChangeProgress", "Sleeping Manticore", "1"
+
+                                  ]
+                    },
+
+
+                    {
+                        "NameOfScene": "RoomRentalScene",
+                        "theScene": [ "SetChoice", "5", "HadScene",
+                                      "DisplayCharacters",
+                                          "EndLoop",
+                                      "The only thing you can hear is the occasional muffled chatter through the wall, but soon you hear someone approaching, and you jump a little as they knock on the wall.",
+                                      "Speaks",
+                                      "Hey, how much to rent the guy in here?",
+                                      "You shiver at the familiar, almost sinister sounding voice... You can't make out the sound of whoever responds to her question...",
+                                      "FlexibleSpeaks",
+                                      "Yeah, but I want to spend some nice {i}personal{/i} time with my favorite cum pump, hehe... Double normal price? Hehe, yeah that's perfectly fine with me.",
+                                      "Her mere voice has left your cock throbbingly erect, and you gasp as she gently trails a claw along the underside of your shaft before she walks away, leaving your dick twitching with longing.",
+                                      "DisplayCharacters",
+                                          "2",
+                                          "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Sigh",
+                                      "After a short wait, Belle returns to the back end of the stall and unstraps you from the stall with a grim look.",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "Speaks2",
+                                      "You've been hired... Though I'm sure you heard her. She's a manticore... So... Good luck for the night, if she gets too rough with you, try to scream as loud as you can, the walls are mostly soundproof, but someone might be able to hear you...",
+                                      "DisplayCharacters",
+                                          "EndLoop",
+                                      "A little anxious knowing you have no way out of this, you quickly head to the room Belle tells you the client rented for the night, and head inside...",
+                                      "IfChoice", "3", "Kaia", "EnterTheRoomKaia",
+                                      "GetAnEventsProgressThenIfEqualsOrGreater", "Sleeping Manticore", "1", "already met",
+                                      "JumpToScene", "EnterTheRoomManticore"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "already met",
+                              "theScene": [
+                                            "SetChoice", "6", "Met",
+                                              "JumpToScene", "EnterTheRoomManticore"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "EnterTheRoomManticore",
+                              "theScene": [ "SetFlexibleSpeaker", "4",
+                                              "DisplayCharacters",
+                                                  "4",
+                                                  "EndLoop",
+                                              "JumpToScene", "RoomRentalLewdScene"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "EnterTheRoomKaia",
+                              "theScene": [
+                                            "DisplayCharacters",
+                                                "3",
+                                                "EndLoop",
+                                              "JumpToScene", "RoomRentalLewdScene"
+                                        ]
+                          },
+                    {
+                        "NameOfScene": "RoomRentalLewdScene",
+                        "theScene": [ "ChangeBGM", "music/Loss/Falling Down.mp3",
+                                    "ChangeImageLayer", "Expression", "1", "SmugSharp",
+                                     "ChangeImageLayer", "BodyExtra", "1", "",
+                                     "ChangeImageLayer", "BodyPart", "1", "",
+                                     "ChangeBG", "InnRoomLewd.png",
+
+                                    "She's lazily sitting on the bed with a smug grin, her nude chimeric body on full display, and you hastily close the door.",
+                                    "SetChoice", "7", "",
+                                    "FlexibleSpeaks",
+                                    "SwapLineIf", "Choice",
+                                      "3", "Kaia", "Hehehe, hey there [ThePlayerName]. I felt like getting a little sexual satisfaction tonight. So get on the bed.",
+                                      "6", "Met", "Hehehe, hey there cum pump. I felt like getting a little sexual satisfaction tonight. So get on the bed.",
+                                      "6", "" , "Well, it's nice to finally meet face to face, hehe, you pervert. Now, get on the bed, I want some sexual satisfaction.",
+                                    "EndLoop",
+                                    "SetChoice", "6", "Met",
+                                    "[DisplayMonsterChoice] gestures to the bed with a claw while her tail flicks impatiently, and you sit down on the bed next to her.",
+                                    "ChangeImageLayer", "Expression", "1", "PredatorySmirk",
+                                    "She proceeds to push you down onto the bed and tear off your rather revealing clothes in a single motion, and is now smiling down at you with a lascivious expression.",
+                                    "JumpToScene", "RoomRentalLewdSceneStart"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "DenSceneStart",
+                                "theScene": [  "SetChoice", "7", "InDen",
+                                              "SetChoice", "3", "Kaia",
+                                              "ChoiceToDisplayMonster", "3",
+                                                "SetFlexibleSpeaker", "3",
+                                              "DisplayCharacters",
+                                                  "3",
+                                                  "EndLoop",
+                                                "ChangeImageLayer", "BodyExtra", "1", "",  "ChangeImageLayer", "BodyPart", "1", "", "ChangeImageLayer", "Expression", "1", "Happy",
+                                                "JumpToScene", "RoomRentalLewdSceneStart"
+                                          ]
+                            },
+
+                    {
+                        "NameOfScene": "RoomRentalLewdSceneStart",
+                        "theScene": [ "ChangeBGM", "music/Loss/Falling Down.mp3",
+
+                                    "[DisplayMonsterChoice] plucks two of her venom-laced barbs off of her tail, and injects them into the base of your cock in quick succession, making you cry out in pleasured shock as heat quickly spreads through your body and your cock springs to aching fullness.",
+                                    "ChangeImageLayer", "Expression", "1", "Smug",
+                                    "She licks her lips as her tail engulfs your twitching length, and you shiver as the unnatural insides of her tail pussy immediately begin to churn around your manhood, leaving you spasming with ecstasy.",
+                                    "As you try to endure the twisting and squeezing pleasure she quickly moves up the bed and sits herself down on your face, pressing her dripping pussy to your mouth while she smiles dominantly down at you.",
+                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                    "FlexibleSpeaks",
+                                    "Get licking.♥",
+                                    "You quickly start to lap at her wet sex, she lets out a happy sigh as you do, and you tightly grab the bed sheets with a stifled moan as her tail clamps down like a form-fitting vice.",
+                                    "ChangeImageLayer", "Expression", "1", "Smug",
+                                    "FlexibleSpeaks",
+                                    "Mmm... the better you make me feel, the better you get to feel...♥ I think that's fair. But I'm not letting you cum until I do, so try not to go crazy.♥",
+                                    "Her tail's insides ripple in a wonderful milking motion as you continue to lick her soaked pussy, your mind's already getting clouded with the burning need to cum as her venom flows through your body.",
+                                    "She shivers happily as you gradually get more and more desperate to please her, and you shiver with bliss from the pleasure radiating through your groin from her tail churning around your throbbing cock.",
+                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                    "One of her claws grabs a hold of your head and gently ruffles your hair as she gazes down with a slightly sadistic grin.",
+                                    "FlexibleSpeaks",
+                                    "SwapLineIf", "Choice",
+                                      "7", "InDen", "Mnnnn...♥ That's it [ThePlayerName]...♥ Don't stop...♥",
+                                      "7", "", "Mnnnn...♥ That's it...♥ Don't stop you pervert...♥",
+                                    "EndLoop",
+                                    "You moan thoughtlessly as the electrifying pleasure builds inside your body. You feel like you're lost in a daze as her womanly scent and taste completely overwhelm you, intermixing with the mind-numbing ecstasy.",
+                                    "ChangeImageLayer", "Expression", "1", "Smug", "ChangeImageLayer", "Base", "1", "Blush",
+                                    "FlexibleSpeaks",
+                                    "Hahahaaaa...♥ I bet you're going to get hooked on licking my pussy.♥ Mmmm... Submissively servicing me, feeding me.♥ The pleasure is going to burn into your brain until it's all you can think about.♥",
+                                    "Her tail slows its wonderfully pleasurable squeezing and gulping motions, slowly bringing you to the edge of orgasm, and keeping you aching there.",
+                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                    "She lets out an erotic laugh as you whimper in desperation, and she moans happily as you intensify your efforts to get her to cum as your own urge to orgasm starts to eclipse everything.",
+                                    "You madly lick and worship her soaking wet pussy, leaving her body tensing with a bit of surprise from the sudden increase in your efforts.",
+                                    "The claw on your head pushes your face deeper into her sex as she presses her hips down a little more, her tail's gentle and teasing gulps keeping you on the mind-bending edge of climax.",
+                                    "Her entire body shivers with pleasure, and she loudly moans, but she's not there yet, so you do your best to push through the mind-melting edge-induced ecstasy and pleasure her with fervent worship.",
+                                    "FlexibleSpeaks",
+                                    "MMmmmm!♥♥♥ That's it! I-I'm almost there!♥",
+                                    "ChangeImageLayer", "Expression", "1", "SmugSharp",
+                                    "[DisplayMonsterChoice]'s body starts to twitch and spasm with your every lick, but suddenly she lifts herself off of your face and pins your arms down with her legs, leaving you leaning up desperately trying to lick more.",
+                                    "FlexibleSpeaks",
+                                    "Ahhhh?♥ What's wrong? I was {i}soooo{/i} close.♥ Come on cum dispenser, finish me off.♥",
+                                    "She teasingly hovers her pussy just out of your tongue's reach and with dread building in your core you realize she's still edging your poor twitching cock.",
+                                    "ChangeImageLayer", "Expression", "1", "Mocking",
+                                    "[DisplayMonsterChoice] laughs with a sadistic grin as she looks on your desperate face as wave after wave of pleasure jolts through your body and maddening ecstasy threatens to overwhelm you as your dick throbs with mind-melting need.",
+                                    "Menu",
+                                      "'Please let me cum!'",
+                                      "'Please let me worship you more!♥'",
+                                      "RequiresChoice", "3", "The Manticore",
+                                      "Try to scream for help.",
+                                    "EndLoop"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "'Please let me cum!'",
+                              "theScene": [ "ChangeImageLayer", "Expression", "1", "SmugSharp",
+                                          "Her sadistic smile only widens at your words, and she keeps her pussy just out of reach of your tongue.",
+                                          "ChangeImageLayer", "Expression", "1", "Amused",
+                                            "FlexibleSpeaks",
+                                            "Awww? What do you mean, you can cum if I do.♥",
+                                            "Her legs have you firmly pinned to the bed and you can't even get close.",
+                                            "ChangeImageLayer", "Expression", "1", "Mocking",
+                                            "FlexibleSpeaks",
+                                            "At this rate, you're going to have to work even harder to get me to cum. I'm calming down.♥",
+                                            "Her voice is laced with a sinister tone, and you can feel lust-driven panic washing over you as you look up at her in wide-eyed desperation.",
+                                            "For a few ecstasy-ridden moments she leaves you hanging there, lust overrunning your entire being completely.",
+                                            "ChangeImageLayer", "Expression", "1", "Predatory",
+                                            "FlexibleSpeaks",
+                                            "Hehehe, come on then, if you want to lick it so bad, beg for it.♥",
+                                            "The submissive words spill from your mouth without a second thought, your mind far too desperate for release to care.",
+                                            "ChangeImageLayer", "Expression", "1", "Smug",
+                                            "She gives you a smug smile as she mercifully presses her pussy back down on your mouth with a lustful sigh.",
+                                          "JumpToScene", "RoomRentalLewdScene2"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "'Please let me worship you more!♥'",
+                              "theScene": [ "ChangeImageLayer", "Expression", "1", "Smug",
+                                          "Her sadistic smile slips into a look of surprise at your submissive words, only to shift back into a lewd grin.",
+                                            "FlexibleSpeaks",
+                                            "Ohhh?♥ I guess you really did get hooked on my pussy.♥",
+                                            "She keeps her pussy just out of reach of your desperate tongue for a few moments.",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "FlexibleSpeaks",
+                                            "Hmmm.♥ If you're that desperate to please me, I guess you don't really need to cum.♥",
+                                            "You can't help but let out a panicked whimper at the prospect of not cumming.",
+                                            "She lets out a quick laugh before pressing her pussy back down onto your mouth with a lustful sigh.",
+                                            "ChangeImageLayer", "Expression", "1", "Loving",
+                                            "FlexibleSpeaks",
+                                            "Hehehe, don't worry, I'm not {i}that{/i} mean.♥",
+                                          "JumpToScene", "RoomRentalLewdScene2"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Try to scream for help.",
+                              "theScene": [ "ChangeImageLayer", "Expression", "1", "SmugSharp",
+                                            "Her sadistic smile only widens at your attempts to call for help, but your cries keep devolving into blissful moans from the edged out ecstasy flowing through your body.",
+                                            "FlexibleSpeaks",
+                                            "Awww? What's wrong? Are you going crazy from wanting to cum so bad?♥",
+                                            "ChangeImageLayer", "Expression", "1", "Predatory",
+                                            "She lets out an evil laugh while she leers down at you.",
+                                            "FlexibleSpeaks",
+                                            "If you're good and get me to cum, I'll make you cum soooo hard.♥ So stop trying to resist it.♥",
+                                            "You let out a strangled whimper as your head spins with the delirious need to cum and your body aches with pleasure.",
+                                            "ChangeImageLayer", "Expression", "1", "SmugSharp",
+                                            "FlexibleSpeaks",
+                                            "Hehehe, come on then,♥ if you want to cum so bad, beg to lick my pussy.♥",
+                                            "The submissive words spill from your mouth without a second thought, your mind far too desperate for release to care.",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "She gives you a smug smile as she mercifully presses her pussy back down on your mouth with a lustful sigh.",
+                                          "JumpToScene", "RoomRentalLewdScene2"
+                                        ]
+                          },
+                    {
+                        "NameOfScene": "RoomRentalLewdScene2",
+                        "theScene": [ "ChangeImageLayer", "Expression", "1", "Happy", "ChangeImageLayer", "Base", "1", "Blush",
+                                    "[DisplayMonsterChoice] barely stifles a moan as you lick and worship her dripping pussy with crazed intensity, the need to cum blanking out your reason.",
+                                    "Her tail gently churns around your aching and twitching cock, drinking down every drop of your pre-cum as it leaks out.",
+                                    "The break from sexual stimulation undid quite a bit of your hard work to make her cum, and your entire body throbs with each passing second you're left on the maddening edge.",
+                                    "Your tongue eagerly works to please her, desperately searching for her most sensitive spots to tease, and her pussy occasionally clamps down hard on your tongue for your efforts.",
+                                    "Her breathing gradually gets rougher and more erotic as you worship her soaked sex, her scent and taste seeping into your very being from mixing with the unending pleasure jolting through your cock.",
+                                    "ChangeImageLayer", "Expression", "1", "Loving",
+                                    "FlexibleSpeaks",
+                                    "That's it-♥ K-Keep going!♥",
+                                    "She thoughtlessly presses her hips down on your mouth with a blissful shiver, and her tail's insides start to ripple faster around your cock as she approaches her orgasm.",
+                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                    "FlexibleSpeaks",
+                                    "Yessssss!♥",
+                                    "Her body starts to shiver and twitch with every movement of your tongue, and as her pussy clamps tightly around it, her words devolve into incoherent moans of pleasure.",
+                                    "She suddenly cries out in ecstasy as her body spasms, and her tail suddenly starts to roughly squeeze your twitching cock, churning quickly while the fleshy interior ripples unnaturally.",
+                                    "PlayerOrgasmNoSpiritLoss",
+                                    "Your mind blanks out completely from the pleasure as your cock finally gets sweet blissful release, spurting thick ropes of cum into her greedy tail, and it eagerly gulps down each load.",
+                                    "The orgasm doesn't seem to stop as your entire body is locked and tensed from the pleasure while [DisplayMonsterChoice] sighs happily as she slowly lifts her hips from your face.",
+                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                    "You're left still cumming like a broken faucet into her tail, and she lets out a laugh as she looks down on your pleasure drunk face, her own face deeply flushed with pleasure.",
+                                    "ChangeImageLayer", "Expression", "1", "Smug",
+                                    "FlexibleSpeaks",
+                                    "Hehe, you look like you're drunk off my pussy. Well, I guess it's the mind-melting orgasm.♥",
+                                    "Her tail loudly gulps and you moan happily in response as you spurt another load into it.",
+                                    "Despite your still aching and twitching cock the orgasm slowly ebbs away, and you're left shivering on the bed with a happy smile.",
+                                      "ChangeImageLayer", "Expression", "1", "SmugSharp",
+                                    "She gives you an evil little smile as she injects your cock with another aphrodisiac-laced spine from her tail and you gasp in shock as your body is awash with the need to cum again.",
+                                    "[DisplayMonsterChoice] yawns before giving you a smug smile as she cuddles up next to you.",
+                                      "ChangeImageLayer", "Expression", "1", "Happy",
+                                    "FlexibleSpeaks",
+                                    "SwapLineIf", "Choice",
+                                      "7", "InDen", "Mmmm... That was incredible [ThePlayerName]...♥ But, Mmm... I think I'm going to nap while my tail keeps milking you.♥",
+                                      "7", "", "Mmmm... That was pretty good. For a pervert.♥ But, Mmm... I think I'm going to nap while my tail keeps milking you.♥",
+                                    "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Sleeping",
+                                    "You thoughtlessly moan as her tail keeps working your cock, and despite the pleasure and impending orgasm you find yourself drifting off to sleep with her...",
+                                    "...",
+                                    "SleepPlayer",  "DelayNotifications",
+                                    "IfChoice", "7", "InDen", "PostFaceSitScene",
+                                    "ChangeFetish", "Sex", "5",
+                                    "ChangeFetish", "Monstrous", "5",
+                                    "ChangeFetish", "Manticore Venom",   "15",
+                                    "ChangeSensitivity", "Sex", "10",
+                                    "IfChoice", "3", "Kaia", "KaiaWakeUp",
+                                    "DisplayCharacters",
+                                        "EndLoop",
+                                    "You awake the next morning with a soft groan, alone in the bed, with your cock still rock-hard, and her pussy's womanly taste still hanging in your mouth, her scent still burned into your senses...",
+                                    "Despite your best efforts you can't calm your erection down, and settle on masturbating furiously to the thought of your dick getting milked by [DisplayMonsterChoice]'s tail while worshiping her dripping pussy...",
+                                    "ChangeBGM", "music/Town/casino.mp3",
+                                    "ChangeBG", "Inn.png",
+                                    "Finally calmed down you head downstairs and get your payment for your work shift.",
+
+                                    "ChangeEros", "750",
+                                    "GiveExp", "75",
+                                      "ChangeProgress", "1",
+                                      "GetAnEventsProgressThenIfEqualsOrGreater", "Sleeping Manticore", "1", "gainAffection"
+
+                                  ]
+                    },
+
+
+                          {
+                              "NameOfScene": "PostFaceSitScene",
+                              "theScene": [  "ChangeImageLayer", "Expression", "1", "Loving",
+                                            "You awake the next morning with a soft groan, with the smug manticore still cuddled up to you, and your cock still rock-hard inside her tail pussy.",
+                                            "ChangeBGM", "music/Forest/Starry sky.mp3",
+                                            "FlexibleSpeaks",
+                                            "Good morning [ThePlayerName], I hope you managed to sleep well.♥",
+                                            "ChangeImageLayer", "BodyExtra", "1", "Pants",  "ChangeImageLayer", "BodyPart", "1", "Top",
+                                            "Her tail wetly frees your twitching erection, and she cuddles a little closer to you with a giggle, letting the two of you relish a cozy embrace before you both eventually slip out of bed.",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "FlexibleSpeaks",
+                                            "Alright, so what next? Hehe, or did you want to eat me out again?♥",
+                                            "JumpToEventThenScene", "Sleeping Manticore", "PostFaceSitScene"
+                                        ]
+                          },
+                    {
+                        "NameOfScene": "KaiaWakeUp",
+                        "theScene": [ "ChangeImageLayer", "Expression", "1", "SmugSharp",
+                                      "You awake the next morning with a soft groan, with the smug manticore still cuddled up to you, and your cock still rock-hard inside her tail pussy.",
+                                      "ChangeBGM", "music/Forest/Starry sky.mp3",
+                                      "FlexibleSpeaks",
+                                      "SwapLineIf", "Choice",
+                                        "3", "Kaia", "Good morning [ThePlayerName], I hope I wasn't {i}too{/i} rough with you.♥",
+                                        "6", "Met", "Good morning, I hope I wasn't {i}too{/i} rough with you.♥",
+                                        "6", "" , "Good morning, I hope I wasn't {i}too{/i} rough with you.♥",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Happy", "ChangeImageLayer", "BodyExtra", "1", "Pants",  "ChangeImageLayer", "BodyPart", "1", "Top",
+                                      "Her tail wetly frees your twitching erection, and she hops out of bed with a laugh, easily dressing herself in an instant.",
+                                      "FlexibleSpeaks",
+                                      "Well, see you around.♥",
+                                      "ChangeImageLayer", "Expression", "1", "Smug",
+                                      "She quickly hurries out of the room with a smile. Leaving you with a painfully hard dick, and her pussy's womanly taste still hanging in your mouth, her scent still burned into your senses.",
+                                      "DisplayCharacters",
+                                          "EndLoop",
+                                      "Flushing deeply at how she left you like this, you know you can't hope to calm down without pleasuring yourself... So you masturbate furiously, unable to stop yourself from fantasizing about her tail wringing your dick dry while worshiping her dripping pussy...",
+                                      "ChangeBGM", "music/Town/casino.mp3",
+                                      "Finally calmed down you head downstairs and get your payment for your work shift.",
+
+                                      "ChangeEros", "750",
+                                      "GiveExp", "75",
+                                      "ChangeProgress", "1",
+                                      "GetAnEventsProgressThenIfEqualsOrGreater", "Sleeping Manticore", "1", "gainAffection"
+                                  ]
+                    }
+
+
+
+
+                ]
+}

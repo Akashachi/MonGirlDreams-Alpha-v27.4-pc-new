@@ -1,0 +1,1297 @@
+{
+  "name": "Matango Den",
+  "CardType": "Event",
+  "CardLimit": "1",
+  "Description": "Deep within the Forest Dungeon are remote sections which are not meant to be explored by adventurers. One such area hosts a gathering of matangos who are perfectly comfortable with their restful isolation, but who do not mind being summoned from time to time to do battle with adventurers venturing into the dungeon. Perhaps they would be happy to get some unexpected company too?",
+  "requires": [ ""],
+   "requiresEvent": [
+                        {
+                          "NameOfEvent": "Matango Den",
+                          "Progress": "0",
+                          "ChoiceNumber": "7",
+                          "Choice": "DenKnown"
+                        }
+                      ],
+  "Speakers": [
+            	{
+              	"name": "Ancilla",
+              	"postName": "",
+              	"SpeakerType": "Monster"
+            	},
+            	{
+              	"name": "Matango",
+              	"postName": "",
+              	"SpeakerType": "Monster"
+            	}
+          	],
+  "EventText": [
+              	{
+                  	"NameOfScene": "EventStart",
+                  	"theScene": [
+                                    "SetChoice", "1", "",
+                                    "SetChoice", "7", "DenKnown",
+                                	"As you keep advancing through the Forest Dungeon, you begin to fear that you've gotten lost, your admittedly haphazard exploration progressively turning into aimless wandering as you go from one room to the next without feeling like you're making progress, your increasingly puzzling situation leaving you more and more concerned that you took a critically wrong turn at some point, and got hopelessly turned around as a result.",
+                                  	"StoreCurrentBG",
+                                    "ChangeBG", "DungeonMossyForestNight.png",
+                                	"In fact, that worrisome concern grows downright gnawing as you realize not only that your surroundings have gradually been growing darker and damper, but also that you haven't encountered a single living soul in quite some time... \n\n... Are you even supposed to be here?",
+                                	"Yet, notwithstanding your fears, there isn't much more you can do at this point than to keep going and hope that you can get back on track in some way. With that objective in mind, you walk up to an umpteenth door that doesn't look any different from the others you've crossed up to this point, and which you promptly open before stepping in without breaking your stride...",
+                                	"JumpToScene", "MatangoDenEnter"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "MatangoDenEnter",
+                  	"theScene": [
+                                    "DisplayCharacters",
+                                      "2",
+                                      "2",
+                                      "2",
+                                      "2",
+                                      "2",
+                                    "EndLoop",
+                                    "ChangeImageLayer", "Expression", "3", "Flustered", "ChangeImageLayer", "Blush", "3", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "4", "Concern",
+                                    "ChangeImageLayer", "Expression", "5", "Panic", "ChangeImageLayer", "Blush", "5", "BlushLight",
+                                	"... which brings you into a dark, somewhat cramped room filled with an earthy yet enticingly sweet smell, but also and more to the point with half a dozen mushroom women who seem to have been restfully idling in their quarters, and whose gazes immediately turn to you at your unexpected arrival, tension filling the area as their eyes widen in surprise.",
+                                    "SwapLineIf", "Perk",
+                                      "Mushroom Head", "|f|ChangeArousalQuietly|/|50|n|As for you, upon taking in the sight of so many sexy matangos gathered in one place, you can't keep your heart from thumping faster in your chest while your cock twitches eagerly in your pants, already raring to go and {i}fuck{/i} the sexy fungal ladies, eager to fill their wombs with your cum and turn their currently perplexed expressions into ones of wanton pleasure...",
+                                      "", "",
+                                    "EndLoop",
+                                    "ChangeImageLayer", "Expression", "2", "Shy", "ChangeImageLayer", "Blush", "2", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "3", "Shy",  
+                                    "ChangeImageLayer", "Expression", "5", "Awkward",
+                                	"IfChoice", "1", "AncillaHere", "SceneWithAncilla",
+                                	"IfChoice", "4", "AncillaMatangoDone", "MatangoKnown",
+                                    "Nevertheless, after a second of silent confused staring, you quickly notice that although some of them still seem puzzled or nervous at your intrusion, others prove more {i}welcoming{/i}, a demure flush showing on their cheeks as they timidly look away from you with yet a smile of undisguised interest on their faces, the monster girls fidgeting in place until one of them gathers the gumption to speak up.",
+                                    "ChangeImageLayer", "Expression", "1", "Shy", "ChangeImageLayer", "Blush", "1", "BlushLight",
+                                    "Speak", "Cheerful Matango",
+                                    "O-Oh, an adventurer...",
+                                    "ChangeImageLayer", "Expression", "3", "Base", "ChangeImageLayer", "Blush", "3", "",
+                                    "Speak", "Curious Matango",
+                                    "It's not often we see people like you in this place...",
+                                    "ChangeImageLayer", "Expression", "5", "Panic",
+                                    "Speak", "Skittish Matango",
+                                    "Sh-Should you even be here...?",
+                                    "ChangeImageLayer", "Expression", "2", "Drunk", "ChangeImageLayer", "Blush", "2", "Blush",
+                                    "Speak", "Horny Matango",
+                                    "... Now that you are, though, how about you stay for a bit and we {i}enjoy ourselves{/i} together, handsome?",
+                                    "ChangeImageLayer", "Expression", "1", "Fantasizing", "ChangeImageLayer", "Blush", "1", "Blush",
+                                    "ChangeImageLayer", "Expression", "3", "Fantasizing", "ChangeImageLayer", "Blush", "3", "Blush",
+                                    "ChangeImageLayer", "Expression", "4", "Disgust",
+                                    "ChangeImageLayer", "Expression", "5", "Shy", "ChangeImageLayer", "Blush", "5", "BlushLight",
+                                    "ChangeBGM", "music/Casino/BGM sweet smell.mp3",
+                                    "At the notion, the matangos' expressions grow even more lascivious, the mushroom women looking to be warming up to the idea {i}very{/i} fast judging by their increasingly lewd blushes and alluring motions, some coquettishly fiddling with their silver-colored hair while others run their hands over their smooth curves, collectively putting on a show clearly meant to entice you and coax you closer to their rooted spots.",
+                                    "DamagePlayerFromMonster", "Matango", "Charm Spores", "PlayVisualEffect2", "BlindingFlash", "Monsters/Matango/CG/MatangoCG_Haze.png",
+                                    "And more concerningly, with their sexual interest and hunger quickly mounting, the sweet aroma that you previously smelled intensifies, quickly turning into a heady perfume that treacherously wafts up to your nose and stirs up your lust, further tempting you to give up on your exploration, forsake reason, and indulge in the company of the thirsty fungal ladies...",
+                                      "IfPlayerOrgasm", "TooHornyToThink",
+                                      "Menu",
+                                      "Quickly run out of the room! (Technique)",
+                                      "Try to keep a cool head and calm them down. (Willpower)",
+                                      "Indulge in the matango orgy.",
+                                      "EndLoop"
+                            	]
+              	},
+
+
+              	{
+                  	"NameOfScene": "MatangoKnown",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "1", "Shy", "ChangeImageLayer", "Blush", "1", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "2", "Fantasizing", "ChangeImageLayer", "Blush", "2", "Blush",
+                                    "ChangeImageLayer", "Expression", "5", "Flustered", "ChangeImageLayer", "Blush", "5", "Blush",
+                                	"However, as they take you in, recognition soon shows on their faces and they visibly untense, sporting a variety of welcoming expressions as their stances relax and one of them happily speaks up.",
+                                    "Speak", "Curious Matango",
+                                    "Oh, it's you, [ThePlayerName]!",
+                                    "Speak", "Cheerful Matango",
+                                    "What a nice surprise.♪",
+                                    "ChangeImageLayer", "Expression", "5", "Submissive", "ChangeImageLayer", "Blush", "5", "BlushLight",
+                                    "Speak", "Skittish Matango",
+                                    "D-Did you come especially to visit us again?",
+                                    "ChangeImageLayer", "Expression", "4", "Disgust",
+                                    "Speak", "Prickly Matango",
+                                    "Or did you get lost?",
+                                    "ChangeImageLayer", "Expression", "2", "Drunk",
+                                    "Speak", "Horny Matango",
+                                    "Or did you come for some sweet matango sex?♥︎",
+                                    "ChangeImageLayer", "Expression", "1", "Fantasizing", "ChangeImageLayer", "Blush", "1", "Blush",
+                                    "ChangeImageLayer", "Expression", "3", "Fantasizing", "ChangeImageLayer", "Blush", "3", "Blush",
+                                    "ChangeImageLayer", "Expression", "4", "Concern",
+                                    "ChangeImageLayer", "Expression", "5", "Panic", "ChangeImageLayer", "Blush", "5", "Blush",
+                                    "You can immediately tell that the Horny Matango's brazen proposition is stirring up her roommates' libido in turn, the Cheerful and Curious ones joining her in staring lecherously at you while the Skittish one sputters and the Prickly one lets out a deep sigh... though without either of them making any effort to go against the sultry suggestion...",
+                                    "Plainly undressing you with their eyes, they await your response, their mounting lust and the resulting aphrodisiac perfume floating treacherously in the air already making it hard to think straight and formulate a level-headed reply.",
+                                      "IfPlayerOrgasm", "TooHornyToThink",
+                                      "Menu",
+                                      "Chat with them instead.",
+                                      "'Matango orgy!'",
+                                      "Leave.",
+                                      "EndLoop"
+                            	]
+              	},
+
+
+              	{
+                  	"NameOfScene": "Chat with them instead.",
+                  	"theScene": [ "ChangeImageLayer", "Blush", "1", "", "ChangeImageLayer", "Blush", "2", "", "ChangeImageLayer", "Blush", "3", "", "ChangeImageLayer", "Blush", "4", "", "ChangeImageLayer", "Blush", "5", "",
+                                    "ChangeImageLayer", "Expression", "1", "Base", 
+                                    "ChangeImageLayer", "Expression", "2", "Disgust",
+                                    "ChangeImageLayer", "Expression", "3", "Awkward",
+                                    "To your surprise, your innocently casual offer is met with lukewarm perplexity by the mushroom women, the five of them silently exchanging puzzled glances as if having a silent discussion for a moment, before turning back to you as one and answering.",
+                                    "ChangeImageLayer", "Expression", "3", "Submissive", "ChangeImageLayer", "Blush", "3", "BlushLight",
+                                    "Speak", "Curious Matango",
+                                    "H-Hm, sorry, [ThePlayerName], we... don't really... 'chat'.",
+                                    "ChangeImageLayer", "Expression", "1", "Panic",
+                                    "Speak", "Cheerful Matango",
+                                    "Y-Yeah... W-We appreciate the visit, really! But we're just not the type to, er, {i}mingle{/i}...",
+                                    "Speak", "Skittish Matango",
+                                    "{size=-5}Sorry!{/size}",
+                                    "An awkward hush follows the meek rejection, the group of timid monster girls looking like they don't know what else to say, though one of them tentatively adds.",
+                                    "ChangeImageLayer", "Expression", "2", "Submissive", "ChangeImageLayer", "Blush", "2", "BlushLight",
+                                    "Speak", "Horny Matango",
+                                    "... Are you {i}sure{/i} you don't want a matango orgy?",
+                                    "Looks like there is no changing their minds on the subject of conversation... or sex.",
+                                      "Menu",
+                                      "'Matango orgy!'",
+                                      "Leave.",
+                                      "EndLoop"
+                            	]
+              	},
+
+
+              	{
+                  	"NameOfScene": "Leave.",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "Blush", "1", "",
+                                    "ChangeImageLayer", "Expression", "3", "Base", "ChangeImageLayer", "Blush", "3", "",
+                                    "ChangeImageLayer", "Expression", "5", "Submissive", "ChangeImageLayer", "Blush", "5", "BlushLight",
+                                    "Offering your excuses for the disturbance, you make to leave, but just as you set your hand on the door's handle, you're stopped by the Horny Matango's voice.",
+                                    "ChangeImageLayer", "Expression", "2", "Drunk", "ChangeImageLayer", "Blush", "2", "Blush",
+                                    "Speak", "Horny Matango",
+                                    "Where do you think you're going, [ThePlayerName]? You're not going to leave without taking a load off, are you?♥︎",
+                                    "ChangeImageLayer", "Expression", "1", "Fantasizing", "ChangeImageLayer", "Blush", "1", "Blush",
+                                    "ChangeImageLayer", "Expression", "3", "Fantasizing", "ChangeImageLayer", "Blush", "3", "Blush",
+                                    "ChangeImageLayer", "Expression", "4", "Concern",
+                                    "ChangeImageLayer", "Expression", "5", "Panic", "ChangeImageLayer", "Blush", "5", "Blush",
+                                    "While one or two of the matangos sigh or squeak nervously at the idea, the rest of them seem to be of the same mind, their gazes collectively boring into you with lascivious intent while the aphrodisiac smell of their riled-up arousal hangs thicker than ever in the air, making it harder to think straight with every passing second. Looks like they really have no intent of letting you leave without having at least a taste of you!",
+                                      "Menu",
+                                      "Quickly run out of the room! (Technique)",
+                                      "Try to keep a cool head and calm them down. (Willpower)",
+                                      "Indulge in the matango orgy.",
+                                      "EndLoop"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "TooHornyToThink",
+                  	"theScene": [
+                                	"In fact, with you having been so hot and bothered before you even entered their room, you can't bring yourself to even consider turning them down, your inflamed libido quickly snuffing out your restraint at the idea of fucking the group of lecherous monster girls, urging you to take them up on their offer without delay nor any regard for your own safety.",
+                                	"JumpToScene", "MatangoOrgy"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "Indulge in the matango orgy.",
+                  	"theScene": [
+                                	"JumpToScene", "MatangoOrgy"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "Quickly run out of the room! (Technique)",
+                  	"theScene": [
+                                	"With your mind getting foggier with arousal by the second, you know that you only have but moments to make a break for it before the assembled matangos' aphrodisiac scent gets to you and tempts you into staying with them for a lewd romp!",
+                                    "StatCheck",
+                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Mushroom Head", "5",
+        	                         "Technique", "10", "RunOutOfRoom",
+        	                         "Fail", "Didn'tRun"
+
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "RunOutOfRoom",
+                  	"theScene": [
+                                    "DisplayCharacters",
+                                    "EndLoop",
+                                    "StopBGM",
+                                    "In a flash, you leap out of the room and slam the door closed behind you in the same smooth motion, swiftly shutting out the tempting sights and smells of the red-capped monster girls who watch you leave with bemused looks, and whose muffled voices you can still hear as you lean against the wooden door with a sigh of relief, your cheeks flush with lust but your mind quickly clearing now that you're safely out of their immediate vicinity.",
+                                    "Speak", "Cheerful Matango",
+                                    "{size=-8}Aww, he left...{/size}",
+                                    "Speak", "Curious Matango",
+                                    "{size=-8}I wonder why?{/size}",
+                                    "Speak", "Prickly Matango",
+                                    "{size=-8}You were probably all too horny for him.{/size}",
+                                    "ChangeBGM", "music/Forest Dungeon/Stalwick-_Forest_Dungeon-Lurking.mp3",
+                                	"You can hear animated sputters and squeaks of indignation at the flatly accusatory barb, the mushroom women's energetic response at least hinting that they are not {i}too{/i} put out by your adverse reaction and expeditious departure, though that is all you can overhear from them, the group then either staying silent or continuing to speak in tones too low for you to hear.",
+                                	"JumpToScene", "MatangoLeave"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "Didn'tRun",
+                  	"theScene": [
+                                    "As you go to jump out of the room, you trip over your own feet in your haphazard haste, which not only delays you, but also causes you to gasp under the surprise, the involuntary sharp inhale immediately carrying more of the mushroom women's intoxicating scent up your nostrils and straight into your head!",
+                                    "ChangeArousalByPercent", "50",
+                                    "Staggering in place at the dizzying influx of arousal that you instantly feel, your attention is promptly drawn back to the matangos as one of them lets out a soft sigh before your predicament.",
+                                    "ChangeImageLayer", "Expression", "1", "Flustered",  "ChangeImageLayer", "Blush", "1", "BlushLight",
+                                    "Speak", "Cheerful Matango",
+                                    "Oh, are you okay, adventurer? You didn't hurt yourself, did you?",
+                                    "ChangeImageLayer", "Expression", "1", "Tasty", "ChangeImageLayer", "Blush", "1", "Blush",
+                                    "Speak", "Cheerful Matango",
+                                    "If you did, though, don't worry: come to us and we'll make it {i}all better{/i}.",
+                                    "Her lascivious proposal ends with a horny coo as she slowly moves her hands to invitingly frame her lap, and more precisely her pussy, the rest of the posse quickly joining her with encouraging murmurs and enticing gestures of their own.",
+                                    "ChangeArousalByPercent", "50",
+                                    "All the while, the smell of their wanton lust has kept growing stronger, further muddling your thoughts and making you forget all about why you should even run away from the sexy monster girls when you could instead stay and indulge in their company, the appealing prospect prompting you to get away from the door and instead totter towards them in a heated daze...",
+                                	"JumpToScene", "MatangoOrgy"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "Try to keep a cool head and calm them down. (Willpower)",
+                  	"theScene": [
+                                	"Doing your best to ignore both the matangos' tempting motions and the increasingly potent haze of lust clouding your thoughts, you endeavor to address them in an even, calm tone in an effort to temper their libidinous impulses and steer them towards more platonic interactions.",
+                                    "StatCheck",
+                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Mushroom Head", "5",
+        	                         "Willpower", "10", "CalmDown",
+        	                         "Fail", "Horni"
+
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "Horni",
+                  	"theScene": [
+                                  "ChangeArousalByPercent", "50", "PlayVisualEffect2", "BlindingFlash", "Monsters/Matango/CG/MatangoCG_Haze.png",
+                                	"In spite of your determined efforts to rein in your lewd urges and focus on anything but the matangos' lasciviously languid swaying, wanton cooing, and {i}increasingly thick{/i} cloud of aphrodisiac spores, you find yourself unable to shut out their alluring displays from your helplessly captivated mind, leaving your sensible words fizzling in your head alongside your sense of reason.",
+                                  "ChangeArousalByPercent", "50",
+                                	"Your voice trailing off, your arousal-fogged gaze loses itself in the indulgent contemplation of the sexy mushroom women in front of you, and you find yourself more and more incapable of coming up with any reason to refuse their advances, your body moving forward almost on its own while thrilling excitement courses enticingly through you at the idea of the orgy that awaits you.",
+                                	"JumpToScene", "MatangoOrgy"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "CalmDown",
+                  	"theScene": [
+                                	"Despite the hot blush of arousal irresistibly covering your cheeks as you unavoidably inhale more of the matangos' aphrodisiac spores, you manage to stay on track and keep a level voice as you staunchly inform them that your presence is only due to you getting lost, that you did not mean to disturb them, and that you are not interested in an orgy at present.",
+                                    "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "Blush", "1", "",
+                                    "ChangeImageLayer", "Expression", "2", "Disgust", "ChangeImageLayer", "Blush", "2", "",
+                                    "ChangeImageLayer", "Expression", "3", "Flustered", "ChangeImageLayer", "Blush", "3", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "4", "Concern",
+                                    "ChangeImageLayer", "Expression", "5", "Panic", "ChangeImageLayer", "Blush", "5", "BlushLight",
+                                    "ChangeBGM", "music/Forest Dungeon/Stalwick-_Forest_Dungeon-Lurking.mp3",
+                                	"At first, it sounds like your reasonable plea is just going to fall on deaf ears, but as your words sink in, the mushroom women lose their lecherous countenances and mercifully stop collectively releasing so much of their intoxicating perfume, allowing you to literally breathe easier while one of them sputters in embarrassment.",
+                                    "ChangeImageLayer", "Expression", "1", "Panic",
+                                    "Speak", "Cheerful Matango",
+                                    "O-Oh, sorry, we, hum, assumed you'd be up for sex...",
+                                    "ChangeImageLayer", "Expression", "3", "Awkward", "ChangeImageLayer", "Blush", "3", "",
+                                    "Speak", "Curious Matango",
+                                    "Y-Yeah, what with you being an adventurer and all...",
+                                    "There's a somewhat awkward lull as the red-capped monster girls steal embarrassed glances at you and at each other, the timid ladies looking like they don't know how to proceed now, one of them eventually volunteering in a stuttering voice.",
+                                    "ChangeImageLayer", "Expression", "5", "Submissive",
+                                    "Speak", "Skittish Matango",
+                                    "S-So... I g-guess we'll be letting you go back to your... adventuring, now?",
+                                      "Menu",
+                                      "'I'll do that.'",
+                                      "'Wouldn't you be interested in chatting instead?'",
+                                      "'... Actually, thinking about it, I'd be down for an orgy.'",
+                                      "EndLoop"
+                            	]
+              	},
+
+
+              	{
+                  	"NameOfScene": "'I'll do that.'",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "1", "Excited",
+                                    "ChangeImageLayer", "Expression", "3", "Base",
+                                    "ChangeImageLayer", "Expression", "5", "Shy",
+                                    "Speak", "Cheerful Matango",
+                                	  "O-Okay! Have a nice day then!",
+                                    "ChangeImageLayer", "Expression", "4", "Disgust",
+                                    "Speak", "Prickly Matango",
+                                    "And try not to get lost this time...",
+                                    "Considering it wiser to leave the testy remark unanswered, you bid goodbye to the fungal women and quietly step out of their lodgings before closing the door behind you, leaving them to go back to whatever it is that matangos might be doing on their own in a dark, empty room...",
+                                    "JumpToScene", "MatangoLeave"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "'Wouldn't you be interested in chatting instead?'",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "1", "Panic", "ChangeImageLayer", "Blush", "1", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "2", "Concern",
+                                    "ChangeImageLayer", "Expression", "3", "Panic", "ChangeImageLayer", "Blush", "3", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "4", "Concern",
+                                    "ChangeImageLayer", "Expression", "5", "Panic", "ChangeImageLayer", "Blush", "5", "BlushLight",
+                                    "Somehow, your harmless offer seems to be causing a stir among the fungal women, the whole of them getting sent into a flustered tizzy which thankfully gets cut short as one of them rather sharply interjects.",
+                                    "ChangeImageLayer", "Expression", "4", "Disgust",
+                                    "Speak", "Prickly Matango",
+                                    "... Not really?",
+                                    "You can't help but feel like that was unwarrantedly rude, and you're not sure whether to chalk it up to matango moodiness or to the personality of this particular one, though another hurriedly and apologetically adds.",
+                                    "ChangeImageLayer", "Expression", "1", "Submissive", "ChangeImageLayer", "Blush", "1", "",
+                                    "Speak", "Cheerful Matango",
+                                    "S-S-Sorry! I-It's just that... w-we're not really used to... {i}chatting{/i}...",
+                                    "ChangeImageLayer", "Expression", "3", "Flustered", 
+                                    "Speak", "Curious Matango",
+                                    "O-Or to seeing people... O-Outside of getting sent to fight adventurers, that is...",
+                                    "ChangeImageLayer", "Expression", "5", "Submissive",
+                                    "Speak", "Skittish Matango",
+                                    "W-We're more used to A-Ancilla...",
+                                    "ChangeImageLayer", "Expression", "1", "Excited",
+                                    "ChangeImageLayer", "Expression", "2", "Shy", 
+                                    "ChangeImageLayer", "Expression", "3", "Shy",  "ChangeImageLayer", "Blush", "3", "",
+                                    "As one, the other matangos nod approvingly, looking to be putting a lot of trust in Ancilla whose mere mention seems to comfort and placate them. Still, it very much seems like you won't manage to coax them into having a conversation with you unless the aforementioned Ancilla is present, which you'll have to find some way to arrange should you want to have an actual chat with them.",
+                                    "ChangeImageLayer", "Expression", "1", "Panic",
+                                    "ChangeImageLayer", "Expression", "3", "Panic",
+                                    "For the time being, with the timid monster girls barely managing to look you in the eye, it appears you have no other option but to leave them be. Thus, after politely saying your goodbyes, you back out of their room and shut the door behind you, putting an end to this interaction which sadly didn't seem in any capacity to go anywhere...\nAnywhere but sex, that is.",
+                                    "JumpToScene", "MatangoLeave"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "'... Actually, thinking about it, I'd be down for an orgy.'",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "1", "Fantasizing",  "ChangeImageLayer", "Blush", "1", "Blush",
+                                    "ChangeImageLayer", "Expression", "2", "Fantasizing", "ChangeImageLayer", "Blush", "2", "Blush",
+                                    "ChangeImageLayer", "Expression", "3", "Shy", "ChangeImageLayer", "Blush", "3", "Blush",
+                                    "ChangeImageLayer", "Expression", "4", "Concern",
+                                    "ChangeImageLayer", "Expression", "5", "Shy", "ChangeImageLayer", "Blush", "5", "Blush",
+                                    "Again, the matangos' mood does a complete 180 at your unexpected change of heart, most of them once more displaying unabashed expressions of lustful enthusiasm while one of them who seems more perplexed than anything scoffs.",
+                                    "ChangeImageLayer", "Expression", "4", "Disgust",
+                                    "Speak", "Prickly Matango",
+                                    "Seriously?",
+                                    "ChangeImageLayer", "Expression", "3", "Drunk",
+                                    "Speak", "Curious Matango",
+                                    "H-Hey, don't be a spoilsport! If he wants to get {i}naughty{/i}, that's up to him.♥︎",
+                                    "ChangeImageLayer", "Expression", "4", "Concern",
+                                    "Speak", "Prickly Matango",
+                                    "... Whatever. But you, the human... You {i}know{/i} that we're going to be milking {i}at least{/i} a few loads out of you, right? Possibly more than you can take if you really can't rein in your dick...",
+                                    "ChangeImageLayer", "Expression", "2", "Submissive", "ChangeImageLayer", "Blush", "2", "BlushLight",
+                                    "Speak", "Horny Matango",
+                                    "H-Hey, don't try to give him cold feet!",
+                                    "The mushroom women start to bicker among themselves on the subject of whether or not they should encourage you to 'get naughty', which leaves you to make the call: go for the matango orgy, or back out?",
+                                      "Menu",
+                                      "'Matango orgy!'",
+                                      "'Actually...'",
+                                      "EndLoop"
+                            	]
+              	},
+
+
+              	{
+                  	"NameOfScene": "'Matango orgy!'",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "1", "Excited",
+                                    "ChangeImageLayer", "Expression", "2", "Drunk", "ChangeImageLayer", "Blush", "2", "Blush",
+                                    "ChangeImageLayer", "Expression", "3", "Drunk",
+                                    "ChangeImageLayer", "Expression", "4", "Disgust",
+                                    "ChangeImageLayer", "Expression", "5", "Shy",
+                                    "ChangeBGM", "music/Casino/BGM sweet smell.mp3",
+                                    "While the Prickly Matango rolls her eyes at your decision, the rest clearly have no objections to your indulgent choice, gazing at you with smoldering lust and awaiting you from their static spots with outstretched arms, leaving you to enthusiastically cross the bare few steps separating you from them.",
+                                	"JumpToScene", "MatangoOrgy"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "'Actually...'",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "1", "Concern", "ChangeImageLayer", "Blush", "1", "",
+                                    "ChangeImageLayer", "Expression", "2", "Flustered", "ChangeImageLayer", "Blush", "2", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "3", "Panic", "ChangeImageLayer", "Blush", "3", "",
+                                    "ChangeImageLayer", "Expression", "4", "Disgust",
+                                    "ChangeImageLayer", "Expression", "5", "Panic", "ChangeImageLayer", "Blush", "5", "BlushLight",
+                                    "A concert of groans, sputters, and sighs welcomes your wishy-washiness, one of the matangos who looked to be the most enthusiastic of the bunch muttering testily.",
+                                    "ChangeImageLayer", "Expression", "2", "Disgust", "ChangeImageLayer", "Blush", "2", "",
+                                    "Speak", "Horny Matango",
+                                    "Man... And to think that, for once, we got a visit from a human... What a letdown.",
+                                    "ChangeImageLayer", "Expression", "1", "Shy", "ChangeImageLayer", "Blush", "1", "BlushLight",
+                                    "Speak", "Cheerful Matango",
+                                    "You said it- {i}I-I mean{/i} you heard the adventurer! S-So... we'll leave you to get back to your... adventuring, then?",
+                                      "Menu",
+                                      "'I'll do that.'",
+                                      "'Wouldn't you be interested in chatting instead?'",
+                                      "EndLoop"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "MatangoLeave",
+                  	"theScene": [
+                                    "DisplayCharacters",
+                                    "EndLoop",
+                                    "Stepping out and away from the door, you find yourself back into the Forest Dungeon's deserted corridors, which leaves you once again with the task of finding your way out of these labyrinthine back rooms you have somehow ended up meandering through...",
+                                    "UseHeldBG",
+                                    "AdvanceTime", "1",
+                                    "Thankfully, although it takes some time and a frustrating amount of running into dead ends, locked doors, and empty rooms, you {i}eventually{/i} manage to wander back into sections that look more inhabited, making you hopeful that your exploration can carry on normally from now on..."
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "SceneWithAncilla",
+                  	"theScene": [
+                                    "GetEventAndSetChoice", "Forest Dungeon Nexus", "39", "AncillaMatangoDone",
+                                    "DisplayCharacters",
+                                      "1",
+                                      "2",
+                                      "2",
+                                      "2",
+                                      "2",
+                                      "2",
+                                    "EndLoop",
+                                    "ChangeImageLayer", "Expression", "2", "Base",
+                                    "ChangeImageLayer", "Expression", "3", "Shy",
+                                    "ChangeImageLayer", "Expression", "4", "Base",
+                                    "ChangeImageLayer", "Expression", "5", "Concern",
+                                    "ChangeImageLayer", "Expression", "6", "Shy",
+                                    "However, as soon as Ancilla steps in after you and comes into view, their agitation immediately quiets down, the red-capped monster girls going back to staying restfully silent with sighs of relief at the familiar presence, though they still give you curious looks as the maid primly curtsies before them in salute.",
+                                    "Speak", "Ancilla",
+                                    "Hello, ladies, and our apologies for the disturbance. We are just here to check up on you, as per usual... However, exceptionally, [ThePlayerName] here will be your interlocutor today, and will therefore handle the conversation while I only take a supervisory role.",
+                                    "ChangeImageLayer", "Expression", "3", "Base",
+                                    "ChangeImageLayer", "Expression", "5", "Disgust",
+                                    "ChangeImageLayer", "Expression", "6", "Panic", "ChangeImageLayer", "Blush", "6", "BlushLight",
+                                    "And with just that, she draws back with a poker-faced look that signals you to take the reins, the half-dozen matangos meanwhile looking at you with curiosity and a degree of lingering trepidation in their deep red eyes, which leaves it up to you to break the ice...",
+                                    "JumpToScene", "MatangoMenu"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "MatangoMenu",
+                  	"theScene": [
+                                    "Menu",
+                                      "RequiresChoice", "2", "", "'Hum... Hello?'",
+                                      "RequiresChoice", "2", "", "RequiresStat", "Allure", "15", "'Hi there!' (Allure)",
+                                      "RequiresChoice", "2", "BreakTheIce", "'Don't you feel uncomfortable in a small dark room like this?'",
+                                      "RequiresChoice", "3", "Uncomfortable?", "'So what do you do with your days?'",
+                                      "RequiresChoice", "2", "BreakTheIce", "'Anything you'd need or want?'",
+                                      "RequiresChoice", "2", "BreakTheIce", "'Wanna have sex?'",
+                                      "RequiresChoice", "2", "BreakTheIce", "'I'll leave you be.'",
+                                    "EndLoop"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "'Hum... Hello?'",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "2", "Shy",
+                                    "ChangeImageLayer", "Expression", "3", "Shy",
+                                    "ChangeImageLayer", "Expression", "4", "Submissive", "ChangeImageLayer", "Blush", "4", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "6", "Awkward",
+                                    "Ancilla's surprise transfer of responsibilities having left you somewhat at a loss, you don't really know what else to begin with, and the matangos don't look to be feeling much more comfortable, most of the mushroom monster girls shyly responding with a collection of half-whispered 'H-Hello.' and 'H-Hi.' without managing to do more than awkwardly steal glances at your unfamiliar presence.",
+                                    "ChangeImageLayer", "Expression", "4", "Excited",
+                                    "With silence following that lukewarm introduction, it looks like this is all you're going to get in response to your first move, but unexpectedly, curiosity seems to win over timidity within one of the more alert-looking residents who chimes in.",
+                                    "ChangeImageLayer", "Expression", "4", "Base", "ChangeImageLayer", "Blush", "4", "",
+                                    "Speak", "Curious Matango",
+                                    "Erhm... If I may a-ask, then... Why are you here, [ThePlayerName]? ... I-I mean... Aren't adventurers supposed to... not go into these parts of the Forest Dungeon?",
+                                    "ChangeImageLayer", "Expression", "2", "Base",
+                                    "ChangeImageLayer", "Expression", "3", "Base",
+                                    "ChangeImageLayer", "Expression", "5", "Concern",
+                                    "ChangeImageLayer", "Expression", "6", "Shy",
+                                    "Judging by their expressions, the rest of the secluded room's occupants are wondering the same thing, and with Ancilla being seemingly determined to leave the floor to you, you answer that you've taken to lending the maid a hand with her chores around the dungeon, which has resulted in you assisting her with a variety of tasks, eventually leading up to her taking you to this place.",
+                                    "The fungal locals listen with undisguised interest and look rather impressed with your attitude, nodding at you and at each other with happy smiles and praiseful comments on your helpfulness.",
+                                    "ChangeImageLayer", "Expression", "4", "Excited",
+                                    "Speak", "Curious Matango",
+                                    "Oh, I didn't think that Ancilla would be taking human helpers. That's unexpected... and very nice of you!",
+                                    "ChangeImageLayer", "Expression", "2", "Shy", "ChangeImageLayer", "Blush", "2", "BlushLight",
+                                    "Speak", "Cheerful Matango",
+                                    "Yes, that's very... gallant.♪",
+                                    "ChangeImageLayer", "Expression", "5", "Disgust",
+                                    "Speak", "Prickly Matango",
+                                    "Hmph, don't get carried away. I bet he's just in it for sexual favors.",
+                                    "ChangeImageLayer", "Expression", "3", "Fantasizing", "ChangeImageLayer", "Blush", "3", "Blush",
+                                    "Speak", "Horny Matango",
+                                    "What if he is, though?♥︎",
+                                    "ChangeImageLayer", "Expression", "4", "Shy", "ChangeImageLayer", "Blush", "4", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "5", "Concern",
+                                    "ChangeImageLayer", "Expression", "6", "Submissive", "ChangeImageLayer", "Blush", "6", "Blush",
+                                    "The surprisingly brazen comeback is met with a sighing eye roll from the Prickly Matango who yet does not object while the others giggle more or less openly at the quip. You're not sure you exactly got their trust, but it does feel like the atmosphere got at least a {i}bit{/i} less strained, which should let you carry on with other queries more naturally.",
+                                    "SetChoice", "2", "BreakTheIce",
+                                    "JumpToScene", "MatangoMenu"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "'Hi there!' (Allure)",
+                  	"theScene": [
+                                    "Thankfully, social situations like this one are your element! Even though you hadn't planned for today's venture to turn into some sort of matango meet-and-greet, you take things in stride and charismatically step forward to hail them with a cheery wave along with your most winsome smile.",
+                                    "ChangeImageLayer", "Expression", "1", "Shock",
+                                    "ChangeImageLayer", "Expression", "5", "Concern",
+                                    "ChangeImageLayer", "Expression", "6", "Base",
+                                    "And though the timid monster girls are initially taken aback by your forwardness, they can't help but lend you an ear as you go on to explain why you're here, how you've been giving the wonderful Ancilla some {i}much appreciated help{/i} with her professional tasks, and how it's such a {i}pleasure{/i} to make the acquaintance of beautiful ladies like them.",
+                                    "ChangeImageLayer", "Expression", "1", "Disgust",
+                                    "As you animatedly and charmingly proceed to gab and regale the mushroom women with choice excerpts from your past chore-related endeavors, you can feel the sheep maid stare daggers into you... And {i}yes{/i}, it is true that you're laying it on a {i}bit{/i} thick...",
+                                    "ChangeImageLayer", "Expression", "2", "Shy", "ChangeImageLayer", "Blush", "2", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "3", "Shy", "ChangeImageLayer", "Blush", "3", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "4", "Shy", "ChangeImageLayer", "Blush", "4", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "6", "Submissive", "ChangeImageLayer", "Blush", "6", "BlushLight",
+                                    "... but the results speak for themselves, your voluble graces soon putting the locals in the palm of your hand, the ingenuous women blushing and giggling contentedly at your praise, and listening to your anecdotes with rapt attention, making that icebreaker quite the success!",
+                                    "ChangeImageLayer", "Expression", "1", "Frown",
+                                    "ChangeImageLayer", "Expression", "4", "Base", "ChangeImageLayer", "Blush", "4", "",
+                                    "Speak", "Curious Matango",
+                                    "Wow, I didn't expect that Ancilla would hire someone all the way from Fertilia...",
+                                    "ChangeImageLayer", "Expression", "2", "Excited",
+                                    "Speak", "Cheerful Matango",
+                                    "Let alone a full-fledged adventurer... and a valedictorian, at that!",
+                                    "ChangeImageLayer", "Expression", "3", "Fantasizing", 
+                                    "Speak", "Horny Matango",
+                                    "We're really getting the deluxe treatment, huh? I didn't know that Sofia cared {i}that much{/i} about us.♪",
+                                    "ChangeImageLayer", "Expression", "6", "Panic",
+                                    "Speak", "Skittish Matango",
+                                    "Y-Yeah, isn't it k-kinda excessive?",
+                                    "ChangeImageLayer", "Expression", "5", "Disgust",
+                                    "Speak", "Prickly Matango",
+                                    "{size=-5}I bet he's just lying through his teeth...{/size}",
+                                    "The testy mutter and Ancilla's continued staring making you realize that you shouldn't get {i}too{/i} into full-on bullshitting either, you skillfully change course and bring the topic back on less slippery ground, reasserting that you've had nothing but pleasant, enriching experiences alongside the amazing head maid, whom you thank wholeheartedly for giving you the opportunity to get so close to the Forest Dungeon residents and help them.",
+                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                    "ChangeImageLayer", "Expression", "3", "Shy", "ChangeImageLayer", "Blush", "3", "",
+                                    "Speak", "Horny Matango",
+                                    "That's true. Ancilla {i}is{/i} amazing.",
+                                    "ChangeImageLayer", "Blush", "1", "Blush", "ChangeImageLayer", "Expression", "1", "Embarrassed",
+                                    "ChangeImageLayer", "Expression", "4", "Shy", "ChangeImageLayer", "Blush", "4", "",
+                                    "ChangeImageLayer", "Expression", "5", "Shy", "ChangeImageLayer", "Blush", "5", "",
+                                    "ChangeImageLayer", "Expression", "6", "Shy", "ChangeImageLayer", "Blush", "6", "",
+                                    "As one, the entirety of the room's occupants approve, suddenly heaping compliments and adoration on the woolly lady who can't help but be caught by surprise by the sudden change of tide, showing an uncustomarily flustered expression alongside quite the cute blush.",
+                                    "ChangeImageLayer", "Blush", "1", "", "ChangeImageLayer", "Expression", "1", "Base",
+                                    "Still, it would take more than that to actually throw off the no-nonsense professional that she is, the cool-headed woman proving predictably quick to recompose herself and answer in as level a tone as ever.",
+                                    "Speak", "Ancilla",
+                                    "{i}Ahem...{/i} Yes, [ThePlayerName] has indeed been quite the welcome help. And I hope we can continue to count on his assistance.",
+                                    "ChangeImageLayer", "Expression", "1", "Disgust",
+                                    "ChangeImageLayer", "Expression", "2", "Base",
+                                    "ChangeImageLayer", "Expression", "4", "Base",
+                                    "ChangeImageLayer", "Expression", "5", "Concern",
+                                    "And with that, she stays silent once more and lets you move on with the conversation, though you can still feel her give you quite the pointed '{i}Really now?{/i}' stare as the matangos await your next move.",
+                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                    "Still, despite her silent chastising, you get the feeling that, deep down, she's actually amused by your garrulous antics, and perhaps even a bit... impressed? At least, you're pretty confident that you didn't actually make a bad impression on either her or the mushroom ladies.",
+                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                    "SetChoice", "2", "BreakTheIce",
+                                    "IfChoice", "5", "AncillaMatangoGab", "MatangoMenu",
+                                    "GetEventAndChangeProgress", "Forest Dungeon Nexus", "1",
+                                    "SetChoice", "5", "AncillaMatangoGab",
+                                    "JumpToScene", "MatangoMenu"
+                            	]
+              	},
+
+              	{
+                  	"NameOfScene": "'Don't you feel uncomfortable in a small dark room like this?'",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "2", "Base", "ChangeImageLayer", "Blush", "2", "",
+                                    "ChangeImageLayer", "Expression", "3", "Base", "ChangeImageLayer", "Blush", "3", "",
+                                    "ChangeImageLayer", "Expression", "4", "Base", "ChangeImageLayer", "Blush", "4", "",
+                                    "ChangeImageLayer", "Expression", "5", "Disgust", "ChangeImageLayer", "Blush", "5", "",
+                                    "ChangeImageLayer", "Expression", "6", "Base", "ChangeImageLayer", "Blush", "6", "",
+                                    "The matangos stare at you as if you'd asked something strange, a downright uncomfortable silence following your innocent query until one of them candidly volunteers.",
+                                    "ChangeImageLayer", "Expression", "6", "Flustered", 
+                                    "Speak", "Skittish Matango",
+                                    "N-No? ... W-Why would we be?",
+                                    "ChangeImageLayer", "Expression", "2", "Shy",
+                                    "Speak", "Cheerful Matango",
+                                    "Yeah, it's very nice here: we have a snug, nicely dark, nicely damp place to live in, we don't get unwelcome intruders who might disturb us or drive us out, the dungeon is {i}loaded{/i} with energy we can soak in, and though we don't really need much, Ancilla is kind enough to visit us from time to time and see to any needs we might have.",
+                                    "ChangeImageLayer", "Expression", "3", "Shy",
+                                    "ChangeImageLayer", "Expression", "4", "Excited",
+                                    "ChangeImageLayer", "Expression", "5", "Concern",
+                                    "ChangeImageLayer", "Expression", "6", "Shy",
+                                    "The rest of the assembled mushroom ladies 'cheer' to that with approving murmurs and nods while the aforementioned maid just responds with a modest silent curtsy, the topic looking like it has already run its course until another matango spontaneously adds.",
+                                    "ChangeImageLayer", "Expression", "3", "Fantasizing", "ChangeImageLayer", "Blush", "3", "Blush",
+                                    "Speak", "Horny Matango",
+                                    "Don't forget to mention how we get summoned from time to time to have {i}fun{/i} with the adventurers who come in here. It's part of the arrangement of us living here, and it's always a nice surprise.♥︎",
+                                    "ChangeImageLayer", "Expression", "5", "Disgust",
+                                    "ChangeImageLayer", "Expression", "6", "Submissive",
+                                    "Though one of the red-capped women sighs tetchily at that and another sputters flusteredly, you note that no one is actually objecting to her claims, including Ancilla who just keeps restfully standing by and watching the proceedings with a customarily impenetrable expression on her face",
+                                    "All the same, it looks like that's all they had to say on the subject, which leaves the ball back in your court.",
+                                    "SetChoice", "3", "Uncomfortable?",
+                                    "JumpToScene", "MatangoMenu"
+                              	]
+              	},
+
+              	{
+                  	"NameOfScene": "'So what do you do with your days?'",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "2", "Shy",
+                                    "ChangeImageLayer", "Expression", "3", "Shy",
+                                    "ChangeImageLayer", "Expression", "4", "Base", "ChangeImageLayer", "Blush", "4", "",
+                                    "ChangeImageLayer", "Expression", "5", "Awkward",
+                                    "ChangeImageLayer", "Expression", "6", "Submissive",
+                                    "Speak", "Cheerful Matango",
+                                    "Oh, we daydream, bask in Sofia's energy, chat with each other, have naps, compare our experiences with the battles we've had in the dungeon, sometimes play games with each other...",
+                                    "ChangeImageLayer", "Expression", "6", "Excited", "ChangeImageLayer", "Blush", "6", "BlushLight",
+                                    "Speak", "Skittish Matango",
+                                    "B-But mostly, w-we just relax and, hum, r-restfully idle the time away... It's nice.♪",
+                                    "ChangeImageLayer", "Expression", "4", "Shy",
+                                    "ChangeImageLayer", "Expression", "5", "Shy",
+                                    "ChangeImageLayer", "Expression", "6", "Shy",
+                                    "Unanimously, her roommates nod in unblemished approbation, which goes to show that matangos must have a rather distinct notion of what constitutes a good day compared to most humans...",
+                                    "JumpToScene", "MatangoMenu"
+                               ]
+              	},
+
+              	{
+                  	"NameOfScene": "'Anything you'd need or want?'",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "2", "Base",
+                                    "ChangeImageLayer", "Expression", "3", "Base",
+                                    "ChangeImageLayer", "Expression", "4", "Base",
+                                    "ChangeImageLayer", "Expression", "5", "Concern",
+                                    "ChangeImageLayer", "Expression", "6", "Shy",
+                                    "Seeming to have expected that question, one of the mushroom women immediately and happily responds.",
+                                    "ChangeImageLayer", "Expression", "2", "Excited", "ChangeImageLayer", "Blush", "2", "BlushLight",
+                                    "Speak", "Cheerful Matango",
+                                    "No, it's all good.♪ Like we told Ancilla the last time, we have everything we want, and there isn't anything else that we require.",
+                                    "Looking around the bare, featureless, unfurnished room they're standing in, you find that somewhat hard to believe, but you assume that you can chalk it up to differences in needs and sensibilities, though another matango then pipes up while leering at you.",
+                                    "ChangeImageLayer", "Expression", "3", "Drunk", "ChangeImageLayer", "Blush", "3", "Blush",
+                                    "Speak", "Horny Matango",
+                                    "Although since you're offering, I wouldn't say no to some impromptu group sex with a nice, strapping, handsome adventurer...♥︎",
+                                    "ChangeImageLayer", "Expression", "2", "Fantasizing", "ChangeImageLayer", "Blush", "2", "Blush",
+                                    "ChangeImageLayer", "Expression", "4", "Shy", "ChangeImageLayer", "Blush", "4", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "5", "Disgust",
+                                    "ChangeImageLayer", "Expression", "6", "Submissive", "ChangeImageLayer", "Blush", "6", "BlushLight",
+                                    "While most of the other locals seem somewhat shocked by the lecherous suggestion, none of them actually contradict it. Judging by how they fidget, blush, and glance at you, the red-capped women may be shy, but they're certainly not prudish, nothing seeming to be standing between you and a {i}fun time{/i} with them should you wish it... Except perhaps Ancilla, but as is often the case, the maid's blank expression betrays nothing of her feelings.",
+                                    "ChangeImageLayer", "Expression", "4", "Shy",
+                                    "ChangeImageLayer", "Expression", "5", "Shy",
+                                    "ChangeImageLayer", "Expression", "6", "Shy",
+                                    "JumpToScene", "MatangoMenu"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "'Wanna have sex?'",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "1", "Shock",
+                                    "ChangeImageLayer", "Expression", "2", "Fantasizing", "ChangeImageLayer", "Blush", "2", "Blush",
+                                    "ChangeImageLayer", "Expression", "3", "Drunk", "ChangeImageLayer", "Blush", "3", "Blush",
+                                    "ChangeImageLayer", "Expression", "4", "Fantasizing", "ChangeImageLayer", "Blush", "4", "Blush",
+                                    "ChangeImageLayer", "Expression", "5", "Disgust",
+                                    "ChangeImageLayer", "Expression", "6", "Submissive",  "ChangeImageLayer", "Blush", "6", "Blush",
+                                    "The reaction to your unabashed proposition is immediate, most of the matangos' faces reddening with stirred-up lust while an alluring scent of pheromonal arousal rises in the air, the seductive perfume further stoking your libidinous inclinations while one of the mushroom women purrs lasciviously.",
+                                    "Speak", "Horny Matango",
+                                    "Oh, {i}do we{/i}...♥",
+                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                    "However, the increasingly sultry atmosphere gets broken off by Ancilla who steps in decisively, putting a hand to your arm to get your attention, and leaning towards you to speak privately to you in a hushed voice.",
+                                    "Speak", "Ancilla",
+                                    "[ThePlayerName], while you partaking in an orgy with our matango residents was not part of my intent, I understand the appeal of it, and would not stop you from going for it.",
+                                    "ChangeImageLayer", "Expression", "1", "Concern",
+                                    "Speak", "Ancilla",
+                                    "Nevertheless, I must warn you that the resulting intense sexual exertion would undoubtedly affect your sensitivities and fetishes, and would drain you of no small amount of your semen, possibly to the point of exhausting you should you be insufficiently prepared. Additionally, prolonged close-contact exposure to matango spores could alter your body. Not incurably so, but enough that the effects would be noticeable should you overdo it.",
+                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                    "Having spoken in her usual clipped monotone while the rooms' occupants have kept their smoldering gazes locked on you, the maid draws back and concludes.",
+                                    "Speak", "Ancilla",
+                                    "With all of that said, are you certain you want to proceed with this?",
+                                    "Menu",
+                                      "'Yes!'",
+                                      "'When you put it like that...'",
+                                    "EndLoop"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "'Yes!'",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "1", "Shock",
+                                    "The sheep woman looks a bit surprised at your brazenness, but quickly recovers from the slight shock and crisply bows.",
+                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                    "Speak", "Ancilla",
+                                    "Understood. In that case, I will be awaiting you outside to walk you back once you are done, assuming you are not sent back by your recall stone.",
+                                    "DisplayCharacters",
+                                      "2",
+                                      "2",
+                                      "2",
+                                      "2",
+                                      "2",
+                                    "EndLoop",
+                                    "ChangeImageLayer", "Expression", "1", "Tasty", "ChangeImageLayer", "Blush", "1", "Blush",
+                                    "ChangeImageLayer", "Expression", "2", "Drunk", "ChangeImageLayer", "Blush", "2", "Blush",
+                                    "ChangeImageLayer", "Expression", "3", "Fantasizing", "ChangeImageLayer", "Blush", "3", "Blush",
+                                    "ChangeImageLayer", "Expression", "4", "Disgust",
+                                    "ChangeImageLayer", "Expression", "5", "Submissive", "ChangeImageLayer", "Blush", "5", "Blush",
+                                    "ChangeBGM", "music/Casino/BGM sweet smell.mp3",
+                                    "And with that, she briskly takes her leave, closing the door behind her and leaving you to your orgy with the matangos who are awaiting you with burning want, the smell of their arousal having only gotten stronger over the course of your short aside with Ancilla, stirring up your excitement all the more and further encouraging you to go straight for it.",
+                                    "SetChoice", "2", "",
+                                    "SetChoice", "3", "",
+                                    "JumpToScene", "MatangoOrgy"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "'When you put it like that...'",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "2", "Awkward", "ChangeImageLayer", "Blush", "2", "",
+                                    "ChangeImageLayer", "Expression", "3", "Disgust", "ChangeImageLayer", "Blush", "3", "",
+                                    "ChangeImageLayer", "Expression", "4", "Concern", "ChangeImageLayer", "Blush", "4", "",
+                                    "ChangeImageLayer", "Expression", "5", "Disgust",
+                                    "ChangeImageLayer", "Expression", "6", "Panic", "ChangeImageLayer", "Blush", "6", "BlushLight",
+                                    "The woolly lady just nods in acknowledgment and returns to her previous supervisory spot while the matangos quickly cotton on to the fact that there will be no orgy happening and let out sighs, sputters, and scoffs of disappointment in reaction, looking at you in slight annoyance for having gotten their hopes up, but not commenting on it, instead politely leaving you to carry on with your visit.",
+                                    "JumpToScene", "MatangoMenu"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "'I'll leave you be.'",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "2", "Excited",
+                                    "Speak", "Cheerful Matango",
+                                    "A-Alright. Thank you for your visit!",
+                                    "ChangeImageLayer", "Expression", "4", "Shy",
+                                    "Speak", "Curious Matango",
+                                    "Have a nice day!♪",
+                                    "ChangeImageLayer", "Expression", "6", "Submissive", "ChangeImageLayer", "Blush", "6", "BlushLight",
+                                    "Speak", "Skittish Matango",
+                                    "T-Take care!",
+                                    "ChangeImageLayer", "Expression", "5", "Concern",
+                                    "Speak", "Prickly Matango",
+                                    "Good riddance.",
+                                    "ChangeImageLayer", "Expression", "3", "Submissive", "ChangeImageLayer", "Blush", "3", "BlushLight",
+                                    "Speak", "Horny Matango",
+                                    "Y-You're sure you don't want to have an orgy first, though?",
+                                    "DisplayCharacters",
+                                     "1",
+                                    "EndLoop",
+                                    "With it probably being wiser to leave the last two comments unanswered, you and Ancilla leave the matango room, then without further ado, you make your way back across the Forest Dungeon's corridors, out of the present secluded area...",
+                                    "UseHeldBG",
+                                    "AdvanceTime", "1",
+                                    "... and back to the much less damp proximity of Sofia's lair where the maid dutifully reassumes her usual station, though not before treating you to a polite bow.",
+                                    "Speak", "Ancilla",
+                                    "There we go, [ThePlayerName]. I hope you found this 'behind-the-scenes' visit interesting and entertaining.",
+                                    "The sheep woman, for her part, speaks of the subject with as much equanimity as ever, yet you get the feeling that she is happy, or at the very least satisfied to have treated you to such an exclusive experience, and with how it went.",
+                                    "IfChoice", "4", "AncillaMatangoDone", "MatangoEnd",
+                                    "GetEventAndChangeProgress", "Forest Dungeon Nexus", "1",
+                                    "SetChoice", "4", "AncillaMatangoDone",
+                                    "JumpToScene", "MatangoEnd"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "MatangoOrgy",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "1", "Drunk", "ChangeImageLayer", "Blush", "1", "Blush",
+                                    "ChangeImageLayer", "Expression", "2", "Drunk", "ChangeImageLayer", "Blush", "2", "Blush",
+                                    "ChangeImageLayer", "Expression", "3", "Fantasizing", "ChangeImageLayer", "Blush", "3", "Blush",
+                                    "ChangeImageLayer", "Expression", "4", "Concern",
+                                    "ChangeImageLayer", "Expression", "5", "Shy", "ChangeImageLayer", "Blush", "5", "BlushLight",
+                                    "All too eager to indulge in the libidinous urges the aphrodisiac fungal haze has kept stoking within you, you swiftly discard your clothes, exposing your naked body and fully grown erection to the group of mushroom women who thirstily drink in the sight with lecherously burning eyes and lasciviously swaying motions.",
+                                    "For a moment, you can't help but lose yourself in the harem-like view of the horny monster girls awaiting you from their rooted spots with scalding need plain in their hungry gazes, each of their sex-craving bodies calling to your inflamed lust to the point that you find yourself having trouble deciding who to go with, the lewd conundrum leaving you indecisively stuck in place until one of them takes the initiative and addresses you.",
+                                    "ChangeImageLayer", "Expression", "2", "Shy",
+                                    "Speak", "Horny Matango",
+                                    "Go with me first, handsome. I {i}really{/i} can't wait.♥︎",
+                                    "ChangeImageLayer", "ImageSetDontCarryOver", "2", "SexCG", "ChangeImageLayer", "Expression", "2", "Shy", "ChangeImageLayer", "Blush", "2", "Blush",
+                                    "ChangeImageLayer", "Player", "2", "",
+                                    "Crooning sultrily, she stares at you with intense desire, showily leaning back while wantonly parting her wet slit with her fingers, the alluring show sending shivers of anticipation through you and causing your hard cock to throb in eager readiness, instantly helping you make up your mind and directing you straight to the shamelessly presenting lady with hurried strides.",
+                                    "ChangeBGM", "music/Loss/reason.mp3",
+                                    "ChangeImageLayer", "Expression", "2", "Drunk",
+                                    "ChangeImageLayer", "Player", "2", "Base",
+                                    "Without hesitation, you immediately plunge your twitching dick straight into the pussy of your seductive partner who lets out a blissful rasping moan as she gets filled up by your manhood, your length smoothly sliding into her drenched confines which accept you with a welcoming squeeze while she sighs out.",
+                                    "ChangeImageLayer", "Expression", "2", "Gasping",
+                                    "Speak", "Horny Matango",
+                                    "Yessss, that's it... Feel free to go{i}oooooh!{/i}♥︎", 
+                                    "Her voice melts into a slutty cry as you preemptively react to her suggestion by grabbing her wide hips for better leverage and begin frantically swinging yours, fully giving in to the indulgent need to get yourself off, as well as to the possessive urge to claim the erotic monster girl whose pliable body shudders ecstatically under your vigorous thrusts.",
+                                    "ChangeImageLayer", "Expression", "2", "Tasty",
+                                    "Speak", "Horny Matango",
+                                    "Mmmh!♥︎ Yes!♥︎ Just like that!♥︎ Stronger!♥︎ {i}Harder!{/i}♥︎",
+                                    "PlayVisualEffect2", "BlindingFlash", "Monsters/Matango/CG/MatangoCG_Haze.png",
+                                    "Feeling more than inclined to satisfy that request as a result of the ever-thickening mist of titillating spores fogging up your mind more and more, you abandon yourself to your lustful inclinations and redouble your thrusts, making your lover's expression devolve into a blissful sloppy grin as she unresistingly yields to your assertive lovemaking while her quivering inner walls receptively clench and squirm all over your ramming member.",
+                                    "ChangeImageLayer", "Expression", "2", "Submissive",
+                                    "With how aroused you are and how energetically the matango's insides are churning and sucking at your entire shaft, you can already feel an orgasm rise in your loins, and in your thoroughly horny state, you make no effort to hold yourself back, instead continuing to indulgently get yourself off with the pussy of the mushroom woman who seems to be in quite a similar state to yours, her lithe frame trembling while she whorishly shouts out.",
+                                    "Speak", "Horny Matango",
+                                    "Yes! {i}Yes!{/i} I'm already-♥︎♥︎♥︎",
+                                    "PlayerOrgasm", "1", "ChangeImageLayer", "Expression", "2", "Gasping", "ChangeImageLayer", "Blush", "2", "BlushHeavy", "ChangeImageLayer", "Semen", "2", "Semen",
+                                    "Her voice gets cut off as you feel yourself hit the edge and go for the finishing blow by hilting yourself into your fungal partner who climactically cries out as you ejaculate deep within her, your fresh warm cum filling her womb with hosing spurts to the rhythm of her greedily squeezing sex, the monster girl's womb instinctively working to get as much of your cum out of your balls as she can.",
+                                	"ChangeSensitivity", "Sex", "5",
+                                	"ChangeFetish", "Sex", "5",
+                                  "ChangeImageLayer", "ImageSetDontCarryOver", "2", "Normal",
+                                    "IfPlayerSpiritGone", "TooMuchMatangoSex",
+                                    "Only once your dick is blankly throbbing without any more semen to give does she relinquish her hold over it, allowing you to slide your still stiff erection out of her and take a moment to breathe while she swoons in post-orgasmic delight, all the while another matango already calls to you.",
+                                    "ChangeImageLayer", "Expression", "1", "Shy", "ChangeImageLayer", "Expression", "2", "Gasping", "ChangeImageLayer", "Blush", "2", "Blush", "ChangeImageLayer", "Blush", "1", "BlushLight",
+                                    "Speak", "Cheerful Matango",
+                                    "Me next? I'm sure I can give you an {i}unforgettable{/i} time...♪ I know we might not look very different, but I promise you that my pussy will undoubtedly feel {i}unique{/i} and give your cock some very tender care.♥︎",
+                                    "Her enticing suggestion swirls in your mind, threatening to get you to indulgently accept it without a second thought, your aphrodisiac-soaked mind struggling to muster any kind of rationality and to think about anything else than more matango sex...",
+                                    "Menu", "ShuffleMenu",
+                                     "Stop! (Willpower)",
+                                     "More sex!",
+                                    "EndLoop"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "TooMuchMatangoSex",
+                  	"theScene": [
+                                    "ChangeBGM", "music/Loss/Do not yarn.mp3",
+                                    "ChangeImageLayer", "Expression", "1", "Flustered", "ChangeImageLayer", "Blush", "1", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "2", "Base", "ChangeImageLayer", "Blush", "2", "",
+                                    "ChangeImageLayer", "Expression", "3", "Flustered",  "ChangeImageLayer", "Blush", "3", "BlushLight",
+                                    "ChangeImageLayer", "Expression", "4", "Concern",
+                                    "ChangeImageLayer", "Expression", "5", "Submissive", "ChangeImageLayer", "Blush", "5", "BlushLight",
+                                    "... And unfortunately, that strain is more than your body can take, the exertion having emptied you of the last of your spiritual reserves and leaving you dizzyingly swaying, only able to take a few aimless tottering steps before you swoon straight into the arms of one of matangos who thankfully catches you with a surprised squeak.",
+                                    "ChangeImageLayer", "Expression", "1", "Panic",
+                                    "Speak", "Cheerful Matango",
+                                    "Oops! Looks like that was a bit much for him.",
+                                    "ChangeImageLayer", "Expression", "5", "Panic",
+                                    "Speak", "Skittish Matango",
+                                    "O-Oh my...",
+                                    "ChangeImageLayer", "Expression", "4", "Disgust",
+                                    "Speak", "Prickly Matango",
+                                    "What an idiot...",
+                                    "ChangeImageLayer", "Expression", "3", "Shy",
+                                    "Speak", "Curious Matango",
+                                    "Oh, come on, don't be like that... It was very nice of him to volunteer!♥︎",
+                                    "ChangeImageLayer", "Expression", "2", "Drunk", "ChangeImageLayer", "Blush", "2", "Blush",
+                                    "Speak", "Horny Matango",
+                                    "Sure was.♥︎ Feel free to come back anytime, handsome. We'll always be glad to give you a {i}warm{/i} welcome.",
+                                    "ChangeImageLayer", "Expression", "1", "Shy", "ChangeImageLayer", "Blush", "1", "Blush",
+                                    "ChangeImageLayer", "Expression", "5", "Shy", "ChangeImageLayer", "Blush", "5", "Blush",
+                                    "With those lascivious words, your eyes close themselves and you drift off into unconsciousness in the embrace of the Cheerful Matango while the rest of the quintet watch you fade away, the vivid memory of the mushroom women's sexual delights and intoxicating aphrodisiac spores sticking to your senses and mind...",
+                                    "IfChoice", "1", "AncillaHere", "AncillaNotHappy",
+                                    "GameOver"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "AncillaNotHappy",
+                  	"theScene": [
+                                    "SetChoice", "1", "",
+                                    "SetChoice", "2", "",
+                                    "SetChoice", "3", "",
+                                    "IfChoice", "4", "AncillaMatangoDone", "GameOver",
+                                    "GetEventAndChangeProgress", "Forest Dungeon Nexus", "-2",
+                                    "SetChoice", "4", "AncillaMatangoDone",
+                                    "GameOver"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "Stop! (Willpower)",
+                  	"theScene": [
+                                	"StatCheck",
+                                	"ChangeStatCheckDifficulty", "IfHasPerk", "Mushroom Head", "5",
+                                 	"Willpower", "10", "That's enough!",
+                                 	"Fail", "More sex!"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "That's enough!",
+                  	"theScene": [
+                                    "Managing to gather your wits with a conscious effort of will, you laboriously look away from the tempting display and speedily go to gather your clothes, knowing that with the matangos' spores filling the room and your body, you won't be able to stay focused for very long on anything but your want for more sex.",
+                                    "ChangeImageLayer", "Expression", "1", "Concern", "ChangeImageLayer", "Blush", "1", "",
+                                    "ChangeImageLayer", "Expression", "2", "Disgust", "ChangeImageLayer", "Blush", "2", "",
+                                    "ChangeImageLayer", "Expression", "3", "Base", "ChangeImageLayer", "Blush", "3", "",
+                                    "ChangeImageLayer", "Expression", "4", "Disgust",
+                                    "ChangeImageLayer", "Expression", "5", "Panic", "ChangeImageLayer", "Blush", "5", "BlushLight",
+                                    "Sighing, pouting, and moaning dejectedly at your hasty leave, the mushroom ladies gaze longingly at your escaping figure, but make no efforts to stop you, the sound of their voices seeing you off as you quickly open the door to make your exit.",
+                                    "Speak", "Cheerful Matango",
+                                    "Aww...",
+                                    "Speak", "Horny Matango",
+                                    "What a shame...",
+                                    "Speak", "Curious Matango",
+                                    "Maybe next time, then?",
+                                    "Speak", "Skittish Matango",
+                                    "Y-Yeah, c-come back anytime, o-okay?",
+                                    "Speak", "Prickly Matango",
+                                    "Or don't.",
+                                    "ChangeBGM", "music/Forest Dungeon/Stalwick-_Forest_Dungeon-Lurking.mp3",
+                                    "IfChoice", "1", "AncillaHere", "AncillaExit",
+                                    "JumpToScene", "MatangoLeave"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "AncillaExit",
+                  	"theScene": [
+                                    "DisplayCharacters",
+                                     "1",
+                                    "EndLoop",
+                                    "Stumbling out of the aphrodisiac-filled room, you find yourself immediately facing Ancilla who, as promised, has been awaiting you, and doesn't seem fazed by the sight of your naked, erect, and flushed body, simply taking you in methodically and greeting you with impeccable equanimity.",
+                                    "Speak", "Ancilla",
+                                    "Welcome back, [ThePlayerName]. If you would allow me...",
+                                    "JumpToScene", "AncillaExitCont"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "AncillaExitCont",
+                  	"theScene": [
+                                    "With the maid's professional assistance, you get redressed at speed, your spore-stirred arousal rapidly quieting down now that you're out of the matangos' lair, allowing you to swiftly cool off and return to a level-headed state of mind by the time you've got your clothes fully back on, your sheep assistant nodding conclusively at the sight of your more focused expression and receding blush.",
+                                    "Speak", "Ancilla",
+                                    "All seems to be well. Let us return.",
+                                    "UseHeldBG",
+                                    "AdvanceTime", "1",
+                                    "With nary another word, she makes the trip back to her usual spot with you in tow, not volunteering anything else until you've reached your destination, at which point she gives you another slight nod.",
+                                    "Speak", "Ancilla",
+                                    "This concludes the present task. I hope that you enjoyed it, [ThePlayerName].",
+                                    "It's hard to say whether she's annoyed at your indulgent behavior or just curt, but you're at least pretty sure she's not exactly {i}happy{/i} about it, though it also seems like she's willing to simply let it go, returning to her customary diligent immobility and letting you go back to your own affairs.",
+                                    "SetChoice", "4", "AncillaMatangoDone",
+                                    "JumpToScene", "MatangoEnd"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "More sex!",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "1", "Drunk", 
+                                    "ChangeImageLayer", "Expression", "2", "Tasty",  
+                                    "Yielding to the Cheerful Matango's promising words, you turn away from her satiated kin who watches you walk off with a content smile while you immediately go for the awaiting woman who encouragingly holds out her hands as you come within arm's reach of her, putting a palm on your hip while the other grabs your manhood which twitches eagerly as she delicately runs her soft fingers over it, already raring to go again.",
+                                    "ChangeImageLayer", "Expression", "2", "Fantasizing", 
+                                    "ChangeImageLayer", "ImageSetDontCarryOver", "1", "SexCG", "ChangeImageLayer", "Expression", "1", "Drunk",   "ChangeImageLayer", "Blush", "1", "Blush",
+                                    "Enthusiastically purring with a thirsty lick of her lips, your new partner leans back as she guides your length into her pussy, slowly and gently letting you enter her with a long hum of delight as she feels you penetrate her inch by inch, the languid insertion giving you something of a soothing break after your frenetic romp with the previous matango.",
+                                    "Speak", "Cheerful Matango",
+                                    "Mmmmh...♪ Yes, very good...♪ But don't get {i}too{/i} comfortable, stud. You're about to feel what I meant by 'unique'.♥︎",
+                                    "Right on cue, just as you finish leisurely hilting yourself within her, you suddenly feel her inner walls contract around your entire member, and with that pressure comes the immediate, unexpected sensation of innumerable tiny tendrils closing in on your shaft and wriggling against it!",
+                                    "ChangeImageLayer", "Expression", "1", "Excited",
+                                    "Your eyes going wide at the exotic stimulation, you can't hold back a wanton gasp along with a shudder that resonates from your groin all through your frame as the minuscule soft lengths run over your sensitive flesh, lavishing you with tingly bliss as they hungrily massage your cock from the tip to the root while your fungal lover giggles playfully.",
+                                    "Speak", "Cheerful Matango",
+                                    "Nice, huh?♪ All matangos have cilia like this, but usually only deep within their womb, not all over their pussy.♥︎",
+                                    "ChangeImageLayer", "Expression", "1", "Loving",
+                                    "As she speaks, she lets her hand rest on the other side of your pelvis and coaxes you into thrusting into her with a gentle pull, causing your mind to go blank for a moment as the multifold tendrils rub all over your dick as a result of the simple back-and-forth motion, multiplying the pleasure and assailing your vulnerable aphrodisiac-soaked body with overwhelming ecstasy!",
+                                    "Speak", "Cheerful Matango",
+                                    "Ehehe...♪ Come on, stud, you're not going to let me do all the work, are you?♥︎ Shake those hips harder than that.♥︎",
+                                    "ChangeImageLayer", "Expression", "1", "Drunk",
+                                    "Nettled by her teasing tone, you do just that and begin fucking her in earnest, but again, with every one of your swings, you can feel not only her softly wet walls pressing welcomingly into your rock-hard length, but also her cilia hungrily lapping at your manhood and squirming against it, bathing you in more delightfully foreign stimulation than you can bear!",
+                                    "All the same, your burning lust demands that you don't just stay stuck in place, and so you grit your teeth and face the pleasure head-on, letting out a cry of almost torturous euphoria as your shaft scrapes the Cheerful Matango's tendril-covered folds again and again, self-destructively getting yourself off with overpowering intensity while she encouragingly moans and coos against you from your headlong lovemaking.",
+                                    "Speak", "Cheerful Matango",
+                                    "Mmmh!♥︎ That's the spirit!♥︎ Oooh!♥︎ Keep going!♥︎",
+                                    "ChangeImageLayer", "Expression", "1", "Gasping",
+                                    "With dizzying speed, the incomparable and unabating sensation drives you towards another rapid climax, your one-of-a-kind lover's minuscule organs seeming to exist specifically for the purpose of milking cum and working vigorously towards such a goal, thirstily slurping up the precum that's already starting to trickle out of your cock!",
+                                    "Your head fizzling out from the constant bliss, you feel like you can barely control your movements anymore as you keep shudderingly thrusting in and out of the Cheerful Matango who at least doesn't seem indifferent to the sex herself, her face looking thoroughly flushed while her breaths come in panting gasps, making a distantly lucid part of your brain wonder if her cilia may not be particularly erogenous themselves as she huffs out.",
+                                    "ChangeImageLayer", "Expression", "1", "Drunk",
+                                    "Speak", "Cheerful Matango",
+                                    "Oooooh...♥︎ Mmmmf-♥︎ Yes.♥︎ Don't hold back, stud.♥︎ Please.♥︎ Give it to me!♥︎",
+                                    "Feeling like you couldn't hold back much longer even if you wanted to anyway, you yield to her amorous pleas and gather yourself for one final plunge, laboriously drawing back under innumerable tantalizing touches and then immediately throwing yourself back forward, shoving your entire shaft back into your mushroom partner!",
+                                    "PlayerOrgasm", "1", "ChangeImageLayer", "Expression", "1", "Tasty", "ChangeImageLayer", "Blush", "1", "BlushHeavy", "ChangeImageLayer", "Semen", "1", "Semen",
+                                    "Instantly, the countless tendrils close in on your dick and squeeze, rub, and lick it in a veritable frenzy, taking you over the brink for an explosive ejaculation that fills up the matango only to be swiftly absorbed by her semi-independent organs that drink in your semen with bottomless appetite, then expeditiously carry it into the womb of your monster lover who quivers and gasps in indulgent feeding ecstasy.",
+                                    "Feeling incapable of moving an inch as your manhood is getting relentlessly and lavishly preyed on, you stay frozen in place with your hips snugly flush against those of the fungal woman who likewise swims in dizzying climactic glee for luxuriously long seconds... Until the high abates and her cilia finally retract from your thoroughly milked member which slides out of her pussy, leaving you both momentarily and wonderfully drained.",
+                                	"ChangeSensitivity", "Sex", "5",
+                                	"ChangeFetish", "Monstrous", "5",
+                                  "ChangeImageLayer", "ImageSetDontCarryOver", "1", "Normal",
+                                    "IfPlayerSpiritGone", "TooMuchMatangoSex",
+                                    "ChangeImageLayer", "Expression", "3", "Shy",  "ChangeImageLayer", "Expression", "1", "Submissive", "ChangeImageLayer", "Blush", "1", "Blush", "ChangeImageLayer", "Blush", "3", "Blush",
+                                    "PlayVisualEffect2", "BlindingFlash", "Monsters/Matango/CG/MatangoCG_Haze.png",
+                                	"And yet, as you lay eyes on your freed length, you can't but notice that you're {i}still{/i} erect, while the cloud of lewd spores pervading the room remains as thick as before, keeping your mind befuddled with lust and prompting you to eagerly turn towards another alluringly feminine voice as it calls out to you, only to be met with the sight of another one of the room's occupants thrusting out her butt at you with a coquettish smile.",
+                                    "Speak", "Curious Matango",
+                                    "If you don't mind, we can carry on with my ass. I'm wondering how it would feel to have your cock fill me up.♥︎",
+                                    "She runs her hand over her smooth rear and gives it a little slap, making it lewdly wobble in front of you in a way that tempts you to take her up on her offer and immediately carry on with her...",
+                                    "Menu", "ShuffleMenu",
+                                     "Stop!! (Willpower)",
+                                     "More sex!!",
+                                     "More sex!!",
+                                    "EndLoop"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "Stop!! (Willpower)",
+                  	"theScene": [
+                                    "StatCheck",
+                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Mushroom Head", "5",
+        	                         "Willpower", "15", "That's enough!",
+        	                         "Fail", "More sex!!"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "More sex!!",
+                  	"theScene": [
+                                    "Your head feeling more and more debilitatingly and exhilaratingly filled with fungal aphrodisiacs, you don't think twice about it and hastily totter forward with unsteady yet determined steps towards the seductively presenting mushroom woman, the sight of her pendulously swaying heart-shaped derriere luring you to her in a downright hypnotic daze, urging you to follow the direction of your still rock-hard dick showing the way.",
+                                    "ChangeImageLayer", "Expression", "3", "Drunk", 
+                                    "The closer you approach, the lewder the matango's expression grows, the enticing lady ravenously licking her lips in thirsty anticipation and invitingly jutting out her butt when you reach her, further coaxing you into waiting not a moment longer and immediately aligning your twitching length with her awaiting rear before powerfully thrusting into it.",
+                                    "Instantly, her already lascivious face melts even further in libidinous glee, your experimenting lover letting out a blissful moan as your shaft spears her while her inner walls close welcomingly upon your intruding member, making it throb even harder as it gets lavished with intense all-encompassing anal pressure.",
+                                    "ChangeImageLayer", "Expression", "3", "Fantasizing",
+                                    "Compared to the pussies of your previous two partners, her ass certainly feels rougher and tighter, yet it remains pleasantly smooth and muscular, its spastic clenching showing that its owner is very much enjoying the experience as well, as does her gasping voice as she wantonly moans out.",
+                                    "Speak", "Curious Matango",
+                                    "Ooooh, yesssss...♥︎ It really feels just as good as I was hoping...♥︎ Keep going!♥︎",
+                                    "ChangeImageLayer", "Expression", "3", "Gasping",
+                                    "Gladly going along with that encouragement, you begin swinging your hips without delay, eager for more of the stimulatingly squeezing sensation of her pliable butt, your vigorous thrusts immediately eliciting more whorish sounds of base pleasure from her as she gets assertively stirred up by you, unresistingly yielding to your advances.",
+                                    "Driven by her submissively slutty noises and by the roaring arousal still rampaging through you, you dominantly lean over and push her beneath you in a mating-like posture, the anal-loving mushroom woman voicing her approval at your spirited initiative with more inarticulate squeaks as her rear keeps getting mercilessly and blissfully fucked by you.",
+                                    "Additionally, through the pink fog of your lustful stupor, you notice that in her bent posture, her bust is drooping alluringly underneath her, and so, greedily grabbing the opportunity presented to you, you swiftly take hold of her boobs, thirstily groping them with a surprised yelp from her in response to the unexpected extra stimulation, the horny lady rapturously gasping out.",
+                                    "ChangeImageLayer", "Expression", "3", "Submissive",
+                                    "Speak", "Curious Matango",
+                                    "Oooh!♥︎ Oh, yes!♥︎ Keep going!♥︎ More!♥︎ Make a mess of me!♥︎",
+                                    "Your libido stoked even hotter by her indulgent cries and by the feeling of both her hungrily squeezing ass over your dick and her palmably soft breasts under your fingers, you enthusiastically answer her request by thoroughly yielding to your own urges and plowing her even faster and harder, more than eager to keep getting yourself off to the all-out debauched anal sex.",
+                                    "ChangeImageLayer", "Expression", "3", "Drunk",
+                                    "As the matango's pliable body jiggles showily under your animalistic thrusts and she keeps mindlessly moaning and gasping underneath you, you feel yourself hit a mesmerized-like stride, falling into the wanton pace of steadily ramming her while enjoying the sight and sensation of her cushy butt wobbling against your pelvis, immersing you deeper and deeper in bestial fucking ecstasy.",
+                                    "With how vulnerably attuned to base hedonism your senses are by the thick aphrodisiac haze still pervading the room, and with how frantically you're plowing your receptive lover, you can feel that it once again won't be long before you hit your peak, and you once more make no effort to hold yourself back, letting go of her tits to instead grab her wrists and dominantly pull her against you as you go for one final slam!",
+                                    "PlayerOrgasm", "1", "ChangeImageLayer", "Expression", "3", "Submissive", "ChangeImageLayer", "Blush", "3", "BlushHeavy",
+                                    "Taken by surprise by the assertive gesture, the mushroom lady lets out a sharp gasp which turns into a high-pitched orgasmic shriek as you powerfully unload into her, her rear possessively clenching all over your cock in blind instinctual mating glee, hungrily squeezing out all the semen she can out of you and submissively taking in your seed as it prodigally gushes into her.",
+                                    "For a moment, the two of you remain frozen in the vulgar sexual posture, the matango's muscular ass gripping your length too strongly for you to move as you're getting drained of your cum in nice, long, blissful spurts, your mutual high letting you both enjoy your climax to the fullest in mindless rapture...",
+                                    "ChangeImageLayer", "Expression", "3", "Tasty", "ChangeImageLayer", "Blush", "3", "Blush",
+                                    "Then, as her insides relax little by little, you lightly shift in and out of her for good measure, the rubbing of your dick against her inner walls pleasurably milking out a last few dribbles out of your manhood and coaxing out a last few weak slutty moans out of her.",
+                                    "ChangeImageLayer", "Expression", "3", "Gasping",
+                                    "When you eventually let go of her, she limply falls forward in exhaustion and euphoria after the frenetic rutting you gave her, her rooted form keeping her upright, but with her seeded ass showily bulging out, letting you appreciate your handiwork as some of the fruit of your generous ejaculation leaks out of her, giving you quite the showy sight as you step back to regain your breathing after the intense sex.",
+                                	"ChangeSensitivity", "Sex", "5",
+                                	"ChangeFetish", "Ass", "5",
+                                    "IfPlayerSpiritGone", "TooMuchMatangoSex",
+                                    "ChangeImageLayer", "Expression", "3", "Shy", "PlayVisualEffect2", "BlindingFlash", "Monsters/Matango/CG/MatangoCG_Haze.png",
+                                    "... But as you take a reflexive gulp of air, you're reminded once more that you're completely surrounded by matango spores, the aphrodisiac cloud you're swimming in keeping you as readily hard as ever while a small, timid voice draws your attention.",
+                                    "ChangeImageLayer", "Expression", "5", "Panic", "ChangeImageLayer", "Blush", "5", "BlushLight",
+                                    "Speak", "Skittish Matango",
+                                    "Hum... M-M-Maybe me next?",
+                                    "Your gaze instinctively directing itself to the origin of the sound, you see that it came from what seems to be the shyest resident of the bunch, the modest mushroom lady shifting in place in a show of hesitation belied by the strong blush of anticipation on her cheeks and by the wet arousal visibly trickling between her legs, letting you be sure that she's more than looking forward to your attention even as she coyly looks away and adds.",
+                                    "ChangeImageLayer", "Expression", "5", "Submissive", "ChangeImageLayer", "Blush", "5", "Blush",
+                                    "Speak", "Skittish Matango",
+                                    "I-If you want, w-we can f-fuck and k-kiss... r-romantically?",
+                                    "ChangeImageLayer", "Expression", "5", "Loving",
+                                    "As her lips move from her speech, drawing your attention to them, you notice that they look to be {i}very{/i} soft, making you wonder how it would feel to have sex with her while partaking in an all-out feverish lovey-dovey makeout...",
+                                    "Menu", "ShuffleMenu",
+                                     "Stop!!! (Willpower)",
+                                     "More sex!!!",
+                                     "More sex!!!",
+                                     "More sex!!!",
+                                    "EndLoop"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "Stop!!! (Willpower)",
+                  	"theScene": [
+                                    "StatCheck",
+                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Mushroom Head", "5",
+        	                         "Willpower", "20", "That's enough!",
+        	                         "Fail", "More sex!!!"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "More sex!!!",
+                  	"theScene": [   "ChangeImageLayer", "ImageSetDontCarryOver", "5", "SexCG", "ChangeImageLayer", "Blush", "5", "Blush",
+                                    "ChangeImageLayer", "Expression", "5", "Panic",
+                                    "Your now completely aphrodisiac-soaked mind finding no reason whatsoever to refuse the cute matango's advances, you go straight for her with eager strides while her peers giggle and coo in approval of your unceasingly indulgent behavior, the current object of your infatuated affections letting out a stammer of panic as she watches you approach fast and assertively grab her shapely face between your hands.",
+                                    "ChangeImageLayer", "Expression", "5", "Shy",
+                                    "However, her agitation quickly quiets down when you swiftly bring your mouth to hers and catch her into a loving liplock, the red-capped woman exhaling a mellow gasp that melts into a happy sigh as she promptly yields to the romantic gesture and returns it by fondly taking hold of your own face with her graceful fingers.",
+                                    "ChangeBGM", "music/Loss/BGM03_Uncanny light.mp3",
+                                    "Rapidly getting into the makeout, she quickly moves on from just receiving your kisses to passionately returning them, her tongue soon energetically entangling with yours while she leans further into you, which lets you find out that her lips are indeed exquisitely delicate, their petal-like gentleness and sweetness lavishing your sense of taste with uniquely intoxicating floral sensations.",
+                                    "ChangeImageLayer", "Expression", "5", "Fantasizing",
+                                    "Within moments, the previously spazzing monster girl is now letting herself be intimately tender with you, her hands languorously sliding from the sides of your face down to your back in a touchy-feely hug, allowing you to fully appreciate the exceptional softness of her skin, especially as her abdomen incidentally comes into contact with your dick, the feeling of its tip poking into her bellybutton making her shiver expectantly.",
+                                    "ChangeImageLayer", "Expression", "5", "Shy",
+                                    "Pulling out of the kiss with a heated breath while still amorously keeping you in her embrace, she shyly looks away, as if nervous about the idea of going all the way with you, though the blush of deep arousal that plainly shows on her visage belies any second thoughts she might be having as she lasciviously speaks up.",
+                                    "Speak", "Skittish Matango",
+                                    "Y-You can go ahead, now... Please.♥︎",
+                                    "With that needy last word, she wiggles slightly in place to let her legs frame your own, the position coaxing you into aligning your cock with her waiting sex, even though you don't need any encouragement to answer her request in your currently thoroughly horny state, showing no hesitation in allowing your still completely stiff manhood to slide into the confines of your romantically inclined lover.",
+                                    "ChangeImageLayer", "Expression", "5", "Drunk",
+                                    "Unsurprisingly, your rigid shaft has no trouble slipping within her wet lower lips, and her demure expression devolves all over again into a lecherous smile as she hums contently from the insertion, the pleasure driving her to pull you back into a downright possessive kiss while instinctively starting to shift her hips against yours with welcoming squeezes of her pussy, which proves to be just as wonderfully soft and smooth as the rest of her body.",
+                                    "ChangeImageLayer", "Expression", "5", "Shy",
+                                    "Immediately enticed by the luxurious texture of the matango's delicate folds, you start moving at a slow but intense tempo that seems to suit her just fine judging by the way she alluringly moans and sighs as your erection scrapes her inner walls, her gentle receptiveness quickly immersing you in a vacant euphoria of metronome-like thrusting.",
+                                    "ChangeImageLayer", "Expression", "5", "Drunk", "PlayVisualEffect2", "BlindingFlash", "Monsters/Matango/CG/MatangoCG_Haze.png",
+                                    "Drunkenly, your lustful partner redoubles the hot and heavy makeout under the pleasure that fills you both, covering your mouth and the rest of your face with loving smooches which, along with the inebriating spores continually floating out of her and the rest of her roommates, keep you afloat in aphrodisiac ecstasy, driving you to mindlessly keep swinging your hips while returning her kisses for both your joy and hers.",
+                                    "ChangeImageLayer", "Expression", "5", "Gasping",
+                                    "At this smoothly steady pace, you feel like you could keep going forever, just affectionately basking in the tender delights of the sweet mushroom woman for hour upon hour... And yet, with your resistance having been considerably worn down by the back-to-back sex you've been indulging in, you can already feel another orgasmic surge rise in your loins, and your sputtering mind can hardly come up with a reason to hold it back...",
+                                    "For that matter, though, it doesn't look like the Skittish Matango herself has much endurance left, her pants and gasps having gotten ever louder and sharper with every minute, all the while she's been needily pressing herself against you and feverishly smooching you with rising urgency, gazing at you with amorously hazy eyes while her pussy squeezes at your dick in a silent request for you to cum.",
+                                    "ChangeImageLayer", "Expression", "5", "Loving",
+                                    "Too woozily intoxicated to even consider doing otherwise, you gladly grant your lover her wish and firmly hug her back as you gently hilt yourself within her, the two of you sharing an intimately comfy hug as you indulgently let yourself go, once more giving a blissful release to your aphrodisiac-soaked amped-up libido.",
+                                    "PlayerOrgasm", "1", "ChangeImageLayer", "Expression", "5", "Tasty", "ChangeImageLayer", "Blush", "5", "BlushHeavy", "ChangeImageLayer", "Semen", "5", "Semen",
+                                    "With a shared ecstatic sigh into each other's mouth, you cum together, your mutual embrace tightening into romantic body-to-body squishing as your semen flows liberally into the matango's waiting pussy, the smooth orgasm filling you with a warm heat that euphorically melts through you from head to toe, all the while your red-capped partner closes her eyes to better enjoy the tender climax with happy shivers.",
+                                	"ChangeSensitivity", "Sex", "5",
+                                	"ChangeFetish", "Kissing", "5",
+                                    "ChangeImageLayer", "Expression", "5", "Shy", "ChangeImageLayer", "Blush", "5", "Blush",
+                                    "Feeling wondrously content and satiated, you take a minute to just appreciate the moment and stay snugly in her arms, which she seems perfectly fine with judging by the dreamy smile on her lips, though as she opens her eyes and takes a glance over your shoulder, she lets out a little giggle and speaks up.",
+                                    "Speak", "Skittish Matango",
+                                    "Th-Thank you, that was... {i}amazing{/i}...♥︎ But I think someone else is waiting for you now.♥︎",
+                                    "ChangeImageLayer", "ImageSetDontCarryOver", "5", "Normal",
+                                    "ChangeImageLayer", "Expression", "4", "Disgust",
+                                    "Nodding behind you, she points to the last remaining matango who gives the two of you a distasteful frown, and scoffs.",
+                                    "Speak", "Prickly Matango",
+                                    "What, I guess it's my turn, now? ... Fine, if you want to, but don't expect me to be all lovey-dovey with you, on the contrary... Though maybe a pervert like you is into that, too.",
+                                    "As you regretfully part from the Skittish Matango who gives you an encouraging pat on the chest, you ask yourself if you would indeed be up for that... Or at least, you {i}try{/i} to, but your mind is now completely saturated with a pink aphrodisiac haze that makes it harder to think than ever, especially as you pull out and find out that your cock is harder than ever, and also... bigger? Unless it's just your imagination or confused senses?",
+                                    "ChangeImageLayer", "Expression", "4", "Concern",
+                                    "Regardless, you turn to the Prickly Matango who gazes at you with disdain... yet also with something like keen want as her stare errs towards your raging cock, her barbed behavior mixed with her barely disguised interest holding a kind of appeal that makes you wonder if you would be into what she's offering... assuming your much-taxed endurance can hold up.",
+                                    "IfPlayerSpiritGone", "TooMuchMatangoSex",
+                                    "Menu", "ShuffleMenu",
+                                     "Stop!!!! (Willpower)",
+                                     "More sex!!!!",
+                                     "More sex!!!!",
+                                     "More sex!!!!",
+                                     "More sex!!!!",
+                                    "EndLoop"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "Stop!!!! (Willpower)",
+                  	"theScene": [
+                                    "StatCheck",
+                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Mushroom Head", "5",
+        	                         "Willpower", "15", "That's enough!",
+        	                         "Fail", "More sex!!!!"
+                                ]
+              	},
+
+
+              	{
+                  	"NameOfScene": "More sex!!!!",
+                  	"theScene": [
+                                    "ChangeImageLayer", "Expression", "4", "Disgust",
+                                    "Again, any hangup or restraint in your mind fizzles out as you unthinkingly go for your new partner who emphatically rolls her eyes with a sigh at your continued show of wanton lust, but doesn't oppose your advance in any way, instead giving you a witheringly fixed stinkeye as you come to her, until you've reached her and get ready to greedily continue your indulgent sex marathon with yet another of the alluring monster women.",
+                                    "ChangeImageLayer", "ImageSetDontCarryOver", "4", "SexCG",
+                                    "ChangeImageLayer", "Expression", "4", "Disgust",
+                                    "... At which point she surprises you when, instead of just letting you fuck her like the rest of the matangos, she reaches for your shoulders and grips them firmly, before swinging her body forward and impaling herself straight onto your dick with a sneer!",
+                                    "ChangeImageLayer", "Expression", "4", "Concern",
+                                    "Speak", "Prickly Matango",
+                                    "Hah, did you think I was just going to stand there and take it like the rest?",
+                                    "With your dick having gotten abruptly engulfed by her wet pussy, your woozy senses belatedly process what is happening to you, and you can't help but let out a yelp as her insides predatorily close in on you, her inner walls turning out to be particularly powerful, and also covered with what feels like a myriad of small, tough pointy nubs, the barbel-like filaments slightly digging all at once into your cock!",
+                                    "Thankfully, the protrusions are soft enough not to actually hurt you, but alongside the muscular pressure of your assertive lover's insides, they are sharp enough to give you some {i}strong{/i} stimulation, the quasi-pain doing a number on your vulnerably sensitized manhood, especially after the languorously tender sex you've just had, the contrast making the strange sensation all the more impactful!",
+                                    "ChangeImageLayer", "Expression", "4", "Shy",  "ChangeImageLayer", "Blush", "4", "BlushLight",
+                                    "With backhanded sweetness, the venomous mushroom woman snickers at your befuddled reaction, and doesn't wait a second longer before starting to swing her hips, coaxing more indulgent gasps and cries out of you as she assails you with more of the feeling of her barbed folds rubbing and squeezing into you, instilling you with more sadistically intense pleasure!",
+                                    "Speak", "Prickly Matango",
+                                    "Mmhmhmmh... As you can see, I too have a somewhat one-of-a-kind anatomy among matangos, which usually catches adventurers unawares, and even puts off some of them...",
+                                    "You can't tell whether she's being unexpectedly self-conscious or just reveling in your shocked expression and rubbing it in, but she's certainly not slowing down in the slightest, seeming to actually be getting quite into the vigorous lovemaking herself, her face going redder and her breathing faster while her movements keep amping up and her face twists in giddiness, gradually turning into a surprisingly lascivious grin as she coos.",
+                                    "ChangeImageLayer", "Expression", "4", "Drunk",
+                                    "Speak", "Prickly Matango",
+                                    "You sure look like you're enjoying yourself, though.♥︎",
+                                    "Indeed, as she keeps frantically lavishing you with the exotically coarse sensation of her demandingly clenching pussy, you don't know whether it's as a consequence of all the aphrodisiac you're filled with, or due to a uniquely stimulating property of her protrusions, or because of a masochistic streak within you, but you can't deny that the fierce squeezing of her barbed sex feels {i}good{/i}...",
+                                    "Completely on the back foot against her rough ministrations, you can only stand there and keep receiving her sadistic love with defenseless pants and grunts, more pulses of rushing ecstasy coursing through you with each powerful slap of her pelvis against yours, the barrage of intense slamming bounces making short work of your copiously worn down resistance!",
+                                    "ChangeImageLayer", "Expression", "4", "Fantasizing",  "ChangeImageLayer", "Blush", "4", "Blush",
+                                    "Already, you can feel another orgasm approach, and with the frenzied pace your prickly partner is going at, the same seems to go for her, the previously deadpan monster girl now gleefully panting and moaning as she triumphantly takes in your agonizingly aroused appearance and huffs out.",
+                                    "Speak", "Prickly Matango",
+                                    "Oooooh.♥︎ You're already close, aren't you?♥︎ You naughty failure of an adventurer.♥︎",
+                                    "ChangeImageLayer", "Expression", "4", "Gasping",
+                                    "Despite her nasty words, she looks to be on cloud nine, the tempo of her hip swings accelerating to a frenetic crescendo with the clear intent of going for the kill, fanning up the stinging flames of your lust to a scalding apex as she possessively hooks her arms around your neck and shouts out.",
+                                    "ChangeImageLayer", "Expression", "4", "Drunk",  "ChangeImageLayer", "Blush", "4", "BlushHeavy",
+                                    "Speak", "Prickly Matango",
+                                    "Go ahead, pervert!♥︎ Cum!♥︎ Cum without holding anything back!♥︎♥︎♥︎",
+                                    "PlayerOrgasm", "1",  "ChangeImageLayer", "Semen", "4", "Semen",
+                                    "With your flagging endurance completely ground to dust by her merciless lovemaking, there's nothing you can do but yield to her demand as she hilts you completely within herself with a blissful cry, her vice-like insides clenching with relentless force all over your dick which surrenders its seed with a powerful, hot ejaculation, spraying her barbed folds with indulgent force despite your exhaustion.",
+                                    "ChangeImageLayer", "Expression", "4", "Fantasizing", "ChangeImageLayer", "Blush", "4", "Blush",
+                                    "Your vision swaying and blinking, you reel under the assault of strange pleasure while the Prickly Matango delights in your defeated expression as much as in the feeling of your battered cock filling her with awaited semen, the mean red-capped woman inarticulately swooning as she basks in her predatorily claimed meal.",
+                                	"ChangeSensitivity", "Sex", "5",
+                                	"ChangeSensitivity", "Pain", "5",
+                                  "ChangeImageLayer", "ImageSetDontCarryOver", "4", "Normal",
+                                    "ChangeImageLayer", "Expression", "4", "Concern", "ChangeImageLayer", "Blush", "4", "",
+                                    "And then, somehow, with confounding immediacy, her euphoric mien melts away and her face returns to its previous cold staring as she disentangles herself from you, letting go of your manhood which energetically springs free of its abusively loving prison while she scoffs.",
+                                    "ChangeImageLayer", "Expression", "4", "Disgust",
+                                    "Speak", "Prickly Matango",
+                                    "Alright, you got your fuck, now go on your way.",
+                                    "Blinking in baffled dizziness, you staggeringly step away from her, your mind more lost than ever in confusion, lust, and exertion, your head spinning as you struggle to recover from your climax and try to regain your bearings.",
+                                    "IfPlayerSpiritGone", "TooMuchMatangoSex",
+                                    "PlayVisualEffect2", "BlindingFlash", "Monsters/Matango/CG/MatangoCG_Haze.png",
+                                    "All around you, you see that the mushroom ladies surrounding you seem to have recovered from their previous one-on-one time with you, and are more eager than ever to continue, the cloud of pinkish mist resulting from their aphrodisiac spores' emissions having now turned into a veritable fog through which you can yet make out their red eyes hungrily staring at you and your still erect manhood.",
+                                    "ChangeImageLayer", "Expression", "1", "Excited",
+                                    "Speak", "Cheerful Matango",
+                                    "Oh my, this guy just keeps going.♥︎",
+                                    "ChangeImageLayer", "Expression", "2", "Fantasizing",
+                                    "Speak", "Horny Matango",
+                                    "Yeah, he got a round with each of us, and yet, he's still raring to go.♥︎",
+                                    "ChangeImageLayer", "Expression", "3", "Shy",
+                                    "Speak", "Curious Matango",
+                                    "And his cock is definitely feeling it, too.♥︎",
+                                    "SwapLineIf", "Perk",
+                                    "Mushroom Head", "Reflexively looking down at your member in reaction to her words, you see that you were previously not mistaken, and that it is indeed {i}even bigger{/i} than it initially was, though not staggeringly so, the nonetheless surprising increase in size being most likely due to the recent abundance of matango sex, and probably only momentary, your nonplussed realization prompting one of your previous lovers to chime in.",
+                                    "", "Reflexively looking down at your member in reaction to her words, you have the surprise of seeing that you were previously not mistaken, and that it is indeed {i}bigger{/i} than before, especially at the tip, your realization prompting the kissy matango to chime in.",
+                                    "EndLoop",
+                                    "ChangeImageLayer", "Expression", "5", "Panic", "ChangeImageLayer", "Blush", "5", "BlushLight",
+                                    "Speak", "Skittish Matango",
+                                    "SwapLineIf", "Perk",
+                                    "Mushroom Head", "O-Oh, I didn't notice you already had a, hum, a {i}mushroom head{/i}... Th-That explains why it felt so good...♥︎",
+                                    "", "O-Oh, y-you're starting to get a, hum, a {i}mushroom head{/i}... Th-That happens to humans when they have, hum, a lot of s-sex with matangos... I-It's not dangerous or permanent, b-but if you don't want it, you should probably stop now... Unless you want to keep going?♥︎",
+                                    "EndLoop",
+                                    "ChangeImageLayer", "Expression", "4", "Concern",
+                                    "ChangeImageLayer", "Expression", "5", "Shy", "ChangeImageLayer", "Blush", "5", "Blush",
+                                    "Speak", "Prickly Matango",
+                                    "Though heads up, Super Pervert: if you keep going now, I'm pretty sure it's a trip back to Town or wherever you came from for you. Unless those balls of yours can really keep churning out cum like nobody's business, you can bet we're going to drain them dry, because if you don't take that last chance to bail, you're gonna be fucking a {i}lot{/i}.",
+                                    "ChangeImageLayer", "Expression", "3", "Fantasizing",
+                                    "ChangeImageLayer", "Expression", "4", "Drunk", "ChangeImageLayer", "Blush", "4", "Blush",
+                                    "Her libido visibly resurfaces at the horny mention, her face becoming just as lustful as the rest of her roommates', all the room's residents certainly looking like they would be up for {i}even more sex{/i}, though they stay silent as they await your decision, the break in their seductive invitations allowing you to keep a modicum of clarity of mind as you think about what to do, though your aphrodisiac-soaked brain still makes it hard to decide lucidly...",
+                                    "Menu", "ShuffleMenu",
+                                     "More sex!!!!!",
+                                     "More sex!!!!!",
+                                     "More sex!!!!!",
+                                     "More sex!!!!!",
+                                     "More sex!!!!!",
+                                     "Stop!!!!! (Willpower)",
+                                    "EndLoop"
+                                ]
+
+              	},
+
+              	{
+                  	"NameOfScene": "Stop!!!!! (Willpower)",
+                  	"theScene": [
+                                    "StatCheck",
+                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Mushroom Head", "5",
+        	                         "Willpower", "15", "That's enough!",
+        	                         "Fail", "More sex!!!!!"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "More sex!!!!!",
+                  	"theScene": [
+                                    "In the end, you don't even need to think about it: why would you pass up on an opportunity for {b}more{/b} matango sex!?",
+                                    "ChangeBGM", "music/Unknown/[BGM] 09 hypnotism.mp3",
+                                    "ChangeImageLayer", "Expression", "5", "Submissive", "ChangeImageLayer", "Expression", "1", "Loving",
+                                     "ChangeImageLayer", "Blush", "1", "BlushHeavy", "ChangeImageLayer", "Blush", "2", "BlushHeavy", "ChangeImageLayer", "Blush", "3", "BlushHeavy", "ChangeImageLayer", "Blush", "5", "BlushHeavy",
+                                    "Accordingly, you completely discard your inhibitions and go for the nearest of your assembled fungal lovers for a repeat performance. In your now completely blissed-out indulgent state of lustful frenzy, you don't even fully register which one you're fucking, but it feels just as {i}good{/i} for both of you as before, if not more, leading up to another wonderful ejaculation as you fill her up with {i}more{/i} of your eager seed...",
+                                    "PlayerOrgasm", "1",
+                                    "But despite the delightful ecstasy and luxurious afterglow, you only take the barest of breaks before letting go of your avid partner and immediately going for the next one whom you rut with just as much vigor as before, your body filled with scalding mind-fogging arousal and your movements turned ungainly by the unreasonable amount of sex you've been having, all the while your dick somehow remains more raring to go than ever.",
+                                    "PlayerOrgasm", "1", "ChangeImageLayer", "Blush", "4", "BlushHeavy",
+                                    "Like a beast in heat, you go from one horny woman to another, prodigally watering each of them with your hot semen, your cock turned into a tool for pleasuring matangos and for giving you so much pleasure in return as well, leaving you feeling like you could never get enough of their smooth bodies, delectable aphrodisiacs, and perfect pussies, tits, and asses, matangos truly being the most amazing monster girls in existence...",
+                                	"ChangeSensitivity", "Sex", "10",
+                                	"ChangeSensitivity", "Seduction", "5",
+                                 	"ChangeFetish", "Monstrous", "5",
+                                    "SwapLineIf", "Perk",
+                                      "Mushroom Head", "",
+                                      "", "|f|GivePerk|/|Mushroom Head|n|",
+                                    "EndLoop",
+                                    "PlayerOrgasm", "1",
+                                    "Eventually, after one more orgiastic cumshot, you draw back, loudly breathing, and as you cast your gaze over the room, you realize that you somehow seem to have fucked each of its occupants into a stupor, all of the lewd red-capped beauties having been left panting, moaning, or otherwise recuperating from all the sex they've had with you, your thus victorious marathon truly being no mean feat...",
+                                    "IfPlayerSpiritGone", "TooMuchMatangoSex",
+                                    "ChangeImageLayer", "Expression", "3", "Submissive", 
+                                    "Speak", "Curious Matango",
+                                    "Oooh...♥︎ Aaaah...♥︎ Goddess, I didn't think it was possible for a human to outfuck an entire cluster of matangos and still be standing...♥︎",
+                                    "ChangeImageLayer", "Expression", "2", "Shy", "ChangeImageLayer", "Blush", "2", "Blush",
+                                    "Speak", "Horny Matango",
+                                    "I know, right?♥︎ What a stud...♥︎",
+                                    "ChangeImageLayer", "Expression", "5", "Submissive", "ChangeImageLayer", "Blush", "5", "Blush",
+                                    "Speak", "Skittish Matango",
+                                    "I-I don't think I can't take any more, though, or I'm just going to pass out...♥︎",
+                                    "ChangeImageLayer", "Expression", "1", "Excited", "ChangeImageLayer", "Blush", "1", "Blush",
+                                    "Speak", "Cheerful Matango",
+                                    "Same here... But feel free to come back anytime, okay?♥︎",
+                                    "ChangeImageLayer", "Expression", "4", "Fantasizing", "ChangeImageLayer", "Blush", "4", "Blush",
+                                    "Speak", "Prickly Matango",
+                                    "Yeah, so we can make a mess out of you all over again.♥︎",
+                                    "Blearily, you nod, and stagger back towards the exit like a sleepwalker, barely remembering to gather your belongings on your way out, and fumbling with the door for a moment before finally managing to turn the handle and step back out, the lascivious coos, sighs, and grateful compliments of the sexy mushroom women seeing you out.",
+                                    "ChangeBGM", "music/Forest Dungeon/Stalwick-_Forest_Dungeon-Lurking.mp3",
+                                    "IfChoice", "1", "AncillaHere", "AncillaExitTotalFuck",
+                                    "JumpToScene", "MatangoLeave"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "AncillaExitTotalFuck",
+                  	"theScene": [
+                                    "DisplayCharacters",
+                                     "1",
+                                    "EndLoop",
+                                    "ChangeImageLayer", "Expression", "1", "Shock",
+                                    "Blundering out of the matango chamber, you have the surprise of catching Ancilla in the middle of walking away, the head maid nevertheless swiftly turning on her heel back towards you as she hears the door open...",
+                                    "ChangeImageLayer", "Blush", "1", "Blush", "ChangeImageLayer", "Expression", "1", "Embarrassed",
+                                    "... and sporting a rare expression of surprise along with a flustered blush as she takes in your nude, aphrodisiac-soaked, and {i}still monumentally erect{/i} form, the sheep lady stuttering.",
+                                    "Speak", "Ancilla",
+                                    "[TPN]-[ThePlayerName]? I didn't believe you would actually endure for... quite so long, and still be-",
+                                    "ChangeImageLayer", "Blush", "1", "", "ChangeImageLayer", "Expression", "1", "Base",
+                                    "Quickly becoming aware of how she's behaving, she immediately makes an effort to get a grip on herself, recovering her usual propriety in a heartbeat and trading her flushed stammering for a cool nod as she instead goes on to calmly comment.",
+                                    "Speak", "Ancilla",
+                                    "That is... frankly impressive. Libidinously indulgent, but impressive.",
+                                    "Approaching you with steady steps, she slips a hand into her clothes, and for a moment, you wonder if she's going to undress for {i}more{/i} fucking... But you quickly realize that it's just your lust-fogged mind speaking as she instead takes out a bottle of water for you to get rehydrated with, the no-nonsense woman clearly having no intent of partaking in more 'libidinous indulgence' at the moment.",
+                                    "Speak", "Ancilla",
+                                    "Let us get you refreshed and back to a more composed disposition, if you will.",
+                                    "IfChoice", "6", "AncillaMatangoTotalFuck", "AncillaExitCont",
+                                    "GetEventAndChangeProgress", "Forest Dungeon Nexus", "1",
+                                    "SetChoice", "6", "AncillaMatangoTotalFuck",
+                                    "JumpToScene", "AncillaExitCont"
+                                ]
+              	},
+
+              	{
+                  	"NameOfScene": "MatangoEnd",
+                  	"theScene": [
+                                    "SetChoice", "1", "",
+                                    "SetChoice", "2", "",
+                                    "SetChoice", "3", "",
+                                    "JumpToEventThenScene", "Forest Dungeon Nexus", "NexusMenu"
+                                ]
+              	},
+
+                {
+                    "NameOfScene": "EventBroke",
+                    "theScene": [
+                                    "The event broke, but don't panic! Just let Threshold know."
+                              ]
+                }
+
+
+          	]
+}

@@ -1,0 +1,689 @@
+{
+    "name": "ManticoreCombatEvent",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Manticore",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                      "NameOfScene": "Intro",
+                      "theScene": [ "ChoiceToDisplayMonster", "1",
+                                  "SetChoice", "2", "",
+
+                                  "IfProgressEqualsOrGreater", "3", "GiveSexSkill",
+                                  "JumpToScene",
+                                  "IntroText"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "GiveSexSkill",
+                      "theScene": [
+                                  "GivePerkToMonster", "Undeniable Pleasure",
+                                  "GivePerkToMonster", "Pacing",
+                                  "GivePerkToMonster", "Sex Expert",
+                                  "ChangeMonsterLevel", "5",
+                                  "ChangeMonsterErosDrop", "300",
+                                  "ChangeMonsterExpDrop", "100",
+                                  "ChangeMonsterFetish", "Sex", "-25",
+                                  "ChangeMonsterSensitivity", "Sex", "-10",
+                                  "ChangeMonsterMaxArousal", "100",
+                                  "ChangeMonsterAllure", "5",
+                                  "ChangeMonsterWill", "5",
+                                  "IfChoice", "7", "baited", "addSkills",
+                                  "GetEventAndIfChoice", "Sleeping Manticore", "23", "KidnappingYou", "KidnappingIntro",
+                                  "ChangeImageLayer", "Expression", "SmugSharp",
+                                  "[DisplayMonsterChoice] prowls towards you with a smug grin and an evil laugh...",
+                                  "ChangeImageLayer", "Expression", "Predatory",
+                                  "FocusedSpeaks",
+                                  "I can't wait to see the look on your face when I pay you back for fucking me senseless so many times...",
+                                  "JumpToScene",
+                                  "KaiaBuffs"
+                                ]
+                    },
+                          {
+                            "NameOfScene": "addSkills",
+                            "theScene": [
+                                        "GiveSkillToMonster", "Wild Ride",
+                                        "GiveSkillToMonster", "Churning Squeeze",
+                                        "GiveSkillToMonster", "Stinging Love",
+                                        "GiveSkillToMonster", "Loving Venom Injection",
+                                        "GiveSkillToMonster", "Restrained Insert",
+                                        "GetEventAndIfChoice", "Sleeping Manticore", "23", "KidnappingYou", "KidnappingIntro",
+                                        "JumpToScene", "IntroText"
+                                      ]
+                          },
+
+
+                      {
+                        "NameOfScene": "KidnappingIntro",
+                        "theScene": [
+                                      "ApplyStatusEffect",   "Manticore Pin", "ChangeImageLayer", "Expression", "SmugSharp",
+                                      "[DisplayMonsterChoice] leers down at you with a smug grin, her claws pressing down on you, keeping you pinned to the ground.",
+                                      "JumpToScene", "KaiaBuffs"
+                                  ]
+                      },
+
+
+                    {
+                      "NameOfScene": "IntroText",
+                      "theScene": [ "ChangeImageLayer", "Expression", "Base",
+                                    "[DisplayMonsterChoice] prowls towards you with a smug grin...",
+                                      "IfChoice", "5", "GoingHard", "Intropt3",
+                                    "IfChoice", "4", "BeatenOnce", "Intropt2"
+
+                                ]
+                    },
+                          {
+                            "NameOfScene": "Intropt2",
+                            "theScene": [  "SetChoice", "5", "GoingHard",
+                                          "ChangeImageLayer", "Expression", "SmugSharp",
+                                          "FocusedSpeaks",
+                                          "I'm not going to go easy on you this time!",
+                                          "JumpToScene", "KaiaBuffs"
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "Intropt3",
+                            "theScene": [ "ChangeImageLayer", "Expression", "SmugSharp",
+                                          "FocusedSpeaks",
+                                          "I hope you're ready to get ravished!",
+                                          "JumpToScene", "KaiaBuffs"
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "KaiaBuffs",
+                            "theScene": [    "ChangeMonsterLevel", "5",
+                                            "ChangeMonsterErosDrop", "300",
+                                            "ChangeMonsterExpDrop", "100",
+                                            "ChangeMonsterMaxArousal", "50",
+                                            "ChangeMonsterPower", "5",
+                                            "ChangeMonsterTech", "15",
+                                            "ChangeMonsterAllure", "5",
+                                            "ChangeMonsterWill", "5",
+                                            "ChangeMonsterStatusEffectResistances", "Aphrodisiac", "25",
+                                            "ChangeMonsterStatusEffectResistances", "Stun", "25",
+                                            "ChangeMonsterStatusEffectResistances", "Restraints", "10",
+                                            "ChangeMonsterStatusEffectResistances", "Sleep", "50",
+                                            "ChangeMonsterSensitivity", "Magic", "-10",
+                                            "ChangeMonsterSensitivity", "Pain", "-15",
+                                            "GivePerkToMonster", "Monstrous Master"
+
+
+                                      ]
+                          },
+
+                    {
+                        "NameOfScene": "Manticore's Sting",
+                        "theScene": [ "SetPostName", " - Manticore's Sting",
+                                    "ChangeImageLayer", "Expression", "PredatoryIntense", "ChangeImageLayer", "Extra", "Stinger",
+                                    "FocusedSpeaksSkill",
+                                    "SwapLineIf", "Random",
+                                      "'You'd better dodge this!♥' [DisplayMonsterChoice] drops down onto all fours with a low growl and flashes you a smug grin before lunging forward while her tail darts towards you, and a terrifying scorpion stinger extends out from the tail's previously inviting opening!",
+                                      "'Don't look too scared!♥' [DisplayMonsterChoice] drops down onto all fours with a low growl and flashes you a smug grin before lunging forward while her tail darts towards you, and a terrifying scorpion stinger extends out from the tail's previously inviting opening!",
+                                      "[DisplayMonsterChoice] drops down onto all fours with a low growl and flashes you a smug grin before lunging forward while her tail darts towards you, and a terrifying scorpion stinger extends out from the tail's previously inviting opening!",
+                                      "[DisplayMonsterChoice] drops down onto all fours with a low, ominous growl and flashes you a predatory grin before lunging forward while her tail darts towards you, and a terrifying scorpion stinger extends out from the tail's previously inviting opening!",
+                                    "EndLoop",
+                                    "SetPostName",
+                                    "",
+                                    "IfPlayerStunnedByParalysis", "ParastunnedSting",
+                                    "Menu",
+                                      "Try to catch her tail! (Power) [StatCheckPost]",
+                                      "Try to dodge her stinger! (Technique) [StatCheckPost]",
+                                      "Panic!",
+                                    "EndLoop"]
+                    },
+                            {
+                              "NameOfScene": "Try to catch her tail! (Power) [StatCheckPost]",
+                              "theScene": [    "StatCheck",
+                                                "Power",
+                                                "20",
+                                                "Caught tail!",
+                                                "Fail",
+                                                "FailedTailCatch."
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "FailedTailCatch.",
+                                    "theScene": [  "But the tail easily slips through your grip!",
+                                                  "JumpToScene",
+                                                      "HitByTail."
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "Caught tail!",
+                                    "theScene": [  "ChangeImageLayer", "Expression", "Shock",
+                                                  "You catch the terrifying stinger in a powerful grip before it strikes you, and [DisplayMonsterChoice] looks up at you in baffled shock.",
+                                                  "ApplyStatusEffectToMonster", "Spank", "ChangeImageLayer", "Extra", "", "ChangeImageLayer", "Expression", "Pouty",
+                                                  "[DisplayMonsterChoice] yelps in surprise as you pull on her tail, flipping her from her animalistic crouch onto her back, dazing her!"
+                                              ]
+                                  },
+                            {
+                              "NameOfScene": "Try to dodge her stinger! (Technique) [StatCheckPost]",
+                              "theScene": [    "StatCheck",
+                                                "Technique",
+                                                "15",
+                                                "Dodged Tail!",
+                                                "Fail",
+                                                "FailedToDodgeTail."
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "FailedToDodgeTail.",
+                                    "theScene": [  "But you can't avoid [DisplayMonsterChoice]'s terrifyingly fast attack!",
+                                                  "JumpToScene",
+                                                      "HitByTail."
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "Dodged Tail!",
+                                    "theScene": [  "ChangeImageLayer", "Extra", "", "ChangeImageLayer", "Expression", "Pouty",
+                                                  "You deftly avoid the terrifying stinger, and [DisplayMonsterChoice] leaps back to standing with an annoyed scoff."
+                                              ]
+                                  },
+                            {
+                              "NameOfScene": "Panic!",
+                              "theScene": [  "Locked with fear and indecision you don't do anything!",
+                                            "JumpToScene",
+                                                "HitByTail."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "ParastunnedSting",
+                              "theScene": [  "Your body is too wracked with paralysis to even move!",
+                                            "JumpToScene",
+                                                "HitByTail."
+                                        ]
+                            },
+
+                            {
+                              "NameOfScene": "HitByTail.",
+                              "theScene": [ "SetChoice", "2", "Hit",
+                                              "ApplyStatusEffect",   "Manticore's Venom", "ChangeImageLayer", "Expression", "SmugSharp",
+                                            "The stinger jabs you in the torso, instantly filling you with a strange numbness as [DisplayMonsterChoice] injects a large dose of paralytic venom into your body before hopping away with a laugh!",
+                                            "ChangeImageLayer", "Extra", ""
+                                        ]
+                            },
+
+
+
+
+
+
+              {
+                  "NameOfScene": "Pounce",
+                  "theScene": [ "SetPostName", " - Pounce", "ChangeImageLayer", "Expression", "PredatoryIntense",
+                              "FocusedSpeaksSkill",
+                              "SwapLineIf", "Random",
+                                "'You're mine!♥' [DisplayMonsterChoice] drops down onto all fours spreading her wings, and with a smug laugh she leaps at you claws first with terrifying speed!",
+                                "'It's so fun to play with my meals.♥' [DisplayMonsterChoice] drops down onto all fours spreading her wings, and with a smug laugh she leaps at you claws first with terrifying speed!",
+                                "[DisplayMonsterChoice] drops down onto all fours spreading her wings, and with a smug laugh she leaps at you claws first with terrifying speed!",
+                                "[DisplayMonsterChoice] drops down onto all fours spreading her wings, and with a fearsome roar she leaps at you claws first with terrifying speed!",
+                              "EndLoop",
+                              "SetPostName",
+                              "",
+                              "IfPlayerStunnedByParalysis", "ParastunnedPounce",
+                              "Menu",
+                                "Try to meet her pounce with a tackle! (Power) [StatCheckPost]",
+                                "Try to dodge her! (Technique) [StatCheckPost]",
+                                "Freeze up!",
+                              "EndLoop"]
+              },
+                      {
+                        "NameOfScene": "Try to meet her pounce with a tackle! (Power) [StatCheckPost]",
+                        "theScene": [    "StatCheck",
+                                          "Power",
+                                          "25",
+                                          "Tackled!",
+                                          "Fail",
+                                          "FailedTackle."
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "FailedTackle.",
+                              "theScene": [  "But you don't even manage to slow her down with your attempt!",
+                                            "JumpToScene",
+                                                "Pinned."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Tackled!",
+                              "theScene": [    "ApplyStatusEffectToMonster", "Pin", "ChangeImageLayer", "Expression", "Flustered",
+                                              "You crouch down as [DisplayMonsterChoice] hurtles towards you, and just before she reaches you, you slip underneath her taloned claws and tackle her waist, sliding several feet backwards before you turn her momentum against her, throwing her to the ground and leaving her flustered and speechless underneath you as you pin {i}her{/i} to the ground instead.",
+                                              "IfChoice", "3", "CounteredTackle", "endEvent",
+                                                "SetChoice", "3", "CounteredTackle",
+                                                "GetEventAndChangeProgress", "Sleeping Manticore", "5"
+                                        ]
+                            },
+                      {
+                        "NameOfScene": "Try to dodge her! (Technique) [StatCheckPost]",
+                        "theScene": [    "StatCheck",
+                                          "Technique",
+                                          "15",
+                                          "Dodged!",
+                                          "Fail",
+                                          "FailedToDodge."
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "FailedToDodge.",
+                              "theScene": [  "But you can't avoid [DisplayMonsterChoice] flinging herself at you!",
+                                            "JumpToScene",
+                                                "Pinned."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Dodged!",
+                              "theScene": [  "ChangeImageLayer", "Expression", "Pouty",
+                                            "You deftly avoid [DisplayMonsterChoice]'s attempt to pin you to the ground, and she leaps back to standing with an annoyed scoff."
+                                        ]
+                            },
+                      {
+                        "NameOfScene": "ParastunnedPounce",
+                        "theScene": [  "Your body is too wracked with paralysis to even move!",
+                                      "JumpToScene",
+                                          "Pinned."
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Freeze up!",
+                        "theScene": [  "Locked with fear and indecision you don't do anything!",
+                                      "JumpToScene",
+                                          "Pinned."
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Pinned.",
+                        "theScene": [
+                                        "ApplyStatusEffect",   "Manticore Pin", "ChangeImageLayer", "Expression", "SmugSharp",
+                                      "She crashes right into you, pinning you to the ground with a smug predatory grin!"
+                                  ]
+                      },
+
+
+
+
+                {
+                    "NameOfScene": "Tail Pussy Temptation",
+                    "theScene": [ "IfPlayerStunnedByParalysis", "Pounce",
+                                "SetPostName", " - Tail Pussy Temptation",  "ChangeImageLayer", "Expression", "Mocking",  "ChangeImageLayer", "Extra", "TailOpen",
+                                "FocusedSpeaksSkill",
+                                "SwapLineIf", "Random",
+                                    "'Go on, put it in.♥' [DisplayMonsterChoice] lewdly opens her drooling tail pussy revealing its churning insides, tempting you to plunge your cock inside the squirming orifice.",
+                                    "'Your cock knows what it wants better than you do.♥' [DisplayMonsterChoice] lewdly opens her drooling tail pussy revealing its churning insides, tempting you to plunge your cock inside the squirming orifice.",
+                                    "'You know you want this.♥' [DisplayMonsterChoice] teasingly spreads open her tail pussy with her claws, revealing its unnaturally moving insides, tempting you to plunge your dick into the churning orifice.",
+                                    "'Getting all hot and bothered? Well? Don't be shy.♥' [DisplayMonsterChoice] teasingly spreads open her tail pussy with her claws, revealing its unnaturally moving insides, tempting you to plunge your dick into the churning orifice.",
+                                "EndLoop",
+                                "SetPostName",
+                                "",
+                                "IfFetishLevelEqualOrGreater", "Manticore Venom", "25", "VenomCheck",
+                                "IfFetishLevelEqualOrGreater", "Monstrous", "25", "VenomCheck",
+                                "JumpToScene",
+                                "TailOfferMenu"]
+                },
+                          {
+                            "NameOfScene": "VenomCheck",
+                            "theScene": [    "IfFetishLevelEqualOrGreater", "Manticore Venom", "50", "VenomCheck2",
+                                              "IfFetishLevelEqualOrGreater", "Monstrous", "50", "VenomCheck2",
+                                          "Your entire body aches with anticipation at the sight of [DisplayMonsterChoice]'s dripping tail pussy, and you struggle to stay in control of your actions...",
+                                          "StatCheck",
+                                              "Temptation",
+                                              "10",
+                                              "PassOfferCheck",
+                                              "Fail",
+                                              "Fuck her tail."
+                                      ]
+                          },
+                                {
+                                  "NameOfScene": "VenomCheck2",
+                                  "theScene": [    "IfFetishLevelEqualOrGreater", "Manticore Venom", "75", "VenomCheck3",
+                                                    "IfFetishLevelEqualOrGreater", "Monstrous", "75", "VenomCheck3",
+                                                "Your entire body throbs with need at the sight of [DisplayMonsterChoice]'s dripping tail pussy, and you struggle to stay in control of your actions...",
+                                                "StatCheck",
+                                                    "Temptation",
+                                                    "15",
+                                                    "PassOfferCheck",
+                                                    "Fail",
+                                                    "Fuck her tail."
+                                            ]
+                                },
+                                      {
+                                        "NameOfScene": "VenomCheck3",
+                                        "theScene": [    "IfFetishLevelEqualOrGreater", "Manticore Venom", "100", "VenomCheckAddict",
+                                                          "IfFetishLevelEqualOrGreater", "Monstrous", "100", "VenomCheck4",
+                                                      "Your entire body throbs with need, and your cock twitches at the sight of [DisplayMonsterChoice]'s dripping tail pussy much to her amusement, and you struggle to not immediately fuck her inviting orifice...",
+                                                      "StatCheck",
+                                                          "Temptation",
+                                                          "20",
+                                                          "PassOfferCheck",
+                                                          "Fail",
+                                                          "Fuck her tail."
+                                                  ]
+                                      },
+                                            {
+                                              "NameOfScene": "VenomCheckAddict",
+                                              "theScene": [
+                                                            "IfFetishLevelEqualOrGreater", "Monstrous", "100", "VenomCheckInstantFail",
+                                                            "You gasp and whimper with need as your entire body throbs with burning need and your rigid cock twitches at the sight of [DisplayMonsterChoice]'s dripping tail pussy much to her amusement, and you struggle to not immediately fuck her inviting orifice...",
+                                                            "StatCheck",
+                                                                "Temptation",
+                                                                "25",
+                                                                "PassOfferCheck",
+                                                                "Fail",
+                                                                "Fuck her tail."
+                                                        ]
+                                            },
+                                            {
+                                              "NameOfScene": "VenomCheck4",
+                                              "theScene": [
+                                                            "You stare at [DisplayMonsterChoice]'s dripping tail pussy in a horny daze, whimpering with need as your entire body throbs with need for her unnatural orifice, leaving your rigid cock twitching much to [DisplayMonsterChoice]'s amusement, and you struggle to not immediately take up her invitation...",
+                                                            "StatCheck",
+                                                                "Temptation",
+                                                                "25",
+                                                                "PassOfferCheck",
+                                                                "Fail",
+                                                                "Fuck her tail."
+                                                        ]
+                                            },
+                                                  {
+                                                    "NameOfScene": "VenomCheckInstantFail",
+                                                    "theScene": [  "ApplyStance", "Tail Fuck",
+                                                                  "HitPlayerWith", "Tail Fucking", "ChangeImageLayer", "Expression", "SmugSharp",  "ChangeImageLayer", "Extra", "",
+                                                                  "You rush forward and eagerly plunge your manhood into [DisplayMonsterChoice]'s tail pussy without a second thought, lost in a horny daze as your entire body throbs with need for her the pleasure her unnatural orifice brings, and you moan blissfully as it gives your length a tight welcoming squeeze.[DamageToPlayer]"
+
+                                                              ]
+                                                  },
+
+
+
+                              {
+                                  "NameOfScene": "PassOfferCheck",
+                                  "theScene": [ "You manage to clear your head enough to decide what to do!",
+                                              "JumpToScene", "TailOfferMenu"]
+                              },
+                      {
+                          "NameOfScene": "TailOfferMenu",
+                          "theScene": [ "Menu",
+                                        "Fuck her tail.",
+                                        "Ignore Her.",
+                                      "EndLoop"]
+                      },
+                            {
+                                "NameOfScene": "Fuck her tail.",
+                                "theScene": [ 
+                                              "ChangeImageLayer", "ImageSetDontCarryOver", "TailSexCG",
+                                              "PlayMotionEffect", "CrashSmol",
+                                              "ApplyStance", "Tail Fuck",
+                                              "HitPlayerWith", "Tail Fucking", "ChangeImageLayer", "Expression", "SmugSharp",  "ChangeImageLayer", "Extra", "",
+                                              "You rush forward and plunge your manhood into [DisplayMonsterChoice]'s tail pussy, eager for the unspeakable pleasure it brings, and you moan blissfully as it gives your length a tight welcoming squeeze.[DamageToPlayer]"]
+                            },
+                            {
+                                "NameOfScene": "Ignore Her.",
+                                "theScene": [ "ChangeImageLayer", "Expression", "Base",  "ChangeImageLayer", "Extra", "",
+                                            "You ignore [DisplayMonsterChoice]'s tempting offer, and she gives you a slightly annoyed smirk as she slips back into a more combative stance."]
+                            },
+
+
+                  {
+                      "NameOfScene": "Penetrated",
+                      "theScene": [ "IfChoice", "7", "baited", "Penetrated2",
+                                  "IfProgressEqualsOrGreater", "3", "PenetratedItsATrap",
+                                  "ChangeImageLayer", "Expression", "Pleasured",
+                                  "FocusedSpeaks",
+                                  "SwapLineIf", "Random",
+                                    "'Eh?! H-Hold on wouldn't you rather use my taiiilll-!?♥'",
+                                    "'GHHH!? Mmmm,♥ H-Huh? N-No, I didn't make a face when you put it in!'",
+                                    "'Ahhh!♥ W-Wait! My tail will feel way better! J-Just pull out!'",
+                                  "EndLoop"]
+                  },
+                        {
+                            "NameOfScene": "PenetratedItsATrap",
+                            "theScene": [ "SetChoice", "7", "baited",
+                                        "GiveSkillToMonster", "Wild Ride",
+                                        "GiveSkillToMonster", "Churning Squeeze",
+                                        "GiveSkillToMonster", "Stinging Love",
+                                        "GiveSkillToMonster", "Loving Venom Injection",
+                                        "GiveSkillToMonster", "Restrained Insert",
+                                        "GetEventAndChangeProgress", "Sleeping Manticore", "5",
+                                        "ChangeImageLayer", "Expression", "SmugSharp",
+                                        "[DisplayMonsterChoice]'s pussy tightly squeezes your erection like a vice as you enter into it, the wet insides churning slowly around your cock, and [DisplayMonsterChoice] gives you a smug grin as you gasp in pleasure.",
+                                        "FocusedSpeaks",
+                                        "Mmmm,♥ hehehe, what? You didn't think I'd get used to getting fucked after all those times?",
+                                        "ChangeImageLayer", "Expression", "PredatoryIntense",
+                                        "FocusedSpeaks",
+                                        "Now I'm going to fuck {i}you{/i} into submission!"]
+                        },
+                        {
+                            "NameOfScene": "Penetrated2",
+                            "theScene": [ "ChangeImageLayer", "Expression", "SmugSharp",
+                                        "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                          "'Heheh, If you wanted to give up, you could have let me put your cock into my tail pussy instead.'",
+                                          "'Mmmm,♥ guess I'll just have to fuck your brains out normally.'",
+                                          "'I'd rather fuck you silly with my tail, hehe, but this works too.'",
+                                          "'I can still wring you dry and devour every drop of your cum like this. You know that right?'",
+                                          "'Hehe, it's a lot tighter in there than my tail.'",
+                                        "EndLoop"]
+                        },
+
+
+                  {
+                      "NameOfScene": "Thrust",
+                      "theScene": [ "IfProgressEqualsOrGreater", "3", "Thrust2", "ChangeImageLayer", "Expression", "Pleasured",
+                                  "FocusedSpeaks",
+                                  "SwapLineIf", "Random",
+                                    "'Mnrrrrn,♥ hahh!♥'", 
+                                    "'W-Wouldn't you rather fuck my tail?'",
+                                    "'H-Ha, like your dick could make me feel g-good.♥'",
+                                    "'Ahhh!♥'",
+                                  "EndLoop"]
+                  },
+                        {
+                            "NameOfScene": "Thrust2",
+                            "theScene": [ "ChangeImageLayer", "Expression", "SmugSharp",
+                                        "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                          "'Mnnnrrrn...♥'", 
+                                          "'Can't you fuck any harder?'",
+                                          "'You could be fucking my tail instead.'",
+                                          "'I'm going to milk you completely dry with my tail once you're tired out.'",
+                                          "'Hehehe, you're going to fuck {i}yourself{/i} silly at this rate.'",
+                                          "'I think you're getting hooked on my pussy...♥'",
+                                        "EndLoop"]
+                        },
+
+
+                  {
+                      "NameOfScene": "ThrustTeir2",
+                      "theScene": [ "ChangeImageLayer", "Expression", "Pleasured",
+                                  "IfProgressEqualsOrGreater", "3", "Thrust2Teir2",
+                                  "FocusedSpeaksSkill",
+                                  "SwapLineIf", "Random",
+                                    "'I-It doesn't feel th-that good.♥'",
+                                    "'S-Slow down a bit!♥'",
+                                    "'I-I'm going to make you pay for this!♥'",
+                                    "'Mnnn! AHH!♥ D-Damn it!♥'",
+                                    "She barely stifles a moan.",
+                                  "EndLoop"]
+                  },
+                        {
+                            "NameOfScene": "Thrust2Teir2",
+                            "theScene": [ "ChangeImageLayer", "Expression", "SmugSharp",
+                                        "FocusedSpeaksSkill",
+                                        "SwapLineIf", "Random",
+                                          "'I can feel your cock throbbing in me.♥'",
+                                          "'D-Do you really think a pervert like you can outlast me!'",
+                                          "'I-I'll break you first!♥'",
+                                          "She barely stifles a moan.",
+                                          "'Hehe, tight enough for you?♥'",
+                                          "'I'm going to fuck you silly for this.♥'",
+                                          "'Hehehe, are you sure you're not getting addicted to my pussy?'",
+                                        "EndLoop"]
+                        },
+
+                  {
+                      "NameOfScene": "EscapedSex",
+                      "theScene": [ "IfProgressEqualsOrGreater", "3", "EscapedSex2", "ChangeImageLayer", "Expression", "Flustered",
+                                  "FocusedSpeaks",
+                                  "SwapLineIf", "Random",
+                                      "'G-Good, I wasn't feeling much anyways...'",
+                                      "'A-Alright, let's get your cock in my tail so I can milk you senseless!'",
+                                      "'G-Great, now my pussy is aching for you to put it back in...'",
+                                  "EndLoop"]
+                  },
+                        {
+                            "NameOfScene": "EscapedSex2",
+                            "theScene": [ "ChangeImageLayer", "Expression", "SmugSharp",
+                                        "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                            "'Hehehe, don't deny it, you wanted to blow every drop of your cum inside me.'",
+                                            "'Hmph... Now do I force you back inside my pussy or my tail?'",
+                                            "'I bet your dick is already begging you to put it back inside.♥'",
+                                            "'Looks like someone might need more of my venom.♥'",
+                                            "'If my pussy isn't good enough for you, you can always try my tail.'",
+                                            "'D-Damn it...♥ My body is aching for you to put it back in...♥'",
+                                        "EndLoop"]
+                        },
+
+
+                  {
+                      "NameOfScene": "FailedEscapeSex",
+                      "theScene": [ "IfProgressEqualsOrGreater", "3", "FailedEscapeSex2", "ChangeImageLayer", "Expression", "Pleasured",
+                                  "FocusedSpeaks",
+                                  "SwapLineIf", "Random",
+                                      "'D-Damn it... This feels too good...",
+                                      "'I-If you're going to pull out, d-do it already!'",
+                                      "Ohhhh-♥ d-damn it...",
+                                  "EndLoop"]
+                  },
+                        {
+                            "NameOfScene": "FailedEscapeSex2",
+                            "theScene": [ "ChangeImageLayer", "Expression", "Predatory",
+                                        "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                              "'Hehehe, come on, don't be scared, I'm just going to ride you until you break!'",
+                                              "'Don't deny it, you really want to just lay back and give in.' Her pussy gives your cock a tempting squeeze.",
+                                              "'Hmm? Why struggle, your dick loves its new home.♥'",
+                                              "'You're gonna get helplessly addicted to me if you don't escape!'",
+                                              "'You're not getting away that easily.♥'",
+                                              "'You're all mine.♥'",
+                                        "EndLoop"]
+                        },
+
+
+
+
+
+
+
+                      {
+                          "NameOfScene": "endEvent",
+                          "theScene": []
+                      },
+
+
+                    {
+                        "NameOfScene": "EndOfRoundParaCheck",
+                        "theScene": [ "IfChoice", "2", "Hit", "IfParal",
+                                    "JumpToScene", "EndOfRoundTailCheck"]
+                    },
+                        {
+                          "NameOfScene": "IfParal",
+                            "theScene": [ "IfPlayerHasStatusEffect", "Paralysis", "ParaTick",
+                                          "JumpToScene", "EndOfRoundTailCheck"]
+                        },
+                            {
+                                "NameOfScene": "ParaTick",
+                                "theScene": [ "ApplyStatusEffect",   "Manticore's Venom",
+                                          "The paralytic manticore venom continues to creep through your body, making your nerves tingles as you lose more and more control over your body.",
+                                          "JumpToScene", "EndOfRoundTailCheck"]
+                            },
+                  {
+                      "NameOfScene": "EndOfRoundTailCheck",
+                      "theScene": [ "IfMonsterHasStance", "Tail Fuck", "Tail Milking"]
+                  },
+                        {
+                            "NameOfScene": "Tail Milking",
+                            "theScene": [ 
+                                          "SetPostName", " - Autonomous Tail Pussy ",
+                                          "HitPlayerWith", "Tail Fucking",
+                                          "FocusedSpeaksSkill",
+                                          "SwapLineIf", "Random",
+                                            "[DisplayMonsterChoice]'s tail slowly strokes your rigid cock of its own accord, squeezing your dick from base to tip with spasm inducing suction, all while the tongue filled interior works your shaft with each rough pumping motion.[DamageToPlayer]",
+                                            "[DisplayMonsterChoice]'s tail clamps down on [TargetName]'s shaft on its own accord like a vice, and roughly strokes it with its unnaturally textured insides, ridges, and bumps designed to coax out every drop of your cum![DamageToPlayer]",
+                                            "[DisplayMonsterChoice]'s tail's tongue like insides twist and writhe of their own accord around your shaft, tightening and constricting around your cock's entire length with special attention to the tip of your manhood, and you can't help but shudder in delight![DamageToPlayer]",
+                                            "[DisplayMonsterChoice]'s tail makes gulping motions around your manhood of its own accord, and you can't help but moan from the relatively gentle milking rippling through your hips.[DamageToPlayer]",
+                                            "The walls of [DisplayMonsterChoice]'s tail pussy ripple around your dick of their own accord, writhing and twisting unnaturally on occasion, making your cock ache with pleasure as its every inch is sensually teased.[DamageToPlayer]",
+                                          "EndLoop",
+                                          "SetPostName",
+                                          "",
+                                          "IfPlayerOrgasm", "EndOfRoundTailOrgasm"
+                                          ]
+                        },
+                              {
+                                  "NameOfScene": "EndOfRoundTailOrgasm",
+                                  "theScene": [   "PlayerOrgasm", "1",
+                                                 "JumpToScene",
+                                                 "TailOrgasm"
+
+                                                ]
+                              },
+
+
+                        {
+                            "NameOfScene": "Lost",
+                            "theScene": [   "PlayerLosesCombat"
+
+                                          ]
+                        },
+
+
+                      {
+                          "NameOfScene": "TailOrgasm",
+                          "theScene": [ "ChangeImageLayer", "Expression", "SmugSharp",
+                                        "ChangeImageLayer", "Semen", "Semen", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect", "OrgasmPulse", "white.png",
+                                        "FocusedSpeaksSkill",
+                                        "SwapLineIf", "Random",
+                                                  "[DisplayMonsterChoice]'s tail tightly squeezes your manhood before intensely sucking on it, making your hips instinctively buck into her abnormal orifice, and as you cum it draws out your semen in one long spurt from the incredible suction.[PlayerOrgasmLine]",
+                                                  "You groan as [DisplayMonsterChoice]'s tail makes gentle gulping motions around your shaft, and your cock throbs in delight from the sensation of each gulp, soon the pleasure rippling through your hips becomes unbearable and you can't help but ejaculate spurt after spurt of cum into her greedy orifice in time with the gentle gulping motions.[PlayerOrgasmLine]",
+                                                  "[DisplayMonsterChoice] gives you a dominant grin as her tail churns and writhes around your dick, the numerous tongues lining it licking and sucking at your throbbing manhood as she effortlessly brings you to orgasm. As you fill her tail with semen, it loudly gulps down each load before continuing its aggressive milking.[PlayerOrgasmLine]",
+                                                  "The opening of [DisplayMonsterChoice]'s tail tightly clamps down on your manhood and starts to move up and down like a piston, stroking your cock with the unnaturally textured insides, bumps and ridges perfectly designed to work in tandem with the teasing tongues inside, making it impossible to resist the orgasm they're trying to coax out of you.|n|Soon the mind melting pleasure overwhelms you completely and each stroke of her tail forces you to spurt out a thick rope of cum, and her tail greedily gulps it down while she smugly grins down at your twitching body.[PlayerOrgasmLine]",
+                                            "EndLoop",
+                                            "SemenHeal", "75",
+                                            "ChangeImageLayer", "Semen", "",
+                                            "[DisplayMonsterChoice] is filled with renewed energy as her tail devours your load, and she calms down [RecoverAmount] arousal.",
+                                          "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "50", "Orgasm Again",
+                                          "IfPlayerSpiritGone", "Lost"
+                                        ]
+                      },
+                            {
+                                "NameOfScene": "Orgasm Again",
+                                "theScene": [  "ChangeImageLayer", "Expression", "Mocking",
+                                               "EmptySpiritCounter",
+                                                "You gasp and whimper, still on the edge of orgasm from all the manticore venom inside your blood, your cock still pulsing with ecstasy and [DisplayMonsterChoice] gives you a lewd grin and gently drags a claw over your chest making you shiver.",
+                                               "PlayerOrgasm", "1",
+                                              "ChangeImageLayer", "Semen", "Semen", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect", "OrgasmPulse", "white.png",
+                                              "FocusedSpeaksSkill",
+                                              "SwapLineIf", "Random",
+                                                        "With a simple squeeze of her tail pussy's writhing insides, [DisplayMonsterChoice] gets you to moan incoherently as your dick begins to erupt another thick load for her, and her tail applies intense suction to your aching length, making your body spasm with ecstasy as she wrings out a single long rope of cum from your oversensitive manhood, leaving you with a pleasure drunk expression on your face.[PlayerOrgasmLine]",
+                                                        "You shudder with pleasure from [DisplayMonsterChoice]'s tail as it makes slow calculated milking motions, each gently wringing out a load of your cum for her tail to greedily gulp down. Your oversensitive cock throbs in delight from this orgasmic treatment, each gulp sending a fresh wave of rippling pleasure through your entire body as you ejaculate thick ropes of cum for her again and again.[PlayerOrgasmLine]",
+                                                        "[DisplayMonsterChoice] gives you a sinister grin as her tail churns and twists around your throbbing dick, the numerous tongues lining it sensually licking at your oversensitive manhood in perfect unison, and with each writhing squeeze she effortlessly wrings out a fresh load of your semen. As your cum fills her tail, it loudly gulps down each load before continuing its aggressive milking.[PlayerOrgasmLine]",
+                                                        "[DisplayMonsterChoice]'s tail's opening is tightly clamped down around your manhood like a vice, roughly pumping your cock up and down, stroking your cock with the wonderfully tight and unnaturally textured insides, the tongue like walls teasing your entire length with each stroke, and the interior bumps and ridges sending jolts of pleasure through your manhood.|n|You're completely left helpless against the orgasmic pleasure as you spurt out a load of cum for each and every stroke of her tail, and it greedily gulps it down while [DisplayMonsterChoice] gives you a lascivious grin as she looks down at your twitching body.[PlayerOrgasmLine]",
+                                                  "EndLoop",
+                                                  "SemenHeal", "75",
+                                                  "ChangeImageLayer", "Semen", "",
+                                                  "[DisplayMonsterChoice] is filled with renewed energy as her tail devours your load, and she calms down [RecoverAmount] arousal.",
+                                                  "IfPlayerSpiritGone", "Lost"
+                                              ]
+                            }
+
+
+
+                ]
+}

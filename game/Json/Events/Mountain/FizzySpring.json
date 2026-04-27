@@ -1,0 +1,458 @@
+{
+    "name": "Fizzy Spring",
+    "CardType": "Event",
+    "CardLimit": "1",
+    "Description": "Up the mountain you can occasionally find strange green, bubbly springs by rivers pouring down the side of the mountain. These are more than likely not water, and instead a form of slime. Take care as they are known to be as hungry as they are lazy.",
+    "requires": [ "Temple Checkpoint Gem"],
+    "Speakers": [
+                  {
+                    "name": "Bubble Slime",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [ "GetEventAndSetProgress", "BubbleSlimeCombatEvent", "0",
+                                      "StoreCurrentBG",
+                                      "ChangeBG", "mountain.png",
+                                      "As you trek up the mountain you find a small flowing river trailing out of an opening in the mountain, splitting into multiple trickling paths, some of which lead into a fairly large pool of mostly transparent green liquid that gently fizzes as bubbles drift off its surface before popping a few moments later in the air.",
+                                      "AllowInventory",
+                                      "You stop for a moment by the rather welcoming green pond, and catch a breather while deciding what to do next, noting the path around the pool and a sharp, pleasant scent in the air you can't quite place... (Inventory is currently available.)",
+                                      "Menu",
+                                        "Take a drink from the pool.",
+                                        "Take a bath in the pool.",
+                                        "RequiresChoice", "1", "ThatsNotWater",
+                                        "Try talking to the pool.",
+                                        "Walk past it.",
+                                      "EndLoop"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "Take a drink from the pool.",
+                                "theScene": ["DenyInventory",
+                                              "SetChoice", "1", "ThatsNotWater",
+                                              "DisplayCharacters",
+                                                "1",
+                                              "EndLoop",
+                                              "ApplyStatusEffect", "Fizzy Kiss",
+                                              "DamagePlayerFromMonster", "Bubble Slime", "Fizzy Kiss",
+                                              "ChangeImageLayer", "Expression", "1", "Kiss",
+                                              "As you get down to scoop up some of the bubbly liquid to drink, a woman suddenly forms out of the fizzing, and uses your momentary surprise to lock you in a deep kiss, forcing you to drink down some of the bubbling liquid, making you shiver in pleasure as it fizzes its way through your system, soon flooding you with a melty arousal deep in your core.[DamageToPlayer]",
+                                              "ChangeImageLayer", "Expression", "1", "LipLick",
+                                              "She breaks the kiss with a lazy smile, then licks her lips with a glint in her eyes, and starts to creep closer! You don't think she's going to let you talk your way out of this!",
+                                              "JumpToScene", "SlimeFight"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Take a bath in the pool.",
+                                "theScene": ["DenyInventory",
+                                              "SetChoice", "1", "ThatsNotWater",
+                                              "You slip off your clothes and step into the rather viscous bubbly pool of liquid, slowly sitting down to sink into it with a sigh, enjoying its rather surprising warmth alongside the fizzing bubbles and gooey texture. Eventually settling in with the pool up to your chest while you rests against the edge.",
+                                              "DisplayCharacters",
+                                                "1",
+                                              "EndLoop",
+                                              "ChangeImageLayer", "Expression", "1", "Frown",
+                                              "Then, starting with her head, a green woman made from the gooey pool forms directly in front of you with a lazy pout, making you jump slightly in surprise from how close she is.",
+                                              "Speaks",
+                                              "Heyyy... Don't you know it's rude to bathe in a slime girl without asking, honey?",
+                                              "ChangeImageLayer", "Expression", "1", "LipLick",
+                                              "She then hums a little and presses herself against you, rubbing her soft, gooey breasts across your chest while she lazily smiles at you, licking her lips.",
+                                              "Speaks",
+                                              "But that's okay,♪ you look really tasty.♥",
+                                              "Menu",
+                                                "'Er, I just wanted to relax.'",
+                                                "Kiss her.",
+                                                "Attack her!",
+                                                "Try to get out of the pool!",
+                                              "EndLoop"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "'Er, I just wanted to relax.'",
+                                      "theScene": [ "ChangeImageLayer", "Expression", "1", "Curious",
+                                                    "She slowly blinks as she gazes into your eyes with a look of curiosity on her face before a smile slowly spreads over it.",
+                                                    "ChangeImageLayer", "Expression", "1", "Lazy",
+                                                    "Speaks",
+                                                    "Sure.♪ I'll help you relax plenty too.♪",
+                                                    "JumpToScene", "RelaxScene"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Kiss her.",
+                                      "theScene": [ "ApplyStatusEffect", "Fizzy Kiss",
+                                                    "DamagePlayerFromMonster", "Bubble Slime", "Fizzy Kiss", "ChangeImageLayer", "Expression", "1", "Kiss",
+                                                    "You wrap your arms around the gooey woman and deeply kiss her, making her quiver in surprise for a moment before kissing you back, lazily entangling her tongue with your, slowly pushing your back against the edge of the pool while she rubs her luscious body against you, a trickle of fizzing goo sliding down your throat gradually filling your core with a bubbling heat.[DamageToPlayer]",
+                                                    "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                    "Speaks",
+                                                    "Mmmm...♪ Honey, I'm going to make,♪ mphhh,♥ you feel {i}shoooo{/i} good.♥",
+                                                    "Menu",
+                                                      "Keep kissing her.",
+                                                      "'Wait- Hold on, can I just relax?'",
+                                                      "Attack her!",
+                                                      "Try to get out of the pool!",
+                                                    "EndLoop"
+                                                ]
+                                  },
+                                          {
+                                              "NameOfScene": "'Wait- Hold on, can I just relax?'",
+                                              "theScene": ["ChangeImageLayer", "Expression", "1", "Curious",
+                                                            "She breaks the kiss with you and gazes at you curiously for a moment before a smile slowly spreads over it.",
+                                                            "ChangeImageLayer", "Expression", "1", "Lazy",
+                                                            "Speaks",
+                                                            "Sure.♪ I can help you relax plenty.♪",
+                                                            "JumpToScene", "RelaxScene"
+                                                        ]
+                                          },
+
+                                  {
+                                      "NameOfScene": "Attack her!",
+                                      "theScene": [ "ApplyStatusEffect", "Bubble Splash", "GetEventAndSetProgress", "BubbleSlimeCombatEvent", "2",
+                                                    "ChangeImageLayer", "Expression", "1", "Lazy",
+                                                    "You quickly prepare to fend of the bubbly slime woman, but she lazily smiles at you efforts. Then, you find yourself immobilized from how deep you were bathing in her gooey body! This isn't going to make things easier for you...",
+                                                    "JumpToScene", "SlimeFight"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Try to get out of the pool!",
+                                      "theScene": [ "ChangeImageLayer", "Expression", "1", "Frown",
+                                                    "She lets out a gasp of annoyance as you frantically pull yourself out of her viscous body.",
+                                                    "ApplyStatusEffect", "Bubble Splash",
+                                                    "As you break free she gives you a lazy frown, and many of the bubbles in the air suddenly surge towards you before exploding in a sticky goo, restraining you in place before slowly pulling you closer to the pond of fizzing goo! The Bubble Slime gives her lips a hungry lick, you don't think you're talking your way out of this!",
+                                                    "JumpToScene", "SlimeFight"
+
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "RelaxScene",
+                                      "theScene": ["ChangeImageLayer", "Expression", "1", "Lazy",
+                                                    "She starts to gently pull you deeper into her pool of slime with a lazy grin, drawing you a away from the edge and toward its center.",
+                                                    "Menu",
+                                                      "Let her help you relax.",
+                                                      "Attack her!",
+                                                      "Try to get out of the pool!",
+                                                    "EndLoop"
+                                                ]
+                                  },
+
+
+                                {
+                                    "NameOfScene": "Try talking to the pool.",
+                                    "theScene": ["DenyInventory",
+                                                   "DisplayCharacters",
+                                                    "1",
+                                                  "EndLoop",
+                                                  "ChangeImageLayer", "Expression", "1", "Lazy",
+                                                  "There's a moments delay as the pool bubbles a bit more than normal before a shapely woman forms herself from the goo with a sleepy yawn, giving you a lazy smile after she sighs blissfully.",
+                                                  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                  "Speaks",
+                                                  "Hi... Hmmm, do you wanna take a bath in me, honey? It'll be super relaxing.♪",
+                                                  "Menu",
+                                                    "Bathe in her pool.",
+                                                    "'Can you just let me by without attacking me?'",
+                                                    "Chat with her.",
+                                                    "Fight her!",
+                                                  "EndLoop"
+                                              ]
+                                },
+
+                                        {
+                                            "NameOfScene": "Chat with her.",
+                                            "theScene": [  "ChangeImageLayer", "Expression", "1", "Sleepy",
+                                                          "The two of you idly talk for a bit, but she seems to get bored of it pretty fast sleepily yawning, she's not very informative either. It doesn't sound like she really leaves this spot much.",
+                                                          "ApplyStatusEffect", "Bubble Splash",   "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                          "Then with a hungry look in her eyes she suddenly points at you and the floating bubbles suddenly surge towards you, exploding in a sticky goo, restraining you in place, slowly pulling you closer to the pond of fizzing liquid while she gives her lips a seductive lick. You don't think you're talking your way out of this anymore!",
+                                                          "JumpToScene", "SlimeFight"
+                                                      ]
+                                        },
+                                        {
+                                            "NameOfScene": "Fight her!",
+                                            "theScene": ["ChangeImageLayer", "Expression", "1", "LipLick",
+                                                          "She gives you a confused look for a moment as you prepare to attack her, but then she just gives you a lazy smile and licks her lips as she does the same!",
+                                                          "JumpToScene", "SlimeFight"
+                                                      ]
+                                        },
+                                        {
+                                            "NameOfScene": "'Can you just let me by without attacking me?'",
+                                            "theScene": ["ChangeImageLayer", "Expression", "1", "Curious",
+                                                          "She stares at you blankly a moment as you try to convince her to let you by...",
+                                                          "StatCheck",
+                                                          "Allure",
+                                                          "15",
+                                                          "LetBy.",
+                                                          "Fail",
+                                                          "AttackedDuringTalk"
+                                                      ]
+                                        },
+                                                {
+                                                    "NameOfScene": "LetBy.",
+                                                    "theScene": ["ChangeImageLayer", "Expression", "1", "Happy",
+                                                                  "The Bubble Slime then gives you a lazy and happy grin.",
+                                                                  "Speaks",
+                                                                  "Okay.♪ I guess you can go on ahead, I'm kind of sleepy anyways.",
+                                                                  "ChangeImageLayer", "Expression", "1", "Sleepy",
+                                                                  "She then yawns and lets herself melt back into her pool of goo with a few parting words.",
+                                                                  "Speaks",
+                                                                  "Be sure to stop by sometime though, honey, mmmm,♪ I'll make you feel amazing...♪ and relaxed...♪",
+                                                                  "With that said you're left to continue your trek forward without any issue.",
+                                                                  "UseHeldBG"
+                                                              ]
+                                                },
+                                                {
+                                                    "NameOfScene": "AttackedDuringTalk",
+                                                    "theScene": [ "ApplyStatusEffect", "Bubble Splash", "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                  "The Bubble Slime then gives you a lazy and happy grin, and points at you, sending a surge of bubbles at you that explode into sticky goo!",
+                                                                  "Speaks",
+                                                                  "Nahhhh.♪ I'm really hungry, so feed me a lot, okay honey?♪",
+                                                                  "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                                  "The goo restraining your body then starts to slowly pull you toward the pool! It looks like she's not interested in listening to you one bit!",
+                                                                  "JumpToScene", "SlimeFight"
+                                                              ]
+                                                },
+
+
+                                      {
+                                          "NameOfScene": "Bathe in her pool.",
+                                          "theScene": [ "ChangeImageLayer", "Expression", "1", "Happy",
+                                                        "The Bubble Slime lets out a long drawn out and lazy 'Yayyyyyy' as you agree to bath in her pond, leaving her to happily watch you strip off your clothes before slowly sliding into the warm, viscous liquid.",
+                                                        "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                        "She then presses herself against you once you settle in to the bubbling pool, squishing her bountiful tits against your chest with a lewd smile on her face.",
+                                                        "Speaks",
+                                                        "Sooo, wanna get a bubbly massage? Or maybe kiss while you relax?",
+                                                        "Menu",
+                                                          "Get a bubbly massage.",
+                                                          "Make out in the pool.",
+                                                        "EndLoop"
+                                                    ]
+                                      },
+                                                {
+                                                    "NameOfScene": "Get a bubbly massage.",
+                                                    "theScene": [ "ChangeImageLayer", "Expression", "1", "Lazy",
+                                                                   "She nods with a glint of excitement in her eyes, and starts to gently pull you deeper into her pool of slime with a lazy grin, drawing you a away from the edge and toward its center.",
+                                                                   "JumpToScene", "Let her help you relax."
+                                                              ]
+                                                },
+                                                {
+                                                    "NameOfScene": "Let her help you relax.",
+                                                    "theScene": [   "ChangeBGM", "music/Relaxing/Purple Planet Music - Dreamy - A Touch Of Zen (4_25) 62bpm.mp3",
+                                                                   "ChangeImageLayer", "Expression", "1", "Lazy",
+                                                                   "Then she gently gets you to lay on your stomach in her pool of slime, the surface tension acting like a cozy bed for you to lay on, its softly bubbling surface giving you the occasional caress.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                   "Speaks",
+                                                                   "There Honey, all comfy? Then lets start the massage.♪",
+                                                                   "Languidly she lays herself atop your back, making you shiver as her slick, gooey body presses down on you, her plush softness delightful as it slides along your skin, her heavy, pillowy tits squishing down on your shoulders the most wonderful of all as you settle into the slime bed below you.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Lazy",
+                                                                   "A pleasured gasp then escapes you as she starts to use her entire body to rub up and down your back, the slippery feeling of her big tits and plush curves gliding across your skin sending delightful tingles across your skin as her movements make a slight foam of soap-like bubbles, making you just as slick as she is.",
+                                                                   "Your cock swells from the pleasurable sensations of her luscious massage, her bountiful tits against your back especially tempting as they rub up and down you in slick, seductive movements, and with her body sandwiching you tight between her and the pool, your cock starts to throb eagerly against to slick pool.",
+                                                                   "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                                   "Speaks",
+                                                                   "Mmm, you're getting hard.♥ Don't worry though, that's part of the massage, Honey.♥",
+                                                                   "You groan blissfully as the soapy texture of her erotic caress, and the apple hinted scent slowly filling the air leaves your limbs slowly sinking into the slimy pool, your body gently unwinding from her cloying, plush curves rubbing up and down with audible wetness while bubbles gently pop all around you.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Lazy",
+                                                                   "All the tension in your body is just melting away, leaving you smiling happily as your arms and legs drift under the pool of goo, getting massaged by her slime alongside the rest of your body, but the ever-present feeling of her bountiful tits and plush body sliding up and down your back hold most of your attention, the foamy bubbles exemplifying the feeling of her slimy skin against you.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                    "Speaks",
+                                                                   "Feels good doesn't it?♥ Just relax.♥",
+                                                                   "Another lazy sigh escapes you as all your muscles feel loose and weak, her erotic, slippery massage dissolving all your cares and worries, leaving your cock achingly hard pressing up against her slimy pool as you lazily lay there, reveling in the sensations she's enveloping you with.",
+                                                                   "ChangeImageLayer", "Expression", "1", "Seductive",
+                                                                   "Speaks",
+                                                                   "But there's a bit more to massage, isn't there Honey?♥",
+                                                                   "She coos sweetly as she rubs up and down your back, and you moan as the slime under you wraps itself around your rigid cock and pulls it into the pool, creating a soft, squishy sex sleeve for it to idly thrust into as she presses her plush curves down on your back, sending jolts of ecstasy through you when your hips unconsciously jerk forward.",
+                                                                   "ChangeImageLayer", "Expression", "1", "Lazy",
+                                                                   "You feel like you're going to melt away if this keeps up, your face lost in an intoxicated, blissful smile as she slides her plush body against you, her big soft breasts making you shiver as she continues to leave a slick, bubbly foam on your back, your dick twitching excitedly inside the slimy pussy it's trapped in while you thoughtlessly moan in erotic relaxation.",
+                                                                   "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                                   "Speaks",
+                                                                   "You're almost there.♥",
+                                                                   "With her soft whisper, the entire pool starts to gently ripple, caressing every bit of you as she continues to massage and rub your back with her own squishy body, and the tension endlessly builds in your hips as you're entire body is overwhelmingly caressed, every bit of you is left tingling in wonderful, melty bliss.",
+                                                                   "PlayerOrgasm", "1",
+                                                                   "Your waist can't help but thrust unconsciously into the slimy pussy she made for your throbbing dick, the squeezing interior drawing out a thick gout of semen as your hips tense in spurting ecstasy, your mind-blanking out in bubbling pleasure as you cum, her massage still going all the while, drawing out your intense orgasm even as your body relaxes into her gooey embrace.",
+                                                                   "ChangeImageLayer", "Expression", "1", "Kiss",
+                                                                   "As your climax slowly ebbs away you're left spacing out from the muddle of pleasure and lazy tingles, your cock still achingly hard inside her goo, and she plants a wet kiss on your neck.",
+                                                                   "Speaks",
+                                                                   "Oh Honey.♥ You're still so tense aren't you?♥",
+                                                                   "ChangeImageLayer", "Expression", "1", "Seductive",
+                                                                   "You moan as her slime gives your stiff cock a loving squeeze before she lazily flips you over, letting your limbs sink into her gooey pool again as you lay there, your dick standing full mast.",
+                                                                   "Speaks",
+                                                                   "We better do the front then.♥",
+                                                                   "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                                   "She presses her plush, curves against your chest while smiling lazily at you, slowly rubbing up and down your entire body in long strokes of movement, occasionally caressing your aching manhood with her jellowy tits, leaving you shivering and moaning from the continued massage.",
+                                                                   "You gasp and try to squirm, quickly noting that while your arms are firmly submerged in her pool, they almost entirely refuse to move, your muscles so loose and relaxed you can't even move if you wanted to. But your focus is scattered as the pool starts to ripple and massage you all over again, the bubbling liquid teasing you all over as she coats your front in a foamy mess of bubbles.",
+                                                                   "ChangeImageLayer", "Expression", "1", "Seductive",
+                                                                   "Speaks",
+                                                                   "You're very tense here, aren't you Honey?♥",
+                                                                   "ChangeImageLayer", "Expression", "1", "Lazy",
+                                                                   "She gives you a lazy smile as she slides down your torso again, dragging her plush breasts across your torso before she settles between your legs, wrapping your dick between her deep, slippery cleavage. All while the pool of slime continues to knead and squeeze every bit of skin it's touching, leaving you a languid, gasping mess.",
+                                                                   "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                                   "Speaks",
+                                                                   "It needs some special attention.♥",
+                                                                   "The Bubble Slime then starts to pump your length with her heavy breasts, stroking it up and down with her soft gooey tits, making a bubbly froth between them that makes your cock tingle with delight as they pop. Your hips do their best to thrust up into her squeezing cleavage, but every bit of you is so loose and limp, except your aching manhood.",
+                                                                   "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                   "With a lazy smile she rolls her breasts in lazy circles, alternating between squishing her big tits together and milking you with her cleavage, and your erection can only throb in delight as she works to drain the tension out of it, the rest of you idly massaged by the rippling pool of slime, and your thoughts just drift away in a hazy cloud of pleasure.",
+                                                                   "PlayerOrgasm", "1",  "ChangeImageLayer", "Expression", "1", "Lazy",
+                                                                   "A dopey, pleasure drunk smile is stuck on your face as you melt away under her care, every bit of you tingling with radiating ecstasy, and as she starts to wetly pump her tits even faster you can't hope to endure, your lower body spasming in delight as you spurt thick ropes of cum all over her breasts, hot ecstasy electrifying your entire body, and she gasps in delight, slowly absorbing your cum with a smile.",
+                                                                   "You lay there gasping in a pleasured daze, the Bubble Slime smiling up at you as she finishes soaking in your seed, and she idly prods your still rigid dick with a gooey finger.",
+                                                                   "ChangeImageLayer", "Expression", "1", "Seductive",
+                                                                   "Speaks",
+                                                                   "Oh, Honey.♥ You're still tense.♥ Let's do your back again.",
+                                                                   "You try to get out a response, but she rolls you over first, leaving you moaning as your stiff cock plunges into her gooey pool again and she starts to immediately slide up and down your back with her slippery, plush curves.",
+                                                                   "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                                   "Speaks",
+                                                                   "It's like all the tension in your body went into your dick.♥ Hehe.♥ don't worry Honey,♥ I'll wring it {i}alllll{/i} out.♥",
+                                                                   "Her movements get more forceful and you can only gasp and moan as she makes your hips thrust into her gooey sex sleeve by pressing her own hips against you, whispering and cooing sweet nothings into your ear as her bountiful tits slide up and down your back.",
+                                                                   "ChangeImageLayer", "Expression", "1", "Lazy",
+                                                                   "Your body feels like it's melting away from the pleasure, and you can feel something in your hips straining as the pleasure mounts, her slippery curves sandwiching you against the pool overwhelming your oversensitive, orgasm wracked body, leaving only whimpers and pleasured sighs to escape your mouth.",
+                                                                   "PlayerOrgasm", "1",
+                                                                   "Until that straining in your loins finally snaps and your cry out in orgasm, her sliding, slick tits and plush curves rubbing up and down seem to draw out a thick gout of cum with every up and down motion, as if her massage flicked a switch in your dick to merely spurt for her.",
+                                                                   "PlayerOrgasm", "1",
+                                                                   "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                                   "As she gyrates her hips against yours and slides her tits up and down your back, she slows down even more, leaving your thoughts dissolving in wave after wave of long drawn out climaxes as you pour your seed into her, more semen than should be reasonable, leaving you melting away in her embrace as you cum over and over from her loving, lazy massage...",
+                                                                   "SetSpirit", "0",
+                                                                   "...",
+                                                                   "ChangeFetish", "Breasts", "10",
+                                                                   "ChangeSensitivity", "Sex", "10",
+                                                                   "ChangeSensitivity", "Seduction", "10",
+                                                                   "JumpToScene", "PostLewds"
+                                                              ]
+                                                },
+
+
+                                                {
+                                                    "NameOfScene": "Make out in the pool.",
+                                                    "theScene": ["ChangeImageLayer", "Expression", "1", "Seductive",
+                                                                  "She gives you a nod and a lewd smile, waiting for you to make the first move while she rubs her breasts against you.",
+                                                                  "ChangeImageLayer", "Expression", "1", "Kiss",
+                                                                  "So you wrap your arms around the gooey woman and deeply kiss her, making her quiver in delight as she kisses you back, lazily entangling her tongue with your, slowly pushing your back against the edge of the pool while she rubs her luscious body against you, a trickle of fizzing goo sliding down your throat gradually filling your core with a bubbling heat.",
+                                                                  "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                                  "Speaks",
+                                                                  "Mmmm...♪ Honey, I'm going to make,♪ mphhh,♥ you feel {i}shoooo{/i} good.♥",
+                                                                   "JumpToScene", "Keep kissing her."
+                                                              ]
+                                                },
+                                                {
+                                                    "NameOfScene": "Keep kissing her.",
+                                                    "theScene": [  "ChangeBGM", "music/Relaxing/Purple Planet Music - Dreamy - A Touch Of Zen (4_25) 62bpm.mp3",
+                                                                  "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                                   "As her gooey tongue lazily swirls around your mouth you let out a soft moan as she rubs her plush body against you beneath her gooey pool, all while more and more of her bubbly saliva slips down into your throat, clouding your horny thoughts with the sounds of popping and a increasingly warm haze of arousal.",
+                                                                   "Your hands start to glide over the other body, letting you fully appreciate her soft, squishy curves while you passionately kiss, her seductive gaze locked with yours as you swap back and forth with who's leading the intimate kiss.",
+                                                                   "Speaks",
+                                                                   "Honey-♥ You taste so good.♥ I want more.♥",
+                                                                   "ChangeImageLayer", "Expression", "1", "Kiss",
+                                                                   "A shiver runs through your body as you feel your stiffening cock get gently wrapped up in a soft, gooey sex sleeve beneath the viscous liquid as the slime starts to slowly swing her hips into you, each wet impact eliciting a moan from your lips into her mouth as you relax into the bubbling pool with her in your arms.",
+                                                                   "Soon you've sunk neck deep into the bubbling ooze while still kissing her, your brain feeling like it's fizzing and popping from the aphrodisiac you've been drinking, and every bit of you under the slime is getting idly squeezed and caressed. You're a little amazed she can maintain her plump curvy body under her own pool of slime, but your hands aren't complaining as they move through the thick liquid to grope her.",
+                                                                   "ChangeImageLayer", "Expression", "1", "Seductive",
+                                                                   "Her big soft tits are firmly pressed against you as she slowly rocks her hips, your tongues lazily rolling around the other as pleasure melts through you, every bit of you submersed in bubbling pleasure, your thoughts getting lost in a building sea of lust.",
+                                                                   "Speaks",
+                                                                   "Mnnn-♥ Honey-♥ Grab my waist-♥ Mmmmmm-♥ And fuck me like you mean it.♥",
+                                                                   "ChangeImageLayer", "Expression", "1", "Kiss",
+                                                                   "Keeping the passionate kiss going you slide your hands through the viscous liquid and firmly grab her plush, thick hips and start to guide her up and down on your rigid cock, and she lets out a fluttering moan as your tip strikes her core over and over.",
+                                                                   "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                                   "The entire pool seems to ripple as you gradually up your tempo, your mind entirely focused on making love to the bubble slime, every wet impact beneath the pool making your dick spasm with need as your tip hits her core. The slime gazes lovingly into your eyes all the while as you continue to swap saliva, every bit of your body tingling with excitement.",
+                                                                    "PlayerOrgasm", "1",
+                                                                   "You groan as you reach your limit with one final powerful meeting of your hips you both moan into the others mouth as you meet climax, your seed spurting across her core from the point of impact, slowly getting dissolved by her slimy body while the two of you still embrace, shivering in delight.",
+                                                                   "ChangeImageLayer", "Expression", "1", "Pleasured", "ChangeImageLayer", "Face", "1", "Blush",
+                                                                   "She breaks the kiss first, leaving you gasping to catch your breath as orgasmic aftershocks trail across your skin.",
+                                                                   "Speaks",
+                                                                   "Oh... Honey, that was amazing.♥ ...You're not done yet though, are you?♥",
+                                                                   "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                   "Your brain feels like it's been filled with bubbles at this point, and you eagerly start to thrust into her again as she starts to roll her wide hips in circles, making her giggle lazily.",
+                                                                   "Speaks",
+                                                                   "Good.♥",
+                                                                   "ChangeImageLayer", "Expression", "1", "Kiss",
+                                                                   "The two of you get back to kissing, your tongues wrapping around each other as she swings her hips in time with your thrusts, and gradually the two of you drift towards the center of the pool as you continue fucking. Your second load pouring into her just as she lays herself back atop her pool of slime, putting you directly on top of her as you piston into her.",
+                                                                   "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                                   "She lets out a languid sigh as you soon resume fucking her from above, her bubbling aphrodisiac tingling through your body, keeping you focused on mating with her, and you eagerly oblige, letting your hands glide over her plush body as you thrust and she lazes happily.",
+                                                                   "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                                                   "Speaks",
+                                                                   "Mmmm, fuck me as much as you want, Honey.♥ I'll just, lay back and enjoy okay?♥",
+                                                                   "You nod in agreement as you continue to fuck her softly squeezing pussy, its slick texture making you shiver as your grope and play with the slime's large breasts, and she gasps with delight whenever your length strikes her core.",
+                                                                   "ChangeImageLayer", "Expression", "1", "Seductive",
+                                                                   "Speaks",
+                                                                   "Mmm, but do let me know if you want to switch positions.♥",
+                                                                   "PlayerOrgasm", "1",
+                                                                   "For emphasis, she uses her slimy nature to almost instantly shift her missionary prone body into an ass raised up doggy style one mid thrust, making you cry out in orgasmic shock from the shift in sensations, filling her with another load of cum as she grinds her thick hips against your groin.",
+                                                                   "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                                   "As you recover your hands take a moment to appreciate her plush ass before you lean over her and start pounding her from the new position, pulling her in for another aphrodisiac laden kiss while she lets you do all the work, your hands grabbing hold of her bountiful tits as you work towards your next mind-blanking climax... then the next as you alternate positions... and then the next...",
+                                                                   "SetSpirit", "0",
+                                                                   "...",
+                                                                   "ChangeFetish", "Kissing", "5",
+                                                                   "ChangeFetish", "Sex", "5",
+                                                                   "ChangeSensitivity", "Sex", "10",
+                                                                   "ChangeSensitivity", "Mouth", "10",
+                                                                   "JumpToScene", "PostLewds"
+                                                              ]
+                                                },
+
+
+                                                {
+                                                    "NameOfScene": "PostLewds",
+                                                    "theScene": [   "ChangeBGM", "music/Forest/Starry sky.mp3",
+                                                                  "RestPlayer", "RestPlayer", "RemoveStatusEffect", "Aphrodisiac",
+                                                                  "ChangeImageLayer", "Expression", "1", "Lazy",  "ChangeImageLayer", "Face", "1", "Base",
+                                                                   "Slowly in a daze you wake up what must be {i}hours{/i} later, the Bubble Slime gently embracing you from behind with a lazy smile as you drift in your pool of slime.",
+                                                                   "Speaks",
+                                                                   "You look like you enjoyed yourself a lot, Honey.♥",
+                                                                   "ChangeImageLayer", "Expression", "1", "Kiss",
+                                                                   "She gives you a soft kiss on the cheek.",
+                                                                   "ChangeImageLayer", "Expression", "1", "Base",
+                                                                   "Speaks",
+                                                                   "Be sure to visit again okay.♥ I'm going to take a nap.",
+                                                                   "ChangeImageLayer", "Expression", "1", "Sleepy",
+                                                                   "She yawns lazily before melting back into her pool of slime, leaving you to trudge your way out of her bubbling goo and fix up your clothes before proceeding onwards.",
+                                                                   "UseHeldBG"
+                                                              ]
+                                                },
+
+
+                            {
+                                "NameOfScene": "Walk past it.",
+                                "theScene": [ "DenyInventory",
+                                              "You decide to leave the pool be and continue on your way.",
+                                              "StatCheck",
+                                              "Luck",
+                                              "15",
+                                              "LeaveFree.",
+                                              "Fail",
+                                              "Ambush."
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "Ambush.",
+                                      "theScene": [
+                                                    "SetChoice", "1", "ThatsNotWater",
+                                                    "DisplayCharacters",
+                                                      "1",
+                                                    "EndLoop",
+                                                    "ApplyStatusEffect", "Bubble Splash",
+                                                    "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                    "As you walk by the pool, some of the bubbles suddenly surge towards you and explode in a sticky goo, restraining you in place, slowly pulling you closer to the pond of fizzing liquid as a woman with lazy smile forms in its center! She gives her lips a hungry lick, and you don't think you're talking your way out of this!",
+                                                    "JumpToScene", "SlimeFight"
+
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "SlimeFight",
+                                      "theScene": [
+                                                    "CombatEncounter",
+                                                        "Bubble Slime",
+                                                        "Restrainer",
+                                                    "StartCombat",
+                                                    "With the bubble slime subdued into a blissful puddle of pleasure, you hurry on your way up the mountain!",
+                                                    "UseHeldBG"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "LeaveFree.",
+                                      "theScene": [
+                                                    "Nothing odd happens as you pass by the bubbling green pool, leaving you to continue your trek up the mountain.",
+                                                    "UseHeldBG"
+                                                ]
+                                  },
+                        {
+                            "NameOfScene": "Event break.",
+                            "theScene": [
+                                          "Event broke!"
+                                      ]
+                        }
+                ]
+}

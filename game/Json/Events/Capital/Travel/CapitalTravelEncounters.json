@@ -1,0 +1,244 @@
+{
+    "name": "CapitalTravelEncounters",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Voltlin Livewire",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  } 
+
+                ],
+    "EventText": [
+                    {
+                      "NameOfScene": "EventStart",
+                      "theScene": [  
+                                    "JumpToScene", "TravelRNG"
+                                ]
+                    }, 
+                    {
+                      "NameOfScene": "TravelRNG",
+                      "theScene": [     "IfTimeIs", "Night", "TravelRNGNight",
+                                       "JumpToRandomScene",
+                                            "No Event", 
+                                            "No Event", 
+                                            "No Event", 
+                                            "TrafficJam",
+                                            "AphrodesiacCloud",
+                                        "EndLoop"
+                                ]
+                    },           
+                          {
+                            "NameOfScene": "TravelRNGNight",
+                            "theScene": [      
+                                            "JumpToRandomScene",
+                                                  "No Event", 
+                                                  "No Event",  
+                                                  "TrafficJam",
+                                                  "TrafficJam",
+                                                  "AphrodesiacCloud",
+                                                  "AphrodesiacCloud",
+                                                  "NightWalk",
+                                              "EndLoop"
+                                      ]
+                          },          
+                          {
+                              "NameOfScene": "No Event",
+                              "theScene": [
+                                            "AllowInventory",
+                                            "GoBackToStoredEvent"
+                                        ]
+                          },
+                          {
+                            "NameOfScene": "TrafficJam",
+                            "theScene": [  "DenyInventory",
+                                          "JumpToEvent", "Street Traffic Havoc"
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "AphrodesiacCloud",
+                            "theScene": [  "DenyInventory",
+                                          "JumpToEvent", "Ars Delusian Fog"
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "NightWalk",
+                            "theScene": [  "DenyInventory",
+                                          "JumpToEvent", "A Perfectly Normal Walk"
+                                      ]
+                          },
+
+                          
+
+                          {
+                            "NameOfScene": "Voltlin Livewire",
+                            "theScene": [  "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "Voltlin Livewire",
+                                          "StartCombat",
+                                          "JumpToScene", "No Event"
+                                      ]
+                          },
+                        
+                                            
+
+                          {
+                            "NameOfScene": "Put this into the event you're traveling from",
+                            "theScene": [   
+                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                            "JumpToEventThenScene", "CapitalTravelEncounters", "RNG",
+                                            
+                                             
+                                            
+                                            "JumpToScene", "Put this into the event you're traveling from"
+                                      ]
+                          },
+
+
+
+              {
+                "NameOfScene": "ErosDistrictEventCheck",
+                "theScene": [    
+                              "IfChoice", "1", "", "SecondCapitalIntro",
+                              "JumpToEventThenScene", "Eros District", "DistrictMenu"
+                          ]
+              }, 
+                          {
+                            "NameOfScene": "SecondCapitalIntro",
+                            "theScene": [    "SetChoice", "1", "HeatherMet",
+                                              "JumpToEvent", "HeatherInErosDistrict"
+                                      ]
+                          }, 
+
+
+
+
+              {
+                "NameOfScene": "StarlightRNG",
+                "theScene": [   
+                                  "IfTimeIs", "Night", "StarlightRNGNight",
+                                  "JumpToRandomScene",
+                                      "No Event",  
+                                      "No Event",  
+                                      "A Fashionable Encounter",
+                                  "EndLoop"
+                          ]
+              },     
+                    {
+                      "NameOfScene": "StarlightRNGNight",
+                      "theScene": [    
+                                        "JumpToRandomScene",
+                                            "No Event",
+                                            "Starlit Window",
+                                        "EndLoop"
+                                ]
+                    },     
+              {
+                "NameOfScene": "StarlightTrouble",
+                "theScene": [   
+                                  "IfTimeIs", "Night", "StarlightTroubleNight",
+                                  "JumpToRandomScene", 
+                                      "A Fashionable Encounter",
+                                  "EndLoop"
+                          ]
+              },
+                    {
+                      "NameOfScene": "StarlightTroubleNight",
+                      "theScene": [    
+                                        "JumpToRandomScene", 
+                                            "Starlit Window",
+                                        "EndLoop"
+                                ]
+                    },
+                          {
+                            "NameOfScene": "Starlit Window",
+                            "theScene": [    "DenyInventory",
+                                              "JumpToEvent", "Starlit Window"
+                                      ]
+                          },     
+                          {
+                            "NameOfScene": "A Fashionable Encounter",
+                            "theScene": [    "DenyInventory",
+                                              "JumpToEvent", "A Fashionable Encounter"
+                                      ]
+                          }, 
+                          {
+                            "NameOfScene": "Dynamic Dancing Duo",
+                            "theScene": [    "DenyInventory",
+                                              "JumpToEvent", "Dynamic Dancing Duo"
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "Relria's Massage Parlor",
+                            "theScene": [   "DenyInventory",
+                                            "GetEventAndSetChoice", "Relria's Massage Parlor", "8", "",
+                                            "JumpToEvent", "Relria's Massage Parlor"
+                                      ]
+                          },
+                          
+                          
+              {
+                "NameOfScene": "AphrodesiaRNG",
+                "theScene": [   
+                                  "IfTimeIs", "Night", "AphrodesiaRNGNight",
+                                  "JumpToRandomScene",
+                                      "No Event",  
+                                      "No Event",  
+                                      "Relria's Massage Parlor",
+                                      "Dynamic Dancing Duo",
+                                      "A Fashionable Encounter",
+                                  "EndLoop"
+                          ]
+              },     
+                    {
+                      "NameOfScene": "AphrodesiaRNGNight",
+                      "theScene": [    
+                                        "JumpToRandomScene",
+                                            "Relria's Massage Parlor",
+                                            "Dynamic Dancing Duo",
+                                            "Dynamic Dancing Duo",
+                                            "A Fashionable Encounter", 
+                                        "EndLoop"
+                                ]
+                    },   
+                    
+              {
+                "NameOfScene": "AphrodesiaTrouble",
+                "theScene": [   
+                                  "IfTimeIs", "Night", "AphrodesiaTroubleNight",
+                                  "JumpToRandomScene", 
+                                      "Relria's Massage Parlor",
+                                      "Dynamic Dancing Duo",
+                                      "A Fashionable Encounter",
+                                  "EndLoop"
+                          ]
+              },
+                    {
+                      "NameOfScene": "AphrodesiaTroubleNight",
+                      "theScene": [    
+                                        "JumpToRandomScene", 
+                                            "Relria's Massage Parlor",
+                                            "Dynamic Dancing Duo",
+                                            "A Fashionable Encounter",
+                                        "EndLoop"
+                                ]
+                    },
+
+
+
+                    
+ 
+
+                           
+                           
+                     {
+                       "NameOfScene": "EventBroke",
+                       "theScene": [   "event broke."
+                                 ]
+                     }
+                ]
+}

@@ -1,0 +1,218 @@
+{
+  "name": "Labyrinth",
+  "CardType": "Event",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [ ""],
+  "Speakers": [
+                {
+                  "name": "Ceris",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "Beris",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "Ushris",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "Iabel",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "Perpetua",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "???",
+                  "postName": "",
+                  "SpeakerType": "?"
+                }
+              ],
+  "EventText": [
+                  {
+                      "NameOfScene": "Exit",
+                      "theScene": [
+                                        "IfGridNPCThere", "Key", "StillLocked",
+                                        "You use all of the keys you've collected and open the gate! It smoothly opens with a quiet metallic noise, and you hurry on and pass through!",
+                                        "ExitGridmap"
+                                ]
+                  },
+                            {
+                                "NameOfScene": "StillLocked",
+                                "theScene": [
+                                                  "You try to open the door, but it won't budge. It's still locked, you need more keys!"
+                                          ]
+                            },
+
+
+                          {
+                              "NameOfScene": "Key",
+                              "theScene": [
+                                              "PlaySoundEffect", "sfx/kettei-02.wav",
+                                              "RemoveGridNPC", "Current",
+                                              "IfGridNPCThere", "Key", "Nothing",
+                                              "As you pick up the key, it emits a warm glow and lets out a cheery sound just like the rest. You're pretty sure this is the last one!"
+                                        ]
+                          },
+
+                          {
+                              "NameOfScene": "ShadowKey",
+                              "theScene": [
+                                              "PlaySoundEffect", "sfx/kettei-02.wav",
+                                              "RemoveGridNPC", "Current",
+                                              "IfChoice", "1", "ShadowMode", "ShadowKeyLast",
+                                              "ChangeProgress", "1",
+                                              "IfProgressEqualsOrGreater", "4", "ShadowMode"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "ShadowKeyBonus",
+                              "theScene": [
+                                              "PlaySoundEffect", "sfx/kettei-02.wav",
+                                              "RemoveGridNPC", "Current",
+                                              "IfChoice", "1", "ShadowMode", "ShadowKeyLast"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "ShadowKeyLast",
+                                      "theScene": [
+                                                    "IfGridNPCThere", "Key", "Nothing",
+                                                    "IfGridNPCThere", "KeyBonus", "NotifyFinalShadowKey",
+                                                    "As you pick up the key, it emits a warm glow and lets out a cheery sound just like the rest. You're pretty sure this is the last one!"
+                                                ]
+                                  },
+                                        {
+                                            "NameOfScene": "NotifyFinalShadowKey",
+                                            "theScene": [
+                                                          "As you pick up the key, it emits a warm glow and lets out a cheery sound just like the rest... But despite getting all the ones you remember seeing in your grimoire, an echoing, teasing feminine giggle makes you think you're missing something..."
+                                                      ]
+                                        },
+
+
+                                  {
+                                      "NameOfScene": "ShadowMode",
+                                      "theScene": [
+                                                      "ChangeBGM", "music/Caverns/Purple Planet Music - Emotional - Darkness (1_55) 94bpm.mp3",
+                                                       "CallSceneThenReturn", "VisionChange",
+                                                       "SetChoice", "1", "ShadowMode",
+
+                                                       "GetEventAndChangeProgress", "BerisCombatEvents", "10",
+                                                       "GetEventAndChangeProgress", "UshrisCombatEvents", "10",
+
+                                                       "ChangeMapTile", "2", "6", "0",
+                                                       "ChangeMapTile", "20", "6", "0",
+
+                                                       "ChangeMapTile", "10", "6", "0",
+                                                       "ChangeMapTile", "12", "6", "0",
+
+                                                       "SpawnGridNPC", "KeyBonus", "1", "6",
+
+                                                       "RemoveGridNPC", "Specific", "Beris",
+                                                       "RemoveGridNPC", "Specific", "BerisResting",
+                                                       "RemoveGridNPC", "Specific", "BerisRespawnWarning",
+
+                                                       "RemoveGridNPC", "Specific", "PinkHeartTrap",
+                                                       "RemoveGridNPC", "Specific", "PinkHeartTrap",
+                                                       "RemoveGridNPC", "Specific", "BlueHeartTrap",
+                                                       "RemoveGridNPC", "Specific", "BlueHeartTrap",
+                                                       "RemoveGridNPC", "Specific", "GreenHeartTrap",
+                                                       "RemoveGridNPC", "Specific", "GreenHeartTrap",
+                                                       "RemoveGridNPC", "Specific", "GreenHeartTrap",
+                                                       "RemoveGridNPC", "Specific", "GreenHeartTrap",
+                                                       "RemoveGridNPC", "Specific", "BlackHeartTile",
+                                                       "RemoveGridNPC", "Specific", "BlackHeartTile",
+
+                                                       "SpawnGridNPC", "Ceris", "11", "6",
+
+                                                       "SpawnGridNPC", "ShadowsTile", "10", "5",
+                                                       "SpawnGridNPC", "ShadowsTile", "10", "7",
+                                                       "SpawnGridNPC", "ShadowsTile", "12", "5",
+                                                       "SpawnGridNPC", "ShadowsTile", "12", "7",
+                                                       "SpawnGridNPC", "ShadowsTile", "10", "6",
+                                                       "SpawnGridNPC", "ShadowsTile", "12", "6",
+
+                                                       "SpawnGridNPC", "ShadowsTile", "2", "5",
+                                                       "SpawnGridNPC", "ShadowsTile", "2", "6",
+                                                       "SpawnGridNPC", "ShadowsTile", "2", "7",
+                                                       "SpawnGridNPC", "ShadowsTile", "20", "5",
+                                                       "SpawnGridNPC", "ShadowsTile", "20", "6",
+                                                       "SpawnGridNPC", "ShadowsTile", "20", "7",
+
+                                                       "SpawnGridNPC", "PinkHeartTrap", "5", "2",
+                                                       "SpawnGridNPC", "PinkHeartTrap", "5", "10",
+                                                       "SpawnGridNPC", "PinkHeartTrap", "17", "2",
+                                                       "SpawnGridNPC", "PinkHeartTrap", "17", "10",
+
+                                                       "SpawnGridNPC", "BlackHeartTile", "3", "3",
+                                                       "SpawnGridNPC", "GreenHeartTrap", "3", "9",
+                                                       "SpawnGridNPC", "BlackHeartTile", "19", "3",
+                                                       "SpawnGridNPC", "GreenHeartTrap", "19", "9",
+
+                                                       "As you pick up the key, the lights in the labyrinthine obsidian halls dim, the map from your grimoire distorting with deepening shadows while an eerie feminine giggle echoes through the ominous passageways amid sounds of shifting stones...",
+                                                       "Then, as an eerie silence settles over the darkened halls, you hear a distant clink faintly echo through the maze, like a small metallic object was dropped somewhere..."
+                                                ]
+                                  },
+                                          {
+                                              "NameOfScene": "VisionChange",
+                                              "theScene": [
+                                                            "ChangeGridVision", "2"  ]
+                                          },
+
+                                  {
+                                      "NameOfScene": "LightDown",
+                                      "theScene": [
+                                                      "IfChoice", "1",  "ShadowMode", "LightDownShadow",
+                                                      "ChangeGridVision", "3"
+                                                ]
+                                  },
+                                          {
+                                              "NameOfScene": "LightDownShadow",
+                                              "theScene": [
+                                                              "ChangeGridVision", "2"
+                                                        ]
+                                          },
+                                  {
+                                      "NameOfScene": "LightUp",
+                                      "theScene": [
+                                                      "IfChoice", "1", "ShadowMode", "LightUpShadow",
+                                                      "ChangeGridVision", "0"
+                                                ]
+                                  },
+                                        {
+                                            "NameOfScene": "LightUpShadow",
+                                            "theScene": [
+                                                            "ChangeGridVision", "5"
+                                                      ]
+                                        },
+
+
+
+                          {
+                              "NameOfScene": "Nothing",
+                              "theScene": [
+                                        ]
+                          },
+
+
+                  {
+                      "NameOfScene": "Posion",
+                      "theScene": [
+                                      "ApplyStatusEffect", "Impish Face Grind"
+                                ]
+                  },
+                  {
+                      "NameOfScene": "EventBreak",
+                      "theScene": [
+                                      "Evento broko"
+                                ]
+                  }
+              ]
+}

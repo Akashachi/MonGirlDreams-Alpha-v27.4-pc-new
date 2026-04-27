@@ -1,0 +1,478 @@
+{
+    "name": "ViliCombatEvents",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Vili",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EndOfRound",
+                        "theScene": [   "IfMonsterHasStatusEffect", "Sleep", "CheckTittyTemptation",
+                                       "IfMonsterHasStatusEffect", "Charm", "CheckTittyTemptation",
+                                       "IfMonsterHasStatusEffect", "Restrain", "TeleportFreeRestraints",
+                                       "IfMonsterHasStance", "Anal", "TeleportFreeStanceAnal",
+                                       "IfMonsterHasStance", "Making Out", "TeleportFreeStance",
+                                       "JumpToScene", "CheckTittyTemptation"
+                                  ]
+                    },
+                      {
+                            "NameOfScene": "TeleportFreeStanceAnal",
+                            "theScene": [   "ChangeImageLayer", "Expression", "Playful",
+                                            "ClearStanceFromMonsterAndPlayer", "All",
+                                           "Vili glances down at your cock lodged in her ass before she closes her eyes in focus, and before you can react, she teleports a short distance away from you with a playful grin, extracting herself from your grasp!",
+                                           "ChangeImageLayer", "Expression", "Pout",  "ApplyStatusEffectToMonster", "Disoriented",
+                                           "But she frowns for a moment as she gently sways in the air, clearly slightly disoriented from teleporting so quickly as she shakes her head to clear her thoughts...",
+                                           "JumpToScene", "CheckTittyTemptation"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "TeleportFreeStance",
+                            "theScene": [   "ChangeImageLayer", "Expression", "Playful",
+                                            "ClearStanceFromMonsterAndPlayer", "All",
+                                           "Vili stares into your eyes dreamily as you kiss her for a few moments before she snaps out of it, focusing herself, and before you can react, she teleports a short distance away from you with a playful grin, extracting herself from your grasp!",
+                                           "ChangeImageLayer", "Expression", "Pout", "ApplyStatusEffectToMonster", "Disoriented",
+                                           "But she frowns for a moment as she gently sways in the air, clearly slightly disoriented from teleporting so quickly as she shakes her head to clear her thoughts...",
+                                           "JumpToScene", "CheckTittyTemptation"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "TeleportFreeRestraints",
+                            "theScene": [   "CallEventAndSceneThenReturn", "Visit Vili", "GoToBreastSizeCombat",
+                                            "ChangeImageLayer", "Expression", "Smug",
+                                            "ClearStanceFromMonsterAndPlayer", "All",
+                                            "RemoveStatusEffectFromMonster", "Restrain",
+                                            "CallEventAndSceneThenReturn", "PlayerEndOfCombat", "CheckPin",
+                                           "Vili struggles against her restraints for a brief moment before she gives you a smug grin, and before you can react, she teleports herself a short distance away, freeing herself without any apparent strain!",
+                                           "FocusedSpeaks",
+                                           "Did you really think that would hold me?♪",
+                                           "ChangeImageLayer", "Expression", "Pout", "ApplyStatusEffectToMonster", "Disoriented",
+                                           "But she frowns for a moment after her boast, gently swaying in the air, clearly slightly disoriented from teleporting so quickly as she shakes her head to clear her thoughts...",
+                                           "JumpToScene", "CheckTittyTemptation"
+                                      ]
+                        },
+                    {
+                        "NameOfScene": "CheckTittyTemptation",
+                        "theScene": [   "IfFetishLevelEqualOrGreater", "Breasts", "100", "Tempted",
+                                       "IfFetishLevelEqualOrGreater", "Vili's Curse", "6", "Tempted",
+                                       "IfPlayerHasStatusEffect", "Charm", "Tempted"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Tempted",
+                              "theScene": [  "IfMonsterHasStatusEffect", "Sleep", "SleepingTemptation",
+                                              "IfMonsterHasStance", "Sex", "SexTemptation",
+                                            "IfMonsterHasStance", "Titfuck", "TitfuckingTemptation",
+                                            "IfMonsterHasStance", "Breast Smother", "SmotheringTemptation",
+                                            "HitPlayerWith", "ViliTemptationDamage",
+                                            "SwapLineIf", "Random",
+                                              "You just can't keep your eyes off of Vili's big perfect breasts, every tempting bounce completely captivating you.[DamageToPlayer]",
+                                              "Vili unconsciously puffs out her chest, leaving you completely captivated as you watch her huge breasts bounce.[DamageToPlayer]",
+                                              "Vili languidly stretches in the air making her tits bounce a little, leaving your jaw hanging open in awe of her perfect breasts as they temptingly jiggle.[DamageToPlayer]",
+                                              "Vili leans forward a little, and you find yourself completely lost in the sight of her deep cleavage, your aching erection twitching at the sight.[DamageToPlayer]",
+                                            "EndLoop"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "SleepingTemptation",
+                                    "theScene": [  "HitPlayerWith", "ViliTemptationDamage",
+                                                  "SwapLineIf", "Random",
+                                                    "While Vili sleeps, her gentle breathing lifts her breasts up and down in a slow rhythm, and you just can't look away from the alluring sight.[DamageToPlayer]",
+                                                    "Vili murmurs in her sleep and unconsciously lifts up her tits with her arms, leaving you completely captivated as you watch her huge breasts bounce.[DamageToPlayer]",
+                                                    "Vili cutely yawns while she sleeps and stretches making her tits bounce a little, leaving your jaw hanging open in awe of her perfect breasts as they temptingly jiggle.[DamageToPlayer]",
+                                                  "EndLoop"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "SexTemptation",
+                                    "theScene": [
+                                                  "HitPlayerWith", "ViliTemptationDamage",
+                                                  "SwapLineIf", "Random",
+                                                    "You just can't keep your eyes off of Vili's big perfect breasts as she rides you, every tempting bounce completely captivating you.[DamageToPlayer]",
+                                                    "Vili leans back, emphasizing her chest, leaving you completely captivated as you watch her huge breasts bounce while she rides you.[DamageToPlayer]",
+                                                    "Vili teasingly shakes her tits, leaving your jaw hanging open in awe of her perfect breasts as they temptingly jiggle.[DamageToPlayer]",
+                                                    "Vili presses her tits against your chest while she bounces her hips on your rigid cock, leaving you gasping as she rubs her perfectly soft breasts against you.[DamageToPlayer]",
+                                                  "EndLoop"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "SmotheringTemptation",
+                                    "theScene": [  "IfPlayerHasStances", "Breast Smother", "Breast Smother", "EndLoop", "BreastSmotherDuoTemptation",
+                                                  "HitPlayerWith", "ViliTemptationDamage",
+                                                  "SwapLineIf", "Random",
+                                                    "You thoughtlessly nuzzle your face into Vili's bountiful cleavage with a blissful sigh, reveling in the feeling of her soft breasts against you.[DamageToPlayer]",
+                                                    "You sigh and rub your face against Vili's perfect tits, her sweet scent filling your senses while you indulge in the softness of her warm breasts.[DamageToPlayer]",
+                                                    "Vili giggles smugly as you bury your face in her bountiful cleavage, and gently cradles your head in her soft tits while you lose yourself for a moment.[DamageToPlayer]",
+                                                    "Vili gently strokes the back of your head while you nuzzle her overwhelming breasts, letting you indulge in their marshmallowy softness all you want.[DamageToPlayer]",
+                                                  "EndLoop"
+                                              ]
+                                },
+                                      {
+                                          "NameOfScene": "BreastSmotherDuoTemptation",
+                                          "theScene": [
+                                                        "HitPlayerWith", "ViliTemptationDamage",
+                                                        "SwapLineIf", "Random",
+                                                          "You thoughtlessly sigh and sink into the duo of Vili's bountiful cleavage imprisoning your face, reveling in the feeling of their soft breasts rubbing against you.[DamageToPlayer]",
+                                                          "You sigh and eagerly rub your face into the two Vili's sets of perfect tits, their sweet scent filling your senses while you indulge in the overwhelming softness of their warm breasts.[DamageToPlayer]",
+                                                          "The duo of Vili's giggle smugly as you bury your face in their overwhelmingly bountiful cleavage, and they gently squeeze your head between their soft tits while you lose yourself for a moment in intoxicating bliss.[DamageToPlayer]",
+                                                          "The two Vili's gently shake their tits back and forth while you nuzzle into her overwhelming cleavage, completely indulging in their marshmallowy softness all you want.[DamageToPlayer]",
+                                                        "EndLoop"
+                                                    ]
+                                      },
+                              {
+                                  "NameOfScene": "TitfuckingTemptation",
+                                  "theScene": [  "IfPlayerHasStances", "Titfuck", "Titfuck", "EndLoop", "TitfuckingDuoTemptation",
+                                                "HitPlayerWith", "ViliTitfuckTempt",
+                                                "SwapLineIf", "Random",
+                                                  "|f|ChangeImageLayer|/|Expression|/|Smug|n|You thoughtlessly hump Vili's bountiful cleavage with a blissful sigh, reveling in the feeling of her soft breasts rubbing your cock.[DamageToPlayer]",
+                                                  "|f|ChangeImageLayer|/|Expression|/|Smug|n|You sigh and thrust your dick between Vili's perfect tits, reaching down and sinking your fingers into her soft chest, indulging in the heavenly softness of her warm breasts.[DamageToPlayer]",
+                                                  "|f|ChangeImageLayer|/|Expression|/|Smug|n|Vili giggles smugly as you eagerly fuck her bountiful cleavage, and gently squeezes her soft tits together to help you lose yourself in the moment.[DamageToPlayer]",
+                                                  "|f|ChangeImageLayer|/|Expression|/|Smug|n|Vili gently bounces her tits while you space out from the sight of her jiggly breasts, letting you indulge in her marshmallowy softness all you want.[DamageToPlayer]",
+                                                "EndLoop"
+                                            ]
+                              },
+                                    {
+                                        "NameOfScene": "TitfuckingDuoTemptation",
+                                        "theScene": [
+                                                      "HitPlayerWith", "ViliTitfuckTempt",
+                                                      "SwapLineIf", "Random",
+                                                       "You thoughtlessly hump the bountiful cleavage of the two Vili's with a blissful sigh, reveling in the feeling of their soft breasts rubbing your cock.[DamageToPlayer]",
+                                                       "You sigh and thrust your dick between the two Vili's perfect tits, reaching down and sinking your fingers into their soft chests, indulging in the heavenly softness of their warm breasts.[DamageToPlayer]",
+                                                       "The duo of Vili's giggle smugly as you eagerly fuck their bountiful cleavage, and gently squeezes their soft tits together to help you lose yourself in the moment.[DamageToPlayer]",
+                                                       "The two Vili's gently bounces their tits while you space out from the sight of their combined jiggly breasts, letting you indulge in their marshmallowy softness all you want.[DamageToPlayer]",
+                                                     "EndLoop"
+                                                  ]
+                                    },
+
+              {
+                  "NameOfScene": "Intro",
+                  "theScene": [
+                                  "ChangeImageLayer", "Expression", "Smug",
+                                  "FocusOnMonster", "2", "ApplyStatusEffectToMonster", "Stabilizing Phantasm",
+                                  "Vili gives you a smug grin as an illusionary phantasm of her appears next to her!",
+                                  "SetProgress", "2",
+                                  "SetChoice", "3", ""
+                            ]
+              },
+              {
+                  "NameOfScene": "DoNothing",
+                  "theScene": [
+                            ]
+              },
+
+
+              {
+                "NameOfScene": "DemonLayerResponse",
+                "theScene": [ "IfMonsterHasStatusEffect", "Restrain", "DoNothing",
+                              "IfMonsterHasStatusEffect", "Sleep", "DoNothing",
+                              "IfMonsterHasStatusEffect", "Stun", "DoNothing",
+                              "SkipPlayerAttack",
+                              "As you go to lash out with Demon Layer, Vili starts teleporting rapidly around the dreamy void with an echoing giggle, and you try to carefully time your strike...",
+                              "StatCheck",
+                                  "Technique",
+                                  "15",
+                                  "DLayerHit!Pass",
+                                  "Fail",
+                                  "DLayerHit!Fail"
+                          ]
+              },
+                    {
+                        "NameOfScene": "DLayerHit!Pass",
+                        "theScene": [ "ChangeImageLayer", "Expression", "Orgasm",
+                                    "HitMonsterWith", "Demon Layer",
+                                    "Demon layer strikes true with a loud crack, making Vili cry out with ecstasy as holy magic reverberates through her busty body, stopping her in the air![DamageToEnemy]",
+                                    "IfMonsterOrgasm", "DefeatVili",
+                                    "FocusedSpeaks",
+                                    "SwapLineIf", "Random",
+                                        "'Ahhh...♥ Th-This is bad...♥'",
+                                        "'Kyaaaa!♥ D-Damn you!♥'",
+                                        "'Haaaahhh!♥ F-Fool I won't lose to this!♥'",
+                                        "'KYAAA!♥♥♥ H-How did you hit me?!'",
+                                        "'KYAAA!♥♥♥ I-I'll pay you back for that a hundred fold!'",
+                                    "EndLoop"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "DLayerHit!Fail",
+                        "theScene": [ "ChangeImageLayer", "Expression", "Mocking",
+                                    "But you only manage to the air, and Vili laughs mockingly at your missed attack."
+                                  ]
+                    },
+                    {
+                      "NameOfScene": "DefeatVili",
+                      "theScene": [  "ChangeImageLayer", "Expression", "Orgasm", "ChangeImageLayer", "Face", "BlushExtra",
+                                    "Vili cries out in a resonating orgasm, her back arching in pleasure, from the strike of Demon Layer, leaving the Phantasms fading away.",
+                                    "FocusedSpeaks",
+                                    "SwapLineIf", "Random",
+                                      "'KYAAA!♥♥♥ AHH!♥ TH-THE PLEASURE WON'T STOOOPPP!♥♥♥'",
+                                       "'AHHH!!!♥♥♥ FEELS SOOOO GOOOOODDDD!!!♥♥♥",
+                                       "'EEEK!♥ I-I'm gonna l-lose?!♥♥♥ NHOOOO!♥♥♥",
+                                       "'W-Wai- I-I can't- AAAAAHH!!!!!!♥♥♥'",
+                                       "'{i}I'm cumming!♥ I'm cumming!♥ I'm cummingggg!♥♥♥{/i}'",
+                                    "EndLoop",
+                                    "DefeatMonster",
+                                    "ClearFightForVictory",
+                                    "EndCombat"
+                                ]
+                    },
+              {
+                "NameOfScene": "Victory",
+                "theScene": [    "As Vili cries out in a resonating orgasm, her back arching in pleasure, the Phantasms fading away as she collapses to the floor.",
+                                "DefeatMonster",
+                                "ClearFightForVictory",
+                                "EndCombat"
+                          ]
+              },
+
+
+              {
+                "NameOfScene": "_HighArousal",
+                "theScene": [  "ChangeImageLayer", "Expression", "Pleasured", "ChangeImageLayer", "Face", "Blush",
+                                "IfPlayerIsUsingThisSkill", "Demon Layer", "DemonLayerResponse",
+                                "FocusedSpeaks",
+                                "SwapLineIf", "Random",
+                                  "'I-I haven't lost yet!'",
+                                  "'D-Don't think this is over just yet!'",
+                                  "'Ahhhh...♥ D-Dang it!♥ Now my head's all floaty!♥'",
+                                  "'Wh-Why haven't you lost yet?!♥♥♥'",
+                                "EndLoop"
+                          ]
+              },
+
+
+
+
+              {
+                  "NameOfScene": "PhantasmalSpawn",
+                  "theScene": [  "EncounterSizeLessOrEqualTo", "4", "SpawnCheck",
+                                 "ChangeProgress", "1"
+                            ]
+              },
+                  {
+                      "NameOfScene": "SpawnCheck",
+                      "theScene": [  "IfProgressEqualsOrGreater", "5", "SpawnAPhantasm",
+                                     "ChangeProgress", "1"
+                                ]
+                  },
+                      {
+                          "NameOfScene": "SpawnAPhantasm",
+                          "theScene": [ "SetProgress", "0",
+                                      "CallEventAndSceneThenReturn", "Visit Vili", "GoToBreastSizeCombat",
+                                      "The twisting magic surrounding your battle fluctuates wildly as another Phantasm is formed ready to seduce you senseless!",
+                                      "IfChoice", "3", "TittyPhantasm", "SpawnTitfuckingPhantasm",
+
+                                      "AddMonsterToEncounter", "Phantasmal Vili PuffPuff",
+                                      "FocusOnMonster", "13",
+                                      "ApplyStatusEffectToMonster", "Stabilizing Phantasm",
+                                      "SetChoice", "3", "TittyPhantasm"
+                                    ]
+                      },
+                              {
+                                  "NameOfScene": "SpawnTitfuckingPhantasm",
+                                  "theScene": [
+                                              "AddMonsterToEncounter", "Phantasmal Vili Titfuck",
+                                              "FocusOnMonster", "13",
+                                              "ApplyStatusEffectToMonster", "Stabilizing Phantasm",
+                                              "SetChoice", "3", ""
+                                            ]
+                              },
+
+
+              {
+                  "NameOfScene": "TooShort",
+                  "theScene": [ "IfMonsterHasStance", "Breast Smother", "ClearSmotheringDueToHight"
+                            ]
+              },
+                    {
+                        "NameOfScene": "ClearSmotheringDueToHight",
+                        "theScene": [  "ClearStanceFromMonsterAndPlayer", "Breast Smother",
+                                      "Vili is too short to keep smothering you with her tits while you're fucking her!"
+                                  ]
+                    },
+
+
+
+              {
+                  "NameOfScene": "BreastSmotheringOrgasm",
+                  "theScene": [  "IfPlayerHasStances", "Breast Smother", "Breast Smother", "EndLoop", "BreastSmotherDuoOrgasm",
+                                "ChangeImageLayer", "Expression", "Playful",
+                                "SwapLineIf", "Random",
+                                  "Vili giggles playfully as she rolls her soft, heavy breasts around your face in alternating circles, leaving your mind spinning in delirious lust, as she massages you with her perfect tits, she melts away your cares, worries, and thoughts, replacing them all with her overwhelming boobs.|n|The ecstasy cascades through your mind as she gently rubs your face with her bountiful tits, and your aching cock spasms from the mind-melting pleasure, until her soft breasts completely wear away your resistance, leaving you spurting thick ropes of cum for her devilish chest.[PlayerOrgasmLine]",
+                                  "You moan as Vili squeezes her bountiful breasts around your head, completely smothering you in her cleavage with an evil giggle, flooding your mind with enchanting images of her tits while her sweet scent fills your senses.|n|She squeezes her tits again with a sweet coo, and your entire body shivers in ecstasy, your thoughts replaced completely with her perfect breasts, leaving you eagerly rubbing your face into her deep cleavage, sinking deeper into her charms.|n|With the third squeeze of her devilish tits you're left letting out a muffled moan as your twitching cock spurts thick ropes of cum and your mind flooded with her huge breasts.[PlayerOrgasmLine]",
+                                  "Vili giggles as you're completely overwhelmed by her soft marshmallowy tits, and you bury your face deeper into them, indulging in their comforting warmth as your pleasure drunk mind completely gives in to her, eagerly nuzzling into her cleavage.|n|She gently shakes her tits back and forth, rocking your head between them and that heavenly sensation is enough to finish you off, leaving your twitching cock spurting thick ropes of cum while you tremble in blissful ecstasy, thinking only of Vili's perfect tits.[PlayerOrgasmLine]",
+                               "EndLoop"
+                            ]
+              },
+                      {
+                          "NameOfScene": "BreastSmotherDuoOrgasm",
+                          "theScene": [ "ChangeImageLayer", "Expression", "Playful",
+                                        "SwapLineIf", "Random",
+                                          "|f|ChangeImageLayer|/|Expression|/|Playful|n|The pair of Vili giggle playfully as they roll their soft, heavy breasts around your face in alternating circles, leaving your mind-melting in delirious lust, as she massages you with her perfect tits, she wipes away your cares, worries, and thoughts, replacing them all with her overwhelming boobs.|n|The ecstasy cascades through your mind as they gently rub your face with their bountiful tits, and your aching cock spasms from the overwhelming blissful pleasure, until their soft pillowy breasts completely wear away your resistance with a devilish squeeze, leaving you spurting thick ropes of cum in devotion to devilish titties.|f|PlayerOrgasm|/|1|n|But as they both teasingly shake their voluptuous tits around your head, you're left moaning and twitching in extended ecstasy, your aching dick spasming madly as you spurt more and more for Vili's bountiful cleavage overwhelming you completely with its marshmallowy softness.[PlayerOrgasmLine]",
+                                          "|f|ChangeImageLayer|/|Expression|/|Smug|n|You moan as the duo of Vili's squeeze their bountiful breasts around your head, completely smothering you in their combined cleavage with an evil giggle, flooding your mind with enchanting images of her tits while her sweet scent fills your senses.|n|They squeeze their tits again with a sweet coo, and your entire body shivers in ecstasy, your thoughts replaced completely with her perfect breasts, leaving you eagerly rubbing your face into their overwhelming prison of cleavage, sinking deeper into their enchanting allure.|n|With the third squeeze of their devilish tits you're left letting out a muffled cry of ecstasy as your twitching cock spurts thick ropes of cum and your mind flooded with her huge bouncing breasts, taking over your charmed senseless mind.|f|PlayerOrgasm|/|1|n|But as the duo giggle in unison and squeeze their bountiful breasts a fourth and final time your entire body shivers in ecstasy as your dick spasms like crazy, spurting more and more of your semen while they completely bury you in soft mind-bending cleavage, completely crushing your will to resist between their pillowy tits for a few blissful seconds.[PlayerOrgasmLine]",
+                                          "|f|ChangeImageLayer|/|Expression|/|Seductive|n|The duo of Vili's giggle as you're completely overwhelmed by their soft marshmallowy tits, and you lovingly bury your face deeper into them, eagerly groping their breasts with your hands, letting your fingers sink into the intoxicating flesh, completely indulging in their comforting warmth as your pleasure drunk mind completely gives in to her.|n|You devotedly nuzzle into their combined cleavage, and they reward you by gently shaking their tits back and forth, rocking your head between them and that heavenly sensation is enough to finish you off, leaving your twitching cock spurting thick ropes of cum while you tremble in blissful ecstasy, thinking only of Vili's perfect tits.|f|PlayerOrgasm|/|1|n|While you're still lost in a sea of pillowy ecstasy, they squeeze their heavy breasts, tightly pressing them together with you stuck in the heavenly prison of cleavage, quivering in renewed ecstasy from the intense yet seductively soft pressure, your dick throbbing and spasming as it spurts more and more cum, leaving your mind drifting in a heaven of tits.[PlayerOrgasmLine]",
+                                      "EndLoop"
+                                    ]
+                      },
+
+              {
+                  "NameOfScene": "TitfuckingOrgasm",
+                  "theScene": [  "IfPlayerHasStances", "Titfuck", "Titfuck", "EndLoop", "TitfuckingDuoOrgasm",
+                                  "CallEventAndSceneThenReturn", "Visit Vili", "GoToTitfuckCombat",
+                                "SwapLineIf", "Random",
+                                    "|f|ChangeImageLayer|/|Expression|/|Playful|n||f|ChangeImageLayer|/|ViliPaizuri|/|SqueezeAlt|n||f|ChangeImageLayer|/|BoobString|/|SqueezeAlt|n||f|ChangeImageLayer|/|PlayerBodyPenisTip|/|None|n||f|ChangeImageLayer|/|PlayerBodyPenisTipSilhouette|/|None|n||f|PlayMotionEffectLoop|/|Pump|n|Vili giggles playfully as she pumps your stiff cock with her bountiful tits, your throbbing manhood completely trapped in her pillowy tits as she keeps you teetering on the brink of orgasm, her gentle squeezing as she stroke your aching manhood leaving your entire body tensing with melting bliss.|n||f|ChangeImageLayer|/|Expression|/|Base|n||f|PlayVisualEffect|/|DoublePulse|/|white.png|n||f|PlayMotionEffectLoop|/|PumpSlow|n||f|PlayMotionEffect|/|Crash|n||f|ChangeImageLayer|/|SemenSpurt|/|Base|n||f|ChangeImageLayer|/|Semen|/|Base|n|With a final seductively smug impact of her jiggly tits you're sent howling over the edge, coating her heavy breasts in your seed while you tremble and spasm in ecstasy, only able to think of her heavenly cleavage as it works to wring you dry.|n||f|ChangeImageLayer|/|Expression|/|Smug|n||f|PlayerOrgasm|/|1|n||f|ApplyStatusEffect|/|Charm|n||f|PlayVisualEffect|/|DoublePulse|/|white.png|n||f|PlayMotionEffect|/|Crash|n||f|ChangeImageLayer|/|Semen|/|BaseThick|n|Her grin only gets more devilish as she keeps pumping your aching cock in slow calculated strokes, each sinisterly sweet movement making you spurt until your cum is shooting out like a fountain from between her overwhelming cleavage, your mind-blanking out completely as you keep cumming for her perfect tits.|n||f|ChangeImageLayer|/|Expression|/|Caring|n||f|EndMotionEffect|n||f|ChangeImageLayer|/|SemenSpurt|/|None|n|But eventually, the pleasure ebbs away and you're left gasping, trying to recover from your intense orgasm, and Vili giggles sweetly as she soaks in your semen with a magical glow before gently resuming milking your aching manhood.[PlayerOrgasmLine][PostOrgasmLine]|f|PlayMotionEffect|/|Realign|n||f|CallEventAndSceneThenReturn|/|Visit Vili|/|SemenClearCombat|n|",
+                                    "|f|ChangeImageLayer|/|Expression|/|Caring|n||f|ChangeImageLayer|/|PlayerBodyPenisTip|/|None|n||f|ChangeImageLayer|/|PlayerBodyPenisTipSilhouette|/|None|n||f|ChangeImageLayer|/|ViliPaizuri|/|Squeeze|n||f|ChangeImageLayer|/|BoobString|/|Squeeze|n||f|PlayMotionEffectLoop|/|Pump|n|Vili innocently looks up at you as she slowly and sensually squeezes her breasts together, giving them a teasing shake, enticing your needy cock until you can't stop yourself from thrusting your hips, fucking her heavenly soft tits with your aching manhood.|n||f|ChangeImageLayer|/|Expression|/|Smug|n||f|ApplyStatusEffect|/|Charm|n||f|PlayVisualEffect|/|DoublePulse|/|white.png|n||f|PlayMotionEffect|/|Crash|n||f|ChangeImageLayer|/|Semen|/|Squeeze|n||f|ChangeImageLayer|/|SemenSpurt|/|Squeeze|n|With every willing thrust you feel like your dick is breaking down, making you more and more obsessed with her bountiful tits, until her enchanting tits completely enslave your cock with their overwhelming softness, humping her breasts until something snaps inside you, and you erupt your seed all over her chest and face.|n||f|ChangeImageLayer|/|Expression|/|Playful|n||f|PlayerOrgasm|/|1|n||f|PlayMotionEffectLoop|/|Crash|n||f|PlayVisualEffect|/|DoublePulse|/|white.png|n||f|ChangeImageLayer|/|Semen|/|SqueezeThick|n||f|PlayMotionEffect|/|Crash|n|She playfully giggles as you can't stop yourself from fucking her huge breasts even as you tremble with orgasmic pleasure, each mind-melting thrust making you spurt a long rope of cum all over her until you're left trembling and blank, completely focused on her heavy tits enveloping your spasming dick.|n||f|ChangeImageLayer|/|Expression|/|LipLickMock|n|Vili licks ups some of your seed from her lips with a happy moan before soaking in every drop with a magical glow, giving her big tits a teasing shake, tempting you to do it all over again...[PlayerOrgasmLine][PostOrgasmLine]|f|PlayMotionEffect|/|Realign|n||f|CallEventAndSceneThenReturn|/|Visit Vili|/|SemenClearCombat|n|",
+                                    "|f|ChangeImageLayer|/|Expression|/|Smug|n||f|ChangeImageLayer|/|ViliPaizuri|/|SqueezeAlt|n||f|ChangeImageLayer|/|BoobString|/|SqueezeAlt|n||f|ChangeImageLayer|/|PlayerBodyPenisTip|/|None|n||f|ChangeImageLayer|/|PlayerBodyPenisTipSilhouette|/|None|n||f|PlayMotionEffectLoop|/|Pump|n|You moan incoherently as Vili pumps your twitching dick with growing intensity, glowing a faint teal as she weaves magic into her movements, sending reverberating pleasure directly through your spasming cock from her bountiful jiggly tits, each squeezing stroke echoing through your hips.|n||f|ChangeImageLayer|/|Expression|/|Playful|n||f|ApplyStatusEffect|/|Charm|n||f|ChangeImageLayer|/|Semen|/|Base|n||f|ChangeImageLayer|/|SemenSpurt|/|Base|n||f|PlayVisualEffect|/|DoublePulse|/|white.png|n||f|EndMotionEffect|n||f|PlayMotionEffect|/|Crash|n|She giggles joyfully as your dick completely gives in to her heavy breasts crushing its resistance leaving you spurting all over her chest while twitching in bliss, your thoughts completely smothered in her perfect breasts as her magic soaks into your brain.|n||f|PlayerOrgasm|/|1|n||f|ChangeImageLayer|/|Semen|/|BaseThick|n||f|PlayVisualEffect|/|DoublePulse|/|white.png|n||f|PlayMotionEffect|/|Crash|n|You blissfully sigh as her tits overwhelm both your twitching manhood and your empty mind, her every impactful stoke of her bountiful tits wringing another thick load out of your aching balls giving her more and more seed to soak in, milking you dry while you fall in love with her soft breasts.|n||f|ChangeImageLayer|/|Expression|/|LipLick|n||f|ChangeImageLayer|/|SemenSpurt|/|None|n||f|EndMotionEffect|n|Finally she relents and licks up some of your seed before soaking in your semen with a teal glow and resuming her mind-melting titfuck.[PlayerOrgasmLine][PostOrgasmLine]|f|PlayMotionEffect|/|Realign|n||f|CallEventAndSceneThenReturn|/|Visit Vili|/|SemenClearCombat|n|",
+                                "EndLoop"
+                            ]
+              },
+                      {
+                          "NameOfScene": "TitfuckingDuoOrgasm",
+                          "theScene": [
+                                        "SwapLineIf", "Random",
+                                          "|f|ChangeImageLayer|/|Expression|/|Playful|n|The pair of Vili giggle playfully as they pump your stiff cock with their bountiful tits, your throbbing manhood completely trapped in between their pillowy tits as they keep you teetering on the brink of orgasm, their gentle squeezing as they slowly stroke your aching manhood leaving your entire body tensing with melting bliss.|n||f|ChangeImageLayer|/|Expression|/|Seductive|n|With a final seductively smug impact of their unified jiggly tits you're sent howling over the edge, coating their heavy breasts in your seed while you tremble and spasm in ecstasy, only able to think of Vili's heavenly cleavage as they work to wring you dry.|n||f|ChangeImageLayer|/|Expression|/|Smug|n||f|PlayerOrgasm|/|1|n||f|ApplyStatusEffect|/|Charm|n|Their grins only gets more devilish as they keep pumping your aching cock in slow calculated strokes, each sinisterly sweet movement making you spurt until your cum is shooting out like a fountain from between their overwhelming cleavage, your mind-blanking out completely as you keep cumming for Vili's perfect tits again and again.|f|PlayerOrgasm|/|1|n|The orgasm string together on and on, and you idly wonder if you're ever going to stop cumming for the two pairs of huge tits slowly milking spurt after explosive spurt from your aching balls. You don't think you {i}want{/i} to stop cumming, eagerly craving more.|n||f|ChangeImageLayer|/|Expression|/|Happy|n|But to your dismay, eventually the pleasure ebbs away and you're left gasping, trying to recover from your long and intense orgasm, and the duo of Vili's giggle sweetly as they soak in your semen with a magical glow before gently resuming milking your aching manhood.[PlayerOrgasmLine][PostOrgasmLine]",
+                                          "|f|ChangeImageLayer|/|Expression|/|Happy|n|The two Vili innocently look up at you as they slowly and sensually squeeze their breasts together, giving them a teasing shake at the same time, enticing your needy cock until you can't stop yourself from thrusting your hips, fucking their heavenly soft tits with your aching manhood.|n||f|ChangeImageLayer|/|Expression|/|Smug|n||f|ApplyStatusEffect|/|Charm|n|With every willing thrust you feel like your dick is breaking down, making you more and more obsessed with Vili's bountiful tits, until their enchanting tits completely enslave your cock with their overwhelming softness, humping their breasts until something snaps inside you, and you erupt your seed all over their chests and faces.|n||f|ChangeImageLayer|/|Expression|/|Playful|n||f|PlayerOrgasm|/|1|n|They playfully giggles as you can't stop yourself from fucking their huge breasts even as you tremble with orgasmic pleasure, each mind melting thrust making you spurt a long rope of cum all over them until you're left trembling and blank, completely focused on their heavy tits enveloping your spasming dick.|f|PlayerOrgasm|/|1|n|But that doesn't stop the two of them from tightly squeezing their tits together, completely crushing your spasming manhood with their heavenly soft tits, leaving you crying out in redoubled ecstasy, explosively cumming again all over the two of them like a fountain, leaving them giggling in delight as you break yourself with their tits.|n|They licks up some of your seed from their lips with a happy moan before soaking in every drop with a magical glow, giving their big tits a teasing shake, tempting you to do it all over again...[PlayerOrgasmLine][PostOrgasmLine]",
+                                          "|f|ChangeImageLayer|/|Expression|/|Smug|n|You moan incoherently as duo of Vili's pump your twitching dick with growing intensity, glowing a faint teal as they weave magic into their movements, sending reverberating pleasure directly through your spasming cock from their bountiful jiggly tits, each squeezing stroke echoing through your hips.|n||f|ChangeImageLayer|/|Expression|/|Playful|n||f|ApplyStatusEffect|/|Charm|n|They giggle joyfully as your dick completely gives in to their heavy breasts crushing its resistance leaving you spurting all over their chests while twitching in bliss, your thoughts completely smothered in their perfect breasts as their magic soaks into your brain.|n||f|PlayerOrgasm|/|1|n|You blissfully sigh as their tits overwhelm both your twitching manhood and your empty mind, their every impactful stoke of their bountiful tits wringing another thick load out of your aching balls giving them more and more seed to soak in, milking you dry while you fall helplessly in love with their soft breasts.|f|PlayerOrgasm|/|1|n|Every pump of the duos tits only intensifies the next mind breaking spurt your cock unloads, sending brain shattering bliss through your spasming dick over and over as the double titfuck you senseless, leaving you brain seeped in bouncy tits.|n|Finally they relent and lick up some of your seed before soaking in your semen with a teal glow and resuming their cock-enslaving titfuck.[PlayerOrgasmLine][PostOrgasmLine]",
+                                      "EndLoop"
+                                    ]
+                      },
+
+
+
+
+
+
+
+              {
+                  "NameOfScene": "Puff Puff Temptation",
+                  "theScene": [  "HitPlayerWith", "ViliTemptationDamage",
+                                "ChangeImageLayer", "Expression", "Seductive",
+                                "Vili spreads her arms with a seductive smile as shakes her bountiful tits back and forth, captivating your eyes as seductive magic glows around her, hazing your thoughts over with lust.[DamageToPlayer]",
+                                "FocusedSpeaks",
+                                "SwapLineIf", "Random",
+                                  "Come on,♥ bury your face in my tits.♥",
+                                  "Let me massage your cares away with my perfect boobs.♥",
+                                  "I'll smother you in my cleavage {i}alllll{/i} you want.♥",
+                                  "Come here,♥ you can use my breasts like a pillow.♥",
+                                  "Want me to rub my tits all over your face?♥",
+                                  "Do you want a puff puff massage?♥",
+                                "EndLoop",
+                                "Menu",
+                                  "Nuzzle your face in her tits.",
+                                  "Ignore her puff puff offer.",
+                                "EndLoop"
+                            ]
+              },
+                    {
+                        "NameOfScene": "Nuzzle your face in her tits.",
+                        "theScene": [
+                                      "ApplyStance", "Breast Smother",
+                                      "HitPlayerWith", "Vili's Puff Puff Massage",
+                                      "You rush forward and bury your face in Vili's tits with a happy sigh, reveling in their marshmallowy softness while she giggles playfully at your helpless reaction.[DamageToPlayer]"
+                                  ]
+                    },
+                        {
+                            "NameOfScene": "CantResistPuffPuff",
+                            "theScene": [ "With all your might you try to muster the willpower to resist Vili's perfect tits, but your resistance just simply crumbles away from your loving devotion to her bouncy tits as she shakes them...",
+                                          "JumpToScene", "Nuzzle your face in her tits."
+                                      ]
+                        },
+                    {
+                        "NameOfScene": "Ignore her puff puff offer.",
+                        "theScene": [  "IfFetishLevelEqualOrGreater", "Vili's Curse", "10", "CantResistPuffPuff",
+                                      "You try to resist the temptation of Vili's magically enhanced seduction!",
+                                      "StatCheck",
+                                      "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "25", "1",
+                                      "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "50", "2",
+                                      "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "75", "2",
+                                      "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Vili's Curse", "3", "1",
+                                      "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Vili's Curse", "6", "2",
+                                      "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Vili's Curse", "10", "2",
+                                      "Temptation",
+                                      "15",
+                                      "IgnoredPufPuff",
+                                      "Fail",
+                                      "Nuzzle your face in her tits."
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "IgnoredPufPuff",
+                              "theScene": [ "ChangeImageLayer", "Expression", "Pout",
+                                            "Vili pouts as you completely ignore her offer to bury your face in her soft cleavage."
+                                        ]
+                          },
+
+
+
+
+                {
+                    "NameOfScene": "Titfuck Temptation",
+                    "theScene": [  "HitPlayerWith", "ViliTemptationDamage",
+                                  "ChangeImageLayer", "Expression", "Seductive", "ChangeImageLayer", "Base", "ArmsCrossed",
+                                  "Vili squishes her huge breasts together with her arms and a seductive smile as she bounces them up and down, captivating your eyes as seductive magic glows around her, hazing your thoughts over with lust.[DamageToPlayer]",
+                                  "FocusedSpeaks",
+                                  "SwapLineIf", "Random",
+                                    "Come on [ThePlayerName],♥ bury your dick in my tits.♥",
+                                    "Let me milk you dry with my perfect boobs.♥",
+                                    "I'll titfuck your dick as {i}lonnngggg{/i} as you want.♥",
+                                    "Come here and fuck my pillowy tits.♥",
+                                    "Want me to rub my tits all over your cock?♥",
+                                    "Don't you want a titfuck?♥",
+                                  "EndLoop",
+                                  "Menu",
+                                    "Plunge your dick into her cleavage.",
+                                    "Ignore her titfuck offer.",
+                                  "EndLoop"
+                              ]
+                },
+                      {
+                          "NameOfScene": "Plunge your dick into her cleavage.",
+                          "theScene": [
+                                        "ApplyStance", "Titfuck",
+                                        "HitPlayerWith", "Vili's Playful Tittyfuck",
+                                        "ChangeImageLayer", "Base", "Base",
+                                        "CallEventAndSceneThenReturn", "Visit Vili", "GoToTitfuckCombat", "PlayMotionEffect", "Crash",
+                                        "You rush forward and bury your cock in Vili's bountiful tits with a happy sigh, reveling in their marshmellowy softness while she giggles seductively at your blissful reaction.[DamageToPlayer]"
+                                    ]
+                      },
+                          {
+                              "NameOfScene": "CantResistTitfuck",
+                              "theScene": [ "With all your might you try to muster the willpower to resist Vili's perfect tits, but your resistance just simply crumbles away from your loving devotion to her bouncy tits as she playfully bounces them in her hands...",
+                                            "JumpToScene", "Plunge your dick into her cleavage."
+                                        ]
+                          },
+                      {
+                          "NameOfScene": "Ignore her titfuck offer.",
+                          "theScene": [  "IfFetishLevelEqualOrGreater", "Vili's Curse", "10", "CantResistTitfuck",
+                                        "You try to resist the temptation of Vili's magically enhanced seduction!",
+                                        "StatCheck",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "25", "1",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "50", "2",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "75", "2",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Vili's Curse", "3", "1",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Vili's Curse", "6", "2",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Vili's Curse", "10", "2",
+                                        "Temptation",
+                                        "15",
+                                        "IgnoredTitfuck",
+                                        "Fail",
+                                        "Plunge your dick into her cleavage."
+                                    ]
+                      },
+                            {
+                                "NameOfScene": "IgnoredTitfuck",
+                                "theScene": [ "ChangeImageLayer", "Expression", "Pout",
+                                              "ChangeImageLayer", "Base", "Base",
+                                              "Vili pouts as you completely ignore her offer to bury your cock in her soft cleavage."
+                                          ]
+                            }
+
+
+
+                ]
+}

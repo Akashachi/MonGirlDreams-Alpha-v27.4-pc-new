@@ -1,0 +1,1315 @@
+{
+    "name": "Visit Lillian",
+    "CardType": "Church",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Lillian",
+                    "postName": "",
+                    "SpeakerType": ""
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "StoreKeeper",
+                        "theScene": [
+                                    "DisplayCharacters",
+                                      "1",
+                                    "EndLoop",
+                                    "IfChoice", "14", "", "CheckDungeonClear",
+                                    "IfChoice", "15", "", "CheckTempleClear",
+                                    "IfChoice", "18", "", "CheckLabyClear",
+                                      "JumpToScene", "Intro"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "CheckDungeonClear",
+                                "theScene": [ "IfHasItem", "Sigil Of Allure", "Beat the forest dungeon.",
+                                            "JumpToScene", "Intro"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "Beat the forest dungeon.",
+                                      "theScene": [ "SetChoice", "14", "ForestDungeonConvo",
+                                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                                  "As you approach Lillian, she runs over at a breakneck speed and almost hug-tackles you into the ground, her sudden embrace knocking the air out of your lungs.",
+                                                  "Speaks",
+                                                  "You did it! You cleared the Forest Dungeon and got the Sigil of Allure! I knew you could do it!",
+                                                  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                  "She ends her hug with an almost sheepish smile, taking a step back.",
+                                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                                  "Speaks",
+                                                  "Great job getting through such an evil place, I bet you stole the sigil back right out from under the Imp Queen's nose! Hehe, her minions' sinful temptations were no match for your heroic willpower!♪",
+                                                  "Lillian takes on a heroic stance with a jubilant smile, before recomposing and fidgeting a little with a giggle.",
+                                                  "ChangeImageLayer", "Expression", "1", "Nervous",
+                                                  "Speaks",
+                                                  "Ehehe,♪ I asked Elena to keep me up to date on your progress. But I'm pretty sure her intel is {i}super{/i} wrong, there's no way the first dungeon would have an {i}Arch-Demon{/i} in it, she'd be so close to town people would be freaking out and panicking, everyone would be huddled in the church praying to be saved from the impending {i}doom.{/i}",
+                                                  "You try to explain that there really {i}is{/i} an Arch-Demon there, and that you didn't {i}exactly{/i} steal the sigil out from under her, but Lillian doesn't seem to be having any of it, taking on a grand pose to emphasize her point.",
+                                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                                  "Speaks",
+                                                  "Nonsense! Oh brave adventurer [ThePlayerName], don't understate your great achievements in the name of the Goddess! You're doing yourself a disservice! And clearly the Imp Queen was just using fancy talk to make herself sound important to her minions. From what I've read Arch-Imps have {i}very{/i} fragile egos.",
+                                                  "Speaks",
+                                                  "With your bravery and courage you took back what was rightfully yours in the first place! So great job! You can do it [ThePlayerName]! You will collect the sigils, and defeat, the {i}Demon Queen!{/i} Eventually! Everything is one step at a time, so don't get in over your head and try to actually fight the Imp Queen or something unless you're ready to try it a-and-!",
+                                                  "Lillian is left running out of air as she finishes her fast-paced, yet reassuring rambling, eventually dropping her dynamic pose as she takes deep breaths of air.",
+                                                  "Speaks",
+                                                  "S-So, y-yeah you should keep pushing forward, and stuff... {i}I believe in you!♪{/i}",
+                                                  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                  "With her final statement she hops back up to her full diminutive height with a wide smile.",
+                                                  "Speaks",
+                                                  "Anyways,♪ what did you need, {i}hero?♪{/i}",
+                                                  "Lillian playfully and excitedly giggles after calling you that.",
+                                                  "ChangeProgress", "5",
+                                                  "JumpToScene", "VisitMenu"
+                                                ]
+                                  },
+                    {
+                        "NameOfScene": "CheckTempleClear",
+                        "theScene": [ "IfHasItem", "Sigil Of Will-Power", "Beat the temple.",
+                                    "JumpToScene", "Intro"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "Beat the temple.",
+                                "theScene": [ "SetChoice", "15", "templeConvo",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "As you approach Lillian, she runs over to you with a beaming smile with breakneck speed, hug tackling you with a laugh, almost knocking you to the ground as her sudden embrace knocking the air out of your lungs.",
+                                            "Speaks",
+                                            "You did it!♪ You defied the trials of that heretical Temple on the mountain and got the Sigil of Will-Power! I knew you could do it!♪",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "She gives you another tight and ecstatic squeeze before letting the hug go and hopping back with a brimming smile.",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Speaks",
+                                            "Great job! I never doubted you for a second!♪ Hehe,♪ that evil nine-tailed fox and her demonic minions never stood a chance against you!♪",
+                                            "ChangeImageLayer", "Expression", "1", "Nervous",
+                                            "Speaks",
+                                            "Though, I kind of figured a nine-tailed fox demon would be way stronger than {i}second{/i} dungeon material...",
+                                            "ChangeImageLayer", "Expression", "1", "Blush",
+                                            "You explain to her that it was actually two oni sisters you had to deal with, and that the kitsune was more of a side thing, with less tails.",
+                                            "Speaks",
+                                            "O-Ohhhhh... H-hehe, {i}maybe{/i} I made a few too many assumptions from what Elena told me... hehe...",
+                                            "ChangeImageLayer", "Expression", "1", "Upset",
+                                            "Speaks",
+                                            "But come on, embellishing your accomplishments is {i}way{/i} more fun than what actually happened!",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Speaks",
+                                            "But seriously, you're doing {i}amazing!♪{/i} You'll be taking down the Demon Queen in no time at all!♪",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "Speaks",
+                                            "And I'll be here cheering you on the whole way [ThePlayerName]!♪",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Speaks",
+                                            "So did you need something, brave adventuring hero?♪",
+                                            "Lillian playfully and excitedly giggles after calling you that.",
+                                            "ChangeProgress", "5",
+                                            "JumpToScene", "VisitMenu"
+                                          ]
+                            },
+                    {
+                        "NameOfScene": "CheckLabyClear",
+                        "theScene": [ "IfHasItem", "Lucidian Passport", "Beat the laby.",
+                                    "JumpToScene", "Intro"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "Beat the laby.",
+                                "theScene": [ "SetChoice", "18", "labyConvo",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "As you approach Lillian, she rushes over to you at breakneck speed with a beaming smile, hug-tackling you with a jubilant giggle, the sudden embrace knocking the air out of your lungs and almost pushing you to the ground. Raising her eyes from your chest, the priestess gazes up at you expectantly.",
+                                            "Speaks",
+                                            "You did it!♪ You traversed the Labyrinth and evaded the dreaded minotaur! I knew you could do it!♪",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "She gives you another warm huggy squeeze before letting go, prancing backwards a few hopping steps with a beaming smile, mercifully letting you catch your breath.",
+                                            "ChangeImageLayer", "Expression", "1", "Upset",
+                                            "Speaks",
+                                            "Though I'm wondering about the power curve of these dungeons... Aren't there minotaurs on the mountain paths? How is that a challenge for you now???",
+                                            "ChangeImageLayer", "Expression", "1", "Surprised",
+                                            "Still gasping for air, you explain that there's no minotaur in the Labyrinth, making the cleric woman gasp with shock.",
+                                            "ChangeImageLayer", "Expression", "1", "Upset",
+                                            "Speaks",
+                                            "{i}What?!{/i} What do you {i}mean{/i} there's no minotaur in the {i}Labyrinth!?{/i} That's like- {i}classic maze legend 101!{/i} Right?!",
+                                            "ChangeImageLayer", "Expression", "1", "Surprised",
+                                            "You helpfully exposit on the Cerberus sisters, hellhound guardians of the Umbral Labyrinth, Lillian's mouth taking the shape of an awed 'o' of understanding.",
+                                            "Speaks",
+                                            "Oooooh...",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "Speaks",
+                                            "So the Cerberus Sisters were a big hellhound with three heads and a serpent tail, right? How big was she? Did you play music to soothe her and pass unopposed? {b}Oh!{/b} Did you pet her!? Did you subdue her gentle soul with comforting wholesome calming headpats!?",
+                                            "Menu",
+                                              "Yes.",
+                                              "There was definitely a lot of... petting...",
+                                              "No.",
+                                            "EndLoop"
+                                          ]
+                            },
+                                    {
+                                        "NameOfScene": "No.",
+                                        "theScene": [
+                                                    "ChangeImageLayer", "Expression", "1", "Upset",
+                                                    "Speaks",
+                                                    "Aw... That's lame... You should have patted them.",
+                                                    "JumpToScene", "labytalkEnd"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "There was definitely a lot of... petting...",
+                                        "theScene": [
+                                                    "ChangeImageLayer", "Expression", "1", "Blush",
+                                                    "Speaks",
+                                                    "...{i}Oh.{/i} Uh- well, anyways-",
+                                                    "JumpToScene", "labytalkEnd"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "Yes.",
+                                        "theScene": [
+                                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                                    "Speaks",
+                                                    "{i}Yay!♪{/i} I bet they were super fluffy!♪",
+                                                    "JumpToScene", "labytalkEnd"
+                                                  ]
+                                    },
+                                            {
+                                                "NameOfScene": "labytalkEnd",
+                                                "theScene": [
+                                                                "ChangeImageLayer", "Expression", "1", "Base",
+                                                                "Speaks",
+                                                                "So yeah! Amazing job out there smiting evil- {i}don't correct me-{/i} Keep it up and you'll have the Demon Queen beat in no time at all!♪",
+                                                                "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                "Speaks",
+                                                                "And I'll keep cheering you on from here, [ThePlayerName]!♪",
+                                                                "ChangeImageLayer", "Expression", "1", "Base",
+                                                                "Speaks",
+                                                                "Soooo did you need some church service or a prayer, oh brave adventuring hero?♪",
+                                                                "Lillian playfully giggles after calling you that.",
+                                                                "ChangeProgress", "5",
+                                                                "JumpToScene", "VisitMenu"
+                                                          ]
+                                            },
+
+
+
+
+
+            {
+                "NameOfScene": "Intro",
+                "theScene": ["IfTimeIs", "NightTrue", "NightIntro",
+                            "SwapLineIf", "Random",
+                              "You walk over to Lillian and see her talking politely with an elf, but as you approach the elf notices you and flushes deeply, quickly excusing herself from the church and heading out, and Lillian waves her goodbye as she goes.",
+                              "As you walk over to Lillian, you notice that she's currently stuck in a conversation with a man who is obviously attempting to hit on her, but before you make it over to her to intervene, she sighs and raises a hand, and a magical wave of force emanates from her palm, rocketing the man out of the front entrance of the church. Without missing a beat, she prances over towards you as if nothing just happened at all.",
+                              "As you turn your attention over to Lillian you see she's forcefully shooing an imp out of the church with a frumpy expression, and the target of her ire leaves quite miffed, but Lillian seems quite proud of herself, then she runs over to you and gives you a big hug when she notices you.",
+                              "As you turn your attention over to Lillian you see she's forcefully shooing a scantily dressed catgirl out of the church with a frumpy expression, and the target of her ire leaves quite miffed, but Lillian seems quite proud of herself, then she runs over to you and gives you a big hug when she notices you.",
+                              "As you turn your attention over to Lillian you see she's happily chatting with an old human couple sitting in the pews, and as soon as their conversation comes to an end, Lillian turns her attention over to you, and almost knocks you over with a hug.",
+
+                              "As you head over towards Lillian at the Church's lectern, preaching to an apparently empty church, she perks up and immediately runs over to you, and gives you a big hug.",
+
+                              "As you walk over to Lillian she immediately notices you, and gives you a big smile, setting aside the broom she was using to sweep up dust in the church before excitedly bounding over to you.",
+                              "You walk over to Lillian as she polishes the sparkling clean statue of Venereae, and she takes a few more moments to scrub a spot with almost scary intensity before putting the cloth down and turning to you with a cheerful grin.",
+                              "You walk over as Lillian wipes down the pews with a cloth, a serious expression on her face as she does so, but once she notices your approach she cheerfully drops her work and skips over to you.",
+                              "You walk over as Lillian is mopping the floor, dancing with surprising grace as she makes the floor shine as she hums and steps to an unheard beat, only noticing you after a few more moments of her energetic cleaning, and drops her work, skipping over to you with a wide smile.",
+                              "As you make your way over to Lillian through the currently empty church, you see her kneeling in front of the Goddess Statue praying intently, and you patiently wait, not wanting to interrupt her. Soon she hops up excitedly with a beaming smile and turns to face you, her prayers complete.",
+                            "EndLoop",
+                            "JumpToScene", "PostIntro"
+
+                          ]
+            },
+                  {
+                      "NameOfScene": "NightIntro",
+                      "theScene": [
+                                  "SwapLineIf", "Random",
+                                    "As you head over towards Lillian at the Church's lectern, preaching to the moonlit and empty church, she perks up and immediately runs over to you, and gives you a big hug.",
+
+                                    "As you walk over to Lillian she immediately notices you, and gives you a big smile, setting aside the broom she was using to sweep up dust in the church before excitedly bounding over to you.",
+                                    "You walk over to Lillian as she polishes the sparkling clean statue of Venereae, and she takes a few more moments to scrub a spot with almost scary intensity before putting the cloth down and turning to you with a cheerful grin.",
+                                    "You walk over as Lillian wipes down the pews with a cloth, a serious expression on her face as she does so, but once she notices your approach she cheerfully drops her work and skips over to you.",
+                                    "You walk over as Lillian is mopping the floor, dancing with surprising grace as she makes the floor shine as she hums and steps to an unheard beat, only noticing you after a few more moments of her energetic cleaning, and drops her work, skipping over to you with a wide smile.",
+                                    "As you make your way over to Lillian through the currently empty church, you see her kneeling in front of the Goddess Statue praying intently, and you patiently wait, not wanting to interrupt her. Soon she hops up excitedly with a beaming smile and turns to face you, her prayers complete.",
+                                  "EndLoop",
+                                  "JumpToScene", "PostIntro"
+                                ]
+                  },
+            {
+                "NameOfScene": "PostIntro",
+                "theScene": [
+                              "Speaks",
+                              "Ehehe,♪ hi [ThePlayerName]!♪ Do you need anything?",
+                              "JumpToScene", "VisitMenu"
+                          ]
+            },
+
+            {
+                "NameOfScene": "VisitMenu",
+                "theScene": [
+                              "Menu",
+                                "Talk with Lillian.",
+                                "Ask Lillian for a hug.",
+                                "RequiresChoice", "5", "PatPat",
+                                "Ask to headpat Lillian.",
+                                "RequiresChoice", "4", "HolyWater",
+                                "Buy holy water. 100 Eros.",
+                                "Get purification.",
+                                "Done spending time with Lillian.",
+                              "EndLoop"
+                          ]
+            },
+                        {
+                            "NameOfScene": "Ask Lillian for a hug.",
+                            "theScene": [
+                                          "ChangeImageLayer", "Expression", "1", "Happy",
+                                          "Lillian's eyes light up with joy, and she spreads her arms open, practically leaping at you with a giggle to give you a tight hug with all the strength her small body can muster, her joyous demeanor is so infectious you can't help but smile as you hug her back.",
+                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                          "Speaks",
+                                          "SwapLineIf", "Random",
+                                            "Hehe,♪ everybody needs a hug once in a while,♪ and if your adventures are getting you down. I'll be here to cheer you back up!♪",
+                                            "{i}Hmmmm!♪{/i} This hug is blessed by the Goddess, so all your pain will go away!♪",
+                                            "There there [ThePlayerName].♪ Just do your best and you can do it,♪ and if you do fail,♪ I'll be here to help you get up again!♪",
+                                            "By the power of this hug!♪ I purge your worries, fears, and stress!♪ In the name of the Goddess, begone bad feelings!♪",
+                                            "Hug breaks are important.♪ So let all your adventuring fears and worries disappear.♪",
+                                          "EndLoop",
+                                          "She tightens the hug one last time before breaking it and stepping back with a wide smile.",
+                                          "IfChoice", "12", "Hug", "VisitMenu",
+                                          "SetChoice", "12", "Hug",
+                                          "ChangeImageLayer", "Expression", "1", "Happy",
+                                          "Speaks",
+                                          "Be sure to let me know if you need another hug!♪ It's my duty to help ease the burdens of adventurers, and hugging always helps.♪",
+                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                          "Lillian's smile is rather proud and self-assured as she nods knowingly.",
+                                          "IfChoice", "16", "HugTime", "VisitMenu",
+                                          "SetChoice", "16", "HugTime",
+                                          "ChangeProgress",   "5",
+                                          "JumpToScene", "VisitMenu"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "Ask to headpat Lillian.",
+                            "theScene": [
+                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                          "Speaks",
+                                          "Hm? You want to practice the Holy Headpat some more? Okay.♪",
+                                          "Lillian takes off her hat and gazes up at you expectantly with a bright smile, and you tentatively reach out and ruffle her hair, gently stroking her hair, your hand suffused in a soft light, and Lillian sweetly smiles up at you.",
+                                          "You finally pull your hand away, Lillian's eyes shine with pride and she puts her hat back on with a divine smile.",
+                                          "Speaks",
+                                          "SwapLineIf", "Random",
+                                            "That was spectacular [ThePlayerName]!♪ I bet you could stop the most ferocious of hellhounds with that.♪",
+                                            "{i}Hmmmm...{/i}♪ I give that head pat ten out of ten blessings from the Goddess!♪",
+                                            "Hehe.♪ Keep training and I'm sure you can subdue the Demon Queen!♪",
+                                            "With that kind of power, I bet you could exorcise any evil!♪",
+                                          "EndLoop",
+                                          "IfChoice", "13", "patpat2patharder", "VisitMenu",
+                                          "SetChoice", "13", "patpat2patharder",
+                                          "ChangeImageLayer", "Expression", "1", "Happy",
+                                          "Speaks",
+                                          "Don't be afraid to ask me for more Holy Headpat practice.♪ You've got to stay in top form if you want to stop all the monsters peacefully!♪",
+                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                          "Lillian's shining smile and self-assured confidence almost makes you believe you could actually defeat monsters with head pats alone.",
+                                          "IfChoice", "17", "PatPat", "VisitMenu",
+                                          "SetChoice", "17", "PatPat",
+                                          "ChangeProgress",   "5",
+                                          "JumpToScene", "VisitMenu"
+                                      ]
+                        },
+                  {
+                      "NameOfScene": "Talk with Lillian.",
+                      "theScene": [
+                                    "JumpToScene", "TalkMenu"
+                                ]
+                  },
+
+            {
+                "NameOfScene": "TalkMenu",
+                "theScene": [
+                              "Menu",
+                                "Talk about the Church and Lillian.",
+                                "Talk about other people in town.",
+                                "RequiresChoiceFromEvent", "EnteringChurch", "2", "DemonLayerGet",
+                                "I'm pretty sure Demon 'Slayer' is a holy sex toy called Demon Layer.",
+                                "Done talking.",
+                              "EndLoop"
+                          ]
+            },
+                  {
+                      "NameOfScene": "I'm pretty sure Demon 'Slayer' is a holy sex toy called Demon Layer.",
+                      "theScene": [
+                                    "ChangeImageLayer", "Expression", "1", "Blush",
+                                    "Speaks",
+                                    "{i}What.{/i}",
+                                    "ChangeImageLayer", "Expression", "1", "Upset",
+                                    "There's a moment of hesitation before she steels herself against you.",
+                                    "Speaks",
+                                    "[ThePlayerName] don't be {i}ridiculous!{/i} It's just a missed engraving on the handle.",
+                                    "ChangeImageLayer", "Expression", "1", "Nervous",
+                                    "Speaks",
+                                    "And what kind of weirdo uses a whip as a... sex thing... that makes no sense.",
+                                    "PlayerSpeaks",
+                                    "...{i}Well.{/i}",
+                                    "ChangeImageLayer", "Expression", "1", "Surprised",
+                                    "At your intent to explain yourself she clasps her hands over her ears and starts running off to a different part of the church, very intent on ignoring you.",
+                                    "Speaks",
+                                    "{i}LA LA LA I can't HEAR youuuuuu!{/i} Oh by the goddess this spot over here definitely needs cleaning! Sorry, we'll talk laterrrr.",
+                                    "PlayerSpeaks",
+                                    "L-Lillian...",
+                                    "But she's already set to work about the church, completely set on not hearing out what you have to say."
+                                ]
+                  },
+
+
+
+
+            {
+                "NameOfScene": "Talk about the Church and Lillian.",
+                "theScene": [
+                              "Menu",
+                                "Ask about her job at the Church.",
+                                "Ask about Goddess Venereae.",
+                                "Ask about her good luck charm.",
+                                "Ask about monster girls.",
+                                "Ask about the church's holy water.",
+                                "Talk about something else.",
+                              "EndLoop"
+                          ]
+            },
+
+                      {
+                          "NameOfScene": "Talk about something else.",
+                          "theScene": [
+                                        "JumpToScene", "TalkMenu"
+                                    ]
+                      },
+                  {
+                      "NameOfScene": "Ask about her job at the Church.",
+                      "theScene": [
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "Speaks",
+                                  "Well, it's more of a way of life than a job. But I work {i}really{/i} hard!♪ I host congregations, sell holy water to adventurers, provide purification and healing, help those who fall to the monsters in battle recover, I also provide guidance to the weary.♪",
+                                  "ChangeImageLayer", "Expression", "1", "Happy",
+                                  "Lillian then grandly gestures after doing a little graceful spin, spreading her arms wide as she smiles with unbridled cheer.",
+                                  "Speaks",
+                                  "As the Reverend, Priest, Pastor, Cleric, Deacon, Minister, Bishop, Vicar, Archbishop, and Maintainer of this Church for the Great Holy Goddess Venereae, I have a lot of other work to do too! Like cleaning and repairs.",
+                                  "ChangeImageLayer", "Expression", "1", "Upset",
+                                  "Lillian's grandiose pose slips as a pout takes her face.",
+                                  "Speaks",
+                                  "Ugh, you'd be surprised how many people don't know how to properly care for a Church. A lot of people keep trying to help me, but they just don't really {i}get{/i} it, or how to {i}properly{/i} guide the weary!",
+                                  "ChangeImageLayer", "Expression", "1", "Happy",
+                                  "Her smile returns in full force, but her voice sounds a little strained.",
+                                  "Speaks",
+                                  "So I kick them out if they can't keep things properly in order. But that's okay, cause I can handle it {i}all!♪{/i} I mean, I've been doing this as long as I've lived here, so I can totally manage it!",
+                                  "ChangeImageLayer", "Expression", "1", "Upset",
+                                  "Speaks",
+                                  "Even if people keep telling me I really should and need to take more breaks. Don't they {i}know{/i} that working for the Goddess is all the rest and sustenance I need?",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "Lillian puts her hands on her hips with a proud smile.",
+                                  "Speaks",
+                                  "Oh right! If you have any questions about Goddess Venereae, or need guidance, I'm the gal to ask! I commune with an Angel of Venereae when I pray sometimes, she gives me deep insights on the workings of the world.",
+                                  "ChangeImageLayer", "Expression", "1", "Happy",
+                                  "Lillian solemnly nods with a brimming smile.",
+                                  "Speaks",
+                                  "Hmmm, maybe if you pray enough [ThePlayerName], and live a life of wholesomeness, you too can hear the voices of angels as you pray.",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "Speaks",
+                                  "There!♪ that's already some great guidance I've given you.♪ I should probably clean up the church some more soon though, I want this place to sparkle almost as flawlessly as the Goddess herself.♪",
+                                  "Speaks",
+                                  "Hehehe,♪ if I work hard enough for the Goddess I wonder if I could become the Pope... or maybe even the {i}Arch{/i}-Pope! Hehe, not that I {i}really{/i} care about promotions, just working for the Great Goddess of Pure Light is more than enough for me!♪",
+                                  "ChangeImageLayer", "Expression", "1", "Upset",
+                                  "Speaks",
+                                  "{i}Hmm...{/i} Was that {i}too{/i} many titles for the Goddess? It was kind of wordy...",
+                                  "Lillian trails off, lost in her own thoughts for a moment, before frowning deeply, then returning to her normal excited grin.",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "IfChoice", "2", "JobTalk", "Talk about the Church and Lillian.",
+                                  "SetChoice", "2", "JobTalk",
+                                  "ChangeProgress",   "5",
+                                  "JumpToScene", "Talk about the Church and Lillian."
+                                ]
+                  },
+                  {
+                      "NameOfScene": "Ask about Goddess Venereae.",
+                      "theScene": [
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "Speaks",
+                                  "You want to learn about the Goddess? Hehe,♪ then you've come to the right priestess!♪",
+                                  "ChangeImageLayer", "Expression", "1", "Happy",
+                                  "She holds her hand close to her chest with a smile before whirling to face the stone statue of Venereae with a grand gesture, drawing your eyes to its slim and modest form, faintly recalling most other statues of her you've seen to be far more... Voluptuous.",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "Speaks",
+                                  "Behold the grand statue of the Goddess within this church, it is but a pale imitation of the Goddess' pure and graceful form!",
+                                  "She turns back to you with a giggle.",
+                                  "Speaks",
+                                  "Hehe,♪ I made it myself.♪",
+                                  "PlayerSpeaks",
+                                  "Wait, you carved this yourself?! It's twice your size!",
+                                  "Speaks",
+                                  "Hehe, I mean, it took me like a whole year of stone-working to get it {i}just{/i} right and I lost track of how many stone blocks I went through with failed attempts, but it was worth it!♪ It's the shining centerpiece of the church!♪",
+                                  "She takes a moment to stare proudly at her handiwork before turning back to you with a pout.",
+                                  "ChangeImageLayer", "Expression", "1", "Upset",
+                                  "Speaks",
+                                  "It would be nice if {i}other{/i} priests and priestess' of Venereae could appreciate it as much as I do.",
+                                  "She lets out a slight sigh of frustration.",
+                                  "Speaks",
+                                  "It was {i}really{/i} hard work making it... not to mention repairing the entire church myself...",
+                                  "ChangeImageLayer", "Expression", "1", "Nervous",
+                                  "Speaks",
+                                  "Oh, by that I mean the whole place was in ruins when I took over, and there {i}was{/i} a statue, sort of. Some {i}dummy{/i} completely shattered it!",
+                                  "ChangeImageLayer", "Expression", "1", "Upset",
+                                  "Lillian's face twists into a pouty frown as she thinks about it, and puts her hands on her hips.",
+                                  "Speaks",
+                                  "Who would do something like that?! Ugh, immaculate holy statues don't exactly grow on {i}trees{/i}!",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "There's a moment of silence as she looks off at the statue, her face slipping into a deeper, pained frown for a fraction of a second, but as she takes a deep calming breath and her cheerful smile returns, you almost feel like you imagined the concern on her face.",
+                                  "Speaks",
+                                  "But let's actually get to talking about the Goddess herself, before I get a headache thinking about all that junk.",
+                                  "ChangeImageLayer", "Expression", "1", "Happy",
+                                  "Lillian clears her throat dramatically before continuing, grandly lifting her arms upwards, and light seems to filter down, shimmering above her.",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "Speaks",
+                                  "The Great Holy Goddess Venereae is a beacon of purity, light, and wholesomeness! She holds many titles befitting her greatness, far too many to list in a single breath.",
+                                  "Speaks",
+                                  "She is the only {i}true{/i} Goddess!♪ All other worshiped deities are false, frail imitations of her grand power, they are monsters or even fallen angels deceiving humans into devoting their adoration unto them instead!",
+                                  "ChangeImageLayer", "Expression", "1", "Happy",
+                                  "Speaks",
+                                  "But, Venereae is infinite in her bountiful caring kindness, and shows mercy and love even to the most vile and evil monsters. So long as they truly seek forgiveness and live at peace with humans, never doing anything {i}illicit{/i} or foul.",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "Speaks",
+                                  "Of course, as the creator of both humans and monsters, she loves us all, and good monsters are regarded the same as everyone else, so even wholesome matrimony is possible between our races, provided there is no {i}obscene{/i} subtext to the relationship, and they don't dress like shameless harlots, {i}and don't try to steal my holy book as a prank-{/i}",
+                                  "ChangeImageLayer", "Expression", "1", "Blush",
+                                  "Lillian's grand prose and stance derail and she gets a little flustered for a moment.",
+                                  "Speaks",
+                                  "I- Uh, sorry, got distracted a bit there... by uh, personal bias... Ahem.",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "Lillian strikes a new pose as she gestures on high once more, and light shines down on her.",
+                                  "Speaks",
+                                  "The perfect example of a good, honest monster in the eyes of the goddess is the pure and noble elf! Their cultural outfits are weaved together only from plants in an honest traditional manner.",
+                                  "ChangeImageLayer", "Expression", "1", "Upset",
+                                  "Lillian almost immediately derails her grand prose again as her face turns to a stern pout.",
+                                  "Speaks",
+                                  "Unlike the average, sinful demons, generally {i}evil{/i} and trying to seduce men into doing things like, um... uhhh- {i}kissing{/i} before {i}marriage{/i}. They also dress in a horrible salacious manner unbefitting of a wholesome person! I've only ever met a few demons who were okay.",
+                                  "ChangeImageLayer", "Expression", "1", "Nervous",
+                                  "Lillian lets out a deep sigh.",
+                                  "Speaks",
+                                  "Oh uh, I got distracted again... Ugh, this would be easier if they didn't dress so {i}obscenely.{/i} They need to try wearing dresses! Or maybe actual {i}pants{/i} or something.",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "Speaks",
+                                  "Anyways,♪ only the most wholesome and pure monster-human couples are allowed to get married under the loving light of the goddess. {i}No mind alteration spells allowed!{/i}",
+                                  "Lillian leaves a pause in the air for a moment as she smiles at you, before swinging her arms wide and resuming her speech.",
+                                  "ChangeImageLayer", "Expression", "1", "Happy",
+                                  "Speaks",
+                                  "{i}Next!{/i} I shall inform thee of Venereae's holy {i}Angels!♪{/i} The angels of Venereae are definitely {i}not{/i} monsters. They are in an entirely different league, unless they should become Fallen Angels, then they are considered monsters. But the purity of the angels means they almost never fall to selfish temptation.",
+                                  "Speaks",
+                                  "But when they {i}do{/i} fall, their wings become black as pitch, and their aura of holy light becomes one of twisting evil, even their eyes are stained with their dark, selfish desires. They are even known to be far more disastrous than demons. Though I've never met one personally or anything.",
+                                  "ChangeImageLayer", "Expression", "1", "Happy",
+                                  "Speaks",
+                                  "The angels of the Goddess help those in need all over the world! Bringing guidance and sanctuary where they are needed.♪ Ohhh, I wish I could fly like them...♪ Ahk-! I'm almost done and I'm getting distracted again!",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "Speaks",
+                                  "Ahem, in conclusion! The Goddess Venereae is a shining beacon of perfection, purity, wholesome love and light, that {i}all{/i} women should aspire to.♪",
+                                  "PlayerSpeaks",
+                                  "...You know, I'm pretty sure I remember reading about her being a fertility godd-",
+                                  "ChangeImageLayer", "Expression", "1", "Upset",
+                                  "Speaks",
+                                  "That's about {i}farming.{/i} Definitely about farming!",
+                                  "Lillian's face stays scrunched in an intense pout for a moment longer, but she winces for a moment before returning to her shining smile.",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "Speaks",
+                                  "Anyways-♪ Let me know if you have any more questions about the Goddess!♪ I love teaching people about her.♪",
+                                  "IfChoice", "3", "Goddess Venereae", "Talk about the Church and Lillian.",
+                                  "SetChoice", "3", "Goddess Venereae",
+                                  "ChangeProgress",   "5",
+                                  "JumpToScene", "Talk about the Church and Lillian."
+                                ]
+                  },
+                  {
+                      "NameOfScene": "Ask about her good luck charm.",
+                      "theScene": [
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "Speaks",
+                                      "Hm? Did you already forget my grand speech about it?",
+                                      "Lillian suddenly strikes a grand pose, dramatically gesturing up at the air and then you, and it's almost as if a spotlight is shining down on her.",
+                                      "Speaks",
+                                      "Lo! The holy good luck charm I gifted unto you brave adventurer! It was created by toiling for hours, infusing a mundane silken handkerchief with holy water and weaving the power of my prayers into it's very fabrics!",
+                                      "She spreads her arms wide and you could swear sparkles just flew into the air for dramatic effect.",
+                                      "Speaks",
+                                      "It shall ward away foul monsters, bring you fortune, and bountiful treasure, all thanks to the blessings of the Goddess!♪",
+                                      "ChangeImageLayer", "Expression", "1", "Happy",
+                                      "She lets her arms fall back to her sides with a calm smile, leaving you oddly serene after her speech, but she shatters that serenity in an instant as she excitedly hops in place with giddy joy.",
+                                      "Speaks",
+                                      "Eeeee!♪ I bet it's going to help you lots!♪ I try to make one for every single adventurer who comes into the church!♪",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "She manages to calm her self back down, and tightly holds her holy book to her chest with a wide smile.",
+                                      "Speaks",
+                                      "You know, for a while I was starting to worry that they weren't helping anybody... Some adventurers started telling me they were useless... But then Nara, she's an adventurer too, told me all about how it had been helping her out!♪ I couldn't stop myself from smiling {i}all{/i} day!♪",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "Speaks",
+                                      "Ehehe, well I guess I'm usually smiling. But that's besides the point!♪",
+                                      "Speaks",
+                                      "Anyways!♪ It might {i}just{/i} be a good luck charm, but I hope it helps you!♪ So go do your best today!♪",
+                                      "SwapLineIf", "Choice",
+                                        "6", "GoodLuck", "You nod in affirmation, and Lillian's smile widens even more.",
+                                        "6", "", "You can't help but ponder if the charm {i}really{/i} does anything...",
+                                      "EndLoop",
+                                      "IfChoice", "6", "GoodLuck", "Talk about the Church and Lillian.",
+                                      "Menu",
+                                        "'So, do they {i}really{/i} work?'",
+                                        "Don't ask.",
+                                      "EndLoop"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "Don't ask.",
+                            "theScene": ["JumpToScene", "Talk about the Church and Lillian."
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "'So, do they {i}really{/i} work?'",
+                            "theScene": ["ChangeImageLayer", "Expression", "1", "Nervous",
+                                         "Lillian fills her self with resolution, giving you a determined gaze, before collapsing in on herself and slumping her shoulder with a sigh.",
+                                         "Speaks",
+                                         "Well... No... Not {i}exactly{/i}...",
+                                         "ChangeImageLayer", "Expression", "1", "Base",
+                                         "She then perks back up as quickly as she imploded.",
+                                         "Speaks",
+                                         "But faith, and belief can be a powerful thing on their own! That ideal into itself can be a powerful thing that can drive people to push themselves beyond their limits and defy the odds!",
+                                         "ChangeImageLayer", "Expression", "1", "Happy",
+                                         "Speaks",
+                                         "I think Lucille called it a placebo...",
+                                         "After quietly muttering that last bit to herself she strikes a dynamic pose again, swinging one of her arms wide.",
+                                         "ChangeImageLayer", "Expression", "1", "Base",
+                                         "Speaks",
+                                         "{i}Anyways!{/i} The point is even if it is a pointless gift, that doesn't make it worthless! Even the most futile and time consuming gesture, isn't useless! Be it a simple gift, a hug, or even a few kind words!",
+                                         "Lillian grandly gestures to the sky with one hand and a grin burning with purpose and determination.",
+                                         "Speaks",
+                                         "Even if that tiny gesture sparks even a single ray of hope in someone, then even the most fruitless of efforts has {i}real{/i} meaning!",
+                                         "She's left gasping and sweating a little after her passionate and intense impromptu speech, but despite her wide smile, you can see her expression straining a little with emotion, tears starting to form in the corners of her eyes.",
+                                         "You're left in a state of strange awe from her display, and can't find yourself able to formulate any kind of response to that. But finally she lets out a breath she was holding and drops her pose, grabbing her knees as she shakily gasps for air, and choking back tears, instantly snapping you back to reality.",
+                                         "PlayerSpeaks",
+                                         "Lillian- a-are you okay?",
+                                         "ChangeImageLayer", "Expression", "1", "Happy",
+                                         "She quickly wipes her face with a sleeve before hopping back to her full height with a brimming smile, shining as if she wasn't moments from tears a second ago.",
+                                         "Speaks",
+                                         "O-Of course I am!♪ I just got a little... caught up in the moment.",
+                                         "Despite her practically flawless grin, her voice is still a little strained.",
+                                         "Speaks",
+                                         "But...",
+                                         "Her shoulders start to slump again, and she suddenly leaps forward and gives you a tight hug.",
+                                         "Speaks",
+                                         "It's just... well... kind of complicated...",
+                                         "ChangeImageLayer", "Expression", "1", "Base",
+                                         "You tentatively return her hug, and the two of you stay like that for a moment before she slips away with a smile.",
+                                         "Speaks",
+                                         "I guess part of it is... I'm actually pretty bad at holy magic... In fact, I'm horrible at it. I only have the basics down, and some fun parlour tricks, but even that is pretty exhausting to use.",
+                                         "Speaks",
+                                         "Really the Statue of Venereae does all the heavy magic around here, such as expulsion, or actual blessings. It acts as a conduit for the angels and Venereae.",
+                                         "Speaks",
+                                         "The holy water and blessings I make are basically worthless, and they take hours to make... No matter how hard I try, or practice, or pray, I don't get any better either. So I have to make up for it with {i}gusto!{/i}",
+                                         "Speaks",
+                                         "Hehehe, I mean, I don't {i}exactly{/i} worship the Goddess quite right in some places... but, that's not really how holy magic works either. Even crooked church members can use it better than I can...",
+                                         "Speaks",
+                                         "But that won't stop me from being an amazing priestess!♪ I'm going to help as many people as I can, no matter what anyone else says!♪ So hopefully, someday, everyone can be happy!♪",
+                                         "She gives you a dazzling smile of determination, and you give her a smiling nod in return.",
+                                         "Speaks",
+                                         "{i}Anyways!♪{/i} Anything else you want to talk about [ThePlayerName]?",
+                                         "SetChoice", "6", "GoodLuck",
+                                         "ChangeProgress",   "5",
+                                         "JumpToScene", "Talk about the Church and Lillian."
+                                      ]
+                        },
+
+                  {
+                      "NameOfScene": "Ask about monster girls.",
+                      "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                    "Lillian's face takes a determined yet cheerful smile as she strikes a grand pose, gesturing to the air dramatically as she excitedly answers.",
+                                    "Speaks",
+                                    "Monsters are the ancestral enemy of humanity! Since time immemorial, they have plagued mankind with their violent inclinations, unholy powers, and perverse temptations. It is the duty of heroes — like you! — to defeat them!",
+                                    "Lillian then shifts her pose dynamically to gesture to her self and then point up at the statue as she continues, and is it just you or does she have a spotlight on her?",
+                                    "Speaks",
+                                    "To the purpose of defending humanity, heroes have the support of the Great Goddess Venereae, her holy angels, and her devoted agents of the church- Like me!♪",
+                                    "She then hops to an all new pose, pointing at you with a beaming smile and graceful style.",
+                                    "Speaks",
+                                    "So with my stellar supporting ability, with your bravery, gumption, and sheer determined force of will, you can be the one to take them down and defeat the evil of the Demon Queen for the good of all!",
+                                    "A pause ensues as you're left a little stunned from Lillian's rather absurd demonstrative speech while she gasps for air from talking so fast, and she keeps the dramatic pose for a few final awkward moments before deflating.",
+                                    "ChangeImageLayer", "Expression", "1", "Upset",
+                                    "Speaks",
+                                    "{i}Okay,{/i} maybe it's a {i}little{/i} more complicated than that...",
+                                    "With a slightly pouty frown she fumbles with her thoughts and her holy book she seems to always be carrying with her for a few moments before finally continuing answering.",
+                                    "ChangeImageLayer", "Expression", "1", "Blush",
+                                    "Speaks",
+                                    "I mean... I... it's not like monsters are {i}that{/i} bad. They're people too after all, and it's not like they're indiscriminately attacking people in town, everyone's getting along.♪",
+                                    "ChangeImageLayer", "Expression", "1", "Upset",
+                                    "Speaks",
+                                    "Though, it'd be better if they didn't tend to dress like sinful harlots, you can't go into a {i}church{/i} dressed like that! And by the Goddess if I catch one more drunk imp trying to take a nap in a pew-!",
+                                    "Lillian's face scrunches into a grimace for a moment, but she soon lets out a deep calming breath before continuing.",
+                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                    "Speaks",
+                                    "The Goddess Venereae is forgiving of even the darkest of sinners if they seek it, welcoming them into her benevolent bosom. So, be sure to have an open mind [ThePlayerName]. Even if it's {i}difficult.{/i}♪",
+                                    "Despite her usually cheerful tone, you can tell it's a little strained by the end.",
+                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                    "Speaks",
+                                    "SwapLineIf", "Choice",
+                                      "5", "PatPat", "Now go forth [ThePlayerName], and show them the caring love of the Goddess.",
+                                      "5", "", "Now go forth [ThePlayerName], and gently kick their butts.",
+                                    "EndLoop",
+                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                    "SwapLineIf", "Choice",
+                                      "5", "PatPat", "Lillian takes on a grand pose, but then realizes that you might not be done talking yet as you see sweat start to pour down her face as she maintains the pose with determined intensity.",
+                                      "5", "", "You can't help but feel Lillian is ignoring a rather important detail with the monster girls, specifically how 'kicking butt' works here.",
+                                    "EndLoop",
+
+                                    "IfChoice", "5", "PatPat", "Talk about the Church and Lillian.",
+                                    "JumpToScene", "YouKnowTheyFuckRight"
+
+                                ]
+                  },
+                          {
+                              "NameOfScene": "YouKnowTheyFuckRight",
+                              "theScene": [
+                                          "Menu",
+                                            "'You... You {i}do{/i} know how fighting works here... Right?'",
+                                            "Don't bring it up.",
+                                          "EndLoop"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "Don't bring it up.",
+                                    "theScene": ["You don't have the heart to potentially shatter the innocent church girl's trust and optimism, so you promise you will be a worthy hero and deliver due justice to sinful monster girls.",
+                                                "ChangeImageLayer", "Expression", "1", "Neutral",
+                                                "Speaks",
+                                                 "That's the spirit!♪ I know I can count on you, [ThePlayerName]! Just don't be too hard on them, okay?♪",
+                                                 "For good measure, you and Lillian share a hug before you move on with the conversation.",
+                                                "JumpToScene", "Talk about the Church and Lillian."
+                                              ]
+                                },
+                          {
+                              "NameOfScene": "'You... You {i}do{/i} know how fighting works here... Right?'",
+                              "theScene": [
+                                            "ChangeImageLayer", "Expression", "1", "Surprised",
+                                            "Speaks",
+                                            "Hgrk-",
+                                            "Lillian freezes at the question and her face scrunches up in an almost unreadable expression of displeasure, shock, and embarrassment.",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "You think you actually see a twinge of pain in her eyes as her brow twitches slightly, and her lips make a thin line and she looks up at you with an almost imploring expression.",
+                                            "Speaks",
+                                            "O-Oh, whatever do you mean [ThePlayerName]? It's not like anything but fair non-lethal fighting takes place out there. Ahaha...",
+                                            "Lillian takes on a dramatic pose, but its timing is off, and its dramatic flair is shaky at best. Even her voice seems a little less resolute than normal, and it doesn't take long for her to visibly deflate as she ends her dramatic stance.",
+                                            "Speaks",
+                                            "S-So let's talk about something else. Please?",
+                                            "Menu",
+                                              "'Lillian, are you okay?'",
+                                              "'You know exactly what I mean, don't you.'",
+                                              "Change topics.",
+                                            "EndLoop"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "Change topics.",
+                                      "theScene": [
+                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                    "You decide to change topics, and Lillian quickly returns to her normal exuberance, but you can't help but wonder if you should look into the issue more.",
+                                                    "JumpToScene", "Talk about the Church and Lillian."
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "'Lillian, are you okay?'",
+                                      "theScene": [
+                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                    "Speaks",
+                                                    "Of course! I'm just {i}great!♪{/i}",
+                                                    "Her voice strains a little at the end, leaving a silence hanging in the air that makes you even more concerned.",
+                                                    "ChangeImageLayer", "Expression", "1", "Upset",
+                                                    "Speaks",
+                                                    "Ugh... I guess there's no avoiding this...",
+                                                    "JumpToScene", "TheTruthOfCombat"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "'You know exactly what I mean, don't you.'",
+                                      "theScene": [
+                                                    "ChangeImageLayer", "Expression", "1", "Surprised",
+                                                    "Speaks",
+                                                    "HGK-",
+                                                    "There's a long pause as Lillian tries to keep her composure despite sweating bullets.",
+                                                    "ChangeImageLayer", "Expression", "1", "Upset",
+                                                    "Speaks",
+                                                    "Ugh... I guess there's no avoiding this...",
+                                                    "JumpToScene", "TheTruthOfCombat"
+                                                ]
+                                  },
+                          {
+                              "NameOfScene": "TheTruthOfCombat",
+                              "theScene": [
+                                            "Speaks",
+                                            "I {i}know{/i} that the 'fighting' here takes place through... through... {i}licentious acts{/i}.",
+                                            "She practically spits the words out with a pouty frown on her face, and one of her eye brows twitches with what {i}could{/i} be considered contempt.",
+                                            "Speaks",
+                                            "Truly and deeply I wish it wasn't like this way, but it is... The Demon Queen of the past must be some kind of pure depraved evil to set up this dreadful enchantment with such... {i}inappropriate{/i} intent!",
+                                            "ChangeImageLayer", "Expression", "1", "Blush",
+                                            "Speaks",
+                                            "Oh, uh, not that I'm against, you know, physical displays of affection. Love is a beautiful thing, and I can't wait to unite happy couples under the benevolent gaze of Venereae, to have them promise to protect each other and care for each other until death do them part!",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "She seems to have gotten momentarily lost in thoughts of romantic fantasy, which at least appear to have given her some of her usual positive energy back. But soon her face scrunches up again with unbridled agitation.",
+                                            "ChangeImageLayer", "Expression", "1", "Upset",
+                                            "Speaks",
+                                            "But what's taking place on Lucidia is just so... {i}sinful and debased{/i}. I mean, it's better than real violence, probably, but it is just {i}so wrong{/i}! That's not what love is supposed to be!",
+                                            "She stomps her foot in adorable indignation, then realizes that she's been shouting and simmers down with a bashful expression.",
+                                            "ChangeImageLayer", "Expression", "1", "Blush",
+                                            "Speaks",
+                                            "Oh! I-I'm sorry [ThePlayerName], I can get a bit intense about... {i}this{/i} topic, just talking about it makes me uncomfortable to my very core. To be honest, I'd be more comfortable not talking about it at all...",
+                                            "ChangeImageLayer", "Expression", "1", "Surprised",
+                                            "Speaks",
+                                            "But that doesn't mean I will stop supporting you! You're an adventurer and, more importantly, you're my {i}friend{/i}, and I'll never leave a friend feeling down and hopeless!♪",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "Lillian strikes a dramatic pose with a wide grin, spreading her arms wide after pointing to the sky.",
+                                            "Speaks",
+                                            "I will be there to support you through thick and thin, that's my promise!",
+                                            "She leaps forward and gives you a sudden hug with a joyful laugh, and as she holds you with caring tightness waves of warmth radiate through your body, comfortingly spreading through your spine. As you're in the middle of enjoying the unexpected, wholesome sensation, however, Lillian breaks the embrace, leaping back with a shocked but ecstatic look.",
+                                            "ChangeImageLayer", "Expression", "1", "Surprised",
+                                            "Speaks",
+                                            "{i}I've got it!{/i}",
+                                            "PlayerSpeaks",
+                                            "What?",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Speaks",
+                                            "I know exactly how you can fight the depraved monsters without sinking to their level! Wait, even {i}better!{/i} I'll give you- ah, wait... I'd need to be {i}super{/i} sure...",
+                                            "Lillian whiplashes from her sudden tangent back to her prior train of thought you can barely keep up as she grandly poses once more with a wide grin.",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "Speaks",
+                                            "I have the {i}perfect{/i} skill to teach you!♪ A {i}legendary{/i} skill passed down to me by a powerful and just angel! No more will you need to sink to the depths of sin to defeat your foes! Lo great hero, kneel so I may teach you this holiest of skills!♪",
+                                            "You comply, a little unsure of where she's going with this, but her increasingly grand tone makes it easy to go along with her antics.",
+                                            "Then as you kneel there, you feel Lillian's soft hand gently caress and pat the top of your head, filling you with waves soothing calm, washing through you from head to toe, you can't help but smile peacefully.",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Speaks",
+                                            "Now stand, oh brave adventurer!♪",
+                                            "You get up, a little confused about what just happened, if very relaxed. But Lillian is all smiles as she gestures grandly at you with her arms spread wide.",
+                                            "Speaks",
+                                            "That was the legendary skill, {b}Holy Headpat{/b}! With it, you can subdue monsters peacefully, for its soothing touch should calm anyone!♪",
+                                            "Lillian then proceeds to teach you the skill. It's actually a very simple use of channeling magic into your hand. But you're not sure if it's actually that much different from patting someone's head normally...",
+                                            "GiveSkill", "Holy Headpat",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "Speaks",
+                                            "Now brave hero!♪ Use it on me to demonstrate your new power.♪",
+                                            "She seems to be really into the whole 'heroic ceremony' decorum, and you can't help but get caught up in her infectious enthusiasm, actually feeling like you are being imparted with holy knowledge. Who knows, maybe this 'legendary skill' will turn out to be more effective in battle than it seems?",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Lillian takes off her hat and gazes up at you expectantly with a bright smile. You tentatively reach out and ruffle her hair, gently stroking her head, your hand suffused in a soft light. Lillian smiles up at you proudly, seemingly enjoying being the recipient of the affectionate patting.",
+                                            "When you finally pull your hand away, Lillian's eyes shine with pride and she puts her hat back on with a divine smile.",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "Speaks",
+                                            "By the Goddess, [ThePlayerName]!♪ You learned that super fast!♪ You must be a prodigy, or maybe I'm just an amazing teacher.♪",
+                                            "Lillian then grandly gestures toward you with an almost serene smile.",
+                                            "Speaks",
+                                            "Now go forth, brave hero!♪ And defeat the Demon Queen and her evil minions!♪",
+                                            "She lets out a happy squeal and loses her grand composure completely, dancing in place for a few moments.",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "Speaks",
+                                            "Oh, I always wanted to say that!♪ But, um, you don't {i}actually{/i} have to go right now, we can keep talking if you want.♪",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "ChangeProgress",   "5",
+                                            "SetChoice", "5", "PatPat",
+                                            "JumpToScene", "Talk about the Church and Lillian."
+                                        ]
+                          },
+
+
+
+
+
+                {
+                    "NameOfScene": "Ask about the church's holy water.",
+                    "theScene": [ "IfChoice", "4", "HolyWater", "TalkAboutHolyWater",
+                                "SetChoice", "4", "HolyWater",
+                                "ChangeImageLayer", "Expression", "1", "Base",
+                                "Speaks",
+                                "Ah!♪ It's an extra special holy recovery item I make for adventurers.♪",
+                                "ChangeImageLayer", "Expression", "1", "Upset",
+                                "Speaks",
+                                "But, well, not a lot of people buy it though, and I put so much effort into making it...",
+                                "ChangeImageLayer", "Expression", "1", "Nervous",
+                                "Speaks",
+                                "N-Not that me or the church {i}need{/i} the money or anything.",
+                                "ChangeImageLayer", "Expression", "1", "Happy",
+                                "Speaks",
+                                "It's just that infusing prayers into water is so exhausting... And it's great for healing, dispelling evil, and tastes divinely refreshing! Ah!♪ You'll buy some, won't you?! They're only 100 eros each, and all proceeds go to keeping the church running, so it's for a good cause!",
+                                "ChangeImageLayer", "Expression", "1", "Base",
+                                "She stares at you expectantly with stars in her eyes.",
+                                "Menu",
+                                  "Buy one.",
+                                  "'No thank you.'",
+                                  "'I can't afford that...'",
+                                "EndLoop"
+                              ]
+                },
+                          {
+                              "NameOfScene": "Buy one.",
+                              "theScene": [
+                                          "ChangeImageLayer", "Expression", "1", "Happy",
+                                          "She lunges forward, quickly giving you a hug before running off to get your purchase.",
+                                          "Speaks",
+                                          "Oh, thank you very much!♪ You're not going to regret this!♪",
+                                          "She excitedly returns with a stylish glass bottle filled to the brim with perfectly clear water.",
+                                          "HasErosLessThan",
+                                          "100",
+                                          "LacksFundsFirstTime",
+                                          "ChangeEros",
+                                          "-100",
+                                          "GiveItem",
+                                          "1",
+                                          "Holy Water",
+                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                          "Speaks",
+                                          "Feel free to buy as much as you want!♪ I try my hardest to make sure the Church never runs out of stock.♪",
+                                          "ChangeImageLayer", "Expression", "1", "Happy",
+                                          "She gives you a beaming smile that warms your heart.",
+                                          "Speaks",
+                                          "Good luck adventuring, [ThePlayerName]!♪",
+                                          "ChangeProgress", "5",
+                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                          "JumpToScene", "Talk about the Church and Lillian."
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "'No thank you.'",
+                              "theScene": [ "ChangeImageLayer", "Expression", "1", "Happy",
+                                          "For a mere fraction of a second her face slips into one of absolute sadness and despair before quickly returning to her normal smile, but not quite as large this time.",
+                                          "Speaks",
+                                          "Oh... Well, if you change your mind, I always have some to sell.",
+                                          "ChangeProgress",  "1",
+                                          "JumpToScene", "Talk about the Church and Lillian."
+                                        ]
+                          },
+                              {
+                                  "NameOfScene": "LacksFundsFirstTime",
+                                  "theScene": [ "You realize you don't have the money to buy any, and inform Lillian.",
+                                                "JumpToScene", "'I can't afford that...'"
+                                            ]
+                              },
+
+                          {
+                              "NameOfScene": "'I can't afford that...'",
+                              "theScene": [ "ChangeImageLayer", "Expression", "1", "Surprised",
+                                          "Speaks", "{i}Wh-What?!{/i} Th-That's terrible! Absolutely unacceptably horrible!",
+                                          "She quickly runs off frenetically flailing her arms and returns shortly afterwards carrying a small bag. You can hear the gentle tinkling of glass coming from it.",
+                                          "ChangeImageLayer", "Expression", "1", "Happy",
+                                          "Speaks",
+                                          "Here! I can't give you any money in your time of need, but this should help you on your adventures! Then you'll be rolling in money lickity split.♪",
+                                          "GiveItem", "5", "Holy Water",
+                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                          "Speaks",
+                                          "You can do it, [ThePlayerName]! Just remember I'll be here, cheering you on whenever you leave town.",
+                                          "ChangeProgress",  "1",
+                                          "JumpToScene", "Talk about the Church and Lillian."
+                                        ]
+                          },
+                      {
+                          "NameOfScene": "TalkAboutHolyWater",
+                          "theScene": [
+                                      "Speaks",
+                                      "Ah!♪ It's an extra special holy recovery item I make for adventurers.♪",
+                                      "ChangeImageLayer", "Expression", "1", "Upset",
+                                      "Speaks",
+                                      "But, well, not a lot of people buy it though, and I put so much effort into making it...",
+                                      "ChangeImageLayer", "Expression", "1", "Nervous",
+                                      "Speaks",
+                                      "N-Not that me or the church {i}need{/i} the money or anything.",
+                                      "ChangeImageLayer", "Expression", "1", "Happy",
+                                      "Speaks",
+                                      "It's just that infusing prayers into water is so exhausting... And it's great for healing, dispelling evil, and tastes divinely refreshing.♪",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "Speaks",
+                                      "Be sure to buy some for your adventures! I'm sure it will help!",
+                                      "JumpToScene", "Talk about the Church and Lillian."
+                                    ]
+                      },
+
+
+                      {
+                          "NameOfScene": "Talk about other people in town.",
+                          "theScene": [
+                                        "Menu",
+                                          "RequiresChoiceFromEvent", "EnteringGuild", "1", "MetElena",
+                                          "Talk about Elena.",
+                                          "RequiresChoiceFromEvent", "Head over to Elly's table.", "1", "MetElly",
+                                          "Talk about Elly.",
+                                          "RequiresChoiceFromEvent", "Enter 'Amber's Adventuring Shop'", "1", "MetAmber",
+                                          "Talk about Amber.",
+                                          "RequiresChoiceFromEvent", "EnteringInn", "1", "VivianIntro",
+                                          "Talk about Vivian.",
+                                          "RequiresChoiceFromEvent", "Pray to the Goddess Statue.", "5", "ShopUnlocked",
+                                          "Talk about Lucille.",
+                                          "Talk about something else.",
+                                        "EndLoop"
+                                    ]
+                      },
+                            {
+                                "NameOfScene": "Talk about Elena.",
+                                "theScene": [
+                                              "ChangeImageLayer", "Expression", "1", "Happy",
+                                              "Speaks",
+                                              "Oh? Elena? Yeah, she's really nice isn't she.♪",
+                                              "ChangeImageLayer", "Expression", "1", "Upset",
+                                              "She sternly pouts as she haughtily places a hand on her hip.",
+                                              "Speaks",
+                                              "But she {i}definitely{/i} spends too much time at the bar, she always eats the most unhealthy things when she's there....",
+                                              "ChangeImageLayer", "Expression", "1", "Base",
+                                              "Lillian silently sulks to herself for a brief moment before she brightens once more.",
+                                              "Speaks",
+                                              "I'm sure she would be way happier if she tried cooking at home more often instead of eating out all the time.♪",
+                                              "ChangeImageLayer", "Expression", "1", "Upset",
+                                              "Speaks",
+                                              "...And you know, if she {i}drank{/i} less often. Maybe visit the church a little more often too...",
+                                              "ChangeImageLayer", "Expression", "1", "Happy",
+                                              "Without even skipping a beat, Lillian's cheery smile returns in full force as she eagerly takes a tiny step towards you.",
+                                              "Speaks",
+                                              "But she's a good person at heart, and I have faith that she'll turn herself around eventually! She just needs to learn to enjoy her job more, like me!♪",
+                                              "She proudly puffs out her chest with a satisfied smile on her face.",
+                                              "ChangeImageLayer", "Expression", "1", "Base",
+                                              "Speaks",
+                                              "And I could definitely help her learn to like her job, after all we both help guide adventurers on their grand quests to defeat the Demon Queen and bring peace to the world.",
+                                              "ChangeImageLayer", "Expression", "1", "Upset",
+                                              "Speaks",
+                                              "Hmmm... Or maybe she's always so down because she's not married yet... I mean, she did walk into the church that one time looking a little... {i}tipsy,{/i} and confessed to me that she keeps scaring guys away, so...",
+                                              "ChangeImageLayer", "Expression", "1", "Surprised",
+                                              "She trails off with a mutter, falling silent briefly before she freezes and jerks her head up to stare at you with an expression of panic.",
+                                              "ChangeImageLayer", "Expression", "1", "Nervous",
+                                              "Speaks",
+                                              "[TPN]-[ThePlayerName]?! O-Oh, u-uh, I forgot that I was talking to you, and I... Shouldn't have said that...? H-Hehe...",
+                                              "Lillian nervously glances around for a moment with a sheepish grin before shuffling in a little closer towards you.",
+                                              "Speaks",
+                                              "Uh, please don't tell Elena I told you that. She told me about that in a confessional booth, and I, uh, the reason why I'm not allowed to run those anymore is because I {i}kind of{/i}, kept accidentally telling people about the things other people confessed to me in confidence, so...",
+                                              "ChangeImageLayer", "Expression", "1", "Base",
+                                              "She trails off and is silent for a moment before she gives you a smile and takes a step back from you.",
+                                              "Speaks",
+                                              "So {i}anyway,{/i} did you want to talk about anyone else?",
+                                              "GetEventAndSetChoice", "Go see Elena at the Guild counter.",  "23", "Dating",
+                                              "GetEventAndSetChoice", "Go see Elena at the Guild counter.", "17", "Booze",
+                                              "IfChoice", "7", "Elena", "Talk about other people in town.",
+                                              "SetChoice", "7", "Elena",
+                                              "ChangeProgress",   "5",
+                                              "JumpToScene", "Talk about other people in town."
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Talk about Elly.",
+                                "theScene": [ "ChangeImageLayer", "Expression", "1", "Upset",
+                                            "Lillian's face clouds in thought for a brief moment as she absently taps a finger on her chin.",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Speaks",
+                                            "That's Elena's sister, right? The one from the guild hall?",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "You nod and Lillian's smile deepens as she happily claps her hands together.",
+                                            "Speaks",
+                                            "Yay! I'm glad I actually remembered her name, I never really get the chance to talk to her because she basically never leaves the guild hall.",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "She beams for a few seconds longer before she gives you a more serious, yet still cheerful look.",
+                                            "Speaks",
+                                            "But really, I don't really know much about her personally... We're both really busy people, and every time I {i}do{/i} try talking to her, she's always reading one of her boring, complex magic books that she carries everywhere. She usually gets really annoyed when I ask her to put her book down so we can talk about something, like the Goddess.",
+                                            "ChangeImageLayer", "Expression", "1", "Surprised",
+                                            "Speaks",
+                                            "Personally, I think she's a witch. Her claims of wizardry are clearly all a mask to hide her {i}foul{/i} magical machinations. But she wears a {i}witch hat{/i}, come on, it's totally obvious! Her dark, witchy ways are most likely all in service to getting her sister Elena a boyfriend!",
+                                            "Lillian leaves a conspiratorial pause hanging in the air before she continues.",
+                                            "ChangeImageLayer", "Expression", "1", "Upset",
+                                            "Speaks",
+                                            "Not to mention, one time Elena pulled me aside and told me that I was overthinking things and Elly just doesn't like to be bothered. So I think she {i}might{/i} be in on it too. But I can't be sure yet. But it's clear Elly is definitely a witch... I mentioned she wears the hat right?",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "You nod in mild exasperation and her bright smile returns in full force with a small gleam in her eyes.",
+                                            "Speaks",
+                                            "{i}So{/i} I decided that the best way to help Elly return to a righteous path of normal magic, was to personally carve her a miniature statue of the Goddess so she can pray to it every day.♪ Heh, She was so speechless with it when I handed it to her that I just {i}know{/i} she loved it and decided to change her evil ways.",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "Lillian beams widely as her chest swells with pride and she gives you a satisfied nod.",
+                                            "Speaks",
+                                            "I bet any day now she'll start visiting the church proper, and get to know more people! Then she can help her sister find someone the normal, {i}wholesome{/i} way! Instead of resorting to her witch magic.",
+                                            "ChangeImageLayer", "Expression", "1", "Nervous",
+                                            "Speaks",
+                                            "Seriously I'm still not sure why she hates being called a witch. She has the hat and everything, why else would she keep wearing it?",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "IfChoice", "8", "Elly", "Talk about other people in town.",
+                                            "SetChoice", "8", "Elly",
+                                            "ChangeProgress",   "5",
+                                            "JumpToScene", "Talk about other people in town."
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Talk about Amber.",
+                                "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Lillian looks at you with a faintly questioning gaze.",
+                                            "Speaks",
+                                            "Amber? The frumpy shopkeeper who dresses like a thief? Right?",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "You nod, and Lillian beams as she happily glances around the church.",
+                                            "Speaks",
+                                            "Oh, she's great! She can be a little bit cold, but behind that frigid shell is a heart of gold.♪ She even donates to the church on occasion, too!♪",
+                                            "ChangeImageLayer", "Expression", "1", "Upset",
+                                            "But she pouts as her gaze returns to you, and she indignantly puts a hand on her hip as she furrows her brows at you.",
+                                            "Speaks",
+                                            "But she won't let me into her store! She only lets me buy stuff through this window near the side. She keeps saying she'll let me in {i}'when I'm older'{/i}, but I'm already like {i}20!{/i} I could be an adventurer if I {i}really{/i} wanted...",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "But before you have any time to respond, she just giggles and smiles once with a small shrug of her shoulders.",
+                                            "Speaks",
+                                            "Oh well.♪ She still sells me all the stuff I need to keep the church running, so it's fine. Hehe, other stores just don't sell the right kind of glass vials that holy water needs to be stored in. They just aren't fancy enough. She also sells {i}really{/i} nice silk handkerchiefs!",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Speaks",
+                                            "Actually she sells a lot of silk stuff, I got all my bedding in silk from her, it's really cozy to sleep in.♪",
+                                            "IfChoice", "9", "Amber", "Talk about other people in town.",
+                                            "SetChoice", "9", "Amber",
+                                            "ChangeProgress",   "5",
+                                            "JumpToScene", "Talk about other people in town."
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Talk about Vivian.",
+                                "theScene": [ "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "Lillian immediately brightens with a positively beaming smile as her head eagerly perks up.",
+                                            "Speaks",
+                                            "Oh! The wonderful lady who runs the inn.♪",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "She excitedly claps her hands together before gesturing around the church.",
+                                            "Speaks",
+                                            "She donates {i}so much{/i} money to the church, she's always {i}super{/i} nice to me, {i}and{/i} she usually gives me gifts whenever I see her.♪ She's great!♪",
+                                            "ChangeImageLayer", "Expression", "1", "Upset",
+                                            "Lillian's jubilation abruptly pauses as she lets out a small sigh and a shake of her head as she gives you an exasperated look.",
+                                            "Speaks",
+                                            "But... By the Goddess, I wish she would dress more appropriately! Just because she's rich doesn't mean she should be showing off her legs like she does! It's... It's {i}scandalous{/i}!",
+                                            "You wait for a moment for Lillian to complain about Vivian's more {i}obvious{/i} body parts on display, but you blink in surprise as she only continues to pout angrily to herself in silence.",
+                                            "PlayerSpeaks",
+                                            "Err, don't you mean her...",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Speaks",
+                                            "Hmm? Do I mean her what?",
+                                            "You hesitate for a moment under her shining gaze, and you manage to vaguely gesture towards your upper body.",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "But much to your surprise, instead of getting flustered or embarrassed at all, Lillian just giggles to herself.",
+                                            "Speaks",
+                                            "You mean that super big and floofy pink and white thing she has at the top of her dress? Hehe, I don't have any idea why that would bother you [ThePlayerName], when it {i}perfectly{/i} covers her body! I bet it's really warm.",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "With a huge smile, Lillian does a little exuberant twirl in place before setting her hands on her hips.",
+                                            "Speaks",
+                                            "The Goddess's grace must truly be with her, especially thanks to all of her generous donations. She even named her whole inn after the Goddess! She must plan to become a saint, I can feel it in my bones!♪",
+                                            "ChangeImageLayer", "Expression", "1", "Upset",
+                                            "Lillian lets her pose slip back to something more neutral as a slightly concerned pout crosses her face.",
+                                            "Speaks",
+                                            "Although... I'm kind of worried she's donating {i}too{/i} much. Especially with how vacant the cafe usually is during the day, not to mention that adventurers get free room and board...",
+                                            "ChangeImageLayer", "Expression", "1", "Nervous",
+                                            "Speaks",
+                                            "I mean, I appreciate the donations, but I don't want her to bankrupt herself for this place... I'd hate for that big tall minotaur lady to lose her job too...",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Once more, Lillian's worry slowly dwindles away as she seems to contemplate something, leaving her worry behind as she's momentarily lost in thought.",
+                                            "Speaks",
+                                            "Well, I'm sure she's doing fine, she always seems so happy when I see her, and I always love coming over to visit her too, hehe, she always lets me eat and drink for free there.♪",
+                                            "ChangeImageLayer", "Expression", "1", "Blush",
+                                            "Speaks",
+                                            "But... I don't get to stop by as often as I'd like, though that's not {i}really{/i} a bad thing. I'd probably get a bit, uh... Fat, from all the greasy food...",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Speaks",
+                                            "{i}Anyways,{/i} was there anything else you wanted to talk about? After talking about food, I'm starting to get a little hungry, ehehe...♪",
+                                            "IfChoice", "10", "Vivian", "Talk about other people in town.",
+                                            "SetChoice", "10", "Vivian",
+                                            "ChangeProgress",   "5",
+                                            "JumpToScene", "Talk about other people in town."
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Talk about Lucille.",
+                                "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Lillian lets out an excited gasp as you bring up Lucille.",
+                                            "Speaks",
+                                            "You can hear her now {i}too?!{/i} Oh this is {i}so{/i} cool!",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "Her smile widens, shining with the brightness of ten thousand suns as she strikes a grand pose and gestures to the air.",
+                                            "Speaks",
+                                            "{i}Now we're angel buddies!♪♪♪{/i}",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "She hops back to a normal stance with a giggle before prancing in place excitedly.",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Speaks",
+                                            "But Lucille is {i}soooo{/i} cool!",
+                                            "Lillian starts shadow fencing with an excited grin as she continues talking.",
+                                            "Speaks",
+                                            "She's a Valkyrie! A defender of humanity! Protector of the weak! Bringer of Venereae's divine judgment upon twisted evil!",
+                                            "Lillian giggles and stops her pretend battle, brushing off her clothes with a smile.",
+                                            "Speaks",
+                                            "Now she watches over this church!♪ Making sure the town is safe and answering the prayers of adventurers!♪ It's so nice to have someone like her around.♪ She's like the town's personal guardian angel.♪",
+                                            "ChangeImageLayer", "Expression", "1", "Nervous",
+                                            "Speaks",
+                                            "Though not every one believes me when I say she's there... So I kinda don't bring her up so I don't sound like a crazy person.",
+                                            "ChangeImageLayer", "Expression", "1", "Upset",
+                                            "Speaks",
+                                            "I kind of wish she was allowed to physically manifest here so we could spend some real time together as friends, and so she could help me enact a proper town {i}dress code{/i}.",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "You think you heard Lucille let out an exasperated sigh, but Lillian starts smiling full force as she starts talking again.",
+                                            "Speaks",
+                                            "The two of us have some differences on the goddesses message and how to enact them too, but I trust her a whole bunch!♪",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "Lillian then leans in and whispers to you in a low, conspiring tone.",
+                                            "Speaks",
+                                            "She also helps out around the church, but she thinks I don't notice, hehe.♪ Like dusting stuff when I'm not looking.",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Lillian hops back with a wide grin.",
+                                            "Speaks",
+                                            "But anyways!♪ I hope the two of you get along! She'll probably be a great secondary guide for you on your adventures.♪",
+                                            "IfChoice", "11", "Lucille", "Talk about other people in town.",
+                                            "SetChoice", "11", "Lucille",
+                                            "ChangeProgress",   "10",
+                                            "JumpToScene", "Talk about other people in town."
+                                          ]
+                            },
+
+
+
+
+
+                  {
+                      "NameOfScene": "Buy holy water. 100 Eros.",
+                      "theScene": [ "HasErosLessThan",
+                                  "100",
+                                  "LacksFundsRepeatible",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "Speaks",
+                                  "Yay!",
+                                  "She lunges forward, quickly giving you a hug before running off to get your purchase.",
+                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                  "She excitedly returns with a stylish glass bottle filled to the brim with perfectly clear water.",
+                                  "ChangeEros", "-100",
+                                  "GiveItem", "1", "Holy Water",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "Speaks",
+                                  "Feel free to buy as much as you want!♪ I try my hardest to make sure the Church never runs out of stock.♪",
+                                  "ChangeImageLayer", "Expression", "1", "Happy",
+                                  "Speaks",
+                                  "Good luck adventuring, [ThePlayerName]!♪",
+                                  "ChangeProgress", "1",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "JumpToScene", "VisitMenu"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "LacksFundsRepeatible",
+                            "theScene": [ "You realize you don't have enough eros to buy a holy water...",
+                                         "JumpToScene", "VisitMenu"
+                                      ]
+                        },
+
+            {
+                "NameOfScene": "Get purification.",
+                "theScene": [ "ChangeImageLayer", "Expression", "1", "Happy",
+                              "You ask Lillian to use her purification magic on you and she responds with a warm, helpful smile.",
+                              "ChangeImageLayer", "Expression", "1", "Base",
+                              "Speaks",
+                              "Of course, [ThePlayerName]! I'm always glad to help an adventurer in need.♪ What kind of purification do you require?",
+                              "ChangeImageLayer", "Expression", "1", "Happy",                            
+                            "JumpToScene", "PurificationMenu"
+                          ]
+            },
+                    {
+                      "NameOfScene": "PurificationMenu",
+                      "theScene": [
+                                    "Menu",
+                                      "Just for fun.",
+                                      "HideOptionOnRequirementFail", "RequiresPerk", "Mushroom Head", "Remove matango-related ailments.",
+                                      "HideOptionOnRequirementFail", "RequiresPerk", "Crest of Temptation", "Remove curses.",
+                                      "Purify everything that can be purified.",
+                                      "Nevermind.",
+                                    "EndLoop"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "Nevermind.",
+                            "theScene": [
+                                        "JumpToScene", "VisitMenu"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "Just for fun.",
+                            "theScene": [  "ChangeImageLayer", "Expression", "1", "Base",
+                                        "The kind-hearted priestess seems a bit confused by your request, but cheerfully obliges and fervently intones a prayer with a wave of her hands and a gentle glow of holy magic, filling you with a serene sense of calm and peace! ... It doesn't actually do anything, but it does feel kinda nice and tingly.",
+                                        "JumpToScene", "VisitMenu"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "Remove matango-related ailments.",
+                            "theScene": [  "ChangeImageLayer", "Expression", "1", "Base",
+                                        "The kind-hearted priestess cheerfully obliges and fervently intones a prayer with a wave of her hands and a gentle glow of holy magic, filling you with a serene sense of relaxation as you feel your body return to normal!",
+                                        "GetEventAndSetChoice", "Matango Ambush", "2", "",
+                                        "RemovePerk", "Mushroom Head",
+                                        "ChangeImageLayer", "Expression", "1", "Upset",
+                                        "Speaks",
+                                        "Be more careful next time. Remember that those dastardly monster girls will use all kinds of tricks to try and lead you astray... but I'm sure you'll be able to stay strong! I believe in you!",
+                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                        "JumpToScene", "VisitMenu"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "Remove curses.",
+                            "theScene": [  "ChangeImageLayer", "Expression", "1", "Base",
+                                        "The kind-hearted priestess cheerfully obliges with a wave of her hands and a gentle glow of holy magic, filling you with a serene sense of ease and relief as the crest vanishes!",                                        
+                                        "RemovePerk", "Crest of Temptation",
+                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                        "Speaks",
+                                        "There... Curses might be strong, but nothing is as strong as the Goddess' pure love!♪",
+                                        "ChangeImageLayer", "Expression", "1", "Happy",
+                                        "Speaks",
+                                        "Anything else I can help you with, [ThePlayerName]?",
+                                        "JumpToScene", "VisitMenu"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "Purify everything that can be purified.",
+                            "theScene": [  "ChangeImageLayer", "Expression", "1", "Upset",
+                                        "She pouts a bit as she seems to wonder what kind of trouble you must have gotten into to need so much purification, but she nonetheless obliges with a wave of her hands and a gentle glow of holy magic, filling you with a serene sense of calm as all your worldly and unholy ailments immediately vanish!",
+                                        "JumpToScene", "HealingChecks"
+                                      ]
+                        },
+
+
+
+            {
+                "NameOfScene": "_Get purification.OG",
+                "theScene": [ "You ask Lillian to use her purification magic on you.",
+                            "She cheerfully obliges with a wave of her hands and a gentle glow of holy magic.",
+                            "RefreshPlayer",
+                            "You are fully refreshed! All arousal removed! Energy and spirit restored!",
+                            "JumpToScene", "HealingChecks"
+                          ]
+            },
+                   {
+                        "NameOfScene": "HealingChecks",
+                        "theScene": [ "IfHasPerk", "Mushroom Head", "MushroomCure",
+                                      "IfHasPerk", "Crest of Temptation", "CrestTemptationCure",
+                                      "ChangeImageLayer", "Expression", "1", "Happy",
+                                      "As the glow subsides, Lillian gives you a look-over and nods, seemingly satisfied.",
+                                      "Speaks",
+                                      "{i}There!{/i} That's every possible ailment I can think of cured!",
+                                      "ChangeImageLayer", "Expression", "1", "Nervous",
+                                      "Speaks",
+                                      "If there's still something that troubles you and that I haven't been able to remove, then I'm afraid it's an issue that even the Great Venereae can't help with... In which case you'll have to either address the root cause yourself, or... l-learn to live with it?",
+                                      "She seems a bit embarrassed to suggest such a thing, but moves on with a smile, confident at least that she's done all she could for you.",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "JumpToScene", "VisitMenu"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "MushroomCure",
+                              "theScene": [ "GetEventAndSetChoice", "Matango Ambush", "2", "",
+                                          "RemovePerk", "Mushroom Head",
+                                          "JumpToScene", "HealingChecks"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "CrestTemptationCure",
+                              "theScene": [  
+                                          "RemovePerk", "Crest of Temptation",
+                                          "JumpToScene", "HealingChecks"
+                                        ]
+                          },
+
+          {
+              "NameOfScene": "Done talking.",
+              "theScene": [
+                              "JumpToScene", "VisitMenu"
+                        ]
+          },
+          {
+              "NameOfScene": "Done spending time with Lillian.",
+              "theScene": [
+                              "ChangeImageLayer", "Expression", "1", "Base",
+                              "Speaks",
+                              "Oh? You've got to go? Well good luck on your adventures [ThePlayerName]!♪ May the Goddess' blessings be upon you.♪"
+                        ]
+          }
+
+                ]
+}

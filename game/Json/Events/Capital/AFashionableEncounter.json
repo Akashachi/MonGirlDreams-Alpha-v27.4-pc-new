@@ -1,0 +1,1199 @@
+{
+    "name": "A Fashionable Encounter",
+    "CardType": "Event",
+    "CardLimit": "1",
+    "Description": "A chance Delusian encounter with a succubus possessed of a keen sense for class, money, and fashion, plenty interested in capitalizing on her fortuitous meeting with a handsome adventurer.",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Fashionable Succubus",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+
+                ],
+    "EventText": [
+      {
+        "NameOfScene": "EventStart",
+        "theScene": [
+                    "StoreCurrentBG",
+                    "ChangeBG", "Capital.png",
+                    "ChangeBGM", "music/Casino/07 After the act.mp3",
+                    "DenyInventory",
+                    "DisplayCharacters",
+                      "1",
+                    "EndLoop",
+                    "ChangeImageLayer", "Expression", "1", "Seductive",
+                    "SwapLineIf", "IfTimeIs",
+                      "Night", "But as you contemplate your next move, someone unexpectedly approaches you: a succubus wearing a skimpy high-class outfit whose luxurious materials eye-catchingly gleam under the streetlights, seductively drawing your gaze along its wearer's half-naked curves as she makes her way towards you with a predatory gleam in her eyes!",
+                      "Day", "But as you contemplate your next move, someone unexpectedly approaches you: a succubus wearing a skimpy high-class outfit whose luxurious materials eye-catchingly gleam under the sunlight, seductively drawing your gaze along its wearer's half-naked curves as she makes her way towards you with a predatory gleam in her eyes!",
+                    "EndLoop",
+                    "Speak", "Fashionable Succubus",
+                    "Hey there, handsome.♥",
+                    "VirilityEqualsOrGreater", "51", "NormalScene",
+                    "GetAnEventsProgressThenIfEqualsOrGreater", "ArchlightProgressTracker", "30", "NormalScene",
+                    "ChangeImageLayer", "Expression", "1", "SternGlare",
+                    "However, once she's come within but a few steps of you, she unexpectedly stops with a distasteful sniff, before looking you up and down with a sharply critical gaze, her analysis concluding with a disapproving scowl.",
+                    "Speak", "Fashionable Succubus",
+                    "... Actually, scratch that. I don't think I have time for a {i}skint{/i} like you...",
+                    "DisplayCharacters",
+                    "EndLoop",
+                    "Without even letting you respond, she showily tosses off her professionally coiffed hair and power-struts in the opposite direction without as much as a glance your way, leaving you safe from whatever lewd designs she had against you, but also rather baffled and somewhat insulted... You guess your lack of virility turned her off?",
+                    "JumpToScene", "PostEventStuffs"
+                  ]
+      },
+      {
+        "NameOfScene": "NormalScene",
+        "theScene": [
+                    "ChangeImageLayer", "Expression", "1", "Smug",
+                    "Once she's come within but a few steps of you, she looks you up and down with an appraising stare, her examination concluding with a satisfied smile as she locks eyes with you with an air of confidence, showily tossing her professionally coiffed hair to the side with a flourish of her graceful gloved hand, then posing alluringly with a lascivious cant of her hips as she purringly singsongs.",
+                    "Speak", "Fashionable Succubus",
+                    "Mmmh, yes, you will do nicely♪... Say, dear Adventurer, what would you think of being my generous benefactor and generating some Eros for me?♥",
+                    "ChangeImageLayer", "Expression", "1", "LipLick",
+                    "As she speaks, she leans forward ever so slightly to make her hefty breasts bounce and strain against her skimpy glimmering top while she lewdly licks her soft, expertly painted lips, the atmosphere around her rapidly turning charmingly erotic as she adds with a sultry giggle and a coquettish wink.",
+                    "ChangeImageLayer", "Expression", "1", "SmileWink",
+                    "Speak", "Fashionable Succubus",
+                    "If you catch my drift.♥",
+                    "IfPlayerOrgasm", "TooHornyNotToStare",
+
+                    "JumpToScene", "EncounterMenu"
+                  ]
+      },
+          {
+            "NameOfScene": "EncounterMenu",
+            "theScene": [
+                        "Menu",
+                            "Fight her!",
+                            "RequiresChoice", "5", "",
+                            "'No thanks.'",
+                            "RequiresChoice", "1", "",
+                            "'Are you mugging me?'",
+                            "RequiresChoice", "1", "",
+                            "Offer Eros?",
+                            "RequiresChoice", "1", "ErosTalk",
+                            "Offer Eros!",
+                            "RequiresChoice", "2", "AdventuererBounty",
+                            "Adventurer Bounty?",
+                            "Run!",
+                            "Take a closer look at her.",
+                        "EndLoop"
+                      ]
+          },
+                  {
+                    "NameOfScene": "Fight her!",
+                    "theScene": [ "SetChoice", "2", "AdventuererBounty",
+                                  "ChangeImageLayer", "Expression", "1", "Smug",
+                                  "She readily straightens up with a smug titter at your response, lazily brushing back a lock of hair with one finger as she assumes a more alert stance.",
+                                  "Speak", "Fashionable Succubus",
+                                  "That's the spirit, Mr. Adventurer.♪ I'm looking forward to the bounty bonus I'll get once I've turned you into a nicely climaxing mess.♥",
+                                  "JumpToScene", "Combat"
+                              ]
+                  },
+                  {
+                    "NameOfScene": "'No thanks.'",
+                    "theScene": [ "SetChoice", "5", "YesThanks",
+                                  "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                  "Her expression goes blank as she takes in your blunt refusal, and after a brief awkward silence, she somewhat clumsily responds.",
+                                  "Speak", "Fashionable Succubus",
+                                  "N-No, I'm afraid that's not an option.",
+                                  "ChangeImageLayer", "Expression", "1", "Smug",
+                                  "Speak", "Fashionable Succubus",
+                                  "I'm not taking 'No.' for an answer, Mr. Adventurer. I want my Eros, and I'm going to get them. So try again.♥",
+                                  "She displays a fetchingly bright smile of perfect teeth as she punctuates her words with a predacious flick of her tail and a seductively languid sway of her hips, watching you eagerly as she awaits your next move with recovered aplomb.",
+                                  "JumpToScene", "EncounterMenu"
+                              ]
+                  },
+                  {
+                    "NameOfScene": "Run!",
+                    "theScene": [
+                                  "As you turn away to escape, you realize your 'ambusher' has chosen her spot well, your present position leaving you with your back against a sheer wall, cutting off any possible escape!",
+                                  "ChangeImageLayer", "Expression", "1", "Smug",
+                                  "Seeing that you've realized this, she closes the distance between the two of you with strutting steps that highlight her barely hidden erotic curves, her lips stretching into a satisfied superior smile as she playfully tuts and wags her finger.",
+                                  "ChangeImageLayer", "Expression", "1", "SmileWink",
+                                  "Speak", "Fashionable Succubus",
+                                  "Oh no you don't, handsome. I'm not letting a treat like you get away so easily.♥",
+                                  "Looks like you have no choice but to accept your fate... But once your confrontation is underway, you'll have your opportunity to give her the slip!",
+                                  "JumpToScene", "Combat"
+                              ]
+                  },
+                      {
+                        "NameOfScene": "Combat",
+                        "theScene": [
+                                      "CombatEncounter",
+                                        "RunningWontSkipEvent",
+                                        "Fashionable Succubus",
+                                      "StartCombat",
+                                      "IfRanAway", "Escaped!",
+                                      "With the glamourously glittering succubus defeated, you're free to return to figuring out what to do next in peace.",
+                                      "JumpToScene", "PostEventStuffs"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "Escaped!",
+                              "theScene": [
+                                            "Having successfully fled the glamourously glittering succubus, you distantly hear her grouse and stamp her heeled foot in discontent, but give up on chasing you, leaving you free to return to figuring out what to do next!",
+                                            "JumpToScene", "PostEventStuffs"
+                                        ]
+                            },
+
+
+                      {
+                        "NameOfScene": "'Are you mugging me?'",
+                        "theScene": [
+                                      "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                      "She slightly flinches at your words and straightens up with a scoffing huff as if you'd just accused her of something very crass, her pinched expression and spluttering response dampening her air of allure for a moment, even as her heavy breasts jiggle from her abrupt movement.",
+                                      "Speak", "Fashionable Succubus",
+                                      "I- What-? H-How dare! {i}No.{/i} Do you take me for some sort of {i}Livewire{/i} boor?",
+                                      "JumpToScene", "MoneyExplain"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Offer Eros?",
+                        "theScene": [
+                                      "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                      "As you go to proffer some of your money, she straightens up with a confused and flustered huff, her nonplussed expression dampening her air of allure for a moment, even as her heavy breasts jiggle from her abrupt movement.",
+                                      "Speak", "Fashionable Succubus",
+                                      "I- Hold on- I believe there's a misunderstanding... I'm not trying to rob you.",
+                                      "JumpToScene", "MoneyExplain"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "MoneyExplain",
+                              "theScene": [
+                                            "ChangeImageLayer", "Expression", "1", "Smile",
+                                            "Primly, she swiftly recovers from her off-kilter response with a little cough, trading her scrunched-up mien for an affable one as she politely explains with perhaps exaggerated crispness.",
+                                            "Speak", "Fashionable Succubus",
+                                            "{i}Ahem...{/i} As I'm sure you're already aware, dear Adventurer, engaging in sexual combat involves the winner earning reward money for their victory, courtesy of Lucidia's enchantment, which is what I was alluding to and am interested in... For the sake of full honest disclosure, I'll even mention that Ars Delusia offers official bounties on adventurers, meaning that defeating one gets you even more Eros than just those granted by the fight itself.",
+                                            "ChangeImageLayer", "Expression", "1", "Excited",
+                                            "With that out of the way, she visibly relaxes and swaps back to a bright smile, her bedecked wings glitteringly fluttering behind her as she excitedly switches her stance.",
+                                            "Speak", "Fashionable Succubus",
+                                            "{i}So{/i} the idea is: I'm going to fuck you senseless, and get a generous pay for my efforts. Meanwhile, you get to cum lots.It's win-win.♥",
+                                            "ChangeImageLayer", "Expression", "1", "LipLick",
+                                            "Her expression goes back to becoming dangerously lecherous as she again looks you up and down and licks her lips, overtly showing that she likes what she's seeing and that she's not interested in {i}just{/i} the monetary reward, the fashionable monster girl idly running her hands over her sexy body as she purringly adds.",
+                                            "Speak", "Fashionable Succubus",
+                                            "Worst case, in the {i}very slim{/i} chance you win, I simply fade away back home with the pleasure of a {i}vigorous{/i} experience while you get to victoriously stagger on your way, ideally after having given me a few loads in the process.♥",
+                                            "ChangeImageLayer", "Expression", "1", "SmileWink",
+                                            "Speak", "Fashionable Succubus",
+                                            "So what do you say, handsome?",
+                                            "SetChoice", "1", "ErosTalk",
+                                            "SetChoice", "2", "AdventuererBounty",
+                                            "JumpToScene", "EncounterMenu"
+                                        ]
+                            },
+                      {
+                        "NameOfScene": "Adventurer Bounty?",
+                        "theScene": [
+                                      "ChangeImageLayer", "Expression", "1", "Smile",
+                                      "Speak", "Fashionable Succubus",
+                                      "Hm? Oh, right, I guess you don't know! There's a whole governmental program in Ars Delusia that aims at encouraging proactive single monster girls to look for visiting adventurers and wring them dry.",
+                                      "She explains in a rather nonchalant voice, as though it were the most obvious, casual, and normal topic in the world to talk about.",
+                                      "ChangeImageLayer", "Expression", "1", "Excited",
+                                      "Speak", "Fashionable Succubus",
+                                      "There's a bunch of rules, no-nos, and obligations surrounding the whole thing, of course, but when all's said and done, it basically boils down to me getting paid for hindering you, {i}on top of{/i} getting paid for defeating you.♥ That's {i}double{/i} the profits for an easy gig.♥",
+                                      "ChangeImageLayer", "Expression", "1", "Seductive",
+                                      "Her excitement subsides into a confidently smoldering gaze as she shifts her body to the side, setting a hand on the curve of her hips while crooking the fingers of her other hand in a playful come-hither gesture, seeming to harbor little doubt that she will swiftly and easily overpower you with her charms.",
+                                      "Speak", "Fashionable Succubus",
+                                      "So come on, handsome, let's get {i}naughty{/i} and let me show you what an Ars Delusia succubus can do.♥",
+                                      "ChangeImageLayer", "Expression", "1", "LipLick",
+                                      "For all her talk of money, she certainly seems like she's quite interested in the 'wring dry' part as well, her gaze hungrily running over your body in a way that sends a lustful shiver down your spine, the monster girl definitely looking like she's not all show...",
+                                      "JumpToScene", "EncounterMenu"
+                                  ]
+                      },
+
+                  {
+                    "NameOfScene": "Offer Eros!",
+                    "theScene": [
+                                  "IfChoice", "4", "Moni", "MoneyOffering",
+                                  "SetChoice", "4", "Moni",
+                                  "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                  "At your insistent offering, she sputters for a moment, but then straightens out, crossing her arms under her heavy bust with a haughty huff while her wings moodily flap behind her with a musical glimmering tinkle of their gilded baubles.",
+                                  "ChangeImageLayer", "Expression", "1", "SternGlare",
+                                  "Speak", "Fashionable Succubus",
+                                  "B-Buh- Dear Adventurer, I already said I'm not trying to rob you-",
+                                  "PlayerSpeaks",
+                                  "But if what you want out of this is money, can't I just pay you off?",
+                                  "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                  "Your no-nonsense response catches her by surprise once more, giving her a perplexed thoughtful pause that she eventually breaks with a sighing smile.",
+                                  "ChangeImageLayer", "Expression", "1", "Smile",
+                                  "Speak", "Fashionable Succubus",
+                                  "I mean... I {i}guess-?{/i} ... Kinda takes the fun out of it all, though, doesn't it? After all, aren't adventurers into the business for the kinky pleasure of defeating {i}naughty{/i} monster girls and...",
+                                  "ChangeImageLayer", "Expression", "1", "SternGlare",
+                                  "Her voice trails off as something seems to strike her mind and she pensively stares at you for a moment, once again appraisingly looking you head to toe, albeit with a somewhat more judging look this time.",
+                                  "Speak", "Fashionable Succubus",
+                                  "Wait, I think I've heard about this... Is this a fetish thing? Do you get off to a hot lady extorting money out of you?",
+                                  "Menu",
+                                      "'What? No!'",
+                                      "'No, I just want you to leave me alone.'",
+                                      "'It is not a kink thing.'",
+                                      "'My kinks have nothing to do with this.'",
+                                      "'M-Maybe.'",
+                                      "'It is absolutely a kink thing.'",
+                                  "EndLoop"
+                              ]
+                  },
+                        {
+                          "NameOfScene": "'What? No!'",
+                          "theScene": [
+                                        "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                        "Speak", "Fashionable Succubus",
+                                        "Alright, alright, I was just asking...",
+                                        "She shakes her head with a miffed pout at your indignantly flustered answer, though she then recovers her smile as she moves on.",
+                                        "JumpToScene", "MoneyOfferingInital"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "'No, I just want you to leave me alone.'",
+                          "theScene": [
+                                        "Her glare shifts to an affronted scowl at your blunt reply, your choice of words seeming to have wounded her ego as she icily responds.",
+                                        "Speak", "Fashionable Succubus",
+                                        "... And why is that?",
+                                        "Menu",
+                                            "'You're not my type.'",
+                                            "'That dress is too slutty.'",
+                                            "'I don't like conflict.'",
+                                            "'I'm kind of in a rush.'",
+                                            "'Money solves a lot of problems.'",
+                                        "EndLoop"
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "'You're not my type.'",
+                                  "theScene": [ "ChangeImageLayer", "Expression", "1", "Smug",
+                                                "Speak", "Fashionable Succubus",
+                                                "Whu- 'Not your-' How dare- Listen, {i}buster{/i}, with how much care and effort I put into this body, I'm {i}everyone's{/i} type. Do you think this makeup magically appears when I wake up? No, I spend {i}half an hour{/i} every morning making sure I look my {i}best{/i}. And do you think my skin is this smooth and soft just because I'm a succubus? I'll have you know I have a {i}strict{/i} routine, you philistine! {i}I'll show you who is not whose type-{/i}",
+                                                "ChangeImageLayer", "Expression", "1", "SternGlare",
+                                                "Catching herself mid-rant, she sharply inhales and sighs out a long breath, recomposing herself with a muddled expression.",
+                                                "Speak", "Fashionable Succubus",
+                                                "Wait- That last one didn't make any sense...",
+                                                "ChangeImageLayer", "Expression", "1", "Excited",
+                                                "Speak", "Fashionable Succubus",
+                                                "Anyways! I'm no longer asking, now! I'm going to fuck you stupid to prove a point, and I'm not stopping until you're {i}completely{/i} head over heels for me!",
+                                                "JumpToScene", "Combat"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "'That dress is too slutty.'",
+                                  "theScene": [ "ChangeImageLayer", "Expression", "1", "SternGlare",
+                                                "Speak", "Fashionable Succubus",
+                                                "{i}Wha-{/i} Are you blind? This dress isn't 'slutty'! This is the latest Arch-Light Delights-",
+                                                "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                                "It looks like she has a lot more to rant about concerning her dress, but she cuts herself short with a strained smile, an infuriated vein visibly throbbing on her forehead in vindictive reaction to your faux pas.",
+                                                "Speak", "Fashionable Succubus",
+                                                "You know what? I'm just going to fuck you stupid.",
+                                                "JumpToScene", "Combat"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "'I don't like conflict.'",
+                                  "theScene": [ "ChangeImageLayer", "Expression", "1", "Smile",
+                                                "She smiles and lets out a little coo at your response, her predatory stance relaxing a bit.",
+                                                "Speak", "Fashionable Succubus",
+                                                "Aw, that's kinda cute... But I mean... Not even sexual combat?",
+                                                "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                                "Speak", "Fashionable Succubus",
+                                                "Wait a minute, if you're {i}that{/i} against it, how did you even get all the way to the Capital, then-?",
+                                                "ChangeImageLayer", "Expression", "1", "Smile",
+                                                "Speak", "Fashionable Succubus",
+                                                "Ah, I guess that doesn't matter too much. If you're {i}really{/i} not into it, it wouldn't make sense to force you. I'm not a {i}thug{/i}.",
+                                                "JumpToScene", "TalkedYourWayOut"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "'I'm kind of in a rush.'",
+                                  "theScene": [ "ChangeImageLayer", "Expression", "1", "Excited",
+                                                "She breezily laughs at that, twirling her smooth hair with one hand while playfully batting her other hand at you, as if you were in the middle of a sociable chat.",
+                                                "Speak", "Fashionable Succubus",
+                                                "Oh, I {i}totally{/i} get you there! Sometimes, you end up with a {i}lot{/i} on your plate, and it feels like nothing you do is going fast enough for you to catch up!",
+                                                "ChangeImageLayer", "Expression", "1", "Smile",
+                                                "She nods with sagelike agreement at your reasoning, as if she had found a kindred spirit.",
+                                                "JumpToScene", "TalkedYourWayOut"
+                                            ]
+                                },
+                                      {
+                                        "NameOfScene": "TalkedYourWayOut",
+                                        "theScene": [
+                                                      "ChangeImageLayer", "Expression", "1", "Excited",
+                                                      "Speak", "Fashionable Succubus",
+                                                      "In that case, I won't keep you a moment longer, Mr. Adventurer. I hope you have a wonderful day.♪",
+                                                      "ChangeImageLayer", "Expression", "1", "SmileWink",
+                                                      "Speak", "Fashionable Succubus",
+                                                      "But I'm sure we will be seeing each other again sometime, and maybe I can change your mind?♥",
+                                                      "DisplayCharacters",
+                                                      "EndLoop",
+                                                      "And with that, she gives her perfectly coiffed hair an elegant toss before turning on her heel to alluringly strut off on her way, giving you a fleeting eyeful of her seductively swaying hips before her long hair falls back into teasingly obfuscating place, the succubus no longer seeming to pay you any mind as she hums to herself and soon walks out of your sight.",
+                                                      "JumpToScene", "PostEventStuffs"
+                                                  ]
+                                      },
+
+
+                                  {
+                                    "NameOfScene": "'Money solves a lot of problems.'",
+                                    "theScene": [ "ChangeImageLayer", "Expression", "1", "Smile",
+                                                  "She opines readily in response to your words, looking to be very in agreement on the wonderful power of money.",
+                                                  "Speak", "Fashionable Succubus",
+                                                  "So true.♪",
+                                                  "ChangeImageLayer", "Expression", "1", "SternGlare",
+                                                  "Speak", "Fashionable Succubus",
+                                                  "Though I kinda take offense at 'problem'... But I get you.♪",
+                                                  "JumpToScene", "MoneyOffering"
+                                              ]
+                                  },
+                          {
+                            "NameOfScene": "'It is not a kink thing.'",
+                            "theScene": [
+                                          "ChangeImageLayer", "Expression", "1", "Smile",
+                                          "Speak", "Fashionable Succubus",
+                                          "Oh, huh...",
+                                          "ChangeImageLayer", "Expression", "1", "SternGlare",
+                                          "She moodily stares off into space as she taps her chin with an exquisitely manicured finger, grumpily muttering.",
+                                          "Speak", "Fashionable Succubus",
+                                          "{size=-5}I guess that magazine lied to me, then...{/size}",
+                                          "Swiftly letting go of that thought, however, she shakes her head and carries on.",
+                                          "JumpToScene", "MoneyOfferingInital"
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "'My kinks have nothing to do with this.'",
+                            "theScene": [
+                                          "ChangeImageLayer", "Expression", "1", "Seductive",
+                                          "Speak", "Fashionable Succubus",
+                                          "Well, if you're suuuurrre...♪",
+                                          "She speaks in a teasing singsong tone while eyeing you up searchingly, though she then carries on with a shrug.",
+                                          "JumpToScene", "MoneyOfferingInital"
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "'M-Maybe.'",
+                            "theScene": [
+                                          "ChangeImageLayer", "Expression", "1", "Smug",
+                                          "Speak", "Fashionable Succubus",
+                                          "Huh... {i}Interesting...{/i}♥",
+                                          "ChangeImageLayer", "Expression", "1", "Seductive",
+                                          "The way she says it sends a twinge of anticipation down your spine as she seems to be looking at you in a new light, the ravenous gleam in her eyes stoking an ember of forbidden excitement within you as she carries on lecherously.",
+                                          "ChangeImageLayer", "Expression", "1", "LipLick",
+                                          "Speak", "Fashionable Succubus",
+                                          "Well, if that's the case, I really don't mind wringing you dry in {i}every{/i} sense...♥",
+                                          "ChangeImageLayer", "Expression", "1", "SmileWink",
+                                          "Speak", "Fashionable Succubus",
+                                          "... So long as you're not broke, though. In that case, I'll have to milk you dry the normal 'sex combat' way to get my due instead.",
+                                          "She says with teasing nonchalance and a lewdly sweet smile.",
+                                          "JumpToScene", "MoneyOfferingInital"
+                                      ]
+                          },
+
+                          {
+                            "NameOfScene": "'It is absolutely a kink thing.'",
+                            "theScene": [
+                                          "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                          "Your confident answer actually gives her pause, the elegant woman blinking in stunned silence, then stuttering.",
+                                          "Speak", "Fashionable Succubus",
+                                          "W-Wow, no hesitation, huh...",
+                                          "JumpToScene", "MoneyOffering"
+                                      ]
+                          },
+
+                        {
+                          "NameOfScene": "MoneyOfferingInital",
+                          "theScene": [
+                                        "ChangeImageLayer", "Expression", "1", "Smile",
+                                        "Speak", "Fashionable Succubus",
+                                        "But {i}anyways!{/i} If you're oh so hellbent on paying your way out of this...",
+                                        "ChangeImageLayer", "Expression", "1", "Smug",
+                                        "She holds out her hand with a sharp smile, and you can already tell she won't be satisfied with just a small 'donation'.",
+                                        "Speak", "Fashionable Succubus",
+                                        "That'll be ten thousand Eros.♪ Those bounties are pretty hefty, so I have to get my money's worth.♥",
+                                        "JumpToScene", "MoneyOfferingMenu"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "MoneyOffering",
+                          "theScene": [
+                                        "ChangeImageLayer", "Expression", "1", "Smile",
+                                        "Speak", "Fashionable Succubus",
+                                        "Well, if you're oh so hellbent on paying your way out of this without duress...",
+                                        "ChangeImageLayer", "Expression", "1", "Seductive",
+                                        "She holds out her hand with a lascivious smile, and you can already figure she won't be satisfied with just a small 'donation'.",
+                                        "Speak", "Fashionable Succubus",
+                                        "That'll be ten thousand Eros.♪ Those bounties aren't cheap, you know.♥",
+                                        "JumpToScene", "MoneyOfferingMenu"
+                                    ]
+                        },
+
+                        {
+                          "NameOfScene": "MoneyOfferingMenu",
+                          "theScene": [
+                                        "Menu",
+                                            "Pay her 10000 Eros.",
+                                            "RequiresPerk", "Haggler",
+                                            "Pay her 5000 Eros. (Haggler)",
+                                            "Pay her 25000 Eros.",
+                                            "Pay her 50000 Eros.",
+                                            "Pay her 100000 Eros!",
+                                            "Pay her 1000000 Eros!!!",
+                                        "EndLoop"
+                                    ]
+                        },
+
+                            {
+                              "NameOfScene": "LackFundsForPayingHerOff",
+                              "theScene": [
+                                          "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                          "Speak", "Fashionable Succubus",
+                                          "Wait- You don't seem to have that much money...?",
+                                          "You can't but acknowledge that it is indeed the case as you check your funds, the realization putting a predatory smile back on the succubus' face.",
+                                          "ChangeImageLayer", "Expression", "1", "Smug",
+                                          "Speak", "Fashionable Succubus",
+                                          "{i}Well{/i}, if you're {i}so{/i} intent on making offers you can't deliver on, I'll just have to squeeze those Eros out of you instead, Mr. Adventurer.♥",
+                                          "JumpToScene", "Combat"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Pay her 5000 Eros. (Haggler)",
+                              "theScene": [
+                                           "HasErosLessThan",  "5000", "LackFundsForPayingHerOff",
+                                           "ChangeImageLayer", "Expression", "1", "SternGlare",
+                                           "With practiced ease, you make your offer, and before the succubus can begin to argue, you swiftly remind her that it's money she can get {i}right here, right now{/i} with no effort, instead of not only having to go through the trouble of fighting you, but {i}also{/i} having to experience the administrative tedium of cashing out her bounty, your lightning-fast arguments quickly leaving her nodding in understanding.",
+                                           "ChangeImageLayer", "Expression", "1", "Smile",
+                                           "Speak", "Fashionable Succubus",
+                                           "Hm, I {i}guess{/i} you're right... It {i}is{/i} a lot simpler...",
+                                           "ChangeEros", "-5000",
+                                           "ChangeProgress", "5000",
+                                           "JumpToScene", "PostPayment"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Pay her 10000 Eros.",
+                              "theScene": [
+                                           "HasErosLessThan",  "10000", "LackFundsForPayingHerOff",
+                                           "ChangeEros", "-10000",
+                                           "ChangeImageLayer", "Expression", "1", "Excited",
+                                           "Speak", "Fashionable Succubus",
+                                           "Pleasure doing business with you.♪",
+                                           "ChangeProgress", "10000",
+                                           "JumpToScene", "PostPayment"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Pay her 25000 Eros.",
+                              "theScene": [
+                                           "HasErosLessThan",  "25000", "LackFundsForPayingHerOff",
+                                           "ChangeImageLayer", "Expression", "1", "Smile",
+                                           "Speak", "Fashionable Succubus",
+                                           "Huh? I-I mean, that's more than what I asked for, but sure, I'll gladly take it.♥",
+                                           "ChangeEros", "-25000",
+                                           "ChangeProgress", "25000",
+                                           "JumpToScene", "PostPayment"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Pay her 50000 Eros.",
+                              "theScene": [
+                                           "HasErosLessThan",  "50000", "LackFundsForPayingHerOff",
+                                           "ChangeImageLayer", "Expression", "1", "Excited",
+                                           "Speak", "Fashionable Succubus",
+                                           "H-Huh? That's {i}way{/i} more than what I asked for! ... But I'm not going to complain.♥",
+                                           "ChangeEros", "-50000",
+                                           "ChangeProgress", "50000",
+                                           "JumpToScene", "PostPayment"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Pay her 100000 Eros!",
+                              "theScene": [
+                                          "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                          "Speak", "Fashionable Succubus",
+                                          "Guh- That's, like, {i}ten times{/i} what I asked for, though-?! I had no idea adventurers could be this loaded... But... are you {i}sure?{/i}",
+                                          "Menu",
+                                            "'Yes!'",
+                                            "'No.'",
+                                          "EndLoop"
+                                        ]
+                            },
+                                    {
+                                      "NameOfScene": "'No.'",
+                                      "theScene": [
+                                                  "She gives you a mildly confused and concerned look at your presumed joke, but stays silent, letting you make a more reasonable offer.",
+                                                  "JumpToScene", "MoneyOfferingMenu"
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "'Yes!'",
+                                      "theScene": [  "HasErosLessThan",  "100000", "LackFundsForPayingHerOff",
+                                                  "ChangeImageLayer", "Expression", "1", "Excited",
+                                                  "Speak", "Fashionable Succubus",
+                                                  "{i}Oh, gosh.{/i} W-Well, you {i}definitely{/i} won't hear me complain.♥",
+                                                  "Her eyes seem to literally sparkle as you hand her your more than generous tribute, the succubus pocketing the obscene sum with a giddy, downright aroused giggle.",
+                                                  "ChangeEros", "-100000",
+                                                  "ChangeProgress", "100000",
+                                                  "ChangeImageLayer", "Expression", "1", "Seductive",
+                                                  "Speak", "Fashionable Succubus",
+                                                  "Thank you very {i}very{/i} much, handsome...♥ Should I let you go on your way, now, or are you interested in {i}anything else{/i}?♥",
+                                                  "JumpToScene", "PostPayMenu"
+                                                ]
+                                    },
+                            {
+                              "NameOfScene": "Pay her 1000000 Eros!!!",
+                              "theScene": [
+                                          "IfChoice", "3", "Million", "Million2",
+                                          "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                          "She does a double and then a triple take at your offer of the outrageous sum, even the luxurious succubus seeming to have trouble wrapping her head around such an exorbitant amount of money.",
+                                          "Speak", "Fashionable Succubus",
+                                          "Buh- Guh- A {i}m-millio-{/i} C-Come on, don't make jokes like that...",
+                                          "Menu",
+                                            "'It's not a joke.'",
+                                            "'Sorry...'",
+                                          "EndLoop"
+                                        ]
+                            },
+                                    {
+                                      "NameOfScene": "'Sorry...'",
+                                      "theScene": [
+                                                  "ChangeImageLayer", "Expression", "1", "Smile",
+                                                  "She fidgets in place with a sigh at your apology, giggling nervously.",
+                                                  "Speak", "Fashionable Succubus",
+                                                  "I-I mean, I admit it caught me by surprise and it {i}was{/i} kind of funny, but you're going to give a girl a heart attack doing that...",
+                                                  "JumpToScene", "MoneyOfferingMenu"
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "'It's not a joke.'",
+                                      "theScene": [  "HasErosLessThan",  "1000000", "LackFundsForPayingHerOff",
+                                                  "ChangeImageLayer", "Expression", "1", "Smile",
+                                                  "She stares at you in dumbstruck confusion as you hand her the sack of money, which she takes and holds with a bewildered air, blinking rapidly a few times as she stares at the seven-figure bounty with wide eyes, as if expecting so much wealth to vanish into thin air at any moment.",
+                                                  "ChangeEros", "-1000000",
+                                                  "ChangeProgress", "1000000",
+                                                  "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                                  "Speak", "Fashionable Succubus",
+                                                  "I- Huh- Y-You're {i}really{/i} serious-? But- That's- I mean- How can you just- Guh-",
+                                                  "DisplayCharacters",
+                                                  "EndLoop",
+                                                  "PlayMotionEffect", "Crash",
+                                                  "After a moment of her mind looping through the same overwhelming amount of glee and confusion, she appears to overload and promptly faints on the spot, tumbling backwards into what would be a heap if she didn't also fade away due to some enchantment-related safety measure, disappearing in a blink along with your money.",
+                                                  "While this leaves you alone and free to go about your business, you're also pretty sure she's not going to forget about you anytime soon...",
+                                                  "SetChoice", "3", "Million",
+                                                   "JumpToScene", "PostEventStuffs"
+                                                ]
+                                    },
+                                          {
+                                            "NameOfScene": "Million2",
+                                            "theScene": [  "HasErosLessThan",  "1000000", "LackFundsForPayingHerOff",
+                                                        "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                                        "Speak", "Fashionable Succubus",
+                                                        "A-Again?- R-Really?!",
+                                                        "ChangeImageLayer", "Expression", "1", "Smile",
+                                                        "While she sputters in bafflement, she still takes the money you hand her, hyperventilating with gleeful amazement while her spaded tail frantically swishes behind her, but nonetheless looking more composed than the first time you pulled that stunt on her, hugging the bag of Eros with a dreamy expression.",
+                                                        "ChangeEros", "-1000000",
+                                                        "ChangeProgress", "1000000",
+                                                        "ChangeImageLayer", "Expression", "1", "Excited",
+                                                        "Speak", "Fashionable Succubus",
+                                                        "I-I mean- I {i}really{/i} shouldn't complain- Eeeeee! I'm living the dream! I'm going to go on a {i}wild{/i} shopping spree with this!♥",
+                                                        "Giggling and hopping in place in what would come across as childlike enthusiasm were it not for the way her movements make her breasts showily shake and almost jump out of their skimpy confines, she eventually gets a grip on herself with no small effort, pocketing the insane sum and training her gaze back on you with downright adoring lasciviousness.",
+                                                        "ChangeImageLayer", "Expression", "1", "Seductive",
+                                                        "Speak", "Fashionable Succubus",
+                                                        "Now, {i}handsome{/i}, I hope you won't let me leave you high and dry.♥ A high roller like you deserves {i}special attention{/i}, right?♥",
+                                                        "JumpToScene", "PostPayMenu"
+                                                      ]
+                                          },
+
+                          {
+                            "NameOfScene": "PostPayment",
+                            "theScene": [
+                                          "ChangeImageLayer", "Expression", "1", "Seductive",
+                                          "Speak", "Fashionable Succubus",
+                                          "Now, my generous benefactor, how about you let me... {i}pay you back?{/i}♥",
+                                          "She says with sweet seductive promises in her voice while taking a moment to nonchalantly stretch her arms up and her wings out, the movement deliberately showing off her tantalizing allure before she exhales in a humming sigh and goes back to a more neutral stance, her barely hidden assets briefly jiggling from the release of tension.",
+                                          "ChangeImageLayer", "Expression", "1", "SmileWink",
+                                          "Speak", "Fashionable Succubus",
+                                          "... But only if you want to, of course, handsome.♥",
+                                          "JumpToScene", "PostPayMenu"
+                                      ]
+                          },
+
+
+
+                          {
+                            "NameOfScene": "PostPayMenu",
+                            "theScene": [
+                                          "Menu",
+                                              "Blowjob?",
+                                              "Titfuck?",
+                                              "Sex?",
+                                              "Kisses?",
+                                              "'I want to stare and appreciate your beauty...'",
+                                              "'It's okay, I'll just be on my way.'",
+                                          "EndLoop"
+                                      ]
+                          },
+                                {
+                                  "NameOfScene": "'It's okay, I'll just be on my way.'",
+                                  "theScene": [ "ChangeImageLayer", "Expression", "1", "SternGlare",
+                                                "A pout briefly crosses her soft, refined features, the luxurious woman looking a bit ticked off by your lack of interest, but quickly smoothing out her expression back into an affable smile.",
+                                                "ChangeImageLayer", "Expression", "1", "Smile",
+                                                "Speak", "Fashionable Succubus",
+                                                "Well, if you're {i}sure{/i}... A deal's a deal, after all.♪",
+                                                "ChangeImageLayer", "Expression", "1", "Excited",
+                                                "Speak", "Fashionable Succubus",
+                                                "Have a wonderful day, dear Adventurer, and do keep me in your thoughts.♪ I hope to see you again soon.♥",
+                                                "Stylishly blowing you a kiss with an emphatic 'Mwah!♥', she then turns on her heel and elegantly struts off on her way, soon leaving you alone and free to decide how to move on now.",
+                                                "DisplayCharacters",
+                                                "EndLoop",
+                                                "JumpToScene", "PostEventStuffs"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "'I want to stare and appreciate your beauty...'",
+                                  "theScene": [ "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                                                "Speak", "Fashionable Succubus",
+                                                "Huh? You sure? I mean- You could have done that from the get-go, you know? Not to mention that...",
+                                                "ChangeImageLayer", "Expression", "1", "Seductive",
+                                                "Giggling, she slowly cants her hips while gently running a hand along the curve of her body up to her breasts where she lets her fingers rest, the languorous motions deliberately drawing your gaze to her captivating assets while she goes on in a seductively crooning voice.",
+                                                "ChangeImageLayer", "Expression", "1", "Wink",
+                                                "Speak", "Fashionable Succubus",
+                                                "Well, I don't mean to brag, but if I {i}really{/i} start putting on a show for you, you might get totally lost in the moment and get every drop of your spirit wrung out of you... Are you {i}suuure{/i} that's what you want?♥",
+                                                "As she speaks, she leans forward with her hands casually resting on her knees, seemingly in conversational attention, but plainly in order to emphasize her cleavage with her framing arms, her breasts hanging captivatingly in front of you as she lets out a teasing little giggle, her lascivious posture making it hard to look at any part of her that's not meant to entice and excite you...",
+                                                "Menu",
+                                                  "Just keep staring...",
+                                                  "I-I guess not.",
+                                                "EndLoop"
+                                            ]
+                                },
+                                        {
+                                          "NameOfScene": "Just keep staring...",
+                                          "theScene": [
+                                                        "ChangeImageLayer", "Expression", "1", "Seductive",
+                                                        "In lieu of an answer to her question, you vapidly keep ogling the succubus' luxurious curves up and down in a wordless stupor, the fashionista tittering in flattered amusement as she runs her palms from her thighs up along her hips in response to your staring, giving her skirt a passing tug that {i}almost{/i} flaunts her undergarments, focusing your attention entirely on her and ensuring you don't miss a single moment of her infatuating display.",
+                                                        "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                        "A purr of lust escapes her lips as her hands keep drifting upward along her hourglass waist, gliding up to her big soft tits barely constrained in her glittering skimpy top, the buxom woman delicately palming them and gently rolling them between her fingers for a moment before letting them {i}drop{/i}.",
+                                                        "ChangeImageLayer", "Expression", "1", "Wink",
+                                                        "Showily, they bounce down with an obscene jiggle that threatens to let them spill out, the sight of their plump softness making the thoughts in your head scatter into charmed bliss as you wantonly let the elegant fiend use her wiles on you as much as she wants, the fashionable monster girl looking to be most satisfied with your indulgent spectating.",
+                                                        "ChangeImageLayer", "Expression", "1", "SmileWink",
+                                                        "As you keep staring slack-jawed, she idly plays with the straps of her outfit, each intentionally dress-straining bounce of her tits further melting your brain with enchanting euphoria, making you forget more and more about whatever you were doing before you just started enjoying the spectacle of her wonderful body...",
+                                                        "Vacantly, your eyes follow her hands as they smoothly move back down along her hourglass curves, the succubus shifting her stance ever so slightly to better flaunt her alluring assets, lightly spreading her legs to push up her dress while her hands frame her thighs, teasingly {i}almost{/i} showing you her hidden goods again...",
+                                                        "JumpToScene", "Just stare and appreciate her allure..."
+                                                    ]
+                                        },
+                                {
+                                  "NameOfScene": "I-I guess not.",
+                                  "theScene": [ "ChangeImageLayer", "Expression", "1", "Smug",
+                                                "As you wrench your eyes away from her with some effort, she giggles pridefully, smoothly easing back into a more neutral stance, but treating you to a teasing wink as she playfully singsongs.",
+                                                "ChangeImageLayer", "Expression", "1", "Wink",
+                                                "Speak", "Fashionable Succubus",
+                                                "Your choice, handsome.♪ But really, don't hesitate to indulge. I {i}really{/i} don't mind the attention, and I guarantee you that I'd put on a show you wouldn't soon forget... Something to leave you a nice, sexy memory as you continue to explore and enjoy our beautiful city, hm?♥",
+                                               "ChangeImageLayer", "Expression", "1", "SmileWink",
+                                                "She lets the prospect enticingly drift through your mind with a little titter, but leaves it at that, letting you go back to making your choice on how she should reward you for your generosity.",
+                                                "JumpToScene", "PostPayMenu"
+                                            ]
+                                },
+
+
+
+                                        {
+                                          "NameOfScene": "Take a closer look at her.",
+                                          "theScene": [
+                                                      "Inspecting her more closely, you can see that, in line with her seemingly greedy behavior, the succubus looks to be a person of quite some means, every bit of her body, attire, and makeup screaming luxury, the monster girl appearing to be living {i}in{/i} the money and {i}for{/i} the money.",
+                                                      "ChangeImageLayer", "Expression", "1", "Seductive",
+                                                      "DamagePlayerFromMonster", "Fashionable Succubus", "Sexual Tempt",
+                                                      "Noticing your attention, she is visibly quite flattered by it, taking a flaunting pose that makes her skimpy garment obscenely dig ever so slightly into her hips, showing off their carefully cultivated hourglass shape and the perfect softness of her skin while she coquettishly tosses her hair your way, sending out a sweet-smelling hint of pheromone-accented chic perfume that makes your heart race faster for a moment.",
+                                                      "ChangeImageLayer", "Expression", "1", "SmileWink",
+                                                      "Speak", "Fashionable Succubus",
+                                                      "Hmmh, enjoying the show, handsome?♪ I don't mind. You can stare as {i}much{/i} as you want.♥",
+                                                      "Languidly wiggling her hips, she further captures your attention with their pendulous movement, the straining of her racy dress pulling it {i}ever so slightly{/i} up and {i}almost{/i} giving you naughty peeks of her pussy, wordlessly promising you more if you just keep watching...",
+                                                      "Menu",
+                                                        "Snap out of it!",
+                                                        "Just stare and appreciate her allure...",
+                                                      "EndLoop"
+                                                    ]
+                                        },
+                                {
+                                  "NameOfScene": "TooHornyNotToStare",
+                                  "theScene": [
+                                                "In spite of yourself, however, you can't manage to pay much attention to her words, being currently far too horny and aroused to think straight, your gaze finding itself irresistibly stuck on her obscenely exposed body, libidinously enjoying the perfect shape of her swaying breasts before indulgently drifting down along her captivating curves to enjoy {i}more{/i} of her, your lust-stained mind starting to get wrapped up in her charms...",
+                                                "Menu",
+                                                    "Try to focus-!",
+                                                    "Just keep staring...",
+                                                "EndLoop"
+
+
+                                  ]
+                                },
+                                      {
+                                        "NameOfScene": "Try to focus-!",
+                                        "theScene": [
+                                                      "StatCheck",
+                                                      "Temptation",
+                                                      "25",
+                                                      "PassFocus",
+                                                      "Fail",
+                                                      "Just keep staring..."
+
+
+                                        ]
+                                      },
+                                          {
+                                            "NameOfScene": "PassFocus",
+                                            "theScene": [ "ChangeImageLayer", "Expression", "1", "Wink",
+                                                          "With an effort of will, you manage to recompose yourself, but the demonic woman nonetheless seems to have noticed your struggle against your own lust, puffing up her chest pridefully as she looks you over with a seductively teasing wink.",
+                                                          "Speak", "Fashionable Succubus",
+                                                          "You could have just kept staring, you know? I wouldn't have minded.♥",
+                                                          "JumpToScene", "EncounterMenu"
+                                            ]
+                                          },
+
+                                          {
+                                            "NameOfScene": "Snap out of it!",
+                                            "theScene": [
+                                                        "ChangeImageLayer", "Expression", "1", "Smug",
+                                                        "Gathering your wits, you get a grip on yourself and stop vapidly ogling the seductive woman in front of you, the succubus letting out a half-disappointed, half-smug huff as you look away, but not pressing things further, letting you decide how you want to proceed instead.",
+                                                         "JumpToScene", "EncounterMenu"
+                                                      ]
+                                          },
+
+                  {
+                    "NameOfScene": "Just stare and appreciate her allure...",
+                    "theScene": [
+                                  "ChangeBGM", "music/Loss/Falling Down.mp3",
+                                  "ChangeImageLayer", "Expression", "1", "Seductive",
+                                  "Tittering in satisfaction at your show of enraptured attention, she gives you a simple come-hither gesture with a crook of her gloved finger accented with a seductive smile on her exquisitely soft and expertly painted lips, the succubus' tempting pose amplifying the charming urge to get closer to her... to the point that, in your woozy daze, you end up stumbling before reaching her!",
+                                  "ChangeImageLayer", "Expression", "1", "Smug",
+                                  "Awkwardly, you totter forward on unsteady legs, nearly falling flat but making a partial recovery that ends with you kneeling right in front of the opportunistic monster girl who takes in your accidentally worshipful pose with a smug grin, swiftly approaching you to get close and personal with your genuflecting form and gently grab your face to press it coaxingly against her soft thighs with a purring hum of content.",
+                                  "Speak", "Fashionable Succubus",
+                                  "Well, well, well... Isn't it my lucky day.♥ A treat like you literally falling into my lap.♥",
+                                  "As she sweetly speaks, one of her hands gently caresses along the back of your neck while you shiveringly inhale her erotically charged scent, your charmed thoughts growing syrupy with lust as she steps back to free your head from her legs while her spaded tail flicks in to trail under your chin and make you look up at her enchanting splendor, the demonette's allure oh so tantalizing to just soak in, her smile widening at your vapid state.",
+                                  "ChangeImageLayer", "Expression", "1", "Wink",
+                                  "Speak", "Fashionable Succubus",
+                                  "Although... I guess saying that you fell head over heels for my charms is probably more accurate...♥ Like a {i}good boy{/i}.♥",
+                                  "Gazing down at you in doting dominance, she scritches the underside of your chin with the tip of her tail for a moment, as though it were one of her elegant fingers, sending affectionate tingles all through your charmed scalp before the demonic appendage dips down, leaving you dreamily staring up at her while her dexterous prehensile limb opens up your pants to let your straining erection spring free while she carries on.",
+                                  "ChangeImageLayer", "Expression", "1", "LipLick",
+                                  "Speak", "Fashionable Succubus",
+                                  "And nice, docile, horny treats like you deserve treats of their own...♥ And don't you worry, I'm going to take such {i}good care{/i} of you. You're going to feel sooooo good.♥",
+                                  "Her cooing purr hangs tantalizingly in the air while her nimble tail coils around your twitching and erect manhood and starts to pump it up and down, the steady stimulation interspersed with intermittent grazes along your rigid shaft with its spaded tip, the skillful masturbation instilling you with gratifying titillating pulses that keep you nice and complacent in your kneeling posture.",
+                                  "However, equally attention-grabbing and warmly pleasurable is the succubus lewdly gluing your stare to her by languidly swaying her body side to side, ensuring your upward gaze is intoxicatingly filled with the spectacle of her enchanting curves and tightly hugging dress while she treats you to the naughty show of her breasts slowly jiggling back and forth in their luxurious confines.",
+                                  "ChangeImageLayer", "Expression", "1", "Seductive",
+                                  "Woozily, you can feel the charmed state you're in only worsening with every movement of her captivating body and stroke of her teasing tail, glimmers of light dancing up and down her showy dress to guide your eyes along her curves right where she wants you to ogle, ensuring you don't miss a single moment of her mesmerizing allure, letting you appreciate and memorize every perfect curve of her body in infatuating detail.",
+                                  "Playfully, she musically hums as you follow every minute motion of her body as if gawking at a hypnotizing pendulum, your expression growing sloppier by the minute while your arousal keeps mounting, stoked both by the lascivious display in front of you and the expert stimulation you're receiving, your pliant attitude getting a satisfied giggle out of the demonic woman.",
+                                  "ChangeImageLayer", "Expression", "1", "LipLick",
+                                  "Speak", "Fashionable Succubus",
+                                  "Oh, sweetheart, I'm going to get stuck in your head for {i}days{/i}, aren't I?♥ I wonder just how many times you're going to desperately masturbate thinking about me.♥",
+                                  "ChangeImageLayer", "Expression", "1", "Wink",
+                                  "Her coiled tail gives you an affirming squeeze while she titters sweetly, your erection throbbing happily when her spaded tip toyingly flicks your leaking cockhead, meanwhile your heart skips a beat as her hands heft up her heavy tits before letting the pillowy mounds drop back down with a mind-crushing wobble, the soft flesh straining against her dress and nearly slipping free of the scanty garment, yet staying teasingly hidden.",
+                                  "ChangeImageLayer", "Expression", "1", "Smug",
+                                  "Speak", "Fashionable Succubus",
+                                  "I'm just too {i}perfect{/i} for a {i}naughty{/i} adventurer like you to handle, hmmm?♥ But that's okay, I don't mind if you just want to {i}indulge{/i}... So why don't you enjoy yourself and breathe in some more of that perfection, handsome?♥",
+                                  "ChangeImageLayer", "Expression", "1", "Seductive",
+                                  "Gracefully, she tosses her long locks of hair to the side while giving a small flap of her demonic wings to let the gentle gust hit you with a potent wave of pheromone-charged perfume, a single breath of the erotic fragrance making you swoon with redoubled intoxication and leaving your heart racing with love-struck infatuation.",
+                                  "Just from that huff of the aphrodisiac scent, you can feel your lewd urges redouble, your cock throbbing desperately with every stroke of her tail as its pace accelerates to accompany your amping libido and the accelerating lustful thrumming of your heart, your tensing balls more and more desperate to unload and offer the splendid succubus every drop of cum they can.",
+                                  "Speak", "Fashionable Succubus",
+                                  "I can see you liked that, and that you're getting quite {i}eager{/i} to show me some {i}appreciation{/i} now... So don't hold back... Just give♥ it♥ to♥ {i}me.♥{/i}",
+                                  "PlayerOrgasm", "1",
+                                  "Her words melt into your vapidly charm-drunk head like the sweetest honey, the seductive command amplifying the hot bubbling ecstasy that readily overtakes your loins as her pumping coiled appendage milks out the first spurt of your mind-blanking, tongue-lolling climax, a heavy gout of your hot semen geysering into the air in tribute to her.",
+                                  "ChangeImageLayer", "Expression", "1", "Excited",
+                                  "Letting out a happy cry at your warm offering, she continues expertly getting you off with skillfully controlled squeezes and tugs, every dexterous stroke draining out more of your seed while your eyes remain unable to look away from her tantalizing and enchanting body as you docilely keep offering up a thick splattering load in dedication to her enthralling beauty.",
+                                  "ChangeImageLayer", "Expression", "1", "LipLick",
+                                  "PlayerOrgasm", "1", "ChangeEnergyQuietly", "-50",
+                                  "The succubus wordlessly purrs in delight while a glimmering surge of gilded energy washes over her tail, the monster woman greedily feasting on your spirit as she absorbs your fresh cum, her coiled demonic appendage continuing to squeeze your girth affectionately as it glides up and down your shaft, ensuring it coaxes out every single drop you have to offer, only mercifully slowing down as your twitching climax eventually ebbs away.",
+                                  "While you tremble in libidinous rapture, awash in a dreamy afterglow, her tail finally frees your trembling length and rises up to her mouth, the Fashionable Succubus tentatively sipping at some of your semen she left on the spaded tip, seemingly for the express purpose of sampling it.",
+                                "SwapLineIf", "Virility",
+                                      "200", "|f|ChangeImageLayer|/|Expression|/|1|/|Pleasured|n|And judging by her reaction, she is finding it more potent than she expected, her expression devolving into one of raw bliss as she loses herself in its taste for a moment before she hastily recomposes herself, her face hurriedly smoothing back into a composed suave mien as she concludes.",
+                                      "100", "|f|ChangeImageLayer|/|Expression|/|1|/|Smug|n|Happily, she smacks her lips at the taste test, nodding in approval at the flavor of your seed which she seems to be finding perfectly adequate, hungrily lapping up the rest of it before looking back to you with satisfaction and concluding.",
+                                      "50", "Licking her lips, she looks pensive for a moment, then gulps down with the barest hint of a shrug, seeming not too impressed with the quality of your semen, but not really disappointed either, though she doesn't linger on her judgment, instead focusing back on you to conclude primly.",
+                                      "0", "|f|ChangeImageLayer|/|Expression|/|1|/|SternGlare|n|And going by her sour expression, you get the definite impression that she didn't get what she was hoping for, the succubus looking at you with some tetchiness and looking like she'd want to say something not so nice... though she keeps herself from doing so lest she ruin the mood, instead doing her best to go back to looking smooth and sexy as she concludes.",
+                                  "EndLoop",
+                                  "ChangeImageLayer", "Expression", "1", "Seductive",
+                                  "Speak", "Fashionable Succubus",
+                                  "Well, I assume you liked that plenty, sweetheart... So keep in mind that if we happen into each other again, all you need to do is be good and I'll do this all♥ over♥ again.♥",
+                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                  "She gives the underside of your chin another scritch, this time with her hand, the doting gesture sending sweet submissive shivers all through your entire being while a giddy, drunk smile stays stuck to your face, your gaze remaining glued on her as she parts from you and pivots with a click of her heels, strutting away casually with an eye-catching sway in her hips that you can only indulgently ogle in your dizzy charmed stupor...",
+                                  "ChangeBGM", "music/Casino/07 After the act.mp3",
+                                  "ChangeProgress", "5000",
+                                  "DisplayCharacters",
+                                  "EndLoop",
+                                  "IfPlayerSpiritGone", "GameOverAhe",
+                                  "After a few moments, you manage to get ahold of yourself once more, and get up to fix your clothes and get back to business, readying yourself for your continued traversal of the Capital. The luscious succubus' milking may have left you still standing, but the view of her glamourous visage and sexy body still cling to your thoughts with alluring fantasies of what else she could have done to you, making it hard to focus on anything but her...",
+                                  "ChangeSensitivity", "Sex", "5",
+                                  "ChangeSensitivity", "Seduction", "5",
+                                  "ChangeFetish", "Monstrous", "5",
+                                  "JumpToScene", "PostEventStuffs"
+                              ]
+                  },
+                {
+                  "NameOfScene": "GameOverAhe",
+                  "theScene": [   "ChangeProgress", "5000",
+                                  "With the succubus gone, you go to get up and return to your adventure, but as your senses return to you, so does your exhaustion which hits you in full force, leaving you slumping back to the ground in complete powerlessness and fading away, images of the glamourous temptress responsible for your present fate still clinging to your thoughts with lust-stained infatuation...",
+                                  "ChangeSensitivity", "Sex", "5",
+                                  "ChangeSensitivity", "Seduction", "5",
+                                  "ChangeFetish", "Monstrous", "5",
+                                  "GameOver"
+                            ]
+                },
+
+                {
+                   "NameOfScene": "Blowjob?",
+                   "theScene": [
+                               "ChangeBGM", "music/Casino/BGM06_sink.mp3",
+                                "ChangeImageLayer", "Expression", "1", "LipLick",
+                               "Speak", "Fashionable Succubus",
+                               "But of course, handsome.♥",
+                               "Enthusiastically licking her lips at your request, the Fashionable Succubus shows no hesitation as she crouches down in front of you in a smooth motion while daintily lifting her arms to tug her hair behind her head in the process, the luxuriously dressed woman somehow managing to continue looking suave and refined even as she kneels before you and stares at your groin with undisguised hunger.",
+                               "ChangeImageLayer", "Expression", "1", "SmileUmu",
+                               "Letting out an eager hum that gradually melts into a horny purr as she brings her delicate fingers against your crotch, she begins by gently caressing your manhood through your clothes, her skilled touch sending a twinge of arousal up your spine as she dexterously squeezes and massages the imprint of your package, cooing playfully as she looks at it starting to harden, and thoughtfully watching your reactions with a cheery giggle.",
+                               "ChangeImageLayer", "Expression", "1", "Wink",
+                               "Speak", "Fashionable Succubus",
+                               "Hmhmmh, I don't mean to brag, but I bet I could make you cum just by continuing to fondle your dick like this...♪",
+                               "ChangeImageLayer", "Expression", "1", "SmileWink",
+                               "Speak", "Fashionable Succubus",
+                               "... But don't worry, dear adventurer. I'm not a cocktease, and I heard you loud and clear: you want to cum from my mouth, and that's just what I'm going to give you.♥",
+                               "ChangeImageLayer", "Expression", "1", "Seductive",
+                               "Her expression radiating lustful pride, she proceeds to undo your pants with practiced ease, deftly freeing your half-erect member which she takes in with an appraising gaze as she shamelessly studies it in the open air, a quizzical trill at her lips when she looks back up at you with a knowing grin.",
+                               "ChangeImageLayer", "Expression", "1", "Smug",
+                               "Speak", "Fashionable Succubus",
+                               "SwapLineIf", "ArousalByPercent",
+                                 "100", "{i}Oh my{/i}, you certainly look like you're backed up, poor you... Good thing you have me to take care of you and give you some much-needed relief, right?♥",
+                                 "50", "Nice and eager already, I see...♪ Rest assured that I'll give you the {i}best{/i} service you could ask for, and see to it that your little guy feels thoroughly {i}nice and refreshed{/i} by the end of this session.♥",
+                                 "0", "Mhmhh... Even though you don't look like you need it, you're still asking a succubus to give you some service... How indulgently lustful of you, dear adventurer.♥",
+                               "EndLoop",
+                                "ChangeImageLayer", "Expression", "1", "LipLick",
+                               "Despite her chatty banter, she doesn't stay idle as she speaks, continuing to stimulate you by elegantly wrapping her hand around your stiffening shaft and rubbing her long, finely manicured fingers along its length, the sumptuously velvety texture of her silken gloved touch gradually and expertly coaxing you into full mast, the lascivious monster girl watching your growing and hardening manhood with unmistakable thirst.",
+                                "ChangeImageLayer", "Expression", "1", "SmileWink",
+                               "Humming cheerfully, she keeps going with both of her hands, languorously running her grip from your root to your tip to instill you with more rising titillation until she has your dick nicely perked up, concluding the foreplay with one last teasing scratch on your frenulum along with a playful little blow that makes your erection eagerly twitch, an air of satisfaction plain on her face as her eyes drift back to you and she singsongs with a wink.",
+                               "ChangeImageLayer", "Expression", "1", "Wink",
+                               "Speak", "Fashionable Succubus",
+                               "Well then... {i}Bon appétit.{/i}♪",
+                               "ChangeImageLayer", "Expression", "1", "OralInvitation",
+                               "She lets out a wanton chuckle that melts into a muffled lecherous mumble as she finally takes in your cock with gusto, her maw opening wide to greedily engulf your entire member, the unhesitant swallow instantly submerging your groin in a pleasurable moist heat that spreads from your loins to the rest of your body, making a wonderful little shiver rush through your whole frame.",
+                               "Your muscles unconsciously relaxing and your face slackening from the luxurious sensation, you gladly bask in the wet feeling of her mouth surrounding your rigid manhood, filling you with hot infatuation that makes you reflexively inhale, the half-unconscious breath permeating your nose and lungs with your fellatrix's charming perfume whose intoxicating scent makes you feel all the more giddily loose.",
+                               "Looking quite glad at your reaction, she smoothly keeps devouring you all the way to the base of your cock, sealing her lips right above your balls to give your whole length a good, long, powerful suck, her entire hungry maw seeming to contract around your rigid member in a way that makes it enthusiastically and indulgently throb, wordlessly showing off your appreciation for the premium treatment and eagerly asking for {i}more{/i}.",
+                               "Definitely getting the message, the Fashionable Succubus responds with a lascivious smile as she giggles in a melodious stifled trill whose sound resonates all over your hard shaft, amplifying the delights of her deepthroating blowjob and getting more happy jolts out of your engulfed dick while your expression further devolves into vacant enjoyment, leaving you positively feeling like you're {i}absolutely{/i} getting your money's worth.",
+                                "ChangeImageLayer", "Expression", "1", "LipLick",
+                                "Clearly intent on providing an irreproachable service, the greedy vixen meanwhile doesn't let up for even a moment, carrying on with her deluxe fellatio by swirling her tongue all over your captive manhood, dancingly running it across your sensitive skin and making sure to leave no inch of it untouched, making you feel like your whole sex is getting a thorough, deliciously warm and wet tongue bath.",
+                               "ChangeImageLayer", "Expression", "1", "OralInvitation",
+                                "All the while, she doesn't let her mouth's pressure slacken for even a moment, the dotingly constricting feeling of her throat's soft insides all over your cock continuing to lovingly assail you, the gluttonous monster girl looking quite dedicated to lavishing you with as much pleasure as she can offer in order to bring you to an intense orgasm as quickly as possible, the devilish woman clearly very eager to taste your semen.",
+                                "... And you find that her efforts are {i}quite{/i} effective as you feel a familiar heat rise in your loins, her ravenous ministrations steadily and irrepressibly pushing you closer and closer to the brink... and only ramping up as she senses your sneakily approaching release and moves on from just squeezing and licking to suddenly bobbing her head up and down your length!",
+                                "Taken by surprise by the abrupt change of pace, you feel a gasp escape your lips as you tense from head to toe under the renewed assault of fellating ecstasy, the greedy lady continuing to expertly lap and guzzle at your shaft even as she vigorously pumps your now throbbing and leaking erection with her hungry mouth, sensing that you're ripe for the home stretch and working to bring you to the finish line at breakneck speed!",
+                                "Giving you no time to pace yourself or even to properly process her lustful offense, the fervid fiend proceeds to grab your hips in a voracious grip in order to steady you as much as to brace herself as she frenetically carries on with blowing you with all she's got, frantically slurping and gulping and slobbering on your erratically jumping and quivering member!",
+                                "Very quickly, you sense that it will be a matter of only seconds before you're taken all the way to the edge, and the seasoned demoness knows it as well, going for the final push by completely hilting your dick once more and sucking at your dribbling tip with unchecked thirst, looking unquestionably eager to taste your seed and determined to thoroughly overcome any effort you might make to withhold it from her!",
+                               "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                "And so, with you having little hope of resisting her frenzied servicing, and actually seeing no reason to in your current blissed-out state, you can only let yourself go and allow the scalding pressure in your loins to release while reflexively grabbing at the raunchy woman's head, which she doesn't seem to mind, looking up at you with a hot blush and a slightly hazy expression of lecherous hunger as she messily urges you to cum with muffled moans.",
+                                "PlayerOrgasmNoSpiritLoss",
+                                "Feeling all too happy to oblige her and much too aroused to deny her anyway, you fully embrace the euphoric apex she's led you to, your mind blanking out in lewd rapture as you let the warm pulses of orgasmic felicity wash over you, a powerful climax claiming you with shuddering intensity and making you relinquish your devoted fellatrix's reward, liberally releasing a copious load of fresh seed straight into her gullet.",
+                               "ChangeImageLayer", "Expression", "1", "Orgasm",
+                                "Shivering in ravenous gratification, she gladly drinks in your semen, swallowing rope after rope of it without flinching, her face momentarily going loose as she greedily absorbs every bit of spirit that you can give her and then some, making sure to luxuriously prolong your ejaculation with more sucking and licking, her tongue continuing to coaxingly swish and lap at your tip even as she briefly loses herself to the feeding high.",
+                               "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                "Both of you basking in the base pleasure, you remain like this for long, delightful seconds, you continuing to clutch at her head while she wantonly keeps nursing your cock, ensuring that no sweetly nourishing drop of your cum escapes her, her dedicated milking allowing you to enjoy your indulgent climax to its utmost and letting you slowly land from cloud nine with marvelous lingering ecstasy seeing you through all the way to the end.",
+                               "ChangeImageLayer", "Expression", "1", "OralInvitation",
+                                "Only once she can be certain that she has thoroughly drunk your orgasm dry does she finally relinquish your dick, gently letting her lips slide back up its flagging length with languorous smoothness, and finally letting go of it with a demonstrative kiss-like parting sound.",
+                               "ChangeImageLayer", "Expression", "1", "Seductive",
+                               "Speak", "Fashionable Succubus",
+                               "{i}Mmmmwah...♥{/i} Mmh... It was truly a {i}pleasure{/i} to serve you, sir.♥",
+                               "ChangeBGM", "music/Casino/07 After the act.mp3",
+                               "ChangeImageLayer", "Expression", "1", "Smile",
+                               "Briskly getting back up from her crouching position, she elegantly smoothes out her slightly tousled hair and rearranges her somewhat disheveled outfit back into a more proper appearance, then she deftly takes out a pocket mirror and a tube of lipstick to reapply a fresh coating on her mouth... which makes you realize that she left a rather showy trace of it on your shaft, giving you quite the {i}marking{/i} souvenir...",
+                               "ChangeImageLayer", "Expression", "1", "SmileWink",
+                               "Regardless of this somewhat messy token of your very {i}refreshing{/i} experience, you wrap up your business all the same, you by putting your pants back on and her by finishing her quick fixes with a conclusive lip smack at her reflection in the mirror before stashing it back, then turning towards you with a wink.",
+                               "JumpToScene", "PostNormalSexScene"
+                             ]
+                 },
+
+                {
+                  "NameOfScene": "Titfuck?",
+                  "theScene": [
+                                "ChangeImageLayer", "Expression", "1", "Seductive",
+                                "Speak", "Fashionable Succubus",
+                                "Sure thing, sweetheart.♪",
+                                "ChangeBGM", "music/Casino/BGM06_sink.mp3",
+                                "ChangeImageLayer", "Expression", "1", "OralInvitation",
+                                "With a lingering purr in her voice, the luscious succubus takes a few curve-flaunting strides closer to you, drapes her arms over your neck, and presses her hefty breasts against your chest, assailing your senses with their pillowy softness as she gives you a sudden lip-locking kiss, gazing lustfully into your eyes while tracing her gloved fingers over your nape in comforting, sensuous caresses.",
+                                "ChangeImageLayer", "Expression", "1", "Seductive",
+                                "While your head fogs up with hot bliss from the intense makeout, you can't help but wonder if she misheard the word 'titfuck' somehow, though not for long as she wetly parts her soft mouth from yours with an audible smack and starts to slowly slide down your chest with an amorous gaze, languorously dragging her soft tits across your body while her dress eye-catchingly glimmers and her erotic perfume clings to your senses.",
+                                "With an enthusiastic hum, her hands gently and appreciatively trace along your waist as she gets lower and lower, until she's elegantly kneeling and her cleavage is pressing firmly against your still clothed and now eagerly straining erection, the direct contact of her plush mounds tantalizingly close as they rub against you teasingly, sending scalding waves of throbbing excitement through your loins.",
+                                "ChangeImageLayer", "Expression", "1", "LipLick",
+                                "Speak", "Fashionable Succubus",
+                                "Ooh, getting {i}very{/i} eager for it already, aren't you, handsome?♥",
+                                "She croons playfully while her fingers hook around the edge of your pants, only lightly tugging at them in preparation for removing them entirely, the enticing demoness giving her barely covered breasts a heart-racing shake into your groin that milks a moan of lustful excitement from your mouth while the glittering shimmers of her dress keep you captivated at her alluring crouching sight.",
+                                "ChangeImageLayer", "Expression", "1", "Seductive",
+                                "Then, while you're lost in her showy display, she all at once smoothly pulls down your obtrusive garment, letting your dick spring up unrestrained right between her breasts, their welcoming pillowy embrace flooding you with heady warmth that only intensifies as she uses her arms to tightly squeeze her tits together around your manhood, the cushy press rapidly making your head dizzy and euphorically engrossed with the glamourous woman.",
+                                "ChangeImageLayer", "Expression", "1", "SmileWink",
+                                "Instantly, you can feel yourself starting to happily melt from the pampering perverted hug of her enchantingly soft boobs burying your hard-on, the enveloping, alluring pressure leaving you spacing out in indulgent glee as you bask in their plushness, the refined succubus somehow coming across as being in a dominant position despite her subservient pose, as she is clearly aware herself judging by her teasing smile as she coos.",
+                                "ChangeImageLayer", "Expression", "1", "Wink",
+                                "Speak", "Fashionable Succubus",
+                                "Don't be shy about swinging your hips, dear adventurer.♥",
+                                "Even as her musical voice dances coaxingly through your head, you're too lost in the delightful smothering sensations she's lavishing you with to do much more than shiver in pleasure for now, prompting her to breezily shrug and instead carry on by luxuriously rolling her barely covered tits back and forth with the length of her arms while you drunkenly watch her dote on your member with her sinful body.",
+                                "With every delicate smush and dexterous squeeze of her chest, another pulse of pleasure radiates from your waist and immerses you further in the sublime feeling of her enchanting cleavage massaging and squeezing your dick, making your expression further devolve into one of vacant giddiness that elicits a smug giggle from the servicing vixen.",
+                                "ChangeImageLayer", "Expression", "1", "Seductive",
+                                "Speak", "Fashionable Succubus",
+                                "... Or you could indeed just relax and let me take care of everything.♥",
+                                "Her whispery, seductive voice lovingly prances through your dazed mind, leaving both options equally tempting, the intoxicatingly pampering contact of her luscious tits encouraging you to just stand there and bask in them... but also more and more to start reciprocating her advances in order to enjoy them even {i}more{/i}.",
+                                "And so, as she tightly squeezes her breasts together with her arms and starts to languidly pump them up and down your shaft with jiggly bounces, you irresistibly yield to your increasingly indulgent urges and thrust back into the smothering embrace of her chest, reveling in their perfectly smooth softness and enticing pressure.",
+                                "Every slow, silken impact sends hot waves of tingly euphoria through your entire lower body, accented by the obscene wobbling of her plush pillows while she smiles up at you, her intensely lustful gaze keeping your attention fixed on her while the mesmerizing glimmers of her dress keep captivatingly dancing in your eyes with every movement.",
+                                "In a mesmerized daze, you keep looking down at her while continuing to metronomically swing your hips to the erotically meaty sound of your pelvis gently impacting her boobs, your balls starting to tense bit by bit while the warm pleasure within you gradually turns more and more from a simmer into a boil with each back-and-forth thrust the two of you are exchanging.",
+                                "Hotter and hotter, bliss rises in your groin and through the rest of you, your dick throbbing more and more energetically in pre-orgasmic readiness while your testes tense up, every second of the luxurious titfuck bringing you closer to the edge, as noticed by the skillful minx who giggles knowingly and cheerfully asks with an unmistakably hungry expression.",
+                                "ChangeImageLayer", "Expression", "1", "LipLick",
+                                "Speak", "Fashionable Succubus",
+                                "Looks like you're getting ready to cum like a fountain, handsome?♥ Feel free to go ahead, I promise you quite the treat if you do.♥",
+                                "ChangeImageLayer", "Expression", "1", "Seductive",
+                                "Her tempting affirmation sends an enticing shock through your charmed senses, making you keenly aware of how fast your heart is lustfully racing as she pumps your twitching erection with her perfectly soft cleavage and you keep swinging your hips back into her seductive movements with ever-growing captivation towards her glamourous chest, the fast-mounting pleasure of your impending orgasm overtaking all else.",
+                                "With ever-growing sexual infatuation, you keep thrusting into her tits, and yet, despite your hot and heavy need, the pace remains intoxicatingly languid as she makes sure to sweetly take you to an impeccably smooth finish, letting the torrid climactic surge within you rise higher and higher...",
+                                "PlayerOrgasmNoSpiritLoss",
+                                "Until with one final wobbly slam from both of you, the molten pleasure of her softly stroking breasts overwhelms you completely, leaving your trembling hips thoughtlessly squishing against her tits as you spurt thick ropes up into the air, your fresh semen showily flying up and then splatteringly falling back across her acres of cleavage, making her coo with heated excitement.",
+                                "Your eyes glaze over from the influx of raw ecstasy that cascades through you, leaving your vision blurry as you find yourself unable to focus on anything but the Fashionable Succubus who makes sure to have you enjoy every bit of your luxury experience to the maximum, skillfully pressing and smushing and rolling her boobs to ensure that you can fully appreciate your languorously intense ejaculation to the last spurt.",
+                                "ChangeImageLayer", "Expression", "1", "LipLick",
+                                "Moreover, as your climax starts to ebb away, her 'treat' becomes apparent as she gives her tits a firm squeeze with her arms while a draining pulse radiates from her heavy breasts in a hot gooey wave of bliss that sends {i}even more{/i} pleasure into you, making you throw your head back with a confused moan as your trembling erection renews spurting its seed across her bust even as she ravenously absorbs your cum with her magic!",
+                                "Speak", "Fashionable Succubus",
+                                "Theeeeere you go, handsome.♥ Cum to your heart's content.♥ I'll make sure your balls are nice and empty.♥",
+                                "Shivering and twitching in full-body tantric rapture, you can only swoon under the ecstasy that fills you, your legs losing their strength from the exceptionally powerful high, which would leave you crumbling were it not for the succubus whose hands helpfully take hold of your waist to stop you from toppling over, thus letting you limply and leisurely ride out the waves of the magically amplified climax.",
+                                "Again and again, more scalding rushes of demonic euphoria claim you, each coaxing out another warm gout of fresh seed from you, until she gradually tones down the magical pulses and the smothering squeezes of her tits in time with the eventual winding down of your spurting and trembling erection, slowly easing you down from the intense orgasm.",
+                                "Letting out a contented purr, she moves her arms away from her bosom, loosening the indulgent pressure around your length down to a pillowy, pampering embrace, all the while she uses a gloved finger to curiously scoop up some of your purposefully unabsorbed semen in order to bring it to her lips for a direct taste.",
+                                "SwapLineIf", "Virility",
+                                      "200", "|f|ChangeImageLayer|/|Expression|/|1|/|Pleasured|n|And judging by her reaction, she is finding it more potent than she expected, her expression devolving into one of raw bliss as she loses herself in its taste for a moment before she hastily recomposes herself, her face hurriedly smoothing back into a composed suave mien as she starts to gently release you from her grasp.",
+                                      "100", "|f|ChangeImageLayer|/|Expression|/|1|/|Smug|n|Happily, she smacks her lips at the taste test, nodding in approval at the flavor of your seed which she seems to be finding perfectly adequate, hungrily lapping up the rest of it before looking back to you with satisfaction as she starts to gently release you from her grasp.",
+                                      "50", "Licking her lips, she looks pensive for a moment, then gulps down with the barest hint of a shrug, seeming not too impressed with the quality of your semen, but not really disappointed either, leaving her judgment at that as she starts to gently release you from her grasp.",
+                                      "0", "|f|ChangeImageLayer|/|Expression|/|1|/|SternGlare|n|And going by her sour expression, you get the definite impression that she's not exactly impressed with the flavor, though instead of making any mention of it, she smoothly returns to a sweet upward smile as she starts to gently release you from her grasp.",
+                                "EndLoop",
+                                "ChangeBGM", "music/Casino/07 After the act.mp3",
+                                "As your sensations return to you and you soberingly come back down to earth, you almost completely teeter over, leaving her to slowly and gently ease you out of her pillowy embrace, keeping a careful grip on you until she's sure you're not going to crumple from your drawn-out climax's aftershocks of pleasure as your semi-erect length finally slips out of the intoxicatingly soft vice it was kept in.",
+                                "ChangeImageLayer", "Expression", "1", "Base",
+                                "Once you're fully free, woozily regaining your wits and floating down from the oozing afterglow that's still permeating your entire body, she primly stands up from her crouching position and neatly checks over her dress, hair, and makeup to ensure nothing is out of place, your mind distantly noting that her breasts never once slipped out of her dress' clinging straps of fabric despite the rather {i}vigorous{/i} titfuck.",
+                                "Speak", "Fashionable Succubus",
+                                "Mmmmhmhm...♪ Well, that was... invigorating.♥",
+                                "ChangeImageLayer", "Expression", "1", "SmileWink",
+                                "She coos contentedly while giving you a sweet smile, a glint in her eyes showing that she's lustfully considering {i}even more{/i} carnal delights with you, though she seems to shelve that thought as she treats you to a dazzling wink.",
+                                "JumpToScene", "PostNormalSexScene"
+                            ]
+                },
+                {
+                  "NameOfScene": "Sex?",
+                  "theScene": [
+                                "ChangeBGM", "music/Casino/music/Casino/BGM06_sink.mp3",
+                                "ChangeImageLayer", "Expression", "1", "Seductive",
+                                "The Fashionable Succubus gives you a smolderingly smug gaze at your request, and answers in a teasing tone, posing coquettishly while using one well-manicured finger to toy with a lock of her glamourous hair.",
+                                "Speak", "Fashionable Succubus",
+                                "Well well, straight-up asking a succubus for sex. Aren't you greedy.♪",
+                                "ChangeImageLayer", "Expression", "1", "Wink",
+                                "Despite her lecturing words, it's rather plain that she's being coy, her expression quickly shifting to an openly playful one as she winks at you, the elegantly luscious woman letting out a pleased giggle as she goes on.",
+                                "Speak", "Fashionable Succubus",
+                                "Not that I blame you, though. I bet the thought has been sticking to your mind since you first laid eyes on me.♥",
+                                "ChangeImageLayer", "Expression", "1", "Base",
+                                "Proudly laughing, she promptly pivots with a flourishing toss of her hair, the resulting swish of her luxurious locks tickling your senses with the enticingly drifting smell of her erotically charged perfume as she slowly struts up to a nearby wall, looking back at you with a knowing smile as she makes sure to sultrily accent every striding step, her curve-hugging dress doing little to hide the bounce of her ass from your lusting eyes.",
+                                "ChangeImageLayer", "Expression", "1", "LipLick",
+                                "Crooning coaxingly, the succubus then bends forward and sets her hands against the wall, letting her heavy breasts hang down showily and pendulously against her dress' straps, all the while raising up her plump derriere to give it a tempting shake before the spade of her tail curls around to rub along her plush ass and heft it a bit, the intoxicatingly tempting display making your heart race and your straining erection throb.",
+                                "ChangeImageLayer", "Expression", "1", "Seductive",
+                                "Speak", "Fashionable Succubus",
+                                "If you like what you're seeing, then don't keep me waiting, handsome.♥",
+                                "Snapped out of your ogling stupor by her invitingly lecherous tone, you readily answer her suggestion by striding towards her, eagerly freeing your manhood which springs to attention and twitches with growing excitement the closer you get to the alluring seductress, only for her to unexpectedly raise a hand and speak up only moments before your can grab her juicy hips to satisfy your increasingly aching need.",
+                                "ChangeImageLayer", "Expression", "1", "Wink",
+                                "Speak", "Fashionable Succubus",
+                                "Oh, just one more thing, though...♥",
+                                "ChangeImageLayer", "Expression", "1", "SmileWink",
+                                "Unsure of what she means, but feeling reasonably confident that this isn't a trick of some sort, you stop, and as if to reward you for your patience while emphasizing her intent, she uses the tip of her prehensile tail to gently caress your chest, signaling you to step back so she has the space to pull one of her hands away from the wall and slip it to one of her thighs, her gloved fingers pressing into her soft skin as she does so.",
+                                "ChangeImageLayer", "Expression", "1", "Seductive",
+                                "Then, in a single smooth motion, she twists her body to the side and lifts up her long leg, raising it in a standing split right in front of you while her heavy breasts briefly bounce from the movement before heftily straining back down against the straps of her dress which seem to cling to the pillowy softness, the minx's entire body now on full display for you, her obscene perfume practically wrapped all around your senses in an instant.",
+                                "Speak", "Fashionable Succubus",
+                                "How about we do it like {i}this?♥{/i}",
+                                "With how brazenly alluring her lascivious display is, you all too keenly feel how utterly charmed and fascinated you are by her erotically charged movements, every slight gyration and bounce of her glittering curves as she keeps her acrobatic new stance making your heart pound and your cock twitch and throb with imperious need, leaving only a burning urge for sex drifting in your blanked-out horny mind.",
+                                "ChangeImageLayer", "Expression", "1", "LipLick",
+                                "Wordlessly, the vixen beckons you to her with a flick of her tail while hungrily licking her lips, instantly prompting you to hurriedly rush to her in order to claim her. Using one hand, you grab her lifted leg to embrace her as you line up your erection with her drooling lower lips, her smoldering gaze on you all the while, and her tail gently wrapping around your waist with a firm, affirming squeeze as soon as you're within reach.",
+                                "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                "With nothing else standing in the way of your awaited fuck with the luscious lady, you slam your entire length into her drenched pussy, your dick throbbing and leaking precum in lustful excitement as her folds squeeze and massage every inch of your length on instinct, leaving you spacing out in wanton ecstasy for a moment.",
+                                "However, with the exquisite clenching and sucking of her thirsty insides urging you on, you quickly regain your inflamed stride and, already lost to your desires, you immediately start to swing your hips at a frantic pace while using her raised leg for leverage, your lover responding to your assertively greedy initiative by moaning out in delighted surprise.",
+                                "Speak", "Fashionable Succubus",
+                                "O-Oh my...♥ Someone is- vigorous-♥",
+                                "ChangeImageLayer", "Expression", "1", "Seductive",
+                                "Distantly, a part of you that's not submerged in heady arousal wonders if you've overstepped your boundaries, but you are quickly given the assurance that everything is fine as the succubus' messy expression smoothes back into a heatedly lustful one and she goes on to encouragingly purr.",
+                                "Speak", "Fashionable Succubus",
+                                "Not that I mind, though.♥ Mmmmm-♥",
+                                "With all doubt flying out of your head, you resume rutting her with abandon, every wild swing of your hips sending a hot shock of pleasure through both of you while making her thick ass and heavy tits bounce obscenely from each slamming impact, the intoxicating wet sounds of your fucking shamelessly echoing in the air as you lose yourself in increasingly baser pleasure and greedily drink in the sight of your sexy partner's body.",
+                                "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                "However, overexcited as you are from your eagerness and her sensual temptations, you can tell as you pant and huff in euphoria that your stamina won't last very long, your dick throbbing inside her mind-blowing pussy from the oozing pleasure and heat you feel every time you ram your manhood deep into her, each charm-renewing impact keeping you in a swooning state of inescapable bliss intensified by her moans of pleasure.",
+                                "Speak", "Fashionable Succubus",
+                                "Ohhhh-♥ Gonna cum already-?♥ Mffffh-♥ That's alright.♥ Go ahead, handsome-♥ {i}Give it to me.♥{/i}",
+                                "Her sultry words alone make your balls tense tighter and your brain practically melt as you thrust as hard as you can into her while firmly clinging to her leg, her voice catching and going up an octave in pleasure-filled surprise at the sudden increase in tempo.",
+                                "Further stirred into a gleeful frenzy by her demonstration of receptive ecstasy, you redouble your efforts to bring her over the edge along with you, the eye-catching bouncing of her clothing-straining breasts and plush derriere giving you a constant show that maintains your lust at a roiling boil and keeps you swinging your hips with untiring energy.",
+                                "However, even as you grit your teeth and clench your muscles to try and last as long as you can, the inner conflict between enjoying more of this wonderfully raunchy sex versus basking in your awaited climax finally comes to a head, your indulgent want to cum decisively winning over as you slam deep into the succubus' squeezing pussy for one more definitive time.",
+                                "PlayerOrgasmNoSpiritLoss",
+                                "Instantly, you're overtaken by a hot searing wave of tingling euphoria as your twitching, throbbing erection is getting surrounded in the ravenously predatory embrace of the demoness' hugging folds, the sensation breaking your resistance for good and getting you to pour spurt after spurt of seed into the swooning woman, your own tongue lolling out from the climactic rush you're blissfully hit with.",
+                                "ChangeImageLayer", "Expression", "1", "Orgasm",
+                                "Responsively, her tail tightly squeezes around your waist and her legs quiver as you give her a thick meal of fresh semen, her composure cracking from the pulsing shocks of pleasure induced by your frantic mating and prodigally cumming length, each thick rope of seed coaxing out a coo or moan out of your winged partner as you both ride out your orgasm, until it begins to abate and she happily croons.",
+                                "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                "Speak", "Fashionable Succubus",
+                                "Hahhhnn...♥ That was- energetic.♥ I even nearly climaxed...♥",
+                                "ChangeBGM", "music/Loss/BGM03_Uncanny light.mp3",
+                                "It's hard to tell from her prior wanton cries if she did or didn't actually orgasm, but regardless, her words set off a spark within you even in your afterglow-soaked state, and prompt you to renew thrusting into the succubus' intoxicating pussy, coaxing a surprised gasp out of her as you stubbornly keep pounding her and losing yourself in her luscious body!",
+                                "ChangeImageLayer", "Expression", "1", "Seductive",
+                                "Speak", "Fashionable Succubus",
+                                "Ohhhhhh-?!♥ M-More-!? Mhhhhh-♥ You really {i}are{/i} greedy...♥",
+                                "She coos with lustful excitement as you resume fucking her, but an idea then seems to strike her, and despite letting you use her smooth leg as leverage for your swinging hips all through your tryst so far and apparently having the strength to continue doing so, she suddenly shifts her weight and pushes herself off the wall with a flap of her wings!",
+                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                "Proudly gazing at you as you stagger backwards from her unexpected maneuver, she doesn't give you a moment to react and quickly entangles herself with your standing form by locking both her legs around your waist and draping her arms over your shoulders, her heavy breasts thus pressing tightly against you while her sweet perfume fills your senses all the more intimately as she murmurs.",
+                                "ChangeImageLayer", "Expression", "1", "OralInvitation",
+                                "Speak", "Fashionable Succubus",
+                                "But so am I.♥",
+                                "Thirstily, she locks lips with you in a heated and hungry kiss while she sluttily gyrates and bounces her hips on your length, the change in position only leaving you on the back foot for a moment before you swiftly recover and eagerly thrust back into her while drunkenly kissing her back, your hands reaching down in order to grope and fondle her ass while supporting your standing position.",
+                                "Ravenously, you both tighten your grips on each other as you frantically keep fucking, her heavy pillowy tits squishing luxuriously against you and jiggling temptingly with each thrust, all the while your tongues lustingly entangle as you all but devour each other with feverish abandon, your primal moans and pants the only sounds the two of you can utter in the passionate moment.",
+                                "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                "Together, you sink into animalistic fervor that washes through both of you in equal intoxicating measure. Every gasping breath you take is steeped in her pheromonal fragrance, your rapturous cries echoing into each other while the slapping of your swinging hips resonates out in a vulgarly raunchy display, all the while your hands grope, squeeze, and caress the other in a tightly pressed trance.",
+                                "Time practically melts away into a singular moment of sexual euphoria as you fuck like lovers while the bliss within your scaldingly aroused frames rises higher and hotter by the second, your dick twitching with the imperious urge to fill the insatiable succubus again while her voice keeps getting messier with pleasure as she gazes into your eyes with wanton hunger.",
+                                "ChangeImageLayer", "Expression", "1", "Orgasm",
+                                "Spurred by her silent thirsty plea, you carry on rutting her like a beast in heat, until with one last unified slam of your hips, you both tense and swoon with ecstasy, moaning drunkenly into the other's mouth as your tongues keep sloppily entangling, her arms tightening around your back and yours around her trim waist and thick ass as you release into her for the second time, pouring load after load into her exquisite pussy.",
+                                "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                "Melty warmth oozes through both of you as you generously fill her with your seed and she gladly absorbs every drop, an intoxicating afterglow then gradually creeping in amid the shivering, twitching pleasure of your passionately greedy climaxes, your ravenous makeout slowing down bit by bit into simple kisses while your groping hands turn to doting caresses.",
+                                "ChangeImageLayer", "Expression", "1", "Seductive",
+                                "For a few more moments, you continue to bask together in the unexpectedly romantic post-sex demonstrations of affection, until finally, you part lips with a shared deep sigh of satisfaction, staring into each other's eyes with a delightfully woozy expression of lustful satiety.",
+                                "Taking your time to regain your breathing while enjoying the contact of your still warm, sweat-slicked bodies, you simply stay in this sensual embrace for a bit longer, then she lets one of her legs slip down from your waist back to the ground while you let go of her, the exertion on your muscles becoming sorely apparent as you are suddenly freed from her weight and the strain of your frenzied lovemaking catches up with you.",
+                                "Speak", "Fashionable Succubus",
+                                "Mmmmm... I see now that adventurers are {i}quite{/i} the force to be reckoned with.♥ Thank you for the {i}splendid{/i} demonstration, handsome.♥",
+                                "Gently and carefully, you disentangle yourselves from each other, slowly breaking the intimate embrace, the separation leaving your flagging erection twitching in the open air before you set to fixing your clothing, meanwhile your coquettish partner pulls out a small mirror to look herself over, taking some time to reapply her makeup and brush a few disheveled locks of hair back into smooth order.",
+                                "The two of you thus spend a quiet time of simply making yourselves suitably presentable again, until after a few minutes of post-coital rest and quick fashionable tweaks, you're both about ready to part and carry on with your respective urban outings with a still lingering buzz of climactic afterglow luxuriously clinging to your senses.",
+                                "JumpToScene", "PostNormalSexScene"
+                            ]
+                },
+
+                {
+                 	"NameOfScene": "Kisses?",
+                 	"theScene": [
+                              	"ChangeImageLayer", "Expression", "1", "Excited",
+                              	"The Fashionable Succubus looks quite enthusiastic at your suggestion, perking up with a cheerful little clap.",
+                             	"Speak", "Fashionable Succubus",
+                             	"Oh, I actually have just the thing for that!♪",
+                             	"ChangeImageLayer", "Expression", "1", "Base",
+                             	"Briskly, she produces a pocket mirror and a makeup kit, and quickly cleans up her currently applied lipstick before taking out a tube of a presumably different kind which looks {i}particularly{/i} fancy, the small cylinder being adorned with artsy golden flecks and cursive runes, and looking to have not seen much use judging by its remaining length, as you can see when she uncaps it before turning back to you with a wink.",
+                             	"ChangeImageLayer", "Expression", "1", "SmileWink",
+                             	"Speak", "Fashionable Succubus",
+                             	"I don't use it often because the Auria brand is {i}pretty{/i} expensive, but I can make an exception for such a {i}generous{/i} patron.♥",
+                             	"ChangeImageLayer", "Expression", "1", "SmileUmu",
+                             	"Letting out a breezy giggle, she redirects her attention to her mirror as she focuses back on the task at hand, idly humming in a musical singsong voice while she carefully puts on a coating of the golden lipstick, proceeding with a dexterity that speaks of much practice as she makes sure to apply neither too little nor too much of the high-end makeup.",
+                             	"ChangeImageLayer", "Expression", "1", "Base",
+                             	"ChangeBGM", "music/Casino/BGM sweet smell.mp3",
+                             	"As she does so, you also notice that she seems to be taking her time on purpose, leaving you to focus on her lips as they get {i}slowly{/i} adorned with a luxurious gilded layer, letting you appreciate every sensual curve and turn of her mouth, and how delicately it yields under the slight push of the skillfully held tube, giving you a tantalizing idea of how {i}soft{/i} and {i}gentle{/i} it must feel...",
+                             	"Before you've realized it, your eyes are glued to her lips, your head eagerly filling with soon-to-be-fulfilled fantasies of kissing as you ogle her, the view of her gold-painted mouth seeming to exert a downright magnetic pull on you and already stirring up your arousal, making your breathing and heartbeat sneakily quicken while your manhood gradually hardens from the anticipation slowly building up within you, warmly and expectantly...",
+                              "ChangeImageLayer", "Expression", "1", "Excited",
+                             	"It feels like you could spend hours just watching the alluring succubus casually doll herself up while you admire her luscious lips, though she doesn't belabor the point, eventually wrapping up the task and crowning it with a conclusive smack of her lips whose showy sight and sound seem to resonate and replay enticingly in your brain, making you dreamily sigh out loud and prompting her to turn back to you with a pleased expression.",
+                             	"ChangeImageLayer", "Expression", "1", "Seductive",
+                             	"Speak", "Fashionable Succubus",
+                             	"Mmhmhm, seems like you enjoyed that little teaser, handsome.♥ But let me assure you that it's only the beginning...♥",
+                             	"With a flirtatious titter on her lips and smoldering lust plainly visible in her deep purple eyes, she walks up to you with elegantly sashaying steps, each dancing strut showing off every seductive curve of her sexy body as it jiggles eye-catchingly from her smooth moves... though even then, your attention stays riveted to her mouth, your mind sinking more and more into hypnotic mesmerization as she reaches you and carries on in a sultry coo.",
+                             	"ChangeImageLayer", "Expression", "1", "LipLick",
+                             	"Speak", "Fashionable Succubus",
+                             	"Because {i}now{/i}, I'm going to take you to heaven.♥",
+                             	"ChangeImageLayer", "Expression", "1", "Seductive",
+                             	"Breezily, she wraps her softly gloved hands around you in a gently possessive embrace, and immediately goes for the kill, kissing you straight on the lips.",
+                             	"ChangeBGM", "music/Casino/BGM06_sink.mp3",
+                             	"Instantly, your world becomes alight with beautifully gilded sparkles as her mouth touches yours, your mind filling with a downright electric sensation of blissful infatuation as you get to leisurely bask in the simple yet oh-so sumptuous smooch, making you further relax into sweet wanton depravity while leaving you craving {i}more{/i}, your lips moving on their own as they part in a longing sigh, wordlessly begging for more kissing...",
+                             	"ChangeImageLayer", "Expression", "1", "Wink",
+                             	"Yet, teasingly, the lascivious woman draws back, turning your sigh into a moan as you see her elude you, though she gives you a comforting little squeeze of her arms around your neck as if to reassure you that she's not going anywhere, even as she playfully tuts.",
+                             	"Speak", "Fashionable Succubus",
+                             	"Already wanting more, dear adventurer? How greedy...♥",
+                             	"ChangeImageLayer", "Expression", "1", "SmileWink",
+                             	"Speak", "Fashionable Succubus",
+                             	"But don't you worry, handsome. I won't be leaving you wanting. Just {i}relax{/i}, let me pamper you, and {i}enjoy{/i}.♥",
+                             	"As she speaks, she smoothly moves her head along the side of your face up to your ear, letting her whispery words warmly and enticingly flit into your hearing and imbue you with more indulgent passivity, leaving you absentmindedly nodding to her instructions...",
+                             	"ChangeImageLayer", "Expression", "1", "Wink",
+                             	"... then slightly starting as she punctuates them with a kiss against your ear, sending another ecstatic jolt into you that further scrambles your brain with golden giddiness, further encouraging you to just {i}relax{/i} and {i}enjoy{/i} the sexy succubus' service by fully entrusting yourself to her, without worrying about anything and without trying to rush this fantastic experience.",
+                             	"ChangeImageLayer", "Expression", "1", "Seductive",
+                             	"Speak", "Fashionable Succubus",
+                             	"That's it...♥",
+                             	"Letting out a happily content giggle at your complacent behavior, she faces you again and raises herself ever so slightly to reach up to your forehead and smooch it in turn, the gilded touch of her sweet mouth feeling like it's leaving its imprint on your very thoughts, making them focus on nothing but her, her lips, and her kisses, leaving you floating in wonderful hedonistic euphoria as she carries on.",
+                             	"Speak", "Fashionable Succubus",
+                             	"... just let me...",
+                             	"The first word gets stressed by a doting peck against your cheek, mirrored by another on your other cheek upon the third one, the resulting hot sensation of ethereal aureous pleasure further stretching out your vacant smile into a blissful grin, your flushed face already feeling thoroughly warm and fuzzy from just those few kisses... which certainly won't be the last, the alluringly lipsticked woman continuing with a cradling croon.",
+                             	"Speak", "Fashionable Succubus",
+                             	"... take care of you.♥",
+                             	"ChangeImageLayer", "Expression", "1", "SmileUmu",
+                             	"Another languorous smooch, this time against your defenselessly offered neck, making your breath catch in your throat as it feels like the very air you inhale is getting infused with her resplendent presence, making you swoon with a gleeful whine as she takes her time to melt you down with that lingering, lasting kiss, closing her eyes to enjoy the contact of your bare tender skin under her mouth.",
+                             	"Humming melodiously, she stays like that for a few long, delightful seconds, sucking and licking at your exposed flesh, teasingly nibbling at it, but never outright biting it, leaving you ecstatically trembling from the feeling of sweet predation, your current state of woozy felicity filling you with the treacherously indulgent certainty that she could do {i}anything{/i} to you if she wanted.",
+                             	"ChangeImageLayer", "Expression", "1", "LipLick",
+                             	"Yet, she doesn't take advantage of your weakness, instead eventually letting go of your neck with a demonstrative 'Mwah.~♥' that's certain to leave you with a hickey, your body getting more and more marked by the succubus and her constant attentions, as she is definitely aware of herself as she takes you in with a lascivious lick of her lips.",
+                             	"Speak", "Fashionable Succubus",
+                             	"Mmhmmhm, dear adventurer, you're looking quite good with those golden kiss marks on you.♥",
+                             	"ChangeImageLayer", "Expression", "1", "SmileWink",
+                             	"Playfully, she gives you one more peck, this time on the nose, even that simple light demonstration of affection making you shiver happily from the added twinge of gilded bliss it conveys, prompting the fashionable lady to add with a mischievous smile.",
+                             	"ChangeImageLayer", "Expression", "1", "Smug",
+                             	"Speak", "Fashionable Succubus",
+                             	"So how about we add {i}a lot more{/i}?♥",
+                             	"ChangeImageLayer", "Expression", "1", "LipLick",
+                             	"Before you can react, her mouth is on you again, first on your lips, then on your chin, then your jawline... then your ears, neck, forehead, nose, collarbone, cheeks, nose, forehead, ears, mouth, neck, throat, cheeks...",
+                             	"ChangeBGM", "music/Loss/BGM03_Uncanny light.mp3",
+                             	"At an increasingly frantic pace, the parade of smooches goes on, faster than your pleasure-mired mind can process, the overwhelming assault of tender ministrations leaving you completely on the back foot, unable to do anything but bask in the wonderful experience and in the cloud of aureous rapture you've now entirely sunken into, leaving you a thoroughly complacent recipient to the pampering peppering of kisses.",
+                             	"Each teasing peck, tasting lick, and marking suck leaves you increasingly dizzy with arousal, your whole body now brimming with hot sunny ecstasy while your untouched cock throbs urgently in your pants, brought on the edge solely by the raw lust that's been steadily poured into you by your refined lover and her exquisite lips, which curl into a satisfied smile as she takes a brief break to gaze upon you with a crooning purr.",
+                             	"ChangeImageLayer", "Expression", "1", "Seductive",
+                             	"Speak", "Fashionable Succubus",
+                             	"Mmmhm, handsome, you look like you're ripe for the plucking.♥",
+                             	"Your brain struggling to process her words in its bliss-soaked state, you nonetheless hazily get their meaning, and nod along with a wordless huff in response, making her giggle enthusiastically as her cashmere-covered hands languidly move from your neck to the sides of your head, their rubbing touch imbuing your kiss-sensitized skin with felicitous shivers as she frames your face, further focusing your attention on her and solely her.",
+                             	"Speak", "Fashionable Succubus",
+                             	"So let me get you there with one last, {i}splendidly loving{/i} kiss.♥",
+                             	"ChangeImageLayer", "Expression", "1", "LipLick",
+                             	"Licking her lips, she brings them against your thoroughly unresisting mouth as she claims it once more, giving you a nice, big, long smooch whose sensation and sound vibrate through your whole frame as she hums into you.",
+                             	"ChangeImageLayer", "Expression", "1", "Seductive",
+                                "PlayerOrgasmNoSpiritLoss",
+                                "Rapturously, the heavenly blossoming joy of the assertively romantic makeout seems to ripple through you and resonate with the accumulated golden euphoria you've been steadily instilled with, lighting it in a blaze of scalding pleasure that surges through you and culminates in your loins, setting off your built-up arousal and bringing you to a wonderful orgasm, your untouched dick unloading with wanton abandon.",
+                             	"ChangeImageLayer", "Expression", "1", "OralInvitation",
+                             	"Clearly sensing your release, the Fashionable Succubus makes it a point to dotingly accompany you through it, swiftly moving on from just kissing you to wrestling tongues with you, swirling up the ecstasy within you and skillfully multiplying it, intensifying your ejaculation and redoubling the wanton geysering of your cock, load after load of your warm seed pouring out of your overwhelmed manhood.",
+                             	"ChangeImageLayer", "Expression", "1", "Pleasured",
+                             	"Definitely not letting so much fresh semen go to waste, your demonic partner makes sure to absorb it all through the close-contact makeout, imbuing you with the shivery delight of her treacherously gratifying spiritual drain, the ravenous elation of the generous meal you're giving her actually making the greedy monster girl momentarily tremble and blush in unexpected feeding pleasure.",
+                             	"Spurt after spurt, she diligently sees your climax through with heated breaths and moans of her own, soaking up every bit of cum that you're letting out, leaving your clothes entirely unsoiled as no drop of your ejaculation gets left out by the thirsty monster girl who keeps going without pause, ensuring you can keep basking in indulgent orgasmic glee for as long as your body can bear it...",
+                             	"ChangeBGM", "music/Casino/BGM06_sink.mp3",
+                             	"ChangeImageLayer", "Expression", "1", "OralInvitation",
+                             	"Until eventually, the pulses of hot bliss rampaging through you abate and she slows down her smooching, allowing you to languorously sink into a luxurious afterglow as you gently come back down to earth with a woozy huff, feeling {i}fantastically{/i} drained by the experience.",
+                             	"ChangeImageLayer", "Expression", "1", "Seductive",
+                             	"Carefully, the succubus parts from you while keeping you in her grasp to steady you, letting you slowly return to a more coherent state of mind as your brain laboriously emerges from the gilded stupor it's been plunged in, golden sparkles still dancing in your vision and leaving you unsteadily swaying in place in a way that prompts a cooing titter from the refined woman, even though she herself looks quite giddy from all the excitement.",
+                             	"Speak", "Fashionable Succubus",
+                             	"Mmhmmh...♥ Well, that was certainly a {i}thoroughly{/i} enjoyable experience for me... And I assume I won't be wrong in presuming that it was good for you too, handsome?♥",
+                             	"ChangeImageLayer", "Expression", "1", "SmileUmu",
+                             	"Unthinkingly, you nod and voice your approval with a messy pant, making her giggle happily as she draws back to give you some space and air so that you can get your thoughts back in order, your wits thankfully returning rather quickly to you with post-orgasmic clarity.",
+                                 "ChangeBGM", "music/Casino/07 After the act.mp3",
+                             	"ChangeImageLayer", "Expression", "1", "Smile",
+                             	"Even then, it's a good few minutes of still dazedly swimming in a haze of bright sparkles before you feel in complete control of your mind and good to go again, the fashion-conscious lady meanwhile taking some time of her own to reapply her lasciviously classy makeup and rearrange her slightly ruffled outfit and hair, before conclusively turning back to you with a cheery smile.",
+                                "JumpToScene", "PostNormalSexScene"
+                           	]
+               	},
+
+                {
+                  "NameOfScene": "PostNormalSexScene",
+                  "theScene": [
+                                "ChangeImageLayer", "Expression", "1", "Base",
+                                "Speak", "Fashionable Succubus",
+                                "SwapLineIf", "Random",
+                                  "Well, as much as I might be up for seconds, I'm going to be late for my appointment if I keep dilly-dallying.",
+                                  "Well, as much as I might be up for seconds, I would definitely end up late for work... And this girl is not suffering tardiness on her record.",
+                                  "|f|ChangeImageLayer|/|Expression|/|1|/|Excited|n|Well, as much as I might be up for seconds, I have some {i}shopping{/i} to do now.♪",
+                                  "Well, as much as I might be up for seconds, I can't be late for my date with the girls.♪",
+                                "EndLoop",
+                                "Humming cheerfully, she takes a moment to look over her dress and make sure everything is in order, smoothing out the luxurious fabric and readjusting a strap with a contented sigh, the tugging motion giving you a brief show of her constrained boob idly jiggling before she concludes by giving you a wink.",
+                                "ChangeImageLayer", "Expression", "1", "SmileWink",
+                                "Speak", "Fashionable Succubus",
+                                "So... see you later handsome.♥",
+                                "Playfully, the succubus blows you a kiss with a wet smack of her soft painted lips against her cashmere gloves, the seductive gesture sending a charming shiver across your body and coloring your face with a light flush before the fashionable woman pivots with a click of her heels, strutting away casually with an eye-catching sway in her hips that you can't help but appreciate in your mild charmed stupor.",
+
+                                "DisplayCharacters",
+                                  "EndLoop",
+                                "Once the lovely lady is gone on her way for good, you're left to properly gather your thoughts, double check your clothes, and finally consider what to do next after that accidental and alluring encounter.",
+                                "JumpToScene", "PostEventStuffs"
+                            ]
+                },
+
+
+                {
+                  "NameOfScene": "PostEventStuffs",
+                  "theScene": [ "DisplayCharacters",
+                                  "EndLoop",
+                                "IfInExploration", "EndEvent",
+                                "GoBackToStoredEvent"
+                            ]
+                },
+                {
+                  "NameOfScene": "EndEvent",
+                  "theScene": [    "UseHeldBG"
+                            ]
+                },
+
+
+
+
+
+
+                     {
+                       "NameOfScene": "EventBroke",
+                       "theScene": [   "event broke."
+                                 ]
+                     }
+                ]
+}

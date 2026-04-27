@@ -1,0 +1,1772 @@
+{
+    "name": "IabelCombatEvents",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Beris",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                      "NameOfScene": "Intro",
+                      "theScene": ["SetChoice", "6", "", "SetChoice", "1", "",   "SetChoice", "3", "", "SetChoice", "7", "", "SetChoice", "2", "",
+                                    "GetEventAndSetProgress", "IabelDoor", "0",
+                                    "SetProgress", "0",
+                                    "CallSceneThenReturn", "MoonlitRemove",
+
+                                    "CallEventAndSceneThenReturn", "ShadowsTile", "ShadowRibbonCheck",
+                                    "ChangeImageLayer", "Expression", "Caring",
+
+                                    "IfChoice", "8", "DoorTracking", "RampUpFight",
+                                    "IfInExploration", "RampUpFight",
+                                    "IfChoice", "10", "AltIntro", "AltIntro",
+
+
+                                    "Iabel slithers closer to you, blocking your path with an imperious hiss, her coiling, living hair darting about with deadly intent as the woman looms before you with a lazy sigh, sensually trailing one of her hands along her smooth skin.",
+                                    "FocusedSpeaks",
+                                    "SwapLineIf", "Random",
+                                      "Auhuhu~♥ There you are.",
+                                      "Soon you will be utterly captivated with me.",
+                                      "Stare as long as you want.♥",
+                                      "Fufu~♥ Caught you.",
+                                      "It's dangerous to be so close to me.♥",
+                                    "EndLoop",
+                                    "GetAnEventsProgressThenIfEqualsOrGreater", "IabelPower", "1", "RampUpFight"
+                                ]
+                    },
+                              {
+                                "NameOfScene": "AltIntro",
+                                "theScene": [ "ApplyStatusEffect", "Spank",
+                                              "SetChoice", "10", "",
+                                              "With a domineering hiss she coils closer to your charmed senseless body, a distant part of your mind still telling you to run, while the rest eagerly embraces the goddess' divine curves, leaving you stunned with her mere presence looming over you...",
+                                              "GetAnEventsProgressThenIfEqualsOrGreater", "IabelPower", "1", "RampUpFight"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "MoonlitRemove",
+                                "theScene": [
+                                              "IfInExploration", "Nothing",
+                                               "RemovePerkFromMonster", "Moonlit Allure",
+                                               "RemovePerkFromMonster", "Moonlit Glamour",
+                                               "RemovePerkFromMonster", "Moonlit Mystique"
+                                          ]
+                              },
+
+                            {
+                              "NameOfScene": "RampUpFight",
+                              "theScene": [
+                                            "LevelUpMonster", "GoUpByProgressFromOtherEvent", "IabelPower"
+                                        ]
+                            },
+
+
+
+
+                          {
+                            "NameOfScene": "UpdatePower",
+                            "theScene": [
+                                        "IfChoice", "6", "", "UpdatePower30",
+                                        "IfChoice", "6", "Turn2", "UpdatePower25",
+                                        "IfChoice", "6", "Turn3", "UpdatePower20",
+                                        "GetEventAndChangeProgress", "IabelPower", "5"
+                                      ]
+                          },
+                                {
+                                  "NameOfScene": "UpdatePower30",
+                                  "theScene": [
+                                               "GetEventAndChangeProgress", "IabelPower", "20"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "UpdatePower25",
+                                  "theScene": [
+                                               "GetEventAndChangeProgress", "IabelPower", "15"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "UpdatePower20",
+                                  "theScene": [
+                                               "GetEventAndChangeProgress", "IabelPower", "10"
+                                            ]
+                                },
+
+                          {
+                            "NameOfScene": "CountPowerTurns",
+                            "theScene": [
+                                          "IfChoice", "6", "Turn3", "Turn3",
+                                          "IfChoice", "6", "Turn2", "Turn2",
+                                          "IfChoice", "6", "", "Turn1"
+                                      ]
+                          },
+                                  {
+                                    "NameOfScene": "Turn1",
+                                    "theScene": [
+                                                "SetChoice", "6", "Turn2"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "Turn2",
+                                    "theScene": [
+                                                "SetChoice", "6", "Turn3"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "Turn3",
+                                    "theScene": [
+                                                "SetChoice", "6", "Turn4"
+                                              ]
+                                  },
+
+
+                    {
+                      "NameOfScene": "KissStack",
+                      "theScene": [ "ChangeProgress", "1",
+                                    "IfHasPerk", "Gilded Coating", "GildedTrigger",
+                                    "IfHasPerk", "Gilded Markings", "GildedCoating",
+                                    "IfHasPerk", "Gilded Mark", "GildedMarks",
+                                    "GivePerkQuietly", "Gilded Mark"
+                                ]
+                    },
+                          {
+                            "NameOfScene": "GildedMarks",
+                            "theScene": [ "RemovePerkQuietly", "Gilded Mark",
+                                          "GivePerkQuietly", "Gilded Markings"
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "GildedCoating",
+                            "theScene": [ "RemovePerkQuietly", "Gilded Markings",
+                                          "GivePerkQuietly", "Gilded Coating"
+                                      ]
+                          },
+
+
+                          {
+                            "NameOfScene": "GildedTrigger",
+                            "theScene": [
+                                          "IfHasPerk", "Gilded Enchantment", "IkuIkuIku",
+                                          "RemovePerkQuietly", "Gilded Coating",
+                                          "CallSceneThenReturn", "InfatuationStack",
+                                          "HitPlayerWith", "GildedDetonation",
+                                          "SwapLineIf", "Perk",
+                                           "Gilded Enchantment",  "The exquisite golden kiss marks lovingly covering you suddenly all flare as they hit an enthralling critical mass, sending a shower of ethereal, echoing kisses across each and every lipstick stain, smooching and licking with no way to stop them, sending euphoric tingly jolts of charming bliss all across your body as they 'detonate' before vanishing, painting your mind in wonderful enchanting golden bliss.♥[DamageToPlayer]",
+                                           "Gilded Captivation",  "The golden kiss marks lovingly covering you suddenly all flare as they hit an enthralling critical mass, sending a shower of ethereal, echoing kisses across each and every lipstick stain, smooching and licking with no way to stop them, sending tingly jolts of charming bliss all across your body as they 'detonate' before vanishing, painting your mind in captivating golden bliss...[DamageToPlayer]",
+                                           "Gilded Infatuation",  "The golden kiss marks covering you suddenly all flare as they hit an enthralling critical mass, sending a shower of ethereal, echoing kisses across each and every lipstick stain, smooching and licking with no way to stop them, sending tingly jolts of charming bliss all across your body as they 'detonate' before vanishing, painting your mind in infatuating golden bliss...[DamageToPlayer]",
+                                          "EndLoop",
+                                          "ChangeImageLayer", "Expression", "Wink",
+                                          "FocusedSpeaks",
+                                          "SwapLineIf", "Random",
+                                            "Auhuhu~♥ Enough kisses and you will fall so eagerly for me.♥",
+                                            "Ufuhu~♥ I hope I am not overwhelming you too much.♥",
+                                            "Ufufu~♥ I'll show you an all new meaning of kiss drunk.♥",
+                                            "Hufufu~♥ Are you still resisting?♥ Or have you become too smitten with me?~♥",
+                                            "Mfhfh-♪ Now to coat you in fresh, luxurious lipstick.♥",
+                                          "EndLoop"
+                                      ]
+                          },
+                                    {
+                                      "NameOfScene": "IkuIkuIku",
+                                      "theScene": [ "IfChoice", "4", "PetrifyKissu", "PetrifiedIkuKissu",
+                                                    "IfPlayerHasStance", "Sex", "GildedKissSex",
+                                                    "HitPlayerWith", "GildedDetonation",
+                                                    "The exquisite golden kiss marks lovingly covering you suddenly all flare up with an enthralling glow, sending a constant shower of ethereal, echoing kisses across each and every lipstick stain coating you, sensually smooching and licking you with expert skill with no way to stop them, leaving you twitching and shivering with a pleasure-drunk grin while your goddess watches with an affectionate purr.[DamageToPlayer]",
+                                                    "HitPlayerWith", "GildedDetonation",
+                                                    "Iabel leans in and gives you a deep kiss amid the euphoric tingly jolts of charming bliss that dance all across your body with no signs of stopping, pressing her heavy bosom against your chest while pulling your closer with her elegant arms, your enchanted mind eagerly craving more and more as she toys with your mouth using her long tongue, leaving you moaning out in constant bliss as she drags you into a kiss-drunk stupor.[DamageToPlayer]",
+                                                    "HitPlayerWith", "GildedDetonation",
+                                                    "Your charmed-senseless mind swims in a sea of constant kiss-induced ecstasy as she keeps her gleaming golden lips pressed to yours, a single long nailed hand sliding down to gently pump your leaking cock while you're peppered with mind-melting ethereal kisses, eroding away at whatever is left of your will to resist her as the wet makeout noises fill up your pleasure-soaked brain.[DamageToPlayer]",
+                                                    "IfPlayerOrgasm", "GildedKissClimax",
+                                                    "HitPlayerWith", "GildedDetonation",
+                                                    "ChangeImageLayer", "Expression", "LipLick",
+                                                    "Then, with a sweet laugh, she breaks the kiss, slipping away from your dazed twitching form with a sensual lick of her soft lips while the lipstick marks' echoing resonance slowly ebb away with a few last teasing wet smacks that leave you gasping and panting in a horny daze.[DamageToPlayer]",
+                                                    "ChangeImageLayer", "Expression", "Wink",
+                                                    "FocusedSpeaks",
+                                                    "SwapLineIf", "Random",
+                                                      "I see you're learning your place?♥",
+                                                      "Ufuhu~♥ How endearingly kiss drunk you've become.♥",
+                                                      "I can keep that going on and on.♥",
+                                                      "Beg for more, human.♥ I know you can't help it.♥",
+                                                      "Do you want even {i}more?♥{/i} Auhuhu-♥",
+                                                    "EndLoop",
+                                                    "ChangeSensitivity", "Seduction", "1",
+                                                    "ChangeSensitivity", "Magic", "1",
+                                                    "ChangeFetish", "Kissing", "1"
+                                                ]
+                                    },
+                                            {
+                                              "NameOfScene": "GildedKissClimax",
+                                              "theScene": [
+                                                            "PlayerOrgasm", "1",
+                                                            "Every passing moment feels like you're floating in heaven as she makes out with you, affectionately dominating your enthralled tongue, stroking your spasming cock with captivating care, rubbing her luxurious bust against your chest, and letting you savor the shower of magical kisses washing across you until your eyes roll up in euphoric bliss, and your throbbing manhood spurts out long ropes of semen for her in mind-blanking tribute.",
+                                                            "ChangeImageLayer", "Expression", "LipLick",
+                                                            "She slips away from you with a predatory purr, appreciatively watching you twitch with orgasmic aftershocks while the ethereal smooches slow down, letting her languidly lick up the sticky mess you made on her graceful hand.",
+                                                            "ChangeImageLayer", "Expression", "Wink",
+                                                            "FocusedSpeaks",
+                                                            "SwapLineIf", "Random",
+                                                              "Eager to be mine?♥ Mfhuhu-♥",
+                                                              "Ufuhu~♥ How endearingly kiss drunk you've become.♥",
+                                                              "I can keep that going on and on.♥",
+                                                              "Beg for more, human.♥ I know you can't help it.♥",
+                                                              "Hufufu, ample tribute.♥",
+                                                              "Mmmm-♥ You're my personal kiss addict, aren't you?♥",
+                                                              "Do you want even {i}more?♥{/i} Auhuhu-♥",
+                                                            "EndLoop",
+                                                            "ChangeSensitivity", "Seduction", "5",
+                                                            "ChangeSensitivity", "Magic", "5",
+                                                            "ChangeFetish", "Kissing", "5"
+                                                        ]
+                                            },
+                                    {
+                                      "NameOfScene": "GildedKissSex",
+                                      "theScene": [
+                                                    "HitPlayerWith", "GildedDetonation",
+                                                    "The exquisite golden kiss marks lovingly covering you suddenly all flare up with an enthralling glow, sending a constant shower of ethereal, echoing kisses across each and every lipstick stain coating you, sensually smooching you with expert skill with no way to stop them, leaving you twitching and shivering with a pleasure-drunk grin while your goddess continues to sway and grind her wide hips with an affectionate purr.[DamageToPlayer]",
+                                                    "HitPlayerWith", "GildedDetonation",
+                                                    "Iabel leans in and gives you a deep kiss amid the euphoric tingly jolts of charming bliss that dance all across your body with no signs of stopping, pressing her heavy bosom against your chest while pulling your closer with her elegant arms, your enchanted mind eagerly craving more and more as she toys with your mouth using her long tongue, leaving you moaning out in constant bliss as she drags you into a kiss-drunk stupor.[DamageToPlayer]",
+                                                    "HitPlayerWith", "GildedDetonation",
+                                                    "Your charmed-senseless mind swims in a sea of constant kiss-induced ecstasy as she keeps her gleaming golden lips pressed to yours, her churning, squeezing pussy exquisitely milking your manhood while you're peppered with mind-melting ethereal kisses, eroding away at whatever is left of your will to resist her as the wet makeout noises fill up your pleasure-soaked brain.[DamageToPlayer]",
+                                                    "IfPlayerOrgasm", "GildedSexClimax",
+                                                    "HitPlayerWith", "GildedDetonation",
+                                                    "ChangeImageLayer", "Expression", "LipLick",
+                                                    "Then, with a sweet laugh, she breaks the kiss with a sensual lick of her soft lips, still slowly shaking her curvy hips in a teasing dance while the lipstick marks' echoing resonance slowly ebb away with a few last teasing wet smacks that leave you gasping and panting in a horny daze.[DamageToPlayer]",
+                                                    "ChangeImageLayer", "Expression", "Wink",
+                                                    "FocusedSpeaks",
+                                                    "SwapLineIf", "Random",
+                                                      "I see you're learning your place?♥",
+                                                      "Ufuhu~♥ How endearingly kiss drunk you've become.♥",
+                                                      "I can keep that going on and on.♥",
+                                                      "Beg for more, human.♥ I know you can't help it.♥",
+                                                      "Do you want even {i}more?♥{/i} Auhuhu-♥",
+                                                    "EndLoop",
+                                                    "ChangeSensitivity", "Seduction", "1",
+                                                    "ChangeSensitivity", "Magic", "1",
+                                                    "ChangeFetish", "Kissing", "1",
+                                                    "ChangeFetish", "Sex", "1"
+                                                ]
+                                    },
+                                            {
+                                              "NameOfScene": "GildedSexClimax",
+                                              "theScene": [
+                                                            "PlayerOrgasm", "1",
+                                                            "Every passing moment feels like you're floating in heaven as she makes out with you, affectionately dominating your enthralled tongue, riding your spasming cock with captivating care, rubbing her luxurious bust against your chest, and letting you savor the shower of magical kisses washing across you until your eyes roll up in euphoric bliss, and your throbbing manhood spurts out long ropes of semen inside her in mind-blanking tribute.",
+                                                            "ChangeImageLayer", "Expression", "LipLick",
+                                                            "She gives a predatory purr, still wiggling and shaking her waist to massage and milk your cock for all it's worth in a constant cycle, appreciatively watching you twitch with orgasmic aftershocks while the ethereal smooches slow down, giving you another tempting kiss on the cheek.",
+                                                            "ChangeImageLayer", "Expression", "Wink",
+                                                            "FocusedSpeaks",
+                                                            "SwapLineIf", "Random",
+                                                              "Eager to be mine?♥ Mfhuhu-♥",
+                                                              "Ufuhu~♥ How endearingly kiss drunk you've become.♥",
+                                                              "I can keep that going on and on.♥",
+                                                              "Beg for more, human.♥ I know you can't help it.♥",
+                                                              "Hufufu, ample tribute.♥",
+                                                              "Mmmm-♥ You're my personal kiss addict, aren't you?♥",
+                                                              "Do you want even {i}more?♥{/i} Auhuhu-♥",
+                                                            "EndLoop",
+                                                            "ChangeSensitivity", "Seduction", "5",
+                                                            "ChangeSensitivity", "Magic", "5",
+                                                            "ChangeFetish", "Kissing", "5",
+                                                            "ChangeFetish", "Sex", "5"
+                                                        ]
+                                            },
+                                  {
+                                    "NameOfScene": "PetrifiedIkuKissu",
+                                    "theScene": [
+                                                  "HitPlayerWith", "GildedDetonation",
+                                                  "The exquisite golden kiss marks lovingly covering your helpless shaft suddenly all flare up with an enthralling glow, sending a constant shower of ethereal, echoing kisses and oral affection across each and every lipstick stain, sensually smooching and licking you with expert skill with no way to stop them, leaving you floating in mind-melting heaven with your petrified state numbing all other stimulation.[DamageToPlayer]",
+                                                  "HitPlayerWith", "GildedDetonation",
+                                                  "With a purr Iabel leans in and gives your leaking tip a deep kiss with plump, pursed lips amid the euphoric tingly jolts of charming bliss that dance all across your lipstick marked dick with no signs of stopping, letting her greedily suck and lick at your vulnerable cock head, your euphoria melted senses eagerly craving more and more of this constant bliss you're trapped in as she drags you into deeper captivation.[DamageToPlayer]",
+                                                  "HitPlayerWith", "GildedDetonation",
+                                                  "Trapped in your stony prison your charmed-senseless mind swims in a sea of constant oral-induced ecstasy as she keeps her gleaming golden lips locked around your tip, using her long nails to lovingly caress your tensing balls while loving oral licks and smooches pepper across your shaft, eroding away at whatever is left of your will to resist her as the wet sucking and kissing noises fill up your pleasure-soaked brain.[DamageToPlayer]",
+                                                  "IfPlayerOrgasm", "PetrifiedIkuKissuClimax",
+                                                  "HitPlayerWith", "GildedDetonation",
+                                                  "ChangeImageLayer", "Expression", "LipLick",
+                                                  "Then, with a sweet laugh, she wet pops her plush lips free of your tip with a sensual lick of her soft lips while the lipstick marks' echoing resonance slowly ebb away with a few last teasing wet smacks that leave your mind still spinning in a horny daze.[DamageToPlayer]",
+                                                  "ChangeImageLayer", "Expression", "Wink",
+                                                  "FocusedSpeaks",
+                                                  "SwapLineIf", "Random",
+                                                    "I see you're learning your place?♥",
+                                                    "Ufuhu~♥ How hopelessly charmed are you now?♥",
+                                                    "I can keep that going on and on.♥",
+                                                    "Twitch your cock if you want more, human.♥ I know you can't help it.♥",
+                                                    "Do you want even {i}more?♥{/i} Auhuhu-♥",
+                                                  "EndLoop",
+                                                  "ChangeSensitivity", "Seduction", "1",
+                                                  "ChangeSensitivity", "Magic", "1",
+                                                  "ChangeFetish", "Kissing", "1",
+                                                  "ChangeFetish", "Oral", "1"
+                                              ]
+                                  },
+                                          {
+                                            "NameOfScene": "PetrifiedIkuKissuClimax",
+                                            "theScene": [
+
+                                                          "PlayerOrgasm", "1",
+                                                          "Every passing moment feels like you're floating in heaven as she sucks on your cockhead with her plump, golden lips, her enthralling tongue flicking at your leaking tip, demanding your pleasure soaked erection to submit, letting you savor the shower of magical kisses washing across your shaft, until your completely melts in euphoric bliss, and your throbbing manhood spurts out long ropes of semen for her in mind-blanking surrender.",
+                                                          "ChangeImageLayer", "Expression", "LipLick",
+                                                          "She frees your tip with a wet pop of her intoxicating lips and a predatory purr, appreciatively watching your conquered manhood twitch with orgasmic aftershocks while the ethereal smooches slow down, letting her languidly gulp down the sticky mess you offered her.",
+                                                          "ChangeImageLayer", "Expression", "Wink",
+                                                          "FocusedSpeaks",
+                                                          "SwapLineIf", "Random",
+                                                            "Twitch your cock if you want more, human.♥ I know you can't help it.♥",
+                                                            "I can keep that going on and on.♥",
+                                                            "Hufufu, ample tribute.♥",
+                                                            "Mmmm-♥ You're my personal dildo already, aren't you?♥",
+                                                            "Do you want even {i}more?♥{/i} Auhuhu-♥",
+                                                          "EndLoop",
+                                                          "ChangeSensitivity", "Seduction", "5",
+                                                          "ChangeSensitivity", "Magic", "5",
+                                                          "ChangeFetish", "Kissing", "5",
+                                                          "ChangeFetish", "Oral", "5"
+                                                      ]
+                                          },
+
+                  {
+                    "NameOfScene": "InfatuationStack",
+                    "theScene": [
+                                  "IfHasPerk", "Gilded Enchantment", "Nothing",
+                                  "IfHasPerk", "Gilded Captivation", "GildedEnchantment",
+                                  "IfHasPerk", "Gilded Infatuation", "GildedCaptivation",
+                                  "GivePerkQuietly", "Gilded Infatuation"
+                              ]
+                  },
+                        {
+                          "NameOfScene": "GildedCaptivation",
+                          "theScene": [ "RemovePerkQuietly", "Gilded Infatuation",
+                                        "GivePerkQuietly", "Gilded Captivation"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "GildedEnchantment",
+                          "theScene": [ "RemovePerkQuietly", "Gilded Captivation",
+                                        "GivePerkQuietly", "Gilded Enchantment"
+                                    ]
+                        },
+
+
+                {
+                  "NameOfScene": "SexCharmStack",
+                  "theScene": [   "IfHasPerk", "Gilded Enchantment", "Nothing",
+                                  "IfPlayerHasStatusEffect", "Charm", "CharmWillpowerTest",
+                                  "ApplyStatusEffect", "Charm",
+                                  "You thoughtlessly moan as your head goes blank from the constant indulgent pleasure tingling through your hips, leaving you charmed and dazed..."
+                            ]
+                },
+                {
+                  "NameOfScene": "Sex2CharmStack",
+                  "theScene": [   "IfHasPerk", "Gilded Enchantment", "Nothing",
+                                  "ChangeProgress", "1",
+                                  "IfPlayerHasStatusEffect", "Charm", "CharmWillpowerTest",
+                                  "ApplyStatusEffect", "Charm",
+                                  "You mewl and moan in love-drunk bliss, nuzzling into Iabel's heavenly embrace as your lose yourself to the constant pleasure surging through your hips, leaving you eagerly charmed and eager for more..."
+                            ]
+                },
+                {
+                  "NameOfScene": "CharmStack",
+                  "theScene": [   "IfHasPerk", "Gilded Enchantment", "Nothing",
+                                  "IfPlayerHasStatusEffect", "Charm", "CharmWillpowerTest",
+                                  "ApplyStatusEffect", "Charm",
+                                  "You are eagerly captivated at the sight of [AttackerName]'s idle, sensual relaxation, leaving you charmed!"
+                            ]
+                },
+                      {
+                        "NameOfScene": "CharmWillpowerTest",
+                        "theScene": [ "Your head spins deliriously with captivated bliss as you feel the charm afflicting you try to worsen...",
+                                      "StatCheck",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "25", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "24", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "23", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "22", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "21", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "20", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "19", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "18", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "17", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "16", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "15", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "14", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "13", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "12", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "11", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "10", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "9", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "8", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "7", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "6", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "5", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "4", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "3", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "2", "1",
+                                      "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "1", "1",
+                                      "Willpower",
+                                      "5",
+                                      "IgnoreCharmingBuildup",
+                                      "Fail",
+                                      "DeepenCharm"
+                                  ]
+                      },
+                              {
+                                "NameOfScene": "IgnoreCharmingBuildup",
+                                "theScene": [ "ChangeProgress", "1",
+                                                "You manage to shake off the creeping infatuation gradually seeping into you, but you can feel it slowly eroding your will to resist being enthralled by Iabel's divine body."
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "DeepenCharm",
+                                "theScene": [ "ChangeProgress", "-5",
+                                              "CallSceneThenReturn", "InfatuationStack",
+                                              "SwapLineIf", "Perk",
+                                               "Gilded Enchantment",  "Your entire mind feels like it's turned a bright, love-struck pink, filled to the brim with submissive infatuation for Iabel's divine curves, leaving you utterly enchanted with the serpentine goddess, eager to give in to her alluring and seductive whims, all your thoughts replaced with images of her perfect hourglass body's intoxicating softness, leaving your dick an obediently throbbing, leaking mess for her to toy with...♥",
+                                               "Gilded Captivation",  "You swoon in horny, love-drunk bliss as your gaze wanders over Iabel's luxurious, regal body, your mind only thinking of the divine serpent woman as all your other thoughts get lost in her euphoria-inducing softness, leaving your dick twitching eagerly for her as you fall deeper into hopelessly charmed captivation...",
+                                               "Gilded Infatuation",  "You stare at Iabel in a love-struck daze, your mind going fuzzy and blissed-out while your cock throbs excitedly at the sight of her, your mind growing haplessly infatuated with the serpentine woman...",
+                                              "EndLoop"
+                                          ]
+                              },
+
+
+
+
+
+                {
+                  "NameOfScene": "ConqueringAdvance",
+                  "theScene": [
+                                "SetPostName", " - Conquering Advance",
+                                "ChangeImageLayer", "Expression", "Predatory",
+                                "FocusedSpeaksSkill",
+                                "Iabel leans back slightly, leaving a string of saliva hanging between your mouths for a moment while she sighs with predatory excitement. Sneakily, her long tail possessively coils around your waist to help line you up with her wide hips, pressing your rigid cock against her ornate panties that spread to reveal her gushing pussy, taking a long moment to languidly rub your tip against her drooling entrance.",
+                                "FocusedSpeaks",
+                                "SwapLineIf", "Random",
+                                  "Ahuhu~♥ You're mine.♥",
+                                  "Time to eat you up.♥",
+                                  "I'll captivate and enchant you into a mewling puddle.♥",
+                                  "Mhhfhuhu~♥ Your cock is going to turn obedient once it's inside me.♥",
+                                  "Hahhhh~♥ You won't be able to escape.♥",
+                                "EndLoop",
+                                "SetPostName", "",
+                                "IfPlayerOrgasm", "Eagerly thrust into her!",
+                                "IfHasPerk", "Gilded Infatuation", "ConqueringTemptation",
+                                "IfHasPerk", "Gilded Captivation", "ConqueringTemptation",
+                                "IfHasPerk", "Gilded Enchantment", "ConqueringTemptation",
+                                "JumpToScene", "ConquerAdvMenu"
+                            ]
+                },
+                        {
+                          "NameOfScene": "ConqueringTemptation",
+                          "theScene": ["HitPlayerWith", "Seduce",
+                                        "SwapLineIf", "Perk",
+                                         "Gilded Enchantment",  "You're too enchanted with Iabel's perfectly plush, divine body to think about anything other than obeying her, every part of your mind lost in her indulgently soft, tempting hourglass curves as they rub against you sensually, leaving you aching to eagerly fuck her and surrender to her whims...[DamageToPlayer]",
+                                         "Gilded Captivation",  "You're too captivated with Iabel's smooth, luxurious body to think about anything other than her, every part of your mind lost in her soft, tempting hourglass curves as they rub against you sensually, leaving you aching to simply fuck her and surrender to her whims...[DamageToPlayer]",
+                                         "Gilded Infatuation",  "You're too infatuated with Iabel's glamourous body to think straight, every part of your mind lost in her soft, tempting hourglass curves, leaving you aching to simply fuck her and submit to her whims...[DamageToPlayer]",
+                                        "EndLoop",
+                                        "IfPlayerOrgasm", "Eagerly thrust into her!",
+                                        "Menu",
+                                          "Try to think! (Temptation)",
+                                          "Eagerly thrust into her!",
+                                        "EndLoop"
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "Try to think! (Temptation)",
+                                  "theScene": [
+                                                "StatCheck",
+                                                "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Enchantment", "5",
+                                                "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Captivation", "5",
+                                                "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                                "Temptation",
+                                                "20",
+                                                "ConqueringTemptPass",
+                                                "Fail",
+                                                "Eagerly thrust into her!"
+                                            ]
+                                },
+                        {
+                          "NameOfScene": "ConqueringTemptPass",
+                          "theScene": [
+                                        "Steeling your mind against the regal woman's tempting allure you manage to collect your thoughts! But you still need to pull away before it's too late!",
+                                        "JumpToScene", "ConquerAdvMenu"
+                                    ]
+                        },
+                {
+                  "NameOfScene": "ConquerAdvMenu",
+                  "theScene": [
+                                "Menu",
+                                  "Shove her hips away! (Power)",
+                                  "Slip your shaft away! (Technique)",
+                                  "Tease her back into just kissing! (Allure)",
+                                  "Eagerly thrust into her!",
+                                "EndLoop"
+                            ]
+                },
+                      {
+                        "NameOfScene": "Eagerly thrust into her!",
+                        "theScene": ["HitPlayerWith", "Luxurious Indulgence",
+                                    "ChangeImageLayer", "Expression", "Oral", "ApplyStance", "Sex",
+                                    "Iabel purrs triumphantly as you willingly plunge your aching manhood into her tightly squeezing pussy, its exquisite massaging movements enveloping your dick in heavenly pleasure as she presses her glossy golden lips back onto yours to resume the deep mind-numbing kiss, her long tongue toying with you as you melt in her embrace.[DamageToPlayer]",
+                                    "JumpToScene", "ConqueringAdvanceFailed2"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Shove her hips away! (Power)",
+                        "theScene": [ "You grab ahold of her wide hips and desperately try to keep your aching manhood out of her exquisite pussy!",
+                                      "StatCheck",
+                                      "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                      "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Enchantment", "5",
+                                      "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Captivation", "5",
+                                      "Power",
+                                      "15",
+                                      "ConqueringAdvancePass",
+                                      "Fail",
+                                      "ConqueringAdvanceFail"
+                                  ]
+                      },
+                          {
+                            "NameOfScene": "ConqueringAdvancePass",
+                            "theScene": ["ChangeImageLayer", "Expression", "Cold",
+                                        "And manage to swing her waist to the side, leaving your shaft simply rubbing against her thighs while you continue to make out with her.",
+                                        "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                          "Hmph...",
+                                          "You will obey soon enough...",
+                                          "A few more lipstick kisses will get you in line...",
+                                          "How rude...",
+                                        "EndLoop"
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "ConqueringAdvanceFail",
+                            "theScene": ["But despite your best efforts you're helpless to pull away!",
+                                        "JumpToScene", "ConqueringAdvanceFailed"
+                                      ]
+                          },
+                    {
+                      "NameOfScene": "Slip your shaft away! (Technique)",
+                      "theScene": [ "You try and slip away from Iabel's inviting pussy trying to draw you inside!",
+                                    "StatCheck",
+                                    "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Enchantment", "5",
+                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Captivation", "5",
+                                    "Technique",
+                                    "15",
+                                    "ConqueringAdvancePass2",
+                                    "Fail",
+                                    "ConqueringAdvanceFail2"
+                                ]
+                    },
+                        {
+                          "NameOfScene": "ConqueringAdvancePass2",
+                          "theScene": ["ChangeImageLayer", "Expression", "Cold",
+                                      "And manage to skillfully guide your length away, leaving your shaft simply rubbing against her thighs while you continue to make out with her.",
+                                      "FocusedSpeaks",
+                                      "SwapLineIf", "Random",
+                                        "Hmph...",
+                                        "You will obey soon enough...",
+                                        "A few more lipstick kisses will get you in line...",
+                                        "How rude...",
+                                      "EndLoop"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "ConqueringAdvanceFail2",
+                          "theScene": ["But despite your best efforts you're helpless to pull away!",
+                                      "JumpToScene", "ConqueringAdvanceFailed"
+                                    ]
+                        },
+                    {
+                      "NameOfScene": "Tease her back into just kissing! (Allure)",
+                      "theScene": [
+                                    "You start groping and teasing Iabel's soft curves to try and distract her enough so you can maintain merely making out!",
+                                    "StatCheck",
+                                    "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Enchantment", "5",
+                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Captivation", "5",
+                                    "Allure",
+                                    "15",
+                                    "ConqueringAdvancePass3",
+                                    "Fail",
+                                    "ConqueringAdvanceFail3"
+                                ]
+                    },
+                            {
+                              "NameOfScene": "ConqueringAdvancePass3",
+                              "theScene": ["ChangeImageLayer", "Expression", "Pleasured",
+                                            "And she lets out a few gaps of delight as you caress her into pulling away, while keeping your locked in a heated kiss, though she's clearly pouting about it.",
+                                            "ChangeImageLayer", "Expression", "Cold",
+                                            "FocusedSpeaks",
+                                            "SwapLineIf", "Random",
+                                              "Hmph...",
+                                              "You will obey soon enough...",
+                                              "A few more lipstick kisses will get you in line...",
+                                              "How rude...",
+                                            "EndLoop"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "ConqueringAdvanceFail3",
+                              "theScene": [
+                                            "But your loving caress doesn't deter the queenly woman in the slightest!",
+                                          "JumpToScene", "ConqueringAdvanceFailed"
+                                        ]
+                            },
+
+                      {
+                        "NameOfScene": "ConqueringAdvanceFailed",
+                        "theScene": [    "ChangeImageLayer", "Expression", "Oral", "ApplyStance", "Sex", "HitPlayerWith", "Luxurious Indulgence",
+                                        "Iabel purrs triumphantly she plunges your aching manhood into her tightly squeezing pussy, its exquisite massaging movements enveloping your dick in heavenly pleasure as she presses her glossy golden lips back onto yours to resume the deep mind-numbing kiss, her long tongue toying with you as you melt in her embrace.[DamageToPlayer]",
+                                        "JumpToScene", "ConqueringAdvanceFailed2"
+                                        ]
+                      },
+                      {
+                        "NameOfScene": "ConqueringAdvanceFailed2",
+                        "theScene": [   "ChangeImageLayer", "Expression", "Kiss",
+
+                                        "She entrancingly sways her hips side to side, milking and teasing your throbbing cock with her regal pussy as she forces you to 'dance' with her, and you feel yourself space out for a moment as she uses her plump lips to sensually suck on your tongue.",
+                                        "ApplyStatusEffect", "QueensCoils", "HitPlayerWith", "Luxurious Indulgence",
+                                        "The combined sensations leaving you exposed to her coils tightly wrapping around your lower body, and her living hair sliding forth to entangle your arms, binding you to her plush body.[DamageToPlayer]"
+                                  ]
+                      },
+
+
+
+
+
+
+                      {
+                        "NameOfScene": "ConqueringCoils",
+                        "theScene": [
+                                      "SetPostName", " - Conquering Coils",
+                                      "ChangeImageLayer", "Expression", "Predatory",
+                                      "FocusedSpeaksSkill",
+                                      "Iabel hisses with predatory excitement, twisting and turning in place with you in a teasing dance, slowly coiling her long tail possessively around your lower body, gradually binding up your legs while her snake filled living hair lunges forward to bind your arms to her hourglass waist, rapidly entrapping you against her divine curves as you continue to fuck.",
+                                      "FocusedSpeaks",
+                                      "SwapLineIf", "Random",
+                                        "Ahuhu~♥ You're mine.♥",
+                                        "Time to eat you up.♥",
+                                        "Mhhfhuhu~♥ I'll have you wrapped around my finger in no time.♥",
+                                        "Hahhhh~♥ Soon you'll be trapped and helpless to resist.♥",
+                                      "EndLoop",
+                                      "SetPostName", "",
+                                      "IfHasPerk", "Gilded Infatuation", "ConqueringCoilsTemptation",
+                                      "IfHasPerk", "Gilded Captivation", "ConqueringCoilsTemptation",
+                                      "IfHasPerk", "Gilded Enchantment", "ConqueringCoilsTemptation",
+                                      "JumpToScene", "ConqueringCoilsMenu"
+                                  ]
+                      },
+                              {
+                                "NameOfScene": "ConqueringCoilsTemptation",
+                                "theScene": ["HitPlayerWith", "Seduce",
+                                              "SwapLineIf", "Perk",
+                                               "Gilded Enchantment",  "You're too enchanted with Iabel's perfectly plush, divine body to think about anything other than obeying her, every part of your mind lost in her indulgently soft, tempting hourglass curves as they rub against you sensually, and your trembling manhood obediently throbs submissively inside your goddess' tight pussy as it expertly squeezes you, leaving you eager to surrender to her seductive whims...[DamageToPlayer]",
+                                               "Gilded Captivation",  "You're too captivated with Iabel's smooth, luxurious body to think about anything other than her, every part of your mind lost in her soft, tempting hourglass curves as they rub against you sensually, and your cock obediently throbs inside her divine pussy as it expertly squeezes you, leaving you eager to submit to her seductive whims...[DamageToPlayer]",
+                                               "Gilded Infatuation",  "You're too infatuated with Iabel's glamourous body to think straight, every part of your mind lost in her soft, tempting hourglass curves, and your cock obediently throbs inside her expertly squeezing pussy, leaving you aching to submit to her seductive whims...[DamageToPlayer]",
+                                              "EndLoop",
+                                              "IfPlayerOrgasm", "Eagerly accept her coiled embrace!",
+                                              "Menu",
+                                                "Try to resist! (Temptation)",
+                                                "Eagerly accept her coiled embrace!",
+                                              "EndLoop"
+                                          ]
+                              },
+                                      {
+                                        "NameOfScene": "Try to resist! (Temptation)",
+                                        "theScene": [
+                                                      "StatCheck",
+                                                      "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Enchantment", "5",
+                                                      "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Captivation", "5",
+                                                      "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                                      "Temptation",
+                                                      "15",
+                                                      "ConqueringCoilsTemptPass",
+                                                      "Fail",
+                                                      "Eagerly accept her coiled embrace!"
+                                                  ]
+                                      },
+                              {
+                                "NameOfScene": "ConqueringCoilsTemptPass",
+                                "theScene": [
+                                              "Steeling your mind against the regal woman's tempting allure you manage to collect your thoughts! But you still need to resist her before it's too late!",
+                                              "JumpToScene", "ConqueringCoilsMenu"
+                                          ]
+                              },
+                      {
+                        "NameOfScene": "ConqueringCoilsMenu",
+                        "theScene": [
+                                      "Menu",
+                                        "Untangle yourself from her tail and hair! (Power)",
+                                        "Slip free of the encroaching restraints! (Technique)",
+                                        "Tease her into loosening her grasp! (Allure)",
+                                        "Eagerly accept her coiled embrace!",
+                                      "EndLoop"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "Eagerly accept her coiled embrace!",
+                              "theScene": ["HitPlayerWith", "Luxurious Indulgence",
+                                          "ChangeImageLayer", "Expression", "Wink",   "ApplyStatusEffect", "QueensCoils",
+                                          "Iabel purrs approvingly as you willingly lean into her tight coils with a blissful sigh, thoughtlessly thrusting your twitching cock into her exquisite pussy as you're royally imprisoned against her luxurious curves, heavenly pleasure tingling through you head-to-toe as you melt in her intoxicating embrace.[DamageToPlayer]",
+                                          "JumpToScene", "ConqueringCoilsFailed2"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Untangle yourself from her tail and hair! (Power)",
+                              "theScene": [ "You push back against her slithering tail and hissing hair to ensure you can stay unrestricted!",
+                                            "StatCheck",
+                                            "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                            "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Enchantment", "5",
+                                            "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Captivation", "5",
+                                            "Power",
+                                            "10",
+                                            "ConqueringCoilsPass",
+                                            "Fail",
+                                            "ConqueringCoilsFail"
+                                        ]
+                            },
+                                {
+                                  "NameOfScene": "ConqueringCoilsPass",
+                                  "theScene": ["ChangeImageLayer", "Expression", "Cold",
+                                              "And manage to keep them at bay! Making Iabel huff in mild annoyance as she continues to languidly fuck you.",
+                                              "FocusedSpeaks",
+                                              "SwapLineIf", "Random",
+                                                "Hmph...",
+                                                "You will obey soon enough...",
+                                                "A few more lipstick kisses will get you in line...",
+                                                "There's no reason to be afraid...",
+                                              "EndLoop"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "ConqueringCoilsFail",
+                                  "theScene": ["But despite your best efforts you're helpless to ward her off!",
+                                              "JumpToScene", "ConqueringCoilsFailed"
+                                            ]
+                                },
+                          {
+                            "NameOfScene": "Slip free of the encroaching restraints! (Technique)",
+                            "theScene": [ "You try and slip away from Iabel's winding snake tail and living-hair as it tries to bind you in place!",
+                                          "StatCheck",
+                                          "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                          "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Enchantment", "5",
+                                          "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Captivation", "5",
+                                          "Technique",
+                                          "10",
+                                          "ConqueringCoilsPass2",
+                                          "Fail",
+                                          "ConqueringCoilsFail2"
+                                      ]
+                          },
+                              {
+                                "NameOfScene": "ConqueringCoilsPass2",
+                                "theScene": ["ChangeImageLayer", "Expression", "Cold",
+                                            "And manage to skillfully stay free of her coils! Making Iabel huff in mild annoyance as she continues to languidly fuck you.",
+                                            "FocusedSpeaks",
+                                            "SwapLineIf", "Random",
+                                              "Hmph...",
+                                              "You will obey soon enough...",
+                                              "A few more lipstick kisses will get you in line...",
+                                              "There's no reason to be afraid...",
+                                            "EndLoop"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "ConqueringCoilsFail2",
+                                "theScene": ["But despite your best efforts you're helpless to ward her off!",
+                                            "JumpToScene", "ConqueringCoilsFailed"
+                                          ]
+                              },
+                          {
+                            "NameOfScene": "Tease her into loosening her grasp! (Allure)",
+                            "theScene": [
+                                          "You start groping and teasing Iabel's soft curves to try and distract her enough so you can avoid being restrained!",
+                                          "StatCheck",
+                                          "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                          "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Enchantment", "5",
+                                          "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Captivation", "5",
+                                          "Allure",
+                                          "10",
+                                          "ConqueringCoilsPass3",
+                                          "Fail",
+                                          "ConqueringCoilsFail3"
+                                      ]
+                          },
+                                  {
+                                    "NameOfScene": "ConqueringCoilsPass3",
+                                    "theScene": ["ChangeImageLayer", "Expression", "Pleasured",
+                                                  "And she lets out a few gaps of delight as you caress her into losing her focus enough you can deter the incoming restraints. Making Iabel huff in mild annoyance as she continues to languidly fuck you.",
+                                                  "ChangeImageLayer", "Expression", "Cold",
+                                                  "FocusedSpeaks",
+                                                  "SwapLineIf", "Random",
+                                                    "Hmph...",
+                                                    "You will obey soon enough...",
+                                                    "A few more lipstick kisses will get you in line...",
+                                                  "EndLoop"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "ConqueringCoilsFail3",
+                                    "theScene": [
+                                                  "But your loving caress doesn't deter the queenly woman in the slightest!",
+                                                "JumpToScene", "ConqueringCoilsFailed"
+                                              ]
+                                  },
+
+                            {
+                              "NameOfScene": "ConqueringCoilsFailed",
+                              "theScene": [   "HitPlayerWith", "Luxurious Indulgence",
+                                              "ChangeImageLayer", "Expression", "Wink",   "ApplyStatusEffect", "QueensCoils",
+                                              "Iabel purrs triumphantly as you're helpless to stop her tight coils from restraining you, their teasing squeezes forcing a blissful sigh out of you as their owner lovingly rides your twitching cock with her exquisite pussy, keeping you royally imprisoned against her luxurious curves, heavenly pleasure tingling through you head-to-toe as you melt in her intoxicating embrace.[DamageToPlayer]",
+                                              "JumpToScene", "ConqueringCoilsFailed2"
+                                              ]
+                            },
+                            {
+                              "NameOfScene": "ConqueringCoilsFailed2",
+                              "theScene": [   "ChangeImageLayer", "Expression", "Predatory","HitPlayerWith", "Luxurious Indulgence",
+                                              "Her snakes guide your eager hands to her plush ass while she entrancingly sways her wide hips side to side, enveloping your fingers in plush softness while her ravenous pussy milks and massages your throbbing cock from every angle. With a haughty laugh she forces you to lewdly 'dance' with her in your helplessly bound state, charming and churning your manhood with divine bliss.[DamageToPlayer]"
+                                        ]
+                            },
+
+
+
+
+
+                      {
+                        "NameOfScene": "HaughtyReversal",
+                        "theScene": [
+                                      "ChangeImageLayer", "Expression", "Smug", "ChangeImageLayer", "Snakes", "SnakesGlare",
+                                      "While you fuck Iabel's tight rear, she glances back with a smug smile, no longer dazed as she was, her myriad of snakes all look to you in hissing unison, before lunging at you in a surge of movement.",
+                                      "ChangeImageLayer", "Expression", "Wink",   "ClearStanceFromMonsterAndPlayer", "Anal",
+                                      "But instead of biting, they tightly coil and entangle your upper body and arms, thoroughly binding you to the serpentine woman as lets out a haughty laugh, her living hair forcing you to pull out of her butt while her long tail swiveling about to press against your back, giving you nowhere to go as she starts to bounce her thick ass to give you a teasing assjob.",
+                                      "ChangeImageLayer", "Snakes", "SnakesNormal",
+                                      "FocusedSpeaks",
+                                      "SwapLineIf", "Random",
+                                        "Oh you poor fool, did you think that would be my weak point?♥",
+                                        "I shall let you enjoy my exquisite butt to its fullest.♥ That {i}is{/i} what you wanted, right?♥",
+                                        "Auhuhu~♥ You're trapped like prey now.♥ So I shall seduce you {i}completely.♥{/i}",
+                                        "Hmm?♥ Did I not warn you about getting close?♥",
+                                      "EndLoop",
+                                      "JumpToScene", "RoyalAssjob"
+                          ]
+                      },
+
+
+
+                      {
+                        "NameOfScene": "AnalCounter",
+                        "theScene": [
+                                "SkipPlayerAttack",
+                                "ChangeImageLayer", "Expression", "Smug", "ChangeImageLayer", "Snakes", "SnakesGlare",
+                                "As you slip behind Iabel and grab her wide hips to rub your cock against her plump, regal ass, it becomes quickly apparent this may have been a poor idea as the myriad of snakes that make up her hair turn their attention to you before lunging in unison with a chorus of hisses!",
+                                "ChangeImageLayer", "Expression", "Wink",
+                                "But instead of biting, they tightly coil and entangle your upper body and arms, thoroughly binding you to the serpentine woman as she looks back with a sideways glance and a haughty laugh, her long tail swiveling about to press against your back, giving you nowhere to go as she bounces her thick ass to give you a teasing assjob.",
+                                "ChangeImageLayer", "Snakes", "SnakesNormal",
+                                "FocusedSpeaks",
+                                "SwapLineIf", "Random",
+                                  "Oh you poor fool, did you think that would be my weak point?♥",
+                                  "I shall let you enjoy my exquisite butt to its fullest.♥ That {i}is{/i} what you wanted, right?♥",
+                                  "Auhuhu~♥ You're trapped like prey now.♥ So I shall seduce you {i}completely.♥{/i}",
+                                  "Hmm?♥ Did I not warn you about getting close?♥",
+                                "EndLoop",
+                                "JumpToScene", "RoyalAssjob"
+                          ]
+                      },
+                              {
+                                "NameOfScene": "RoyalAssjob",
+                                "theScene": [ "ChangeProgress", "1",
+                                              "HitPlayerWith", "RoyalAssjob",
+                                              "ChangeImageLayer", "Expression", "Wink",
+                                              "SwapLineIf", "Random",
+                                                "Iabel grinds and sways her body against you, snaking her hourglass waist back and forth while her full ass keeps your aching manhood buried and massaged by soft flesh at all times, making you leak and twitch for her divine butt as it dominates your cock, and demands your full rapt attention with its charming dance.[DamageToPlayer]",
+                                                "Iabel lets out a hissing purr as she shakes her hips up and down, leaving your helpless manhood at the mercy of her indulgently soft asscheeks as they sandwich your twitching shaft in pillowy, regal softness stroking it and audibly slapping into your hips, the tempting, bouncy sight demanding your full attention with each charming impact.[DamageToPlayer]",
+                                                "You groan as Iabel only gently rocks her wide hips side to side, teasing your twitching erection with tempting pleasure, while her living hair practically forces your hands to grope and knead her plump ass, your fingers sinking into the indulgently soft skin, until eventually, you can't resist and eagerly hump her thick butt with your leaking dick in a thoughtless haze.[DamageToPlayer]",
+                                                "Every teasing bounce of Iabel's thick rear coaxes you to thrust back into the jiggly assjob as your instincts give in to her enchanting body, reverently obeying her divine body's whims, reveling in the plush pleasures you're being 'punished' with, and the sight of her bountiful ass rippling seductively with each impact only drives you deeper into her seductions.[DamageToPlayer]",
+                                              "EndLoop",
+                                              "IfPlayerOrgasm", "RoyalAssjobOrgasm",
+                                              "FocusedSpeaks",
+                                              "SwapLineIf", "Random",
+                                                "Your cock will soon become a loyal servant to my divine ass.♥",
+                                                "Hmmmm~♥ Perhaps you enjoy being trapped like this?♥",
+                                                "Your cock is obediently leaking for me.♥ How cute.♥",
+                                                "You're trapped in heaven, mortal.♥",
+                                                "Squirm if you want, I'm not letting go.♥",
+                                              "EndLoop",
+                                              "IfHasPerk", "Gilded Infatuation", "RoyalAssjobTemptation",
+                                              "IfHasPerk", "Gilded Captivation", "RoyalAssjobTemptation",
+                                              "IfHasPerk", "Gilded Enchantment", "RoyalAssjobTemptation",
+                                              "JumpToScene", "RoyalAssjobMenu"
+                                  ]
+                              },
+                                      {
+                                        "NameOfScene": "RoyalAssjobOrgasm",
+                                        "theScene": [ "ChangeProgress", "5",
+                                                      "ChangeImageLayer", "Expression", "Loving",
+                                                      "PlayerOrgasm", "1",
+                                                      "SwapLineIf", "Random",
+                                                        "Lost in a pleasure-drunk haze, you greedily hump Iabel's thick, bountiful ass, losing yourself to its indulgent, regal softness, thoughtlessly admiring the divine sight of it bouncing alluringly with each thrust, until with a glamourous flick of her hourglass waist,  and a captivating off-tempo wiggle of her wide hips, she finishes you off, leaving you moaning blissfully as you coat her back and butt in semen.",
+                                                        "You're left hopelessly stunned as you watch Iabel sway and grind against you, completely captivated with her divine body dancing as she rubs her thick hips and ass against your leaking manhood, teasing and taming it into an infatuated toy. Even the slightest wiggle of her waist sends tremors of pleasure rampaging across your body, and in a blissfully, ruinously prolonged climax your dick slowly spurts out a stream of semen in offering to the goddess' plump ass.",
+                                                        "Iabel lets out a low, haughty laugh as she bounces her bountiful ass with echoing slaps of her thick hips impacting your waist, your dick perfectly buried and imprisoned within her derriere's indulgent softness, letting the serpentine woman massage your entire length into trembling submission, a final lewd clap of her jiggly butt sending you huffing and moaning over the edge, coating her rear in a thick offering of seed.",
+                                                        "You huff and moan as you instinctively thrust against the serpent woman's plush ass, losing yourself in the rhythm of her shaking waist, groping and kneading the overflowing, luxurious softness with your fingers, every jiggly impact of her thick hips sending a charming pulse of euphoria through your mind, until the bubbling ecstasy in your waist erupts, and with a final self-defeating thrust you spurt semen all over her regal back and soft butt.",
+                                                      "EndLoop",
+                                                      "IfPlayerSpiritGone", "AssEndLoss",
+                                                      "ApplyStatusEffect", "Charm",
+                                                      "CallSceneThenReturn", "AssclimaxCharm",
+                                                      "IfHasPerk", "Gilded Infatuation", "RoyalAssjobTemptation",
+                                                      "IfHasPerk", "Gilded Captivation", "RoyalAssjobTemptation",
+                                                      "IfHasPerk", "Gilded Enchantment", "RoyalAssjobTemptation",
+                                                      "JumpToScene", "RoyalAssjobMenu"
+                                          ]
+                                      },
+                                              {
+                                                "NameOfScene": "AssclimaxCharm",
+                                                "theScene": [
+                                                              "IfHasPerk", "Gilded Enchantment", "Nothing",
+                                                              "You groan and tremble with post orgasmic aftershock from Iabel's thick hips toying with your twitching erection, a charming wiggle of her waist resonating deep in your mind...",
+                                                              "StatCheck",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "25", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "24", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "23", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "22", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "21", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "20", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "19", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "18", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "17", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "16", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "15", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "14", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "13", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "12", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "11", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "10", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "9", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "8", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "7", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "6", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "5", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "4", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "3", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "2", "1",
+                                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "1", "1",
+                                                              "Willpower",
+                                                              "10",
+                                                              "IgnoreAssCharmingBuildup",
+                                                              "Fail",
+                                                              "DeepenAssCharm"
+                                                          ]
+                                              },
+                                                      {
+                                                        "NameOfScene": "IgnoreAssCharmingBuildup",
+                                                        "theScene": [ "ChangeProgress", "3",
+                                                                        "You manage to shake off the creeping infatuation gradually seeping into you, but you can feel the serpentine woman's plump ass slowly eroding your will to resist being enthralled it's divine softness."
+                                                                  ]
+                                                      },
+                                                      {
+                                                        "NameOfScene": "DeepenAssCharm",
+                                                        "theScene": [ "ChangeProgress", "-5",
+                                                                      "CallSceneThenReturn", "InfatuationStack",
+                                                                      "SwapLineIf", "Perk",
+                                                                       "Gilded Enchantment",  "Your entire mind feels like it's turned a bright, love-struck pink, filled to the brim with submissive worshipful infatuation for Iabel's divine ass, leaving you utterly enchanted with the serpentine goddess, all your thoughts replaced with images of her perfectly shaped butt bouncing as swaying, showing off her body's intoxicating softness, leaving your dick an obediently throbbing, leaking mess for her to toy with...♥",
+                                                                       "Gilded Captivation",  "You swoon in horny, love-drunk bliss as you stare at Iabel's luxurious, plush butt, struggling to think of anything else than the divine serpent woman, all your other thoughts sinking in her euphoria-inducing voluptuous ass as it bounces and sways, leaving your dick twitching in eager submission for her as you fall deeper into hopelessly charmed captivation for her thick hips and pillowy derriere...",
+                                                                       "Gilded Infatuation",  "You stare at Iabel's plump ass in a love-struck daze, your mind going fuzzy and bubbly while your cock throbs excitedly between her soft cheeks, your mind growing haplessly infatuated with the serpentine woman and her intoxicating body...",
+                                                                      "EndLoop"
+                                                                  ]
+                                                      },
+                                {
+                                  "NameOfScene": "RoyalAssjobTemptation",
+                                  "theScene": ["HitPlayerWith", "Swaying Ass",
+                                                "SwapLineIf", "Perk",
+                                                 "Gilded Enchantment",  "You're too enchanted with Iabel's wide, voluptuous curves to think about anything else than her divine derriere, reverently watching it captivatingly bounce and jiggle around your eagerly leaking trapped manhood, thoughtlessly humping her as you fully revel in the serpent goddess' luxurious ass with a pleasure-drunk smile, the indulgent softness leaving you unable to think of anything else but worshiping her...[DamageToPlayer]",
+                                                 "Gilded Captivation",  "You're too captivated with Iabel's perfectly plush butt to think straight or even look away, greedily watching it temptingly bounce and jiggle around your imprisoned, leaking manhood, leaving you slavishly marveling at her luxurious ass with a blissed-out sigh as the indulgent softness milks out your dwindling resistance and your infatuation keeps growing...[DamageToPlayer]",
+                                                 "Gilded Infatuation",  "You're too infatuated with Iabel's plump butt to think straight, greedily watching it bounce and jiggle around your imprisoned manhood, thoughtlessly admiring her luxurious ass with a dopey sigh as the indulgent softness milks out your resistance...[DamageToPlayer]",
+                                                "EndLoop",
+                                                "IfPlayerOrgasm", "Eagerly enjoy her royal ass!♥",
+                                                "Menu",
+                                                  "Try to focus! (Temptation)",
+                                                  "Eagerly enjoy her royal ass!♥",
+                                                "EndLoop"
+                                            ]
+                                },
+                                        {
+                                          "NameOfScene": "Try to focus! (Temptation)",
+                                          "theScene": [
+                                                        "StatCheck",
+                                                        "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Enchantment", "5",
+                                                        "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Captivation", "5",
+                                                        "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                                        "Temptation",
+                                                        "20",
+                                                        "AssTemptPass",
+                                                        "Fail",
+                                                        "Eagerly enjoy her royal ass!♥"
+                                                    ]
+                                        },
+                                {
+                                  "NameOfScene": "AssTemptPass",
+                                  "theScene": [
+                                                "Steeling your mind against the regal woman's tempting allure you manage to collect your thoughts! But you still need to get away from her plush ass before it's too late!",
+                                                "JumpToScene", "RoyalAssjobMenu"
+                                            ]
+                                },
+                            {
+                              "NameOfScene": "RoyalAssjobMenu",
+                              "theScene": ["IfPlayerSpiritGone", "AssEndLoss",
+                                          "Menu",
+                                            "Break away from her tempting butt! (Power)",
+                                            "Slip away from her alluring derriere! (Technique)",
+                                            "Eagerly enjoy her royal ass!♥",
+                                          "EndLoop"
+                                        ]
+                            },
+                                    {
+                                      "NameOfScene": "Eagerly enjoy her royal ass!♥",
+                                      "theScene": [
+                                                  "JumpToScene", "RoyalAssjob"
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "Break away from her tempting butt! (Power)",
+                                      "theScene": [ "You attempt to get free of her binding hair and plush rear!",
+                                                    "StatCheck",
+                                                    "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Enchantment", "5",
+                                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Captivation", "5",
+                                                    "Power",
+                                                    "15",
+                                                    "RoyalAssjobEscape",
+                                                    "Fail",
+                                                    "RoyalAssjob"
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "Slip away from her alluring derriere! (Technique)",
+                                      "theScene": [ "You attempt to slip out of her coiling hair and free your dick from pillowy ass!",
+                                                    "StatCheck",
+                                                    "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Enchantment", "5",
+                                                    "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Captivation", "5",
+                                                    "Technique",
+                                                    "15",
+                                                    "RoyalAssjobEscape",
+                                                    "Fail",
+                                                    "RoyalAssjob"
+                                                ]
+                                    },
+                                        {
+                                          "NameOfScene": "RoyalAssjobEscape",
+                                          "theScene": [  "ChangeImageLayer", "Expression", "Cold",
+                                                      "And manage to get away from Iabel's hissing hair and her intoxicating wide hips, making her turn back to you with a lazy sigh, a little disappointed you escaped.",
+                                                      "FocusedSpeaks",
+                                                      "SwapLineIf", "Random",
+                                                        "You can always try that again.",
+                                                        "Are you certain you {i}don't{/i} want to be captivated by my luxurious ass?",
+                                                        "You clearly need more time to be haplessly smitten with me.",
+                                                      "EndLoop"
+                                                    ]
+                                        },
+
+
+
+                                        {
+                                          "NameOfScene": "AssEndLoss",
+                                          "theScene": [  "ChangeImageLayer", "Expression", "Wink",
+                                                        "You go slack against the serpentine goddess, lightly humping her plump butt while you keep mindlessly groping it, completely lost in her entangling embrace, your enthralled gaze unable to look away from her sublime hourglass curves, her full ass keeping you fully captivated and helplessly overflowing with reverent affection.",
+                                                        "FocusedSpeaks",
+                                                        "Auhuhu~♥ It seems your will to resist me has been smothered by my luxurious ass.~♥ {i}Wonderful{/i}.♥",
+                                                        "Now that she has you totally powerless under her, she continues her slow dance with a happy hum, bouncing her captivating butt up and down with intermittent shakes of her wide hips side to side, leaving your mind spinning and your aching erection twitching, happily imprisoned by her thick derriere while her living hair coils tighter and tighter around you, covering your limbs, torso, and waist in a snug, inescapable embrace.",
+                                                        "ChangeImageLayer", "Expression", "Smug",
+                                                        "FocusedSpeaks",
+                                                        "Now I shall teach you and your obedient cock how to be a good loyal servant to my divine body.♥",
+                                                        "Letting out a purr of excitement, Iabel rocks her thick hips against your trembling erection while languorous pulses of magic radiate along her curvy form into you, sending a rush of shivering infatuation through your senses as your dazed eyes can't help but watch her heavenly plump ass pump your buried shaft in its delightful silken vice, every jiggle of her royal butt amplifying the melty feeling of worshipful captivation.",
+                                                        "ChangeImageLayer", "Expression", "Wink",
+                                                        "FocusedSpeaks",
+                                                        "Just how smitten with me can you become?♥ Let's find out... Let yourself crave that mesmerizing feeling of total adoration.♥",
+                                                        "Your jaw slackly hangs open in panting lustful awe while melty arousal pools in your waist, every lift and drop of her full ass amid her enchanting swaying movements making the bubbling bliss in you rise higher and higher with mind-spinning euphoria while your fully engorged dick keeps throbbing and twitching in excitement against Iabel's soft skin.",
+                                                        "Unable to do anything but watch and feel her serpentine jiggling erode away at your already sinking willpower, you just lie back in her embrace with a giddy whimper as Iabel's erotic form coils tighter and tighter around your infatuated lust-filled psyche, her heavy divine ass taking up more and more of your thoughts, gradually conquering your mind, filling you with ever more pleasure...",
+                                                        "ChangeImageLayer", "Expression", "Caring",
+                                                        "Until with another impact of her plush luxurious ass, your hips meekly jerk back up into her, your trembling manhood spurting a thick shower of semen across her heavenly body, your eyes rolling as you feel more of your rationality fly out of your climaxing cock like so much needless weight.",
+                                                        "The rapturous feeling of adoration toward your goddess Iabel peaks for a grandiose moment as a gilded shimmer trails across the gooey mess on her perfect skin to soak everything in, all while she lightly grinds against your still achingly hard length, your thoughts a mess of captivated pleasure, your pleasure-glazed eyes vapidly glued to her.",
+                                                        "ChangeImageLayer", "Expression", "Smug",
+                                                        "FocusedSpeaks",
+                                                        "Trapped with no escape... And no {i}want{/i} to escape, of course?♥ Auhuhu.♥",
+                                                        "Still stunned from the reverberating ecstasy, you thoughtlessly nod and helplessly watch the exquisite dance that dominates your mind, panting and huffing like a lovestruck boy toy, craving more of the gyrating and grinding of her thick ass against your leaking dick, any leftover resistance in you steadily ground to dust under her royal hips that keep smothering and rubbing your shaft, total loving obedience blossoming in your core.",
+                                                        "ChangeImageLayer", "Expression", "Wink",
+                                                        "FocusedSpeaks",
+                                                        "Ufuhu~ Melt and melt until you can think only of me.♥ Of my flawless body.♥ Of my divine ass making you my cute little servant.♥",
+                                                        "She purrs and giggles in amusement as you readily and obediently thrust back against her as best you can despite the tight living hair restraints, humping her ass as her loyal, devoted acolyte while moaning out her name in reverence, a vacant smile of fulfillment spreading over your face when she giggles in approval, watching you lovingly.",
+                                                        "Lying back relaxingly, she stays still while you continue to break yourself against her divine presence and luxurious curves all on your own, raptly watching her rear bounce and jiggle from each impact, deepening your already hopeless captivation.",
+                                                        "ChangeImageLayer", "Expression", "Caring",
+                                                        "FocusedSpeaks",
+                                                        "Such an adorable acolyte you make for, mortal.♥ It pleases me. Let me give you a reward for your efforts, so you can give me {i}more{/i} tribute.♥",
+                                                        "From just a slight downward press and a lazy shake of Iabel's wide hips, you throw your head back with a sloppy tongue-lolling moan of climax, trembling and shivering as you coat her magnificent form with more of your seed in praise to her gilded perfection, sighing euphorically when she resumes her indulgent dance as you melt in post-orgasmic bliss, overjoyed to be able to experience such heavenly pleasure from your goddess.",
+                                                        "FocusedSpeaks",
+                                                        "Mmmmh, wonderful.♥ Behavior truly fitting for a devoted acolyte. You're a fast learner, aren't you? ♥",
+                                                        "ChangeImageLayer", "Expression", "Wink",
+                                                        "Winking, she purses her lips in a distant kiss while you babble half-incoherent words of adoration in response, her compliments washing through you like a radiating wave of pure happiness, cementing in you the ruinous desire to do nothing but obey your goddess unconditionally and be her faithful servant forever...",
+                                                        "FocusedSpeaks",
+                                                        "And... so long as you are still hard, we can continue your training, can't we?~♥ Since you're such a good, enthusiastic worshiper, ufuhu~♥",
+                                                        "When you nod dumbly in response, Iabel lets out a haughty laugh of amusement at the sight of you falling for her harder and harder, her neverending serpentine dance melting and remolding your mind, her swaying regal ass ingraining the heavenly feeling of its plush curves deep into you, leaving nothing but the imperious want to be completely hers as her hips continue to gyrate and bounce against your trembling erection.",
+                                                        "Minutes, hours pass as you remain completely subjugated by her enchanting body and thick queenly ass, kept tenderly cradled within her coils like her precious property, bathing in supreme bliss as you keep sinking deeper and deeper into fervent love toward the divine Iabel.",
+                                                        "All through that seemingly endless spell of ecstasy, you're easily brought to spurting climax whenever she desires, turned into a love-intoxicated dildo she can milk at her leisure while you remain free to massage and worship her full ass all you want amid her intensive training, basking in the giddy euphoria of offering her your seed time after time in tribute, until your mind goes fully blank from the overloading pleasure...",
+                                                        "As your eyes close and you fall into erotic slumber filled with hypnotic dreams of your goddess' flawless shape, you hear her laugh again, the delightful mirthful sound turning into an affectionate titter.",
+                                                        "FocusedSpeaks",
+                                                        "Rest well, [ThePlayerName]. Recover your strength and come back to lovingly revere my ass all you want.♥",
+                                                        "...",
+                                                        "ChangeSensitivity", "Sex", "10",
+                                                        "ChangeSensitivity", "Seduction", "5",
+                                                        "ChangeFetish", "Ass", "20",
+                                                        "GameOver"
+                                                    ]
+                                        },
+
+
+
+
+
+                    {
+                      "NameOfScene": "Nothing",
+                      "theScene": ["SetChoice", "4", "0"
+                                ]
+                    },
+
+
+
+
+
+                      {
+                          "NameOfScene": "RoyalMilking",
+                          "theScene": [ "HitPlayerWith", "Luxurious Indulgence",
+                                        "SetPostName", " - Royal Milking",
+                                        "ChangeImageLayer", "Expression", "Wink",
+                                        "ChangeProgress", "1",
+                                        "FocusedSpeaksSkill",
+                                        "SwapLineIf", "Random",
+                                          "Iabel's luxurious pussy continues to squeeze and milk your rigid dick with its exquisitely churning folds, massaging and sucking on your manhood in heavenly ways, the unnatural sensations sending tingles of submissive bliss all through your waist.[DamageToPlayer]",
+                                          "Iabel lightly wiggles and shakes her waist with smooth  regal grace, massaging and teasing your manhood from every angle as her pussy dances around your length with squeezing gyrations, toying with your spasming erection, coaxing it into submitting to the pleasure she's giving you.[DamageToPlayer]",
+                                          "The serpentine goddess' divine pussy squeezes and milks your twitching length of its own accord, coaxing you to stay buried deep inside her while she slowly wrings out your will to resist her captivating body and alluring charms.[DamageToPlayer]",
+                                          "The serpentine woman's luxurious pussy's tight folds churn around your cock with affectionate precision, massaging and squeezing your most sensitive spots with mere languid undulations of her wide hips, sending more melty pleasure washing through your hips with every passing moment.[DamageToPlayer]",
+                                        "EndLoop",
+                                        "SetPostName",
+                                        ""
+                                        ]
+                      },
+
+
+
+                      {
+                          "NameOfScene": "GazeCheck",
+                          "theScene": [
+                                          "IfMonsterHasStatusEffect", "Sleep", "Nothing",
+                                          "IfMonsterHasStatusEffect", "Stun", "Nothing",
+                                          "IfMonsterHasStatusEffect", "Restrain", "Nothing",
+                                          "IfChoice", "3", "MaskOff", "GazeAttack",
+                                          "IfMonsterArousalGreaterThan", "600", "MaskOff"
+                                        ]
+                      },
+                                {
+                                    "NameOfScene": "MaskOff",
+                                    "theScene": [
+                                                    "SetChoice", "3", "MaskOff",
+                                                    "ChangeImageLayer", "Expression", "Cold",
+                                                    "FocusedSpeaks",
+                                                    "SwapLineIf", "Random",
+                                                      "Hmph... I suppose I should take you more seriously...",
+                                                    "EndLoop",
+                                                    "ChangeImageLayer", "Mask", "", "ChangeImageLayer", "Expression", "Base",
+                                                    "Iabel lifts up an elegant hand and daintily takes her gilded mask off with a eerie click, casually passing it to her snake hair which gulps it down like a meal, her serpentine gaze now bearing down on you directly, sending a shiver of primal danger through your spine."
+                                                  ]
+                                },
+                                {
+                                    "NameOfScene": "GazeAttack",
+                                    "theScene": [
+                                                  "JumpToRandomScene",
+                                                    "GazeOfDesire",
+                                                    "GazeOfHeat",
+                                                    "GazeofImmobility",
+                                                    "PetrifyingGaze",
+                                                    "GazeOfTemptation",
+                                                  "EndLoop"
+                                                  ]
+                                },
+                                        {
+                                            "NameOfScene": "GazeOfDesire",
+                                            "theScene": [
+                                                            "ChangeImageLayer", "Expression", "GlareSeductiveShine",
+                                                            "SetPostName", " - Chthonic Gaze: Affection",
+                                                            "HitPlayerWith", "CharmingGaze", "ApplyStatusEffect", "Charm",
+                                                            "ChangeProgress", "1",
+                                                            "FocusedSpeaksSkill",
+                                                            "Iabel licks her lips with sensual lust as her eye light up with intense magic, her tempting gaze sending shivers through your mind as it coaxes to look at her in turn, your vision flowing up and down along her soft, inviting curves, flooding you with heart pounding captivation for her soft tits and wide hips as she shakes them too and fro.[DamageToPlayer]",
+                                                            "SetPostName", "",
+                                                            "IfPlayerHasStatusEffect", "Charm", "CharmWillpowerTest",
+                                                            "ChangeImageLayer", "Expression", "Wink"
+                                                        ]
+                                        },
+                                        {
+                                            "NameOfScene": "GazeofImmobility",
+                                            "theScene": [
+                                                            "ChangeImageLayer", "Expression", "GlareShine", "ApplyStatusEffect", "Paralysis", "ApplyStatusEffect", "Paralysis",
+                                                            "SetPostName", " - Chthonic Gaze: Paralysis",
+                                                            "FocusedSpeaksSkill",
+                                                            "Iabel's stern gaze shines on you with a flare of gilded magic and you feel where ever she looks upon your body rapidly starts to seize up and go numb!",
+                                                            "SetPostName", "",
+                                                            "ChangeImageLayer", "Expression", "Base"
+                                                        ]
+                                        },
+                                        {
+                                            "NameOfScene": "GazeOfHeat",
+                                            "theScene": [
+                                                            "ChangeImageLayer", "Expression", "GlareSeductiveShine",
+                                                            "CallSceneThenReturn", "ApplyOverheat", "HitPlayerWith", "Arousero",
+                                                            "SetPostName", " - Chthonic Gaze: Hellfire",
+                                                            "ChangeProgress", "1",
+                                                            "FocusedSpeaksSkill",
+                                                            "With an excited predatory lick of her lips, Iabel's lustful gaze shines on you with a flare of gilded magic, and you feel an infernal heat suddenly swell inside your loins with a shivering gasp of pleasure, where ever she looks tingling with warm bliss![DamageToPlayer]",
+                                                            "SetPostName", "",
+                                                            "ChangeImageLayer", "Expression", "Wink"
+                                                        ]
+                                        },
+                                                  {
+                                                    "NameOfScene": "ApplyOverheat",
+                                                    "theScene": [ "IfHasPerk", "Overheat", "OverheatIncrease",
+                                                                  "GivePerkQuietly", "Overheat"
+                                                              ]
+                                                  },
+                                                        {
+                                                          "NameOfScene": "OverheatIncrease",
+                                                          "theScene": [ "ChangePerkDuration", "Overheat", "7"
+                                                                    ]
+                                                        },
+
+                                        {
+                                            "NameOfScene": "PetrifyingGaze",
+                                            "theScene": [   "IfPlayerHasStance", "Sex", "GazeAttack",
+                                                            "ChangeImageLayer", "Expression", "GlareShine",
+                                                            "SetPostName", " - Chthonic Gaze: Petrification",
+                                                            "FocusedSpeaksSkill",
+                                                            "With a low dangerous hiss, Iabel's intense glare shines on you with a magically-charged flare of gilded magic, hitting you with an intense spine chilling cascade of arcane power that resonates all through your body!",
+                                                            "SetPostName", "",
+                                                            "StatCheck",
+                                                            "Willpower",
+                                                            "15",
+                                                            "PetrifyGazeEscape",
+                                                            "Fail",
+                                                            "PetrifyGazeFail"
+                                                        ]
+                                        },
+                                                {
+                                                  "NameOfScene": "PetrifyGazeFail",
+                                                  "theScene": [ "SetChoice", "7", "Petrifyed"
+                                                            ]
+                                                },
+                                                {
+                                                  "NameOfScene": "PetrifyGazeEscape",
+                                                  "theScene": [
+                                                              "But you manage to shake off the sudden oppressive stare of the serpent woman!"
+                                                            ]
+                                                },
+
+                                        {
+                                            "NameOfScene": "GazeOfTemptation",
+                                            "theScene": [   "IfPlayerHasStance", "Sex", "GazeAttack",
+                                                            "IfPlayerHasStance", "Anal", "GazeAttack",
+                                                            "IfPlayerHasStance", "Making Out", "GazeAttack",
+                                                            "ChangeImageLayer", "Expression", "GlareSeductiveShine",
+                                                            "ChangeProgress", "1",
+                                                            "SetPostName", " - Chthonic Gaze: Temptation",
+                                                            "FocusedSpeaksSkill",
+                                                            "With a sensual purring hiss, Iabel pivots her serpentine body and gives you an intense, amorous gaze while licking her soft lips, her eyes shining on you with a flare of gilded, seductive magic as she teasingly shakes her wide hips, her magically charged stare sending captivating bliss surging through your mind!",
+                                                            "FocusedSpeaksSkill",
+                                                            "Come here.~♥",
+                                                            "SetPostName", "",
+                                                            "Menu",
+                                                              "Resist the tempting allure!",
+                                                              "Stare and obey...",
+                                                            "EndLoop"
+                                                        ]
+                                        },
+                                                {
+                                                  "NameOfScene": "Resist the tempting allure!",
+                                                  "theScene": [ "StatCheck",
+                                                                "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "5",
+                                                                "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Enchantment", "5",
+                                                                "ChangeStatCheckDifficulty", "IfHasPerk", "Gilded Captivation", "5",
+                                                                "Temptation",
+                                                                "15",
+                                                                "TemptGazeEscape",
+                                                                "Fail",
+                                                                "Stare and obey..."
+                                                            ]
+                                                },
+                                                      {
+                                                        "NameOfScene": "Stare and obey...",
+                                                        "theScene": [ "SetChoice", "7", "Tempted"
+                                                                  ]
+                                                      },
+                                                      {
+                                                        "NameOfScene": "TemptGazeEscape",
+                                                        "theScene": [
+                                                                     "But you manage to shake off the intoxicated gaze tempting you to give in to your lust!"
+                                                                  ]
+                                                      },
+
+
+
+
+
+
+                    {
+                        "NameOfScene": "Petrify Counter Call",
+                        "theScene": [ "SetChoice", "1", "CounterCheckEndTurn"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "DoorOpening",
+                        "theScene": [ "IfChoice", "8", "", "Nothing",
+                                      "GetEventAndChangeProgress", "IabelDoor", "1",
+                                      "GetAnEventsProgressThenIfEqualsOrGreater", "IabelDoor", "7", "DoorOpen",
+                                      "GetAnEventsProgressThenIfEqualsOrGreater", "IabelDoor", "4", "DoorRattle",
+
+                                      "The metallic doorway continues to creak and groan as it struggles to open..."
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "DoorRattle",
+                              "theScene": [
+                                            "The metallic doorway continues to creak and rattle as it continues to slowly opens inch by inch, groaning in metallic protest as it persists in denying your escape from Iabel's predatory chase..."
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "DoorOpen",
+                              "theScene": [
+                                            "SetChoice", "8", "",
+                                            "AllowRunning",
+                                            "Finally, the metallic grated doorway opens, ascending upwards with a clattering heave, leaving your escape path open! ...You just need to get away from Iabel now."
+                                        ]
+                          },
+
+
+                        {
+                          "NameOfScene": "EndOfTurn",
+                          "theScene": [
+                                        "CallSceneThenReturn", "CountPowerTurns",
+                                        "CallNextSceneJumpThenReturn", "IfMonsterHasStance", "Sex", "RoyalMilking",
+                                        "CallSceneThenReturn", "DoorOpening",
+                                        "CallSceneThenReturn", "GazeCheck",
+                                        "IfChoice", "7", "Petrifyed", "PetrifyHit",
+                                        "IfChoice", "7", "Tempted", "TemptHit",
+                                        "IfMonsterHasStatusEffect", "Sleep", "Remove Counter Checks",
+                                        "IfMonsterHasStatusEffect", "Stun", "Remove Counter Checks",
+                                        "IfMonsterHasStatusEffect", "Restrain", "Remove Counter Checks",
+                                        "IfChoice", "2", "counter set", "CounterEnd",
+                                        "IfChoice", "2", "Countered!", "ResumeFight",
+                                        "IfChoice", "1", "CounterCheckEndTurn", "CounterSetCheck"
+                                    ]
+                        },
+                                {
+                                  "NameOfScene": "PetrifyHit",
+                                  "theScene": ["SetChoice", "7", "",
+                                                "FocusedSpeaksSkill",
+                                                "The dangerously numbing, tingling sensation surges across your skin as you are rapidly turned to stone! ...With the sole exception of your raging erection and aching balls, leaving all your senses acutely focused on your exposed loins.",
+                                                "ChangeImageLayer", "Snakes", "SnakesNormal", "ChangeImageLayer", "Expression", "Wink", "ClearStances",
+                                                "Iabel slowly lowers herself between your legs with a lazy lick of her plump gilded lips, letting her snakes relax again as she settles in with a purr, gazing along your length appreciatively.",
+                                                "JumpToScene", "PostPetrify"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "TemptHit",
+                                  "theScene": ["SetChoice", "7", "",
+                                                "ChangeImageLayer", "Expression", "Smug", "ChangeImageLayer", "Snakes", "SnakesGlare",
+                                                "You stumble closer to the deadly serpentine goddess with a drunken smile while she gazes back with a smug smile, her myriad of snakes all look to you in hissing unison as you get into range, lunging at you in a surge of movement!",
+                                                "ChangeImageLayer", "Expression", "Wink",
+                                                "But instead of biting, they tightly coil and entangle your upper body and arms, thoroughly binding you to the serpentine woman as she lets out a haughty laugh, her long tail swiveling about to press against your back, giving you nowhere to go as she starts to bounce her thick butt to give you a teasing assjob.",
+                                                "ChangeImageLayer", "Snakes", "SnakesNormal",
+                                                "JumpToScene", "RoyalAssjob"
+                                            ]
+                                },
+
+
+                                {
+                                  "NameOfScene": "Remove Counter Checks",
+                                  "theScene": [   "ChangeImageLayer", "Snakes", "SnakesNormal",
+                                                  "SetChoice", "1", "",
+                                                  "SetChoice", "2", "",
+                                                  "ResumeMonsterAttack"
+                                            ]
+                                },
+                        {
+                          "NameOfScene": "CounterSetCheck",
+                          "theScene": [   "SetChoice", "1", "",
+                                          "IfMonsterHasStance", "Sex", "DoAttack",
+                                          "IfMonsterHasStance", "Anal", "DoAttack",
+                                          "SetChoice", "2", "counter set",
+                                          "SkipMonsterAttack",
+                                          "ChangeImageLayer", "Expression", "Base",
+                                          "ChangeImageLayer", "Snakes", "SnakesGlare", "ChangeImageLayer", "Expression", "Glare",
+                                          "Iabel languidly hisses with intense focus as her shadow snake filled hair eerily turn all their attention to you with eyeless, threatening glares, as if reading your every move..."
+                                    ]
+                        },
+                            {
+                              "NameOfScene": "DoAttack",
+                              "theScene": [  "ChangeImageLayer", "Snakes", "SnakesNormal",
+                                              "CallMonsterAttack"
+                                        ]
+                            },
+                        {
+                          "NameOfScene": "CounterEnd",
+                          "theScene": [   "SetChoice", "2", "",
+                                          "ResumeMonsterAttack",
+                                          "ChangeImageLayer", "Snakes", "SnakesNormal",
+                                          "ChangeImageLayer", "Expression", "Base",
+                                          "Iabel's living hair seems to relax, and flit about her once more with yawning hisses, and the uneasy tension in your body slips away."
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "ResumeFight",
+                          "theScene": [   "SetChoice", "2", "", "ChangeImageLayer", "Snakes", "SnakesNormal",
+                                          "ResumeMonsterAttack"
+                                         ]
+                        },
+                    {
+                      "NameOfScene": "CallCounterAttack",
+                      "theScene": [  "IfMonsterHasStatusEffect", "Sleep", "Remove Counter Checks",
+                                    "IfMonsterHasStatusEffect", "Stun", "Remove Counter Checks",
+                                    "IfMonsterHasStatusEffect", "Restrain", "Remove Counter Checks",
+                                    "IfChoice", "2", "counter set", "PetrifyCounterAttack!"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "PetrifyCounterAttack!",
+                      "theScene": [   "SetChoice", "2", "Countered!",
+                                      "SkipPlayerAttack",
+                                      "IfChoice", "3", "MaskOff", "GlareNoMask",
+                                      "ChangeImageLayer", "Expression", "GlareShine", "ChangeImageLayer", "Mask", "",
+                                      "SetPostName", " - Chthonic Gaze: Petrification",
+                                      "FocusedSpeaksSkill",
+                                      "As you try to make a move, one of Iabel's snakes darts down and pulls of her gilded mask, revealing to you her shining magically charged gaze, hitting you with an intense spine chilling cascade of arcane power that resonates all through your body!",
+                                      "FocusedSpeaksSkill",
+                                      "The dangerously numbing, tingling sensation surges across your skin as you are rapidly turned to stone! ...With the sole exception of your raging erection and aching balls, leaving all your senses acutely focused on your exposed loins.",
+                                      "ChangeImageLayer", "Mask", "Mask", "ChangeImageLayer", "Snakes", "SnakesNormal",  "ChangeImageLayer", "Expression", "Wink", "ClearStances",
+                                      "One of her snakes carefully sets the serpent woman's mask back on with a metallic click while she slowly lowers herself between your legs with a lazy lick of her plump gilded lips, letting her snakes relax as she settles in with a purr.",
+                                      "JumpToScene", "PostPetrify"
+                                  ]
+                    },
+                              {
+                                "NameOfScene": "GlareNoMask",
+                                "theScene": [
+                                                "ChangeImageLayer", "Expression", "GlareShine", "ChangeImageLayer", "Mask", "",
+                                                "SetPostName", " - Chthonic Gaze: Petrification",
+                                                "FocusedSpeaksSkill",
+                                                "As you try to make a move, Iabel's intense glare shines with magically charged might, hitting you with an intense spine chilling cascade of arcane power that resonates all through your body!",
+                                                "FocusedSpeaksSkill",
+                                                "The dangerously numbing, tingling sensation surges across your skin as you are rapidly turned to stone! ...With the sole exception of your raging erection and aching balls, leaving all your senses acutely focused on your exposed loins.",
+                                                "ChangeImageLayer", "Snakes", "SnakesNormal", "ChangeImageLayer", "Expression", "Wink", "ClearStances",
+                                                "Iabel slowly lowers herself between your legs with a lazy lick of her plump gilded lips, letting her snakes relax again as she settles in with a purr, gazing along your length appreciatively.",
+                                                "JumpToScene", "PostPetrify"
+                                            ]
+                              },
+                    {
+                      "NameOfScene": "PostPetrify",
+                      "theScene": [
+                                      "SetPostName", "",
+                                      "FocusedSpeaks",
+                                      "You're my helpless toy now, human.♥",
+                                      "ChangeImageLayer", "Expression", "Kiss",
+                                      "HitPlayerWith", "PetrifiedKisses",
+                                      "Iabel purrs and gently plants loving lipstick smooches along your rigid length, making it twitch and leak in tingly delight with each kiss mark left behind, your petrified state leaving you unable to focus on anything else but the divine pleasure her plush lips are showering your shaft with, the rest of your body numb as though it weren't even there, like you're {i}only{/i} an aching erection to be played with.[DamageToPlayer]",
+                                      "HitPlayerWith", "PetrifiedBJ", "ChangeImageLayer", "Expression", "Oral",
+                                      "There's nothing you can do but moan powerlessly as the serpentine goddess kisses your leaking tip with her luxurious lips then slides down your exposed manhood, affectionately sucking your cock as her long tongue rolls along the underside of your twitching shaft. Your entire cock trembles blissfully at her attentions, getting assailed with ever more tingling bliss as she uses a free hand to tease your balls with her long nails.[DamageToPlayer]",
+                                      "HitPlayerWith", "PetrifiedTitfuck", "ChangeImageLayer", "Expression", "Wink",
+                                      "After hilting her gilded mouth down your length, Iabel slowly pulls back with a languid suck before freeing your cock with a lewd sigh, lazily licking her lips as she lifts herself up slightly. With a haughty laugh, she then sandwiches your hapless erection between her luxurious, pillowy cleavage, giving your trembling dick a few experimental pumps with her plush bust, leaving your mind spinning in euphoria from the sinfully soft prison.[DamageToPlayer]",
+                                      "FocusedSpeaks",
+                                      "Ufufu.♥ I wonder which is your favorite?♥",
+                                      "Iabel lets her heavy bust bounce back down with a jewelryed jingle as she musingly hisses how to toy with your eagerly throbbing manhood.",
+                                      "JumpToScene", "PetrifyScene"
+                                  ]
+                    },
+                    {
+                      "NameOfScene": "PetrifyScene",
+                      "theScene": [
+                                      "JumpToRandomScene",
+                                        "PetrifyLewdsKiss",
+                                        "PetrifyLewdsOral",
+                                        "PetrifyLewdsTits",
+                                      "EndLoop"
+                                  ]
+                    },
+                                {
+                                  "NameOfScene": "PetrifyLewdsKiss",
+                                  "theScene": [
+                                                "HitPlayerWith", "PetrifiedKisses",
+                                                "ChangeImageLayer", "Expression", "Kiss",
+                                                "SwapLineIf", "Random",
+                                                  "Iabel lazily lavishes the length of your dick with affectionate sucks and licks, layering warm, golden lipstick all over your pampered manhood, and there's nothing you can do but enjoy every touch of her plump lips pressing against your shaft, growing ever more intoxicated by the divinely indulgent sensation filling up your body.[DamageToPlayer]",
+                                                  "Iabel plants loving kisses on your tensing, churning balls, warmly marking them with her golden lipstick and filling them with aching need as she trails her smooches up along your shaft before sending a mind-blanking bolt of pleasure through your hips as once she presses her plush lips to your cockhead in an intimate makeout session, flicking her tongue against your tip while you leak for her.[DamageToPlayer]",
+                                                "EndLoop",
+                                                "IfPlayerOrgasm", "PetrifyLewdsKissOrgasm",
+                                                "SetChoice", "4", "PetrifyKissu",
+                                                "CallSceneThenReturn", "KissStack",
+                                                "IfPlayerSpiritGone", "PetrifyEndLoss",
+                                                "FocusedSpeaks",
+                                                "SwapLineIf", "Random",
+                                                  "Hmhmhm~♥",
+                                                  "Auhuhu~♥",
+                                                  "How captivated have you become?♥",
+                                                  "Ufuhu~♥",
+                                                "EndLoop",
+                                                "JumpToScene", "PetrifyMenu"
+                                    ]
+                                },
+                                        {
+                                          "NameOfScene": "PetrifyLewdsKissOrgasm",
+                                          "theScene": [
+                                                        "ChangeImageLayer", "Expression", "Oral",
+                                                        "PlayerOrgasm", "1",
+                                                        "SwapLineIf", "Random",
+                                                          "Your cock trembles and spasms with each affectionate kiss the serpent woman plants on it, making it drool precum in offering to her. Seeing that your twitching, edged cock is ripe for the picking, she finally takes your tribute, sealing her plump lips around your tip with a lewd suck, milking out spurt after spurt of semen from your obedient dick, leaving your brain blanking out on loop while you're treated like a simple cum pump.",
+                                                          "Your balls tense and quiver with melty euphoria as the serpentine woman slips down and showers them in loving kisses, coating them in gleaming lipstick until the bubbling pleasure starts to overwhelm you, at which point the regal woman slides back to your tip with a low hiss, lewdly wrapping her plump lips around your cockhead just in time to catch your spurting ejaculation, greedily drinking your seed while your mind turns blank.",
+                                                        "EndLoop",
+                                                        "IfPlayerSpiritGone", "PetrifyEndLoss",
+                                                        "SetChoice", "4", "PetrifyKissu",
+                                                        "ChangeImageLayer", "Expression", "Wink",
+                                                        "Iabel gulps down your seed before pulling back with a satisfied sigh, wiping her soft lips with a dainty hand as she ponders how to tease you next.",
+                                                        "CallSceneThenReturn", "KissStack",
+                                                        "IfPlayerSpiritGone", "PetrifyEndLoss",
+                                                        "ApplyStatusEffect", "Charm",
+                                                        "SwapLineIf", "Random",
+                                                          "Wonderful~♥ Now give me more.♥",
+                                                          "Auhuhu~♥ So your cock is eager to obey.♥",
+                                                          "By the time you're free, you'll be completely enchanted.♥",
+                                                          "Ufuhu~♥ Are you enjoying being a dildo for me?♥",
+                                                        "EndLoop",
+                                                        "JumpToScene", "PetrifyMenu"
+                                            ]
+                                        },
+                                {
+                                  "NameOfScene": "PetrifyLewdsOral",
+                                  "theScene": [
+                                                "HitPlayerWith", "PetrifiedBJ",
+                                                "ChangeImageLayer", "Expression", "Oral",
+                                                "ChangeProgress", "1",
+                                                "SwapLineIf", "Random",
+                                                  "Iabel purses her plump lips and kisses your tip before slowly sliding up and down your shaft with lazy sucks, her long tongue rolling along the underside of your shaft as she works to coax out your semen. The serpent goddess lets out a low purr as she bobs her head, sending blissful tremors all through your quivering erection, making it throb in submission to the divine pleasure she's gifting you with.[DamageToPlayer]",
+                                                  "With a haughty chuckle, Iabel affectionately grazes your tensing balls with her refined nails while she wraps her plush golden lips around your dick and slowly bobs up and down, intently sucking while teasing your unpetrified skin to its sensory limits, leaving your mind blanking out in white-hot bliss as she hilts you down her tight throat with a few naughty gulps before sliding back up with a muffled purring hiss.[DamageToPlayer]",
+                                                "EndLoop",
+                                                "IfPlayerOrgasm", "PetrifyLewdsOralOrgasm",
+                                                "She then frees your tip with a wet pop, licking her lips as she muses on how to toy with you next.",
+                                                "FocusedSpeaks",
+                                                "SwapLineIf", "Random",
+                                                  "Hmhmhm~♥ Just surrender.♥",
+                                                  "Auhuhu~♥ You keep twitching.♥",
+                                                  "You are quite tasty, human.♥",
+                                                  "Ufuhu~♥",
+                                                "EndLoop",
+                                                "JumpToScene", "PetrifyMenu"
+                                    ]
+                                },
+                                        {
+                                          "NameOfScene": "PetrifyLewdsOralOrgasm",
+                                          "theScene": [
+                                                        "PlayerOrgasm", "1",
+                                                        "SwapLineIf", "Random",
+                                                          "Your manhood spasms between her plump lips as she sucks on your tip, her long tongue twirling about your leaking cock head, lapping up every drop of precum before slowly sliding down your length to its throbbing base, her nimble fingers kneading your twitching balls while she gulps slowly along your dick, pushing you past the brink, drawing out thick ropes of semen for her to drink down with a purr.",
+                                                          "The ravenous serpentine goddess smoothly glides her plush, gilded lips up and down your throbbing length, your impending climax rapidly narrowing your existence down to your manhood as the rest of your body is left senseless, until the heavenly bliss overwhelms you in a mind-blanking peak as she takes your entire length and you obediently pour your thick seed down her greedily gulping throat.",
+                                                        "EndLoop",
+                                                        "IfPlayerSpiritGone", "PetrifyEndLoss",
+                                                        "ApplyStatusEffect", "Charm",
+                                                        "ChangeImageLayer", "Expression", "Wink",
+                                                        "Slowly, Iabel pulls away from your twitching dick with a satisfied sigh, giving your tip a loving smooch as a reward for its obedience. Then she leans back, licking her plump lips while musing on how to toy with you next.",
+                                                        "FocusedSpeaks",
+                                                        "SwapLineIf", "Random",
+                                                          "Wonderful~♥ Now give me more.♥",
+                                                          "Auhuhu~♥ So your cock is eager to obey.♥",
+                                                          "By the time you're free, you'll be completely enchanted.♥",
+                                                          "Ufuhu~♥ Are you enjoying being a dildo for me?♥",
+                                                        "EndLoop",
+                                                        "JumpToScene", "PetrifyMenu"
+                                            ]
+                                        },
+                              {
+                                "NameOfScene": "PetrifyLewdsTits",
+                                "theScene": ["ChangeProgress", "1",
+                                              "HitPlayerWith", "PetrifiedTitfuck",
+                                              "ChangeImageLayer", "Expression", "Wink",
+                                              "SwapLineIf", "Random",
+                                                "Iabel leans in and engulfs your rigid cock in her pillowy cleavage, rolling her plush tits in slow teasing circles around your twitching erection, letting you fully enjoy every little detail of her luxuriously soft breasts squeezing and massaging your erection, your petrified state rendering you incapable to do anything but sink deeper into the heavenly titfuck, the overflowing, melty bliss leaving your tip leaking in submission.[DamageToPlayer]",
+                                                "Iabel sandwiches your manhood between her huge tits and pumps them up and down in unison, making her gilded pasties bounce and jingle as she pampers your dick with her regal cleavage, the divine pressure of the serpent woman's bust all you can focus on as every stroke of her tits brings you closer to rapturous submission.[DamageToPlayer]",
+                                              "EndLoop",
+                                              "IfPlayerOrgasm", "PetrifyLewdsTitsOrgasm",
+                                              "With a haughty laugh she relents the use of her plush bosom, letting her breasts bounce back down while she teasingly, showily runs her nails across her skin.",
+                                              "FocusedSpeaks",
+                                              "SwapLineIf", "Random",
+                                                "Hmhmhm~♥ Just surrender.♥",
+                                                "Auhuhu~♥ You keep twitching.♥",
+                                                "I should be careful.♥ Or you might get hooked on this.♥",
+                                                "Ufuhu~♥ Did you want me to keep going?♥",
+                                              "EndLoop",
+                                              "JumpToScene", "PetrifyMenu"
+                                  ]
+                              },
+                                      {
+                                        "NameOfScene": "PetrifyLewdsTitsOrgasm",
+                                        "theScene": [
+                                                      "ChangeImageLayer", "Expression", "Caring",
+                                                      "PlayerOrgasm", "1",
+                                                      "SwapLineIf", "Random",
+                                                        "The serpentine woman purrs as your dick throbs between her pillowy tits, slowly squeezing and kneading her opulent bust around your length, sensually rubbing and massaging your every inch, immersing it in intoxicating pleasure that fills your mind to the brim with the softness of her heavenly cleavage, and you leak and twitch helplessly as climactic bliss bubbles up deep inside you, until you finally erupt all over her tits in a spurting shower of cum.",
+                                                        "With a haughty laugh, the serpentine queen bounces her heavy tits with mind-melting impacts that make them jiggle obscenely, your manhood left spasming in submission with each pump of the divine goddess' pillowy cleavage, leaving your sense of touch utterly overwhelmed with intoxicating softness, until the constant cascade of euphoria cracks your resistance and your cock spurts your seed out wildly over her bust.",
+                                                      "EndLoop",
+                                                      "IfPlayerSpiritGone", "PetrifyEndLoss",
+                                                      "ApplyStatusEffect", "Charm",
+                                                      "Purring, the dark-haired woman lets her semen-coated bust lazily drop with a tempting jiggle, using her nails to languidly scoop some of your seed into her mouth while her skin soaks in the rest with a faint golden glow.",
+                                                      "FocusedSpeaks",
+                                                      "SwapLineIf", "Random",
+                                                        "Wonderful~♥ Now give me more.♥",
+                                                        "Auhuhu~♥ So your cock is eager to obey.♥",
+                                                        "By the time you're free, you'll be completely enchanted.♥",
+                                                        "Ufuhu~♥ Are you enjoying being a dildo for me?♥",
+                                                      "EndLoop",
+                                                      "JumpToScene", "PetrifyMenu"
+                                          ]
+                                      },
+
+                                      {
+                                        "NameOfScene": "PetrifyEndLoss",
+                                        "theScene": [  "ChangeImageLayer", "Expression", "Wink",
+                                                      "With your dick obediently throbbing and leaking in response to each and every delightful gesture of divine affection Iabel showers it with, the snakelike hellhound lets the petrification effect end, the stone encasing your body vanishing like dust, letting you crumple on your back with a love-drunk whimper.",
+                                                      "FocusedSpeaks",
+                                                      "Auhuhu~♥ Your metamorphosis into my love-struck servant should now be complete.♥",
+                                                      "ChangeImageLayer", "Expression", "Smug",
+                                                      "While you dazedly stare upward, Iabel leans over your shivering, pleasure-ruined form with a smirk, her heavy tits pendulously hanging underneath her along with her gilded jewelry and shiny adornments that lightly jingle and twinkle as she looms over you, one idle hand gliding across her soft skin to flaunt her plush breasts with a tempting lift and a jiggly drop that makes your cock eagerly throb while you let out a choked mewl.",
+                                                      "FocusedSpeaks",
+                                                      "... But perhaps you don't want this to stop here? Perhaps you would like to enjoy being my personal toy and nothing else?♥ Just a {i}little{/i} longer?♥",
+                                                        "ChangeImageLayer", "Expression", "Caring",
+                                                      "Totally lost to melty captivation, both your thoughts and vision hopelessly swimming in needy gilded infatuation, you eagerly nod with a pleasure-drunk smile at your serpentine goddess, drawing a loving purr from her soft gold-painted lips.",
+                                                      "FocusedSpeaks",
+                                                      "Ufuhu~♥ {i}Very{/i} good choice. You will be such a perfect submissive dildo once I'm done.♥ Irremediably fascinated and enchanted by me.♥",
+                                                      "ChangeImageLayer", "Expression", "GlareSeductiveShine",
+                                                      "The next moment, with a golden glare and a hungry purr of delight, you're hit with a familiar and intense numbness as a tingly spine-chilling cascade of magic resonates all through your body like pleasurable shocks. Everything goes dangerously numb as you're once more rapidly turned to stone, excluding your aching, leaking, throbbing erection and your tense, heavy balls, all of your senses brought to focus between your legs.",
+                                                      "ChangeImageLayer", "Expression", "Wink",
+                                                      "FocusedSpeaks",
+                                                      "Perfect...♥ Such an eager toy you are.♥ So happy to be helpless and at my mercy.♥",
+                                                      "Iabel slowly licks her lips as she lowers herself down to your prone form, trailing her elegant fingers and long nails up the base of your twitching erection's length appreciatively, gently wrapping her fingers around it to give it a few teasing pumps that make your thoughts melt with every stroke, unable to focus on anything but the sensations the serpent woman is giving you.",
+                                                      "ChangeImageLayer", "Expression", "Kiss",
+                                                      "Then, humming contentedly, she settles between your legs, resting her divine breasts against your inert thighs, a vague ghostly sensation of softness spreading over your numb lower body while her regal hand stays coiled around your cock.",
+                                                      "Slowly, sensually smiling at the sight of your proudly erect manhood, she gives your crown a long drawn-out lipstick-staining smooch, the wet smack and charming kiss resonating all through your vulnerable erection, the hellhound woman making sure to let her lips linger against your tip before removing them with a teasing {i}mwah{/i}.",
+                                                      "Oozing pleasure radiates through your hips at the simple smooch, the resulting feeling proving strong enough to make you attempt to clench your teeth and whimper in bliss... but your body is hopelessly unresponsive, making the sensations all the more unbearably intense, your overstimulated cock desperately leaking precum in response while Iabel giggles coquettishly.",
+                                                      "ChangeImageLayer", "Expression", "Caring",
+                                                      "FocusedSpeaks",
+                                                      "Mmmhmm... What a nice reaction, [ThePlayerName]...♥ But you can still be an even {i}better{/i} dildo for me.♥ Even more lovestruck, more worshipful, pliable, and eager to offer up your gooey tribute.♥",
+                                                      "ChangeImageLayer", "Expression", "Kiss",
+                                                      "Taking her time, acting with maddening languorousness, Iabel starts to slowly smooch down along your achingly hard length, every kiss sending resonating shocks through your confined senses, enchanting shockwaves making your mind spin in delirious bliss as your shaft is stained with golden kiss marks that tingle delightfully and seep into your thoughts.",
+                                                      "Your tip is leaking a constant dribble of precum from Iabel's affections, the sultry serpentine lady pausing her kisses just in time to abate a near climax, a howl of frustration never leaving your chest as you watch her swiftly slurp up a sip of the overflowing clear liquid before she purrs sweetly.",
+                                                      "FocusedSpeaks",
+                                                      "Don't be hasty... Be grateful your goddess is going to give this needy cock of yours the intensive, personal, hands-on training it craves and deserves.♥",
+                                                      "ChangeImageLayer", "Expression", "Oral",
+                                                      "With a lick along the underside of your length, she slides her hand up to lightly pump your dick while she gives your tensed, churning balls loving smooches and idle sucks, covering every bit of your exposed, vulnerable body in luxurious kiss marks, every wet {i}Mwah{/i} and smooch sending scalding jolts of enchanting euphoria coursing into you while her slow, languid pace expertly and maddeningly keeps you on the brink of spurting.",
+                                                      "Easily guessing the unbearable need you are feeling, Iabel turns her gaze back to your face, throwing back her hair with her free hand while she gives you a teasing, regal wink.",
+                                                      "ChangeImageLayer", "Expression", "Wink",
+                                                      "FocusedSpeaks",
+                                                      "Your erection will be perfectly obedient, lasting as long as {i}I{/i} want, {i}twitching{/i} and {i}leaking{/i} pleasurably on command, spurting whenever {i}I{/i} want, staying hard for me at {i}alllll{/i} times.",
+                                                      "ChangeImageLayer", "Expression", "Oral",
+                                                      "While your mind sinks and spins from both the picture she's painting and the intolerable arousal rampaging through you, she moves back up your length, breathing out a hot cooing breath across your sensitive skin that leaves your infatuated dick throbbing and spasming crazily as it leaks on the constant brink of spurting for her...",
+                                                      "But not yet. Despite the lust raging through your mind and the overwhelming urge to cum, you're too far charmed to erupt without your goddess' permission, your brain a kiss-stained mess mired in depraved hallucinations of Iabel's soft curves swaying and bouncing while her kisses shower you in melty affection.",
+                                                      "ChangeImageLayer", "Expression", "Kiss",
+                                                      "FocusedSpeaks",
+                                                      "Do you like this, [ThePlayerName]? You like being my fervent acolyte.♥ Craving my touch.♥ So overjoyed to dedicate yourself to me.♥ Loving the feeling of being utterly enchanted by me looping over and over like a constant pleasure high.♥",
+                                                      "ChangeImageLayer", "Expression", "Happy",
+                                                      "You want to scream out your love, your adoration, your total submission to Iabel, you want to beg her to make you cum, to shower her with a tribute of seed for her to absorb... but you can't say or do anything, only leak and throb for her while she looks on at you with her golden eyes, as if reading your every devoted thought and every desperate emotion.",
+                                                      "ChangeImageLayer", "Expression", "GlareSeductive",
+                                                      "Her heavy breasts wrap around your trembling, submissive cock, and while you ache to thrust your hips, there is nothing you can do but lie there and lose yourself to the soft rolling waves of her plush cleavage, her gentle pampering keeping your focus entirely on her bust and the overflowing pleasure high of being her teasable boy toy, unable to escape the near climax that's keeping your dick madly twitching for the serpent goddess.",
+                                                      "ChangeImageLayer", "Expression", "Wink",
+                                                      "FocusedSpeaks",
+                                                      "Completely hooked on my body.♥ Lost in its heavenly embrace.♥ So eager to worship me.♥ To bask in my affections, my kisses.♥",
+                                                      "Giggling, she gives your manhood another insidiously slow pump with her regal tits, and your head goes blank as she plants a gilded smooch on your drooling tip, which is now oozing out a constant stream of precum for her to lightly lap up while your thoroughly tamed dick learns to obey her teasing milking touches, completely losing yourself in her luxurious coddling and ruinous teasing.",
+                                                      "Iabel purrs and squeezes her heavy bust tighter while giving you an indulgent suck as her tits bounce along your length, her ornaments jingling melodiously with each movement, the hot electrifying euphoria rapidly swelling to eclipse everything else but your goddess and your impending explosive orgasm, your heart soaring with joy at the thought that you're finally going to cum-",
+                                                        "ChangeImageLayer", "Expression", "Smug",
+                                                      "Only for her to part from you with a sweet laugh while your erection spasms fruitlessly, your kiss-marked balls churning crazily with boiling, pent-up seed while your tips leaks a veritable rivulet of clear liquid, leaving you barely able to think more than 'I need to cum!' and 'Goddess Iabel!' as she appreciates the work she's done to her royal dildo.",
+                                                      "FocusedSpeaks",
+                                                      "Ufuhu~♥ Oh-so-lost in my divinity you can think of nothing else.♥ Trained in your petrified cocoon to be such a perfect acolyte...♥ But rest assured I am a kind, merciful goddess.♥ So let me reward your devotion.♥",
+                                                      "ChangeImageLayer", "Expression", "Kiss",
+                                                      "She leans in and plants a single smooch on your aching testes that reverberates through your lower body up into your head in a lipstick-stained tingly wave, leaving your oversensitive and excessively teased manhood jolting, twitching, and ruinously laden with molten desire, {i}so close{/i} to the maddening release you desperately need...",
+                                                      "ChangeImageLayer", "Expression", "Oral",
+                                                      "Then she oh-so-gently trails just the tip of her tongue along your length, her warm breath coiling around your trembling girth like a thousand little caresses as she slowly moves up your shaft, ultimately reaching your spasming tip and giving it a gentle smooch of her plush cock-taming lips that renews the hot near-climactic tantalizing jolts running through your narrowed senses like a head-blanking cascade...",
+                                                      "... But still she keeps you teetering right on the brink, your mind roiling and screaming with impossible need for release, all of your addled perceptions focused on the regal snake woman who looks upon you with a fond, confident smile, uttering just a few simple words that seem to strike straight into your mushy brain.",
+                                                      "ChangeImageLayer", "Expression", "GlareSeductive",
+                                                      "FocusedSpeaks",
+                                                      "Surrender {i}everything{/i} to me.",
+                                                      "ChangeImageLayer", "Expression", "Oral",
+                                                      "Still smiling, your serpentine goddess pulls back and lets out a simple but long, ruinously drawn-out, hot sigh onto your leaking, thoroughly dominated cock, her cooing exhale washing across your senses like a destructive wave of pleasure as the warm air dances over your oversensitive skin, that one ultimate touch finally taking you over the edge.",
+                                                      "A tantric cascade of mind-shattering ecstasy resonates up and down your erection, your tip shooting thick ropes of seed to coat Iabel's face and bust in loving reverence, the lustful lady lovingly licking her full lips at the result of her handiwork, relishing both the fresh helping of hot semen and your total surrender to her gilded subjugation.",
+                                                      "Total submission and euphoria stick to your senses, leaving you numb to everything but the whims of the serpentine woman who managed to milk you dry with something so teasingly simple, the feeling of her sweet breath lingering all over you like she's still teasing you, softly blowing on the raging flames of your scalding arousal...",
+                                                      "Even as your climax ebbs away and your hopelessly defeated cock returns to dribbling and twitching, you can feel it stay as achingly hard as before, ecstatic layered charming enchantments lingering all across you, reminding you that you're a happy devoted dildo for your goddess, always eager to offer her a thick stream of semen in tribute...",
+                                                      "ChangeImageLayer", "Expression", "Caring",
+                                                      "FocusedSpeaks",
+                                                      "{i}Perfect{/i}.♥ A perfect lovestruck servant, allll for me.♥ Trained to obey with total adoration and subservience.♥",
+                                                      "With another haughty giggle, she lets the petrification effect end, the stone vanishing all over you while you lay there with a frozen expression that rapidly melts into a pleasure-drunk, tongue-lolling smile as you twitch with aftershocks of euphoria from having been edged so relentlessly, more spurts of semen flowing out of your broken dick to splatter Iabel with surrendered cum.",
+                                                      "Your mind unable to bear the overload of pleasure, you can feel everything going dark around you while throbs of pleasure keep radiating through your numbed lower body, and as your consciousness starts slipping, your goddess lovingly wraps her heavy breasts around your conquered length once more, lazily pumping it in honeyed farewell.",
+                                                      "ChangeImageLayer", "Expression", "Wink",
+                                                      "FocusedSpeaks",
+                                                      "Rest now, mortal... and come back begging for more.♥ Auhuhu~♥",
+                                                      "Her laugh lingers in your mind along with the feeling of her smooches and plush cleavage milking you into a ruined stupor, a part of you very eager to be her teased-senseless dildo all over again...",
+                                                      "...",
+                                                      "ChangeSensitivity", "Sex", "20",
+                                                      "ChangeSensitivity", "Seduction", "10",
+                                                      "ChangeFetish", "Monstrous", "10",
+                                                      "GameOver"
+                                                  ]
+                                      },
+
+                    {
+                      "NameOfScene": "PetrifyMenu",
+                      "theScene": [
+                                  "Menu",
+                                    "Shake off the petrification! (Willpower)",
+                                    "Relax and enjoy the strange situation...",
+                                  "EndLoop"
+                                ]
+                    },
+                            {
+                              "NameOfScene": "Relax and enjoy the strange situation...",
+                              "theScene": [
+                                          "JumpToScene", "PetrifyScene"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Shake off the petrification! (Willpower)",
+                              "theScene": [ "You muster your will to try and stave off the oppressive stonifying effect!",
+                                            "StatCheck",
+                                            "Willpower",
+                                            "25",
+                                            "PetrifyEscape",
+                                            "Fail",
+                                            "PetrifyScene"
+                                        ]
+                            },
+                                {
+                                  "NameOfScene": "PetrifyEscape",
+                                  "theScene": [
+                                              "ChangeImageLayer", "Expression", "Cold",
+                                              "Finally the stone vanishes like dust in the wind, and Iabel slithers back with a disappointed hiss as you recollect your once numbed senses.",
+                                              "FocusedSpeaks",
+                                              "SwapLineIf", "Random",
+                                                "...Perhaps I should merely re-petrify you, you were clearly enjoying it.",
+                                                "Did you not enjoy being my personal dildo?♥",
+                                                "Maybe I should have given you more lipstick marks...",
+                                              "EndLoop"
+                                            ]
+                                },
+
+
+
+
+
+
+
+                    {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [   "Iabel combat event broke."
+                                ]
+                    }
+
+                ]
+}

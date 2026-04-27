@@ -1,0 +1,922 @@
+{
+    "name": "VeneficaWildCombatEvents",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Venefica",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "SurgingCalamity",
+                        "theScene": [   "SetPostName", " - Surging Calamity",
+                                          "ChangeImageLayer", "Expression", "Predatory",
+                                          "ApplyStatusEffectToMonster", "SurgingCalamityCrit",
+                                          "ApplyStatusEffectToMonster", "SurgingCalamityRes",
+                                          "ApplyStatusEffectToMonster", "Spank",
+                                        "FocusedSpeaksSkill",
+                                        "SwapLineIf", "Random",
+                                          "'Hahhhh-♥' Venefica lets out an excited growl as she instinctively layers multiple spells over herself, magic radiating off her in waves as she cools off, briefly stunning herself in the process!",
+                                          "'Come on-!♥' Venefica lets out an excited growl as she instinctively layers multiple spells over herself, magic radiating off her in waves as she cools off, briefly stunning herself in the process!",
+                                          "'Hehehehe-!♥' Venefica lets out an excited growl as she instinctively layers multiple spells over herself, magic radiating off her in waves as she cools off, briefly stunning herself in the process!",
+                                          "'More-!♥ {i}More!♥{/i}' Venefica lets out an excited growl as she instinctively layers multiple spells over herself, magic radiating off her in waves as she cools off, briefly stunning herself in the process!",
+                                        "EndLoop",
+                                        "SetPostName", ""
+                                  ]
+                    },
+
+
+                    {
+                        "NameOfScene": "HighArousal",
+                        "theScene": [
+                                        "IfPlayerIsUsingThisSkill", "Holy Headpat", "Pats",
+                                        "FocusedSpeaksSkill",
+                                        "SwapLineIf", "Random",
+                                            "|f|ChangeImageLayer|/|Expression|/|Horny|n||f|ChangeImageLayer|/|HatAndFaceEffects|/|NoHatBlush|n|'Ah-♥ Yes-♥",
+                                            "|f|ChangeImageLayer|/|Expression|/|Horny|n||f|ChangeImageLayer|/|HatAndFaceEffects|/|NoHatBlush|n|'Just a bit more-♥'",
+                                            "|f|ChangeImageLayer|/|Expression|/|Horny|n||f|ChangeImageLayer|/|HatAndFaceEffects|/|NoHatBlush|n|'Come onnnn-♥ I'm almost there-♥'",
+                                            "|f|ChangeImageLayer|/|Expression|/|Horny|n||f|ChangeImageLayer|/|HatAndFaceEffects|/|NoHatBlush|n|'Can't think-♥'",
+                                        "EndLoop"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Pats",
+                        "theScene": [
+                                      "IfChoice", "1", "", "PatsEffective",
+                                        "FocusedSpeaksSkill",
+                                        "SwapLineIf", "Random",
+                                            "|f|ChangeImageLayer|/|Expression|/|Curious|n|'...?'",
+                                            "|f|ChangeImageLayer|/|Expression|/|Curious|n|She just looks a little confused and curious as you ruffle her hair and caress her ears.",
+                                            "|f|ChangeImageLayer|/|Expression|/|Curious|n|Venefica purrs happily at your touch, but there's still a hungry glint in her eyes.",
+                                            "|f|ChangeImageLayer|/|Expression|/|Sparkling|n|'...' She seems oddly happy for a moment.",
+                                        "EndLoop"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "PatsEffective",
+                                "theScene": ["SetChoice", "1", "pattedSpirit",
+                                            "ChangeImageLayer", "Expression", "Curious",
+                                            "ChangeMonsterSpirit", "-2",
+                                            "Venefica purrs happily at your touch and nuzzles into your hand, her ears flicking curiously, and she lets out a rather calm sigh, it seems like this eased down her riled up state.",
+                                            "IfMonsterSpiritGone", "TheEvilIsDefeated",
+                                            "ChangeImageLayer", "Expression", "Devious",
+                                            "But she lets out a hungry growl, licking of her lips as she brushes your hand away, clearly still intent on draining you dry."
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "TheEvilIsDefeated",
+                                "theScene": [ "ChangeImageLayer", "Expression", "Sigh",
+                                              "She then closes her eyes and leans into you with a lazy murmur, the roiling magical aura fading away from her slowly as she relaxes and enjoys your soothing touch, clearly no longer intent on trying to fuck your brains out.",
+                                              "Speak", "Elly",
+                                              "SwapLineIf", "OtherEventsChoice", "VeneficaCombatEvents",
+                                                "2", "EllyAid", "...I- Uh... Really?",
+                                                "2", "", "",
+                                              "EndLoop",
+                                              "DefeatMonster"
+                                          ]
+                            },
+
+
+                    {
+                        "NameOfScene": "KissingMount",
+                        "theScene": [
+                                        "IfPlayerHasStance", "Sex", "AphroLineOnly",
+                                        "IfPlayerHasStance", "Anal", "AphroLineOnly",
+                                        "As your body throbs with warmth from Venefica magically enhanced, aphrodisiac laden saliva slowly taking its pleasurable toll, she presses herself forward, hooking a long leg around your legs in an effort to send you sprawling to the floor!",
+                                        "IfPlayerHasStatusEffect", "Surrender", "Accept whatever she's planning.",
+                                        "Menu",
+                                          "Keep yourself steady! (Power)",
+                                          "Tease her to keep control! (Allure)",
+                                          "Accept whatever she's planning.",
+                                        "EndLoop"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "AphroLineOnly",
+                              "theScene": [
+                                            "Your body throbs with warmth as Venefica's magically enhanced, aphrodisiac laden saliva slowly takes its pleasurable toll..."
+                                        ]
+                          },
+                          {
+                            "NameOfScene": "Keep yourself steady! (Power)",
+                            "theScene": [   "You try to keep Venefica from knocking you to the ground!",
+                                            "StatCheck",
+                                              "Power",
+                                              "25",
+                                              "Steady",
+                                              "Fail",
+                                              "FailedSteady"
+                                      ]
+                          },
+                                {
+                                  "NameOfScene": "FailedSteady",
+                                  "theScene": [ "But your best efforts fail!",
+                                                "JumpToScene", "PushedDown"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "Steady",
+                                  "theScene": [    "ChangeImageLayer", "Expression", "LipLick",
+                                                  "And you manage to keep yourself from falling back with Venefica despite her aggressively making out with you."
+                                            ]
+                                },
+                        {
+                          "NameOfScene": "Tease her to keep control! (Allure)",
+                          "theScene": [   "You try to tease and caress Venefica while maintaining the kiss to distract her!",
+                                          "StatCheck",
+                                            "Allure",
+                                            "20",
+                                            "Distracted",
+                                            "Fail",
+                                            "FailedDistract"
+                                    ]
+                        },
+                              {
+                                "NameOfScene": "FailedDistract",
+                                "theScene": [   "JumpToScene", "PushedDown"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "Distracted",
+                                "theScene": [    "ChangeImageLayer", "Expression", "LipLick",
+                                                "And you manage to keep yourself from falling back with Venefica despite her aggressively making out with you."
+                                          ]
+                              },
+                        {
+                          "NameOfScene": "PushedDown",
+                          "theScene": [
+                                        "But despite your best efforts Venefica completely overpowers you and shoves you to the ground while passionately kissing you senseless!",
+                                        "JumpToScene", "KissIntoSex"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "Accept whatever she's planning.",
+                          "theScene": [  "Venefica easily overpowers you and shoves you to the ground while passionately kissing you senseless!",
+                                          "JumpToScene", "KissIntoSex"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "KissIntoSex",
+                          "theScene": [ "ApplyStance", "Sex", "ApplyStatusEffect", "Spank",
+                                        "Then in a single smooth motion she engulfs your rigid length with her drooling pussy, squeezing it tightly as she starts to ride you at a rapid pace, leaving you briefly stunned in the process!"
+                                    ]
+                        },
+
+
+
+
+
+
+
+
+                  {
+                      "NameOfScene": "UmbralDevastation",
+                      "theScene": [
+                                  "SetPostName", " - Umbral Devastation",
+                                  "ChangeImageLayer", "Expression", "LipLick",
+                                  "FocusedSpeaksSkill",
+                                  "SwapLineIf", "Random",
+                                    "'Hahhhh!♥♥♥' Venefica's magic surges out as she shivers with lustful glee, sending inky black magic lashing out wildly from her tattoos, some carving up the cavern tunnels, but many instinctively lance towards at Elly!",
+                                    "'Come on!♥♥♥' Venefica's magic surges out as she shivers with lustful glee, sending inky black magic lashing out wildly from her tattoos, some carving up the cavern tunnels, but many instinctively lance towards at Elly!",
+                                    "'More!♥♥♥' Venefica's magic surges out as she shivers with lustful glee, sending inky black magic lashing out wildly from her tattoos, some carving up the cavern tunnels, but many instinctively lance towards at Elly!",
+                                    "'Hehehehe!♥♥♥' Venefica's magic surges out as she shivers with lustful glee, sending inky black magic lashing out wildly from her tattoos, some carving up the cavern tunnels, but many instinctively lance towards at Elly!",
+                                  "EndLoop",
+                                  "SetPostName", "",
+                                  "Speak", "Elly",
+                                  "SwapLineIf", "Random",
+                                    "Oh- That can't be good-!",
+                                    "O-Oh no!",
+                                    "I-I might need some help!",
+                                    "I-I don't think I can stop that thing!",
+                                  "EndLoop",
+                                  "IfPlayerHasStatusEffect", "Stun", "HelplessElly",
+                                  "IfPlayerHasStance", "Any", "BlastEllyInStance",
+                                  "Menu",
+                                    "Shove Elly out of the way! (Technique)",
+                                    "Block it with magic! (Intelligence)",
+                                    "Interpose yourself! (Take damage, but won't fail.)",
+                                    "She can probably handle it herself...",
+                                  "EndLoop"]
+                  },
+                          {
+                            "NameOfScene": "Shove Elly out of the way! (Technique)",
+                            "theScene": [    "StatCheck",
+                                              "Technique",
+                                              "20",
+                                              "PushElly",
+                                              "Fail",
+                                              "FailedShove"
+                                      ]
+                          },
+                                {
+                                  "NameOfScene": "FailedShove",
+                                  "theScene": [  "But you can't reach Elly in time!",
+                                                "JumpToScene", "EllyGetsBlasted"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "PushElly",
+                                  "theScene": [    "ChangeImageLayer", "Expression", "Devious",
+                                                  "And you manage to shove the panicking Elly out of the way at the last second as the terrifying beams of pitch black magic rip through her defensive magic like butter! She gives you a quiet thank you as you both recompose yourself.",
+                                                  "FocusedSpeaks",
+                                                  "SwapLineIf", "Random",
+                                                    "Stop messing around with her-♥",
+                                                    "Hahaha-♥",
+                                                    "Come on get back here!♥",
+                                                    "This is so entertaining!♥",
+                                                    "Your faces are making me so excited!♥",
+                                                  "EndLoop"
+                                            ]
+                                },
+                          {
+                            "NameOfScene": "Block it with magic! (Intelligence)",
+                            "theScene": [    "StatCheck",
+                                              "Intelligence",
+                                              "20",
+                                              "magiBlock",
+                                              "Fail",
+                                              "FailedToBlock"
+                                      ]
+                          },
+                                {
+                                  "NameOfScene": "FailedToBlock",
+                                  "theScene": [  "But despite your best efforts, the lancing beams of magic spill past you and destroy your barriers before heading for Elly!",
+                                                "JumpToScene", "EllyGetsBlasted"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "magiBlock",
+                                  "theScene": [ "ChangeImageLayer", "Expression", "Devious",
+                                                  "And you manage to repel the intense dark magical onslaught with an arcane barrier, the rampaging inky black spells scattering against it, and Elly lets out a sigh of relief.",
+                                                  "FocusedSpeaks",
+                                                  "SwapLineIf", "Random",
+                                                    "Stop messing around with her-♥",
+                                                    "Hahaha-♥",
+                                                    "This is so entertaining!♥",
+                                                    "Your faces are making me so excited!♥",
+                                                  "EndLoop"
+                                            ]
+                                },
+                          {
+                            "NameOfScene": "HelplessElly",
+                            "theScene": [  "You're currently helpless to aid Elly!",
+                                          "JumpToScene",
+                                              "EllyGetsBlasted"
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "She can probably handle it herself...",
+                            "theScene": [  "You decide to do nothing to help Elly...",
+                                          "JumpToScene",
+                                              "EllyGetsBlasted"
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "Interpose yourself! (Take damage, but won't fail.)",
+                            "theScene": [
+                                          "HitPlayerWith", "Umbral Rending",
+                                          "You fling yourself into the way of the rampaging magic, leaving you gasping and moaning as you struggle to stand from the pulsing impacts of dark magic running through your body.[DamageToPlayer]",
+                                          "Speak", "Elly",
+                                          "SwapLineIf", "Random",
+                                            "-[TPN]-[ThePlayerName]!",
+                                            "Ghk?! A-Are you okay?!",
+                                            "D-Don't over do it!",
+                                          "EndLoop",
+                                          "ChangeImageLayer", "Expression", "LipLick",
+                                          "FocusedSpeaks",
+                                          "SwapLineIf", "Random",
+                                            "So adorable-♥",
+                                            "Hahaha-♥",
+                                            "The way you're squirming so desperately-!♥ I want more!♥",
+                                            "Hahhh-♥ I just can't contain myself!♥",
+                                          "EndLoop"
+
+                                      ]
+                          },
+                      {
+                          "NameOfScene": "BlastEllyInStance",
+                          "theScene": [
+                                      "Menu",
+                                        "Calm Venefica down! (Allure)",
+                                        "Throw off the magics dispersal! (Power)",
+                                        "She can probably handle it herself...",
+                                      "EndLoop"]
+                      },
+                                  {
+                                    "NameOfScene": "Calm Venefica down! (Allure)",
+                                    "theScene": [   "You press yourself against Venefica and gently tease her body with as much sensual care you can..." ,
+                                                    "StatCheck",
+                                                      "Allure",
+                                                      "20",
+                                                      "Calm",
+                                                      "Fail",
+                                                      "FailedCalm"
+                                              ]
+                                  },
+                                        {
+                                          "NameOfScene": "FailedCalm",
+                                          "theScene": [  "But Venefica's magical outburst isn't slowed in the slightest!",
+                                                        "JumpToScene", "EllyGetsBlasted"
+                                                    ]
+                                        },
+                                        {
+                                          "NameOfScene": "Calm",
+                                          "theScene": [    "ChangeImageLayer", "Expression", "LipLick",
+                                                          "And you manage to distract the primally driven Venefica enough that the magical outpour fizzles out as she turns her aroused attention back to you with a hungry grin, but Elly is untouched!",
+                                                          "FocusedSpeaks",
+                                                          "SwapLineIf", "Random",
+                                                            "More...♥",
+                                                            "Hahhhh...♥",
+                                                            "Come on...♥",
+                                                            "Mnnnn...♥",
+                                                          "EndLoop"
+                                                    ]
+                                        },
+                                  {
+                                    "NameOfScene": "Throw off the magics dispersal! (Power)",
+                                    "theScene": [   "You try to shove Venefica to aim the flailing magical outburst at the cave walls instead of Elly!",
+                                                      "StatCheck",
+                                                      "Power",
+                                                      "20",
+                                                      "ThrowOff",
+                                                      "Fail",
+                                                      "FailedToThrowOff"
+                                              ]
+                                  },
+                                        {
+                                          "NameOfScene": "FailedToThrowOff",
+                                          "theScene": [  "But despite your best efforts, Venefica's magic unerringly flies at Elly!",
+                                                        "JumpToScene", "EllyGetsBlasted"
+                                                    ]
+                                        },
+                                        {
+                                          "NameOfScene": "ThrowOff",
+                                          "theScene": [ "ChangeImageLayer", "Expression", "LipLick",
+                                                          "And you manage to push Venefica's down, and the magic scatters across the ground and cave walls instead crashing into Elly!",
+                                                          "FocusedSpeaks",
+                                                          "SwapLineIf", "Random",
+                                                            "Hahhh...♥",
+                                                            "Hehehe...♥ I wonder if you can keep that up!♥",
+                                                            "I'm going to fuck you into the ground for that!♥",
+                                                            "Oh?♥ Really think you can satisfy me?♥♥♥",
+                                                          "EndLoop"
+                                                    ]
+                                        },
+
+                          {
+                            "NameOfScene": "EllyGetsBlasted",
+                            "theScene": [
+                                          "GetEventAndIfChoice", "VeneficaCombatEvents", "3", "Hit2", "EllyDown",
+                                          "...And Venefica's wild magic rips through Elly's attempts to stop it with ease, slamming into her small frame with a resonating pulse of magic that leaves her crying out in shock and pleasure, nearly falling to the floor that instant, but manages to keep her footing.",
+                                          "Speak", "Elly",
+                                          "SwapLineIf", "OtherEventsChoice", "VeneficaCombatEvents",
+                                            "3", "Hit1", "Mnnn-!♥♥♥ I- Ah-♥ Th-This is bad-♥ I-If I get hit by that again, I'm finished-",
+                                            "3", "", "Hahh- Hahh- O-Okay- Er- c-can you try to stop that if she does it again-? Th-There wasn't anything I could do against it-",
+                                          "EndLoop",
+                                          "GetEventAndIfChoice", "VeneficaCombatEvents", "3", "Hit1", "MakeHit2",
+                                          "GetEventAndSetChoice", "VeneficaCombatEvents", "3", "Hit1"
+                                      ]
+                          },
+                                {
+                                  "NameOfScene": "MakeHit2",
+                                  "theScene": [
+                                                "GetEventAndSetChoice", "VeneficaCombatEvents", "3", "Hit2"
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "EllyDown",
+                                  "theScene": [
+                                                "GetEventAndSetChoice", "VeneficaCombatEvents", "2", "EllyDown",
+                                                "RemoveSkillFromMonster", "Umbral Devastation",
+
+                                                "...And Venefica's magic rips through Elly's attempts to stop it with ease, washing across her small frame with resonating pulses of magic that leaves her crying out in orgasmic ecstasy, her entire body shivering with delight while she gushes her juices onto the floor before slowly crumpling to the ground...",
+                                                "Speak", "Elly",
+                                                "SwapLineIf", "Random",
+                                                  "-[TPN]-[ThePlayerName]...",
+                                                  "Th-This is... bad...",
+                                                  "I-I can't... Anymore...",
+                                                "EndLoop",
+                                                "ChangeImageLayer", "Expression", "Predatory",
+                                                "FocusedSpeaks",
+                                                "Hmmm?♥ Oh she's out of the way?♥ Hehehe-♥ Oh well-♥"
+                                            ]
+                                },
+
+
+                    {
+                      "NameOfScene": "CalamityRush",
+                      "theScene": [
+
+                                    "SetPostName", " - Calamity Rush",
+                                      "ChangeImageLayer", "Expression", "Predatory",
+                                    "FocusedSpeaksSkill",
+                                    "SwapLineIf", "Random",
+                                        "'Come here!♥' Venefica crouches down to the ground on all fours for a moment, wreathing herself in twisting dark magic before launching herself forward with her long powerful legs, stretching out her clawed hands to catch you!",
+                                        "'Mine!♥' Venefica crouches down to the ground on all fours for a moment, wreathing herself in twisting dark magic before launching herself forward with her long powerful legs, stretching out her clawed hands to catch you!",
+                                        "'You look delicious!♥' Venefica crouches down to the ground on all fours for a moment, wreathing herself in twisting dark magic before launching herself forward with her long powerful legs, stretching out her clawed hands to catch you!",
+                                        "'Hehehe!♥' Venefica crouches down to the ground on all fours for a moment, wreathing herself in twisting dark magic before launching herself forward with her long powerful legs, stretching out her clawed hands to catch you!",
+                                        "'Hahhhh-♥' Venefica crouches down to the ground on all fours for a moment, wreathing herself in twisting dark magic before launching herself forward with her long powerful legs, stretching out her clawed hands to catch you!",
+                                    "EndLoop",
+                                    "SetPostName", "",
+                                    "SwapLineIf", "OtherEventsChoice", "VeneficaCombatEvents",
+                                      "2", "EllyAid", "There's a flare of magic as Elly desperately tries to reinforce you with magic to fend off the rampaging Venefica!",
+                                      "2", "", "",
+                                    "EndLoop",
+                                    "IfPlayerHasStatusEffect", "Stun", "Freeze up.",
+                                    "IfPlayerHasStatusEffect", "Surrender", "Freeze up.",
+                                    "Menu",
+                                      "Stop her approach! (Power)",
+                                      "Dodge! (Technique)",
+                                      "Freeze up.",
+                                    "EndLoop"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "Stop her approach! (Power)",
+                      "theScene": [
+                                    "StatCheck",
+                                    "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "VeneficaCombatEvents", "2", "EllyAid", "-5",
+                                    "Power",
+                                    "35",
+                                    "MeetHer",
+                                    "Fail",
+                                    "FailStop"
+                                ]
+                    },
+                            {
+                              "NameOfScene": "MeetHer",
+                              "theScene": [
+                                            "ChangeImageLayer", "Expression", "Devious", "ApplyStatusEffect", "SurgingCalamityRes",
+                                            "And you manage to catch her hands with your own, skidding back slightly as she pressures you back, attempting to bowl you over, but you shove her back with every bit of force you can manage, and she hops backwards, digging a claw into the stone ground while licking her lips. And you feel oddly empowered from Venefica's residual magic."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "FailStop",
+                              "theScene": [
+                                            "But as you try to push her back, it becomes quickly apparent she's going to overpower you!",
+                                            "JumpToScene", "RushedDown"
+                                        ]
+                            },
+                    {
+                      "NameOfScene": "Dodge! (Technique)",
+                      "theScene": [
+                                    "StatCheck",
+                                    "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "VeneficaCombatEvents", "2", "EllyAid", "-5",
+                                    "Technique",
+                                    "25",
+                                    "AvoidHer",
+                                    "Fail",
+                                    "FailAvoid"
+                                ]
+                    },
+                            {
+                              "NameOfScene": "AvoidHer",
+                              "theScene": [
+                                            "ChangeImageLayer", "Expression", "Devious",
+                                            "And you manage to leap to the side and avoid her ravenous charge, leaving her skidding across the ground with the claws tearing through the ground as she turns to face you again with hungry desire."
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "FailAvoid",
+                              "theScene": [
+                                            "But despite your efforts to evade her she easily corrects her course leaping off the ground again!",
+                                            "JumpToScene", "RushedDown"
+                                        ]
+                            },
+                    {
+                      "NameOfScene": "Freeze up.",
+                      "theScene": [
+                                    "You stand frozen, unable to act as Venefica barrels towards you!",
+                                    "JumpToScene", "RushedDown"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "RushedDown",
+                      "theScene": [ "ApplyStatusEffect", "Pin", "ApplyStance", "Sex", "ChangeImageLayer", "Expression", "LipLick",
+                                    "Venefica grabs your wrists and bowls you over, leaving you flat on your back as she plunges your rigid length inside her and starts with swinging her hips rapidly, all while keeping you thoroughly pinned under her!"
+                                ]
+                    },
+
+
+
+
+                    {
+                      "NameOfScene": "UmbralBunnyRampage",
+                      "theScene": [ "ChangeImageLayer", "Expression", "Devious",
+                                    "SetProgress", "0",
+                                    "SetPostName", " - Umbral Bunny Rampage",
+                                    "FocusedSpeaksSkill",
+                                    "SwapLineIf", "Random",
+                                      "'Squirm for me!♥' Venefica gets down on all fours with an excited growl, her claws digging into the stone as she's wreathed in an ominous aura, before leaping onto an adjacent wall with disconcerting speed, then from there right towards you, her claws engulfed in inky black magic as they slash towards you!",
+                                      "'Hehehehe!♥' Venefica gets down on all fours with an excited growl, her claws digging into the stone as she's wreathed in an ominous aura, before leaping onto an adjacent wall with disconcerting speed, then from there right towards you, her claws engulfed in inky black magic as they slash towards you!",
+                                      "'You're mine!♥' Venefica gets down on all fours with an excited growl, her claws digging into the stone as she's wreathed in an ominous aura, before leaping onto an adjacent wall with disconcerting speed, then from there right towards you, her claws engulfed in inky black magic as they slash towards you!",
+                                      "'More-♥ {i}More!♥{/i}' Venefica gets down on all fours with an excited growl, her claws digging into the stone as she's wreathed in an ominous aura, before leaping onto an adjacent wall with disconcerting speed, then from there right towards you, her claws engulfed in inky black magic as they slash towards you!",
+                                      "'Let's fuck already!♥' Venefica gets down on all fours with an excited growl, her claws digging into the stone as she's wreathed in an ominous aura, before leaping onto an adjacent wall with disconcerting speed, then from there right towards you, her claws engulfed in inky black magic as they slash towards you!",
+                                    "EndLoop",
+                                    "SetPostName", "",
+                                    "JumpToScene", "DODGE"
+                                ]
+                    },
+                          {
+                            "NameOfScene": "DODGE",
+                            "theScene": [     "ChangeProgress", "1",
+                                              "IfPlayerHasStatusEffect", "Surrender", "Don't move.",
+                                              "Menu",
+                                                "Block her attack! (Power)",
+                                                "Dodge her! (Technique)",
+                                                "Predict her movements! (Intelligence)",
+                                                "Look cute! (Allure)",
+                                                "Don't move.",
+                                              "EndLoop"
+                                      ]
+                          },
+                                {
+                                  "NameOfScene": "Block her attack! (Power)",
+                                  "theScene": [
+                                                "SwapLineIf", "OtherEventsChoice", "VeneficaCombatEvents",
+                                                  "2", "EllyAid", "You desperately try to stop Venefica's rapidly approaching form as she sends wild slashes of magic at you and Elly does her best to aid you by slowing the wild witch's movements...",
+                                                  "2", "", "You desperately try to avoid Venefica's rapidly approaching form as she sends wild slashes of magic at you...",
+                                                "EndLoop",
+                                                "StatCheck",
+                                                "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "2", "-5",
+                                                "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "3", "-5",
+                                                "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "4", "-5",
+                                                "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "VeneficaCombatEvents", "2", "EllyAid", "-5",
+                                                "Power",
+                                                "30",
+                                                "Blocked!",
+                                                "Fail",
+                                                "NoBlock!"
+                                            ]
+                                },
+                                      {
+                                        "NameOfScene": "Blocked!",
+                                        "theScene": [ "ChangeImageLayer", "Expression", "Predatory",
+                                                      "You manage to avoid the flurry of dark magic slashes flying at you by taking Venefica head on, and manage to catch her as she slams right into you, leaving you skidding back from the force, her grinning face a few inches from yours before she leaps away from you, the twisting shadowy flames covering her fading away."
+                                                  ]
+                                      },
+                                      {
+                                        "NameOfScene": "NoBlock!",
+                                        "theScene": [
+                                                      "But you can't hope to stop Venefica's powerful magically changed movements as she lunges towards you!",
+                                                      "JumpToScene", "GotHit"
+                                                  ]
+                                      },
+                                {
+                                  "NameOfScene": "Dodge her! (Technique)",
+                                  "theScene": [
+                                                "SwapLineIf", "OtherEventsChoice", "VeneficaCombatEvents",
+                                                  "2", "EllyAid", "You desperately try to avoid Venefica's rapidly approaching form as she sends wild slashes of magic at you and Elly does her best to clear a safe path for you with her magic...",
+                                                  "2", "", "You desperately try to avoid Venefica's rapidly approaching form as she sends wild slashes of magic at you...",
+                                                "EndLoop",
+                                                "StatCheck",
+                                                "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "2", "-5",
+                                                "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "3", "-5",
+                                                "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "4", "-5",
+                                                "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "VeneficaCombatEvents", "2", "EllyAid", "-5",
+                                                "Technique",
+                                                "30",
+                                                "Dodged!",
+                                                "Fail",
+                                                "NoDodge!"
+                                            ]
+                                },
+                                      {
+                                        "NameOfScene": "Dodged!",
+                                        "theScene": ["ChangeImageLayer", "Expression", "LipLick",
+                                                      "You nimbly evade the shadowy cascade of magic and Venefica herself as she flies past you, missing her pleasure inducing strike entirely, and nimbly flips off the ground back to a standing position as she lands, the flaring dark magic fading out as she lets out an excited exhale."
+                                                  ]
+                                      },
+                                      {
+                                        "NameOfScene": "NoDodge!",
+                                        "theScene": [
+                                                      "But you can't escape Venefica's charge as she lunges for you faster than you can react!",
+                                                      "JumpToScene", "GotHit"
+                                                  ]
+                                      },
+                                {
+                                  "NameOfScene": "Predict her movements! (Intelligence)",
+                                  "theScene": [
+                                                "SwapLineIf", "OtherEventsChoice", "VeneficaCombatEvents",
+                                                  "2", "EllyAid", "You try to carefully predict where Venefica's wild movements are going to take her as she flings wild slashes of magic at you to get out of her way and Elly does her best to clear a safe path for you with her magic...",
+                                                  "2", "", "You try to carefully predict where Venefica's wild movements are going to take her as she flings wild slashes of magic at you to get out of her way...",
+                                                "EndLoop",
+                                                "StatCheck",
+                                                "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "2", "-5",
+                                                "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "3", "-5",
+                                                "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "4", "-5",
+                                                "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "VeneficaCombatEvents", "2", "EllyAid", "-5",
+                                                "Intelligence",
+                                                "30",
+                                                "Predict!",
+                                                "Fail",
+                                                "NoPredict!"
+                                            ]
+                                },
+                                      {
+                                        "NameOfScene": "Predict!",
+                                        "theScene": ["ChangeImageLayer", "Expression", "LipLick",
+                                                      "You figure out what way Venefica is going to move given her primally driven state, and evade the shadowy cascade of magic and she flies past you, missing her pleasure inducing strikes entirely, nimbly flipping off the ground back to a standing position as she lands, the flaring dark magic fading out as she lets out an excited exhale."
+                                                  ]
+                                      },
+                                      {
+                                        "NameOfScene": "NoPredict!",
+                                        "theScene": [
+                                                      "But you can't escape Venefica's charge as she lunges for you faster than you can react!",
+                                                      "JumpToScene", "GotHit"
+                                                  ]
+                                      },
+                              {
+                                "NameOfScene": "Look cute! (Allure)",
+                                "theScene": [
+                                              "SwapLineIf", "OtherEventsChoice", "VeneficaCombatEvents",
+                                                "2", "EllyAid", "You try to look as helpless and attractive as you can for the ravenous woman, and Elly just looks baffled...",
+                                                "2", "", "You try to look as helpless and attractive as you can for the ravenous woman...",
+                                              "EndLoop",
+                                              "StatCheck",
+                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "2", "-5",
+                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "3", "-5",
+                                              "ChangeStatCheckDifficulty", "IfProgressEqualsOrGreater", "4", "-5",
+                                              "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "VeneficaCombatEvents", "2", "EllyAid", "-5",
+                                              "Allure",
+                                              "30",
+                                              "Cute!",
+                                              "Fail",
+                                              "NoCute!"
+                                          ]
+                              },
+                                    {
+                                      "NameOfScene": "Cute!",
+                                      "theScene": ["ChangeImageLayer", "Expression", "Sparkling",
+                                                    "And Venefica actually stops in front of you for a moment, looking rather excited, her shadow-wreathed aura dissipating-",
+                                                    "ChangeImageLayer", "Expression", "Predatory",
+                                                    "But then you have to desperately dodge her a few times as she tries to pin you down for sex! But at least she's not charging you over and over with dark magic!"
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "NoCute!",
+                                      "theScene": [
+                                                    "But Venefica's burning lustful desire blinds her to your attempts to endear yourself to her!",
+                                                    "JumpToScene", "GotHit"
+                                                ]
+                                    },
+                              {
+                                "NameOfScene": "Don't move.",
+                                "theScene": [  "You just stand there helplessly- Unsure how to deal with this!",
+                                               "JumpToScene", "GotHit"
+                                          ]
+                              },
+                                      {
+                                        "NameOfScene": "GotHit",
+                                        "theScene": [ "HitPlayerWith", "Umbral Rending",
+                                                      "ChangeImageLayer", "Expression", "Devious",
+                                                      "SwapLineIf", "Random",
+                                                        "And Venefica seemingly passes through you, her shadowy wreathed form clawing through you harmlessly, sending a crackling cascade of ecstasy surging through your entire body that leave you crying out in pleasure.[DamageToPlayer]",
+                                                        "And the shadowy slashes of crackling magic she flings at you slam into you, leaving you crying out in pleasure while Venefica flies over you with a giggle, sending another blast of dark magic into your back as she goes, tormenting you with another surge of ecstasy.[DamageToPlayer]",
+                                                        "And she lunges past you, lightly skimming your body with her crackling claws, sending a mind-blanking wave of pleasure through you as she bouncing forward to do it again, and again and again, nimbly dancing around you while laughing excitedly from the sight of your ecstasy ridden form as she assails you with her magic.[DamageToPlayer]",
+                                                        "And she slams an orb of undulating black magic right into you before flipping into the air with ease, sending a hot wave of syrupy bliss radiating through your entire being that leaves you barely able to stand as your cock throbs and twitches in delight.[DamageToPlayer]",
+                                                        "And she flies past you he crackling claws moving through you like air, leaving not a trace the shadow-wreathed hands even touched you aside from the jolting cascade of pleasure shooting through your body in a near mind-blanking surge.[DamageToPlayer]",
+                                                      "EndLoop",
+                                                       "IfPlayerOrgasm", "OrgasmicFinish",
+                                                       "JumpToScene", "YetMore!"
+                                                  ]
+                                      },
+                                          {
+                                            "NameOfScene": "YetMore!",
+                                            "theScene": [
+                                                            "SetPostName", " - Umbral Bunny Rampage",
+                                                            "ChangeImageLayer", "Expression", "Predatory",
+                                                            "FocusedSpeaksSkill",
+                                                            "SwapLineIf", "Random",
+                                                                "'Hahahaha!♥' She then leaps off the ground behind you to another wall before lunging at you again with a wild grin, the dark flames on her body flaring up as her claws reach out for you again!",
+                                                                "'More-♥ {i}More!♥{/i}' She then leaps off the ground behind you to another wall before lunging at you again with a wild grin, the dark flames on her body flaring up as her claws reach out for you again!",
+                                                                "'Come on!♥' She then leaps off the ground behind you to another wall before lunging at you again with a wild grin, the dark flames on her body flaring up as her claws reach out for you again!",
+                                                                "'Mine!♥' She then leaps off the ground behind you to another wall before lunging at you again with a wild grin, the dark flames on her body flaring up as her claws reach out for you again!",
+                                                                "'Adorable!♥' She then leaps off the ground behind you to another wall before lunging at you again with a wild grin, the dark flames on her body flaring up as her claws reach out for you again!",
+                                                            "EndLoop",
+                                                            "SetPostName", "",
+                                                            "JumpToScene", "DODGE"
+                                                      ]
+                                          },
+                                      {
+                                        "NameOfScene": "OrgasmicFinish",
+                                        "theScene": [
+                                                        "ApplyStance", "Sex",  "PlayerOrgasm", "1", "ApplyStatusEffect", "Spank", "ChangeImageLayer", "Expression", "Predatory",
+                                                        "SwapLineIf", "Random",
+                                                          "'Hehehe♥ mine now!♥' Then as you stagger and moan helplessly from the pleasure overwhelming your body, Venefica lunges at you with both her arms outstretched as she pounces on you, knocking you to the ground with her, letting her easily straddle your hips with hers as you lay there stunned and disoriented.",
+                                                          "'You look delicious now!♥' Then as you stagger and moan helplessly from the pleasure overwhelming your body, Venefica lunges at you with both her arms outstretched as she pounces on you, knocking you to the ground with her, letting her easily straddle your hips with hers as you lay there stunned and disoriented.",
+                                                          "'Hehehehehe!♥' Then as you stagger and moan helplessly from the pleasure overwhelming your body, Venefica lunges at you with both her arms outstretched as she pounces on you, knocking you to the ground with her, letting her easily straddle your hips with hers as you lay there stunned and disoriented.",
+                                                          "'Finally!♥' Then as you stagger and moan helplessly from the pleasure overwhelming your body, Venefica lunges at you with both her arms outstretched as she pounces on you, knocking you to the ground with her, letting her easily straddle your hips with hers as you lay there stunned and disoriented.",
+                                                          "'That's it!♥' Then as you stagger and moan helplessly from the pleasure overwhelming your body, Venefica lunges at you with both her arms outstretched as she pounces on you, knocking you to the ground with her, letting her easily straddle your hips with hers as you lay there stunned and disoriented.",
+                                                        "EndLoop",
+                                                        "With little warning or time to ready yourself she wetly slams her hips down on your aching cock, leaving you immediately crying out in orgasm from how worked up you were, your dick pouring your seed into her as she continues to swing her waist at a rapid pace, giving you no time to recollect yourself as she fucks you into the ground with a hungry grin."
+                                                  ]
+                                      },
+
+
+                      {
+                        "NameOfScene": "UmbralMania",
+                        "theScene": [ "SetPostName", " - Umbral Mania",
+                                      "ChangeImageLayer", "Expression", "Predatory",
+                                      "HitPlayerWith", "Frenzied Bunny",
+                                      "FocusedSpeaksSkill",
+                                      "SwapLineIf", "Random",
+                                        "'Come on, more!♥' Venefica thoroughly pushes your back onto the ground as she rides your length, looming over you as her entire body is wreathed in twisting shadowy magic, her presence weighing down on your very mind with its predatory intent, and every powerful impact of your hips meeting leaves your entire body tensing up in hot melty ecstasy while her movements become event faster.[DamageToPlayer]",
+                                        "'Hehehehe!♥' Venefica thoroughly pushes your back onto the ground as she rides your length, looming over you as her entire body is wreathed in twisting shadowy magic, her presence weighing down on your very mind with its predatory intent, and every powerful impact of your hips meeting leaves your entire body tensing up in hot melty ecstasy while her movements become event faster.[DamageToPlayer]",
+                                        "'How delectable!♥' Venefica thoroughly pushes your back onto the ground as she rides your length, looming over you as her entire body is wreathed in twisting shadowy magic, her presence weighing down on your very mind with its predatory intent, and every powerful impact of your hips meeting leaves your entire body tensing up in hot melty ecstasy while her movements become event faster.[DamageToPlayer]",
+                                        "'Give me every drop!♥' Venefica thoroughly pushes your back onto the ground as she rides your length, looming over you as her entire body is wreathed in twisting shadowy magic, her presence weighing down on your very mind with its predatory intent, and every powerful impact of your hips meeting leaves your entire body tensing up in hot melty ecstasy while her movements become event faster.[DamageToPlayer]",
+                                        "'Not enough!♥' Venefica thoroughly pushes your back onto the ground as she rides your length, looming over you as her entire body is wreathed in twisting shadowy magic, her presence weighing down on your very mind with its predatory intent, and every powerful impact of your hips meeting leaves your entire body tensing up in hot melty ecstasy while her movements become event faster.[DamageToPlayer]",
+                                      "EndLoop",
+                                      "SetPostName", "",
+                                      "IfPlayerHasStatusEffect", "Surrender", "Let her do as she wants.",
+                                      "Menu",
+                                        "Shove her back! (Power)",
+                                        "Disperse her magic! (Intelligence)",
+                                        "Let her do as she wants.",
+                                      "EndLoop"
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "Shove her back! (Power)",
+                              "theScene": [   "StatCheck",
+                                              "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "VeneficaCombatEvents", "2", "EllyAid", "-5",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "1",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "1",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "1",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "2",
+                                              "Power",
+                                              "20",
+                                              "ShoverUmbralMania",
+                                              "Fail",
+                                              "RiddenUmbralManaia"
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "ShoverUmbralMania",
+                                    "theScene": [ "ChangeImageLayer", "Expression", "LipLick",
+                                                  "And you manage to push Venefica back just enough that the malevolent aura dissipates, breaking her overbearing hold on you, but she just licks her lips with excitement as she continues to ride your aching length."
+                                              ]
+                                  },
+                            {
+                              "NameOfScene": "Disperse her magic! (Intelligence)",
+                              "theScene": [   "StatCheck",
+                                              "ChangeStatCheckDifficulty", "GetEventAndIfChoice", "VeneficaCombatEvents", "2", "EllyAid", "-5",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "1",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "1",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "1",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "100", "2",
+                                              "Intelligence",
+                                              "20",
+                                              "DispereseUmbralMania",
+                                              "Fail",
+                                              "RiddenUmbralManaia"
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "DispereseUmbralMania",
+                                    "theScene": [ "ChangeImageLayer", "Expression", "LipLick",
+                                                  "And you manage to use your own magic to extinguish the shadowy aura that was surrounding Venefica, making her movements slow back down, and allow you to get some ground on trying to actually do something other than being ridden into the ground. But she merely purrs with excitement while still bouncing on your aching cock."
+                                              ]
+                                  },
+                            {
+                              "NameOfScene": "Let her do as she wants.",
+                              "theScene": [
+                                            "JumpToScene", "Ridden"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "RiddenUmbralManaia",
+                              "theScene": [
+                                            "But your efforts are in vain! Venefica's overflowing libido and roiling magical energy allows her to keep you thoroughly pinned as she continues to fuck you senseless!",
+                                            "JumpToScene", "Ridden"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Ridden",
+                              "theScene": [
+                                            "SetPostName", " - Umbral Mania",
+                                              "ChangeImageLayer", "Expression", "Predatory",
+                                              "HitPlayerWith", "Frenzied Bunny",
+                                              "FocusedSpeaksSkill",
+                                              "SwapLineIf", "Random",
+                                                "'Yes!♥' A heavy, magical pressure weighs down on your body as Venefica rapidly bounces on your rigid cock with single minded lust, the shadowy flames wreathing her body sending intense resonating pulses of ecstasy through your waist every time your tip kisses her womb, leaving you squirming under her helplessly like trapped prey.[DamageToPlayer]",
+                                                "'Hehehe!♥' A heavy, magical pressure weighs down on your body as Venefica rapidly bounces on your rigid cock with single minded lust, the shadowy flames wreathing her body sending intense resonating pulses of ecstasy through your waist every time your tip kisses her womb, leaving you squirming under her helplessly like trapped prey.[DamageToPlayer]",
+                                                "'More!♥' A heavy, magical pressure weighs down on your body as Venefica rapidly bounces on your rigid cock with single minded lust, the shadowy flames wreathing her body sending intense resonating pulses of ecstasy through your waist every time your tip kisses her womb, leaving you squirming under her helplessly like trapped prey.[DamageToPlayer]",
+
+                                                "'Come on!♥' Venefica firmly grabs your ankles and lifts them into the air along with your hips, swinging her waist intensely all the while, leaving you gasping with ecstasy from each wet impact, and your cock spasming excitedly inside her as her pussy squeezes and milks your entire length with each and every movement she makes.[DamageToPlayer]",
+                                                "'More!♥' Venefica firmly grabs your ankles and lifts them into the air along with your hips, swinging her waist intensely all the while, leaving you gasping with ecstasy from each wet impact, and your cock spasming excitedly inside her as her pussy squeezes and milks your entire length with each and every movement she makes.[DamageToPlayer]",
+                                                "'So cute-♥' Venefica firmly grabs your ankles and lifts them into the air along with your hips, swinging her waist intensely all the while, leaving you gasping with ecstasy from each wet impact, and your cock spasming excitedly inside her as her pussy squeezes and milks your entire length with each and every movement she makes.[DamageToPlayer]",
+
+                                                "'More!♥' She keeps your legs locked under hers as she presses her heavy breasts against your chest, wildly swinging her hips at a frantic pace, working to drain you of over drop of cum she can, and your aching cock throbs submissively from being completely overpowered by the woman's ravenous libido.[DamageToPlayer]",
+                                                "'Yes!♥' She keeps your legs locked under hers as she presses her heavy breasts against your chest, wildly swinging her hips at a frantic pace, working to drain you of over drop of cum she can, and your aching cock throbs submissively from being completely overpowered by the woman's ravenous libido.[DamageToPlayer]",
+                                                "'Hahhh-♥' She keeps your legs locked under hers as she presses her heavy breasts against your chest, wildly swinging her hips at a frantic pace, working to drain you of over drop of cum she can, and your aching cock throbs submissively from being completely overpowered by the woman's ravenous libido.[DamageToPlayer]",
+
+                                                "'Hehehe!♥' Venefica briefly interlocks her clawed hands with yours as she forcefully keeps you pinned under her, gasping excitedly, looming over you with dangerous magic wreathing her body while still riding your aching erection at a frantic pace that leaves your head spinning with pleasure.[DamageToPlayer]",
+                                                "'More!♥' Venefica briefly interlocks her clawed hands with yours as she forcefully keeps you pinned under her, gasping excitedly, looming over you with dangerous magic wreathing her body while still riding your aching erection at a frantic pace that leaves your head spinning with pleasure.[DamageToPlayer]",
+                                                "'You're delicious!♥' Venefica briefly interlocks her clawed hands with yours as she forcefully keeps you pinned under her, gasping excitedly, looming over you with dangerous magic wreathing her body while still riding your aching erection at a frantic pace that leaves your head spinning with pleasure.[DamageToPlayer]",
+                                              "EndLoop",
+                                              "SetPostName", "",
+                                            "IfPlayerOrgasm", "SpurtSpurt",
+                                            "IfPlayerSpiritGone", "CrumpleFromManic",
+                                            "Menu",
+                                              "Shove her back! (Power)",
+                                              "Disperse her magic! (Intelligence)",
+                                              "Let her do as she wants.",
+                                            "EndLoop"
+                                        ]
+                            },
+                                    {
+                                      "NameOfScene": "SpurtSpurt",
+                                      "theScene": [
+                                                      "ChangeImageLayer", "Expression", "LipLick",
+                                                      "PlayerOrgasm", "1",
+                                                      "FocusedSpeaksSkill",
+                                                      "SwapLineIf", "Random",
+                                                        "With one more powerful downward slam of her curvy hips, your aching dick is left helplessly spurting into her ravenous pussy, and before you can even hope to recover she's already bouncing on your still spasming cock to work you towards your next explosive ejaculation, leaving you a twitching mess under her.",
+                                                        "Even as your cock starts to throb and spasm inside her, Venefica doesn't slow down in the slightest, frantically fucking you into the ground until you're roughly sent over the orgasmic edge, and your aching dick floods her with your seed, every excited downward swing of her hips drawing out a fresh spurt of cum from you, and she still shows no signs of stopping.",
+                                                        "As you reach your limit the aura wreathing Venefica flares up, sending a melty wave of syrupy heat and pleasure washing through your waist with each impactful meeting of your hips as she rides you at a frantic pace, leaving you crying out in ecstasy as you flood her with thick spurts of your seed, her squeezing pussy practically milking it out of you as it massages your entire length with her every movement.",
+                                                        "Venefica briefly slows down the frantic bouncing of her hips to lean in and playfully nibble on your ear and neck, lightly gyrating her waist, letting her squeezing pussy gently milk your length. Before pulling away as you reach the brink of climax to resume rapidly riding your aching dick as you pour your seed into her, leaving your entire body twitching in orgasmic ecstasy and overstimulation.",
+                                                      "EndLoop",
+                                                      "SetPostName", "",
+                                                      "IfPlayerSpiritGone", "CrumpleFromManic",
+                                                      "JumpToScene", "Keep being fucked into the ground."
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "Keep being fucked into the ground.",
+                                      "theScene": [
+                                                    "IfPlayerSpiritGone", "Ridden",
+                                                    "Menu",
+                                                      "Shove her back! (Power)",
+                                                      "Disperse her magic! (Intelligence)",
+                                                      "Let her do as she wants.",
+                                                    "EndLoop"
+                                                ]
+                                    },
+                                          {
+                                            "NameOfScene": "CrumpleFromManic",
+                                            "theScene": [
+                                                            "Menu",
+                                                              "Keep being fucked into the ground.",
+                                                              "I can't... (Lose)",
+                                                            "EndLoop"
+                                                      ]
+                                          },
+                                                {
+                                                  "NameOfScene": "I can't... (Lose)",
+                                                  "theScene": [   "ChangeImageLayer", "Expression", "LipLick",
+                                                                  "SkipPlayerAttack",
+                                                                  "Your sore body goes completely slack underneath Venefica as she continues to ride you senseless, clearly not caring for your exhaustion, and your aching cock stays fully hard for her..."
+                                                            ]
+                                                },
+
+
+
+                      {
+                          "NameOfScene": "Surrender",
+                          "theScene": [
+                                        "GetEventAndIfChoice", "VeneficaCombatEvents", "2", "EllyAid", "SurrenderElly",
+                                        "ChangeImageLayer", "Expression", "Predatory",
+                                        "FocusedSpeaks",
+                                        "SwapLineIf", "Random",
+                                          "Good-!♥ Now let's fuck!♥",
+                                          "Hahah-♥ Wonderful!♥",
+                                          "Hehe- Now you're mine!♥",
+                                        "EndLoop"
+                                    ]
+                      },
+                          {
+                              "NameOfScene": "SurrenderElly",
+                              "theScene": [
+                                              "Speak", "Elly",
+                                              "SwapLineIf", "Random",
+                                                "Wh-What?! You can't just give-",
+                                                "Wha- Don't you dare-",
+                                                "A-Are you joking?! Because this is-",
+                                                "H-Hold on! You can't just-",
+                                              "EndLoop",
+                                              "ChangeImageLayer", "Expression", "Devious",
+                                              "Before Elly can finish her sentence, a scattering wave of pitch black magic from Venefica slams into the now heavily distracted and unsupported mage, then another, and another, until she's crumpled on the ground whimpering in pleasure. Then Venefica looks to you with primal hunger.",
+                                              "ChangeImageLayer", "Expression", "LipLick",
+                                              "FocusedSpeaks",
+                                              "SwapLineIf", "Random",
+                                                "Hehehe-♥ Well- You're first.♥",
+                                                "With that distraction gone-♥ Hehehe-♥ I can't contain myself-♥",
+                                                "I'm going to eat you up now.♥",
+                                              "EndLoop"
+                                        ]
+                          },
+
+                    {
+                      "NameOfScene": "Event Broke",
+                      "theScene": [ "Combat events broke!"
+                                ]
+                    }
+
+                ]
+}

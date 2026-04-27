@@ -1,0 +1,582 @@
+{
+  "name": "EnteringChurch",
+  "CardType": "Church",
+  "CardLimit": "0",
+  "Description": "EnterArea",
+  "requires": [ ""],
+  "Speakers": [
+                {
+                  "name": "Lillian",
+                  "postName": "",
+                  "SpeakerType": ""
+                }
+              ],
+  "EventText": [
+
+                  {
+                      "NameOfScene": "EnteringArea",
+                      "theScene": [  
+                                  "IfChoice", "1", "", "LillianIntro",
+                                  "IfChoice", "2", "", "CheckDemonLayer",
+                                  "IfChoice", "2", "redoQuiz", "redoQuizIntro"
+                                ]
+                  },
+                          {
+                              "NameOfScene": "LillianIntro",
+                              "theScene": [ "SetChoice", "1", "MetLillian",
+                                            "DisplayCharacters",
+                                              "1",
+                                              "EndLoop",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "As you enter the church, a small cleric girl turns her head towards you, smiling widely as she excitedly runs up to you, giving you a tight hug.",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Speaks",
+                                            "{i}Hi! I'm Lillian! What's your name? Are you an adventurer?{/i}",
+                                            "She speaks so fast and with such exuberance it takes you a moment to process an answer.",
+                                            "PlayerSpeaks",
+                                            "I'm uh, [ThePlayerName], and yes, I'm an adventurer.",
+                                            "ChangeImageLayer", "Expression", "1", "Blush",
+                                            "She stares up at you with shimmering excitement briefly, but then realizes that she's still hugging you and quickly releases her grip on you, red faced and fidgeting awkwardly as she steps back.",
+                                            "ChangeImageLayer", "Expression", "1", "Nervous",
+                                            "Speaks",
+                                            "A-AH! I'm so sorry! I didn't mean to startle you or anything, it's just really exciting meeting new people...",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "You assure her that it's no big deal, and she immediately stops fidgeting, relief plain on her now joyfully brimming face.",
+                                            "Speaks",
+                                            "Oh, good!♪ I was worried you would think I'm {i}weird{/i} or something. Ah! If you're an adventurer, I should give you this!",
+                                            "She proudly hands you a plain white handkerchief. It's slightly damp.",
+                                            "GiveItem", "1", "Good Luck Charm",
+                                            "You take a moment to examine the good luck charm, but your attention is brought back to Lillian as she suddenly strikes a grand pose, dramatically gesturing up at the air and then you.",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Speaks",
+                                            "Behold!♪ It's a holy good luck charm created by infusing a mere silk handkerchief with holy water, my prayers and the will of the Holy Goddess herself!♪ Take it oh brave adventurer! For it shall ward off the vile evil monsters of this land, and bring you good fortune!♪",
+                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                            "You find her over the top exuberance contagious and grin with her as you put the charm away, and she breaks her dramatic stance with a fit of giggles, before setting her hands on her hips with a proud smile.",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Speaks",
+                                            "Ehehe.♪ Anyways-♪ If you ever do need purification or healing, I can fix you up no problem!♪ And should you somehow ever fall in battle, your recall stone will warp you back here so I can revitalize you with holy water!♪",
+                                            "Speaks",
+                                            "Should any of your adventures out there leave any lasting damage to your body or mind that I can't fix, you can pray to the Holy Goddess Venereae at her statue, and make a donation to resolve your ailments.",
+                                            "She looks rather proud for a moment as she gazes over at the statue, before turning back to you with a wide smile.",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Speaks",
+                                            "Be sure to talk to me if you're ever feeling down, or need guidance, I'll do my best to help!♪ We can chat whenever too.♪",
+                                            "Speaks",
+                                            "Well, I've got to get back to work, so, good luck adventuring!♪ I'll be here cheering you on the whole time!♪",
+                                            "Lillian runs off with a beaming smile and a giggle as she sets to cleaning the church, and chatting with other people inside at a rather frenetic pace.",
+                                            "ChangeImageLayer", "Expression", "1", "Base"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "CheckDemonLayer",
+                              "theScene": [ "GetAnEventsProgressThenIfEqualsOrGreater", "Visit Lillian", "55", "DemonLayerPatCheck"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "DemonLayerPatCheck",
+                                    "theScene": [ "GetEventAndIfChoice", "Visit Lillian", "5", "PatPat", "DemonLayerCheckPower"
+                                              ]
+                                },
+                                      {
+                                          "NameOfScene": "DemonLayerCheckPower",
+                                          "theScene": [ "StatEqualsOrMore", "Power", "6", "DemonLayerCheckTech"
+                                                    ]
+                                      },
+                                              {
+                                                  "NameOfScene": "DemonLayerCheckTech",
+                                                  "theScene": [ "StatEqualsOrMore", "Technique", "6", "DemonLayerCheckAllure"
+                                                            ]
+                                              },
+                                                    {
+                                                        "NameOfScene": "DemonLayerCheckAllure",
+                                                        "theScene": [ "StatEqualsOrMore", "Allure", "6", "DemonLayerQuiz"
+                                                                  ]
+                                                    },
+                                    {
+                                        "NameOfScene": "DemonLayerQuiz",
+                                        "theScene": [ "DisplayCharacters",
+                                                      "1",
+                                                    "EndLoop",
+                                                    "ChangeImageLayer", "Expression", "1", "Upset",
+                                                    "As you enter the church, Lillian turns her head towards you with a smile that quickly shifts into an intensely thoughtful look of powerful scrutiny as she strides closer.",
+                                                    "Speaks",
+                                                    "Hmmmmmmmm... {i}HMMMMMMMMMM!{/i}",
+                                                    "She leans in closer, lightly holding her chin in one of her dainty hands, and you can feel her eyes judging you as if gazing into your very soul, and you shift uncomfortably.",
+                                                    "PlayerSpeaks",
+                                                    "U-Uh... Lillian?",
+                                                    "Speaks",
+                                                    "[ThePlayerName]...",
+                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                    "Lillian suddenly strikes a dramatic pose, pointing at you in a single smooth and intense motion of her hand that almost makes you jump.",
+                                                    "Speaks",
+                                                    "{i}I figured it out!{/i} [ThePlayerName].... {i}You{/i} are the Goddess Chosen Hero! Aren't you? Come on! I know I'm rigggghhttt.♪",
+                                                    "Her expression shifts to one of excitement in an instant as she playfully waggles her pointed finger at you, bouncing on her feet with bottled joy as she waits for your answer.",
+                                                    "Menu",
+                                                      "Yes, I am the Chosen Hero.",
+                                                      "No, I'm not the Chosen Hero.",
+                                                    "EndLoop"
+                                                  ]
+                                    },
+                                          {
+                                              "NameOfScene": "No, I'm not the Chosen Hero.",
+                                              "theScene": [
+                                                            "ChangeImageLayer", "Expression", "1", "Upset",
+                                                            "Lillian's expression flicks to one of disappointment as her pose slumps, her face shifting to one of deep thought again as she wanders off into the church.",
+                                                            "Speaks",
+                                                            "Hmph, if you say so [ThePlayerName], but I'm {i}sure{/i} of it. You clearly just don't know it yet... Unless {i}I'm{/i} the chosen hero? No, wait, that would be silly."
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "Yes, I am the Chosen Hero.",
+                                              "theScene": [
+                                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                                            "Speaks",
+                                                            "Aha! {i}I knew it!♪{/i} Come ♪! I have a gift for you.♪",
+                                                            "Lillian tightly grabs ahold of your wrist and practically drags you into the back of the church before you can figure out what she's planning, and soon the two of you stand in a back room as she lets go of your arm, closing the door behind you. It looks a bit like a small well kept office.",
+                                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                                            "Speaks",
+                                                            "But before I bequeath you the grand gift worthy of a champion of Venereae, I have to make sure you're really the Chosen Hero, so prepare yourself for my grand test!",
+                                                            "JumpToScene", "QuizIntroScene"
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "redoQuizIntro",
+                                              "theScene": [ "DisplayCharacters",
+                                                            "1",
+                                                          "EndLoop",
+                                                          "ChangeImageLayer", "Expression", "1", "Happy",
+                                                            "As you enter the church, Lillian turns her head towards you with a smile and strides over to you, grabbing your wrist before practically dragging you into the back of the church before you can figure out what she's planning, and soon the two of you stand in a back room as she lets go of your arm, closing the door behind you. It looks a bit like a small well kept office.",
+                                                            "Speaks",
+                                                            "Alright [ThePlayerName]!♪ Prepare yourself for my grand test of chosen hero...ness! So do your best or I can't bequeath you the grand gift I have planned!",
+                                                            "JumpToScene", "QuizIntroScene"
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "QuizIntroScene",
+                                              "theScene": [
+                                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                                            "Speaks",
+                                                            "Now let us begin...",
+                                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                                            "Lillian does a single spin in place before flinging her arms wide in a grand arc, holy light shining down on her in glimmering motes as she takes up a proud stance, crossing her arms with a wide smile.",
+                                                            "Speaks",
+                                                            "The Arch-bishopess's Quiz of Holy Truth for the Chosen Hero's Judgment of the Great Divine Goddess of Light Venereae!-♪",
+                                                            "Lillian is left gasping a little in exertion after saying all of that in a single breath, then she takes a dramatically intense pose as she points at you with one hand.",
+                                                            "Speaks",
+                                                            "First question! What are the domains of Venereae?",
+                                                            "Menu",
+                                                              "Purity, and Wholesome Love.",
+                                                              "Fertility and Se-",
+                                                              "Light and Farming.",
+                                                              "Protection, Finance, and Creation.",
+                                                            "EndLoop"
+                                                        ]
+                                          },
+                                                {
+                                                    "NameOfScene": "Fertility and Se-",
+                                                    "theScene": [  "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                  "Speaks",
+                                                                  "{b}{i}Wrong!{/i}{/b} Didn't I tell you already, It's {i}FARMING{/i}.",
+                                                                  "JumpToScene", "FailQuiz"
+                                                              ]
+                                                },
+                                                      {
+                                                          "NameOfScene": "FailQuiz",
+                                                          "theScene": [  "SetChoice", "2", "redoQuiz",
+                                                                        "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                        "Lillian grabs you by the wrist again and drags you out of the backroom into the church proper with a pouty expression.",
+                                                                        "Speaks",
+                                                                        "You failed the quiz. So you're not the Chosen Hero [ThePlayerName], sorry.",
+                                                                        "She lets go of your wrist and she turns back to face you with a confident smile.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Speaks",
+                                                                        "Well, you're not the chosen hero {i}YET.{/i} I believe in you to keep following the Goddess' teaching and follow the path of a hero! We can try the quiz again next time you stop by.♪",
+                                                                        "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                        "Speaks",
+                                                                        "Be sure to ask me any questions you want to bring clarity to your mistakes.♪",
+                                                                        "Lillian wanders off to go do some work around the church."
+                                                                    ]
+                                                      },
+                                                {
+                                                    "NameOfScene": "Purity, and Wholesome Love.",
+                                                    "theScene": [  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                  "Speaks",
+                                                                  "Correct!",
+                                                                  "JumpToScene", "GotToQuestion2"
+                                                              ]
+                                                },
+                                                {
+                                                    "NameOfScene": "Light and Farming.",
+                                                    "theScene": [  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                  "Speaks",
+                                                                  "Correct!",
+                                                                  "JumpToScene", "GotToQuestion2"
+                                                              ]
+                                                },
+                                                {
+                                                    "NameOfScene": "Protection, Finance, and Creation.",
+                                                    "theScene": [  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                  "Speaks",
+                                                                  "... Close enough!♪",
+                                                                  "JumpToScene", "GotToQuestion2"
+                                                              ]
+                                                },
+                                                    {
+                                                        "NameOfScene": "GotToQuestion2",
+                                                        "theScene": [  "ChangeImageLayer", "Expression", "1", "Base",
+                                                                      "Lillian pirouettes in place and ends her spin pointing straight up with a wide grin.",
+                                                                      "Speaks",
+                                                                      "Question two! What are Monster Girls in the eyes of the Goddess?",
+                                                                      "Menu",
+                                                                        "A plague on humanity that needs to be exterminated.",
+                                                                        "Equals with humans, if they're not being evil.",
+                                                                        "The perfect wives for human men.",
+                                                                        "In need of caring and understanding.",
+                                                                      "EndLoop"
+                                                                  ]
+                                                    },
+                                                          {
+                                                              "NameOfScene": "A plague on humanity that needs to be exterminated.",
+                                                              "theScene": [  "ChangeImageLayer", "Expression", "1", "Surprised",
+                                                                            "Speaks",
+                                                                            "{i}Woah!{/i} By the goddess, [ThePlayerName], that's not funny!",
+                                                                            "ChangeImageLayer", "Expression", "1", "Nervous",
+                                                                            "Speaks",
+                                                                            "So, no. You're wrong, I think you need to go and think on what you said for a while...",
+                                                                            "JumpToScene", "FailQuiz"
+                                                                        ]
+                                                          },
+                                                          {
+                                                              "NameOfScene": "The perfect wives for human men.",
+                                                              "theScene": [  "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                            "Speaks",
+                                                                            "...No, bad [ThePlayerName].",
+                                                                            "JumpToScene", "FailQuiz"
+                                                                        ]
+                                                          },
+                                                          {
+                                                              "NameOfScene": "Equals with humans, if they're not being evil.",
+                                                              "theScene": [  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                            "Speaks",
+                                                                            "Correct!",
+                                                                            "JumpToScene", "GotToQuestion3"
+                                                                        ]
+                                                          },
+                                                          {
+                                                              "NameOfScene": "In need of caring and understanding.",
+                                                              "theScene": [  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                            "Speaks",
+                                                                            "Correct!",
+                                                                            "JumpToScene", "GotToQuestion3"
+                                                                        ]
+                                                          },
+                                            {
+                                                "NameOfScene": "GotToQuestion3",
+                                                "theScene": [  "ChangeImageLayer", "Expression", "1", "Base",
+                                                              "Lillian hops in the air before striking another pose, pointing at you with a wide smile.",
+                                                              "Speaks",
+                                                              "Question three! How should a hero dispatch an unruly monster?",
+                                                              "Menu",
+                                                                "Non-lethal combat.",
+                                                                "The Holy Headpat.",
+                                                                "Fuc-",
+                                                                "A well thought-out, friendly discussion.",
+
+                                                                "A duel to the death.",
+                                                              "EndLoop"
+                                                          ]
+                                            },
+                                                  {
+                                                      "NameOfScene": "A duel to the death.",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                    "Speaks",
+                                                                    "...Come on, you should know better than that.",
+                                                                    "JumpToScene", "FailQuiz"
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "Fuc-",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                    "Speaks",
+                                                                    "{b}{i}No! Wrong! Don't even think of saying another word!{/i}{/b} Gah! Ugh, now I'm going to have a headache...",
+                                                                    "JumpToScene", "FailQuiz"
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "Non-lethal combat.",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                    "Speaks",
+                                                                    "Correct, mostly. I mean, it shouldn't always be your go-to option. Talking can work too!♪",
+                                                                    "JumpToScene", "GotToQuestion4"
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "The Holy Headpat.",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                    "Speaks",
+                                                                    "Correct!",
+                                                                    "JumpToScene", "GotToQuestion4"
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "A well thought-out, friendly discussion.",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                    "Speaks",
+                                                                    "Correct, mostly. I mean, it won't always work, but you've got {i}spirit!♪{/i}",
+                                                                    "JumpToScene", "GotToQuestion4"
+                                                                ]
+                                                  },
+
+                                            {
+                                                "NameOfScene": "GotToQuestion4",
+                                                "theScene": [  "ChangeImageLayer", "Expression", "1", "Base",
+                                                              "Lillian does a spinning jump in place, and throws her arms wide, sending glimmering holy sparkles everywhere.",
+                                                              "Speaks",
+                                                              "Question four! What is the purest, noblest, and most properly dressed monster girl species?",
+                                                              "Menu",
+                                                                "Demons.",
+                                                                "Angels.",
+                                                                "Slimes.",
+                                                                "Elves.",
+                                                                "Beast Girls.",
+                                                              "EndLoop"
+                                                          ]
+                                            },
+                                                  {
+                                                      "NameOfScene": "Demons.",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                    "Speaks",
+                                                                    "{b}{i}Wrong!{/i}{/b} Like, seriously [ThePlayerName]? Are you even trying?",
+                                                                    "JumpToScene", "FailQuiz"
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "Slimes.",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                    "Speaks",
+                                                                    "{i}What?{/i} No.",
+                                                                    "JumpToScene", "FailQuiz"
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "Beast Girls.",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Blush",
+                                                                    "Speaks",
+                                                                    "{i}Wrong!{/i} Though they can be very nice. And fluffy.",
+                                                                    "JumpToScene", "FailQuiz"
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "Angels.",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                    "Speaks",
+                                                                    "Heh, Angels aren't really monsters. Nice try.",
+                                                                    "JumpToScene", "FailQuiz"
+                                                                ]
+                                                  },
+                                            {
+                                                "NameOfScene": "Elves.",
+                                                "theScene": [  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                              "Speaks",
+                                                              "Correct!",
+                                                              "Lillian does another spinning jump in place, and points at you with shining intensity.",
+                                                              "ChangeImageLayer", "Expression", "1", "Base",
+                                                              "Speaks",
+                                                              "Question five, the {i}final{/i} question! Where do the Goddess Venereae and her angels live and come from?",
+                                                              "Menu",
+                                                                "Lucidia.",
+                                                                "The Land of Dreams.",
+                                                                "Heaven.",
+                                                                "Hell.",
+                                                                "The Celestial Realm.",
+                                                                "Elysium.",
+                                                              "EndLoop"
+                                                          ]
+                                            },
+                                                  {
+                                                      "NameOfScene": "Hell.",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                    "Speaks",
+                                                                    "...Oh come on [ThePlayerName]. {i}Really?{/i}",
+                                                                    "JumpToScene", "FailQuiz"
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "Lucidia.",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Nervous",
+                                                                    "Speaks",
+                                                                    "That's the continent we're on [ThePlayerName]. Are you feeling well?",
+                                                                    "JumpToScene", "FailQuiz"
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "Elysium.",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                    "Speaks",
+                                                                    "{i}Wrong!{/i} ...I don't even know if that's an actual place...",
+                                                                    "JumpToScene", "FailQuiz"
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "The Land of Dreams.",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                    "Speaks",
+                                                                    "{i}Wrong!{/i} ...Is that even an actual place? Orrrr just another way to say Lucidia?",
+                                                                    "JumpToScene", "FailQuiz"
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "The Celestial Realm.",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                    "Speaks",
+                                                                    "Ugh, I mean, yeah, if you wanna get {i}super{/i} technical about it...",
+                                                                    "JumpToScene", "FinalQuestion"
+                                                                ]
+                                                  },
+                                                  {
+                                                      "NameOfScene": "Heaven.",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Base",
+                                                                    "Speaks",
+                                                                    "{i}Correct!♪{/i}",
+                                                                    "JumpToScene", "FinalQuestion"
+                                                                ]
+                                                  },
+                                                        {
+                                                            "NameOfScene": "FinalQuestion",
+                                                            "theScene": [  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                          "Lillian sets her hands on her hips with a smile, and light seems to glimmer around her as she suddenly gestures to the sky.",
+                                                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                                                          "Speaks",
+                                                                          "{i}Secret final question!{/i} Hehe, you didn't think It'd be easy to become the chosen hero did you?♪",
+                                                                          "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                          "Speaks",
+                                                                          "Are pointless gestures and actions done in futility {i}worthless?{/i}",
+                                                                          "Menu",
+                                                                            "Even if all hope is lost, every little bit counts towards breaking through the impossible!",
+                                                                            "Even small gestures can help brighten someone's day.",
+                                                                            "Yes.",
+                                                                            "No.",
+                                                                          "EndLoop"
+                                                                      ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "No.",
+                                                            "theScene": [ "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                          "Speaks",
+                                                                          "Correct.",
+                                                                          "JumpToScene", "GetDLayer"
+                                                                      ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "Even if all hope is lost, every little bit counts towards breaking through the impossible!",
+                                                            "theScene": [
+                                                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                                                            "Lillian's eyes sparkle with enthusiasm and excitement at your words. She's practically vibrating with positive energy.",
+                                                                          "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                          "Speaks",
+                                                                          "Yeah!♪ That's super heroic-sounding! You're correct!♪",
+                                                                          "GetEventAndChangeProgress", "Visit Lillian", "5",
+                                                                          "JumpToScene", "GetDLayer"
+                                                                      ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "Even small gestures can help brighten someone's day.",
+                                                            "theScene": [  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                          "Speaks",
+                                                                          "Yay!♪ You're correct!♪",
+                                                                          "GetEventAndChangeProgress", "Visit Lillian", "3",
+                                                                          "JumpToScene", "GetDLayer"
+                                                                      ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "Yes.",
+                                                            "theScene": [   "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                            "Lillian's pouty frown intensifies at your answer.",
+                                                                          "Speaks",
+                                                                          "Hmph, wrong, I think you need to think on what being a hero means.",
+                                                                          "JumpToScene", "FailQuiz"
+                                                                      ]
+                                                        },
+
+
+
+
+                                                  {
+                                                      "NameOfScene": "GetDLayer",
+                                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Base",
+                                                                    "SetChoice", "2", "DemonLayerGet",
+                                                                    "Lillian hops in place and swings her arms in wide arcs, sending sparkles everywhere.",
+                                                                    "Speaks",
+                                                                    "{i}Congratulations!♪{/i} You are definitely the Chosen Hero of the Goddess! I {i}knew{/i} it!♪",
+                                                                    "Lillian then loses her grandiose composure and prances excitedly in place as she continues speaking.",
+                                                                    "Speaks",
+                                                                    "This means you're worthy of the power I can bestow upon the hero! I have a holy relic that was entrusted to me by the Goddess herself! It's been blessed by her grand holy powers, which means that it should have no problem bypassing the monster's enchantment, letting you fight the monsters fair and square in non-lethal combat!",
+                                                                    "You can't stop yourself from letting out a choked noise of surprise as you stare at Lillian's beaming face, feeling a strong note of incredulity run through you from her words.",
+                                                                    "PlayerSpeaks",
+                                                                    "Th-The Goddess herself gave you a {i}holy relic{/i}?!",
+                                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                                    "Speaks",
+                                                                    "Ehehe,♪ {i}Well,{/i} I've been donating almost every bit of money I've ever received beyond the bare minimum needed for daily needs to the Goddess for my whole life, and some time ago, upon giving her some more donations, a fancy silver box appeared before me with a grand flash of light, and inside of it was the holy weapon!",
+                                                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                    "She quickly turns and scampers off to the desk in the room, and you hear a series of locks being undone before she pulls out a sizable silver box, and she clicks it open, lifting out an ornate silver-coated whip high above her head with a proud smile.",
+                                                                    "Speaks",
+                                                                    "Behold the weapon blessed by the Great Holy Goddess Venereae, {i}The Demon Slayer!{/i}",
+                                                                    "You take a look at the intricately designed yet very practical-looking whip as she walks over, eagerly displaying it to you, and you note that the silver on it almost seems to gleam even without light directly shining on it as the sleek design appeals to you, and you can see the words 'Demon Layer' engraved on the handle of it.",
+                                                                    "Speaks",
+                                                                    "Thankfully it only slays the super evil soul-devouring demons, or I'd probably have to make an actually hard heroic test.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                    "Speaks",
+                                                                    "But for such an exquisitely crafted weapon, I can't imagine how someone forgot the 'S' in slayer there. I feel like the letters could have been a little smaller to fit it all onto the handle.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                                    "Speaks",
+                                                                    "SwapLineIf", "OtherEventsChoice", "Pray to the Goddess Statue.",
+                                                                      "5", "ShopUnlocked","The important thing is, Lucille told me all about its powers: it incapacitates monster girls with its holy powers, sealing away their strength so they can't bother people anymore! I mean, their power will come back eventually, but they'll have time to think on their actions. But as I mentioned before, the {i}truly{/i} evil and vile will be completely seared with holy light, utterly destroying them.",
+                                                                      "5", "", "The important thing is, an Angel told me all about its powers, it incapacitates monster girls with its holy powers, sealing away their strength so they can't bother people anymore! I mean, their power will come back eventually, but they'll have time to think on their actions. But as I mentioned before, the {i}truly{/i} evil and vile will be completely seared with holy light, utterly destroying them.",
+                                                                    "EndLoop",
+                                                                    "Lillian lets out an excited gasp and runs over to the closet in the room, pulling it open with her free hand, keeping the whip in the other.",
+                                                                    "Speaks",
+                                                                    "You definitely need a demonstration of the Demon Slayer's incredible holy power!",
+                                                                    "From inside the closet she pulls out what appears to be a combat practice dummy designed to look like an imp, and starts to drag it behind her, heading into the church proper, and you follow after her a little thrown off by the entire event occurring, noting that the church is thankfully completely empty at the moment.",
+                                                                    "She sets down the practice dummy imp in an open area with a smile, and you get a better look at it. At the very least you think it's supposed to be an imp, clearly inspired by Lillian's imagination. It has an exaggeratedly evil smile, dark red eyes, and great curved horns sprouting from its forehead, dressed in scanty fabrics, and overall it looks quite comical, but terrifying as well.",
+                                                                    "Speaks",
+                                                                    "I made this 'evil' practice dummy by hand after receiving this holy weapon to try and practice it, but I could never get the hang of using it. I even went to go see Amber to see if she could teach me, but she refused... She only tried to get me to {i}sell{/i} her the holy relic...",
+                                                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                    "Lillian frowns as she walks a few feet away from the dummy over to you, whip in hand, and a cheerful smile on her face as she reaches your side.",
+                                                                    "Speaks",
+                                                                    "But anyway, I figured it would be perfect for a demonstration of the weapon's holy powers!",
+                                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                                    "She turns to the dummy with a look of determination, straightening herself, dramatically bringing her arm up before attempting to crack the silvery whip to smite the 'imp', which only causes it to clumsily flail in the air before slipping out of her hand and clattering to the ground, not even managing to hit the dummy.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Upset",
+                                                                    "Lillian lets out a small sigh before turning to face you with a pout, looking more than a little put out, but not surprised, by her failure.",
+                                                                    "Speaks",
+                                                                    "I've been trying to get the hang of it ever since I took it to Amber to try and learn how to use it, but I just can't seem to get it to work right... I really wanted to help out more by battling evil and stuff...",
+                                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                                    "But just a few moments later, she picks the whip up off the ground and offers the handle of it to you, widely smiling at you with an extremely pure look in her eyes as her earlier sadness all but evaporates.",
+                                                                    "Speaks",
+                                                                    "SwapLineIf", "OtherEventsChoice", "Pray to the Goddess Statue.",
+                                                                      "5", "ShopUnlocked", "But thanks to a revelation given to me by Lucille, I learned it was not my duty to {i}use{/i} the Demon Slayer, but to deliver this holy weapon to the Great Goddess Venereae's chosen hero!♪",
+                                                                      "5", "", "But thanks to a revelation given to me by an Angel, I learned it was not my duty to {i}use{/i} the Demon Slayer, but to deliver this holy weapon to the Great Goddess Venereae's chosen hero!♪",
+                                                                    "EndLoop",
+                                                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                    "Speaks",
+                                                                    "Come on!♪ Come on!♪ Try it out!♪",
+                                                                    "You tentatively take the silvery whip from Lillian's hands as she eagerly gestures towards the test dummy with a beaming smile, and you give the whip a slightly concerned look as it seems to be abnormally warm in your hands before swinging it.",
+                                                                    "The whip expertly flies through the air and perfectly strikes the 'evil' practice dummy right in the face with a sharp crack, and you can't help but jump a little as a blinding flash of holy light suddenly envelops the imp's snarling visage!",
+                                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                                    "Lillian cheerfully claps at your incredible use of the Demon Slayer, ecstatically prancing in place at the sight of you using it so effectively.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                    "Speaks",
+                                                                    "See! It worked for you! I knew you could do it! It didn't even mar the poor practice dummy.",
+                                                                    "Lillian grandly turns to face the statue of the Goddess in the room with a look of devotion for a few moments, clasping her hands together in prayer before spinning back to you with a glimmering smile, spreading her arms wide in a grand arc.",
+                                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                                    "Speaks",
+                                                                    "Now, go brave hero! And defeat the Demon Queen with the power of the Goddess at your side!",
+                                                                    "She lets out a childish giggle with a huge smile on her face as she happily dances in place for a few heartbeats.",
+                                                                    "Speaks",
+                                                                    "EEEEE!♪ I always wanted to say that! Oh, I'm sure that you're going to be the best-chosen hero of the Goddess, and I'm helping you fulfill that role! This is the best day {i}EVER{/i}!♪",
+                                                                    "She can't seem to contain her excitement any longer as she happily prances around the church, singing an off-key prayer to the Goddess as she all but forgets about you, leaving you to your own devices. You'll probably need to tell her what 'Demon Slayer' actually is another time...",
+                                                                    "GiveSkill", "Demon Layer"
+                                                                ]
+                                                  }
+              ]
+}

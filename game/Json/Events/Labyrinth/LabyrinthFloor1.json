@@ -1,0 +1,888 @@
+{
+  "name": "Labyrinth Floor 1",
+  "CardType": "Event",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [ ""],
+  "Speakers": [
+                {
+                  "name": "Ceris",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "Beris",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "Ushris",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "Iabel",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "Perpetua",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                },
+                {
+                  "name": "???",
+                  "postName": "",
+                  "SpeakerType": "?"
+                }
+              ],
+  "EventText": [
+                  {
+                      "NameOfScene": "LabyrinthMenu",
+                      "theScene": [
+                                    "Menu",
+                                      "Talk with Ceris.",
+                                      "Sex?",
+
+                                      "Tutorial?",
+                                      "Challenge Ceris' Floor.",
+                                      "RequiresChoice", "1", "BeatFloor1",
+                                      "Go to another floor.",
+                                      "Leave.",
+                                    "EndLoop"
+                                ]
+                  },
+                            {
+                              "NameOfScene": "Sex?",
+                              "theScene": [
+                                            "IfChoice", "1", "BeatFloor1", "Seegs",
+                                            "ChangeImageLayer", "Expression", "Ceris", "Sigh",
+                                            "Unexpectedly, Ceris lets out a heavy sigh and awkwardly rubs the back of her head with one of her large pawed hands.",
+                                            "Speaks",
+                                            "Er- I'd {i}love{/i} to... buuuut the rules won't let me have casual fun with you till you manage to beat my floor...",
+                                            "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                            "However, she brightens back up just as quickly with a warm, reassuring smile.",
+                                            "Speaks",
+                                            "But I'm sure you can clear it.♪ I believe in you!♪",
+                                            "ChangeImageLayer", "Expression", "Ceris", "Seductive",
+                                            "Speaks",
+                                            "And once you {i}do{/i}, we can have as {i}much{/i} sex as we want in my room.♥ Hours and hours of passionate fucking. {i}Without pause.{/i}♥",
+                                            "Letting her husky voice hang in the air as a low seductive purr, she stares at you hungrily, leaning forward so her straining shirt shamelessly shows off her bountiful cleavage, the lascivious sight and the hellhound's close proximity making your cock twitch with anticipation.",
+                                            "ChangeImageLayer", "Expression", "Ceris", "SmugKnowing",
+                                            "Speaks",
+                                            "Until then, though, we can have all the fun we want during my challenge.♥ For stress relief, ya know? Feel free to come right to me and 'accidentally' get caught. I {i}definitely{/i} won't mind.♥",
+                                            "Giggling lustfully, she bouncily returns to her previous position, the motion making her breasts jiggle visibly, the lustful sight making you want to go straight to Ceris' floor to 'face her'...",
+                                            "JumpToScene", "LabyrinthMenu"
+                                ]
+                              },
+                              {
+                                "NameOfScene": "Seegs",
+                                "theScene": [
+                                            "ChangeImageLayer", "Expression", "Ceris", "LipLick",
+                                            "Ceris lets out a hungry purr of arousal when you broach the topic she's temptingly brought up so many times, her big fluffy tail wagging with obvious eagerness.",
+                                            "Speaks",
+                                            "Well, that's if you're {i}sure.♥{/i} Who knows how long we could end up fucking for.♥ A quicky?♥ A few hours? A few {i}days?♥{/i}",
+                                            "You can feel the heat radiating off the hellhound's body as a result of her mounting lust, her cheeks flushing with excitement as she casts a hungry glance at your crotch, her lascivious gaze filling you with infectious arousal and making your cock twitch at the idea of taking her up on her alluringly dangerous offer...",
+                                            "ChangeImageLayer", "Expression", "Ceris", "Horny",
+                                            "Speaks",
+                                            "I'm confident your pelvis can handle it, though.♥",
+                                            "ChangeImageLayer", "Expression", "Ceris", "Seductive",
+                                            "Speaks",
+                                            "{i}Buuut{/i} if you're having second thoughts, now's the time to back out. Once we get to my room, you're all mine.♥",
+                                            "Menu",
+                                              "I'm sure!",
+                                              "Er- Maybe not...",
+                                            "EndLoop"
+                                          ]
+                              },
+                                    {
+                                      "NameOfScene": "Er- Maybe not...",
+                                      "theScene": [
+                                                  "ChangeImageLayer", "Expression", "Ceris", "Sigh",
+                                                  "Speaks",
+                                                  "Aw... You went and got my hopes up and everything...",
+                                                  "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                  "Speaks",
+                                                  "Well, let me know if you change your mind.♪",
+                                                  "JumpToScene", "LabyrinthMenu"
+                                                ]
+                                    },
+                                    {
+                                    "NameOfScene": "I'm sure!",
+                                    "theScene": [
+                                                  "ChangeImageLayer", "Expression", "Ceris", "Laugh",
+                                                  "ChangeBGM", "music/Forest/Starry sky.mp3",
+                                                  "Speaks",
+                                                  "Yes!♪",
+                                                  "Her tail still wagging with brimming excitement, she lunges forward to grab your wrist with a large paw and starts dragging you off with overeager enthusiasm down one of the passages, making you stumble a moment before you recover your balance and follow her energetic stride.",
+                                                  "IfChoice", "2", "SexIntro", "RoomSexIntroList",
+                                                  "SetChoice", "2", "SexIntro",
+                                                  "JumpToScene", "RoomSexIntro"
+                                                ]
+                                    },
+                                        {
+                                        "NameOfScene": "RoomSexIntroList",
+                                        "theScene": [
+                                                    "JumpToRandomScene",
+                                                        "RoomSexIntro2",
+                                                        "RoomSexIntro2",
+                                                        "RoomSexIntro2",
+                                                        "RoomSexIntro",
+                                                    "EndLoop"
+                                                  ]
+                                        },
+                                              {
+                                              "NameOfScene": "RoomSexIntro",
+                                              "theScene": [
+                                                            "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                            "Speaks",
+                                                            "Hopefully, I don't end up scaring you off.♪",
+                                                            "ChangeImageLayer", "Expression", "Ceris", "Seductive",
+                                                            "Speaks",
+                                                            "I'd much rather leave you aching for {i}more.♥{/i}",
+                                                            "She lets out a low growl of arousal as she looks back at you with a sideways glance, giving her shapely hips a teasing shake that draws your eyes to how sultrily her booty shorts hug and highlight her curves, while warm heat slowly seeps from her clawed hand possessively but tenderly wrapped around your wrist.",
+                                                            "Meanwhile, as you keep progressing down the darkened hallway of the Umbral Labyrinth, the air contorts, moving you to another part of the domain.",
+                                                            "As if the subtle change of location had jogged her mind, a stray thought seems to pop into Ceris' head, her expression losing some of its seductive edge as her eyes flit off to the side in peevish perplexity.",
+                                                            "ChangeImageLayer", "Expression", "Ceris", "Confused",
+                                                            "Speaks",
+                                                            "Seriously, though, you'd think wild sex for hours with a smoking-hot girl like {i}me{/i} would be more of a draw for guys? But nah, big strong monster lady with infinite stamina scary. That's just quitter talk, right? Who cares if you end up a twitching blissed-out mess that keeps getting helplessly bounced on and can't think about anything other than cumming again and again, it's {i}cute!{/i}",
+                                                            "ChangeImageLayer", "Expression", "Ceris", "LipLick",
+                                                            "Speaks",
+                                                            "But I have a {i}really{/i} good feeling about you, [ThePlayerName].♥",
+                                                            "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                            "While she licks her lips, her gaze catches a smooth door up ahead, adorned with a no-nonsense nameplate that reads 'Ceris'. She brightens up at the sight, losing her train of thought again.",
+                                                            "JumpToScene", "RoomSexPostIntro"
+                                                          ]
+                                              },
+                                              {
+                                              "NameOfScene": "RoomSexIntro2",
+                                              "theScene": [
+                                                            "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                            "Speaks",
+                                                            "Alright!♪ Noooow... Which was the fastest way to my room?♪",
+                                                            "ChangeImageLayer", "Expression", "Ceris", "Laugh",
+                                                            "She muses as she urges you through the darkened hallways of the Umbral Labyrinth, her clawed hand firmly clamped around your wrist forcing you to keep pace or get dragged along behind the eager, horny hellhound.",
+                                                            "ChangeImageLayer", "Expression", "Ceris", "LipLick",
+                                                            "Despite the dark, intimidating setting, Ceris keeps on a relaxed hum or a cheery chatter of conversation as you go through a flurry of disorienting twists and turns, until the air eventually contorts with shadows, revealing the sudden presence of a smooth door up ahead. The hellhound licks her lips in excitement at your destination finally coming into view, the stony gate adorned with a no-nonsense nameplate that reads 'Ceris'.",
+                                                            "JumpToScene", "RoomSexPostIntro"
+                                                          ]
+                                              },
+
+                                            {
+                                              "NameOfScene": "RoomSexPostIntro",
+                                              "theScene": ["ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                      "Speaks",
+                                                      "Oh hey, there's my room!♪ {i}Finally.{/i} Let's get to it.♪",
+                                                      "ChangeImageLayer", "Expression", "Ceris", "Seductive",
+                                                      "ChangeBGM", "music/Casino/BGM sweet smell.mp3",
+                                                      "With an extra spring in her step, she practically drags you over to the door and swings it open, hurriedly pulling you in before swiftly closing it behind the two of you. And then, before you can even get an actual look at what her home looks like, she's already pushing you down onto a bed right next to the door, pressing her lips to yours in a deep, messy, greedy kiss.",
+                                                      "Speaks",
+                                                      "Mmmhh-♥ So what do you want to do?♥",
+                                                      "ChangeImageLayer", "Expression", "Ceris", "LipLick",
+                                                      "She lets out an excited growl as she breaks the kiss, your body pressed between her large curvy frame and her cushy bed, her warmth slowly oozing into you and imbuing you with infectious lust, her huge tits idly rubbing against you while she gazes amorously into your eyes.",
+                                                      "JumpToEventThenScene", "CerisRoom", "SexMenu"
+                                                    ]
+                                            },
+
+
+
+
+
+                              {
+                                  "NameOfScene": "EnterFloor1",
+                                  "theScene": [
+                                                "DisplayCharacters",
+                                                  "1",
+                                                "EndLoop",
+                                                "ChangeBG", "LabyrinthCeris.png",
+                                                "ChangeBGM", "music/Loss/BGM03_Uncanny light.mp3",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                "You make your way back up through the shadowy passageways and return to the first chamber, spotting Ceris lazily leaning against a wall with her large claws crossed under her heavy bust. Upon noticing you, she gives you a friendly smile.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                "Speak", "Ceris",
+                                                "Oh? Back again? Did you miss me {i}that{/i} much?",
+                                                "ChangeImageLayer", "Expression", "Ceris", "SmugKnowing",
+                                                "She gives you a teasing look while her words hang in the air, her large fluffy tail lightly wagging behind her.",
+                                                "Speak", "Ceris",
+                                                "I'm guessing you got sick of my sisters, or really wanted to fuck me?♥",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Confused",
+                                                "She pauses her lustful train of thought with a quizzical look.",
+                                                "Speak", "Ceris",
+                                                "Or did you need a refresher or something?",
+                                                "JumpToScene", "LabyrinthMenu"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "Go to another floor.",
+                                  "theScene": ["DisplayCharacters",
+                                                "EndLoop",
+                                                "Menu",
+                                                  "Go to the second floor.",
+                                                  "RequiresChoiceFromEvent", "Labyrinth Floor 2", "2", "BeatFloor2",
+                                                  "Go to the third floor.",
+                                                  "RequiresChoiceFromEvent", "Labyrinth Floor 3", "13", "BeatFloor3",
+                                                  "Go to the fourth floor.",
+                                                  "Stay here.",
+                                                "EndLoop"
+                                            ]
+                              },
+                                    {
+                                        "NameOfScene": "Stay here.",
+                                        "theScene": ["DisplayCharacters",
+                                                        "1",
+                                                      "EndLoop",
+                                                      "JumpToScene", "LabyrinthMenu"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the second floor.",
+                                        "theScene": [
+                                                      "JumpToEventThenScene", "Labyrinth Floor 2", "EnterFloor2"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the third floor.",
+                                        "theScene": [
+                                                      "JumpToEventThenScene", "Labyrinth Floor 3", "EnterFloor3"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the fourth floor.",
+                                        "theScene": [
+                                                      "JumpToEventThenScene", "Labyrinth Floor 4", "EnterFloor4"
+                                                  ]
+                                    },
+
+
+                              {
+                                  "NameOfScene": "About you nursing me in combat...",
+                                  "theScene": [
+                                                "ChangeImageLayer", "Expression", "Ceris", "Caring",
+                                                "Speak", "Ceris",
+                                                "Hm?♪ What about it?",
+                                                "Menu",
+                                                  "RequiresChoiceFromEvent", "CerisCombatEvents",  "5", "NoNursing",
+                                                  "Can you use milk?",
+                                                  "RequiresChoiceFromEvent", "CerisCombatEvents",  "5", "NoMilk",
+                                                  "Can you use milk?",
+
+                                                  "RequiresChoiceFromEvent", "CerisCombatEvents",  "5", "NoNursing",
+                                                  "Can you not use milk?",
+                                                  "RequiresChoiceFromEvent", "CerisCombatEvents",  "5", "Milk",
+                                                  "Can you not use milk?",
+
+                                                  "RequiresChoiceFromEvent", "CerisCombatEvents",  "5", "NoMilk",
+                                                  "Can you just stop?",
+                                                  "RequiresChoiceFromEvent", "CerisCombatEvents",  "5", "Milk",
+                                                  "Can you just stop?",
+                                                  "Nevermind.",
+                                                "EndLoop"
+                                            ]
+                              },
+                                    {
+                                        "NameOfScene": "Nevermind.",
+                                        "theScene": [
+                                                      "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                      "Speak", "Ceris",
+                                                      "Alright.♪",
+                                                      "JumpToScene", "CerisTalkMenu"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "Can you use milk?",
+                                        "theScene": [
+                                                      "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                      "Speak", "Ceris",
+                                                      "Sure!♪",
+                                                      "GetEventAndSetChoice", "CerisCombatEvents", "5", "Milk",
+                                                      "ChangeImageLayer", "Expression", "Ceris", "Loving",
+                                                      "Speak", "Ceris",
+                                                      "I promise it's {i}very{/i} tasty.♥",
+                                                      "JumpToScene", "CerisTalkMenu"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "Can you not use milk?",
+                                        "theScene": [
+                                                      "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                      "Speak", "Ceris",
+                                                      "Aw, {i}fine.♪{/i}",
+                                                      "GetEventAndSetChoice", "CerisCombatEvents", "5", "NoMilk",
+                                                      "ChangeImageLayer", "Expression", "Ceris", "Loving",
+                                                      "Speak", "Ceris",
+                                                      "It's going to be fun either way.♥",
+                                                      "JumpToScene", "CerisTalkMenu"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "Can you just stop?",
+                                        "theScene": [
+                                                      "ChangeImageLayer", "Expression", "Ceris", "Confused",
+                                                      "Speak", "Ceris",
+                                                      "Oh, uh, sure.",
+                                                      "GetEventAndSetChoice", "CerisCombatEvents", "5", "NoNursing",
+                                                      "ChangeImageLayer", "Expression", "Ceris", "Bashful",
+                                                      "Speak", "Ceris",
+                                                      "Sorry, I thought you'd be into that...",
+                                                      "JumpToScene", "CerisTalkMenu"
+                                                  ]
+                                    },
+
+
+
+
+
+                        {
+                            "NameOfScene": "Talk with Ceris.",
+                            "theScene": [
+                                          "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                          "Speak", "Ceris",
+                                          "Oh, do you have questions or something?",
+                                          "JumpToScene", "CerisTalkMenu"
+                                      ]
+                        },
+                            {
+                                "NameOfScene": "Done talking.",
+                                "theScene": [
+                                              "JumpToScene", "LabyrinthMenu"
+                                          ]
+                            },
+                        {
+                            "NameOfScene": "CerisTalkMenu",
+                            "theScene": [
+                                          "Menu",
+                                            "Ask about her.",
+                                            "Ask about her sisters.",
+
+                                            "RequiresChoiceFromEvent", "CerisCombatEvents",  "5", "Milk",
+                                            "About you nursing me in combat...",
+                                            "RequiresChoiceFromEvent", "CerisCombatEvents",  "5", "NoMilk",
+                                            "About you nursing me in combat...",
+                                            "RequiresChoiceFromEvent", "CerisCombatEvents",  "5", "NoNursing",
+                                            "About you nursing me in combat...",
+
+                                            "Ask about the labyrinth.",
+                                            "Done talking.",
+                                          "EndLoop"
+                                      ]
+                        },
+                              {
+                                  "NameOfScene": "Ask about her sisters.",
+                                  "theScene": [
+                                                "Menu",
+                                                  "Ask about Beris.",
+                                                  "Ask about Ushris.",
+                                                  "Ask about Iabel.",
+                                                  "Ask about something else.",
+                                                "EndLoop"
+                                            ]
+                              },
+                                      {
+                                          "NameOfScene": "Ask about something else.",
+                                          "theScene": [
+                                                        "JumpToScene", "CerisTalkMenu"
+                                                    ]
+                                      },
+
+
+                              {
+                                  "NameOfScene": "Ask about her.",
+                                  "theScene": [ "ChangeImageLayer", "Expression", "Ceris", "Confused",
+                                                "Speak", "Ceris",
+                                                "You wanna know about me? Well, that's forward.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                "Her big fluffy tail wags behind her happily while she gives you a relaxed smile.",
+                                                "Speak", "Ceris",
+                                                "Let's see... I like long runs on the beach where I chase after someone and pin them down and fuck them {i}well{/i} past their limit into a twitching orgasm-ridden mess.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Seductive",
+                                                "Speak", "Ceris",
+                                                "...Then spending a few hours cuddling, coddling, and smothering them in affection, before hunting them down and fucking them incoherent {i}all{/i}, {i}over{/i}, {i}again.♥{/i}",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Bashful",
+                                                "She glances off to the side while crossing her arms under her heavy bust in thought.",
+                                                "Speak", "Ceris",
+                                                "Well, I guess it doesn't {i}have{/i} to be a beach...",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                "Speak", "Ceris",
+                                                "It could be a forested hike trail, a mountain sight-seeing path, some vacant city streets, or- {i}hell,{/i} even this labyrinth!♪",
+                                                "Her tail swishes behind her excitedly as she lists off the alternative locations, letting her fantasies hang in the air a moment before her tail stops dead as something clicks in her head.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Confused",
+                                                "Speak", "Ceris",
+                                                "Wait. Heck. I'm at work, I shouldn't be going over my dating profile right now.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                "Speak", "Ceris",
+                                                "Well, if your experience in the labyrinth doesn't scare you off like most guys, feel free to hit me up sometime.♪",
+                                                "You're left a little stunned at how quickly she ran off with the conversation like that...",
+                                                "JumpToScene", "CerisTalkMenu"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "Ask about Beris.",
+                                  "theScene": [ "ChangeImageLayer", "Expression", "Ceris", "Smug",
+                                                "Speak", "Ceris",
+                                                "Oh? My runt of a little sis?",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                "Speak", "Ceris",
+                                                "Yeah, she's a {i}bit{/i} of a firecracker. Haha.♪",
+                                                "The large hellhound's tail lazily sways behind her as she talks, her ears swiveling slightly to the side.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                "Speak", "Ceris",
+                                                "Crass, blunt, aggressive... I mean you saw her. Of course, I still love her to bits.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "SmugKnowing",
+                                                "Speak", "Ceris",
+                                                "She's also {i}really{/i} fun to tease. She might be the fastest out of the four of us, but that's really all she's got going for her. She gets {i}so{/i} flustered when I pin her down for fun.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Laugh",
+                                                "Speak", "Ceris",
+                                                "Really, I'd say she's probably the weakest out of the four of us, but she'll kick your ass if you say that to her face. Hahaha.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Caring",
+                                                "Speak", "Ceris",
+                                                "But she's still a hellhound, so don't get stupid and think you can take her no problem... Or you'll end up on the floor, fucked till your hips feel like they're going to break.",
+                                                "She then mutters more to herself than to you.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Confused",
+                                                "Speak", "Ceris",
+                                                "That reminds me, I should really ask her where she buys her clothes. Mine keep ripping...",
+                                                "JumpToScene", "Ask about her sisters."
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "Ask about Ushris.",
+                                  "theScene": [ "ChangeImageLayer", "Expression", "Ceris", "SmugKnowing",
+                                                "Taking on a mock-dainty pose, the big hellhound asks with a simpering expression and a bad falsetto voice.",
+                                                "Speak", "Ceris",
+                                                "Hm? You want to know about my 'dear' sister?~",
+                                                "She chuckles lightly at her botched imitation of her petite, green-hued sister's tone of voice.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                "Speak", "Ceris",
+                                                "Well, I can't say much or she'll get really grumpy.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                "Speak", "Ceris",
+                                                "But as you could likely tell just from her hat, she's a witch.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Laugh",
+                                                "Speak", "Ceris",
+                                                "She might be the smallest of us, but thanks to her magic, she's sure as hell not the {i}weakest.{/i}",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Confused",
+                                                "Speak", "Ceris",
+                                                "Honestly, she can be pretty scary when she wants to be...",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                "Speak", "Ceris",
+                                                "But yeah, she handles most of the logistics and management of the labyrinth, and knows way more about it than the rest of us.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Sigh",
+                                                "Speak", "Ceris",
+                                                "And thank {i}fuck{/i} for that. I sure as hell don't know how to run the behind-the-scenes of this place...",
+                                                "Her tail then wags excitedly as she happily mulls something over, thoughtfully hopping from one foot to another, the bouncing movement making her heavy tits jiggle.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Laugh",
+                                                "Speak", "Ceris",
+                                                "Oh!♪ And you saw her outfit, right? She looks {i}so{/i} adorable!♪",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smug",
+                                                "Speak", "Ceris",
+                                                "Hehe, and she always freaks out when I hug and compliment her.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                "Speak", "Ceris",
+                                                "{i}Anyways,{/i} that's probably all I can safely say about her...",
+                                                  "ChangeImageLayer", "Expression", "Ceris", "Confused",
+                                                "She stands there, letting a pause hang in the air for a moment before jumping slightly in realization.",
+                                                "Speak", "Ceris",
+                                                "Oh! Actually...",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smug",
+                                                "Speak", "Ceris",
+                                                "Just so you {i}know,{/i} she's {i}waaay{/i} more interested in having a 'pet' she can toy with, rather than a boyfriend or something.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                "Speak", "Ceris",
+                                                "So be careful around her if that's not your thing.♪",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Confused",
+                                                "Speak", "Ceris",
+                                                "...I think she wants to call them 'puppy' or something? Kinda weird if you ask me-",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                "Speak", "Ceris",
+                                                "Oh, whoops, okay, {i}now{/i} I've probably said too much, hahaha.",
+                                                "JumpToScene", "Ask about her sisters."
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "Ask about Iabel.",
+                                  "theScene": [ "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                "Speak", "Ceris",
+                                                "Oh? Iabel?",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                "Speak", "Ceris",
+                                                "First off, she {i}is{/i} a hellhound.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                "Speak", "Ceris",
+                                                "We all have the same mom and dad, so ya know.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Confused",
+                                                "Speak", "Ceris",
+                                                "Really, Demonic Beast genetics are just kinda weird as {i}fuck{/i}, in my opinion?",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smug",
+                                                "Speak", "Ceris",
+                                                "It's like, a Cerberus bloodline thing or something? I mean, Ushris was {i}born{/i} with that snake tail... but not, like, her giganto claws.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                "Speak", "Ceris",
+                                                "Meanwhile, Beris has way less monstrous features than the rest of us. So... yeaaah, it's weird...",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Serious",
+                                                "Ceris' face turns serious for a moment as she regards you evenly, her tail not wagging.",
+                                                "Speak", "Ceris",
+                                                "By the way, if you pick on Iabel for the not-a-hellhound thing, I'm going to kick your ass, enchantment or not.",
+                                                "Then her easygoing, cheerful behavior returns as quickly as it faded.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                "Speak", "Ceris",
+                                                "Just throwing it out there.♪",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smug",
+                                                "Speak", "Ceris",
+                                                "And I mean, I'm sure you think she's hot, so don't worry about the details.",
+                                                "JumpToScene", "Ask about her sisters."
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "Ask about the labyrinth.",
+                                  "theScene": [ "ChangeImageLayer", "Expression", "Ceris", "Confused",
+                                                "Speak", "Ceris",
+                                                "Oh, uh, you want to know {i}about{/i} the labyrinth?",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Caring",
+                                                "Speak", "Ceris",
+                                                "Well, I don't really get how this place works. You'd have better luck talking to Ushris about it, she's really into all this Umbral Labyrinth stuff.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Laugh",
+                                                "Ceris chuckles as she mulls something over, her tail lazily wagging behind her.",
+                                                "Speak", "Ceris",
+                                                "Honestly, I can't even tell what time of day it is down here, but {i}she{/i} can.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Confused",
+                                                "Speak", "Ceris",
+                                                "Something about time not mattering the same, or something?",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Sigh",
+                                                "Speak", "Ceris",
+                                                "Seriously, this whole place is just a bunch of magic gibberish to me.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                "Speak", "Ceris",
+                                                "But it {i}is{/i} really cool, and it's a great place to go for a run!",
+                                                "Speak", "Ceris",
+                                                "Anyways, anything else you want to chat about?",
+                                                "JumpToScene", "CerisTalkMenu"
+                                            ]
+                              },
+
+
+
+
+
+                            {
+                                "NameOfScene": "Tutorial?",
+                                "theScene": ["JumpToEvent", "LabyrinthTutorial"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Challenge Ceris' Floor.",
+                                "theScene": [   "GetEventAndSetChoice", "CerisCombatEvents", "4", "",
+                                                "GetEventAndSetProgress", "CerisCombatEvents", "0",
+                                                "GetEventAndSetChoice", "FireGridTimers", "1", "",
+                                                "GetEventAndSetProgress", "FireGridTimers", "0",
+                                                "GetEventAndSetChoice", "AphroGridTimers", "1", "",
+                                                "GetEventAndSetProgress", "AphroGridTimers", "0",
+
+                                                "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                                "Speak", "Ceris",
+                                                "Alright! Just head down that hallway over there, and we can get started.",
+                                                "She points a large claw down the darkened tunnel on your left before leisurely making her way to the path on the right, her large fluffy tail swaying in excitement.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                                "Speak", "Ceris",
+                                                "Just get all the keys and make it to the exit, I'm sure you'll do great!♪",
+                                                "You cautiously make your way towards the passage, looking back to see Ceris slowly fading from sight even as her flickering flames ominously illuminate the obsidian hallway she's heading down, the hellhound giving you a last backward glance.",
+                                                "ChangeImageLayer", "Expression", "Ceris", "LipLick",
+                                                "Speak", "Ceris",
+                                                "Either that {i}or{/i} we'll end up passionately fucking for {i}hours{/i}.♥ No pressure.♪",
+                                                "DisplayCharacters",
+                                                "EndLoop",
+                                                "She winks out of sight with her sultry words hanging in the air, the light around her twisting and distorting as she fades away for good, leaving you to head down your own passage with anticipation thrumming in your chest, the dim illumination swirling with an eerie chill as you head deeper...",
+                                                "ChangeBGM", "music/Unknown/Dungeon-Cave.mp3",
+                                                "Then, as you enter a split in the dark tunnel, you realize with a glance back that the hallway you came in from is no longer here, your grimoire pulsing as it opens to display a map...",
+
+                                              "GoToMap",
+                                                "Tileset",
+                                                  "0", "GridMap/floor.png", "Floor", "", "", "",
+                                                  "1", "GridMap/Wall.png", "Wall",  "", "", "",
+                                                  "2", "GridMap/Void.png", "Floor", "", "", "",
+                                                  "E", "GridMap/LockedGate.png", "Interactable", "Labyrinth Floor 1", "Exit", "You stand before a large metal gate with multiple large locks...",
+                                                  "P", "GridMap/floorPoisoned.png", "Auto", "Labyrinth", "Posion", "The ground is laden in aphrodisiac.",
+                                                "EndLoop",
+                                                "PlayerCoord", "1", "4",
+                                                "YAdjust", "45",
+                                                "NPC",
+                                                  "Name", "Key",
+                                                  "Img", "GridMap/Key.png",
+                                                  "Event", "Auto", "Labyrinth", "Key",
+                                                  "Obstacle",
+                                                "EndLoop",
+
+                                                "NPC",
+                                                  "Name", "Ceris",
+                                                  "Img", "GridMap/CerisIcon.png",
+                                                  "Event", "Auto", "CerisGridAI", "Caught",
+                                                  "Movement", "Chase", "Player",
+                                                  "TurnEvent", "CerisGridAI", "Timer",
+                                                  "CanShareTile", "False",
+                                                "EndLoop",
+                                                    "NPC",
+                                                      "Name", "CerisResting",
+                                                      "Img", "GridMap/CerisRestingIcon.png",
+                                                      "TurnEvent", "CerisGridAI", "WarnTimer",
+                                                    "EndLoop",
+                                                    "NPC",
+                                                      "Name", "CerisRespawnWarning",
+                                                      "Img", "GridMap/CerisRespawnIcon.png",
+                                                      "TurnEvent", "CerisGridAI", "RespawnTimer",
+                                                    "EndLoop",
+                                                "NPC",
+                                                  "Name", "RecallPoint",
+                                                  "Img", "Invisible",
+                                                "EndLoop",
+                                                "NPC",
+                                                  "Name", "FireGridDormant",
+                                                  "Img", "GridMap/Grate.png",
+                                                  "Timer", "7", "FireGridTimers", "SwapToWarning",
+                                                  "Obstacle",
+                                                "EndLoop",
+                                                    "NPC",
+                                                      "Name", "FireGridWarning",
+                                                      "Img", "GridMap/FireGrateWarning.png",
+                                                      "Timer", "3", "FireGridTimers", "SwapToActive",
+                                                      "Obstacle",
+                                                    "EndLoop",
+                                                    "NPC",
+                                                      "Name", "FireGridActive",
+                                                      "Img", "GridMap/FireGrateBigFire.png",
+                                                      "Timer", "5", "FireGridTimers", "SwapToCalm",
+                                                      "Obstacle",
+                                                      "Wall",
+                                                    "EndLoop",
+                                                    "NPC",
+                                                      "Name", "FireGridCalming",
+                                                      "Img", "GridMap/FireGrateWarning.png",
+                                                      "Timer", "1", "FireGridTimers", "SwapToDormant",
+                                                      "Obstacle",
+                                                    "EndLoop",
+
+                                                "NPC",
+                                                  "Name", "AphroGridDormant",
+                                                  "Img", "GridMap/Grate.png",
+                                                  "Timer", "5", "AphroGridTimers", "SwapToWarning",
+                                                  "Obstacle",
+                                                "EndLoop",
+                                                    "NPC",
+                                                      "Name", "AphroGridWarning",
+                                                      "Img", "GridMap/PoisonGrateWarning.png",
+                                                      "Timer", "2", "AphroGridTimers", "SwapToActive",
+                                                      "Obstacle",
+                                                    "EndLoop",
+                                                    "NPC",
+                                                      "Name", "AphroGridActive",
+                                                      "Img", "GridMap/PoisonGrateFull.png",
+                                                      "Timer", "8", "AphroGridTimers", "SwapToCalm",
+                                                      "Event", "Auto", "AphroGridTimers", "StepOnAphroGrid",
+                                                      "Description", "Stepping into the thick haze of aphrodisiacs fills your senses with hot aching need...",
+                                                      "Obstacle",
+                                                    "EndLoop",
+                                                    "NPC",
+                                                      "Name", "AphroGridCalming",
+                                                      "Img", "GridMap/PoisonGrateWarning.png",
+                                                      "Timer", "3", "AphroGridTimers", "SwapToDormant",
+                                                      "Obstacle",
+                                                    "EndLoop",
+                                                "NPC",
+                                                  "Name", "RedHeartTrap",
+                                                  "Img", "GridMap/heartTile.png",
+                                                  "Event", "Auto", "RedHeartTile", "RedHeart",
+                                                  "Obstacle",
+                                                "EndLoop",
+                                                      "NPC",
+                                                        "Name", "RedHeartTrapDormant",
+                                                        "Img", "GridMap/heartTileDormant.png",
+                                                        "TurnEvent", "RedHeartTile", "RedHeartTimer",
+                                                        "Event", "Interactable", "RedHeartTile", "RedHeart",
+                                                        "Obstacle",
+                                                      "EndLoop",
+
+
+
+                                                "SpawnNPC", "Key", "3", "4",
+                                                "SpawnNPC", "Key", "13", "4",
+                                                "SpawnNPC", "Key", "8", "3",
+                                                "SpawnNPC", "Key", "8", "5",
+
+                                                "SpawnNPC", "RecallPoint", "15", "4",
+                                                "SpawnNPC", "RecallPoint", "13", "4",
+
+                                                "SpawnNPC", "FireGridDormant", "4", "6",
+                                                "SpawnNPC", "FireGridDormant", "12", "2",
+                                                "SpawnNPC", "AphroGridActive", "8", "1",
+                                                "SpawnNPC", "AphroGridActive", "8", "7",
+
+                                                "SpawnNPC", "FireGridDormant", "15", "3",
+                                                "SpawnNPC", "FireGridDormant", "15", "5",
+
+                                                "SpawnNPC", "FireGridDormant", "10", "4",
+
+                                                "SpawnNPC", "AphroGridActive", "4", "2",
+                                                "SpawnNPC", "AphroGridActive", "12", "6",
+
+                                                "SpawnNPC", "AphroGridActive", "7", "3",
+                                                "SpawnNPC", "AphroGridActive", "7", "5",
+                                                "SpawnNPC", "AphroGridActive", "9", "3",
+                                                "SpawnNPC", "AphroGridActive", "9", "5",
+
+                                                "SpawnNPC", "RedHeartTrap", "6", "4",
+
+                                                "SpawnNPC", "Ceris", "15", "4",
+
+
+                                                "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                "Row", "1","0","1","1","0","1","1","1","1","1","1","1","0","1","1","0","1",  "EndLoop",
+                                                "Row", "1","0","1","0","0","0","1","0","0","0","1","0","0","0","1","0","1",  "EndLoop",
+                                                "Row", "1","0","1","0","1","0","0","0","1","0","0","0","1","0","1","E","1",  "EndLoop",
+                                                "Row", "1","0","1","0","0","0","1","0","0","0","1","0","0","0","1","0","1",  "EndLoop",
+                                                "Row", "1","0","1","1","0","1","1","1","1","1","1","1","0","1","1","0","1",  "EndLoop",
+                                                "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                              "StartMap"
+                                          ]
+                            },
+
+                  {
+                      "NameOfScene": "Leave.",
+                      "theScene": [ "ChangeBG", "Labyrinth.png",
+                                    "DisplayCharacters", 
+                                                "EndLoop",
+                                    "You step away from the labyrinth's twisting entranceway and return to the checkpoint gem, not intent on taking the challenge right now."
+                                ]
+                  },
+                  {
+                      "NameOfScene": "StillLocked",
+                      "theScene": [
+                                        "You try to open the door, but it won't budge. It's still locked, you need more keys!"
+                                ]
+                  },
+                  {
+                      "NameOfScene": "Exit",
+                      "theScene": [
+                                        "IfGridNPCThere", "Key", "StillLocked",
+                                        "You use all of the keys you've collected and open the gate! It smoothly opens with a quiet metallic noise, and you hurry on and pass through!",
+                                        "ExitGridmap",
+                                        "IfChoice", "1", "BeatFloor1", "Exit2",
+                                        "DisplayCharacters",
+                                          "1",
+                                        "EndLoop",
+                                        "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                        "ChangeBGM", "music/Loss/BGM03_Uncanny light.mp3",
+                                        "ChangeBG", "Labyrinth.png",
+                                        "As you hurry through the seemingly downward-sloping hallway, a wall next to you smoothly shifts and Ceris steps in with a friendly smile on her face, her tail happily wagging behind her.",
+                                        "Speak", "Ceris",
+                                        "I knew you could do it!♪",
+                                        "ChangeImageLayer", "Expression", "Ceris", "Smile",
+                                        "She walks alongside you through the smooth blackened stone pathway that stretches on deeper.",
+                                        "Speak", "Ceris",
+                                        "The next chamber will be my sis, Beris. I'm sure you remember her. Blue hair and fire, really grumpy.",
+                                        "Ceris' large tail sways cheerfully behind her as she strides next to you, the flickering flames licking off her eyes illuminating the dim stone hallway.",
+                                        "ChangeImageLayer", "Expression", "Ceris", "SmugKnowing",
+                                        "Speak", "Ceris",
+                                        "Well her challenge isn't {i}just{/i} her, hehe... You'll see.",
+                                        "The large hellhound woman's demeanor hints at some degree of unspoken excitement as she gives you a sly glance, her eyes glinting with lustful hunger.",
+                                        "ChangeImageLayer", "Expression", "Ceris", "Caring",
+                                        "Seemingly realizing something, she lets out a small 'Oh' and cups her chin with a large clawed paw before pointing it at you, her face adorned in a kind smile.",
+                                        "Speak", "Ceris",
+                                        "By the way, if you can't handle dealing with my sisters, or get frustrated with the labyrinth, or get so horny you can't think straight, feel free to stop by the upper chamber, I'll help make it {i}alllll{/i} better...",
+                                        "She trails off with a low growling purr of arousal, licking her lips as she gazes at you, looking like she could pounce on you right here and now, the warmth oozing from her body heating up the hallway to a sweat-inducing point.",
+                                        "But a few steps further, the dim light surrounding you twists and bends eerily for a moment, and Ceris flinches in surprise, snapping out of her building arousal.",
+                                        "ChangeImageLayer", "Expression", "Ceris", "Confused",
+                                        "Speak", "Ceris",
+                                        "Oh! We're almost there.",
+                                        "ChangeImageLayer", "Expression", "Ceris", "Smug",
+                                        "Speak", "Ceris",
+                                        "Well, this is as far as I can tag along. See you again soon?♥",
+                                        "DisplayCharacters",
+                                        "EndLoop",
+                                        "Leaving behind her the echoes of her husky, teasing voice the large hellhound woman strides back the way you came from, lazily stretching her arms over her head, swiftly winking out of view as the darkened air twists obfuscatingly around her.",
+                                        "Speak", "Ceris",
+                                        "Oh, wait, right-!",
+                                        "DisplayCharacters",
+                                          "1",
+                                        "EndLoop",
+                                        "ChangeImageLayer", "Expression", "Ceris", "Bashful",
+                                        "Ceris pops her head back through the rippling darkness, looking mildly embarrassed at her own forgetfulness.",
+                                        "ChangeImageLayer", "Expression", "Ceris", "Base",
+                                        "Speak", "Ceris",
+                                        "Don't be afraid to head back to town if you need a break or some pick-me-ups or whatever. We're not going to make you redo the whole labyrinth from the start.",
+                                        "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                        "Speak", "Ceris",
+                                        "Very nice of us, right? Anyways, bye!♥",
+                                        "She once more winks out of view into the twisting shadows of the labyrinth, the absence of her fiery presence making it all the darker.",
+
+                                        "SetChoice", "1", "BeatFloor1",
+                                        "ChangeBG", "LabyrinthBeris.png",
+                                        "You tentatively move forward, stepping into another crossroad-like chamber with multiple passages, the room lit by wall braziers burning with deep blue flames.",
+                                        "ChangeBGM", "music/Forest Dungeon/night road.mp3",
+
+                                          "GetEventAndIfChoice", "Hellhound Bondage", "1", "Signed", "BerisAltFloorIntro",
+                                        "DisplayCharacters",
+                                          "2",
+                                        "EndLoop",
+                                        "ChangeImageLayer", "Expression", "Beris", "Frown",
+                                        "The slim form of the second hellhound sister steps forward from the second labyrinthine floor ahead of you, a scowl on her face as she glares at you, her arms crossed.",
+                                        "Speak", "Beris",
+                                        "Alright, you bastard, you made it to the second floor, now the {i}real{/i} challenge starts.",
+                                        "ChangeImageLayer", "Expression", "Beris", "TchAtYou",
+                                        "Speak", "Beris",
+                                        "And don't expect me to answer any of your dumb-as-fuck questions. Go bother Ceris if you're confused or some shit. Just let me know when you're ready.",
+
+                                        "JumpToEventThenScene", "Labyrinth Floor 2",  "LabyrinthMenu"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "BerisAltFloorIntro",
+                            "theScene": [
+                                            "DisplayCharacters",
+                                              "2",
+                                            "EndLoop",
+                                            "ChangeImageLayer", "Expression", "Beris", "Shy",
+                                            "The slim form of the second hellhound sister steps forward from the second labyrinthine floor ahead of you, an awkward expression on her face as she tries to avoid making eye contact with you, her arms defensively crossed.",
+                                            "Speak", "Beris",
+                                            "Uh, h-hey, [ThePlayerName]... So you made it to the second floor, huh...? ...Fuck, when we met at that bar, I never actually considered that I might see you here...",
+                                            "ChangeImageLayer", "Expression", "Beris", "TchAtYou",
+                                            "Speak", "Beris",
+                                            "W-Well, fuck it! Whatever! Our secret little deal doesn't change how this works! The challenges here and onward get a lot fucking harder! Don't expect me to go easy on you or some shit!",
+                                            "ChangeImageLayer", "Expression", "Beris", "Tch",
+                                            "She shifts restlessly, lightly biting her lip as she wrestles with something, her thighs tightly pressed together, her tail wagging excitedly behind her.",
+                                            "Speak", "Beris",
+                                            "I-I'm serious! D-Don't expect that bondage crap to work on me here!",
+                                            "She lets out a huff and glares at you.",
+                                            "ChangeImageLayer", "Expression", "Beris", "TchAtYou",
+                                            "Speak", "Beris",
+                                            "And don't think I'll answer any of your dumb-as-fuck questions! Go bother Ceris if you're confused or some shit. Just let me know when you're ready.",
+                                            "ChangeImageLayer", "Expression", "Beris", "Shy",
+                                            "Speak", "Beris",
+                                            "There's no way you're going to get me to spill anything on my sisters or this stupid labyrinth...",
+                                            "JumpToEventThenScene", "Labyrinth Floor 2",  "LabyrinthMenu"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "Exit2",
+                            "theScene": [
+                                              "DisplayCharacters",
+                                                "1",
+                                              "EndLoop",
+                                              "ChangeBGM", "music/Loss/BGM03_Uncanny light.mp3",
+                                              "ChangeImageLayer", "Expression", "Ceris", "Happy",
+                                              "You hurry up the darkened hall and soon find yourself back where you started on the first floor, face to face with a warmly smiling Ceris leaning lazily against the wall in front of you.",
+                                              "Speak", "Ceris",
+                                              "I hope you had fun!♪",
+                                              "ChangeImageLayer", "Expression", "Ceris", "Seductive",
+                                              "Speak", "Ceris",
+                                              "I know I did.♥",
+                                              "JumpToScene",  "LabyrinthMenu"
+                                      ]
+                        },
+                  {
+                      "NameOfScene": "eventbroke.",
+                      "theScene": [
+                                    "screm event broke"
+                                ]
+                  }
+
+              ]
+}

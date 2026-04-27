@@ -1,0 +1,1401 @@
+{
+"name": "ImpCombatEvent",
+"CardType": "",
+"CardLimit": "0",
+"Description": "",
+"requires": [ ""],
+"Speakers": [
+    {
+    "name": "Imp",
+    "postName": "",
+    "SpeakerType": "Monster"
+    }
+],
+"EventText": [
+    {
+    "NameOfScene": "Intro",
+    "theScene": [
+      "SetChoice", "2", "",
+      "SetChoice", "8", "",
+      "SetChoice", "9", "",
+      "GetEventAndIfChoice", "Imp Den", "1", "HordeBattle", "HordeIntro",
+      "EncounterSizeLessOrEqualTo", "1", "SoloImpIntro",
+      "EncounterSizeLessOrEqualTo", "2", "DuoImpIntro",
+      "SetChoice", "1", "GroupImp",
+      "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Smug",
+      "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "LipLick",
+      "FocusOnMonster", "3", "ChangeImageLayer", "Expression", "Teasing",
+      "A group of imps approach, and let out playful giggles as they smugly ogle your body."
+    ]},
+    {
+    "NameOfScene": "DuoImpIntro",
+    "theScene": [
+      "SetChoice", "1", "GroupImp",
+      "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Base",
+      "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Teasing",
+      "A pair of imps approach, and let out playful giggles as they ogle your body."
+    ]},
+    {
+    "NameOfScene": "SoloImpIntro",
+    "theScene": [
+      "SetChoice", "1", "SoloImp",
+      "ChangeImageLayer", "Expression", "Panic",
+      "ChangeMonsterAllure", "-2",
+      "ChangeMonsterWill", "-3",
+      "ChangeMonsterPower", "-1",
+      "ChangeMonsterTech", "-2",
+      "ChangeMonsterMaxArousal", "-25",
+      "ChangeMonsterSensitivity", "Mouth", "35",
+      "ChangeMonsterSensitivity", "Sex", "35",
+      "ChangeMonsterSensitivity", "Ass", "35",
+
+      "ClearMonsterSkillList",
+      "GiveSkillToMonster", "Impish Blowjob",
+      "GiveSkillToMonster", "Playful Tease",
+      "GiveSkillToMonster", "Glans Teasing",
+      "GiveSkillToMonster", "Mischievous Suction",
+
+      "GiveSkillToMonster", "Impish Insert",
+      "GiveSkillToMonster", "Playful Grind",
+      "GiveSkillToMonster", "Mischievous Tighten",
+
+      "A single imp stumbles into you and lets out a panicked yelp of surprise before frantically looking around, quickly realizing it's just the two of you."
+    ]},
+    {
+    "NameOfScene": "HordeIntro",
+    "theScene": [
+      "SetChoice", "1", "GroupImp",
+      "SetChoice", "5", "Spawn",
+      "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Smug",
+      "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "LipLick",
+      "FocusOnMonster", "3", "ChangeImageLayer", "Expression", "Teasing",
+      "FocusOnMonster", "4", "ChangeImageLayer", "Expression", "XD",
+      "FocusOnMonster", "5", "ChangeImageLayer", "Expression", "Base",
+      "SetProgress", "7",
+      "The closest imps quickly surround you and slam the door shut behind you, cutting off your chances to escape, and they let out a collective giggle as more move in to join in the battle...",
+      "GetEventAndIfChoice", "Forest Dungeon Nexus", "25", "BannedTheImpsFromFun", "AngryImps"
+    ]},
+    {
+    "NameOfScene": "AngryImps",
+    "theScene": [
+      "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Confused",
+      "FocusedSpeaks",
+      "'Thanks to you Ancilla punished us pretty badly you know...'",
+      "ChangeImageLayer", "Expression", "Smug",
+      "FocusedSpeaks",
+      "'So we're going to take out all our frustrations out on your dick!♪'",
+      "FocusOnMonster", "1", "ApplyStatusEffectToMonster", "Imp Fury", "ApplyStatusEffectToMonster", "Demonic Determination",
+      "FocusOnMonster", "2", "ApplyStatusEffectToMonster", "Imp Fury", "ApplyStatusEffectToMonster", "Demonic Determination",
+      "FocusOnMonster", "3", "ApplyStatusEffectToMonster", "Imp Fury", "ApplyStatusEffectToMonster", "Demonic Determination",
+      "FocusOnMonster", "4", "ApplyStatusEffectToMonster", "Imp Fury", "ApplyStatusEffectToMonster", "Demonic Determination",
+      "FocusOnMonster", "5", "ApplyStatusEffectToMonster", "Imp Fury", "ApplyStatusEffectToMonster", "Demonic Determination",
+      "The imps seem rather exhilarated at the concept of defeating you and taking some revenge..."
+    ]},
+
+    {
+    "NameOfScene": "HordeDefeatCheck",
+    "theScene": [
+      "CallNextSceneJumpThenReturn", "IfChoice", "8",  "CG Active", "Imp CG Stance Check",
+      "GetEventAndIfChoice", "Imp Den", "1", "HordeBattle", "MoreImps"
+    ]},
+    {
+    "NameOfScene": "Imp CG Stance Check",
+    "theScene": [
+      "IfPlayerHasStance", "None", "Clear CGs",
+      "IfPlayerHasStance", "Sex", "ImpCGPenetrate",
+      "IfPlayerHasStance", "Face Sit", "ImpCGFaceSit"
+    ]},
+    {
+    "NameOfScene": "Clear CGs",
+    "theScene": [
+      "RoledCGEnd",
+      "SetChoice", "8", "",
+      "SetChoice", "9", ""
+    ]},
+    {
+    "NameOfScene": "MoreImps",
+    "theScene": [
+      "EncounterSizeLessOrEqualTo", "3", "MoreImpProgressCheck",
+      "EncounterSizeGreaterOrEqualTo", "7", "NoTeamSkill",
+      "JumpToRandomScene",
+        "MoreImpProgressCheck",
+        "MoreImpProgressCheck",
+        "NoTeamSkill",
+        "NoTeamSkill",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "MoreImpProgressCheck",
+    "theScene": [ "IfProgressEqualsOrGreater", "1", "ReplaceImp"
+    ]},
+    {
+    "NameOfScene": "ReplaceImp",
+    "theScene": [
+      "ChangeProgress", "-1",
+      "AddMonsterToEncounter", "Imp",
+      "As that imp fades away from her orgasm, another imp rushes to take her place in the battle!",
+      "GetEventAndIfChoice", "Forest Dungeon Nexus", "25", "BannedTheImpsFromFun", "GiveImpFury"
+    ]},
+    {
+    "NameOfScene": "GiveImpFury",
+    "theScene": [
+      "FocusOnMonster", "13",
+      "ApplyStatusEffectToMonster", "Imp Fury", "ApplyStatusEffectToMonster", "Demonic Determination"
+    ]},
+
+    {
+    "NameOfScene": "EndOfRound",
+    "theScene": [
+      "SetChoice", "7", "",
+      "ResumeAllMonsterAttacks",
+      "IfChoice", "1", "GroupImp", "CheckEncounterSize",
+      "SetChoice", "2", ""
+    ]},
+    {
+    "NameOfScene": "CheckEncounterSize",
+    "theScene": [
+      "IfChoice", "2", "Charge!", "CheckChargeViablility",
+      "IfChoice", "2", "TeamSpell!", "CheckSpellViablility",
+      "GetEventAndIfChoice", "Imp Den", "1", "HordeBattle", "HordeBolster",
+      "EncounterSizeGreaterOrEqualTo", "5", "TeamAttackDecision",
+      "EncounterSizeLessOrEqualTo", "1", "SoloImpRealize"
+    ]},
+
+    {
+    "NameOfScene": "ImpCGPenetrate",
+    "theScene": [
+      "PlayMotionEffect", "CrashSmol",
+      "IfPlayerHasStance", "Face Sit", "ImpCGBoth",
+      "ChangeImageLayer", "ImageSetRoleStart", "Sex",
+      "ChangeImageLayer", "PlayerBody", "RideDick",
+      "ChangeImageLayer", "DickImpExpression", "Teasing",
+      "SetChoice", "8", "CG Active",
+      "SetChoice", "9", ""
+    ]},
+    {
+    "NameOfScene": "ImpCGFaceSit",
+    "theScene": [
+      "PlayMotionEffect", "CrashSmol",
+      "IfPlayerHasStance", "Sex", "ImpCGBoth",
+      "IfPlayerHasStance", "Anal", "ImpCGBoth",
+      "ChangeImageLayer", "ImageSetRoleStart", "Sex",
+      "ChangeImageLayer", "PlayerBody", "RideFace",
+      "ChangeImageLayer", "FaceImpExpressionRide", "Teasing",
+      "SetChoice", "8", "CG Active",
+      "SetChoice", "9", ""
+    ]},
+    {
+    "NameOfScene": "ImpCGBoth",
+    "theScene": [
+      "SetChoice", "9", "BothImpsStance",
+      "ChangeImageLayer", "PlayerBody", "RideBoth"
+    ]},
+
+    {
+    "NameOfScene": "SoloImpRealize",
+    "theScene": [
+      "SetChoice", "1", "SoloImp",
+      "FocusOnMonster", "1",
+      "ChangeImageLayer", "Expression", "Panic",
+      "ChangeMonsterAllure", "-2",
+      "ChangeMonsterWill", "-3",
+      "ChangeMonsterPower", "-1",
+      "ChangeMonsterTech", "-2",
+      "ChangeMonsterMaxArousal", "-25",
+      "ChangeMonsterSensitivity", "Mouth", "35",
+      "ChangeMonsterSensitivity", "Sex", "35",
+      "ChangeMonsterSensitivity", "Ass", "35",
+
+      "ClearMonsterSkillList",
+      "GiveSkillToMonster", "Impish Blowjob",
+      "GiveSkillToMonster", "Playful Tease",
+      "GiveSkillToMonster", "Glans Teasing",
+      "GiveSkillToMonster", "Mischievous Suction",
+
+      "GiveSkillToMonster", "Impish Insert",
+      "GiveSkillToMonster", "Playful Grind",
+      "GiveSkillToMonster", "Mischievous Tighten",
+
+      "The final imp looks around in a panic realizing she's alone against you, her confidence rapidly crumbling."
+    ]},
+    {
+    "NameOfScene": "HordeBolster",
+    "theScene": [
+      "IfProgressEqualsOrGreater", "1", "MaximumCheck",
+      "EncounterSizeGreaterOrEqualTo", "5", "TeamAttackDecision",
+      "EncounterSizeLessOrEqualTo", "1", "SoloImpRealize"
+    ]},
+    {
+    "NameOfScene": "MaximumCheck",
+    "theScene": [
+      "EncounterSizeLessOrEqualTo", "11", "AddImp",
+      "EncounterSizeGreaterOrEqualTo", "5", "TeamAttackDecision"
+    ]},
+    {
+    "NameOfScene": "AddImp",
+    "theScene": [
+      "IfChoice",  "5", "DontSpawn", "SkipSpawn",
+      "SetChoice", "5", "DontSpawn",
+      "AddMonsterToEncounter", "Imp",
+      "ChangeProgress", "-1",
+      "Another imp joins in!",
+      "GetEventAndIfChoice", "Forest Dungeon Nexus", "25", "BannedTheImpsFromFun", "GiveImpFuryRound",
+      "EncounterSizeGreaterOrEqualTo", "5", "TeamAttackDecision"
+    ]},
+    {
+    "NameOfScene": "GiveImpFuryRound",
+    "theScene": [
+      "FocusOnMonster", "13",
+      "ApplyStatusEffectToMonster", "Imp Fury", "ApplyStatusEffectToMonster", "Demonic Determination",
+      "EncounterSizeGreaterOrEqualTo", "5", "TeamAttackDecision"
+    ]},
+    {
+    "NameOfScene": "SkipSpawn",
+    "theScene": [
+      "SetChoice", "5", "Spawn",
+      "EncounterSizeGreaterOrEqualTo", "5", "TeamAttackDecision"
+    ]},
+
+    {
+    "NameOfScene": "TeamAttackDecision",
+    "theScene": [
+      "GetEventAndSetProgress", "Imp Glory Hole", "0",
+      "FocusOnMonster", "1", "IfMonsterHasStatusEffect", "Stun", "Restrain", "Sleep", "Decide2",
+      "GetEventAndChangeProgress", "Imp Glory Hole", "1",
+      "JumpToScene", "Decide2"
+    ]},
+    {
+    "NameOfScene": "Decide2",
+    "theScene": [
+      "EncounterSizeLessOrEqualTo", "1", "RetaliateCheck",
+      "FocusOnMonster", "2", "IfMonsterHasStatusEffect", "Stun", "Restrain", "Sleep", "Decide3",
+      "GetEventAndChangeProgress", "Imp Glory Hole", "1",
+      "JumpToScene", "Decide3"
+    ]},
+    {
+    "NameOfScene": "Decide3",
+    "theScene": [
+      "EncounterSizeLessOrEqualTo", "2", "RetaliateCheck",
+      "FocusOnMonster", "3", "IfMonsterHasStatusEffect", "Stun", "Restrain", "Sleep", "Decide4",
+      "GetEventAndChangeProgress", "Imp Glory Hole", "1",
+      "JumpToScene", "Decide4"
+    ]},
+    {
+    "NameOfScene": "Decide4",
+    "theScene": [
+      "EncounterSizeLessOrEqualTo", "3", "RetaliateCheck",
+      "FocusOnMonster", "4", "IfMonsterHasStatusEffect", "Stun", "Restrain", "Sleep", "Decide5",
+      "GetEventAndChangeProgress", "Imp Glory Hole", "1",
+      "JumpToScene", "Decide5"
+    ]},
+    {
+    "NameOfScene": "Decide5",
+    "theScene": [
+      "EncounterSizeLessOrEqualTo", "4", "RetaliateCheck",
+      "FocusOnMonster", "5", "IfMonsterHasStatusEffect", "Stun", "Restrain", "Sleep", "Decide6",
+      "GetEventAndChangeProgress", "Imp Glory Hole", "1",
+      "JumpToScene", "Decide6"
+    ]},
+    {
+    "NameOfScene": "Decide6",
+    "theScene": [
+      "EncounterSizeLessOrEqualTo", "5", "DecisionAvalibilityCheck",
+      "FocusOnMonster", "6", "IfMonsterHasStatusEffect", "Stun", "Restrain", "Sleep", "Decide7",
+      "GetEventAndChangeProgress", "Imp Glory Hole", "1",
+      "JumpToScene", "Decide7"
+    ]},
+    {
+    "NameOfScene": "Decide7",
+    "theScene": [
+      "EncounterSizeLessOrEqualTo", "6", "DecisionAvalibilityCheck",
+      "FocusOnMonster", "7", "IfMonsterHasStatusEffect", "Stun", "Restrain", "Sleep", "Decide8",
+      "GetEventAndChangeProgress", "Imp Glory Hole", "1",
+      "JumpToScene", "Decide8"
+    ]},
+    {
+    "NameOfScene": "Decide8",
+    "theScene": [
+      "EncounterSizeLessOrEqualTo", "7", "DecisionAvalibilityCheck",
+      "FocusOnMonster", "8", "IfMonsterHasStatusEffect", "Stun", "Restrain", "Sleep", "Decide9",
+      "GetEventAndChangeProgress", "Imp Glory Hole", "1",
+      "JumpToScene", "Decide9"
+    ]},
+    {
+    "NameOfScene": "Decide9",
+    "theScene": [
+      "EncounterSizeLessOrEqualTo", "8", "DecisionAvalibilityCheck",
+      "FocusOnMonster", "9", "IfMonsterHasStatusEffect", "Stun", "Restrain", "Sleep", "Decide10",
+      "GetEventAndChangeProgress", "Imp Glory Hole", "1",
+      "JumpToScene", "Decide10"
+    ]},
+    {
+    "NameOfScene": "Decide10",
+    "theScene": [
+      "EncounterSizeLessOrEqualTo", "9", "DecisionAvalibilityCheck",
+      "FocusOnMonster", "10", "IfMonsterHasStatusEffect", "Stun", "Restrain", "Sleep", "Decide11",
+      "GetEventAndChangeProgress", "Imp Glory Hole", "1",
+      "JumpToScene", "Decide11"
+    ]},
+    {
+    "NameOfScene": "Decide11",
+    "theScene": [
+      "EncounterSizeLessOrEqualTo", "10", "DecisionAvalibilityCheck",
+      "FocusOnMonster", "11", "IfMonsterHasStatusEffect", "Stun", "Restrain", "Sleep", "Decide12",
+      "GetEventAndChangeProgress", "Imp Glory Hole", "1",
+      "JumpToScene", "Decide12"
+    ]},
+    {
+    "NameOfScene": "Decide12",
+    "theScene": [
+      "EncounterSizeLessOrEqualTo", "11", "DecisionAvalibilityCheck",
+      "FocusOnMonster", "12", "IfMonsterHasStatusEffect", "Stun", "Restrain", "Sleep", "DecisionAvalibilityCheck",
+      "GetEventAndChangeProgress", "Imp Glory Hole", "1",
+      "JumpToScene", "DecisionAvalibilityCheck"
+    ]},
+
+    {
+    "NameOfScene": "RetaliateCheck",
+    "theScene": [ "RefocusOnInitialMonster",
+      "IfChoice", "7", "Charge", "NotEnoughImpsForPlan",
+      "IfChoice", "7", "Spell", "NotEnoughImpsForPlan"
+    ]},
+    {
+    "NameOfScene": "DecisionAvalibilityCheck",
+    "theScene": [
+      "GetAnEventsProgressThenIfEqualsOrGreater", "Imp Glory Hole", "5", "TeamAttackDecisionPostCCCheck",
+      "IfChoice", "7", "Charge", "NotEnoughImpsForPlan",
+      "IfChoice", "7", "Spell", "NotEnoughImpsForPlan",
+      "JumpToScene", "NoTeamSkill"
+    ]},
+
+    {
+    "NameOfScene": "TeamAttackDecisionPostCCCheck",
+    "theScene": [
+      "IfChoice", "7", "Charge", "ChargeSizeViable",
+      "IfChoice", "7", "Spell", "ChargeSpellViable",
+      "IfPlayerHasStance", "Any", "InStanceTeamAttackDecision",
+      "JumpToRandomScene",
+        "HordeChargePrepare",
+        "HordeChargePrepare",
+        "SpellChargePrepare",
+        "NoTeamSkill",
+        "NoTeamSkill",
+        "NoTeamSkill",
+        "NoTeamSkill",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "InStanceTeamAttackDecision",
+    "theScene": [
+      "JumpToRandomScene",
+        "SpellChargePrepare",
+        "NoTeamSkill",
+        "NoTeamSkill",
+        "NoTeamSkill",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "NoTeamSkill",
+    "theScene": [
+    ]},
+    {
+    "NameOfScene": "HordeChargePrepare",
+    "theScene": [
+      "SkipAllMonsterAttacks",
+      "SetChoice", "2", "Charge!",
+      "All the imps look ready to charge at you as they giggle amongst themselves..."
+    ]},
+    {
+    "NameOfScene": "SpellChargePrepare",
+    "theScene": [
+      "SkipAllMonsterAttacks",
+      "SetChoice", "2", "TeamSpell!",
+      "All the imps start to glow with eerie pink magic while giggling with sinister intent..."
+    ]},
+    {
+    "NameOfScene": "CheckChargeViablility",
+    "theScene": [
+      "SetChoice", "7", "Charge",
+      "SetChoice", "2", "",
+      "EncounterSizeGreaterOrEqualTo", "5", "TeamAttackDecision",
+      "JumpToScene", "NotEnoughImpsForPlan"
+    ]},
+    {
+    "NameOfScene": "ChargeSizeViable",
+    "theScene": [
+      "IfPlayerHasStance", "Any", "OverRunWhileDistracted",
+      "SetPostName", " - Imp Wave Tactics!",
+      "FocusedSpeaksSkill",
+      "The imps surge towards you in an effort to bring you to the ground!",
+      "SetPostName", "",
+      "Menu",
+        "Push them back! (Power)",
+        "Dodge! (Technique)",
+        "Accept the wave of imps.",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "Push them back! (Power)",
+    "theScene": [
+      "StatCheck",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "6", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "7", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "8", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "9", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "10", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "11", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "12", "3",
+      "Power", "20", "TacklePass",
+      "Fail", "TackleFail"
+    ]},
+    {
+    "NameOfScene": "Dodge! (Technique)",
+    "theScene": [
+      "StatCheck",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "6", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "7", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "8", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "9", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "10", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "11", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "12", "3",
+      "Technique", "20", "TacklePass",
+      "Fail", "TackleFail"
+    ]},
+    {
+    "NameOfScene": "Accept the wave of imps.",
+    "theScene": [ 
+      "ResetStatCheckDifficultyModifer",
+      "You willingly accept the incoming embrace of the numerous imps, and are quickly pinned to the ground!",
+      "JumpToScene", "ApplyImpTackle"
+    ]},
+    {
+    "NameOfScene": "OverRunWhileDistracted",
+    "theScene": [ 
+      "With one of the imps already up close and personal with you, you're distracted enough that the rest of the imps easily overrun you, pinning you to the ground!",
+      "JumpToScene", "ApplyImpTackle"
+    ]},
+    {
+    "NameOfScene": "TacklePass",
+    "theScene": [ "But you manage to shake off the imp horde! Leaving them pouting while they plan their next move."
+    ]},
+    {
+    "NameOfScene": "TackleFail",
+    "theScene": [
+      "The imps overrun you and you're quickly pinned to the ground!",
+      "JumpToScene", "ApplyImpTackle"
+    ]},
+
+    {
+    "NameOfScene": "ApplyImpTackle",
+    "theScene": [
+      "ClearStances",
+      "FocusOnRandomMonster",
+      "ApplyStance", "Face Sit",
+      "ApplyStatusEffect", "Impish Face Grind",
+      "HitPlayerWith", "Impish Face Grind",
+      "PlayMotionEffect", "CrashSmol",
+      "ChangeImageLayer", "ImageSetRoleStart", "Sex",
+      "ChangeImageLayer", "PlayerBody", "RideFace",
+      "One of the imps sits on your hapless face, pressing her dripping wet pussy to your mouth, forcing you to drink down some of her aphrodisiac laden juices...[DamageToPlayer]",
+      "SetChoice", "4", "Bj1",
+      "JumpToRandomScene",
+        "ApplyBlowJobs",
+        "ApplySex",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "ApplySex",
+    "theScene": [
+      "FocusOnRandomMonster",
+      "IfMonsterHasStance", "Any", "ApplySex",
+      "ApplyStance", "Sex",
+      "HitPlayerWith", "Grind",
+      "ChangeImageLayer", "PlayerBody", "RideBoth",
+      "Another imp straddles your waist and starts to ride your rigid manhood, making you moan as her tight pussy squeezes around your length.[DamageToPlayer]",
+      "ApplyStatusEffect", "Imp Binding Magic",
+      "HitPlayerWith", "Impish Encouragement",
+      "The rest of the imps quickly use magic to restrain you to the ground while cheering the other two, the imp riding your cock frantically slamming her hips down as she's spurred on by her companions, while you're forced to lap at the others aphrodisiac laced pussy, leaving your mind melting into blissful pleasure.[DamageToPlayer]"
+    ]},
+    {
+    "NameOfScene": "ApplyBlowJobs",
+    "theScene": [
+      "ApplyStance", "Blowjob",
+      "JumpToScene", "OtherImpsBJ"
+    ]},
+    {
+    "NameOfScene": "OtherImpsBJ",
+    "theScene": [
+      "FocusOnRandomMonster",
+      "IfMonsterHasStance", "Any", "OtherImpsBJ",
+      "ApplyStance", "Blowjob",
+      "IfChoice", "4", "Bj3", "BJHordeText",
+      "IfChoice", "4", "Bj2", "Bj3",
+      "SetChoice", "4", "Bj2",
+      "JumpToScene", "OtherImpsBJ"
+    ]},
+    {
+    "NameOfScene": "Bj3",
+    "theScene": [
+      "SetChoice", "4", "Bj3",
+      "JumpToScene", "OtherImpsBJ"
+    ]},
+    {
+    "NameOfScene": "BJHordeText",
+    "theScene": [
+      "HitPlayerWith", "Double Blowjob", "ApplyStatusEffect", "Imp Binding Magic",
+      "The other imps quickly swarm around your dick after using magic to restrain your limbs, and start to lavish it with as much oral attention as possible with their skilled tongues, the imp riding your face leaning forward to join them in teasing your twitching cock.[DamageToPlayer]",
+      "HitPlayerWith", "Triple Blowjob",
+      "You sigh with melting bliss as they relentlessly worship your aching manhood, leaving you spacing out and servicing the imp riding your face while they suck and tease your throbbing dick, trying to wring out a thick load of your cum.[DamageToPlayer]"
+    ]},
+
+    {
+    "NameOfScene": "CheckSpellViablility",
+    "theScene": [
+      "SetChoice", "7", "Spell",
+      "SetChoice", "2", "",
+      "EncounterSizeGreaterOrEqualTo", "5", "TeamAttackDecision",
+      "JumpToScene", "NotEnoughImpsForPlan"
+    ]},
+    {
+    "NameOfScene": "ChargeSpellViable",
+    "theScene": [
+      "SetPostName", " - Arcane Seduction Overdrive!",
+      "IfPlayerHasStance", "Face Sit", "SpellWhileFaceSat",
+      "FocusedSpeaksSkill",
+      "The imps' magic flare brightly as they all seductively pose together, teasingly caressing each others bodies, calling out the name of the spell's like siren's call, and immediately a surge of mind-melting arousal quickly threatens to overwhelm you as your eyes are drawn to their supple bodies!",
+      "JumpToScene", "SpellResistMenu"
+    ]},
+    {
+    "NameOfScene": "SpellWhileFaceSat",
+    "theScene": [
+      "SetPostName", " - Arcane Seduction Overdrive!",
+      "FocusedSpeaksSkill",
+      "The imps' magic flares brightly as they call out their spells name like a siren's call, and your mind is instantly washed in ecstasy as merely licking the pussy of the imp grinding on your face feels like molten bliss, washing your mind in countless seductive images of the imps posing seductively drift through your thoughts.",
+      "ChangeNextStatCheckDifficulty", "5",
+      "JumpToScene", "SpellResistMenu"
+    ]},
+    {
+    "NameOfScene": "SpellResistMenu",
+    "theScene": [
+      "SetPostName", "",
+      "Menu",
+        "Endure the magic! (Power)",
+        "Resist the magic! (Intelligence)",
+        "Try to sensually distract one of the imps! (Allure)",
+        "Hope and pray something goes wrong! (Luck)",
+        "Accept the arcane ecstasy.",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "Endure the magic! (Power)",
+    "theScene": [
+      "SetChoice", "6", "Power",
+      "StatCheck",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "6", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "7", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "8", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "9", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "10", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "11", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "12", "3",
+      "Power", "15", "SpellPass",
+      "Fail", "SpellFail"
+    ]},
+    {
+    "NameOfScene": "Resist the magic! (Intelligence)",
+    "theScene": [
+      "SetChoice", "6", "Willpower",
+      "StatCheck",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "6", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "7", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "8", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "9", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "10", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "11", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "12", "3",
+      "Intelligence", "15", "SpellPass",
+      "Fail", "SpellFail"
+    ]},
+    {
+    "NameOfScene": "Try to sensually distract one of the imps! (Allure)",
+    "theScene": [
+      "SetChoice", "6", "Allure",
+      "StatCheck",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "6", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "7", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "8", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "9", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "10", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "11", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "12", "3",
+      "Allure", "15", "SpellPass",
+      "Fail", "SpellFail"
+    ]},
+    {
+    "NameOfScene": "Hope and pray something goes wrong! (Luck)",
+    "theScene": [
+      "SetChoice", "6", "Luck",
+      "StatCheck",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "6", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "7", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "8", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "9", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "10", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "11", "2",
+      "ChangeStatCheckDifficulty", "IfEncounterSizeGreaterOrEqualTo", "12", "3",
+      "Luck", "15", "SpellPass",
+      "Fail", "SpellFail"
+    ]},
+    {
+    "NameOfScene": "Accept the arcane ecstasy.",
+    "theScene": [
+      "ResetStatCheckDifficultyModifer",
+      "You offer no resistance to the enchanting magic washing over you, and a loose blissful smile spreads over your face...",
+      "JumpToScene", "ApplyImpMagic"
+    ]},
+    {
+    "NameOfScene": "SpellPass",
+    "theScene": [
+      "FocusOnMonster", "1", "ApplyStatusEffectToMonster", "Spank", "ApplyStatusEffectToMonster", "Charm", "ApplyStatusEffectToMonster", "Group Sensitize", "HitMonsterWith", "Arouse", "ChangeImageLayer", "Blush", "LightBlush", "ChangeImageLayer", "Expression", "Panic",
+      "EncounterSizeLessOrEqualTo", "1", "Rebuked",
+      "FocusOnMonster", "2", "ApplyStatusEffectToMonster", "Spank", "ApplyStatusEffectToMonster", "Charm", "ApplyStatusEffectToMonster", "Group Sensitize", "HitMonsterWith", "Arouse", "ChangeImageLayer", "Blush", "Blush", "ChangeImageLayer", "Expression", "ComicalPanic",
+      "EncounterSizeLessOrEqualTo", "2", "Rebuked",
+      "FocusOnMonster", "3", "ApplyStatusEffectToMonster", "Spank", "ApplyStatusEffectToMonster", "Charm", "ApplyStatusEffectToMonster", "Group Sensitize", "HitMonsterWith", "Arouse", "ChangeImageLayer", "Blush", "Blush", "ChangeImageLayer", "Expression", "Confused",
+      "EncounterSizeLessOrEqualTo", "3", "Rebuked",
+      "FocusOnMonster", "4", "ApplyStatusEffectToMonster", "Spank", "ApplyStatusEffectToMonster", "Charm", "ApplyStatusEffectToMonster", "Group Sensitize", "HitMonsterWith", "Arouse", "ChangeImageLayer", "Blush", "Blush", "ChangeImageLayer", "Expression", "Orgasm",
+      "EncounterSizeLessOrEqualTo", "4", "Rebuked",
+      "FocusOnMonster", "5", "ApplyStatusEffectToMonster", "Spank", "ApplyStatusEffectToMonster", "Charm", "ApplyStatusEffectToMonster", "Group Sensitize", "HitMonsterWith", "Arouse", "ChangeImageLayer", "Blush", "Blush", "ChangeImageLayer", "Expression", "OrgasmHeavy",
+      "EncounterSizeLessOrEqualTo", "5", "Rebuked",
+      "FocusOnMonster", "6", "ApplyStatusEffectToMonster", "Spank", "ApplyStatusEffectToMonster", "Charm", "ApplyStatusEffectToMonster", "Group Sensitize", "HitMonsterWith", "Arouse", "ChangeImageLayer", "Blush", "LightBlush", "ChangeImageLayer", "Expression", "Panic",
+      "EncounterSizeLessOrEqualTo", "6", "Rebuked",
+      "FocusOnMonster", "7", "ApplyStatusEffectToMonster", "Spank", "ApplyStatusEffectToMonster", "Charm", "ApplyStatusEffectToMonster", "Group Sensitize", "HitMonsterWith", "Arouse", "ChangeImageLayer", "Expression", "Pleasured",
+      "EncounterSizeLessOrEqualTo", "7", "Rebuked",
+      "FocusOnMonster", "8", "ApplyStatusEffectToMonster", "Spank", "ApplyStatusEffectToMonster", "Charm", "ApplyStatusEffectToMonster", "Group Sensitize", "HitMonsterWith", "Arouse", "ChangeImageLayer", "Blush", "Blush", "ChangeImageLayer", "Expression", "Shy",
+      "EncounterSizeLessOrEqualTo", "8", "Rebuked",
+      "FocusOnMonster", "9", "ApplyStatusEffectToMonster", "Spank", "ApplyStatusEffectToMonster", "Charm", "ApplyStatusEffectToMonster", "Group Sensitize", "HitMonsterWith", "Arouse", "ChangeImageLayer", "Blush", "Blush", "ChangeImageLayer", "Expression", "XD",
+      "EncounterSizeLessOrEqualTo", "9", "Rebuked",
+      "FocusOnMonster", "10", "ApplyStatusEffectToMonster", "Spank", "ApplyStatusEffectToMonster", "Charm", "ApplyStatusEffectToMonster", "Group Sensitize", "HitMonsterWith", "Arouse", "ChangeImageLayer", "Blush", "Blush", "ChangeImageLayer", "Expression", "Pleasured",
+      "EncounterSizeLessOrEqualTo", "10", "Rebuked",
+      "FocusOnMonster", "11", "ApplyStatusEffectToMonster", "Spank", "ApplyStatusEffectToMonster", "Charm", "ApplyStatusEffectToMonster", "Group Sensitize", "HitMonsterWith", "Arouse", "ChangeImageLayer", "Blush", "Blush", "ChangeImageLayer", "Expression", "Orgasm",
+      "EncounterSizeLessOrEqualTo", "11", "Rebuked",
+      "FocusOnMonster", "12", "ApplyStatusEffectToMonster", "Spank", "ApplyStatusEffectToMonster", "Charm", "ApplyStatusEffectToMonster", "Group Sensitize", "HitMonsterWith", "Arouse", "ChangeImageLayer", "Blush", "Blush", "ChangeImageLayer", "Expression", "OrgasmHeavy",
+      "JumpToScene", "Rebuked"
+    ]},
+    {
+    "NameOfScene": "Rebuked",
+    "theScene": [ 
+      "SwapLineIf", "Choice",
+        "6", "Allure", "You manage to completely distract and fluster a few of the imps with your body, disrupting their spell, giving the rest of the imps a collective split second of panic before the magic backlashes on all of them, causing them to all convulse and moan in pleasure!",
+        "6", "Willpower", "But you manage to completely deflect the spell with your own magic! And the imps manage a collective split second of panic before their spell backlashes onto all of them, causing them to all convulse and moan in pleasure!",
+        "6", "Luck", "But one of the imps horribly botches the spell, giving the other rest of the imps a collective split second of panic and angry glares at her before their magic backlashes onto all of them, causing them to all convulse and moan in pleasure!",
+        "6", "Power", "But you manage to completely resist the spell! And the imps manage a collective split second of panic before their magic backlashes onto all of them, causing them to all convulse and moan in pleasure!",
+      "EndLoop",
+      "CallMonsterEncounterOrgasmCheck"
+    ]},
+    {
+    "NameOfScene": "SpellFail",
+    "theScene": [
+      "The magic completely overtakes you, washing your entire being in bliss!",
+      "JumpToScene", "ApplyImpMagic"
+    ]},
+    {
+    "NameOfScene": "ApplyImpMagic",
+    "theScene": [
+      "ApplyStatusEffect", "Spank", "ApplyStatusEffect", "Charm", "HitPlayerWith", "Arouse",
+      "Your thoughts are completely lost in mindless arousal, you can only twitch and moan with pleasure as blissful arcane ecstasy washes through your body, leaving your mind completely captivated with the imps and their seductively supple bodies.[DamageToPlayer]",
+      "ApplyStatusEffect", "Group Sensitize", "HitPlayerWith", "Arouse",
+      "But not only is your mind lost in complete fascination, your entire body feels so wonderfully sensitive that a single gentle caress leaves your cock throbbing with need, leaving you shivering with melty pleasure while the imps giggle smugly.[DamageToPlayer]"
+    ]},
+
+    {
+    "NameOfScene": "NotEnoughImpsForPlan",
+    "theScene": [
+      "Without enough imps available for their scheme, they ditch the plan entirely!",
+      "JumpToScene", "EveryoneAttack!"
+    ]},
+    {
+    "NameOfScene": "EveryoneAttack!",
+    "theScene": [ 
+      "FocusOnMonster", "1",   "CallMonsterAttack",
+      "EncounterSizeLessOrEqualTo", "1", "NoTeamSkill",
+      "FocusOnMonster", "2",  "CallMonsterAttack",
+      "EncounterSizeLessOrEqualTo", "2", "NoTeamSkill",
+      "FocusOnMonster", "3",  "CallMonsterAttack",
+      "EncounterSizeLessOrEqualTo", "3", "NoTeamSkill",
+      "FocusOnMonster", "4",  "CallMonsterAttack",
+      "EncounterSizeLessOrEqualTo", "4", "NoTeamSkill",
+      "FocusOnMonster", "5",  "CallMonsterAttack",
+      "EncounterSizeLessOrEqualTo", "5", "NoTeamSkill",
+      "FocusOnMonster", "6",  "CallMonsterAttack",
+      "EncounterSizeLessOrEqualTo", "6", "NoTeamSkill",
+      "FocusOnMonster", "7",  "CallMonsterAttack",
+      "EncounterSizeLessOrEqualTo", "7", "NoTeamSkill",
+      "FocusOnMonster", "8",  "CallMonsterAttack",
+      "EncounterSizeLessOrEqualTo", "8", "NoTeamSkill",
+      "FocusOnMonster", "9",  "CallMonsterAttack",
+      "EncounterSizeLessOrEqualTo", "9", "NoTeamSkill",
+      "FocusOnMonster", "10",  "CallMonsterAttack",
+      "EncounterSizeLessOrEqualTo", "10", "NoTeamSkill",
+      "FocusOnMonster", "11",  "CallMonsterAttack",
+      "EncounterSizeLessOrEqualTo", "11", "NoTeamSkill",
+      "FocusOnMonster", "12",  "CallMonsterAttack"
+    ]},
+    {
+    "NameOfScene": "Penetrate",
+    "theScene": [
+      "IfChoice", "1", "SoloImp", "PenetrateSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|Teasing|n|'Ehehe♥, someone's eager!'",
+        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You do realize I'm basically a succubus, right?'",
+        "|f|ChangeImageLayer|/|Expression|/|Base|n|'You're going to regret this!♥'",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mmm!♥ I'm really hungry, so I hope you're ready!'",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "PenetrateSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|OrgasmHeavy|n||f|RefocusOnInitialMonster|n|'Eh- W-Wait you're kinda big- EEK!♥ '",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Panic|n|'Ahhh!♥ H-Hold on- M-My head went completely blank...♥'",
+        "|f|ChangeImageLayer|/|Expression|/|Shy|n|'U-Uhm,♥ b-be gentle?'",
+        "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Ohhhh...♥♥♥ Uhm, c-can you let me do all the moving?♥'",
+      "EndLoop"
+    ]},
+
+    {
+    "NameOfScene": "PenetrateA",
+    "theScene": [
+      "IfChoice", "1", "SoloImp", "PenetrateSoloA",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|OrgasmHeavy|n|'H-Hey where do you think you're- EEE!♥'",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Panic|n|'D-Do you really think that fucking my ass is a good idea?'",
+        "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Y-You're going to regret that!♥'",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "PenetrateSoloA",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Y-You feel really big in there...♥'",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Panic|n|'Ahhh!♥ H-Hold on- M-My head went completely blank...♥'",
+        "|f|ChangeImageLayer|/|Expression|/|Shy|n|'U-Uhm,♥ b-be gentle?'",
+        "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Ohhhh...♥♥♥ Uhm, c-can you let me do all the moving?♥'",
+      "EndLoop"
+    ]},
+
+    {
+    "NameOfScene": "Thrust",
+    "theScene": [
+      "IfChoice", "1", "SoloImp", "ThrustSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Haah! At this rate I just might cum!♥'",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Smug|n|'C'mon, you can do it!♥'",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Teasing|n|'Mmm!♥ Not bad!'",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "ThrustSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|Shy|n|'S-So big!♥'",
+        "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Haah!♥ At this rate I'm gonna cum!♥'",
+        "|f|ChangeImageLayer|/|Expression|/|Orgasm|n|'S-So good...♥'",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'Ahhh...♥ Ahhh...♥' The imp shyly averts her gaze.",
+        "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'My mind keeps going blank...♥♥♥'",
+      "EndLoop"
+    ]},
+
+    {
+    "NameOfScene": "FaceFuck",
+    "theScene": [
+      "IfChoice", "1", "SoloImp", "FaceFuckSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|She does her best to keep pace with the face fucking.",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|She seems to enjoy the rough treatment.",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Teasing|n|She looks up at you with hunger in her eyes.",
+      "EndLoop"
+    ]},
+
+    {
+    "NameOfScene": "FaceFuckSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|She seems to {i}really{/i} enjoy the rough treatment.",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|She looks up at you with submission gleaming in her eyes.",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|The imp unconsciously masturbating while you plow her face.",
+      "EndLoop"
+    ]},
+
+    {
+    "NameOfScene": "GropeAss",
+    "theScene": [
+      "IfChoice", "1", "SoloImp", "GropeAssSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Smug|n|'Ehehe, what are you, some kind of pervert?'",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'I wear this skirt for a reason you know!♥'",
+        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehe, are you already in love with my butt?♥'",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Teasing|n|'Mmmm...♥ Grope my ass as much as you want.♥'",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "GropeAssSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|She looks up into your eyes with a submissive blush while you grope her rear.",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|She leans into you with a moan as you grope and massage her shapely butt.",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'I-I'm glad you like my skirt...♥'",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Ahhh...♥ I feel like I'm melting...♥'",
+      "EndLoop"
+    ]},
+
+
+    {
+    "NameOfScene": "Breasts",
+    "theScene": [
+      "IfChoice", "1", "SoloImp", "BreastsSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Smug|n|'Ehehe, what are you, some kind of pervert?'",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmmm...♥'",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|LipLick|n|'Wait, do you {i}prefer{/i} flat chests?♥'",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Smile|n|'I-I'd rather you service my pussy... But this will do for now.♥'",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Cooing|n|'Hey... You're not mocking my breasts size are you?'",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "BreastsSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|Shy|n|'Eh?!♥ M-My breasts aren't even big, so why does this feel so good...?♥'",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|'E-Eh?! W-Wait, do you prefer flat chests?!♥'",
+        "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Y-You're making my nipples feel weird...♥'",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Orgasm|n|'Ahhh...♥ I feel like I'm melting...♥'",
+      "EndLoop"
+    ]},
+
+    {
+    "NameOfScene": "PussyWorship",
+    "theScene": [
+      "ApplyStatusEffect", "Impish Face Grind",
+      "IfChoice", "1", "SoloImp", "PussyWorshipSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmm♥ His tongue feels great!' Her aphrodisiac juices are starting to affect you...",
+        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehehe, you're completely hooked on imp pussy!♥'' Her aphrodisiac juices are starting to affect you...",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'You must be so thirsty.♥' Her aphrodisiac juices are starting to affect you...",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Cooing|n|'I hope I'm not getting carried away...' Her aphrodisiac juices are starting to affect you...",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "PussyWorshipSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|OrgasmHeavy|n|'A-Ahhh!♥♥♥ St-Stop licking there!♥♥♥' Her aphrodisiac juices are starting to affect you...",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Orgasm|n|'M-My pussy feels like it's melting!♥' Her aphrodisiac juices are starting to affect you...",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Panic|n|'H-How thirsty are you?♥' Her aphrodisiac juices are starting to affect you...",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Pleasured|/|Shy|n|'D-Don't stop...♥' Her aphrodisiac juices are starting to affect you...",
+      "EndLoop"
+    ]},
+
+
+
+    {
+    "NameOfScene": "TeasingSeduction",
+    "theScene": [
+      "HitPlayerWith", "Seduce",
+      "SetPostName", " - Teasing Seduction",
+      "IfPlayerHasStance", "Blowjob", "TeasingSeductionOral",
+      "IfPlayerHasStance", "Sex", "TeasingSeductionSex",
+      "IfPlayerHasStance", "Anal", "TeasingSeductionSex",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'We're going to milk out every drop of your cum.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|'Ehehe, we're going to drain your balls dry.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Teasing|n|'You're going to be a great semen dispenser.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'We're going to make you into an imp pleasure slave.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You're going to love being a sex pet for imps.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'We just want a few thick loads of cum, is that {i}so{/i} bad?♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Wink|n|'You're going to be cumming like a broken faucet.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|'Give up.♥ I promise we'll have tons of fun.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "TeasingSeductionSex",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'We're going to make you into an imp pleasure slave.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You're going to love being a sex pet for imps.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Wink|n|'You're going to be cumming like a broken faucet.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Teasing|n|'I bet you don't want to stop fucking us.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|'You're going to get your brains fucked out.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Come on.♥ Fill her full of cum.♥ I want a turn.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Teasing|n|'I bet you wanna cum inside her sooo bad.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Are you hooked on fucking imps yet?♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "TeasingSeductionOral",
+    "theScene": [
+      "ChangeImageLayer", "Expression", "Smug",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|'Every drop of your cum is going to get sucked out.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Ehehe, your balls are going to get drained dry.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Teasing|n|'You're going to be a great semen dispenser.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Wink|n|'You're going to be cumming like a broken faucet.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|'We're going to give you {i}so many{/i} blowjobs.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Teasing|n|'Come on,♥ spurt a thick load of cum down her throat!♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mnnn...♥ I wanna suck on your cock so bad...♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'I hope you can feed all of us,♥ we're {i}so{/i} hungry for you semen.♥' [AttackerName] giggles playfully as [AttackerHeOrShe] teases [TargetName] enticing [TargetHisOrHer] desires with lewd promises.[DamageToPlayer]|f|SetPostName|/|None|n|",
+      "EndLoop"
+    ]},
+
+    {
+    "NameOfScene": "ImpishInsert",
+    "theScene": [
+      "CallSceneThenReturn",  "ImpCGPenetrate",
+      "HitPlayerWith", "Insert",
+      "SetPostName", " - Impish Insert",
+      "IfChoice", "1", "SoloImp", "ImpishInsertSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|DickImpExpression|/|Smug|n|'This cock is all mine!♥' [AttackerName] flies a few feet into the air before charging at you, knocking you onto your back as [AttackerHeOrShe] pushes your cock into her dripping pussy![DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|DickImpExpression|/|Teasing|n|'I'm going to drain every drop of cum out of you!♥' [AttackerName] flies a few feet into the air before charging at you, knocking you onto your back as [AttackerHeOrShe] pushes your cock into her dripping pussy![DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|DickImpExpression|/|Smug|n|'You're going to love being a sex pet for imps.♥' [AttackerName] flies a few feet into the air before charging at you, knocking you onto your back as [AttackerHeOrShe] pushes your cock into her dripping pussy![DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|DickImpExpression|/|Cheerful|n|'Got you now human!' [AttackerName] flies a few feet into the air before charging at you, knocking you onto your back as [AttackerHeOrShe] pushes your cock into her dripping pussy![DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "ImpishInsertSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|DickImpExpression|/|Pleasured|n|'-EEK!♥ Y-You're bigger than I thought...♥' [AttackerName] flies a few feet into the air before charging at you in a flailing panic, knocking you onto your back as [AttackerHeOrShe] straddles your waist and plunges your cock into her dripping pussy![DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|DickImpExpression|/|Pleasured|n|'I-I've got to drain you dry fast...' [AttackerName] flies a few feet into the air before charging at you in a flailing panic, knocking you onto your back as [AttackerHeOrShe] straddles your waist and plunges your cock into her dripping pussy![DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|DickImpExpression|/|Pleasured|n|'D-Don't underestimate me!' [AttackerName] flies a few feet into the air before charging at you in a flailing panic, knocking you onto your back as [AttackerHeOrShe] straddles your waist and plunges your cock into her dripping pussy![DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|DickImpExpression|/|Pleasured|n|'M-Maybe this was a bad idea...' [AttackerName] flies a few feet into the air before charging at you in a flailing panic, knocking you onto your back as [AttackerHeOrShe] straddles your waist and plunges your cock into her dripping pussy![DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+      "EndLoop"
+    ]},
+
+    {
+    "NameOfScene": "PlayfulGrind",
+    "theScene": [
+      "HitPlayerWith", "Grind",
+      "SetPostName", " - Playful Grind",
+      "IfChoice", "1", "SoloImp", "PlayfulGrindSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mmm♥ I {i}really{/i} don't wanna share this dick.♥' [AttackerName] slowly gyrates her hips around your cock, her tight orifice desperately clinging to your length as she massages your entire length.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|'Hey, my pussy is so hungry for your cum.♥' [AttackerName] slowly gyrates her hips around your cock, her tight orifice desperately clinging to your length as she massages your entire length.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'I'm going to wring you dry.♥' [AttackerName] slowly gyrates her hips around your cock, her tight orifice desperately clinging to your length as she massages your entire length.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Wink|n|'You're going to be cumming like a broken faucet.♥' [AttackerName] slowly gyrates her hips around your cock, her tight orifice desperately clinging to your length as she massages your entire length.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "PlayfulGrindSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|Panic|n|'I-I really wish I had back up to take care of you...♥' [AttackerName] meekly gyrates her hips on your cock, her tight orifice desperately clinging to your length as she massages your entire length.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Y-You're so big...♥' [AttackerName] meekly gyrates her hips on your cock, her tight orifice desperately clinging to your length as she massages your entire length.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'J-Just let me take care of all the moving...♥' [AttackerName] meekly gyrates her hips on your cock, her tight orifice desperately clinging to your length as she massages your entire length.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'Y-You wouldn't mind giving me a few loads of your cum, would you?♥' [AttackerName] meekly gyrates her hips on your cock, her tight orifice desperately clinging to your length as she massages your entire length.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+      "EndLoop"
+    ]},
+
+    {
+    "NameOfScene": "MischievousTighten",
+    "theScene": [
+      "HitPlayerWith", "Tighten",
+      "SetPostName", " - Mischievous Tighten",
+      "IfChoice", "1", "SoloImp", "MischievousTightenSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mmm♥ I {i}really{/i} don't wanna share this dick.♥' [AttackerName]'s [SexWord] fits snugly around your shaft, and it only gets tighter as she delightfully squeezes your entire length, trying to milk you dry.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|'I'm so hungry for your cum.♥' [AttackerName]'s [SexWord] fits snugly around your shaft, and it only gets tighter as she delightfully squeezes your entire length, trying to milk you dry.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'I can milk you dry without even moving!♥' [AttackerName]'s [SexWord] fits snugly around your shaft, and it only gets tighter as she delightfully squeezes your entire length, trying to milk you dry.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Wink|n|'You're going to be cumming like a broken faucet.♥' [AttackerName]'s [SexWord] fits snugly around your shaft, and it only gets tighter as she delightfully squeezes your entire length, trying to milk you dry.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "MischievousTightenSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|Panic|n|'I-I really wish I had back up to take care of you...♥' [AttackerName]'s [SexWord] fits snugly around your shaft, and it only gets tighter as she delightfully squeezes your entire length, trying to milk you dry.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Y-You're so big...♥' [AttackerName]'s [SexWord] fits snugly around your shaft, and it only gets tighter as she delightfully squeezes your entire length, trying to milk you dry.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|'It's so warm...' [AttackerName]'s [SexWord] fits snugly around your shaft, and it only gets tighter as she delightfully squeezes your entire length, trying to milk you dry.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'Y-You wouldn't mind giving me a few loads of your cum, would you?♥' [AttackerName]'s [SexWord] fits snugly around your shaft, and it only gets tighter as she delightfully squeezes your entire length, trying to milk you dry.[DamageToPlayer]|f|SetPostName|/|None|n||f|CallMonsterEncounterOrgasmCheck|n|",
+      "EndLoop"
+    ]},
+
+    {
+    "NameOfScene": "ImpishBlowjob",
+    "theScene": [
+      "HitPlayerWith", "Blowjob",
+      "SetPostName", " - Impish Blowjob",
+      "IfChoice", "1", "SoloImp", "ImpishBlowjobSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Time to suck you dry!♥' [AttackerName] wraps her wet mouth around [TargetName]'s cock and starts to bob her head.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Teasing|n|'Ehehe!♥' [AttackerName] wraps her wet mouth around [TargetName]'s cock and starts to bob her head.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|'I hope you like blowjobs!♥' [AttackerName] wraps her wet mouth around [TargetName]'s cock and starts to bob her head.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|'I promise not to bite!♥' [AttackerName] wraps her wet mouth around [TargetName]'s cock and starts to bob her head.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Ehehe, you're already twitching!♥' [AttackerName] wraps her wet mouth around [TargetName]'s cock and starts to bob her head.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'You better have a lot of energy stored up for me!♥' [AttackerName] wraps her wet mouth around [TargetName]'s cock and starts to bob her head.[DamageToPlayer]|f|SetPostName|/|None|n|",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "ImpishBlowjobSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'I hope you like blowjobs...♥' [AttackerName] timidly wraps her wet mouth around [TargetName]'s cock and starts to gently bob her head.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Wow, your cock is so big...♥' [AttackerName] timidly wraps her wet mouth around [TargetName]'s cock and starts to gently bob her head.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|'I want to taste it...♥' [AttackerName] timidly wraps her wet mouth around [TargetName]'s cock and starts to gently bob her head.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'I'm just going to take a few loads of your cum...♥' [AttackerName] timidly wraps her wet mouth around [TargetName]'s cock and starts to gently bob her head.[DamageToPlayer]|f|SetPostName|/|None|n|",
+      "EndLoop"
+    ]},
+
+    {
+    "NameOfScene": "PlayfulTease",
+    "theScene": [
+      "HitPlayerWith", "Oral Tease",
+      "SetPostName", " - Playful Tease",
+      "IfChoice", "1", "SoloImp", "PlayfulTeaseSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|Teasing|n|'How long can you hold out?' [AttackerName] licks and teases the length of your shaft with her skilled tongue, occasionally nibbling gently on the side of your cock.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Ehehe, you taste really good!♥' [AttackerName] licks and teases the length of your shaft with her skilled tongue, occasionally nibbling gently on the side of your cock.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|'It's so big and sensitive!♥' [AttackerName] licks and teases the length of your shaft with her skilled tongue, occasionally nibbling gently on the side of your cock.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Haahhhh. You're leaking so much pre-cum!♥' [AttackerName] licks and teases the length of your shaft with her skilled tongue, occasionally nibbling gently on the side of your cock.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|'Mmmm♥' [AttackerName] licks and teases the length of your shaft with her skilled tongue, occasionally nibbling  gently on the side of your cock.[DamageToPlayer]|f|SetPostName|/|None|n|",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "PlayfulTeaseSolo",
+    "theScene": [ 
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'Can I have a load of your cum?♥' [AttackerName] submissively licks and teases the length of your shaft with her skilled tongue, occasionally nibbling  gently on the side of your cock.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'You taste really good...♥' [AttackerName] submissively licks and teases the length of your shaft with her skilled tongue, occasionally nibbling  gently on the side of your cock.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Orgasm|n|'It's so big and manly...♥' [AttackerName] submissively licks and teases the length of your shaft with her skilled tongue, occasionally nibbling  gently on the side of your cock.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Smile|n|'You're leaking so much pre-cum...♥' [AttackerName] submissively licks and teases the length of your shaft with her skilled tongue, occasionally nibbling  gently on the side of your cock.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|OralOffer|n|'Mmmm...♥' [AttackerName] submissively licks and teases the length of your shaft with her skilled tongue, occasionally nibbling  gently on the side of your cock.[DamageToPlayer]|f|SetPostName|/|None|n|",
+      "EndLoop" 
+    ]},
+
+    {
+    "NameOfScene": "GlansTeasing",
+    "theScene": [ 
+      "HitPlayerWith", "Glans Blowjob",
+      "SetPostName", " - Glans Teasing",
+      "IfChoice", "1", "SoloImp", "GlansTeasingSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmm!♥ There's so much pre-cum!' [AttackerName] loops her tongue around the head of your cock, over and over, sending sweet jolts of pleasure through your entire length.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|'Sho tashty!♥' [AttackerName] loops her tongue around the head of your cock, over and over, sending sweet jolts of pleasure through your entire length.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|OralOffer|n|'Mmmm♥' [AttackerName] loops her tongue around the head of your cock, over and over, sending sweet jolts of pleasure through your entire length.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ehehe, you keep twitching!♥' [AttackerName] loops her tongue around the head of your cock, over and over, sending sweet jolts of pleasure through your entire length.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Teasing|n|'How long can you hold out?' [AttackerName] loops her tongue around the head of your cock, over and over, sending sweet jolts of pleasure through your entire length.[DamageToPlayer]|f|SetPostName|/|None|n|",
+      "EndLoop" 
+    ]},
+    {
+    "NameOfScene": "GlansTeasingSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmm...♥ There's so much pre-cum...' [AttackerName] loops her tongue around the head of your cock, over and over, sending sweet jolts of pleasure through your entire length while she gazes up at you meekly.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|OralOffer|n|'Sho tashty...♥' [AttackerName] loops her tongue around the head of your cock, over and over, sending sweet jolts of pleasure through your entire length while she gazes up at you meekly.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|OralOffer|n|'Mmmm...♥' [AttackerName] loops her tongue around the head of your cock, over and over, sending sweet jolts of pleasure through your entire length while she gazes up at you meekly.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|'It's so big and manly...♥' [AttackerName] loops her tongue around the head of your cock, over and over, sending sweet jolts of pleasure through your entire length while she gazes up at you meekly.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'Can I have a load of your cum?♥' [AttackerName] loops her tongue around the head of your cock, over and over, sending sweet jolts of pleasure through your entire length while she gazes up at you meekly.[DamageToPlayer]|f|SetPostName|/|None|n|",
+      "EndLoop" 
+    ]},
+
+    {
+    "NameOfScene": "MischievousSuction",
+    "theScene": [
+      "HitPlayerWith", "Vacuum Blowjob",
+      "SetPostName", " - Mischievous Suction",
+      "IfChoice", "1", "SoloImp", "MischievousSuctionSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|'Haahhhh. You're leaking so much pre-cum!♥' [AttackerName] forms a tight seal around [TargetName]'s cock with her lips and sucks as hard as she can![DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Teasing|n|'I'm going to make you feel so good you won't be able to stand!♥' [AttackerName] forms a tight seal around [TargetName]'s cock with her lips and sucks as hard as she can![DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|*Suuuucck*♥ 'Mhmhm.♥' [AttackerName] forms a tight seal around [TargetName]'s cock with her lips and sucks as hard as she can![DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'C'mon, gimme your cum!♥' [AttackerName] forms a tight seal around [TargetName]'s cock with her lips and sucks as hard as she can![DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|OralOffer|n|'Mmm!' *Suuuucck* [AttackerName] forms a tight seal around [TargetName]'s cock with her lips and sucks as hard as she can![DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm, Ehehehe.♥' [AttackerName] forms a tight seal around [TargetName]'s cock with her lips and sucks as hard as she can![DamageToPlayer]|f|SetPostName|/|None|n|",
+      "EndLoop" 
+    ]},
+    {
+    "NameOfScene": "MischievousSuctionSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmm...♥ There's so much pre-cum...' [AttackerName] forms a tight seal around [TargetName]'s cock with her lips and sucks as hard as she can, occasionally glancing up at you shyly.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Th-This is making my knees feel weak...♥' [AttackerName] forms a tight seal around [TargetName]'s cock with her lips and sucks as hard as she can, occasionally glancing up at you shyly.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Orgasm|n|*Suuuucck*♥ 'Sho tashty...♥' [AttackerName] forms a tight seal around [TargetName]'s cock with her lips and sucks as hard as she can, occasionally glancing up at you shyly.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'Can I have a load of your cum?♥' [AttackerName] forms a tight seal around [TargetName]'s cock with her lips and sucks as hard as she can, occasionally glancing up at you shyly.[DamageToPlayer]|f|SetPostName|/|None|n|",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|OralOffer|n|'Mmmm...♥' *Suuuucck* [AttackerName] forms a tight seal around [TargetName]'s cock with her lips and sucks as hard as she can, occasionally glancing up at you shyly.[DamageToPlayer]|f|SetPostName|/|None|n|",
+      "EndLoop" 
+    ]},
+
+    {
+    "NameOfScene": "StanceStrugglePen",
+    "theScene": [
+      "IfChoice", "1", "SoloImp", "StanceStrugglePenSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You're not getting away!♥'",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mmmm,♥ I'm not letting this big meal escape!'",
+        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'I'm going to turn you into a sex slave for imps!♥'",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Ahhh,♥ this is great!'",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "StanceStrugglePenSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|She gazes up into your eyes meekly, her tail tightly wrapped around your leg.",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'Mmmm,♥ d-don't pull out...'",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Y-You're so big... I can feel it throbbing and twitching...'",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Orgasm|n|'Ahhh...♥ F-Fuck me.♥♥♥'",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Mnn!♥ I-I can take it...♥'",
+      "EndLoop"
+    ]},
+
+    {
+    "NameOfScene": "StanceEscapePen",
+    "theScene": [
+      "IfPlayerHasStance", "Face Sit", "StanceEscapePenStillFaceSit",
+      "CallSceneThenReturn", "Clear CGs",
+      "JumpToScene", "StanceEscapePenDialogue"
+    ]},
+    {
+    "NameOfScene": "StanceEscapePenStillFaceSit",
+    "theScene": [
+      "FocusOnMonster", "1",
+      "ChangeImageLayer", "DickImp", "",
+      "ChangeImageLayer", "PlayerBody", "RideFace",
+      "RefocusOnInitialMonster",
+      "SetChoice", "9", "",
+      "JumpToScene", "StanceEscapePenDialogue"
+    ]},
+    {
+    "NameOfScene": "StanceEscapePenDialogue",
+    "theScene": [
+      "IfChoice", "1", "SoloImp", "StanceEscapePenSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Confused|n|'Can't you just give up already?'",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Panic|n|'Ugh, stop struggling!'",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|ComicalPanic|n|'Uwa?! Crap, you might actually be pretty strong...'",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Confused|n|'You're going to give in eventually... So give up already!'",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "StanceEscapePenSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Panic|n|'C-Can you just give up?'",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'Uwa?! Y-You know I'm pretty sure you could have fucked me silly instead... N-Not that I'm suggesting you do!'",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'C-Can't you just give in!?'",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "StanceEscapeFace",
+    "theScene": [
+      "IfPlayerHasStance", "Sex", "StanceEscapeFaceStillPen",
+      "IfPlayerHasStance", "Anal", "StanceEscapeFaceStillPen",
+      "JumpToScene", "Clear CGs"
+    ]},
+    {
+    "NameOfScene": "StanceEscapeFaceStillPen",
+    "theScene": [
+      "SetChoice", "9", "",
+      "FocusOnMonster", "1",
+      "ChangeImageLayer", "FaceImp", "",
+      "ChangeImageLayer", "PlayerBody", "RideDick",
+      "RefocusOnInitialMonster"
+    ]},
+    {
+    "NameOfScene": "StanceStruggleOral",
+    "theScene": [
+      "IfChoice", "1", "SoloImp", "StanceStruggleOralSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|Teasing|n|'At this rate, you're going to get sucked dry!♥'",
+        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'How does it feel to be weaker than an imp?♥'",
+        "|f|ChangeImageLayer|/|Expression|/|Wink|n|'You're way too tasty to let get away!♥",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'Mmmm,♥ I'm not letting this big meal escape!",
+        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'What's wrong? Is your head blanking out?♥'",
+        "|f|ChangeImageLayer|/|Expression|/|Base|n|'Stop struggling and give me your cum!♥'",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "StanceStruggleOralSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Don't take your big dick away from me...♥'",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'I just want a few loads of your semen...♥",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'Eh? Am I making you feel that good?",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|She gazes up into your eyes meekly, her tail tightly wrapped around your leg.",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "StanceEscapeOral",
+    "theScene": [
+      "SetChoice", "8", "",
+      "CallNextSceneJumpThenReturn",
+      "IfPlayerHasStance", "Face Sit", "ImpCGFaceSit",
+      "RefocusOnInitialMonster",
+      "JumpToScene", "StanceEscapeOralDialogue"
+    ]},
+
+    {
+    "NameOfScene": "StanceEscapeOralDialogue",
+    "theScene": [
+      "IfChoice", "1", "SoloImp", "StanceEscapeOralSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Don't deny it, you {i}want{/i} to cum your brains out from a blowjob!♥'",
+        "|f|ChangeImageLayer|/|Expression|/|Confused|n|'Ugh, stop struggling!'",
+        "|f|ChangeImageLayer|/|Expression|/|LipLick|n|'I just want to drain your balls, is that so bad?♥'",
+        "|f|ChangeImageLayer|/|Expression|/|Confused|n|'Come on! Give in already!'",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "StanceEscapeOralSolo",
+    "theScene": [
+      "ChangeImageLayer", "Blush", "Blush",
+      "ChangeImageLayer", "Expression", "Shy",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "'Aw...'",
+        "'E-Eh? Was I making you feel that good?'",
+        "'I just want a thick load of your cum...'",
+      "EndLoop"
+    ]},
+
+
+    {
+    "NameOfScene": "StanceStruggleKiss",
+    "theScene": [
+      "IfChoice", "1", "SoloImp", "StanceStruggleKissSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Expression|/|Teasing|n|'Mmn♥, did you underestimate my tongue skills? Idiot!♥'",
+        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Ha, did you think you could distract me with kissing?'",
+        "|f|ChangeImageLayer|/|Expression|/|Wink|n|'What's wrong? Is your head blanking out?♥'",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "StanceStruggleKissSolo",
+    "theScene": [
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|The imp shyly gazes into your eyes while keeping you locked in a deep kiss.",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Shy|n|'M-More...♥'",
+        "|f|ChangeImageLayer|/|Blush|/|Blush|n||f|ChangeImageLayer|/|Expression|/|Pleasured|n|'Ahh...♥ Your kiss is making my head blank out...♥ Don't stop...♥",
+      "EndLoop"
+    ]},
+
+    {
+    "NameOfScene": "StanceEscapeKiss",
+    "theScene": [
+      "IfChoice", "1", "SoloImp", "StanceEscapeKissSolo",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Confused|n|'Can't you just give up already?'",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|Panic|n|'Ugh, stop struggling!'",
+        "|f|ChangeImageLayer|/|Blush|/|LightBlush|n||f|ChangeImageLayer|/|Expression|/|ComicalPanic|n|'Uwa?! Crap, you might actually be pretty strong...'",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "StanceEscapeKissSolo",
+    "theScene": [
+      "ChangeImageLayer", "Blush", "Blush",
+      "ChangeImageLayer", "Expression", "Shy",
+      "FocusedSpeaksSkill",
+      "SwapLineIf", "Random",
+        "'Aw...'",
+        "'E-Eh? Was I making you feel that good?'",
+      "EndLoop"
+    ]},
+
+
+    {
+    "NameOfScene": "BaseOrgasm",
+    "theScene": [
+      "IfPlayerHasStance", "Sex", "SexOrgasm",
+      "ChangeImageLayer", "Expression", "OralOffer",
+      "SwapLineIf", "Random",
+        "You succumb to the pleasure coursing through your body and ejaculate onto the imp. 'Hey! That's just wasteful!'[PlayerOrgasmLine]",
+        "'Hey, you're gonna cum, right? Riiiight?' As if on cue, your cock erupts into orgasm and the imp catches as much as she can in her mouth.[PlayerOrgasmLine]",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "MultiOralOrgasm",
+    "theScene": [
+      "ChangeImageLayer", "Expression", "OralOffer",
+      "SwapLineIf", "Random",
+        "The group of imps keep incessantly lavishing your twitching cock with oral affection, long teasing licks from base to tip, sweet playful kisses up and down your length, worshipfully massaging your aching balls with their tongues, and loving suction applied to the spasming tip of your manhood.|n|The warm electric waves of bliss are too much to bear as ecstasy builds in your hips, until you finally cry out in pleasure, spurting thick ropes of cum all over the excited imps who eagerly gulp down every drop off your dick and each other.",
+        "One of the multiple imps giving your aching manhood oral love bobs her head up and down the tip of your cock, lapping at your tip and rolling her tongue around your spasming cockhead on occasion, all while the rest of the imp worship every inch of your throbbing erection with their nimble tongues and teasing lips, kissing and licking with needy hunger.|n|The inescapable pleasure wells inside your hips, exploding through your cock in a wave of orgasmic pleasure, leaving your cock spurting thick ropes of semen down the first imps mouth which she greedily gulps down before passing your still climaxing dick to another imps mouth so she can get her share of your cum, passing it imp to imp until the last one is desperately sucking out the last bit of your semen left in your cock.|n|You're left in twitching bliss as they slowly resume working your length with renewed hunger in their eyes, the last imp to feed getting to focus her attention on your spasming tip while waiting for the next load.",
+        "The group of imps pass your throbbing cock between their mouths eagerly slurping and sucking their way up and down your twitching dick, their smug eyes telling you they know you can't hold back anymore, letting them play an impromptu lottery on who gets your fresh load of semen.|n|They massage and lick your tightening balls when it's not their turn, trying to help coax out your cum for the current imp before it gets passed to their own hungry mouth, until you can't take the hips numbing pleasure anymore, and erupt a thick load of cum down the lucky imp's throat, who lewdly gulps down as much as she can before she's pulled away to let the others lap up the rest of your seed.",
+        "You moan loudly as the imps intensify their oral teasing, kissing, licking and sucking on every inch of your twitching cock they can, making your hips instinctively buck as sparks of pleasure strike through your dick, and their hands lovingly massage your heavy balls, overriding any resistance you have.|n|As they shower your manhood in a barrage of lewd kisses you can't take it anymore, the need to coat them in your seed overwhelming you, and an explosion of climactic bliss radiates through your hips as you spurt thick ropes of cum all over the imps, who gleefully lick up every drop off your twitching shaft and each other's faces before they resume their hungry affections on your still rigid erection.",
+      "EndLoop"
+    ]},
+    {
+    "NameOfScene": "SexOrgasm",
+    "theScene": [
+      "IfPlayerHasStance", "Face Sit", "DuoStanceOrgasm",
+      "ChangeImageLayer", "DickImpExpression", "LipLick",
+      "ChangeImageLayer", "SemenSex", "SemenRide",
+      "PlayMotionEffect", "CrashSmol",
+      "SwapLineIf", "Random",
+        "'Ehehe.♥ You're throbbing like crazy, righhht? Just spurt it out!' With those coaxing words floating around you like a teasing enticing haze, the imp riding you keeps excitedly swinging her hips until with one final hilting stroke, you can't take it anymore and climax with a defeated moan, ejaculating deep into the imp's tight pussy as it undulates around you in gulping-like motions.[PlayerOrgasmLine]",
+        "With the imp riding your dick languidly grinding her hips against yours, you feel orgasmic bliss approaching, but she keeps you teetering on the edge! 'Say you want to cum!♥' You try to ignore her, but every lucid thought in your brain drowns in pleasure and the need to cum, quickly leaving you no choice but to beg for release. In response, she happily obliges, her tight pussy forcing you over the edge and milking you to the last drop.[PlayerOrgasmLine]",
+        "The imp on your aching cock rides you faster and faster, pleasure swelling higher and higher in your groin until you eventually can't hold it anymore and your dick erupts in orgasmic bliss, load after load of your cum spurting into the monster girl's hungry pussy as she grinds her hips against yours, working to milk out as much as she can from your rigid manhood.[PlayerOrgasmLine]",
+      "EndLoop",
+      "ChangeImageLayer", "SemenSex", ""
+    ]},
+    {
+    "NameOfScene": "DuoStanceOrgasm",
+    "theScene": [
+    "ChangeImageLayer", "DickImpExpression", "LipLick",
+    "ChangeImageLayer", "FaceImpExpressionRide", "Smug",
+    "ChangeImageLayer", "SemenSex", "SemenRide",
+    "PlayMotionEffect", "Crash",
+    "SwapLineIf", "Random",
+      "Every mouthful of aphrodisiac imp juices you gulp down leaves your head going blanker by the moment, yet you can't bring yourself to stop licking and kissing the domineering demoness' pussy, indulgently letting the pleasure wash up and down through your entire body as you continue to lap and suck in a trance.|n|The head-spinning sensation intermingles with the constant hip-bouncing of the imp riding your dick, stoking your mind-blanking lust hotter and hotter until you can't take it anymore and your cock excitedly spurts into her in submission, the devilish girl crying out in joy as she happily takes in your seed.[PlayerOrgasmLine]",
+      "With your face lost in imp pussy and your dick getting relentlessly ridden, you're powerless to resist the swelling bliss within you as it spreads in hot waves, the imps' hips' messy grinding stirring up your body and mind and bathing your dick in constant warm pleasure, until a few tight squeezes to your shaft and one more gulp of aphrodisiac juices take you over the edge, milking a thick load out of you.[PlayerOrgasmLine]",
+      "The two imps rock their bodies back and forth in time with their cheering teasing giggles, drowning you in the feeling of their soft, lithe curves as your twitching dick keeps being squeezed and milked and your face remains firmly buried in imp pussy.|n|Rapidly, your resistance crumbles under the fast-paced, pleasure-seeking tempo, the two demonesses' gyrations quickly wringing a thick rope of cum from your trembling erection while you muffledly moan in incoherent euphoria into your rider's muff.[PlayerOrgasmLine]",
+    "EndLoop",
+    "ChangeImageLayer", "SemenSex", ""
+    ]},
+    {
+    "NameOfScene": "eventBroke",
+    "theScene": [
+      "FocusedSpeaks",
+      "EVENT BROKE"
+    ]}
+]}

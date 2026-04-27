@@ -1,0 +1,317 @@
+{
+  "name": "BlackHeartTile",
+  "CardType": "Event",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [ ""],
+  "Speakers": [
+                {
+                  "name": "Ushris",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                }
+              ],
+  "EventText": [
+                  {
+                      "NameOfScene": "BlackHeart",
+                      "theScene": [  "SpawnGridNPC", "BlackHeartTrapDormant", "Here",
+                                    "RemoveGridNPC", "Current",
+                                      "As you step onto the tile inlaid with a pitch-black heart, there's a dark flare of arcane light-!",
+                                     "JumpToScene", "PostIntro"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "BlackHeartAlt",
+                            "theScene": ["SpawnGridNPC", "BlackHeartTrapDormant", "Here",
+                                          "RemoveGridNPC", "Current",
+                                            "The tile flares up with a pitch-black heart on its center along with a burst of dark arcane energy-!",
+                                           "JumpToScene", "PostIntro"
+                                      ]
+                        },
+                  {
+                      "NameOfScene": "PostIntro",
+                      "theScene": [
+                                      "SetProgress", "0",  "SetChoice", "1", "",
+                                      "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                      "-And the next moment, the magic fades, and you find yourself kneeling on the stone floor, magical wall-like panes pressing down on your arms and legs, keeping them irrepressibly locked in place. In front of you, Ushris looks down at you with a smug giggle.",
+                                      "Speak", "Ushris",
+                                      "Hihihi,♪ how very unfortunate for you.♪",
+                                      "The chains draping her gothic outfit rattle ominously while the heart underneath you pulses with crackling magic, pacing the hellhound's stride as she steps closer with graceful, even steps, her smug smile bearing down on your helpless form, then softening slightly.",
+                                      "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                      "Speak", "Ushris",
+                                      "But worry not, this trap is only as bad as you want it to be.♪",
+                                      "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                      "ChangeImageLayer", "ImageSetDontCarryOver", "1", "Step",
+                                      "ChangeImageLayer", "Feet", "1", "ToesOneDown",
+                                      "She gently kicks off a shoe from one of her feet and lifts the dainty, stockinged sole in front of your face, giving her toes a gentle wiggle for emphasis as she smiles down at you with a glint of sadism.",
+                                      "ChangeImageLayer", "Feet", "1", "BaseOneDown",
+                                      "Speak", "Ushris",
+                                      "Just kiss my foot like a good obedient dog, and I'll let you go free.♪",
+                                      "Menu",
+                                        "RequiresFetishLevelEqualOrGreater", "Feet", "75",
+                                        "Worship her foot.",
+                                        "RequiresFetishLevelEqualOrGreater", "Feet", "25",
+                                        "Lovingly kiss her foot.",
+                                        "Lightly kiss her foot.",
+                                        "RequiresFetishLevelEqualOrLess", "Feet", "99",
+                                        "Refuse.",
+                                      "EndLoop"
+                                  ]
+                  },
+                            {
+                                "NameOfScene": "Refuse.",
+                                "theScene": [   "ChangeImageLayer", "ImageSetDontCarryOver", "1", "Base",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Cold",
+                                                "Speak", "Ushris",
+                                                "{i}Hmph,{/i} fine then. Enjoy your punishment.",
+                                                "ApplyStatusEffect", "ParalysisFull",
+                                                "She slips her shoe back on and twirls in place, her tail giving out a low laughing hiss as she indignantly steps away from you, giving you a cold backward glance. The ground beneath your restrained form flares up with sickly green and black magic as the trap activates, and you're instantly hit with a creeping, shivering numbness locking up your body.",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                "Ushris snickers as she watches the trap unfurl on you, lifting a heavy claw up to her lips.",
+                                                "Speak", "Ushris",
+                                                "Oh, I {i}do{/i} hope you have no regrets.♪ Kehehe.♪",
+                                                "DisplayCharacters",
+                                                "EndLoop",
+                                                "Then, in another flare of dark magic, Ushris is gone, and you're left twitching on the ground unrestrained, struggling to recover from the powerful paralytic effect wracking your body..."
+                                            ]
+                            },
+                            {
+                                "NameOfScene": "Worship her foot.",
+                                "theScene": [
+                                                "ChangeImageLayer", "Expression", "Ushris", "Pleasured",
+                                                "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "ChangeImageLayer", "Feet", "1", "ToesOneDown",
+                                                "Without hesitation, you lean in and wrap your mouth around her stockinged toes, licking and sucking on them obediently before trailing your lavish kisses and lapping tongue down her sole, your unexpected willingness proving a surprise to the hellhound who lets out a pleasured gasp that turns into a ticklish giggle.[DamageToPlayer]",
+                                                "Speak", "Ushris",
+                                                "Mmfhehihi-♥♪ Ahn-♪ D-Down puppy-! O-Oh my-♪",
+                                                "ChangeImageLayer", "Expression", "Ushris", "SmugToothy", "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "She lets out a low purring growl as you continue to lavish her sweet caramel-scented foot in loving adoration, licking and kissing, the witchy monster girl giving you all the time you want to enjoy her cloying perfume, feminine taste, and melty warmth, the body heat of her soft skin seeping into your vulnerable, horny mind, slowly blanking it out with fluttering lust.[DamageToPlayer]",
+                                                "Speak", "Ushris",
+                                                "Hmmm-♥ Good puppy.♥♪",
+                                                "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "ChangeImageLayer", "Feet", "1", "BaseOneDown", "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "Ushris clearly appreciates your eagerness, sighing dotingly as she conjures a chair of chains to seat herself in front of you, reaching down to pat your head with a massive claw while you continue to lap at her silk-covered foot like a dog, your tongue tingling from the soft-textured sensations and sinfully sweet taste.[DamageToPlayer]",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                "Speak", "Ushris",
+                                                "Ehihi-♪ Such obedience deserves a reward-♥ Don't you think so?",
+                                                "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "ChangeImageLayer", "Feet", "1", "Press", "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "You whine in a happy daze as she pulls her foot away from your face, slipping it under your chin in a teasing caress while she kicks off her other shoe. She then follows up by pressing her second foot onto your drooling face to have you worship it, the thick perfumed fragrance of caramel enveloping your senses completely as she lovingly rubs you with her feet from multiple angles, prompting you to drunkenly lap at them.[DamageToPlayer]",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                "Speak", "Ushris",
+                                                "Good boy.♥♪ Good puppy.♥♪",
+                                                "DamagePlayerFromMonster", "Ushris", "Sole Seduction", "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "As Ushris massages your face with both her soles, you feel like your rationality is leaking out of your ears and panting mouth, your tongue lolling out amid the warm melty pleasure radiating directly into your head from her silky caresses, half-forgetting to lick and kiss in worship when the opportunity arises while she plays with you like a dog.[DamageToPlayer]",
+                                                "ChangeImageLayer", "Expression", "Ushris", "LipLick",
+                                                "Speak", "Ushris",
+                                                "Breathe it in.♥♪",
+                                                "PlayerOrgasm", "1", "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "ChangeImageLayer", "Feet", "1", "Base", "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "Her cooing voice draws you into sharply inhaling with a confused whine, filling your senses with the impossibly sweet and creamy fragrance from both of her feet pressing down on your face, leaving you incoherently barking as your spasming cock spurts and spasms in sudden climax from a surge of euphoria flooding your head with vapid bliss from Ushris' scent alone.",
+                                                "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                                "Speak", "Ushris",
+                                                "{i}Good doggie.♥♪{/i}",
+                                                "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "ChangeImageLayer", "Feet", "1", "Toes", "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "She takes a moment to coddle your pleasure-drunk face with her feet, sensually caressing your cheeks with her toes before sliding them down to gently step on your twitching, leaking erection, leaving you whimpering and panting in renewed pleasure as her stockinged soles start to expertly pump your throbbing shaft.[DamageToPlayer]",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                "Speak", "Ushris",
+                                                "More rewards for my good puppy.♥♪",
+                                                "ChangeImageLayer", "Feet", "1", "Base", "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "You heavily gasp and pant in ecstasy as she toys with your spasming cock, reaching down with a claw to scritch you under the chin while your head stays blank with primal rapture, her debasing treatment eroding away at your pleasure-stained mind, leaving your tongue lolling out while you huff and whine in pleasure under Ushris' entertained gaze.[DamageToPlayer]",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                "Speak", "Ushris",
+                                                "Go on.♪ Let out as much as you want.♥♪ Spurt~♥ it~♪ out~♥♪",
+                                                "PlayerOrgasm", "1", "DamagePlayerFromMonster", "Ushris", "Sole Seduction", "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "She punctuates her words with unified strokes of her warm, soft feet, staring into your pleasure-drunk eyes while petting your chin and cheek with a hand, giving her a full view of your expression melting with messy bliss as you erupt all over her feet in long spurts, the domineering witch  pumping your spasming erection without pause as it wags between her heavenly feet.",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                "Speak", "Ushris",
+                                                "Keep it up~♥♪",
+                                                "PlayerOrgasm", "2", "PlayVisualEffect2", "OrgasmPulse", "white.png",  "PlayMotionEffect", "CrashSmol",
+                                                "You incoherently whine and nuzzle into her claws as you huff and pant with your tongue out, head blank. Your climax keeps hitting over and over on loop, your senses and brain still filled with her creamy caramel fragrance as you keep spurting for her, eagerly accepting every bit of your reward.",
+                                                "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                                "Speak", "Ushris",
+                                                "Good puppy.♪",
+                                                "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                                "ChangeImageLayer", "ImageSetDontCarryOver", "1", "Base",
+                                                "She pulls her feet away, her body soaking in your messy seed in a vivid emerald glow as she stands up and slips her shoes back on, leaving you slack in your magic restraints in a head-spinning daze, mewling as she pats your head.",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                "Speak", "Ushris",
+                                                "Hihi.♪ I'll see you soon, [ThePlayerName].♪ You foot-addicted puppy.♥",
+                                                "DisplayCharacters",
+                                                "EndLoop",
+                                                "Then, in a flare of dark magic, Ushris is gone, and you're left crumpled on the ground, your spent cock still achingly erect, your thoughts mired in images of her foot pressing down on you, taming and teasing you, a thoughtless whine slipping from your lips as you pantingly catch your breath...",
+                                                "ChangeFetish", "Feet", "30",
+                                                "CallSceneThenReturn",  "FixSpirit"
+                                            ]
+                            },
+
+
+                            {
+                                "NameOfScene": "Lovingly kiss her foot.",
+                                "theScene": [
+                                                "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "You lean in and affectionately kiss Ushris' indulgently warm sole like a lover, finding your thoughts spacing out as you savor the sweet caramel taste mixing with the texture of her silky stockings on your tongue and lips, shivering with a moan of delight as you make out with her sole longer than planned, the heat of her skin seeping seductively into your body.[DamageToPlayer]",
+                                                "Speak", "Ushris",
+                                                "Hihihi,♥ good puppy.♪ Keep it up and I'll give you a treat.♪",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Seductive",  "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "ChangeImageLayer", "Feet", "1", "PressOneDown", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "She gently presses her sole into your loving lips with a soft, seductive smile, teasingly tapping one of her dainty toes on your nose, and you eagerly bask in the cloyingly sweet perfume of her foot with a whimper before licking along her soft foot and peppering it with kisses. Your head is spinning with hot melty submission, her full creamy fragrance and taste making you feel like you're floating away while you pant and huff.[DamageToPlayer]",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Happy",
+                                                "Speak", "Ushris",
+                                                "Mmmm.♥ Ehihi.♪ It tickles.♥",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Loving", "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "Ushris giggles in delight as you lap at her foot, the hellhound purring as you revel in her warm caramel taste and scent oozing through your senses. She takes a moment to slide her foot down to rub the underside of your chin, letting you affectionately nuzzle it for a drunken moment while her intoxicating body warmth goes straight to your dazed head, making your erect cock twitch and leak from the submissive pleasure swelling inside you.[DamageToPlayer]",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                "Speak", "Ushris",
+                                                "Hmmm-♪ Such a good doggie you are, [ThePlayerName].♥ Your cock is already obediently wagging for me.♥",
+                                                "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "ChangeImageLayer", "Feet", "1", "BaseOneDown", "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "She gently rubs her foot against your face while smugly praising you, and you let out a thoughtless huffing moan, your hips jerking as your dick spasms from the sensation of her soft stockinged sole dominating you, your expression loose and blissed out as you keep kissing her foot in reverence, the creamy, sweet feminine scent burning up all your rationality, your tongue melting with pleasure at the cloying, warm flavor.[DamageToPlayer]",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                "Speak", "Ushris",
+                                                "Good boy.♪ Good boy.♪♥ Kehihi-♥ ",
+                                                "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "The witch giggles playfully at the sight of your dazed, whimpering form beneath her heel, your entire body shivering in euphoric pleasure as you can't bring yourself to stop worshipfully kissing and licking her foot, your mind completely blank with pleasure from her sinful warmth and seductively sweet caramel taste, your cock leaking a steady stream of precum as it twitchingly wags in obedience.[DamageToPlayer]",
+                                                "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                                "Speak", "Ushris",
+                                                "Kehe-♪ Do you want your {i}reward?♥♪{/i} Go on,♥ {i}beg{/i} for it,♪ puppy.♪♥",
+                                                "ChangeImageLayer", "Feet", "1", "ToesOneDown", "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "Too far gone to object and too stupefied with happy arousal to respond properly, you can only whine and whimper in response, almost letting out a needy bark as her toes tickle your nose dominantly, making you pant and huff her foot's sweet fragrance in-between loving licks and kisses, savoring the silky texture of her stockings covering her soft sole, your dick spasming wildly as warm gooey pleasure melts through your foot-addled brain.[DamageToPlayer]",
+                                                "ChangeImageLayer", "Expression", "Ushris", "LipLick",
+                                                "Speak", "Ushris",
+                                                "{i}Good puppy.♥{/i} Now, C~U~M~♥",
+                                                "ChangeImageLayer", "ImageSetDontCarryOver", "1", "Base",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Smug", "PlayVisualEffect2", "OrgasmPulse", "white.png",  "PlayMotionEffect", "CrashSmol",
+                                                "PlayerOrgasm", "1",
+                                                "She teasingly slides her dainty foot off of your intoxicated face, leaving you whining in confusion for a moment before she lovingly steps down on your twitching erection, expertly stroking it up and down with her sole while gazing down at you with a smug smile, keeping her eyes locked on yours as you let out incoherent noises of ecstasy, your face going sloppy as you spurt long ropes of seed all over the floor and her soft foot.",
+                                                "While you whimper and moan in messy climax, Ushris reaches in with a massive claw and gently scritches under your chin with a single finger as you ride out your orgasm, sending submissive tingles running across your skin while you drool and pant like a pleasure-drunk animal.",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Happy",
+                                                "Speak", "Ushris",
+                                                "Hihihi♪ {i}Good{/i} puppy.♥ Now, keep being obedient, and I'll give you plenty more {i}rewards.♪♥{/i}",
+                                                "She slides her large claw around to pat your head for a few moments while she keeps wringing out a few final spurts of seed from your trembling shaft with her slowly pumping foot, leaving your head devoid of anything but a pleasurable warm afterglow.",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                "Speak", "Ushris",
+                                                "So be good for me,♪ okay?♥ Hihi.♪",
+                                                "DisplayCharacters",
+                                                "EndLoop",
+                                                "Then, in a flare of dark magic, Ushris is gone, and you're left kneeling on the ground, your spent cock still achingly erect, your thoughts mired in images of her foot pressing down on you, taming and teasing you, a thoughtless whine slipping from your lips as you pantingly catch your breath...",
+                                                "ChangeFetish", "Feet", "20",
+                                                "CallSceneThenReturn",  "FixSpirit"
+                                            ]
+                            },
+
+                            {
+                                "NameOfScene": "Lightly kiss her foot.",
+                                "theScene": [
+                                                "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "You lean in and give the hellhound's soft, indulgently warm sole a gentle kiss of submission, the texture of her silky stockings running along your lips in a shiver-inducing caress, the heat of her foot seductively seeping into your head. Eventually, you pull away in a slight daze while she looks down at you with a smug smile.[DamageToPlayer]",
+                                                "Speak", "Ushris",
+                                                "Good puppy,♪ but you can do better than {i}that,{/i} can't you? I won't let you get away with a half-hearted effort, you know.♥",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Seductive",  "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "ChangeImageLayer", "Feet", "1", "PressOneDown", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "Ushris firmly presses her stockinged sole back on your lips with a soft, seductive smile, lightly teasing your hapless nose with her dainty toes, giving you a fuller moment to appreciate the sinful warmth and delightful sweet caramel scent of her foot, and you unconsciously give it another kiss while your mind starts to spin from the mounting feeling of submission swelling inside you.[DamageToPlayer]",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Loving",
+                                                "Speak", "Ushris",
+                                                "Hihi,♪ there you go.♥ Keep it up.♪",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                "ChangeImageLayer", "Feet", "1", "BaseOneDown", "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "She lets out a delighted purring growl as you give her sole another dazed kiss, your head feeling gooey and warm from her body heat intermixing with your building submissive lust, her light, creamy, sweet fragrance filling your vulnerable, tingly nose, leaving you feeling more and more pleasantly light-headed with every passing second.",
+                                                "DamagePlayerFromMonster", "Ushris", "Sole Seduction", "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "Carried by the mounting puppyish subservience imbuing your mind, you give her foot a meek lick, the silky fabric's textured sensation and the intoxicating sweetness of Ushris' thinly covered skin sending another shiver of bliss through you, compounded by a doting appreciative giggle from the dainty hellhound that makes you irresistibly crave more of this sweetly degrading experience.[DamageToPlayer]",
+                                                "Speak", "Ushris",
+                                                "{i}Good puppy.♥{/i} Lick and kiss to your heart's content,♥ ehihi.♪",
+                                                "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "ChangeImageLayer", "Expression", "Ushris", "SmugToothy",
+                                                "ChangeImageLayer", "Feet", "1", "PressOneDown", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "You let out a whining, disoriented whimper as she grinds her foot down into your face, making your achingly hard cock throb from the euphoric surge the domineering tease fills you with, leaving you huffing and moaning into her sole in between gentle kisses and thoughtless licks, savoring and exploring the warm cloying caramel taste of her stockinged foot, the hellhound's radiating heat melting your brain into a horny mess.[DamageToPlayer]",
+                                                "DamagePlayerFromMonster", "Ushris", "Sole Seduction",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                "Speak", "Ushris",
+                                                "Keep it up.♪ Just a bit more.♪ Kehe-♪ Good boy,♥ good puppy.♥",
+                                                "PlayVisualEffect2", "ScreenPulse", "pinkHaze.png",
+                                                "Her praising, coaxing words mix together in your spun-senseless, hot-and-bothered head, letting time slip from you as you animalistically indulge in the smug hellhound's foot, your cock twitching and spasming like a wagging tail, your thoughts completely focused on worshiping her sole with meek affection, panting and gasping to take your fill of her creamy sweet scent.[DamageToPlayer]",
+                                                "ChangeImageLayer", "ImageSetDontCarryOver", "1", "Base",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Smug",
+                                                "... Until she pulls her foot away with a teasing giggle, leaving you swaying in place with a vacant expression, your aching erection leaking precum while you lean forward to try and give one last kiss to her warm sole.",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Seductive",
+                                                "Speak", "Ushris",
+                                                "Good puppy.♥ Wonderful kisses.♥",
+                                                "The petite woman gently pats your head with one of her massive claws, exercising dainty care as she ruffles your hair, coaxing a confused whimper out of you, the needy sound welling up from your throat in the aftermath of the foot-kissing session.",
+                                                "ChangeImageLayer", "Expression", "Ushris", "Base",
+                                                "Speak", "Ushris",
+                                                "See you soon?♥ Hihi.♪",
+                                                "DisplayCharacters",
+                                                "EndLoop",
+                                                "Then, in a flare of dark magic, Ushris is gone, and you're left kneeling on the ground, your cock twitching and throbbing with need, your thoughts mired in images of the woman's foot pressing down on you, taming and teasing you...",
+                                                "ChangeFetish", "Feet", "15"
+                                            ]
+                            },
+
+
+                            {
+                              "NameOfScene": "FixSpirit",
+                              "theScene": [
+                                              "IfPlayerSpiritGone", "Give1Spirit"
+                                        ]
+                            },
+                                  {
+                                    "NameOfScene": "Give1Spirit",
+                                    "theScene": [
+                                                    "SetSpirit", "1",
+                                                    "Despite being completely spent, something from that encounter leaves you oddly energized..."
+                                              ]
+                                  },
+                            {
+                                "NameOfScene": "Nothing",
+                                "theScene": [
+                                          ]
+                            },
+
+                          {
+                              "NameOfScene": "BlackHeartTimer",
+                              "theScene": [ "IfChoice", "1", "TimerEnd", "Nothing",
+                                            "ChangeProgress", "1",
+                                            "IfProgressEqualsOrGreater", "8", "ActiveTimerUp"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "ActiveTimerUp",
+                                      "theScene": [
+                                                      "SetProgress", "0",
+                                                      "SetChoice", "1", "TimerEnd"
+                                                ]
+                                  },
+                          {
+                              "NameOfScene": "CheckTimerEndOnTile",
+                              "theScene": [
+                                            "IfChoice", "1", "TimerEnd", "SwapTile"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "SwapTile",
+                                    "theScene": [
+                                                  "SpawnGridNPC", "BlackHeartTile", "Here",
+                                                  "RemoveGridNPC", "Current"
+                                              ]
+                                },
+
+
+
+
+                  {
+                      "NameOfScene": "EventBreak",
+                      "theScene": [
+                                      "Evento broko"
+                                ]
+                  }
+              ]
+}

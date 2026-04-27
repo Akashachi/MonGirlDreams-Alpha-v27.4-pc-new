@@ -1,0 +1,37 @@
+{
+    "name": "HiddenTrapShadows",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Ceris",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "HiddenTrap",
+                        "theScene": [
+                                        "As you step onto the tile, there's an ominous click-!",
+                                        "JumpToScene", "Triggered"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "Triggered",
+                                "theScene": [
+                                                "SpawnGridNPC", "ShadowsTile", "Here",
+                                                "RemoveGridNPC", "Current",
+                                                "JumpToEventThenScene", "ShadowsTile", "ShadowsTileAlt"
+                                          ]
+                            },
+                    {
+                        "NameOfScene": "EventBreak",
+                        "theScene": [
+                                        "Evento broko"
+                                  ]
+                    }
+                ]
+}

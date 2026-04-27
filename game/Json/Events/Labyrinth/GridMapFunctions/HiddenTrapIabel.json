@@ -1,0 +1,102 @@
+{
+    "name": "HiddenTrapIabel",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Ceris",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "HiddenTrap",
+                        "theScene": [
+                                        "JumpToRandomScene",
+                                          "Gold",
+                                          "Purple",
+                                          "Shadows",
+                                          "Overheat",
+                                          "Aphrodisiac",
+                                          "Nothing...",
+                                          "Nothing...",
+                                        "EndLoop"
+                                  ]
+                    },
+                              {
+                                  "NameOfScene": "Gold",
+                                  "theScene": [   "IfChoice", "1", "Gold", "Nothing...",
+                                                  "SetChoice", "1", "Gold",
+                                                  "As you step onto the tile, there's an ominous click-!",
+                                                  "JumpToEventThenScene", "HiddenTrapGold", "Triggered"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "Purple",
+                                  "theScene": [   "IfChoice", "1", "Purple", "Nothing...",
+                                                  "SetChoice", "1", "Purple",
+                                                  "As you step onto the tile, there's an ominous click-!",
+                                                  "JumpToEventThenScene", "HiddenTrapPurple", "Triggered"
+                                            ]
+                              },
+                              {
+                                  "NameOfScene": "Shadows",
+                                  "theScene": [  "IfChoice", "1", "Shadows", "Nothing...",
+                                                  "SetChoice", "1", "Shadows",
+                                                  "As you step onto the tile, there's an ominous click-!",
+                                                  "JumpToEventThenScene", "HiddenTrapShadows", "Triggered"
+                                            ]
+                              },
+                              {
+                                "NameOfScene": "Overheat",
+                                "theScene": [
+                                              "IfChoice", "1", "Overheat", "Nothing...",
+                                              "SetChoice", "1", "Overheat",
+                                              "SpawnGridNPC", "HiddenTrapShown", "Here",
+                                              "RemoveGridNPC", "Current",
+                                              "As you step onto the tile, there's an ominous click-!",
+                                              "IfHasPerk", "Overheat", "OverheatIncrease",
+                                              "GivePerkQuietly", "Overheat",
+                                              "ChangePerkDuration", "Overheat", "6",
+                                              "And the surrounding darkened stone suddenly flares up with hellish heat that radiates outwards in incandescent magical pulses, flooding your body with needy warmth and your mind with sexual desire, leaving your cock achingly hard...",
+                                              "Then the stone simmers back down, leaving no sign of the magical outburst that just occurred..."
+                                          ]
+                              },
+                                    {
+                                      "NameOfScene": "OverheatIncrease",
+                                      "theScene": [ "ChangePerkDuration", "Overheat", "10",
+                                                    "And the surrounding darkened stone suddenly flares up with hellish heat that radiates outwards in incandescent magical pulses, flooding your already overheated body with more needy warmth, miring your mind in sexual desire and leaving your cock achingly hard...",
+                                                    "Then the stone simmers back down, leaving no sign of the magical outburst that just occurred..."
+                                                ]
+                                    },
+                              {
+                                "NameOfScene": "Aphrodisiac",
+                                "theScene": [ "IfChoice", "1", "Aphrodisiac", "Nothing...",
+                                              "SetChoice", "1", "Aphrodisiac",
+                                              "SpawnGridNPC", "HiddenTrapShown", "Here",
+                                              "RemoveGridNPC", "Current",
+                                              "As you step onto the tile, there's an ominous click-!",
+                                              "ApplyStatusEffect", "AhproGridTrigger", "ApplyStatusEffect", "AhproGridTrigger",
+                                              "And suddenly, the passageway is flooded with a potent mist of cloyingly sweet aphrodisiacs! There's little you can do as they flood your senses and flow across your skin like a lover's caress, leaving you flushing and gasping with increasing arousal..."
+                                          ]
+                              },
+
+                              {
+                                  "NameOfScene": "Nothing...",
+                                  "theScene": ["SpawnGridNPC", "HiddenTrapShown", "Here",
+                                                "RemoveGridNPC", "Current"
+                                            ]
+                              },
+
+
+                    {
+                        "NameOfScene": "EventBreak",
+                        "theScene": [
+                                        "Evento broko"
+                                  ]
+                    }
+                ]
+}

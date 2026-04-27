@@ -1,0 +1,40 @@
+{
+    "name": "ConsumableItemEvents",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "",
+                    "postName": "",
+                    "SpeakerType": ""
+                  }
+
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "ManticoreSpike",
+                        "theScene": [  "You stare at the manticore spike a moment considering if you should really inject yourself with it.", 
+                                        "Menu",
+                                          "Inject yourself with manticore venom.",
+                                          "Put it away.",
+                                        "EndLoop"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Put it away.",
+                              "theScene": [ "GiveItemQuietly", "1", "Manticore Spike"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Inject yourself with manticore venom.",
+                              "theScene": [
+                                              "ApplyStatusEffect", "Manticore Spike",
+                                              "ChangeFetish", "Manticore Venom", "5",
+                                              "You carefully jab yourself with the spike, and gasp with delight as the aphrodisiac floods your body, slowly filling you with aching lust."
+                                        ]
+                          }
+
+                ]
+}

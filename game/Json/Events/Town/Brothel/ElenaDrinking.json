@@ -1,0 +1,846 @@
+{
+    "name": "Elena drinking the night away.",
+    "CardType": "BarShift",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Elena",
+                    "postName": "",
+                    "SpeakerType": "NPC"
+                  },
+                  {
+                    "name": "Belle",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": ["GetEventAndSetChoice", "Go see Elena at the Guild counter.", "17", "Booze",
+                                    "DisplayCharacters",
+                                      "2",
+                                      "EndLoop",
+                                    "While working behind the bar, you notice someone unexpected sitting at the far end of the bar knocking back multiple drinks that Belle had served them prior.",
+                                    "DisplayCharacters",
+                                      "1",
+                                      "2",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Base", "1", "WorkClothes",
+                                      "ChangeImageLayer", "Expression", "1", "Grumble", "ChangeImageLayer", "Face", "1", "Drunk",
+                                      "ChangeBGM", "music/Casino/red room.mp3",
+                                    "Elena has multiple empty shot glasses littered around her part of the bar corner and seems to be muttering darkly to herself, completely unaware of everything around her except for the quickly diminishing glass of alcohol she's currently working her way through. All of the other patrons in the bar seem to be giving her a wide berth.",
+                                    "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                    "As you warily move closer to take away the empty shot glasses, she looks up with a drunken smile as her eyes slowly focus on your face.",
+                                    "Speaks",
+                                    "Heyyyyyyy [ThePlayerName]! I didn't know you were working hereeee! ...",
+                                    "ChangeImageLayer", "Expression", "1", "Thinking",
+                                    "Speaks",
+                                    "...Didn't I tell you not to do that...?",
+                                      "ChangeImageLayer", "Expression", "1", "Excited",
+                                    "She glares at you angrily for a moment, but quickly devolves into drunken giggles and gently sways in her chair before gesturing for you to get closer.",
+                                    "Speaks",
+                                    "Comereeee! We gotsta *hic* chat!",
+                                    "ChangeImageLayer", "Expression", "2", "Scoff",
+                                    "Belle nudges you closer to Elena, forcing you to interact with the drunken woman.",
+                                    "DisplayCharacters",
+                                      "1",
+                                    "EndLoop",
+                                    "ChangeImageLayer", "Base", "1", "WorkClothes",
+                                    "ChangeImageLayer", "Expression", "1", "Drunk", "ChangeImageLayer", "Face", "1", "Drunk",
+                                    "JumpToScene",
+                                    "RandomDrunkConvo"
+                                  ]
+                    },
+
+                    {
+                        "NameOfScene": "RandomDrunkConvo",
+                        "theScene": [
+                                      "JumpToRandomScene",
+                                        "Complains about paper work.",
+                                        "Complains guild.",
+                                        "Complains you working here.",
+                                        "Complains Booze.",
+                                      "EndLoop"
+
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "Complains about paper work.",
+                                "theScene": [  "ChangeImageLayer", "Expression", "1", "Grumble",
+                                              "Elena drunkenly rambles and complains about her boring job to you, taking special care to emphasize her hatred of paperwork to you over and over again.",
+                                              "ChangeImageLayer", "Expression", "1", "DrunkRant",
+                                              "Speaks",
+                                              "I can't even try... try to do something about some of the problems... 'cause of REGULATIONS! Every time I gotta post a quesht... I need TRIPLE printed documents!",
+                                              "Speaks",
+                                              "But the *hic* 'normal' citizens... {i}get to just post the fucking things!{/i} *hic* It'sh not faiirrrrrr...",
+                                              "ChangeImageLayer", "Expression", "1", "Drunk",
+                                              "She plants her face onto the bar counter and starts to sob as you awkwardly stand in front of her before she perks up and stares at you for a moment.",
+                                              "GetEventAndChangeProgress", "Go see Elena at the Guild counter.",  "1",
+                                              "JumpToScene",
+                                              "Post Convo"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Complains guild.",
+                                "theScene": [  "ChangeImageLayer", "Expression", "1", "Disgust",
+                                              "Elena drunkenly rambles and complains about her employers.",
+                                              "Speaks",
+                                              "Ohhh, 'it'll be a great opportunity for a veteran adventurer' they shaid! *hic* Ohhhh, 'you'll get to help new adventurers fight off monshters' they shaid!",
+                                              "ChangeImageLayer", "Expression", "1", "Grumble",
+                                              "Speaks",
+                                              "And what do I getta do?! I get ta do paperwork and read sex manuals to adventurers! ...And... and some other dumb stuff...",
+                                              "ChangeImageLayer", "Expression", "1", "Frazzled",
+                                              "Speaks",
+                                              "I can't *hic* even take care of queshts th old fasioned way cause of the dumb fffucking enchantment on the content... continent...",
+                                               "ChangeImageLayer", "Expression", "1", "Drunk",
+                                              "Speaks",
+                                              "Iiiii bet I could take down the Demon Queen by myshelf!",
+                                               "ChangeImageLayer", "Expression", "1", "Depressed",
+                                              "She downs the rest of her shot glass before slamming it down on the counter and sighing heavily as she looks at you.",
+                                              "GetEventAndChangeProgress", "Go see Elena at the Guild counter.",  "1",
+                                              "JumpToScene",
+                                              "Post Convo"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Complains you working here.",
+                                "theScene": [  "ChangeImageLayer", "Expression", "1", "Angry",
+                                              "Elena gives you a stern look, juxtaposed by her drunken demeanor as she gently sways in her seat.",
+                                              "Speaks",
+                                              "I tollld you not to work here! Yer gonna end up a total perrvvv!",
+                                              "ChangeImageLayer", "Expression", "1", "Smile",
+                                              "Speaks",
+                                              "You gotta jus, go out there and do shome quests! You can get outta yer debt fair and square!",
+                                              "ChangeImageLayer", "Expression", "1", "Thinking",
+                                              "Speaks",
+                                              "Though... You do gotta fuck ta get anything done out there...",
+                                              "ChangeImageLayer", "Expression", "1", "SmileContent",
+                                              "Her face scrunches up in intense concentration for a moment before she giggles and shakes her head before looking at you.",
+                                              "GetEventAndChangeProgress", "Go see Elena at the Guild counter.",  "1",
+                                              "JumpToScene",
+                                              "Post Convo"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Complains Booze.",
+                                "theScene": [  "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                              "Elena giggles drunkenly.",
+                                              "Speaks",
+                                              "D-Do you know howww expenshive thish stuff I'm drinking is?",
+                                              "ChangeImageLayer", "Expression", "1", "Drunk",
+                                              "Speaks",
+                                              "I-It's like... 1000 eros a shot! A-An 'cause of how high leveled I am... *hic* normal booze jus... just dunn work right on me anymore...",
+                                              "ChangeImageLayer", "Expression", "1", "AraAra",
+                                              "Speaks",
+                                              "But monster gal booze! Now that's the... the good shit!",
+                                              "ChangeImageLayer", "Expression", "1", "Drunk",
+                                              "She downs another shot and slams the empty glass on the bar counter before letting out a contented sigh.",
+                                              "Speaks",
+                                              "And if ya trying not to get completely smashed, you should try *hic* elven wine... They make some damn good stuff, you just have to make sure it isn't all... l-lewd first...",
+                                              "GetEventAndChangeProgress", "Go see Elena at the Guild counter.",  "1",
+                                              "JumpToScene",
+                                              "Post Convo"
+                                          ]
+                            },
+
+                    {
+                        "NameOfScene": "Post Convo",
+                        "theScene": [
+                                      "GetAnEventsProgressThenIfEqualsOrGreater", "Go see Elena at the Guild counter.",  "26",  "Elena Teases You",
+                                      "JumpToScene",
+                                      "NormalEnd"
+
+                                  ]
+                    },
+                        {
+                            "NameOfScene": "NormalEnd",
+                            "theScene": [  "ChangeImageLayer", "Expression", "1", "Drunk",
+                                          "Elena decides that she's had enough to drink and staggers off towards the inn to find a bed to sleep in.",
+                                          "ChangeBGM", "music/Town/casino.mp3",
+                                          "DisplayCharacters",
+                                            "EndLoop",
+                                          "After your encounter with Elena, your shift behind the bar progresses relatively mundanely, and you get a regular payment for your efforts.",
+                                          "ChangeEros", "100",
+                                          "IfTimeIs", "Midnight", "GoToBed",
+                                          "AdvanceTime", "1"
+                                      ]
+                        },
+                              {
+                                  "NameOfScene": "GoToBed",
+                                  "theScene": [
+                                                "Then, it being the end of the night, you head up to your room, and go to bed for the night...",
+                                                "JumpToNPCEventThenScene", "Go to your room.", "Sleeping"
+                                            ]
+                              },
+
+                    {
+                        "NameOfScene": "Elena Teases You",
+                        "theScene": [
+                                      "JumpToRandomScene",
+                                        "Forces you to look at her cleavage.",
+                                        "Ask if pretty.",
+                                        "Flirts.",
+                                      "EndLoop"
+
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Forces you to look at her cleavage.",
+                              "theScene": [  "ChangeImageLayer", "Expression", "1", "AraAra",
+                                            "Elena smiles drunkenly at you.",
+                                            "Speaks",
+                                            "Heyyy... cause you're here... I can force you to do whatever I want... Hehehe...",
+                                            "ChangeImageLayer", "Expression", "1", "Drunk",
+                                            "Speaks",
+                                            "Come onnn [ThePlayerName], look down my shirt!",
+                                            "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                            "She pulls on her already low cut top and gives you a very good eyeful of her cleavage.",
+                                            "IfHasFetish", "Breasts", "LookFetishVer",
+                                            "Menu",
+                                              "Avert Eyes.",
+                                              "Look.",
+                                            "EndLoop"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "Avert Eyes.",
+                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Drunk",
+                                                    "Elena pouts.",
+                                                    "Speaks",
+                                                    "Rigghhhtt... I gotta pay you...",
+                                                    "ChangeImageLayer", "Expression", "1", "Shy",
+                                                    "Her drunken tone suddenly gets really sad.",
+                                                    "Speaks",
+                                                    "Wait... Does this mean you don't like me?",
+                                                    "Menu",
+                                                      "Keep averting.",
+                                                      "Look.",
+                                                    "EndLoop"
+                                                ]
+                                  },
+                                        {
+                                            "NameOfScene": "Keep averting.",
+                                            "theScene": [  "ChangeImageLayer", "Expression", "1", "Frazzled",
+                                                            "She frowns and looks away before pouring out another shot and quickly downing it.",
+                                                            "GetEventAndChangeProgress", "Go see Elena at the Guild counter.",  "-2",
+                                                          "JumpToScene",
+                                                          "NormalEnd"
+                                                      ]
+                                        },
+                                  {
+                                      "NameOfScene": "LookFetishVer",
+                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                    "You can't help but look down Elena's shirt as she drunkenly giggles.",
+                                                    "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                    "She bounces her captivating breasts around for you, giving you a pleasantly jiggling show.",
+                                                    "You find yourself completely enthralled by Elena's bountiful cleavage, and she seems to very much appreciate your intoxicated expression that mirrors her own.",
+                                                    "PlayImagePulseLoopingRandom", "5.0", "1.25", "0.70", "NPCs/Elena/ElenaTitsCloseUp.png",   "EndLoop",
+                                                    "Elena takes advantage of your distracted eyes and moves in, grabs the back of your head with an arm, and shoves your face between her cleavage.",
+                                                     "ChangeImageLayer", "Expression", "1", "LickLips",
+                                                    "Speaks",
+                                                    "I bet you can see them better now heheh...",
+                                                    "You let out a muffled affimative as she shakes her soft tits into your face.",
+                                                    "EndImagePulseLoopingRandom", "ChangeImageLayer", "Expression", "1", "SmileContent",
+                                                    "She eventually frees you from her cleavage with a small giggle, and as you straighten yourself you notice several other patrons of the bar giggling alongside Elena as they fix the two of you with lewd stares.",
+                                                    "You flush, and are happy you're behind the counter so nobody can see your rigid erection straining against your clothes.",
+                                                    "Well, Belle could, but she's doing her best to ignore Elena, so you think you're safe.",
+                                                    "GetEventAndChangeProgress", "Go see Elena at the Guild counter.",  "2",
+                                                    "JumpToScene",
+                                                    "Post Tease"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Look.",
+                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                    "You look down Elena's shirt and she drunkenly giggles.",
+                                                    "She bounces her breasts a bit for you, giving you a pleasant show.",
+                                                    "GetEventAndChangeProgress", "Go see Elena at the Guild counter.",  "1",
+                                                    "JumpToScene",
+                                                    "Post Tease"
+                                                ]
+                                  },
+                            {
+                                "NameOfScene": "Ask if pretty.",
+                                "theScene": [  "ChangeImageLayer", "Expression", "1", "Drunk",
+                                              "Elena leans on one of her hands, and traces a glass with a finger.",
+                                              "Speaks",
+                                              "[ThePlayerName]... Do you think I'm hot?",
+                                              "Menu",
+                                                "Yes.",
+                                                "No.",
+                                              "EndLoop"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "No.",
+                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "Grumble",
+                                                    "She frowns and looks away before pouring out another shot and quickly downing it.",
+                                                      "GetEventAndChangeProgress", "Go see Elena at the Guild counter.",  "-2",
+                                                    "JumpToScene",
+                                                    "NormalEnd"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Yes.",
+                                      "theScene": [  "ChangeImageLayer", "Expression", "1", "DrunkFlirt", "ChangeImageLayer", "Face", "1", "Drunk",
+                                                    "Elena giggles drunkenly like a school girl.",
+                                                    "ChangeImageLayer", "Expression", "1", "Kiss",
+                                                    "Much to your surprise, she grabs you by the collar and pulls you in for a quick drunken smooch.",
+                                                    "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                    "The kiss doesn't last long, but it leaves you a little flushed with the faint taste of alcohol as Elena breaks it before slowly licking her lips.",
+                                                    "GetEventAndChangeProgress", "Go see Elena at the Guild counter.",  "1",
+                                                    "ChangeImageLayer", "Face", "1", "Drunk",
+                                                    "JumpToScene",
+                                                    "Post Tease"
+                                                ]
+                                  },
+                          {
+                              "NameOfScene": "Flirts.",
+                              "theScene": [  "Elena slowly leans on the counter, making her already visible cleavage even easier for you to see.",
+                                            "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                            "Speaks",
+                                            "Hey [ThePlayerName], haveeee I ever told you *hic* how handsome you are?",
+                                            "ChangeImageLayer", "Expression", "1", "Kiss",
+                                            "She proceeds to blow you a wet kiss.",
+                                            "Menu",
+                                              "Flirt back.",
+                                              "Get flustered.",
+                                              "Ignore.",
+                                            "EndLoop"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "Flirt back.",
+                                    "theScene": [  "PlayerSpeaks",
+                                                  "Have I ever told you how {i}beautiful{/i} you are?",
+                                                  "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                  "Elena giggles and flushes deeply, then sips at her drink.",
+                                                    "GetEventAndChangeProgress", "Go see Elena at the Guild counter.",  "1",
+                                                    "ChangeImageLayer", "Face", "1", "Drunk",
+                                                  "JumpToScene",
+                                                  "Post Tease"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "Get flustered.",
+                                    "theScene": [ "ChangeImageLayer", "Expression", "1", "LickLips",
+                                                  "You flush and squirm a little at Elena's advances, and she smiles rather lewdly as she slowly takes another sip of her drink.",
+                                                    "GetEventAndChangeProgress", "Go see Elena at the Guild counter.",  "1",
+                                                  "JumpToScene",
+                                                  "Post Tease"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "Ignore.",
+                                    "theScene": [  "ChangeImageLayer", "Expression", "1", "Frazzled",
+                                                  "You do your best to ignore Elena's advances, and she frowns and looks away before pouring out another shot and quickly downing it.",
+                                                    "GetEventAndChangeProgress", "Go see Elena at the Guild counter.",  "-2",
+                                                  "JumpToScene",
+                                                  "NormalEnd"
+                                              ]
+                                },
+
+
+                          {
+                              "NameOfScene": "Post Tease",
+                              "theScene": [  "GetAnEventsProgressThenIfEqualsOrGreater", "Go see Elena at the Guild counter.",  "35",    "Elena Lewds You",
+                                            "JumpToScene",
+                                            "NormalEnd"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Elena Lewds You",
+                              "theScene": [  "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                            "Elena seems rather content with your company as she continues to drink, chatting, joking, and flirting with you the whole time.",
+                                            "ChangeImageLayer", "Expression", "1", "Drunk",
+                                            "But eventually her drinking catches up with her, and with a final drunken giggle, you manage to catch her before she falls sideways out of her seat.",
+                                            "ChangeImageLayer", "Expression", "1", "Shy",
+                                            "Speaks",
+                                            "Ah... I- *hic* don't normally... Hehe... Stay around... This long...",
+                                            "Belle gets you to carry Elena to a room.",
+                                             "StatEqualsOrMore", "Power", "10", "EasyCarry",
+                                          "JumpToScene",  "CarryHard"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "EasyCarry",
+                                    "theScene": [  "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                  "You easily pick Elena up in a bridal carry and bring her up the stairs. As you literally sweep her off her feet, Elena lets out a drunken giggle and nuzzles closer to you.",
+                                                  "ChangeImageLayer", "Expression", "1", "Kiss",
+                                                  "As you bring her up the stairs two steps at a time, she teasingly gropes your groin with one hand and loops the other around your head while she kisses your neck.",
+                                                  "JumpToScene",
+                                                  "Elena Actually Lewds You"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "CarryHard",
+                                    "theScene": [   "ChangeImageLayer", "Expression", "1", "Drunk",
+                                                  "You struggle to carry Elena upstairs, and she's either heavier than you thought, or your arms are weaker than you think they are.",
+                                                  "JumpToScene",
+                                                  "Elena Actually Lewds You"
+                                              ]
+                                },
+                            {
+                                "NameOfScene": "Elena Actually Lewds You",
+                                "theScene": [  "ChangeImageLayer", "Expression", "1", "Drunk", "ChangeImageLayer", "Face", "1", "Drunk",
+                                              "ChangeBGM", "music/Loss/reason.mp3",
+                                              "ChangeBG", "InnRoom.png",
+                                              "Speaks",
+                                              "Weee're in a room alll aloooone, [ThePlayerName] ... And you can't say nooo!",
+                                              "ChangeImageLayer", "Expression", "1", "Smug",
+                                              "The tipsy woman drunkenly giggles, her face still flushed from the alcohol, but her gaze is focused, and you could swear you saw her lick her lips...",
+
+                                              "ChangeImageLayer", "Expression", "1", "LickLips",
+                                              "Speaks",
+                                              "I'll be niiice... Don't worry! So... Wanna fuck? Orrr maaaaybe... Do you wan'na titfuck?",
+                                              "Menu",
+                                                "Sex.",
+                                                "Titfuck.",
+                                                "You're drunk.",
+                                              "EndLoop"
+
+                                          ]
+                            },
+                                    {
+                                        "NameOfScene": "You're drunk.",
+                                        "theScene": [  "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                      "Elena pouts, peeved by your sharp response, and wordlessly reaches for you. Moving with surprising speed and strength for someone three sheets to the wind, she effortlessly tosses you onto the bed and climbs on top of you, straddling your waist with her wide hips, her drunken smile carrying a predatory glint as she hovers over you.",
+
+                                                      "Swaying about in an inebriated trance, the pent-up guildswoman clearly has no intention of letting you leave now that you've gone this far. Sloppily moving on to undressing herself amid drunken lustful mutterings, she struggles a moment with her clothing, but her fingers eventually find and undo the buttons of her outfit.",
+                                                      "ChangeImageLayer", "Base", "1", "Underwear",
+                                                      "You can't help but feel a pang of arousal as Elena's jacket is chucked away, making the already alluring depths of her cleavage even more apparent as her hefty breasts bounce around, still cupped by her lacy bra.",
+
+                                                      "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                      "Speaks",
+                                                      "Nooo struggling! Why're you bein' sho difficult... I thought I'd let you pick, buuuut since you're being so uncooperative... I'lll pick for you~",
+
+                                                      "ChangeImageLayer", "Base", "1", "Nude",
+                                                      "Her bra coming loose reveals even more of her mature figure, freely exposing her heavy tits, the riled-up woman's already stiffened nipples attesting to her burning lust. Piece by piece, her outfit comes apart, leaving you to gawk and take in your own personal strip show as the unbelievably strong woman's unexpectedly curvy and plush-looking frame is exposed to you in all its naked glory.",
+                                                      "ChangeImageLayer", "Expression", "1", "Smug",
+                                                      "All the while, she keeps you firmly pinned under her body, each attempt to move out from under her punished by a bounce of her powerful hips to keep you in place, punctuated by a sultry, eager giggle from the disrobing drunkard.",
+
+                                                      "Speaks",
+                                                      "Nooo geeetting away from me nooow~",
+                                                      "JumpToRandomScene",
+                                                        "Sex start.",
+                                                        "Titfuck start.",
+                                                      "EndLoop"
+
+                                                  ]
+                                    },
+
+                                          {
+                                              "NameOfScene": "Sex.",
+                                              "theScene": [ "ChangeImageLayer", "Expression", "1", "Smile",
+                                                          "Glad to hear that you're not the kind of guy to leave a lady hanging, Elena giggles as she presses her finger against your chest. Gently pushing you back towards the bed while she draws her long, carefully manicured nail across your front, the office woman deftly slips her hand beneath the hem of your skimpy shirt in order to get you out of your clothes.",
+                                                          "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                          "Speaks",
+                                                          "Gooood... I'll maaake sure you enjoy it... Hehe, and you'd better do the same for meee~",
+
+                                                          "With the drunken slurring in her voice and the flush over her cheeks, it's hard to tell if she's being playful or actually warning you... But once she has gotten you out of your clothes and pushes you onto the bed, you find that the question doesn't matter as your manhood readily stands at attention, too riled up to care whether it's a threat or a promise.",
+                                                           "ChangeImageLayer", "Base", "1", "Underwear",
+                                                          "Quickly relieving herself of the official clothes that only did so much to conceal her sexy figure in the first place, Elena gives you a quick strip-tease, unbuttoning her blouse to reveal her plump, bouncing tits before removing the bra keeping them contained. The pencil skirt hugging her wide hips is soon to follow, a quick unzipping revealing her smooth, stocking-clad legs and thighs.",
+
+                                                          "ChangeImageLayer", "Expression", "1", "DrunkFlirt", "ChangeImageLayer", "Base", "1", "Nude",
+                                                          "Making a show of it, Elena brings a leg up onto the edge of the bed and has you watch as she continues to strip down, giggling with a drunken flush when she sees you gulp and stare obediently. Turning about, she shows off her ass, her fingers digging into the waistline of her panties before she tugs them down, a soft, wet sound reaching your ears as the black fabric peels away from her crotch before she steps out and throws them away.",
+
+                                                          "Now having completely rid herself of her clothing, the bare-naked office lady happily gets on top of you and straddles your waist, her scent filling your nose as she presses up against you. Licking her lips, she lustfully rubs her chest against yours, delighting in the heat of your eager erection pressing against her pelvis, then leans back to lift her hips.",
+                                                          "ChangeImageLayer", "Expression", "1", "Smug",
+                                                          "Giving a drunken giggle, she once more showily makes you watch her get into position above your aching manhood, clicking her tongue with a strict frown when you squirm in anticipation. Slowly trailing one hand down the front of her curvaceous body, she caressingly goes over her breasts and makes her way down to her pelvis before grabbing hold of your throbbing length, guiding you straight into her warm, silky folds.",
+                                                         "JumpToScene",
+                                                          "Sex Scene."
+
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "Titfuck.",
+                                              "theScene": [ "ChangeImageLayer", "Expression", "1", "SmileContent",
+                                                            "Happy to see that you're willing to take her up on the offer,or that you're too horny to turn her down, Elena pulls you by your arm over to the bed before pushing you down, flashing you a knowing, tipsy smile as she takes in your unresisting prone form.",
+                                                            "ChangeImageLayer", "Expression", "1", "Drunk",
+                                                            "Speaks",
+                                                            "A tits guy, huh? Buuut I hope you're not jusht humoring me, hm? I'd be veeeery cross~",
+
+                                                            "Swiftly moving on to checking whether or not you're simply indulging her, she undoes the belt of your work pants with deft fingers before leaning down, the mature woman giving free rein to her animalistic lust as she promptly pulls down your bottoms with her teeth, dominantly keeping eye contact with you as she does so.",
+                                                            "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                                            "As your skimpy bottoms are lowered below your hips, the office woman lets out a surprised, giddy yelp when your eager, rigid length suddenly springs up from its constricting confines and baps against her cheek.",
+
+                                                            "ChangeImageLayer", "Expression", "1", "Excited",
+                                                            "Speaks",
+                                                            "Ooohhh, it's really not jussst talk, is it?",
+                                                            "ChangeImageLayer", "Expression", "1", "LickLips",
+                                                            "Giving her lips an excited lick with a sultry gaze, she leans back up from your waist in order to start stripping herself, plainly looking forward to relieving her pent-up lust.",
+                                                            "ChangeImageLayer", "Base", "1", "Underwear", "ChangeImageLayer", "Expression", "1", "Smug",
+                                                            "She starts by undoing her white buttoned-up blouse to further show off her bountiful cleavage, the movement making her bra-clad bosom gently bounce. Next, reaching behind her back in order to undo the undergarment's clasp, she slowly brings down one strap then the other to further tease and entice you in the process, licking her lips as the lacy brassiere comes off.",
+
+                                                            "ChangeImageLayer", "Expression", "1", "DrunkFlirt", "ChangeImageLayer", "Base", "1", "Nude",
+                                                            "Speaks",
+                                                            "You're alllll mine now... I'll take care of everything, [ThePlayerName]... So don't move, 'kaay?",
+
+                                                            "Tossing her clothing to the side, Elena quickly closes in on her prey, your throbbing, rigid manhood soon finding itself enveloped within the softness of her breasts as she mounts your waist and grins down at you, her boozy flush staining her cheeks pink.",
+
+                                                            "JumpToScene",
+                                                            "Titfuck Scene."
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "Sex start.",
+                                              "theScene": [ "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                            "With almost feral ferocity, the drunken office woman tears the rest of your clothing away, acting with unnerving strength and speed. Quickly laying you bare underneath her wide hips and looming figure, she licks her lips nigh-animalistically while her eyes blaze with lust as she relishes the feeling of claiming her quarry, purring sultrily when she notices your hard and eager erection.",
+
+                                                            "Speaks",
+                                                            "Oh-ho?~ Well... at leasht {i}he's{/i} not complaining...~",
+
+                                                            "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                            "Elena grins as your engorged manhood throbs in response and needily presses itself up against her pelvis, the intoxicating warm softness of her skin teasing you even without her doing anything. Stretching briefly with a playful slurred hum, she proudly puts her curvy upper body on display, giving you a perfect view of her flawlessly plush body and succulent bouncing bust.",
+
+                                                            "Speaks",
+                                                            "Hope you're reaaady, [ThePlayerName]... becauuuse for making me wait, I'm riding you till I'm {i}fully satisfied~{/i}",
+                                                            "ChangeImageLayer", "Expression", "1", "Smug",
+                                                            "With a predatory grin, Elena lifts herself up, bringing a hand down to her pussy and spreading her fingers to proudly show off her wet folds devouring your cock whole while you have no choice but to lay there and watch, an unsettling, irresistible twinge of arousal crawling up your spine at the forceful rutting you're about to be subjected to.",
+                                                               "JumpToScene",
+                                                                "Sex Scene."
+
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "Titfuck start.",
+                                              "theScene": [ "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                            "A manic look plastered across her face, it's clear that Elena has no intention of letting you go as she easily tears away your flimsy work pants like tissue paper. A gasp of amusement and giddiness comes free from her lips as she sees that despite your situation and previous reluctance, your cock is erect and eager, ready for her without any further coaxing being required.",
+
+                                                            "Speaks",
+                                                            "Wellll at least heee'sh not complaining...~",
+                                                            "ChangeImageLayer", "Expression", "1", "Smug",
+                                                            "Leaning down with a dominant leer, the drunken guildswoman's breasts squish pleasantly against your chest, emphasizing the luscious cleavage you're practically forced to stare at every time you walk into the guild office. Elena can feel your aching manhood throb against her stomach and grins sleazily in response, her face mere inches away from yours.",
+                                                            "ChangeImageLayer", "Expression", "1", "Drunk",
+                                                            "Clearly eager to get to the good part, she slides herself and her plush tits down along your torso, keeping you well-pinned beneath her body as she brings her arms up to her bosom. Promptly trapping your cock between her heavy breasts, she lets out a tipsy giggle when your lower body can't help but jerk in response to the pleasurable pressure, her tits' intense but soft embrace feeling delightful against your aching dick.",
+
+                                                            "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                            "Speaks",
+                                                            "Gotcha...~",
+                                                             "JumpToScene",
+                                                                        "Titfuck Scene."
+
+                                                        ]
+                                          },
+
+
+
+
+                                    {
+                                        "NameOfScene": "Sex Scene.",
+                                        "theScene": ["ChangeImageLayer", "Expression", "1", "AraAra",
+                                                    "With little delay, Elena drops her hips onto yours, swiftly enveloping you in her experienced, molten pussy. Immediately, you can't help but throw your head back in bliss as your mouth hangs open with a groan, the office woman herself grinning and licking her lips as she watches you writhe in pleasure beneath her while she grinds and sways her hips.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                    "Speaks",
+                                                    "Hehe, you like thaaat? Do your beesst to hold out so I can enjoooy it too, 'kay?",
+
+                                                    "Not waiting for an answer, she starts bouncing her curvy hips assertively, making you feel all the weight and strength placed into her backside as it slaps down against your crotch. The hot walls of her powerful pussy squeeze down on your already relentlessly assaulted dick, threatening to milk you dry without much effort on her part in a show of dominance... Unless she's simply unable to moderate her strength in her drunken state.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Depressed",
+                                                    "Speaks",
+                                                    "Allll that stuuuupid paperwork... All of it is making me soooo annoyed... Soooo frustrated...",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Smug",
+                                                    "Speaks",
+                                                    "But you'll help me out with that, right?",
+
+                                                    "Without much choice in the matter at this point, you can only weakly nod, the pent-up guildswoman grinning sleazily in response before she sets to fucking you at a quick rhythm with her wide womanly hips, completely controlling the pace. Each time you try to thrust back, Elena just slams your waist back into the cushioning mattress below, totally in control and happily using you like a stress relief toy.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Drunk",
+                                                    "As she rapidly loses herself to her wanton urges and the frantic pace of her hips only accelerates, your fingers dig into the sheets beneath you, trying to use anything to anchor yourself as the rough yet addictive pleasure already starts to overload your senses.",
+
+                                                    "Hot waves of bliss rush through you from each slamming bounce of the office woman's strong hips and each pleasurable squeeze of her greedy pussy, her impossibly muscular yet somehow plush frame smothering you and causing the edges of your vision to go white as the relentless piston movements keep amplifying the longer she's on top of you.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Angry",
+                                                    "Speaks",
+                                                    "Heeeey, don't have me do all the work heeeere... You should at leeeeast try and do something besides lie there like a diiildo...",
+                                                    "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                    "With a mix of sloppily stern admonishment and coaxing temptation, Elena grabs hold of your wrists and brings your hands up to her curvy waist, assertively making you grab hold of it as she leans up and arches backwards. Stretching her arms with a giggling purr, she pushes out her bust for you to watch it obscenely wobble in the sultrily dim light of the brothel bedroom.",
+
+                                                    "As she keeps wildly bouncing her heavy, demanding hips on your waist, you're thankful that the beds in the Goddess' Embrace are so sturdy, the sex-starved Elena practically behaving like an Oni as she fucks you ravenously, your slammed pelvis actually starting to make an indent in the mattress below you.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "LickLips",
+                                                    "Enduring the one-sided power-fucking as best you can, you grimace in a mixture of tantric ache and helpless arousal, unable to do much against Elena's overwhelming strength and sexual hunger, though in her drunken state, she doesn't seem to notice and isn't holding back at all, continuing to ride you into a pleasured mess.",
+
+                                                    "With a mix of ecstasy and pain shooting through you as her pussy keeps a tight, vice-like hold on your erection, you throw your head back, trying to hold on, but you can't deny her much longer: a rapidly approaching orgasm builds within you as your cock throbs and aches madly from the pinning sex, the frantic piston-like movements of Elena's hips and the crushing grip of her pussy driving you over the edge mercilessly quick.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                                    "Elena herself seems to be very much feeling it, her eyes glazed with lust and her usually dignified mouth panting in sloppy wanton enjoyment as she babbles incoherently in her intoxicated state, letting out a messy stream of pleasured noises and indulgent praise and encouragement.",
+
+                                                    "Groaning in satisfaction, she showily gropes her own bust on top of you with a hot steamy sigh to chase more of the sexual release she's craving, fully getting herself off through this sexual romp, the unbelievably erotic sight of the usually severe guildswoman sluttily riding you pushing you over the edge.",
+
+                                                    "PlayerOrgasmNoSpiritLoss",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Embarrassed",
+                                                    "Your endurance crumbling, your hips jerk and twitch as you flood her pussy with cum, Elena letting out a throaty sound of surprise in reaction to your climax, then slowing down the swinging of her hips after a short delay. Ceasing to grope her plush bust, she looks down at you with a drunken look that still speaks of disappointment and annoyance, clearly frustrated that you reached climax before she even seemed to get close.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Angry",
+                                                    "Speaks",
+                                                    "Whaaaat? Heeey! Come {i}oooon,{/i} I wan't to cum too, ya' knooow!?",
+                                                    "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                    "Placing her hands on your chest with a huff, she begins to move again without giving you time to rest, the tight folds of her pussy only gripping down more strongly as she consciously focuses on you amid her renewed wild hip-swinging, the overwhelming sensations flowing through your hips made all the more powerful by your recent orgasm, your abused body twitching and shivering with lancing bliss from the forceful mating.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                    "Doing your best to simply hold on, you keep an almost desperate grip on her shapely hips as they roughly and unrelentingly bounce on your lap with wet slaps, her muscled ass impacting against your thighs. Eager to attain the orgasmic high that you've already enjoyed yourself, she watches you with something like lustful revenge as your face twists and contorts from the shocking cascades of agonizing pleasure crashing through you.",
+
+                                                    "Rather than take mercy on you in reaction to the yelps mixed with groans of pleasure escaping your lips, she seems to be driven further into her climax-seeking frenzy by your helpless moans and melting expression. Increasing the force and pace of her swings, she takes her frustrations out on your trembling cock like a sex toy, keeping you pinned below her and unable to escape until she's satisfied.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Smug",
+                                                    "Speaks",
+                                                    "{i}Heeeey{/i}, you hear me!? I'm not stopping until I get to climax toooo~",
+
+                                                    "As her voice still slurs from her drunken mouth and flows messily through your bliss-addled senses, your mind tries to think of a way out of this situation, searching for a solution to spare yourself from her rampaging lust, the guildswoman's overwhelming power and your present state of weakness not leaving you with many options...",
+
+                                                    "Desperately, as your next orgasm fast approaches, you release your hands from her hips, instead reaching for her swaying breasts in an attempt to push her closer to climax. Perhaps she'll stop or at least slow down if you can get her to reach the release she's seeking...",
+                                                    "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                                    "When your fingers close upon her sweat-slicked, delightfully shapely and soft tits, you instinctively go for her stiff nipples, kneading and pinching them to stimulate the pent-up woman, and your efforts seem to be rewarded as her dour expression changes into a pleasured one, a content moan escaping her lips as you play with her bouncing tits.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Drunk",
+                                                    "Speaks",
+                                                    "Yeeeahhh, that's more like it... Come on, [ThePlayerName]! Help me cum! Show a lady what you've got, would yooouuu?",
+
+                                                    "Still, even as her expression softens, Elena's amazonian hips don't slow down in the slightest. If anything, you think she may have started to go faster in response to your touch and to the extra pleasure coursing through her body, threatening to crush your resistance in a flash all over again!",
+                                                    "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                                    "As your situation grows ever more dire, your stamina draining quickly, you gather your strength and decide to put all you've got into satisfying the ravenous woman. Gritting your teeth, you manage to thrust up into her demanding pussy despite your sore hips and the merciless embrace of her silken squeezing walls over your cock, drawing more sounds of content from your sex-starved customer.",
+
+                                                    "Speaks",
+                                                    "Yeees... {i}Yeees!{/i} I wanna cyum tooo...~!",
+
+                                                    "An unexpected wave of arousal flows through you as the sultry lady's voice peaks out, your lust-wracked body responding by trying to fight back even more. As you play with her nipples, she moans and closes her eyes to try and focus on the pleasure, but even with your redoubled efforts, a second orgasm is quick to arrive as you again reach your limit, tremblingly spurting thick loads of semen into her hellishly delightful body...",
+
+                                                    "PlayerOrgasmNoSpiritLoss",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Angry",
+                                                    "Speaks",
+                                                    "Nono{i}no!{/i} You're getting off without me agaaaain!",
+
+                                                    "This time, the frantic slamming of Elena's hips against yours doesn't let up even for a moment, making your vision go white from the surging bolts of excessive bliss. What was already overwhelming has grown even more dangerous as the waves of pleasure threaten to short out your senses, the drunken guildswoman single-mindedly and one-sidedly continuing to ride you as she desperately tries to reach her own orgasm.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Disgust",
+                                                    "Speaks",
+                                                    "Grrr... {i}Fine!{/i} I'm goin'to give you a hand... but y'better make it up to me, you hear!?",
+
+                                                    "You can't help but feel a pang of fresh fear and close your eyes as you wonder what she has in store for you, but just before you're about to give in to the ruinous pleasure and collapse for good, Elena pauses a moment to grind her hips in tempting circles amid a muttered magic incantation, causing a warming wave of rejuvenating energy to wash over you and through your aching manhood!",
+
+                                                    "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                    "Opening your eyes to watch Elena's expression, you see her beam in triumph at your erection's hardening, twitching state, a clear request practically written on her panting face, the pent-up lady silently begging you to help her cum as she keeps pouring more curative, reenergizing power across your abused frame.",
+                                                    "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                                    "Reinvigorated by the wave of healing magic coursing through your body, you do everything you can to fulfill her desires, playing with her breasts and thrusting your hips with restored vigor and purpose, your efforts rewarded as she moans loudly and resumes wildly swinging her curvy hips at a mind-blanking pace, almost making you lose your focus from the renewed influx of crashing arousal.",
+
+                                                    "Speaks",
+                                                    "Yes! [ThePlayerName], you can do it! Just like thaaaat!",
+
+                                                    "Thrusting as deep as you can within her vice-like pussy as she frantically slams her hips against yours, you try to reach her furthest depths to bring her the pleasure she desires, handling her bouncing tits with all the skill and focus you can muster, your fingers seeking the best spots you can stimulate to make her climax alongside you this time, your limit already fast approaching once again despite the magic boost.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Orgasm",
+                                                    "Speaks",
+                                                    "Yesyesyes! Please, I just wanna cum! Makemecum! {i}Makemecum!!!{/i}",
+                                                    "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                                    "Elena's expression twists as she moans out loudly, your efforts clearly paying off as her body shudders and her pussy clamps ever tighter on your thrusting cock. Driven forward by her shameless and desperate pleas for pleasure, you do everything you can to return the favor and hold out against her relentless fucking, clenching your teeth against the feeling that your pleasure-battered body and mind could give up at any moment.",
+
+                                                    "Both of you are at the brink now, sweat dripping off your bodies as your mouths hang open in wordless, animalistic groaning, each fervorous slam of your hips sending a groaning protest through the bed as you desperately reach for the peak of Elena's pleasure.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Orgasm", "ChangeImageLayer", "Face", "1", "Drunk",
+                                                    "Speaks",
+                                                    "Yesyesyes! I'm going to- I'm going to- {b}Oh fuuuuck~!{/b}",
+
+                                                    "PlayerOrgasmNoSpiritLoss",
+
+                                                    "Elena throws her head back in a primal howl of ecstasy as her body starts to shake, one last slam leaving your cock deeply hilted inside of her. Throwing her arms around you in a ravenously intimate embrace, the office woman's nails inadvertently claw into your back while you tightly reciprocate the gesture through your own climax, flooding her pussy yet again with your cum as you both moan out in bestial bliss.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                    "Your hips jerk instinctively along with Elena's as her folds convulse and tightly squeeze down on you, the pleasure-starved, frustrated woman's sex clamping down on yours and milking it for all it's worth. As her orgasm begins to die down, the mature lady's body relaxes and she collapses onto you with a pleasured sigh, quietly humming to herself as the two of you bask in the afterglow of the pleasurable endeavor.",
+
+                                                    "After a few minutes of enjoying the waves of post-orgasmic bliss that ooze through your fatigued muscles, Elena slowly brings herself up to drunkenly kiss you on the lips, purring in satisfaction as she keeps your flagging cock inside her. Stretching slightly as she leans back up, she gives you a happy look... though her eyes hold a still-lustful spark that sends a shadow of trepidation through you as she speaks.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                    "Speaks",
+                                                    "Mmmmn... That was great... {i}You're good for one more, right?{/i}",
+                                                    "ChangeImageLayer", "Expression", "1", "LickLips",
+                                                    "Before you can deny her request, she's already back to moving her hips on top of you, your refusal devolving into nothing more than a moan as the vicious cycle of cumming, being restored by her healing magic, and pleasing her starts all over again, your words, cries, gasps, and soon your powerless huffs drowned out by the slapping of her body against yours.",
+                                                    "ChangeImageLayer", "Expression", "1", "Smug",
+                                                    "Effortlessly riding you late into the night and even early into the morning, Elena never stops slamming her curvaceous mature hips on top of yours, ruthlessly using you until she's satisfied, just as she promised, clearly not intent on passing up on the opportunity to fully and completely vent her frustrations.",
+                                                    "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                                    "Each time her ruthless riding makes you pass out, you later wake up only to find yourself being ridden from a different but equally pleasurable position, enduring the blissfully hellish ride until you pass out and the cycle repeats.",
+                                                    "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                    "A slave to her whims, forced to ejaculate over and over within her seemingly insatiable pussy, all you can do is moan and cum, hoping that this time, she'll finally be satiated...",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Drunk", "ChangeImageLayer", "Face", "1", "Drunk",
+                                                    "Thankfully, eventually, even Elena reaches her limit... Or at least she ultimately passes out, whether due to the alcohol in her system or to finally being satisfied, the ravenous guildswoman snoring softly as she lays on your chest, looking surprisingly gentle and peaceful after all the hours of bestial mating she's subjected you to.",
+
+                                                    "Whatever the reason for her finally releasing you from this endless rutting, you can't help but feel content at a job well done, a mix of satisfaction and soreness radiating from your body and from your twitching cock still trapped inside her curvaceous, mature body. As you fade off into the darkness of sleep, you're almost eager for more...",
+
+                                                    "ChangeFetish",
+                                                    "Sex",
+                                                    "10",
+                                                    "ChangeSensitivity",
+                                                    "Pain",
+                                                    "10",
+                                                    "JumpToScene",
+                                                    "Morning after"
+
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "Titfuck Scene.",
+                                        "theScene": [ "Now that Elena has you trapped between her breasts, you can't even think about trying to get away from her. Like a pleasurable, pillowy prison, the guildswoman makes sure that whenever you squirm, she squeezes her heavy bust even tighter around your erect manhood.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                     "Speaks",
+                                                     "You're alll mine to play with noow... No backing out~",
+                                                     "ChangeImageLayer", "Expression", "1", "Kiss",
+                                                     "With a pleased giggle, Elena lowers herself to get closer to the crown of your aching cock, flashing you a drunken, salacious grin before parting her plump lips to blow across your poking glans, the hot puff of air causing the hair on the back of your neck to stand on end from the ticklish sensation. A shiver rides up your spine as she licks her lips, like a predator watching its prey.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Smug",
+                                                     "As she gently teases and strokes your aching shaft, you can't help but gasp and shiver at the feeling of her plush, pillowy bosom being worked over you, your reaction eliciting a confident and alluring hum from the guildswoman as she continues to play with you. Feeling your cock become ever more rigid from her tempting titfuck, Elena ensures that you're under a constant assault of pleasure, all at her own pace.",
+
+                                                     "When your hips buck, craving the embrace of her delightfully soft bust and the waves of pleasure that it brings, Elena presses you back down demandingly, stopping her movement for a moment to lower her head yet again, teasing you with the sight of her plush painted lips mere inches away from kissing the crown of your throbbing length.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Thinking",
+                                                     "Speaks",
+                                                     "Even though I have youuu, something is mishsing...",
+                                                    "ChangeImageLayer", "Expression", "1", "Kiss",
+                                                    "Stuck in idle thought, the guildswoman pouts as her mind wanders, planting a lazy kiss on your manhood in the meantime. Drunkenly staring off into space, she leaves one, two, three small but clear marks of blue lipstick on you, proof of your entrapment between her bust as she practically keeps your cock held hostage.",
+                                                    "ChangeImageLayer", "Expression", "1", "LickLips",
+                                                     "Lightly cooing, as thoughts enter and leave her mind, her breasts don't let up. Enveloping your hardening length and keeping you in place as she continues to inflame and stoke your lust with the lush, indulgent feeling of her bosom bouncing up and down on your waist. Before long, her stroking slows and eventually stops, your hips gently jerking, disappointed the simulation has stopped when you're already so eager to keep going.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Depressed",
+                                                     "Speaks",
+                                                     "It's not good enough... is it?",
+
+                                                     "A small pout grows on her soft lips as she looks at you. Feeling prompted for a response, you quickly try to think of a compliment, hardly able to agree  that the indulgent sensations of your cock stuffed between her bountiful and soft cleavage don't feel good...",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Drunk",
+                                                     "But just as you're about to voice something, however, Elena seems to start concentrating, her painted lips mouthing inaudible words. Several shades of iridescent color begin to flow and swirl around her, like an aurora created from various magical auras overlapping with one another.",
+                                                     "ChangeImageLayer", "Expression", "1", "Smug",
+                                                     "After a few moments, the colors begin to fade and Elena's mouth stops moving, but before you can ask her what she was doing, she presses her voluptuous tits together and you immediately see stars around the edges of your vision, nearly bursting from the enhanced surge of pleasurable waves sent coursing through your body alone.",
+
+                                                    "Indescribable bliss courses through you as your hips instinctively buck up into her heavy, heaving bosom, as though your manhood had been swallowed up by an ecstasy-inducing void, surrounded and enveloped by a pair of heavenly, marshmallowy clouds!",
+
+                                                     "PlayerSpeaks",
+                                                    "Wha-what!?",
+
+                                                    "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                     "Elena lets out a drunken giggle, sticking her tongue out to tease you as she watches you squirm and writhe with nothing more than a few pumps of her magically-charged breasts. A few simple squeezes between that pair of soft, irresistible pillows is enough for you to throw your head back and shiver in mewling delight.",
+
+                                                     "Speaks",
+                                                     "Jusst a few enhancements... You looove it right?",
+                                                     "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                     "Without giving you time to respond, Elena lets out another tipsy laugh and starts to pump your length at an increased pace, easily interrupting your thoughts to leave you moaning loudly instead. Gripping the sheets beneath you on instinct, you try to endure the guildswoman's magically-enhanced assault as she does as she pleases with your throbbing erection.",
+
+                                                     "With every massaging roll of her tits pumping your dick, electric bolts of pleasure course through you, leaving you reeling from the incredible sensations. Elena, clearly enjoying herself as well, opens her mouth to let her tongue hang out and allow drool to drip down into the boundless valley of her cleavage.",
+                                                     "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                     "Under the intense pleasure, you stand no chance against her, a hostage to Elena's marshmallow hell as the ecstasy easily overwhelms you. Even as you grip the bed's frame instead of its sheets and clench your teeth to steady yourself, you're quickly pushed to the brink as Elena lewdly smiles, happy to see you squirming from enjoying her titfuck so much.",
+
+                                                    "PlayerOrgasmNoSpiritLoss",
+                                                    "ChangeImageLayer", "Expression", "1", "LickLips",
+                                                    "You can't help but jerk your hips and let loose like a fountain as you cum between her tits, Elena letting out a surprised moan as some of it even manages to get onto her face. Quickly licking it up with a few flicks of her tongue over her plump, painted lips, the mature guildswoman continues to idly bounce her pillowy chest even as you recoil mid-orgasm, milking you for everything you'll give her.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Drunk",
+                                                     "Speaks",
+                                                     "You knooow... this is shooo relaxing... Watching you squirm like that~",
+                                                     "ChangeImageLayer", "Expression", "1", "Smug",
+                                                     "Before you can even argue back, you feel a wave of rejuvenating magic emanating from Elena and washing over you, restoring your throbbing member to full mast in seconds. In an instant, the fatigue from her ruthless titfuck is lifted... only for the unrelenting heavenly marshmallow hell that brought you to that point to resume all over again, the luxurious cleavage closing back down around your dick like a vice.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                     "Crying out in pleasure, you find yourself almost immediately pushed back to the edge as Elena watches you desperately try to hold out and endure the merciless cascade of pleasure that her magically-enhanced bust is ruthlessly overwhelming you with.",
+
+                                                     "A drunken, slurred giggle slips from her as she toys with you, enjoying the sight of your futile squirming beneath her as you're threatened with a chain orgasm ruthlessly milked from you with her ruthless and dangerous tits.",
+                                                     "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                     "Each roll of her already amazing tits slowly starts to feel even more pleasurable than the last, the mature woman experimenting and watching your reactions as she finds out which movements you like best. Every attempt you make to escape, even the subtle ones, are thwarted by a quick bounce of her upper body, squeezing her bust tightly around your throbbing member as punishment.",
+
+                                                     "You can't hold back any longer as she quickly becomes all too familiar with the best way to tease even more moans out of you, forcing your voice even louder and sloppier with every bounce and squeeze of her hellishly pleasurable tits, and before long...",
+
+                                                    "PlayerOrgasmNoSpiritLoss",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Drunk",
+                                                    "Another orgasm washes through you, creamy ropes of cum flooding Elena's cleavage and once again spraying all over her front, leaking down between her cleavage and staining her face. The drunken guild guide is seemingly captivated by the sight, watching as your cum spurts into the air... then she releases another wave of rejuvenating magic to restore you to yet another stiff erection.",
+
+                                                     "PlayerSpeaks",
+                                                     "E-Elena! W-wai-ahhh!",
+                                                     "ChangeImageLayer", "Expression", "1", "Smug",
+                                                     "You're completely hard again before you even finish cumming for the second time. You can hardly tell if you're trapped in Heaven or Hell as Elena doesn't even give you a second to rest before her breasts start to pump you with more vigor, unconcerned with the chain orgasms starting to short-circuit your brain...",
+                                                     "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                     "Another swift wave of magic cleans your cum from Elena's skin, though in your pleasure-drunken state, you can hardly tell if the extra fluids would even make a difference from how good her blissfully indulgent tits feel around your aching member. Perhaps she's just doing it to mess with you, as her enjoyment is plain as day, the guildswoman giggling with a tipsy smile still stuck on her flushed face.",
+
+                                                     "With yet another orgasm quickly approaching, her enchanting breasts are only dragging you deeper into bliss with each mounting climax that's forced out of you... But no matter how much you feel like you might go insane from her insatiable appetite and the overwhelming waves of arousal, you can only lie there and take it as the older woman does whatever she wants with you, using you like her own personal stress toy.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                     "Speaks",
+                                                     "Hey hey, come on, [ThePlayerName], you can keep going, right~?",
+
+                                                     "Not waiting for an answer that she hardly cares to hear anyway, Elena continues to roll her heavenly, voluptuous tits up and around your aching manhood. Keeping you stuck between the mounds of plush, rolling flesh, she easily drives you into another climax, your cock eagerly responding to her skillful titfuck, utterly incapable of denying her.",
+
+                                                     "PlayerOrgasmNoSpiritLoss",
+                                                     "ChangeImageLayer", "Expression", "1", "Drunk",
+                                                    "Elena happily sighs as she watches your rigid, overstimulated length release another eager burst of cum for the third time without a moment to rest, the same loop playing out as you watch her soft, flawless skin get coated in a haze of white, only for it to magically disappear as you await the wave of healing magic, conflicted in knowing that only more waves of mind-blanking pleasure away you afterwards...",
+
+                                                     "The heavenly titfuck very quickly turns into an overwhelming gauntlet of tormenting bliss as she forces you to cum over and over again for Elena's satisfaction. Using her plush pillowy globes to play with you like her own personal stress relief boy toy. She drunkenly mumbles complaints as her mind seems to drift to other things, then sighs out happily when you're pushed beyond the edge and you release all over her tits yet again.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "Depressed", "ChangeImageLayer", "Face", "1", "Drunk",
+                                                     "Speaks",
+                                                     "I meeean... can you believe that?... It's shooo frustrating, right?",
+                                                     "ChangeImageLayer", "Expression", "1", "Drunk",
+                                                     "Her enchanted bosom never stops bouncing and rolling, tormenting your cock with constant waves of pleasure, even as she mutters and carries on a conversation with herself. There's no way you can follow along as all coherent thought is simply replaced with pleasure, the tempting boobjob slowly rewiring your brain to think of nothing but her voluptuous rack.",
+
+                                                     "The occasional thrust between her cleavage and involuntary bucking of your hips are all that she can expect from you as things continue, the titfuck hell continuing throughout the night as you're made to orgasm for Elena's amusement and pleasure, without an end to the tantric torment in sight.",
+
+                                                    "ChangeImageLayer", "Expression", "1", "DrunkFlirt",
+                                                     "Speaks",
+                                                     "Hfffhhh... I'm sho glad you agree, hehe...",
+                                                     "ChangeImageLayer", "Expression", "1", "AraAra",
+                                                     "A broken, pleasure-drunk, sloppy expression forming on your face as you helplessly drool, unable to do anything as she effortlessly brings you to climax after climax, sighing with satisfaction and relief as if she was letting off her own steam with each orgasm wrung from you.",
+
+                                                     "Even with her recovery magic restoring your length to full attention with each and every climax, your mind begins to drift away into delirium. Thoughts fading and your ability to think well and truly drained out of you by the guildswoman's skillful breast pumping rendering you incapable of processing anything but the indulgent bliss until passing out in a pink lust-filled haze.",
+
+                                                    "Though Elena doesn't seem to notice you falling unconscious as she continues to use your cock as her own personal dildo, working out all her pent up stress late into the night...",
+                                                    "ChangeFetish",
+                                                    "Breasts",
+                                                    "10",
+                                                    "ChangeSensitivity",
+                                                    "Sex",
+                                                    "10",
+                                                    "JumpToScene",
+                                                    "Morning after"
+                                                  ]
+                                    },
+
+
+                            {
+                                "NameOfScene": "Morning after",
+                                "theScene": [  "StopBGM",
+                                              "...",
+                                              "SleepPlayer",  "DelayNotifications",
+                                              "ChangeBGM", "music/Town/casino.mp3",
+                                              "ChangeImageLayer", "Base", "1", "WorkClothes", "ChangeImageLayer", "Expression", "1", "Embarrassed", "ChangeImageLayer", "Face", "1", "Blush",
+                                              "Groaning softly, you wake up as Elena gently shakes you the next morning with a deep blush covering her face.",
+                                              "Your body aches quite a bit from last night, and as you look over at Elena, she seems to be perfectly fine, without even a hangover to show from last night's experiences.",
+                                              "She also seems to have woken up and redressed herself not too long ago, as you can still feel her body warmth on your side from where she was cuddling with you as you slept.",
+                                              "ChangeImageLayer", "Expression", "1", "Shy",  "ChangeImageLayer", "Face", "1", "Base",
+                                              "Speaks",
+                                              "[ThePlayerName]? This never happened, okay? And it definitely won't happen again. Definitely...",
+                                              "ChangeImageLayer", "Expression", "1", "Pleasured", "ChangeImageLayer", "Face", "1", "Blush",
+                                              "Elena's gaze slowly trails down your body to rest on your rigid manhood, which still seems to be working just fine despite the soreness of your body from the events of last night. After a brief moment, Elena flushes deeper and tears her gaze away before looking back at your face.",
+                                              "ChangeImageLayer", "Expression", "1", "Embarrassed",
+                                              "Speaks",
+                                              "Ah, uhm... A-Anyway, are you okay? I was a bit... {i}Much{/i} last night...",
+                                              "You nod, unable to deny how good it felt, and you tell her that it {i}was{/i} your job after all, so she shouldn't feel bad.",
+                                              "ChangeImageLayer", "Expression", "1", "Smile",
+                                              "Speaks",
+                                              "Good... W-Well I need to get back to work, so uhm, I'll probably see you later...",
+                                                "ChangeBG", "Inn.png",
+                                                "DisplayCharacters",
+                                                  "EndLoop",
+                                              "Elena quickly leaves the room with a deep blush, leaving you to roll out of bed and dress yourself before eventually staggering downstairs to collect your payment.",
+                                              "ChangeEros", "600",
+                                              "GiveExp", "50"
+                                          ]
+                            }
+
+
+                ]
+}

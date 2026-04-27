@@ -1,0 +1,1568 @@
+{
+  "name": "FertiliaFertilia",
+  "CardType": "Event",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [ ""],
+
+  "Speakers": [
+                {
+                  "name": "Dark Slime",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                }
+              ],
+  "EventText": [
+                        {
+                            "NameOfScene": "FertiliaMenu",
+                            "theScene": [   "ChangeBGM", "music/Capital/Purple_Planet_Music_-_Deep_In_Trance_3_36_130bpm.mp3",
+                                            "Menu",
+                                                "Play {i}Fertilia Fertilia!{/i} - 1000 Eros",
+                                                "See what {i}Fertilia Fertilia!{/i} is about.",
+                                                "Do something else.",
+                                            "EndLoop"
+                                      ]
+                        },
+                                  {
+                                    "NameOfScene": "Do something else.",
+                                    "theScene": [  "ChangeBGM", "music/Capital/Purple_Planet_Music_-_Deep_In_Trance_3_36_130bpm.mp3",
+                                                  "DisplayCharacters",
+                                                    "EndLoop",
+                                                    "JumpToEventThenScene", "Ars Delusia Arcade", "ArcadeMenu"
+                                              ]
+                                  },
+                                  {
+                                      "NameOfScene": "See what {i}Fertilia Fertilia!{/i} is about.",
+                                      "theScene": [
+                                                    "From what you can see, the story of {i}Fertilia Fertilia!{/i} is that you're a kunoichi infiltrator sent to the human continent to sneak into a highly secure human facilities and make out with all the treasure they contain.",
+                                                    "In addition to grabbing said treasure, you must make sure not to get caught, which implies avoiding not only increasingly meddlesome guards, but also timed vents of knockout gas which can instantly incapacitate you, resulting in your immediate capture and the end of your career.",
+                                                    "Despite the serious-sounding plot, the game itself looks quite colorful and light-hearted, featuring simple but cutesy graphics and music, and a move-by-move gameplay meant to let you take your time to analyze your available routes and your pursuers' patterns, so that you can coolly devise the best strategy to elude them and accomplish your objectives.",
+                                                    "All in all, differences in premise, characters, and setting notwithstanding, you feel like this game should not be too different from your traversal of the Labyrinth, the goal being roughly the same: pick up important items, make it to the exit, and don't get caught by a variety of pursuers, which are as follows:",
+                                                    "{b}Patrolmen{/b} are in {color=#FFFD9B}yellow{/color} and carry a spear. They are drilled and disciplined to the point of obtuseness, and will {i}always{/i} follow a set pattern.\n{b}Soldiers{/b} are in {color=#FF7852}red{/color} and use a sword and shield. These spirited protectors will rush for you through the most direct route, and are thus hard to shake off, but predictable.",
+                                                    "{b}Wizards{/b} are in {color=#67CCFF}blue{/color} and carry a staff of power. These eccentric magic users follow no set pattern and can act unpredictably, which can be both a boon and a curse!\n{b}Rogues{/b} are in {color=#26A31E}green{/color} and wield two knives. They are crafty and clever, and will try to anticipate your moves and cut you off. Watch out for their pincer maneuvers!",
+                                                    "And finally, {b}Skirmishers{/b} are in {color=#FF96DC}pink{/color} and have a whip. These playful humans like to toy with their quarry: they'll stick to you but will rarely directly approach you, instead wandering your surroundings seemingly at random to keep you under pressure.\nThis concludes {i}Fertilia Fertilia!{/i}'s rundown. Good luck on your path to becoming a True Kunoichi!",
+                                                    "JumpToScene", "FertiliaMenu"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "LacksArcadeCash",
+                                      "theScene": [ "As you go to use the Arcade machine, you realize you don't actually have enough money to play...",
+                                                    "JumpToScene", "FertiliaMenu"
+                                                ]
+                                  },
+
+
+                                  {
+                                      "NameOfScene": "StillLocked",
+                                      "theScene": [
+                                                        "Your mission isn't complete yet! You can't leave right now!"
+                                                ]
+                                  },
+
+                                  {
+                                      "NameOfScene": "Key",
+                                      "theScene": [
+                                                      "PlaySoundEffect", "sfx/kettei-02.wav",
+                                                      "RemoveGridNPC", "Current",
+                                                      "IfGridNPCThere", "Key", "Nothing",
+                                                      "That's the last of the treasure! Now, time to leave before you get caught!"
+                                                ]
+                                  },
+                                          {
+                                              "NameOfScene": "Nothing",
+                                              "theScene": [
+                                                        ]
+                                          },
+                                          {
+                                              "NameOfScene": "KeyActual",
+                                              "theScene": [
+                                                              "PlaySoundEffect", "sfx/kettei-02.wav",
+                                                              "RemoveGridNPC", "Current",
+                                                              "You got the key from the guardroom! Now, you just need to get out of here!"
+                                                        ]
+                                          },
+
+                                  {
+                                      "NameOfScene": "Play {i}Fertilia Fertilia!{/i} - 1000 Eros",
+                                      "theScene": [
+                                                      "HasErosLessThan", "1000", "LacksArcadeCash",
+                                                        "ChangeEros", "-1000",
+                                                      "GetEventAndSetChoice", "AphroGridTimersFertillia", "1", "",
+                                                      "GetEventAndSetProgress", "AphroGridTimersFertillia", "0",
+
+                                                      "GetEventAndSetProgress", "GaurdGridAI", "0",
+
+                                                      "Upon inserting the required Eros into the machine, the screen flickers as the game immediately starts, running you through an introductory briefing while the music changes to a sneaky-sounding one...",
+                                                    "ChangeBGM", "music/Capital/03 illegal invasion.mp3",
+
+                                                    "{b}Mission 1{/b} - You have infiltrated deep into Fertilian territory, and must raid a treasure depot to bring back gold, jewels, and other valuables back to Lucidia... and most importantly, cripple the humans' resources! You must avoid getting caught at all costs, or your mission will be an immediate failure. Also, keep in mind that it won't be long before the guards realize you're here and start looking for you. Good luck!",
+
+                                                    "GoToMap",
+                                                      "DenyGridInventory",
+                                                      "Tileset",
+                                                        "0", "GridMap/floor.png", "Floor", "", "", "",
+                                                        "1", "GridMap/Wall.png", "Wall",  "", "", "",
+                                                        "2", "GridMap/Void.png", "Floor", "", "", "",
+                                                        "E", "GridMap/LockedGate.png", "Interactable", "FertiliaFertilia", "ExitStage1", "You're at your entry and exit point for the mission...",
+                                                        "P", "GridMap/floorPoisoned.png", "Auto", "Labyrinth", "Posion", "The ground is laden in aphrodisiac.",
+                                                      "EndLoop",
+
+                                                      "PlayerCoord", "7", "10",
+                                                      "PlayerIcon", "GridMap/kunoichiIcon.png",
+                                                      "YAdjust", "45",
+
+                                                      "NPC",
+                                                        "Name", "Key",
+                                                        "Img", "GridMap/Treasure.png",
+                                                        "Event", "Auto", "FertiliaFertilia", "Key",
+                                                        "Obstacle",
+                                                      "EndLoop",
+
+                                                      "NPC",
+                                                        "Name", "Gaurd",
+                                                        "Img", "GridMap/guardPatrol.png",
+                                                        "Event", "Auto", "GaurdGridAI", "Caught",
+                                                        "Movement", "Chase", "WayPoint2",
+                                                        "TurnEvent", "GaurdGridAI", "Waypoints",
+                                                      "EndLoop",
+                                                      "NPC",
+                                                        "Name", "Gaurd2",
+                                                        "Img", "GridMap/guardPatrol.png",
+                                                        "Event", "Auto", "GaurdGridAI", "Caught",
+                                                        "Movement", "Chase", "WayPoint4",
+                                                        "TurnEvent", "GaurdGridAI", "Waypoints",
+                                                      "EndLoop",
+
+
+                                                      "NPC",
+                                                        "Name", "GaurdSeeker",
+                                                        "Img", "GridMap/guardChase.png",
+                                                        "Event", "Auto", "GaurdGridAI", "Caught",
+
+                                                        "TurnEvent", "GaurdGridAI", "SeekerTimer",
+                                                      "EndLoop",
+
+
+                                                      "NPC",
+                                                        "Name", "WayPoint1",
+                                                        "Img", "Invisible",
+                                                      "EndLoop",
+                                                      "NPC",
+                                                        "Name", "WayPoint2",
+                                                        "Img", "Invisible",
+                                                      "EndLoop",
+                                                      "NPC",
+                                                        "Name", "WayPoint3",
+                                                        "Img", "Invisible",
+                                                      "EndLoop",
+                                                      "NPC",
+                                                        "Name", "WayPoint4",
+                                                        "Img", "Invisible",
+                                                      "EndLoop",
+
+
+                                                      "NPC",
+                                                        "Name", "AphroGridDormant",
+                                                        "Img", "GridMap/Grate.png",
+                                                        "Timer", "5", "AphroGridTimersFertillia", "SwapToWarning",
+                                                        "Obstacle",
+                                                      "EndLoop",
+                                                          "NPC",
+                                                            "Name", "AphroGridWarning",
+                                                            "Img", "GridMap/PoisonGrateWarning.png",
+                                                            "Timer", "2", "AphroGridTimersFertillia", "SwapToActive",
+                                                            "Obstacle",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "AphroGridActive",
+                                                            "Img", "GridMap/PoisonGrateFull.png",
+                                                            "Timer", "8", "AphroGridTimersFertillia", "SwapToCalm",
+                                                            "Event", "Auto", "AphroGridTimersFertillia", "StepOnAphroGrid",
+                                                            "Obstacle",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "AphroGridCalming",
+                                                            "Img", "GridMap/PoisonGrateWarning.png",
+                                                            "Timer", "3", "AphroGridTimersFertillia", "SwapToDormant",
+                                                            "Obstacle",
+                                                          "EndLoop",
+
+
+
+                                                      "SpawnNPC", "Key", "5", "3",
+                                                      "SpawnNPC", "Key", "6", "3",
+                                                      "SpawnNPC", "Key", "5", "4",
+                                                      "SpawnNPC", "Key", "6", "4",
+                                                      "SpawnNPC", "Key", "5", "5",
+                                                      "SpawnNPC", "Key", "6", "5",
+
+                                                      "SpawnNPC", "Key", "10", "3",
+                                                      "SpawnNPC", "Key", "11", "3",
+                                                      "SpawnNPC", "Key", "10", "4",
+                                                      "SpawnNPC", "Key", "11", "4",
+                                                      "SpawnNPC", "Key", "10", "5",
+                                                      "SpawnNPC", "Key", "11", "5",
+
+                                                      "SpawnNPC", "WayPoint1", "1", "1",
+                                                      "SpawnNPC", "WayPoint2", "15", "1",
+                                                      "SpawnNPC", "WayPoint3", "15", "7",
+                                                      "SpawnNPC", "WayPoint4", "1", "7",
+
+                                                      "SpawnNPC", "Gaurd", "8", "1",
+                                                      "SpawnNPC", "Gaurd2", "8", "7",
+
+                                                      "SpawnNPC", "GaurdSeeker", "8", "3",
+
+                                                      "SpawnNPC", "AphroGridDormant", "8", "5",
+                                                      "SpawnNPC", "AphroGridDormant", "7", "5",
+                                                      "SpawnNPC", "AphroGridDormant", "9", "5",
+
+                                                      "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                      "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                      "Row", "1","0","1","1","1","1","1","1","0","1","1","1","1","1","1","0","1",  "EndLoop",
+                                                      "Row", "1","0","1","0","0","0","0","1","0","1","0","0","0","0","1","0","1",  "EndLoop",
+                                                      "Row", "1","0","0","0","1","0","0","1","1","1","0","0","1","0","0","0","1",  "EndLoop",
+                                                      "Row", "1","0","1","0","0","0","0","0","0","0","0","0","0","0","1","0","1",  "EndLoop",
+                                                      "Row", "1","0","1","1","1","1","1","1","1","1","1","1","1","1","1","0","1",  "EndLoop",
+                                                      "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                      "Row", "1","1","1","1","1","1","1","1","0","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                      "Row", "1","1","1","1","1","1","1","1","0","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                      "Row", "1","1","1","1","1","1","1","E","0","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                      "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                    "StartMap"
+                                                ]
+                                  },
+
+
+                                  {
+                                      "NameOfScene": "Trove1Off",
+                                      "theScene": [
+                                                    "SpawnGridNPC", "LeverOff", "Here",
+                                                    "RemoveGridNPC", "Current",
+                                                    "RemoveGridNPC", "Specific", "FireDoorOnTrove1",
+                                                    "RemoveGridNPC", "Specific", "FireDoorOnTrove1",
+                                                    "SpawnGridNPC", "FireDoorOffTrove1", "14", "6",
+                                                    "SpawnGridNPC", "FireDoorOffTrove1", "6", "4"
+                                      ]
+                                  },
+                                  {
+                                      "NameOfScene": "Trove1On",
+                                      "theScene": [
+                                                      "SpawnGridNPC", "LeverOn", "Here",
+                                                      "RemoveGridNPC", "Current",
+                                                      "RemoveGridNPC", "Specific", "FireDoorOffTrove1",
+                                                      "RemoveGridNPC", "Specific", "FireDoorOffTrove1",
+                                                      "SpawnGridNPC", "FireDoorOnTrove1", "14", "6",
+                                                      "SpawnGridNPC", "FireDoorOnTrove1", "6", "4"
+                                      ]
+                                  },
+
+                                  {
+                                      "NameOfScene": "ExitStage1",
+                                      "theScene": [
+                                                        "IfGridNPCThere", "Key", "StillLocked",
+                                                        "GetEventAndChangeProgress", "Ars Delusia Arcade", "10",
+                                                        "{b}Mission 1 complete!{/b} You escaped with the humans' treasure without a hitch! How did you carry it all? Kunoichi trade secrets!\n\n10 tickets whirr out of the machine for you to collect while the screen shifts to the next stage!",
+                                                        "ExitGridmap",
+
+                                                        "GetEventAndSetChoice", "AphroGridTimersFertillia", "1", "",
+                                                        "GetEventAndSetProgress", "AphroGridTimersFertillia", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAI", "0",
+
+                                                          "GetEventAndSetProgress", "GaurdGridAIWhimsy", "0",
+                                                            "GetEventAndSetChoice", "GaurdGridAIWhimsy", "1", "",
+
+                                                        "{b}Mission 2{/b} - Your next assignment is to infiltrate a castle, starting with sneaking through a derelict half-abandoned section of the compound to reach an entrance into the keep's catacombs, all the while pilfering anything of value on your way. The head guard on duty here is apparently getting in on years and slow to act, so if you move quickly, you might be able to get in and out without attracting trouble. Good luck!",
+
+
+                                                        "GoToMap",
+                                                          "Tileset",
+                                                            "0", "GridMap/floor.png", "Floor", "", "", "",
+                                                            "1", "GridMap/Wall.png", "Wall",  "", "", "",
+                                                            "2", "GridMap/Void.png", "Floor", "", "", "",
+                                                            "E", "GridMap/LockedGate.png", "Interactable", "FertiliaFertilia", "ExitStage2", "You're at your entry and exit point for the mission...",
+                                                            "P", "GridMap/floorPoisoned.png", "Auto", "Labyrinth", "Posion", "The ground is laden in aphrodisiac.",
+                                                          "EndLoop",
+
+                                                          "PlayerCoord", "1", "6",
+                                                          "PlayerIcon", "GridMap/kunoichiIcon.png",
+                                                          "YAdjust", "30",
+
+                                                          "NPC",
+                                                            "Name", "Key",
+                                                            "Img", "GridMap/Treasure.png",
+                                                            "Event", "Auto", "FertiliaFertilia", "Key",
+                                                            "Obstacle",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "Gaurd",
+                                                            "Img", "GridMap/guardPatrol.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "Movement", "Chase", "WayPoint2",
+                                                            "TurnEvent", "GaurdGridAI", "Waypoints",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "Gaurd2",
+                                                            "Img", "GridMap/guardPatrol.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "Movement", "Chase", "WayPoint4",
+                                                            "TurnEvent", "GaurdGridAI", "Waypoints",
+                                                          "EndLoop",
+
+
+                                                          "NPC",
+                                                            "Name", "GaurdSeeker",
+                                                            "Img", "GridMap/guardChase.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+
+                                                            "TurnEvent", "GaurdGridAI", "SeekerTimer",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdWhimsy",
+                                                            "Img", "GridMap/guardWhimsy.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+
+                                                            "TurnEvent", "GaurdGridAIWhimsy", "WhimsyTimer",
+                                                          "EndLoop",
+
+
+                                                          "NPC",
+                                                            "Name", "WayPoint1",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "WayPoint2",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "WayPoint3",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "WayPoint4",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+
+
+                                                          "NPC",
+                                                            "Name", "AphroGridDormant",
+                                                            "Img", "GridMap/Grate.png",
+                                                            "Timer", "5", "AphroGridTimersFertillia", "SwapToWarning",
+                                                            "Obstacle",
+                                                          "EndLoop",
+                                                              "NPC",
+                                                                "Name", "AphroGridWarning",
+                                                                "Img", "GridMap/PoisonGrateWarning.png",
+                                                                "Timer", "2", "AphroGridTimersFertillia", "SwapToActive",
+                                                                "Obstacle",
+                                                              "EndLoop",
+                                                              "NPC",
+                                                                "Name", "AphroGridActive",
+                                                                "Img", "GridMap/PoisonGrateFull.png",
+                                                                "Timer", "8", "AphroGridTimersFertillia", "SwapToCalm",
+                                                                "Event", "Auto", "AphroGridTimersFertillia", "StepOnAphroGrid",
+                                                                "Obstacle",
+                                                              "EndLoop",
+                                                              "NPC",
+                                                                "Name", "AphroGridCalming",
+                                                                "Img", "GridMap/PoisonGrateWarning.png",
+                                                                "Timer", "3", "AphroGridTimersFertillia", "SwapToDormant",
+                                                                "Obstacle",
+                                                              "EndLoop",
+
+
+                                                        "NPC",
+                                                          "Name", "LeverOn",
+                                                          "Img", "GridMap/LeverDarkOn.png",
+                                                          "Event", "Interactable", "FertiliaFertilia", "Trove1Off",
+                                                          "Obstacle",
+                                                        "EndLoop",
+                                                              "NPC",
+                                                                "Name", "LeverOff",
+                                                                "Img", "GridMap/LeverDarkOff.png",
+                                                                "Event", "Interactable", "FertiliaFertilia", "Trove1On",
+                                                                "Obstacle",
+                                                              "EndLoop",
+                                                        "NPC",
+                                                          "Name", "FireDoorOffTrove1",
+                                                          "Img", "GridMap/Grate.png",
+                                                          "Obstacle",
+                                                        "EndLoop",
+                                                        "NPC",
+                                                          "Name", "FireDoorOnTrove1",
+                                                          "Img", "GridMap/FireGrateBigFire.png",
+                                                          "Obstacle",
+                                                          "Wall",
+                                                        "EndLoop",
+
+                                                          "SpawnNPC", "Key", "4", "3",
+                                                          "SpawnNPC", "Key", "5", "3",
+
+                                                          "SpawnNPC", "Key", "4", "9",
+                                                          "SpawnNPC", "Key", "5", "9",
+
+                                                          "SpawnNPC", "WayPoint1", "1", "1",
+                                                          "SpawnNPC", "WayPoint2", "13", "1",
+                                                          "SpawnNPC", "WayPoint3", "13", "11",
+                                                          "SpawnNPC", "WayPoint4", "1", "11",
+
+                                                          "SpawnNPC", "Gaurd", "3", "1",
+                                                          "SpawnNPC", "Gaurd2", "11", "11",
+
+                                                          "SpawnNPC", "GaurdWhimsy", "17", "6",
+
+                                                          "SpawnNPC", "Key", "17", "11",
+                                                            "SpawnNPC", "Key", "17", "10",
+                                                          "SpawnNPC", "Key", "16", "11",
+                                                          "SpawnNPC", "Key", "16", "10",
+
+                                                          "SpawnNPC", "Key", "17", "1",
+                                                          "SpawnNPC", "Key", "17", "2",
+                                                          "SpawnNPC", "Key", "16", "1",
+                                                          "SpawnNPC", "Key", "16", "2",
+
+                                                          "SpawnNPC", "AphroGridDormant", "4", "6",
+                                                          "SpawnNPC", "AphroGridDormant", "5", "6",
+
+                                                          "SpawnNPC", "AphroGridDormant", "9", "1",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "2",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "3",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "4",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "5",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "6",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "7",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "8",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "9",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "10",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "11",
+
+
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","1","1","1","1","0","0","0","0","0","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","0","1","0","0","1","1","1","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","1","0","1","0","0","1","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","1","0","1","0","0","0","1","1","1",  "EndLoop",
+                                                          "Row", "1","E","0","0","0","0","0","0","0","0","1","0","1","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","1","0","1","0","0","0","1","1","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","1","0","1","0","0","1","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","0","1","0","0","1","1","1","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","1","1","1","1","0","0","0","0","0","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                        "StartMap"
+                                                ]
+                                  },
+
+
+                                  {
+                                      "NameOfScene": "ExitStage2",
+                                      "theScene": [
+                                                        "IfGridNPCThere", "Key", "StillLocked",
+                                                        "GetEventAndChangeProgress", "Ars Delusia Arcade", "25",
+                                                        "{b}Mission 2 complete!{/b} You escaped with the humans' treasure without a hitch!\n\n25 tickets whirr out of the machine for you to collect while the screen shifts to the next stage!",
+                                                        "ExitGridmap",
+                                                        "ChangeBGM", "music/Capital/sneaking-mission.mp3",
+                                                        "GetEventAndChangeProgress", "GameSkillTracker", "1",
+                                                        "{b}Mission 3{/b} - Your next objective is to slip through the castle's catacombs while picking up any treasure lying around. This far in, there's no regular patrols, but three elite guards are stationed in the area and will set out after you in short order. Good luck!",
+
+                                                        "GetEventAndSetChoice", "AphroGridTimersFertillia", "1", "",
+                                                        "GetEventAndSetProgress", "AphroGridTimersFertillia", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAI", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAIAmbush", "0",
+                                                          "GetEventAndSetChoice", "GaurdGridAIAmbush", "1", "",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAIWhimsy", "0",
+                                                          "GetEventAndSetChoice", "GaurdGridAIWhimsy", "1", "",
+
+                                                        "GoToMap",
+                                                          "Tileset",
+                                                            "0", "GridMap/floor.png", "Floor", "", "", "",
+                                                            "1", "GridMap/Wall.png", "Wall",  "", "", "",
+                                                            "2", "GridMap/Void.png", "Floor", "", "", "",
+                                                            "E", "GridMap/LockedGate.png", "Interactable", "FertiliaFertilia", "ExitStage3", "You're at your entry and exit point for the mission...",
+                                                            "P", "GridMap/floorPoisoned.png", "Auto", "Labyrinth", "Posion", "The ground is laden in aphrodisiac.",
+                                                          "EndLoop",
+
+                                                          "PlayerCoord", "11", "10",
+                                                          "PlayerIcon", "GridMap/kunoichiIcon.png",
+                                                          "YAdjust", "30",
+
+                                                          "NPC",
+                                                            "Name", "Key",
+                                                            "Img", "GridMap/Treasure.png",
+                                                            "Event", "Auto", "FertiliaFertilia", "Key",
+                                                            "Obstacle",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdSeeker",
+                                                            "Img", "GridMap/guardChase.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAI", "SeekerTimer2",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdAmbush",
+                                                            "Img", "GridMap/guardAmbush.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAIAmbush", "AmbushTimer",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdWhimsy",
+                                                            "Img", "GridMap/guardWhimsy.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "Movement", "Whimsical", "Player", "20",
+                                                            "TurnEvent", "GaurdGridAIWhimsy", "TimerWhimsy2",
+                                                          "EndLoop",
+
+
+                                                          "SpawnNPC", "Key", "1", "1",
+                                                          "SpawnNPC", "Key", "1", "11",
+                                                          "SpawnNPC", "Key", "21", "1",
+                                                          "SpawnNPC", "Key", "21", "11",
+
+                                                          "SpawnNPC", "Key", "3", "3",
+                                                          "SpawnNPC", "Key", "3", "9",
+                                                          "SpawnNPC", "Key", "19", "3",
+                                                          "SpawnNPC", "Key", "19", "9",
+
+                                                          "SpawnNPC", "Key", "5", "6",
+                                                          "SpawnNPC", "Key", "17", "6",
+
+                                                          "SpawnNPC", "Key", "11", "6",
+
+
+                                                          "SpawnNPC", "GaurdWhimsy", "11", "1",
+                                                          "SpawnNPC", "GaurdSeeker", "10", "1",
+                                                          "SpawnNPC", "GaurdAmbush", "12", "1",
+
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","1","0","0","0","1","0","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","0","1","1","1","0","1","1","0","1","1","0","1","1","1","0","1","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","1","1","1","1","0","1","1","1","1","1","0","1","1","1","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","0","1","1","0","1","1","0","1","1","0","1","1","0","1","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","1","1","1","1","0","1","1","1","1","1","0","1","1","1","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","0","1","1","1","0","0","0","E","0","0","0","1","1","1","0","1","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1", "EndLoop",
+                                                        "StartMap"
+                                                ]
+                                  },
+
+                                  {
+                                      "NameOfScene": "ExitStage3",
+                                      "theScene": [
+                                                        "IfGridNPCThere", "Key", "StillLocked",
+                                                        "GetEventAndChangeProgress", "Ars Delusia Arcade", "50",
+                                                        "{b}Mission 3 complete!{/b} You escaped with the humans' treasure without a hitch!\n\n50 tickets whirr out of the machine for you to collect while the screen shifts to the next stage!",
+                                                        "ExitGridmap",
+                                                        "GetEventAndChangeProgress", "GameSkillTracker", "1",
+                                                        "{b}Mission 4{/b} - Now, you must sneak right into the castle itself and grab all you can! You're definitely not dealing with rank-and-file grunts anymore: this time, four of the kingdom's finest will be after you. Good luck!",
+
+                                                        "GetEventAndSetChoice", "AphroGridTimersFertillia", "1", "",
+                                                        "GetEventAndSetProgress", "AphroGridTimersFertillia", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAI", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAIAmbush", "0",
+                                                          "GetEventAndSetChoice", "GaurdGridAIAmbush", "1", "",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAIWhimsy", "0",
+                                                          "GetEventAndSetChoice", "GaurdGridAIWhimsy", "1", "",
+
+                                                        "GoToMap",
+                                                          "Tileset",
+                                                            "0", "GridMap/floor.png", "Floor", "", "", "",
+                                                            "1", "GridMap/Wall.png", "Wall",  "", "", "",
+                                                            "2", "GridMap/Void.png", "Floor", "", "", "",
+                                                            "E", "GridMap/LockedGate.png", "Interactable", "FertiliaFertilia", "ExitStage4", "You're at your entry and exit point for the mission...",
+                                                            "P", "GridMap/floorPoisoned.png", "Auto", "Labyrinth", "Posion", "The ground is laden in aphrodisiac.",
+                                                          "EndLoop",
+
+                                                          "PlayerCoord", "11", "1",
+                                                          "PlayerIcon", "GridMap/kunoichiIcon.png",
+                                                          "YAdjust", "15",
+
+                                                          "NPC",
+                                                            "Name", "Key",
+                                                            "Img", "GridMap/Treasure.png",
+                                                            "Event", "Auto", "FertiliaFertilia", "Key",
+                                                            "Obstacle",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdSeeker",
+                                                            "Img", "GridMap/guardChase.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAI", "SeekerTimer2",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdAmbush",
+                                                            "Img", "GridMap/guardAmbush.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAIAmbush", "AmbushTimer",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdWhimsy",
+                                                            "Img", "GridMap/guardWhimsy.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAIWhimsy", "TimerWhimsy2",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdWander",
+                                                            "Img", "GridMap/guardWander.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAI", "WanderTimer",
+                                                          "EndLoop",
+
+
+                                                          "SpawnNPC", "Key", "3", "1",
+                                                          "SpawnNPC", "Key", "4", "1",
+                                                          "SpawnNPC", "Key", "5", "1",
+
+                                                          "SpawnNPC", "Key", "3", "8",
+                                                          "SpawnNPC", "Key", "4", "8",
+                                                          "SpawnNPC", "Key", "5", "8",
+                                                          "SpawnNPC", "Key", "3", "9",
+                                                          "SpawnNPC", "Key", "4", "9",
+                                                          "SpawnNPC", "Key", "5", "9",
+                                                          "SpawnNPC", "Key", "3", "10",
+                                                          "SpawnNPC", "Key", "4", "10",
+                                                          "SpawnNPC", "Key", "5", "10",
+
+
+
+                                                          "SpawnNPC", "Key", "19", "2",
+                                                          "SpawnNPC", "Key", "19", "3",
+                                                          "SpawnNPC", "Key", "20", "2",
+                                                          "SpawnNPC", "Key", "20", "3",
+
+                                                          "SpawnNPC", "Key", "21", "7",
+                                                          "SpawnNPC", "Key", "21", "8",
+                                                          "SpawnNPC", "Key", "21", "11",
+                                                          "SpawnNPC", "Key", "21", "12",
+
+
+                                                          "SpawnNPC", "GaurdWhimsy", "11", "12",
+                                                          "SpawnNPC", "GaurdSeeker", "10", "12",
+                                                          "SpawnNPC", "GaurdAmbush", "12", "12",
+                                                          "SpawnNPC", "GaurdWander", "11", "12",
+
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                          "Row", "1","E","1","0","0","0","1","0","0","0","0","0","0","0","0","0","1","0","0","0","0","E","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","0","1","0","1","0","0","0","0","0","1","0","1","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","1","0","0","0","1","0","1","0","1","0","1","0","0","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","1","0","1","0","0","0","0","0","1","0","0","0","1","1","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","0","1","1","0","1","0","1","0","1","0","1","0","1","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","1","0","1","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","1","1","1","0","1","0","1","0","1","0","1","0","1","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","1","0","1","0","0","0","0","0","1","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","1","0","1","0","1","0","1","0","0","0","1","0","0","1","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","1","0","1","0","0","0","0","0","1","0","1","0","1","0","0","1","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","1","1","1","0","0","0","1","0","1","0","0","0","1","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","1","1","0","E","0","1","1","0","0","0","1","0","0","0","1", "EndLoop",
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1", "EndLoop",
+                                                        "StartMap"
+                                                ]
+                                  },
+
+                                  {
+                                      "NameOfScene": "ExitStage4",
+                                      "theScene": [
+                                                        "IfGridNPCThere", "Key", "StillLocked",
+                                                        "GetEventAndChangeProgress", "Ars Delusia Arcade", "50",
+                                                        "{b}Mission 4 complete!{/b} You escaped with the humans' treasure without a hitch!\n\n50 tickets whirr out of the machine for you to collect while the screen shifts to the next stage!",
+                                                          "ExitGridmap",
+                                                          "ChangeBGM", "music/Temple/Liquid_JPN.mp3",
+                                                          "GetEventAndChangeProgress", "GameSkillTracker", "1",
+                                                          "{b}Mission 5{/b} - You must now escape back through the catacombs without getting caught by the alerted guards! Get the key from the now messy guardroom and reach the exit!!!",
+
+                                                        "GetEventAndSetChoice", "AphroGridTimersFertillia", "1", "",
+                                                        "GetEventAndSetProgress", "AphroGridTimersFertillia", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAI", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAIAmbush", "0",
+                                                          "GetEventAndSetChoice", "GaurdGridAIAmbush", "1", "",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAIWhimsy", "0",
+                                                          "GetEventAndSetChoice", "GaurdGridAIWhimsy", "1", "",
+
+                                                        "GoToMap",
+                                                          "Tileset",
+                                                            "0", "GridMap/floor.png", "Floor", "", "", "",
+                                                            "1", "GridMap/Wall.png", "Wall",  "", "", "",
+                                                            "2", "GridMap/Void.png", "Floor", "", "", "",
+                                                            "E", "GridMap/LockedGate.png", "Interactable", "FertiliaFertilia", "ExitStage5", "You're at your entry and exit point for the mission...",
+                                                            "P", "GridMap/floorPoisoned.png", "Auto", "Labyrinth", "Posion", "The ground is laden in aphrodisiac.",
+                                                          "EndLoop",
+
+                                                          "PlayerCoord", "11", "10",
+                                                          "PlayerIcon", "GridMap/kunoichiIcon.png",
+                                                          "YAdjust", "30",
+
+                                                          "NPC",
+                                                            "Name", "Key",
+                                                            "Img", "GridMap/Key.png",
+                                                            "Event", "Auto", "FertiliaFertilia", "KeyActual",
+                                                            "Obstacle",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdSeeker",
+                                                            "Img", "GridMap/guardChase.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAI", "SeekerTimer2",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdAmbush",
+                                                            "Img", "GridMap/guardAmbush.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAIAmbush", "AmbushTimer",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdWhimsy",
+                                                            "Img", "GridMap/guardWhimsy.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAIWhimsy", "TimerWhimsy2",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdWander",
+                                                            "Img", "GridMap/guardWander.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAI", "WanderTimer",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "WayPoint1",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "WayPoint2",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "WayPoint3",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "WayPoint4",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "Gaurd",
+                                                            "Img", "GridMap/guardPatrol.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "Movement", "Chase", "WayPoint2",
+                                                            "TurnEvent", "GaurdGridAI", "Waypoints",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "Gaurd2",
+                                                            "Img", "GridMap/guardPatrol.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "Movement", "Chase", "WayPoint4",
+                                                            "TurnEvent", "GaurdGridAI", "Waypoints",
+                                                          "EndLoop",
+
+                                                          "SpawnNPC", "Key", "11", "1",
+
+
+                                                          "SpawnNPC", "WayPoint1", "3", "3",
+                                                          "SpawnNPC", "WayPoint2", "19", "3",
+                                                          "SpawnNPC", "WayPoint3", "19", "9",
+                                                          "SpawnNPC", "WayPoint4", "3", "9",
+
+                                                          "SpawnNPC", "Gaurd", "3", "3",
+                                                          "SpawnNPC", "Gaurd2", "19", "9",
+
+                                                          "SpawnNPC", "GaurdWhimsy", "11", "2",
+                                                          "SpawnNPC", "GaurdSeeker", "10", "1",
+                                                          "SpawnNPC", "GaurdAmbush", "12", "1",
+                                                          "SpawnNPC", "GaurdWander", "11", "1",
+
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","0","1","1","1","0","1","1","0","1","1","0","1","1","1","0","1","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","1","1","1","1","0","1","1","1","1","1","0","1","1","1","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","0","1","1","0","1","1","0","1","1","0","1","1","0","1","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","1","1","1","1","0","1","1","1","1","1","0","1","1","1","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","0","1","1","1","0","0","0","E","0","0","0","1","1","1","0","1","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1", "EndLoop",
+                                                        "StartMap"
+                                                ]
+                                  },
+
+
+
+
+
+
+
+
+
+                                  {
+                                      "NameOfScene": "ExitStage5",
+                                      "theScene": [
+                                                        "IfGridNPCThere", "Key", "StillLocked",
+                                                        "GetEventAndChangeProgress", "Ars Delusia Arcade", "100",
+                                                        "{b}Mission 5 complete! Total victory!!!{/b}\n\n100 tickets whirr out of the machine for you to collect while... the screen shifts to the next stage?",
+                                                          "ExitGridmap",
+                                                          "GetEventAndChangeProgress", "GameSkillTracker", "2",
+                                                          "{b}Mission 1 - True Kunoichi Mode{/b} - Do you have what it takes to be a True Kunoichi? Starting back from your first mission, do it all again, this time with limited sight! Good luck!",
+
+
+                                                        "GetEventAndSetChoice", "AphroGridTimersFertillia", "1", "",
+                                                        "GetEventAndSetProgress", "AphroGridTimersFertillia", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAI", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAIAmbush", "0",
+                                                          "GetEventAndSetChoice", "GaurdGridAIAmbush", "1", "",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAIWhimsy", "0",
+                                                          "GetEventAndSetChoice", "GaurdGridAIWhimsy", "1", "",
+
+                                                          "GoToMap",
+                                                            "Tileset",
+                                                              "0", "GridMap/floor.png", "Floor", "", "", "",
+                                                              "1", "GridMap/Wall.png", "Wall",  "", "", "",
+                                                              "2", "GridMap/Void.png", "Floor", "", "", "",
+                                                              "E", "GridMap/LockedGate.png", "Interactable", "FertiliaFertilia", "ExitStage6", "You're at your entry and exit point for the mission...",
+                                                              "P", "GridMap/floorPoisoned.png", "Auto", "Labyrinth", "Posion", "The ground is laden in aphrodisiac.",
+                                                            "EndLoop",
+
+                                                            "PlayerCoord", "7", "10",
+                                                            "PlayerIcon", "GridMap/kunoichiIcon.png",
+                                                            "YAdjust", "45",
+                                                            "Sight", "7",
+
+                                                            "NPC",
+                                                              "Name", "Key",
+                                                              "Img", "GridMap/Treasure.png",
+                                                              "Event", "Auto", "FertiliaFertilia", "Key",
+                                                              "Obstacle",
+                                                            "EndLoop",
+
+                                                            "NPC",
+                                                              "Name", "Gaurd",
+                                                              "Img", "GridMap/guardPatrol.png",
+                                                              "Event", "Auto", "GaurdGridAI", "Caught",
+                                                              "Movement", "Chase", "WayPoint2",
+                                                              "TurnEvent", "GaurdGridAI", "Waypoints",
+                                                            "EndLoop",
+                                                            "NPC",
+                                                              "Name", "Gaurd2",
+                                                              "Img", "GridMap/guardPatrol.png",
+                                                              "Event", "Auto", "GaurdGridAI", "Caught",
+                                                              "Movement", "Chase", "WayPoint4",
+                                                              "TurnEvent", "GaurdGridAI", "Waypoints",
+                                                            "EndLoop",
+
+
+                                                            "NPC",
+                                                              "Name", "GaurdSeeker",
+                                                              "Img", "GridMap/guardChase.png",
+                                                              "Event", "Auto", "GaurdGridAI", "Caught",
+
+                                                              "TurnEvent", "GaurdGridAI", "SeekerTimer",
+                                                            "EndLoop",
+
+
+                                                            "NPC",
+                                                              "Name", "WayPoint1",
+                                                              "Img", "Invisible",
+                                                            "EndLoop",
+                                                            "NPC",
+                                                              "Name", "WayPoint2",
+                                                              "Img", "Invisible",
+                                                            "EndLoop",
+                                                            "NPC",
+                                                              "Name", "WayPoint3",
+                                                              "Img", "Invisible",
+                                                            "EndLoop",
+                                                            "NPC",
+                                                              "Name", "WayPoint4",
+                                                              "Img", "Invisible",
+                                                            "EndLoop",
+
+
+                                                            "NPC",
+                                                              "Name", "AphroGridDormant",
+                                                              "Img", "GridMap/Grate.png",
+                                                              "Timer", "5", "AphroGridTimersFertillia", "SwapToWarning",
+                                                              "Obstacle",
+                                                            "EndLoop",
+                                                                "NPC",
+                                                                  "Name", "AphroGridWarning",
+                                                                  "Img", "GridMap/PoisonGrateWarning.png",
+                                                                  "Timer", "2", "AphroGridTimersFertillia", "SwapToActive",
+                                                                  "Obstacle",
+                                                                "EndLoop",
+                                                                "NPC",
+                                                                  "Name", "AphroGridActive",
+                                                                  "Img", "GridMap/PoisonGrateFull.png",
+                                                                  "Timer", "8", "AphroGridTimersFertillia", "SwapToCalm",
+                                                                  "Event", "Auto", "AphroGridTimersFertillia", "StepOnAphroGrid",
+                                                                  "Obstacle",
+                                                                "EndLoop",
+                                                                "NPC",
+                                                                  "Name", "AphroGridCalming",
+                                                                  "Img", "GridMap/PoisonGrateWarning.png",
+                                                                  "Timer", "3", "AphroGridTimersFertillia", "SwapToDormant",
+                                                                  "Obstacle",
+                                                                "EndLoop",
+
+
+
+                                                            "SpawnNPC", "Key", "5", "3",
+                                                            "SpawnNPC", "Key", "6", "3",
+                                                            "SpawnNPC", "Key", "5", "4",
+                                                            "SpawnNPC", "Key", "6", "4",
+                                                            "SpawnNPC", "Key", "5", "5",
+                                                            "SpawnNPC", "Key", "6", "5",
+
+                                                            "SpawnNPC", "Key", "10", "3",
+                                                            "SpawnNPC", "Key", "11", "3",
+                                                            "SpawnNPC", "Key", "10", "4",
+                                                            "SpawnNPC", "Key", "11", "4",
+                                                            "SpawnNPC", "Key", "10", "5",
+                                                            "SpawnNPC", "Key", "11", "5",
+
+                                                            "SpawnNPC", "WayPoint1", "1", "1",
+                                                            "SpawnNPC", "WayPoint2", "15", "1",
+                                                            "SpawnNPC", "WayPoint3", "15", "7",
+                                                            "SpawnNPC", "WayPoint4", "1", "7",
+
+                                                            "SpawnNPC", "Gaurd", "8", "1",
+                                                            "SpawnNPC", "Gaurd2", "8", "7",
+
+                                                            "SpawnNPC", "GaurdSeeker", "8", "3",
+
+                                                            "SpawnNPC", "AphroGridDormant", "8", "5",
+                                                            "SpawnNPC", "AphroGridDormant", "7", "5",
+                                                            "SpawnNPC", "AphroGridDormant", "9", "5",
+
+                                                            "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                            "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                            "Row", "1","0","1","1","1","1","1","1","0","1","1","1","1","1","1","0","1",  "EndLoop",
+                                                            "Row", "1","0","1","0","0","0","0","1","0","1","0","0","0","0","1","0","1",  "EndLoop",
+                                                            "Row", "1","0","0","0","1","0","0","1","1","1","0","0","1","0","0","0","1",  "EndLoop",
+                                                            "Row", "1","0","1","0","0","0","0","0","0","0","0","0","0","0","1","0","1",  "EndLoop",
+                                                            "Row", "1","0","1","1","1","1","1","1","1","1","1","1","1","1","1","0","1",  "EndLoop",
+                                                            "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                            "Row", "1","1","1","1","1","1","1","1","0","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                            "Row", "1","1","1","1","1","1","1","1","0","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                            "Row", "1","1","1","1","1","1","1","E","0","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                            "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                          "StartMap"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "ExitStage6",
+                                      "theScene": [
+                                                        "IfGridNPCThere", "Key", "StillLocked",
+                                                        "GetEventAndChangeProgress", "Ars Delusia Arcade", "30",
+                                                        "{b}Mission 1 - True Kunoichi Mode - complete!{/b} You escaped with the humans' treasure without a hitch!\n\n30 tickets whirr out of the machine for you to collect while the screen shifts to the next stage!",
+                                                        "ExitGridmap",
+                                                        "GetEventAndChangeProgress", "GameSkillTracker", "1",
+
+                                                        "GetEventAndSetChoice", "AphroGridTimersFertillia", "1", "",
+                                                        "GetEventAndSetProgress", "AphroGridTimersFertillia", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAI", "0",
+
+                                                          "GetEventAndSetProgress", "GaurdGridAIWhimsy", "0",
+                                                            "GetEventAndSetChoice", "GaurdGridAIWhimsy", "1", "",
+
+                                                        "{b}Mission 2 - True Kunoichi Mode{/b} - Good luck!",
+
+                                                        "GoToMap",
+                                                          "Tileset",
+                                                            "0", "GridMap/floor.png", "Floor", "", "", "",
+                                                            "1", "GridMap/Wall.png", "Wall",  "", "", "",
+                                                            "2", "GridMap/Void.png", "Floor", "", "", "",
+                                                            "E", "GridMap/LockedGate.png", "Interactable", "FertiliaFertilia", "ExitStage7", "You're at your entry and exit point for the mission...",
+                                                            "P", "GridMap/floorPoisoned.png", "Auto", "Labyrinth", "Posion", "The ground is laden in aphrodisiac.",
+                                                          "EndLoop",
+
+                                                          "PlayerCoord", "1", "6",
+                                                          "PlayerIcon", "GridMap/kunoichiIcon.png",
+                                                          "Sight", "7",
+                                                          "YAdjust", "30",
+
+                                                          "NPC",
+                                                            "Name", "Key",
+                                                            "Img", "GridMap/Treasure.png",
+                                                            "Event", "Auto", "FertiliaFertilia", "Key",
+                                                            "Obstacle",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "Gaurd",
+                                                            "Img", "GridMap/guardPatrol.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "Movement", "Chase", "WayPoint2",
+                                                            "TurnEvent", "GaurdGridAI", "Waypoints",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "Gaurd2",
+                                                            "Img", "GridMap/guardPatrol.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "Movement", "Chase", "WayPoint4",
+                                                            "TurnEvent", "GaurdGridAI", "Waypoints",
+                                                          "EndLoop",
+
+
+                                                          "NPC",
+                                                            "Name", "GaurdSeeker",
+                                                            "Img", "GridMap/guardChase.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+
+                                                            "TurnEvent", "GaurdGridAI", "SeekerTimer",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdWhimsy",
+                                                            "Img", "GridMap/guardWhimsy.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+
+                                                            "TurnEvent", "GaurdGridAIWhimsy", "WhimsyTimer",
+                                                          "EndLoop",
+
+
+                                                          "NPC",
+                                                            "Name", "WayPoint1",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "WayPoint2",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "WayPoint3",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "WayPoint4",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+
+
+                                                          "NPC",
+                                                            "Name", "AphroGridDormant",
+                                                            "Img", "GridMap/Grate.png",
+                                                            "Timer", "5", "AphroGridTimersFertillia", "SwapToWarning",
+                                                            "Obstacle",
+                                                          "EndLoop",
+                                                              "NPC",
+                                                                "Name", "AphroGridWarning",
+                                                                "Img", "GridMap/PoisonGrateWarning.png",
+                                                                "Timer", "2", "AphroGridTimersFertillia", "SwapToActive",
+                                                                "Obstacle",
+                                                              "EndLoop",
+                                                              "NPC",
+                                                                "Name", "AphroGridActive",
+                                                                "Img", "GridMap/PoisonGrateFull.png",
+                                                                "Timer", "8", "AphroGridTimersFertillia", "SwapToCalm",
+                                                                "Event", "Auto", "AphroGridTimersFertillia", "StepOnAphroGrid",
+                                                                "Obstacle",
+                                                              "EndLoop",
+                                                              "NPC",
+                                                                "Name", "AphroGridCalming",
+                                                                "Img", "GridMap/PoisonGrateWarning.png",
+                                                                "Timer", "3", "AphroGridTimersFertillia", "SwapToDormant",
+                                                                "Obstacle",
+                                                              "EndLoop",
+
+
+                                                        "NPC",
+                                                          "Name", "LeverOn",
+                                                          "Img", "GridMap/LeverDarkOn.png",
+                                                          "Event", "Interactable", "FertiliaFertilia", "Trove1Off",
+                                                          "Obstacle",
+                                                        "EndLoop",
+                                                              "NPC",
+                                                                "Name", "LeverOff",
+                                                                "Img", "GridMap/LeverDarkOff.png",
+                                                                "Event", "Interactable", "FertiliaFertilia", "Trove1On",
+                                                                "Obstacle",
+                                                              "EndLoop",
+                                                        "NPC",
+                                                          "Name", "FireDoorOffTrove1",
+                                                          "Img", "GridMap/Grate.png",
+                                                          "Obstacle",
+                                                        "EndLoop",
+                                                        "NPC",
+                                                          "Name", "FireDoorOnTrove1",
+                                                          "Img", "GridMap/FireGrateBigFire.png",
+                                                          "Obstacle",
+                                                          "Wall",
+                                                        "EndLoop",
+
+                                                          "SpawnNPC", "Key", "4", "3",
+                                                          "SpawnNPC", "Key", "5", "3",
+
+                                                          "SpawnNPC", "Key", "4", "9",
+                                                          "SpawnNPC", "Key", "5", "9",
+
+                                                          "SpawnNPC", "WayPoint1", "1", "1",
+                                                          "SpawnNPC", "WayPoint2", "13", "1",
+                                                          "SpawnNPC", "WayPoint3", "13", "11",
+                                                          "SpawnNPC", "WayPoint4", "1", "11",
+
+                                                          "SpawnNPC", "Gaurd", "3", "1",
+                                                          "SpawnNPC", "Gaurd2", "11", "11",
+
+                                                          "SpawnNPC", "GaurdWhimsy", "17", "6",
+
+                                                          "SpawnNPC", "Key", "17", "11",
+                                                            "SpawnNPC", "Key", "17", "10",
+                                                          "SpawnNPC", "Key", "16", "11",
+                                                          "SpawnNPC", "Key", "16", "10",
+
+                                                          "SpawnNPC", "Key", "17", "1",
+                                                          "SpawnNPC", "Key", "17", "2",
+                                                          "SpawnNPC", "Key", "16", "1",
+                                                          "SpawnNPC", "Key", "16", "2",
+
+                                                          "SpawnNPC", "AphroGridDormant", "4", "6",
+                                                          "SpawnNPC", "AphroGridDormant", "5", "6",
+
+                                                          "SpawnNPC", "AphroGridDormant", "9", "1",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "2",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "3",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "4",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "5",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "6",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "7",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "8",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "9",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "10",
+                                                          "SpawnNPC", "AphroGridDormant", "9", "11",
+
+
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","1","1","1","1","0","0","0","0","0","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","0","1","0","0","1","1","1","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","1","0","1","0","0","1","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","1","0","1","0","0","0","1","1","1",  "EndLoop",
+                                                          "Row", "1","E","0","0","0","0","0","0","0","0","1","0","1","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","1","0","1","0","0","0","1","1","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","1","0","1","0","0","1","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","0","1","0","0","1","1","1","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","1","1","1","1","0","0","0","0","0","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                        "StartMap"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "ExitStage7",
+                                      "theScene": [
+                                                        "IfGridNPCThere", "Key", "StillLocked",
+                                                        "GetEventAndChangeProgress", "Ars Delusia Arcade", "70",
+                                                        "{b}Mission 2 - True Kunoichi Mode - complete!{/b} You escaped with the humans' treasure without a hitch!\n\n70 tickets whirr out of the machine for you to collect while the screen shifts to the next stage!",
+                                                        "ExitGridmap",
+                                                        "ChangeBGM", "music/Capital/sneaking-mission.mp3",
+                                                        "GetEventAndChangeProgress", "GameSkillTracker", "1",
+                                                        "{b}Mission 3 - True Kunoichi Mode{/b} - Good luck!",
+
+                                                        "GetEventAndSetChoice", "AphroGridTimersFertillia", "1", "",
+                                                        "GetEventAndSetProgress", "AphroGridTimersFertillia", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAI", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAIAmbush", "0",
+                                                          "GetEventAndSetChoice", "GaurdGridAIAmbush", "1", "",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAIWhimsy", "0",
+                                                          "GetEventAndSetChoice", "GaurdGridAIWhimsy", "1", "",
+
+                                                        "GoToMap",
+                                                          "Tileset",
+                                                            "0", "GridMap/floor.png", "Floor", "", "", "",
+                                                            "1", "GridMap/Wall.png", "Wall",  "", "", "",
+                                                            "2", "GridMap/Void.png", "Floor", "", "", "",
+                                                            "E", "GridMap/LockedGate.png", "Interactable", "FertiliaFertilia", "ExitStage8", "You're at your entry and exit point for the mission...",
+                                                            "P", "GridMap/floorPoisoned.png", "Auto", "Labyrinth", "Posion", "The ground is laden in aphrodisiac.",
+                                                          "EndLoop",
+
+                                                          "PlayerCoord", "11", "10",
+                                                          "PlayerIcon", "GridMap/kunoichiIcon.png",
+                                                          "Sight", "7",
+                                                          "YAdjust", "30",
+
+                                                          "NPC",
+                                                            "Name", "Key",
+                                                            "Img", "GridMap/Treasure.png",
+                                                            "Event", "Auto", "FertiliaFertilia", "Key",
+                                                            "Obstacle",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdSeeker",
+                                                            "Img", "GridMap/guardChase.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAI", "SeekerTimer2",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdAmbush",
+                                                            "Img", "GridMap/guardAmbush.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAIAmbush", "AmbushTimer",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdWhimsy",
+                                                            "Img", "GridMap/guardWhimsy.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "Movement", "Whimsical", "Player", "20",
+                                                            "TurnEvent", "GaurdGridAIWhimsy", "TimerWhimsy2",
+                                                          "EndLoop",
+
+
+                                                          "SpawnNPC", "Key", "1", "1",
+                                                          "SpawnNPC", "Key", "1", "11",
+                                                          "SpawnNPC", "Key", "21", "1",
+                                                          "SpawnNPC", "Key", "21", "11",
+
+                                                          "SpawnNPC", "Key", "3", "3",
+                                                          "SpawnNPC", "Key", "3", "9",
+                                                          "SpawnNPC", "Key", "19", "3",
+                                                          "SpawnNPC", "Key", "19", "9",
+
+                                                          "SpawnNPC", "Key", "5", "6",
+                                                          "SpawnNPC", "Key", "17", "6",
+
+                                                          "SpawnNPC", "Key", "11", "6",
+
+
+                                                          "SpawnNPC", "GaurdWhimsy", "11", "1",
+                                                          "SpawnNPC", "GaurdSeeker", "10", "1",
+                                                          "SpawnNPC", "GaurdAmbush", "12", "1",
+
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","1","0","0","0","1","0","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","0","1","1","1","0","1","1","0","1","1","0","1","1","1","0","1","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","1","1","1","1","0","1","1","1","1","1","0","1","1","1","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","0","1","1","0","1","1","0","1","1","0","1","1","0","1","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","1","1","1","1","0","1","1","1","1","1","0","1","1","1","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","0","1","1","1","0","0","0","E","0","0","0","1","1","1","0","1","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1", "EndLoop",
+                                                        "StartMap"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "ExitStage8",
+                                      "theScene": [
+                                                        "IfGridNPCThere", "Key", "StillLocked",
+                                                        "GetEventAndChangeProgress", "Ars Delusia Arcade", "100",
+                                                        "{b}Mission 3 - True Kunoichi Mode - complete!{/b} You escaped with the humans' treasure without a hitch!\n\n100 tickets whirr out of the machine for you to collect while the screen shifts to the next stage!",
+                                                        "ExitGridmap",
+                                                        "GetEventAndChangeProgress", "GameSkillTracker", "2",
+                                                        "{b}Mission 4 - True Kunoichi Mode{/b} - Good luck!",
+
+                                                        "GetEventAndSetChoice", "AphroGridTimersFertillia", "1", "",
+                                                        "GetEventAndSetProgress", "AphroGridTimersFertillia", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAI", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAIAmbush", "0",
+                                                          "GetEventAndSetChoice", "GaurdGridAIAmbush", "1", "",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAIWhimsy", "0",
+                                                          "GetEventAndSetChoice", "GaurdGridAIWhimsy", "1", "",
+
+                                                        "GoToMap",
+                                                          "Tileset",
+                                                            "0", "GridMap/floor.png", "Floor", "", "", "",
+                                                            "1", "GridMap/Wall.png", "Wall",  "", "", "",
+                                                            "2", "GridMap/Void.png", "Floor", "", "", "",
+                                                            "E", "GridMap/LockedGate.png", "Interactable", "FertiliaFertilia", "ExitStage9", "You're at your entry and exit point for the mission...",
+                                                            "P", "GridMap/floorPoisoned.png", "Auto", "Labyrinth", "Posion", "The ground is laden in aphrodisiac.",
+                                                          "EndLoop",
+
+                                                          "PlayerCoord", "11", "1",
+                                                          "PlayerIcon", "GridMap/kunoichiIcon.png",
+                                                          "Sight", "7",
+                                                          "YAdjust", "15",
+
+                                                          "NPC",
+                                                            "Name", "Key",
+                                                            "Img", "GridMap/Treasure.png",
+                                                            "Event", "Auto", "FertiliaFertilia", "Key",
+                                                            "Obstacle",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdSeeker",
+                                                            "Img", "GridMap/guardChase.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAI", "SeekerTimer2",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdAmbush",
+                                                            "Img", "GridMap/guardAmbush.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAIAmbush", "AmbushTimer",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdWhimsy",
+                                                            "Img", "GridMap/guardWhimsy.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAIWhimsy", "TimerWhimsy2",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdWander",
+                                                            "Img", "GridMap/guardWander.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAI", "WanderTimer",
+                                                          "EndLoop",
+
+
+                                                          "SpawnNPC", "Key", "3", "1",
+                                                          "SpawnNPC", "Key", "4", "1",
+                                                          "SpawnNPC", "Key", "5", "1",
+
+                                                          "SpawnNPC", "Key", "3", "8",
+                                                          "SpawnNPC", "Key", "4", "8",
+                                                          "SpawnNPC", "Key", "5", "8",
+                                                          "SpawnNPC", "Key", "3", "9",
+                                                          "SpawnNPC", "Key", "4", "9",
+                                                          "SpawnNPC", "Key", "5", "9",
+                                                          "SpawnNPC", "Key", "3", "10",
+                                                          "SpawnNPC", "Key", "4", "10",
+                                                          "SpawnNPC", "Key", "5", "10",
+
+
+
+                                                          "SpawnNPC", "Key", "19", "2",
+                                                          "SpawnNPC", "Key", "19", "3",
+                                                          "SpawnNPC", "Key", "20", "2",
+                                                          "SpawnNPC", "Key", "20", "3",
+
+                                                          "SpawnNPC", "Key", "21", "7",
+                                                          "SpawnNPC", "Key", "21", "8",
+                                                          "SpawnNPC", "Key", "21", "11",
+                                                          "SpawnNPC", "Key", "21", "12",
+
+
+                                                          "SpawnNPC", "GaurdWhimsy", "11", "12",
+                                                          "SpawnNPC", "GaurdSeeker", "10", "12",
+                                                          "SpawnNPC", "GaurdAmbush", "12", "12",
+                                                          "SpawnNPC", "GaurdWander", "11", "12",
+
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                          "Row", "1","E","1","0","0","0","1","0","0","0","0","0","0","0","0","0","1","0","0","0","0","E","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","0","1","0","1","0","0","0","0","0","1","0","1","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","1","0","0","0","1","0","1","0","1","0","1","0","0","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","1","0","1","0","0","0","0","0","1","0","0","0","1","1","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","0","1","1","0","1","0","1","0","1","0","1","0","1","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","1","0","1","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","1","1","1","0","1","0","1","0","1","0","1","0","1","0","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","1","0","1","0","0","0","0","0","1","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","1","0","1","0","1","0","1","0","0","0","1","0","0","1","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","1","0","1","0","0","0","0","0","1","0","1","0","1","0","0","1","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","1","1","1","0","0","0","1","0","1","0","0","0","1","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","1","1","0","E","0","1","1","0","0","0","1","0","0","0","1", "EndLoop",
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1", "EndLoop",
+                                                        "StartMap"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "ExitStage9",
+                                      "theScene": [
+                                                        "IfGridNPCThere", "Key", "StillLocked",
+                                                        "GetEventAndChangeProgress", "Ars Delusia Arcade", "150",
+                                                        "{b}Mission 4 - True Kunoichi Mode - complete!{/b} You escaped with the humans' treasure without a hitch!\n\n150 tickets whirr out of the machine for you to collect while the screen shifts to the next stage!",
+                                                        "ExitGridmap",
+                                                        "ChangeBGM", "music/Temple/Liquid_JPN.mp3",
+                                                        "GetEventAndChangeProgress", "GameSkillTracker", "2",
+                                                        "{b}Mission 5 - Final Stage - True Kunoichi Mode{/b} - Are you a True Kunoichi?",
+
+                                                        "GetEventAndSetChoice", "AphroGridTimersFertillia", "1", "",
+                                                        "GetEventAndSetProgress", "AphroGridTimersFertillia", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAI", "0",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAIAmbush", "0",
+                                                          "GetEventAndSetChoice", "GaurdGridAIAmbush", "1", "",
+
+                                                        "GetEventAndSetProgress", "GaurdGridAIWhimsy", "0",
+                                                          "GetEventAndSetChoice", "GaurdGridAIWhimsy", "1", "",
+
+                                                        "GoToMap",
+                                                          "Tileset",
+                                                            "0", "GridMap/floor.png", "Floor", "", "", "",
+                                                            "1", "GridMap/Wall.png", "Wall",  "", "", "",
+                                                            "2", "GridMap/Void.png", "Floor", "", "", "",
+                                                            "E", "GridMap/LockedGate.png", "Interactable", "FertiliaFertilia", "ExitStage10", "You're at your entry and exit point for the mission...",
+                                                            "P", "GridMap/floorPoisoned.png", "Auto", "Labyrinth", "Posion", "The ground is laden in aphrodisiac.",
+                                                          "EndLoop",
+
+                                                          "PlayerCoord", "11", "10",
+                                                          "PlayerIcon", "GridMap/kunoichiIcon.png",
+                                                          "Sight", "7",
+                                                          "YAdjust", "30",
+
+                                                          "NPC",
+                                                            "Name", "Key",
+                                                            "Img", "GridMap/Key.png",
+                                                            "Event", "Auto", "FertiliaFertilia", "KeyActual",
+                                                            "Obstacle",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdSeeker",
+                                                            "Img", "GridMap/guardChase.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAI", "SeekerTimer2",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdAmbush",
+                                                            "Img", "GridMap/guardAmbush.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAIAmbush", "AmbushTimer",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdWhimsy",
+                                                            "Img", "GridMap/guardWhimsy.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAIWhimsy", "TimerWhimsy2",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "GaurdWander",
+                                                            "Img", "GridMap/guardWander.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "TurnEvent", "GaurdGridAI", "WanderTimer",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "WayPoint1",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "WayPoint2",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "WayPoint3",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "WayPoint4",
+                                                            "Img", "Invisible",
+                                                          "EndLoop",
+
+                                                          "NPC",
+                                                            "Name", "Gaurd",
+                                                            "Img", "GridMap/guardPatrol.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "Movement", "Chase", "WayPoint2",
+                                                            "TurnEvent", "GaurdGridAI", "Waypoints",
+                                                          "EndLoop",
+                                                          "NPC",
+                                                            "Name", "Gaurd2",
+                                                            "Img", "GridMap/guardPatrol.png",
+                                                            "Event", "Auto", "GaurdGridAI", "Caught",
+                                                            "Movement", "Chase", "WayPoint4",
+                                                            "TurnEvent", "GaurdGridAI", "Waypoints",
+                                                          "EndLoop",
+
+                                                          "SpawnNPC", "Key", "11", "1",
+
+
+                                                          "SpawnNPC", "WayPoint1", "3", "3",
+                                                          "SpawnNPC", "WayPoint2", "19", "3",
+                                                          "SpawnNPC", "WayPoint3", "19", "9",
+                                                          "SpawnNPC", "WayPoint4", "3", "9",
+
+                                                          "SpawnNPC", "Gaurd", "3", "3",
+                                                          "SpawnNPC", "Gaurd2", "19", "9",
+
+                                                          "SpawnNPC", "GaurdWhimsy", "11", "2",
+                                                          "SpawnNPC", "GaurdSeeker", "10", "1",
+                                                          "SpawnNPC", "GaurdAmbush", "12", "1",
+                                                          "SpawnNPC", "GaurdWander", "11", "1",
+
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","0","1","1","1","0","1","1","0","1","1","0","1","1","1","0","1","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","1","1","1","1","0","1","1","1","1","1","0","1","1","1","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","0","1","1","0","1","1","0","1","1","0","1","1","0","1","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","1","1","1","1","0","1","1","1","1","1","0","1","1","1","1","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","1","1","0","1","1","1","0","0","0","E","0","0","0","1","1","1","0","1","1","0","1",  "EndLoop",
+                                                          "Row", "1","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","1",  "EndLoop",
+                                                          "Row", "1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1",  "EndLoop",
+                                                        "StartMap"
+                                                ]
+                                  },
+
+                                  {
+                                      "NameOfScene": "ExitStage10",
+                                      "theScene": [
+                                                        "IfGridNPCThere", "Key", "StillLocked",
+                                                        "GetEventAndChangeProgress", "Ars Delusia Arcade", "250",
+                                                        "GetEventAndChangeProgress", "GameSkillTracker", "3",
+                                                        "ChangeBGM", "music/Temple/far-east-kingdom.mp3",
+                                                        "{b}Mission 5 - True Kunoichi Mode - complete! Congratulations! You are a True Kunoichi and the savior of Lucidia!!!{/b}\n\n250 tickets whirr out of the machine for you to collect while the screen shifts to a brief credits sequence, complete with a little animation of your kunoichi being lauded and praised back at her dojo.",
+                                                        "ExitGridmap",
+                                                        "Then the game bloops right back to the start screen, leaving you to consider what to do next. Maybe play again, this time to beat the game in record time?",
+                                                        "JumpToScene", "FertiliaMenu"
+                                                ]
+                                  },
+
+
+
+
+
+
+
+
+                   {
+                     "NameOfScene": "EventBroke",
+                     "theScene": [   "event broke."
+                               ]
+                   }
+              ]
+}

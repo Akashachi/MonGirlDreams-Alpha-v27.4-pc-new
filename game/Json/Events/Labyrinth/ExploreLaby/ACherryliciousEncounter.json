@@ -1,0 +1,54 @@
+{
+    "name": "A Cherrylicious Encounter",
+    "CardType": "Event",
+    "CardLimit": "2",
+    "Description": "You find a page in your Grimoire depicting Perpetua awaiting your challenge with a brash smile, the paper stained with what appears to be cherry juice...\n\nWhen did this get here?",
+    "requires": [ ""],
+    "requiresEvent": [
+                  {
+                      "NameOfEvent": "PerpetuaHouse",
+                      "Progress": "0",
+                      "ChoiceNumber": "10",
+                      "Choice": "SparAllowed"
+                  }
+            ],
+    "Speakers": [
+                  {
+                    "name": "Perpetua",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Fight",
+                        "theScene": [ 
+                                          "ChangeBG", "mountain.png",
+                                          "You find yourself approaching the foot of the Mountain, ready to ascend it... but as the lift ahead comes down from up high, you realize that there's already someone riding it! Someone who turns out to be none else than...",
+                                          "ChangeBGM", "music/Battle/bgm_maoudamashii_orchestra12.mp3",
+                                          "Speaks",
+                                          "Hmhmhm... {b}Ooohohoho, foolish hero!{/b}",
+                                          "DisplayCharacters",
+                                            "1",
+                                          "EndLoop",
+                                          "ChangeImageLayer", "Expression", "1", "Laugh",
+                                          "Perpetua herself, your (self-appointed) archrival! She's gazing down at you pridefully, taking you in with eager glee as she literally descends upon you, plainly delighting in your surprised expression... before frowning in gnawing confusion and glancing away in deep thought as the incongruity of the sudden encounter seems to hit her, the realization leaving her pensively muttering.",
+                                          "ChangeImageLayer", "Expression", "1", "Shy",
+                                          "Speaks",
+                                          "{size=-10}Huh, this dream's giving me some déjà-vu...{/size}",                                          
+                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                          "But she perks right back up as the lift reaches its destination and locks into place in front of you, prompting your gooey rival to shake off the niggling feeling and go back to relishing the battle ahead, the peppy slime girl giving you an excited smile as she briskly gets back on track.",
+                                          "ChangeImageLayer", "Expression", "1", "Joy",
+                                          "Speaks",
+                                          "Well, whatever! I'm back, and this time, you have {i}no hope{/i} of defeating me! {i}Mwahaha!{/i} En garde!",
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Perpetua Lvl 10",
+                                          "StartCombat",
+                                          "ChangeBG", "Labyrinth.png",
+                                          "With Perpetua defeated, you head onto the lift to keep moving onwards. The ensuing upwards trip takes place without further issues, but by the time the elevator has reached its destination, you find the mountainous landscape around you bleeding away to reveal the darkly familiar, twisting halls of the Labyrinth in their stead, your seemingly endless wanderings thus resuming in earnest..."
+                                  ]
+                    }
+                ]
+}

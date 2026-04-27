@@ -1,0 +1,777 @@
+{
+    "name": "Ghost",
+    "IDname": "Ghost",
+    "species": "Slime",
+    "gender": "female",
+    "description": "A floating, ethereal woman with a frail, bone white translucent body with the faintest hint of blue throughout her wispy form. Her hair is done up it a ponytail that dissipates into nothingness at its tip, and her short bangs frame her cute face and piercing energetic blue eyes, while her entire body is completely naked and uncovered.\n\nHer dainty arms delicately float in the air, hovering with an lithe grace that still seems to be poised to grasp out at anything nearby at a moment's notice, and ending with five elegant fingers. Her pale B cup breasts are left to teasingly bounce free as she effortlessly floats in the air, showing off all of her womanly curves from her chest to her hips as everything from her waist down trails off into a ghostly trail of ethereal energy, but despite her unnatural lower body, her dripping wet pussy is fully defined and placed exactly where it should be, lewdly on display for anyone to see.\n\nLittle motes of light occasionally drift away from her partially translucent body, vanishing after hanging in the air for a few moments.",
+    "encyclopedia": "A hovering, ethereal monster that is most commonly referred to as a ghost, when in reality they are a kind of gaseous, magically charged slime. They are playful and mischievous monsters, fully playing into the role of being 'ghosts', which when combined with their spectral appearance, often tricks most people who come across them into believing that they are actual ghosts, much to the immense annoyance of actual undead monsters, and {i}especially{/i} actual ghosts.\n\nDespite common belief, these translucent slime 'ghosts' are the true origin of ectoplasm, and it is a misnomer to say that actual ghosts created it. Actual ghosts are ethereal in nature and as such cannot manifest ectoplasm, whereas ghost slimes produce ectoplasm from the gooey portions of their body, which is used to keep them aloft as it is magically burned on the surface of their bodies. Due to their slimy, gaseous nature, ghost slimes are able to 'phase' through and around most organic matter, but are unable to move through solid, inorganic matter, which is one of the easiest ways to distinguish ghost slimes and actual ghosts.\n\nGiven that most slimes exist in a natural state of being a gooey liquid and some species, like Yuki-Onna, live in a frigid, more solid state of slime, some people theorize that ghost slimes could be considered a 'gaseous' form of slime, but other research dismisses this notion due to the fact that no species of slime has ever been shown to be able to shift between states by temperature like water can, leaving others to conclude that it is presumably an evolutionary difference most species of slime. Additionally, ghost slimes are one of the few species of slimes with no visible core, which some individuals theorize is due to their gaseous nature and having their 'core' actually be diffused throughout their whole body.",
+    "tags": "none",
+    "generic": "True",
+    "requires": [ "Labyrinth Checkpoint Gem"],
+    "skillList": [ "Ectoplasmic Caress", "Arouse", "Sensitize", "Ethereal Blowjob", "Deepthroat", "Vacuum Blowjob", "Spectral Suction", "Ghostly Blowjob", "Ethereal Oral", "Otherworldly Suction", "Haunting Blowjob", "Spectral Sex",  "Grind", "Energetic Bounce", "Ghostly Rhythm", "Ethereal Grind", "Spectral Double-Team", "Ghostly After-Image", "Ethereal Overstimulation", "Spectral Triple Team"],
+    "perks": [ "Swift", "Swift", "Arcane Adept", "Enduring Body", "Enduring Body", "Lovers Passion", "Aphrodisiac Vulnerable Slime"],
+    "stats": { "lvl": "20",
+              "Exp": "150",
+              "max_hp": "250",
+              "max_ep": "10",
+              "max_sp": "1",
+              "Power": "5",
+              "Technique": "10",
+              "Intelligence": "15",
+              "Allure": "15",
+              "Willpower": "10",
+              "Luck": "15"
+    },
+    "Fetishes": [ ""],
+    "BodySensitivity": { "Sex": "85",
+              "Ass": "90",
+              "Breasts": "100",
+              "Mouth": "90",
+              "Seduction": "100",
+              "Magic": "150",
+              "Pain": "1",
+              "Holy": "100",
+              "Unholy": "100"
+    },
+    "resistancesStatusEffects": {
+              "Stun": "200",
+              "Charm": "0",
+              "Aphrodisiac": "-50",
+              "Restraints": "200",
+              "Sleep": "200",
+              "Trance": "0",
+              "Paralysis": "0",
+              "Debuff": "0"
+    },
+    "moneyDropped": "500",
+    "ItemDropList": [
+                      {
+                        "name": "Ectoplasm",
+                        "dropChance": "65"
+                      },
+                      {
+                        "name": "Ectoplasm",
+                        "dropChance": "25"
+                      },
+                      {
+                        "name": "Flicker Rune",
+                        "dropChance": "10"
+                      }
+                    ],
+    "lossScenes": [
+                    {
+                        "NameOfScene": "TrioLoss",
+                        "move": "",
+                        "stance": "",
+                        "includes": [ "Ghost", "Ghost", "Ghost"],
+                        "theScene": [ "You collapse to the ground exhausted, and the three ghostly women descend upon your helpless form with eerie giggles.",
+                                    "JumpToEventThenScene", "GhostLoss", "TrioLoss"
+                                  ],
+                        "picture": ""
+                    },
+                    {
+                        "NameOfScene": "DuoLoss",
+                        "move": "",
+                        "stance": "",
+                        "includes": [ "Ghost", "Ghost"],
+                        "theScene": [ "You collapse to the ground exhausted, and the two ghostly women descend upon your helpless form with eerie giggles.",
+                                    "JumpToEventThenScene", "GhostLoss", "DuoLoss"
+                                  ],
+                        "picture": ""
+                    },
+                    {
+                        "NameOfScene": "Loss",
+                        "move": "",
+                        "stance": "",
+                        "includes": [ "Ghost"],
+                        "theScene": [ "ChangeImageLayer", "Expression", "Smile",
+                                    "The ghost lets out an eerie wail as you collapse to the ground exhausted, and another ghost soon appears with an evil giggle, and the two descend upon your helpless form...",
+                                    "JumpToEventThenScene", "GhostLoss", "DuoLoss"
+                                  ],
+                        "picture": ""
+                    }
+                  ],
+    "combatDialogue": [
+                        {
+                            "lineTrigger": "SetMusicTo",
+                            "move": "",
+                            "theText": [ "music/Forest Dungeon/chain.mp3"]
+                        },
+                        {
+                          "lineTrigger": "StartOfCombat",
+                          "move": "",
+                          "theText": [ "|f|CallCombatEventAndScene|/|GhostCombatEvents|/|Intro|n|"]
+                        },
+                        {
+                          "lineTrigger": "StartOfRound",
+                          "move": "",
+                          "theText": [ "|f|CallCombatEventAndScene|/|GhostCombatEvents|/|StartOfRound|n|"]
+                        },
+                        {
+                          "lineTrigger": "EndOfRound",
+                          "move": "",
+                          "theText": [ "|f|CallCombatEventAndScene|/|GhostCombatEvents|/|EndOfRound|n|"]
+                        },
+
+
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Spank", "Whip"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Hehe,♪ trying to hurt a ghost, what a dummy.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Are you scared yet?♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'I'm intangible silly.♪ It's spooookyyyy.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'OoooOOOoooo,♪ you can't touch meeee.♪"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Demon Layer",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Ohhh!♥♥♥ F-Feels weirdly good...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Panic|n|'EEK!♥ D-Divine punishment?♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Ahhhh...♥ I'll ascend to heaven at this rate.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Shocked|n|'EEP!♥ I- uhm- w-weapons aren't supposed to work!♥ Th-Though it felt super nice...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Shocked|n|'A-Ah?!♥ Are you some kind of exorcist?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Shocked|n|'EEEK!♥'" ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Holy Headpat",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Panic|n|'C-Cut it out I'm trying to be spooky!'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Panic|n|'Come on, at least take me seriously, I'm super scary!'" ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Kiss",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Shocked|n|'Wh-What do you think you're doing, k-kissing a ghost!'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'There's better things I could do with my ghostly mouth.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Y-You're suppose to be scared, not kissing me!'" ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Make Out",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Kehehe, There's way better things we could do.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'There's better things I could do with my ghostly mouth.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|'That's not going to work on me, OoooOOooo.♪'" ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Arouse", "Arousara", "Arousero"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Shocked|n|'EEEK!♥ H-Hey magic's cheating!'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Shocked|n|'Ahhhh...♥ I'll ascend to heaven at this rate.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Shocked|n|'A-Ah!♥ Every part of me feels so good!♥",
+                                      "|f|ChangeImageLayer|/|Expression|/|Shocked|n|'Oooooh!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Shocked|n|'Oooooh!♥ N-No fair!'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Shocked|n|'Ahhhh!♥ 'I-I can feel it everywhere!♥''",
+                                      "|f|ChangeImageLayer|/|Expression|/|Shocked|n|'Oooooh!♥ I-I feel like I'm melting!♥'"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Electrify",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Hehe,♪ trying to hurt a ghost, what a dummy.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'Are you scared yet?♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'I'm ethereal against things I don't like.♪ It's spooookyyyy.♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'OoooOOOoooo,♪ I barely feellllt thattttt.♪",
+                                        "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'OoooOOOoooo,♪ your magic suuuucccckss.♪"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Finger", "Dildo"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Oooooh...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Don't tease me...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Ahhh,♥ come on! Fuck me.♥",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Mmmm,♥ keep this up and you're getting haunted.♥" ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Charm", "Charm Wave"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmm,♥ I'm going to haunt you.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'I'm going to make you feel so good.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'I-I can't stop thinking about you.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Let's never part.♥'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Enfeeble", "Sensitize"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Panic|n|'Wha- Hey!'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Panic|n|'Uh- That clearly didn't work, oooOOOooo...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Panic|n|'Eugh- Now I feel all gooey!'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Disarming Appeal"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Oh come on, I'm not {i}that{/i} scary.'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehe, don't be scared, I just want to eat all your semen.♥'" ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Seduce", "Ear Tease", "Enamor", "Smoldering Seduction", "Smoldering Flaunt", "Massaging Seduction", "Mass Seduction"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hmm,♥ I'm going to haunt you.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Excited|n|'I guess I can take being cute over being spooky.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Ahhh... I can't phase away from your words...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Talk like that is going to get you haunted by lots of ghosts, ooooOOOooo...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehehe, you're way too sweet for your own good.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Don't tease me...♥'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Grope Ass", "Squeeze Ass", "Massage Ass", "Fondle Ass"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Oohhh,♪ that feels lovely.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|Your hand accidentally sinks into her ethereal butt, making her lightly shiver in pleasure.",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm...♥ I didn't know this could feel so nice.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Oooooh...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'M-Most of my butt is ethereal... But if you're enjoying yourself...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'I feel like I'm floating...♥ Oh right. I am.♪'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Breast Caress", "Breast Massage", "Breast Knead", "Breast Fondle"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Oohhh,♪ that feels lovely.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|Your hand accidentally sinks into her ethereal chest, making her lightly shiver in pleasure.",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm...♥ keep this up and you're getting haunted.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Oooooh...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Oooooh...♥ M-My breasts feel so warm.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'I feel like I'm floating...♥ Oh right. I am.♪'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Suckle",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Oohhh,♪ that feels lovely.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|'I don't think you should drink ectoplasm...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm...♥ keep this up and you're getting haunted.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Oooooh...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Oooooh...♥ M-My breasts feel so warm.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'I feel like I'm floating...♥ Oh right. I am.♪'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Penetrate",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Oooh?♥ Well if you really want I can haunt your cock.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Horny|n|'Hehehe,♥ Going to fill me up with your spirit?♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'We're a perfect match.♥'"]
+                        },
+                        {
+                            "lineTrigger": "AutoCounter",
+                            "move": ["Thrust", "Channeling Thrust", "Pound", "Multi Thrust", "Empowered Thrust", "Tantric Thrust", "Face Fuck", "Passionate Lovemaking"],
+                            "theText": [ "|f|CallCombatEventAndScene|/|GhostCombatEvents|/|Multihitter|/|"
+                                        ]
+                        },
+
+
+
+
+
+
+
+
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Ectoplasmic Caress",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Heheh, you're cursed now.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Doesn't it feel good to be haunted?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehe,♥ soon you'll be helpless.♥",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Are you shivering in fear or pleasure?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'OooooOOoo, curse you.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Is my spooky caress leaving you frozen in fear?♥ Hehehe.♥'"]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Arouse",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Heheh, you're cursed now.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Spooky Arouse!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Pleasure curse.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Pleasure curse.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Let the pleasure possess you.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'OoooOooo, curse of pleasure!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Are you shivering in fear or pleasure?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'OooooOOoo, curse you.♥'" ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Sensitize",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Heheh, you're cursed now.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Pleasure curse.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Pleasure curse.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'OoooOooo, curse of pleasure!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Are you shivering in fear or pleasure?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'OooooOOoo, curse you.♥'" ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Ethereal Blowjob",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hey, don't leave me out of the haunting!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Excited|n|'We're going to empty your balls.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Give us your spirit.♥ It'll feel soooo good.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'We'll give you such otherworldly pleasure.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehe,♥ how long can you endure this?♥'"  ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Deepthroat",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm,♥ I can feel you hitting the back of my throat.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm,♥ you taste good.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Does my tongue feel good?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehehe, you keep twitching in my throat.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Can you see your dick sliding down my throat?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'I don't ever want to part with this wonderful dick.♥'"  ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Vacuum Blowjob",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm,♥ I'm gonna suck you dry.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm,♥ you taste good.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Does my tongue feel good?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehehe, you keep twitching.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Watch me drain your cock.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'I don't ever want to part with this wonderful dick.♥'"  ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Spectral Suction",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Mmmm,♥ we're going to suck you dry.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm,♥ you taste good.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Do our tongues feel good?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You can't resist us forever.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'How long can you endure this?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehehe, you keep twitching.♥ We're driving your cock insane.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Watch your dick get melted with pleasure?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Give us every drop of your cum.♥'"  ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Ghostly Blowjob",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Mmmm,♥ we're going to suck you dry.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm,♥ you taste good.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Do our tongues feel good?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You can't resist us forever.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'How long can you endure this?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehehe, you keep twitching.♥ We're driving your cock insane.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Watch your dick get melted with pleasure?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Give us every drop of your cum.♥'"  ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Ethereal Oral",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Mmmm,♥ we're going to suck you dry.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm,♥ you taste good.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Do our tongues feel good?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You can't resist us forever.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'How long can you endure this?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehehe, you keep twitching.♥ We're driving your cock insane.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Watch your dick get melted with pleasure?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Give us every drop of your cum.♥'"  ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Otherworldly Suction",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Mmmm,♥ we're going to suck you dry.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm,♥ you taste good.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Do our tongues feel good?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You can't resist us forever.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'How long can you endure this?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehehe, you keep twitching.♥ We're driving your cock insane.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Watch your dick get melted with pleasure?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Give us every drop of your cum.♥'"  ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Haunting Blowjob",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Mmmm,♥ we're going to suck you dry.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm,♥ you taste good.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Do our tongues feel good?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You can't resist us forever.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'How long can you endure this?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehehe, you keep twitching.♥ We're driving your cock insane.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Watch your dick get melted with pleasure?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Give us every drop of your cum.♥'" ]
+                        },
+
+
+
+
+
+
+
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Spectral Sex",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Hey, don't leave me out of the haunting!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'We're going to empty your balls.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Give us your spirit.♥ It'll feel soooo good.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'We'll give you such otherworldly pleasure.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehe,♥ how long can you endure this?♥'"  ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Grind",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm,♥ a perfect match.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm,♥ you're so big.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'I want all of your spirit coating my pussy.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Be sure to keep your dick inside me.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Don't be scared of how good this feels.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehehe, you keep twitching inside me.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Can you see your dick getting squeezed inside me?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'I don't ever want to part with this wonderful dick.♥'"  ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Energetic Bounce",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm,♥ a perfect match.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Mmmm,♥ you're so big.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'I want all of your spirit coating my pussy.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Don't be scared of how good this feels.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehehe, you keep twitching inside me.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Can you see your dick getting fucked silly?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'I don't ever want to part with this wonderful dick.♥'"  ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Ghostly Rhythm",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Mmmm,♥ we're going to drain you dry.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehe,♥ can your dick take this many pussies at once?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'We want all of your spirit coating our pussies.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You can't resist us forever.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'How long can you endure this?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Don't be scared of how good this feels.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehehe, you keep twitching.♥ We're driving your cock insane.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Watch your dick get melted with pleasure?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Can you see your dick getting fucked silly?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Give us every drop of your cum.♥'"  ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Ethereal Grind",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Mmmm,♥ we're going to drain you dry.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehe,♥ can your dick take this many pussies at once?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'We want all of your spirit coating our pussies.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You can't resist us forever.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'How long can you endure this?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Don't be scared of how good this feels.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehehe, you keep twitching.♥ We're driving your cock insane.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Watch your dick get melted with pleasure?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Can you see your dick getting fucked silly?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Give us every drop of your cum.♥'"   ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Spectral Double-Team",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Mmmm,♥ we're going to drain you dry.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehe,♥ can your dick take this many pussies at once?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'We want all of your spirit coating our pussies.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You can't resist us forever.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'How long can you endure this?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Don't be scared of how good this feels.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehehe, you keep twitching.♥ We're driving your cock insane.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Watch your dick get melted with pleasure?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Can you see your dick getting fucked silly?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Give us every drop of your cum.♥'"  ]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Spectral Triple Team",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Mmmm,♥ we're going to drain you dry.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehe,♥ can your dick take this many pussies at once?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'We want all of your spirit coating our pussies.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You can't resist us forever.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'How long can you endure this?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Don't be scared of how good this feels.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehehe, you keep twitching.♥ We're driving your cock insane.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Watch your dick get melted with pleasure?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Can you see your dick getting fucked silly?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Give us every drop of your cum.♥'"   ]
+                        },
+
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Ghostly After-Image",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Mmmm,♥ we're going to drain you dry.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehe,♥ can your dick take this many pussies at once?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'We want all of your spirit coating our pussies.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You can't resist us forever.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'How long can you endure this?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Don't be scared of how good this feels.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehehe, you keep twitching.♥ We're driving your cock insane.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Watch your dick get melted with pleasure?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Can you see your dick getting fucked silly?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Give us every drop of your cum.♥'"   ]
+                        },
+
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Ethereal Overstimulation",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Mmmm,♥ we're going to drain you dry.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Ooooh,♥ this is a dick worth haunting.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehe,♥ can your dick take this many pussies at once?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'We want all of your spirit coating our pussies.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'You can't resist us forever.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'How long can you endure this?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Don't be scared of how good this feels.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Hehehe, you keep twitching.♥ We're driving your cock insane.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Watch your dick get melted with pleasure?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Can you see your dick getting fucked silly?♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Give us every drop of your cum.♥'"   ]
+                        },
+
+
+
+
+
+
+
+                        {
+                            "lineTrigger": "PlayerLowHealth",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehehe,♥ you're going to spill your spirit soon.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'You're gonna cum?♥ Come on, give it to me.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|'Go on,♥ empty your balls.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'If you cum I'm going to haunt youuuu.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'You're twitching a lot.♥ Don't hold back,♥ cum all you want.♥"]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "Sex",
+                            "theText": [ "|f|CallCombatEventAndScene|/|GhostCombatEvents|/|SexOrgasmLines|n||c|"
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "Blowjob",
+                            "theText": [ "|f|CallCombatEventAndScene|/|GhostCombatEvents|/|BJOrgasmLines|n||c|"
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Smug|n|Left on the brink of orgasmic ecstasy, it only takes a simple gooey caress from the ghost, gently teasing your body, to send you over the edge, leaving you spurting long ropes of your seed onto her ectoplasmic body.",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smug|n|So horny and mindlessly aroused, it only takes one final blast of arousal magic to send your body into a spasming orgasm, leaving your semen to be absorbed by her spectral body as you erupt all over her."
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnOrgasm",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Orgasm|n|'OOOOOOH!♥♥♥ I'm cumming!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Orgasm|n|'Ahhh!♥♥♥ I'm ascending!♥♥♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Orgasm|n|'HAhhhh!♥ I've been exorcised!♥'"
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnSurrender",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Excited|n|'Eh? You want me to haunt you? Well, I suppose I can!♥'",
+                                       "|f|ChangeImageLayer|/|Expression|/|Smug|n|'OoooOoooo, I'm going to dry your balls now.♥'",
+                                       "|f|ChangeImageLayer|/|Expression|/|Smile|n|'I'll take you to heaven.♥ Figuratively.♥'",
+                                       "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'OoooOOOooo, prepare to cum a looootttttt.♥'",
+                                       "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Aww, It's more fun if you at least try. Oh well.♥'"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggle",
+                            "move": "Sex",
+                            "theText": [ "[ThePlayerName] tries to pull out of the Ghost's ectoplasmic pussy..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFail",
+                            "move": "Sex",
+                            "theText": [ "But your hands pass ineffectively through her ethereal body, leaving you recoiling at the chilling sensation, and she merely giggles as she continues to bounce on your cock.",
+                                        "But her tight pussy clings to your shaft like a vice, leaving you unable to pull free!",
+                                        "But your hands phase through her hips, her intangible nature stopping you from breaking free of her tight slit, leaving you recoiling from the chilling ectoplasmic sensation surrounding your hands.",
+                                        "But as she rides your rigid length you an only moan blissfully from the pleasure striking through your length."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleComment",
+                            "move": "Sex",
+                            "theText": [ "",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Stop trying to make us part so soon.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'OoooOooo,♥ your dick's too haunted to escape nowwwww.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Aw,♥ don't be scared.♥ I just want to drain your balls dry.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehehe,♥ you can't escape from fate.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehe,♥ you can't push away what you can't touch.♥'"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFree",
+                            "move": "Sex",
+                            "theText": [ "And pull your cock free from the spectral orifice!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFreeComment",
+                            "move": "Sex",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'Curseeee youuuuu... Hehe.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'OoooOooo,♥ I'm still going to haunt youuuu.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hmmmm... Was I being too spooky?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Aw,♥ don't be scared.♥ I just wanted to drain your balls dry.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehehe,♥ you can't escape from fate.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Parting so soon... Well, I guess I'll try again!♥'"
+                                    ]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggle",
+                            "move": "Blowjob",
+                            "theText": [ "[ThePlayerName] tries to pull his cock free from [AttackerName]'s wet mouth..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFail",
+                            "move": "Blowjob",
+                            "theText": [ "But your hands pass ineffectively through her head, leaving you recoiling at the chilling sensation and her giggling as she continues to suck your dick.",
+                                        "But as she hilts your raging erection down her tight throat you're left moaning blissfully, unable to pull free from her loving affections.",
+                                        "But your hands phase through her ethereal head, her intangible nature stopping you from breaking free of her loving lips, leaving you recoiling from the chilling ectoplasmic sensation surrounding your hands.",
+                                        "But her intense sucking and loving licking up and down your aching shaft leaves you dazed, forgetting why you wanted to push her away." ]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleComment",
+                            "move": "Blowjob",
+                            "theText": [ "",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Stop trying to make us part so soon.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'OoooOooo,♥ your dick's too haunted to escape nowwwww.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Aw,♥ don't be scared.♥ I just want to drain your balls dry.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehehe,♥ you can't escape from fate.♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehe,♥ you can't push away what you can't touch.♥'"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFree",
+                            "move": "Blowjob",
+                            "theText": [ "And pull free from the [AttackerName]'s lips and teasing tongue!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFreeComment",
+                            "move": "Blowjob",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'Curseeee youuuuu... Hehe.♥ '",
+                                      "|f|ChangeImageLayer|/|Expression|/|Spooky|n|'OoooOooo,♥ I'm still going to haunt youuuu.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hmmmm... Was I being too spooky?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Aw,♥ don't be scared.♥ I just wanted to drain your balls dry.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Hehehe,♥ you can't escape from fate.♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|Smile|n|'Parting so soon... Well, I guess I'll try again!♥'"]
+                        }
+                      ],
+  "victoryScenes": [
+            {
+                "NameOfScene": "",
+                "move": "",
+                "stance": "",
+                "includes": [ ""],
+                "theScene": [ ""
+                          ],
+                "picture": ""
+            }
+        ],
+        "pictures": [
+                      {
+                          "Name": "Body",
+                          "StartOn": "1",
+                          "AlwaysOn": "1",
+                          "IsScene": "0",
+                          "TheBody": "1",
+                          "Overlay": "No",
+                          "setXalign": "0.0",
+                          "setYalign": "0.15",
+                          "Images": [
+                            {
+                                "Name": "Base",
+                                "File": "Monsters/Ghost/Body_Ghost.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            }
+                        ]
+                      },
+                      {
+                          "Name": "Face",
+                          "StartOn": "1",
+                          "AlwaysOn": "1",
+                          "IsScene": "0",
+                          "TheBody": "0",
+                          "Overlay": "No",
+                          "setXalign": "0.0",
+                          "setYalign": "0.0",
+                          "Images": [
+                            {
+                                "Name": "Base",
+                                "File": "Monsters/Ghost/Face_Ghost_Base.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Blush",
+                                "File": "Monsters/Ghost/Face_Ghost_Blush.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            }
+                        ]
+                      },
+                      {
+                          "Name": "Expression",
+                          "StartOn": "1",
+                          "AlwaysOn": "1",
+                          "IsScene": "0",
+                          "TheBody": "0",
+                          "Overlay": "No",
+                          "setXalign": "0.0",
+                          "setYalign": "0.0",
+                          "Images": [
+                            {
+                                "Name": "Smile",
+                                "File": "Monsters/Ghost/Expression_Ghost_Smile.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Smug",
+                                "File": "Monsters/Ghost/Expression_Ghost_Smug.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Spooky",
+                                "File": "Monsters/Ghost/Expression_Ghost_Spooky.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Excited",
+                                "File": "Monsters/Ghost/Expression_Ghost_Excited.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Horny",
+                                "File": "Monsters/Ghost/Expression_Ghost_Horny.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Orgasm",
+                                "File": "Monsters/Ghost/Expression_Ghost_Orgasm.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Panic",
+                                "File": "Monsters/Ghost/Expression_Ghost_Panic.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Shocked",
+                                "File": "Monsters/Ghost/Expression_Ghost_Shocked.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Upset",
+                                "File": "Monsters/Ghost/Expression_Ghost_Upset.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            }
+                        ]
+                      }
+                    ]
+}

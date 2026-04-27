@@ -1,0 +1,317 @@
+{
+    "name": "MelcaCombatEvent",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Melody",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Cadence",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                {
+                  "NameOfScene": "Intro",
+                  "theScene": [  
+                                "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Seductive",
+                                "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "LipLick",                                                            
+                                "As the succubus duo approach with bouncy dancing movements that alluringly flaunt their graceful bodies to you, strange thumping music starts to pound and beat around you, the viscerally sensual sounds rapidly imbuing the atmosphere with heart-racing primal eroticism."                      
+                            ]
+                },
+
+
+
+                {
+                  "NameOfScene": "EndOfRound",
+                  "theScene": [  
+                                "EncounterSizeGreaterOrEqualTo", "2", "CheckSexMakeout"                     
+                            ]
+                },
+                    {
+                      "NameOfScene": "CheckSexMakeout",
+                      "theScene": [  
+                                    "IfMonsterHasStance", "Sex", "CheckSex" 
+                                ]
+                    },
+                        {
+                          "NameOfScene": "CheckSex",
+                          "theScene": [  
+                                        "IfPlayerHasStance", "Making Out", "EndMakeOut"
+                                    ]
+                        },
+                            {
+                              "NameOfScene": "EndMakeOut",
+                              "theScene": [  
+                                            "ClearStanceFromMonsterAndPlayer", "Making Out",
+                                            "[FocusedMonsterName] giggles playfully into your mouth before gently breaking the ongoing makeout session with a parting smack of her lips, leaning away from you not in order to give you a break, but to leave room for her partner to get at you in turn!"
+                                        ]
+                            },
+
+               
+                {
+                  "NameOfScene": "Moxie Melody",
+                  "theScene": [    
+                                "SetPostName", " - Moxie Melody",
+                                "ChangeImageLayer", "Expression", "Wink",
+                                 "EncounterSizeGreaterOrEqualTo", "2", "TeamMoxie",    
+                                "FocusedSpeaksSkill",
+                                "SwapLineIf", "Random",
+                                  "'Aaaah.~ Aaahaaaahaaaaah.~♪' The blond-haired dancer rocks her body at a steady rhythm as she starts to sing sensually, coaxing the thumping music around you to swell and intensify, the magic-charged performance conjuring tangible musical notes that drift aerially through the air and surround her like an enchanting ethereal flock, rapidly weaving around her in an erotically charged spectacle that amplifies her enticing allure.",
+                                  "'Every note a melody.♪' The blond-haired dancer rocks her body at a steady rhythm as she starts to sing sensually, coaxing the thumping music around you to swell and intensify, the magic-charged performance conjuring tangible musical notes that drift aerially through the air and surround her like an enchanting ethereal flock, rapidly weaving around her in an erotically charged spectacle that amplifies her enticing allure.",  
+                                  "'Lose yourself to the music.♪' The blond-haired dancer rocks her body at a steady rhythm as she starts to sing sensually, coaxing the thumping music around you to swell and intensify, the magic-charged performance conjuring tangible musical notes that drift aerially through the air and surround her like an enchanting ethereal flock, rapidly weaving around her in an erotically charged spectacle that amplifies her enticing allure.",    
+                                "EndLoop",
+                                "ApplyStatusEffectToMonster", "MoxieMelody",    
+                                "SetPostName", ""                                        
+                            ]
+                },
+                      {
+                        "NameOfScene": "TeamMoxie",
+                        "theScene": [ "FocusedSpeaksSkill", 
+                                      "SwapLineIf", "Random",
+                                        "'Aaaah.~ Aaahaaaahaaaaah.~♪' The blond-haired dancer rocks her body at a steady rhythm as she starts to sing sensually, coaxing the thumping music around you to swell and intensify, the magic-charged performance conjuring tangible musical notes that drift aerially through the air and surround the duo like an enchanting ethereal flock, rapidly weaving around them in an erotically charged spectacle that amplifies their enticing allure.",  
+                                        "'Every note a melody.♪' The blond-haired dancer rocks her body at a steady rhythm as she starts to sing sensually, coaxing the thumping music around you to swell and intensify, the magic-charged performance conjuring tangible musical notes that drift aerially through the air and surround the duo like an enchanting ethereal flock, rapidly weaving around them in an erotically charged spectacle that amplifies their enticing allure.",  
+                                        "'Lose yourself to the music.♪' The blond-haired dancer rocks her body at a steady rhythm as she starts to sing sensually, coaxing the thumping music around you to swell and intensify, the magic-charged performance conjuring tangible musical notes that drift aerially through the air and surround the duo like an enchanting ethereal flock, rapidly weaving around them in an erotically charged spectacle that amplifies their enticing allure.",  
+                                      "EndLoop",
+                                      "FocusOnMonster", "1", "ApplyStatusEffectToMonster", "MoxieMelody",    
+                                      "FocusOnMonster", "2", "ApplyStatusEffectToMonster", "MoxieMelody",  
+                                      "SetPostName", ""          
+                                  ]
+                      },
+                {
+                  "NameOfScene": "Celerity Cadence",
+                  "theScene": [    
+                                "SetPostName", " - Celerity Cadence",
+                                "ChangeImageLayer", "Expression", "Wink",
+                                 "EncounterSizeGreaterOrEqualTo", "2", "TeamCelerity",
+                                "FocusedSpeaksSkill",
+                                "SwapLineIf", "Random",
+                                  "'Aaaah.~ Aah-aah-aah-aaaah.~♪' The white-haired dancer energetically sways and prances in place, quickly weaving her hands to draw your eyes along her bouncing body as she sings rapidly in an erratic, erotically charged rhythm, making the thumping music around you spike and tense in time with her words, a vivid flurry of tangible musical notes weaving around her in a frantic accelerating march!",
+                                  "'Let's kick this up a notch.♪' The white-haired dancer energetically sways and prances in place, quickly weaving her hands to draw your eyes along her bouncing body as she sings rapidly in an erratic, erotically charged rhythm, making the thumping music around you spike and tense in time with her words, a vivid flurry of tangible musical notes weaving around her in a frantic accelerating march!",
+                                  "'A captivating cadence.♪' The white-haired dancer energetically sways and prances in place, quickly weaving her hands to draw your eyes along her bouncing body as she sings rapidly in an erratic, erotically charged rhythm, making the thumping music around you spike and tense in time with her words, a vivid flurry of tangible musical notes weaving around her in a frantic accelerating march!",
+                                "EndLoop",                              
+                                "ApplyStatusEffectToMonster", "CelerityCadence",    
+                                "SetPostName", ""                                        
+                            ]
+                },
+                      {
+                        "NameOfScene": "TeamCelerity",
+                        "theScene": [ "FocusedSpeaksSkill", 
+                                      "SwapLineIf", "Random",
+                                        "'Aaaah.~ Aah-aah-aah-aaaah.~♪' The white-haired dancer energetically sways and prances in place, quickly weaving her hands to draw your eyes along her and her partner's bouncing bodies as she sings rapidly in an erratic, erotically charged rhythm, making the thumping music around you spike and tense in time with her intonations, a vivid flurry of tangible musical notes weaving around the duo in a frantic accelerating march!",
+                                        "'Let's kick this up a notch.♪' The white-haired dancer energetically sways and prances in place, quickly weaving her hands to draw your eyes along her and her partner's bouncing bodies as she sings rapidly in an erratic, erotically charged rhythm, making the thumping music around you spike and tense in time with her intonations, a vivid flurry of tangible musical notes weaving around the duo in a frantic accelerating march!",
+                                        "'A captivating cadence.♪' The white-haired dancer energetically sways and prances in place, quickly weaving her hands to draw your eyes along her and her partner's bouncing bodies as she sings rapidly in an erratic, erotically charged rhythm, making the thumping music around you spike and tense in time with her intonations, a vivid flurry of tangible musical notes weaving around the duo in a frantic accelerating march!",
+                                      "EndLoop",    
+                                      "FocusOnMonster", "1", "ApplyStatusEffectToMonster", "CelerityCadence",    
+                                      "FocusOnMonster", "2", "ApplyStatusEffectToMonster", "CelerityCadence",  
+                                      "SetPostName", ""          
+                                  ]
+                      },
+
+
+                {
+                  "NameOfScene": "MelCaShowTime",
+                  "theScene": [    
+                                "EncounterSizeGreaterOrEqualTo", "2", "DuoAvalibilityCheck", 
+                                "JumpToScene", "JustAttack"                                              
+                            ]
+                },
+                        {
+                          "NameOfScene": "DuoAvalibilityCheck",
+                          "theScene": [    
+                                        "FocusOnMonster", "1", "IfMonsterHasStatusEffect", "Stun", "Restrain", "Sleep", "JustAttack", "IfMonsterHasStance", "Any", "JustAttack",
+                                        "FocusOnMonster", "2", "IfMonsterHasStatusEffect", "Stun", "Restrain", "Sleep", "JustAttack", "IfMonsterHasStance", "Any", "JustAttack",
+
+                                        "JumpToScene", "Synchronized Show"
+                                    ]
+                        },
+                         {
+                          "NameOfScene": "JustAttack",
+                          "theScene": [    
+                                       "RefocusOnInitialMonster",
+                                       "CallMonsterAttack"                                                       
+                                    ]
+                        }, 
+
+                          {
+                            "NameOfScene": "Synchronized Show",
+                            "theScene": [      
+                                          "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Seductive",
+                                          "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Seductive",
+                                          "RefocusOnInitialMonster",
+                                          "SpeakSkill", "Melody & Cadence - Synchronized Show",
+                                          "SwapLineIf", "Random",
+                                            "'Don't blink.♥♪' The duo smile seductively as they move their bodies in perfect hip-shaking unison in time with the thumping beat of the entrancing music, taking advantage of your weakening willpower to put on a prolonged show for your eyes only, every bounce and jiggle of their sexy curves growing increasingly impossible to ignore while their singing words weave around your thoughts...",
+                                            "'Showtime!♪♥' The duo smile seductively as they move their bodies in perfect hip-shaking unison in time with the thumping beat of the entrancing music, taking advantage of your weakening willpower to put on a prolonged show for your eyes only, every bounce and jiggle of their sexy curves growing increasingly impossible to ignore while their singing words weave around your thoughts...",
+                                            "'Enjoy.♪♥' The duo smile seductively as they move their bodies in perfect hip-shaking unison in time with the thumping beat of the entrancing music, taking advantage of your weakening willpower to put on a prolonged show for your eyes only, every bounce and jiggle of their sexy curves growing increasingly impossible to ignore while their singing words weave around your thoughts...",
+                                          "EndLoop",
+                                          "Menu",
+                                            "Try to get a hold of yourself!",
+                                            "Watch...",
+                                          "EndLoop"                                          
+                                      ]
+                          },
+                                {
+                                    "NameOfScene": "Try to get a hold of yourself!",
+                                    "theScene": [
+                                                  "StatCheck",
+                                                  "Temptation", "25",  
+                                                  "Resisted!",
+                                                  "Fail",
+                                                  "CantResist"
+                                              ]
+                                },
+                                      {
+                                          "NameOfScene": "Resisted!",
+                                          "theScene": [
+                                                        "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "LipLick",
+                                                        "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "LipLick",
+                                                        "RefocusOnInitialMonster",
+                                                        "HitPlayerWith", "Aural Aria",
+                                                        "With a great effort of will, you manage to shake off the worst of the intoxicating captivation, but not before you're treated to a mesmerizing eyeful and earful of the duo's sinfully swaying silhouettes along with their addictively melodic cooing and kissing, the delightful display magically dancing across your senses like a cortege of harmonious ethereal caresses despite the distance.[DamageToPlayer]"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "CantResist",
+                                          "theScene": [
+                                                        "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "LipLick",
+                                                        "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "LipLick",
+                                                        "But you're far too captivated and enamored by the duo to stop watching, your lust-glazed eyes continuing to fixedly stare ahead while the lascivious ladies giggle and lick their lips in ravenous  your helpless surrender...♥",
+                                                        "JumpToScene", "Watch..."
+                                                    ]
+                                      },
+                                          {
+                                              "NameOfScene": "Watch...",
+                                              "theScene": [
+                                                            "JumpToRandomScene",
+                                                              "Default",
+                                                            "EndLoop"  
+                                                        ]
+                                          },
+                                          {
+                                            "NameOfScene": "Default",
+                                            "theScene": [      
+                                                          "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Tease",        
+                                                          "HitPlayerWith", "Aural Aria",                                                  
+                                                          "SpeakSkill", "Melody - Synchronized Show",
+                                                          "SwapLineIf", "Random",
+                                                            "Every pendulous shake of the succubi's hips and tits seems to charmingly pulse right into your head, their tails playfully flicking back and forth in unison as they shamelessly flaunt their bouncing assets to the erotic beat, every pursing and smacking of their sweet lips sending a warm coo or smooch across your ears, all the while their sensually engrossing lyrics dance through your senses...[DamageToPlayer]",
+                                                          "EndLoop",
+                                                          "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Tease",
+                                                          "HitPlayerWith", "Aural Aria",
+                                                          "SpeakSkill", "Cadence - Synchronized Show",
+                                                          "SwapLineIf", "Random",
+                                                            "Before long, your wantonly erect cock is eagerly twitching in time to their movements as you get dragged deeper and deeper into their seductive rhythm, leaving you indulgently watching them sway their hips and erotically wiggle their waists to showcase every bit of their demonic allure to you.[DamageToPlayer]",
+                                                          "EndLoop",
+                                                          "ApplyStatusEffect", "SynchronizedShowEffect",        
+                                                          "Then, as they finish things off with a teasing kiss-blowing pose that sends a perfectly unified smooch to your ears, you're left panting and shivering in lustful aural bliss, struggling to get a grip on yourself after their intoxicating show, your mind so wonderfully melted and dizzy with arousal that it's making it feel oh so tempting to just {i}give in{/i} to the duo's lecherous temptations...",
+                                                          "IfPlayerOrgasm", "MelCaShowTimeOrgasm"
+                                                      ]
+                                          },
+
+
+
+                {
+                "NameOfScene": "MelCaShowTimeOrgasm",
+                "theScene": [    
+                              "JumpToRandomScene",
+                                "UpCloseAndPersonal",
+                                "HandsFreeFinisher",
+                              "EndLoop"                                            
+                          ]
+                },       
+                      {
+                      "NameOfScene": "UpCloseAndPersonal",
+                      "theScene": [    
+                                    "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "LipLick",  
+                                    "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "LipLick",
+                                    "Seeing you left dazedly teetering on the brink of climax after their unified euphoria-inducing show, the lascivious succubus duo showily strut up to you and smoothly sandwich you between their curvy bodies, both of them letting out a hot breathy coo directly into your ears while they reach down to gently grab hold of your wantonly trembling erection and languidly jerk it in slow, skillful pumps.",
+                                    "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Tease",                                              
+                                    "Speak", "Melody",
+                                    "Ehehehe.~♥ You enjoyed our show {i}so much{/i} you can't even think straight anymore, huh, handsome?♥",
+                                    "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Tease",
+                                    "Speak", "Cadence",
+                                    "But we're not done yet, no no.♪~ We're going to give you {i}plenty{/i} of repeat performances...♥ Are you feeling excited?♥",
+                                    "Their sweet murmurs interspersed with sultry giggles, they hotly whisper intimately close to you, their crooning voices echoing and dancing between both of your ears while they press their breasts against your sides and speed up their perfectly beat-synced strokes to your leaking erection, rapidly overstimulating your already blissed-out brain with constant, overlapping waves of pleasure.",
+                                    "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Smile",                                              
+                                    "Speak", "Melody",
+                                    "You love this, don't you?♥♪",
+                                    "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Smile",                                              
+                                    "Speak", "Cadence",
+                                    "Love it sooooo so so much.♥♪",
+                                    "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Seductive",  
+                                    "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Seductive",
+                                    "Speak", "Melody and Cadence",
+                                    "So come on.♪ Come on.~♪ Don't hold back.♪ Spurt♥ it♥ out.♥",
+                                    "With languorous relentlessness, their musical voices and dancing hands keep assaulting you with warm ecstasy, their unified cooing words and stroking fingers perfectly timed to the music as they stoke your lust hotter and hotter, until it reaches a breaking point and sets off the building pressure inside you, leaving your hips jerking thoughtlessly into their grasp while everything goes blank in a euphoric wave of searing climax.",
+                                    "PlayerOrgasm", "2",
+                                    "With a woozy cry of surrender, you gladly let yourself go over the edge under their erotic guidance, your twitching manhood spurting rope after rope of cum for the succubus duo, their tender touches and whispers dragging out your orgasm to an impossibly luxurious length the better to keep you on cloud nine for as long as possible, ensuring you enjoy your melodic high for all it's worth.[PlayerOrgasmLine]",
+                                    "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Smile",  
+                                    "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Smile",
+                                    "Then, as you go limp in their conjoined embrace, they gradually ease your still rigid cock into wonderful post-orgasmic indulgence with slow gentle pumps while giving light soothing smooches to your vulnerable ears, keeping the wonderful tingles of your intoxicating afterglow dancing across every part of your body, ensuring you get the full course of their enchanting ministrations.",
+                                    "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "TeaseWink",  
+                                    "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "TeaseWink",
+                                    "But eventually, once the oozing heat of your splendid climax starts to clear, the twin-like performers stylishly twirl away from you in order to let you finish recovering while they strike a fetchingly tempting pose, winking at you while alluringly pressing their curvy bodies together.",
+                                    "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Wink",  
+                                    "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Wink",
+                                    "Speak", "Melody and Cadence",
+                                    "Ready for the encore?♪♥"
+                                ]
+                      },  
+                      {
+                      "NameOfScene": "HandsFreeFinisher",
+                      "theScene": [    
+                                    "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "LipLick",  
+                                    "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "LipLick",
+                                    "Following the playful pair's erotically showstopping display, you're left helplessly trembling in pleasure, the sensation of their final unified smooch and captivatingly swaying bodies still echoing in your head and across your senses, leaving you with a messy expression of euphoria stuck to your face while your dick keeps excitedly leaking and twitching on the brink of an unmistakable climax.",
+                                    "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Tease",                                              
+                                    "Speak", "Melody",
+                                    "Hehehe, what nice enthusiasm...♪ Looks like you want to become our biggest fan, hm?♥",
+                                    "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Tease",
+                                    "Speak", "Cadence",
+                                    "And we'd {i}never{/i} let a fan down...♪ So you can be sure we won't leave you wanting, you shameless boy.♥",
+                                    "As they speak in charmingly singsong tones, their lecherous words seem to pour directly into your vacant mind, as though their soft mouths were right next to your ears, leaving you utterly captivated as they resume swaying and shaking their obscene succubus bodies back and forth for your viewing enjoyment while they continue sweet-talking in perfect harmonious unison.",
+                                    "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Seductive",  
+                                    "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Seductive",
+                                    "Speak", "Melody and Cadence",
+                                    "Feel it building and building...♥ That wonderful orgasmic tension...♥ {i}Mmmhhwah.~♥{/i} Until you're set to burst.~♥ Get blissfully lost in bouncing,♥ swaying,♥ dizzying sweetness,♥ your melted brain mindlessly begging for more and more of our shameless show...♥",
+                                    "Their perfectly clear, lasciviously lulling lyrics coil all over your captivated senses along with the thumping of the music and the sensually charged shaking of their bodies, keeping you locked in a charmed-silly state of rising euphoria, your eyes unresistingly following their marvelous movements as they instill your head with perverted ogling ecstasy, filling all of you with simmering, bubbling lust...",
+                                    "PlayerOrgasm", "2",
+                                    "Until that climactic heat finally boils over in an explosive spurt of cum, the rapture of your orgasmic release accompanying that of your shameless ogling and listening, the performing partners' aural assault smoothly continuing to pour into you, and in turn making your ejaculation longer and messier as they keep you hopelessly lost in their enthralling rhythm.[PlayerOrgasmLine]",
+                                    "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Smile",  
+                                    "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Smile",
+                                    "Then, as the sexy show slowly winds down and you thoughtlessly relax into a sumptuous afterglow, sloppily panting in a dizzy haze of pleasure, the duo giggle in sweet satisfaction and eye you up patiently as they wait for you to regain your bearings, cheerfully putting on a show as they join hands and lean down to inquire in cooing voices.",
+                                    "FocusOnMonster", "2", "ChangeImageLayer", "Expression", "Wink",  
+                                    "FocusOnMonster", "1", "ChangeImageLayer", "Expression", "Wink",
+                                    "Speak", "Melody and Cadence",
+                                    "Ready to go again, dear number one fan?♪♥"
+                                ]
+                      },                    
+
+
+ 
+                      
+
+
+                
+                {
+                  "NameOfScene": "DoNothing",
+                  "theScene": [  
+                              
+                            ]
+                },
+                {
+                  "NameOfScene": "EventBroke",
+                  "theScene": [  
+                                "Oopsie woopsie the event broke!"                              
+                            ]
+                }              
+
+                ]
+}

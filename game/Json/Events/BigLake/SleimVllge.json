@@ -1,0 +1,1391 @@
+{
+    "name": "SleimVllge",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Blue Slime",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Perpetua",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Sleim Shoppe Slime",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Silver",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "???",
+                    "postName": "",
+                    "SpeakerType": "?"
+                  },
+                  {
+                    "name": "Harpy",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [ "ChangeBG", "Lake.png",
+                                      "Guided by the Slime Badge, you return to the small, verdant flower filled clearing surrounded by trees, and head down the pathway leading towards a huge glimmering lake undulating with gentle windswept waves, giving you time to bask in the pristine sights and fresh air. Taking a moment to enjoy the picturesque view of the lake, the circular outcropping of water edged by beaches and surrounded by plentiful berry bushes.",
+                                      "SetChoice", "4", "",
+                                      "CallSceneThenReturn", "ProgressAdvancesCheck",
+                                      "IfChoice", "4", "NoticePerpoAndSilver", "NoticePerpoAndSilver",
+                                      "IfChoice", "4", "FishingGearGet", "FishingGearGetEvent",
+                                      "IfChoice", "4", "LandingPadGet", "LandingPadGetEvent",
+                                      "JumpToRandomScene",
+                                          "NormalSign",
+                                          "NormalSign",
+                                          "MessySign",
+                                          "MessySign",
+                                          "SliemSliemTown",
+                                          "LazySlimeSign",
+                                          "BlueSign",
+                                          "SleimopolisSign",
+                                          "RequiresChoiceFromEvent", "Approach the Capital...", "7", "CapitalIntroDone",
+                                          "PerpetuaSign",
+                                          "RequiresChoiceFromEvent", "Approach the Capital...", "7", "CapitalIntroDone",
+                                          "PerpetuaSign",
+                                          "RequiresChoiceFromEvent", "Approach the Capital...", "7", "CapitalIntroDone",
+                                          "PerpetuaSign",
+                                          "RequiresChoice", "6", "FishingGear",
+                                          "FishySign",
+                                          "RequiresChoiceFromEvent", "BubbleSlimeAdventure", "1", "BubbleGet",
+                                          "GreenSign",
+                                      "EndLoop"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "_Nothing",
+                                "theScene": [
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "ProgressAdvancesCheck",
+                                "theScene": [
+                                              "IfChoice", "5", "", "PerpoEventCheck",
+                                              "IfChoice", "6", "", "FishingGearGetCheck",
+                                              "IfChoice", "7", "", "LandingPadGetCheck"
+                                          ]
+                            },
+                                    {
+                                        "NameOfScene": "PerpoEventCheck",
+                                        "theScene": [
+                                                      "GetEventAndIfChoice", "PerpetuaHouse", "2", "Lair", "SilverPerpoMoniChek",
+                                                      "GetEventAndIfChoice", "PerpetuaHouse", "3", "BlueSlimes", "SilverPerpoMoniChek",
+                                                      "GetEventAndIfChoice", "PerpetuaHouse", "7", "Goals", "SilverPerpoMoniChek",
+                                                      "GetEventAndIfChoice", "PerpetuaHouse", "8", "SchemeTalk", "SilverPerpoMoniChek"
+                                                  ]
+                                    },
+                                      {
+                                          "NameOfScene": "SilverPerpoMoniChek",
+                                          "theScene": [
+                                                        "IfProgressEqualsOrGreater", "100", "TogglePerpoSilverNotice"
+                                                    ]
+                                      },
+                                          {
+                                              "NameOfScene": "TogglePerpoSilverNotice",
+                                              "theScene": [
+                                                            "SetChoice", "4", "NoticePerpoAndSilver"
+                                                        ]
+                                          },
+                                              {
+                                                  "NameOfScene": "NoticePerpoAndSilver",
+                                                  "theScene": [
+                                                                  "Exiting the pathway to approach the pool, you pass by a crude wooden sign 'painted' in blue slime, messily reading 'Sleim Vllge', and enter into the secret town of slimes, where you can see many blue slimes going about their day. However, among the wobbling sea of blueberry-colored shapes, you spot the cherry-red one of Perpetua... who seems to be chatting with the Sleim Shoppe's owner?",
+                                                                  "JumpToScene", "PostSign"
+                                                            ]
+                                              },
+                              {
+                                  "NameOfScene": "FishingGearGetCheck",
+                                  "theScene": [
+                                                "IfProgressEqualsOrGreater", "2500", "FishingGearGetSet"
+                                            ]
+                              },
+                                        {
+                                            "NameOfScene": "FishingGearGetSet",
+                                            "theScene": [
+                                                          "SetChoice", "4", "FishingGearGet"
+                                                      ]
+                                        },
+                                              {
+                                                  "NameOfScene": "FishingGearGetEvent",
+                                                  "theScene": [ "ChangeProgress", "-2500",
+                                                                "SetChoice", "6", "FishingGear",
+                                                                "SetChoice", "4", "",
+                                                                "Exiting the pathway to approach the pool, you pass by a crude wooden sign 'painted' in blue slime, messily reading 'Sleim Vllge', and enter into the secret town of slimes, where you can see many gooey girls going about their day... But your attention is rapidly drawn instead to an uncommon sound of... rushing wind-?",
+                                                                "DisplayCharacters",
+                                                                  "6",
+                                                                  "6",
+                                                                  "6",
+                                                                "EndLoop",
+                                                                "ChangeImageLayer", "Expression", "1", "Panic", "ChangeImageLayer", "Expression", "2", "Panic", "ChangeImageLayer", "Expression", "3", "Panic",
+                                                                "Turning towards the source of the sharp whooshing noise, you're immediately met with the striking vision of three harpies hurtling towards you at disconcerting speeds, a large wooden crate held in their powerful talons!",
+                                                                "Speak", "Harpy 1",
+                                                                "That's not the landing pad!!!! That's a PERSON!",
+                                                                "Speak", "Harpy 2",
+                                                                "Pull up!",
+                                                                "Speak", "Harpy 3",
+                                                                "We're sorrrryyyyyyy!!!!!!",
+                                                                "Seemingly unperturbed, the nearby slimes look over to the commotion with a curious wobble, while the trio of bird women helplessly carry on their collision course, until a unified flap and perhaps a bit of ducking from you fortunately saves you from becoming target practice for a crate battering ram.",
+                                                                "Huffing in effort, the harpies lift up into the air, drifting forth a bit more before eventually fluttering down with a collapsing sigh of relief, the surrounding carefree slimes cheerfully clapping at their performance.",
+                                                                "ChangeImageLayer", "Expression", "1", "Lewd", "ChangeImageLayer", "Expression", "2", "Lewd", "ChangeImageLayer", "Expression", "3", "Lewd",
+                                                                "While you and the bird women are recollecting yourselves after the near accident, one of the blue slimes, whom you're pretty sure is Silver, scoots over to the trio of delivery girls, prompting you to pick yourself up and get close enough to hear her speak.",
+                                                                "DisplayCharacters",
+                                                                  "1",
+                                                                  "6",
+                                                                  "6",
+                                                                  "6",
+                                                                "EndLoop",
+                                                                "ChangeImageLayer", "Expression", "2", "Lewd", "ChangeImageLayer", "Expression", "3", "Base", "ChangeImageLayer", "Expression", "4", "Excited",
+                                                                "Speak", "Silver",
+                                                                "Henlo, delivery for fishing stuff, yes?",
+                                                                "ChangeImageLayer", "Expression", "2", "Panic",
+                                                                "Speak", "Harpy 1",
+                                                                "Where- Where was the landing pad?! Delivery point!?",
+                                                                "ChangeImageLayer", "Expression", "1", "Smile",
+                                                                "Speak", "Silver",
+                                                                "Don't have. Espensive.",
+                                                                "ChangeImageLayer", "Expression", "3", "Embarrassed",
+                                                                "Speak", "Harpy 2",
+                                                                "Y-Your town should consider getting one if you plan on getting more orders...",
+                                                                "ChangeImageLayer", "Expression", "2", "Clueless",
+                                                                "Speak", "Harpy 1",
+                                                                "Yeah, at least draw a big X in red paint... Or blue paint, I guess?",
+                                                                "Speak", "Harpy 3",
+                                                                "Who cares!♪ Crashless record persists another day!♪",
+                                                                "The whooping harpy proudly lifts a wing for a high-five, but her nonplussed companions sadly leave her hanging while Silver shrugs and once more responds equanimously.",
+                                                                "ChangeImageLayer", "Expression", "1", "Excited",
+                                                                "Speak", "Silver",
+                                                                "Town will get when can afford. The goods are good, yes?",
+                                                                "ChangeImageLayer", "Expression", "2", "Base",
+                                                                "ChangeImageLayer", "Expression", "3", "Base",
+                                                                "Speak", "Harpy 1",
+                                                                "Oh, right.",
+                                                                "The trio of harpies let go of the box's handles, and a myriad of blue slimes, plus yourself, watch in curiosity as one of the bird women hooks a talon into a slot, triggering a click as a mechanism unlocks. Then, with a bit of effort from the three of them, the crate's top opens, revealing a glimmering shine of fishing poles and assorted brand-new fishing paraphernalia, neatly sorted for all to see.",
+                                                                "Speak", "Slime 1",
+                                                                "Ohhh...!",
+                                                                "Speak", "Slime 2",
+                                                                "We can fish with the fisher slime now if we wanna!",
+                                                                "Speak", "Slime 3",
+                                                                "Yey.♪ Seafoam can't act all aloof now!",
+                                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                "Speak", "Silver",
+                                                                "Ver gud.",
+                                                                "ChangeImageLayer", "Expression", "2", "Embarrassed",
+                                                                "Speak", "Harpy 1",
+                                                                "Well, enjoy your purchase! We need to head back and confirm the successful delivery!",
+                                                                "Speak", "Harpy 2",
+                                                                "Have fun everyone!♪",
+                                                                "Speak", "Harpy 3",
+                                                                "Seeya!!!♪",
+                                                                "DisplayCharacters",
+                                                                  "1",
+                                                                "EndLoop",
+                                                                "And with that, the trio take to the sky once more with a fluttering feathery flap that sends them majestically careening back into the air before they fly off towards the mountains, leaving the slimes eagerly crowding the box, though Silver promptly orders them into neat lines to haul all the stuff down to the beach bit by bit.",
+                                                                "Once everyone has gotten their instructions and is moving cheerfully on their way, humming a happy tune, Silver scoots over to you with a smile.",
+                                                                "ChangeImageLayer", "Expression", "1", "Excited",
+                                                                "Speak", "Silver",
+                                                                "Good time for arrive, [ThePlayerName]! We now have fish poles and stuff. Should help with monies. And new fun activity.",
+                                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                "She wobbles in place with a satisfied little laugh, seeming quite happy at this first step towards the Sleim Vllge Renovation Plan.",
+
+                                                                "ChangeImageLayer", "Expression", "1", "Smile",
+                                                                "Speak", "Silver",
+                                                                "We need fishies and things to help with getting people to move in. Is what Petua said. Moremerchandisemorebusinessmorepeoplebettereconomyye? So be sure to try out fishing at beach with others.",
+                                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                "Speak", "Silver",
+                                                                "Or just buy them from trusty Sleim Shoppe if you lazi. We have stock soon.",
+                                                                "DisplayCharacters",
+                                                                "EndLoop",
+                                                                "With that, she gives you a pat of thanks and scoots her way back to her store while you warily peer off to the beach at the line of slimes laden with fishing supplies, who are soon directed by a slime toting an aged fishing rod on where to store them and what to do with them... A number of slimes quickly get bored and wander off to do something else, but a few curiously stick around before heading off to the rocks to try fishing...",
+                                                                "JumpToScene", "PostSign"
+                                                            ]
+                                              },
+                                    {
+                                        "NameOfScene": "LandingPadGetCheck",
+                                        "theScene": [
+                                                      "IfProgressEqualsOrGreater", "10000", "LandingPadGetSet"
+                                                  ]
+                                    },
+                                              {
+                                                  "NameOfScene": "LandingPadGetSet",
+                                                  "theScene": [
+                                                                "SetChoice", "4", "LandingPadGet"
+                                                            ]
+                                              },
+                                              {
+                                                  "NameOfScene": "LandingPadGetEvent",
+                                                  "theScene": [ "ChangeProgress", "-10000",
+                                                                "SetChoice", "7", "LandingPad",
+                                                                "SetChoice", "4", "",
+                                                                "Exiting the pathway to approach the pool, you pass by a crude wooden sign 'painted' in blue slime, messily reading 'Sleim Vllge', and enter into the secret town of slimes, where you can see many gooey girls going about their day... But your gaze is quickly caught by the sight of something out of the ordinary.",
+                                                                "DisplayCharacters",
+                                                                  "6",
+                                                                  "1",
+                                                                  "6",
+                                                                  "1",
+                                                                  "6",
+                                                                  "1",
+                                                                "EndLoop",
+                                                                "Off to a heavily tree-laden side of the village, you see a group of harpies and slimes working together to erect what looks to be a kind of... treehouse? Nest? Roost? A myriad of wooden planks, boxes, straw, and more have been piled, nailed, glued, and roped together with what comes across as surprising skill once you're past the initial helter-skelter impression... Is this what you call 'organized chaos'?",
+                                                                "DisplayCharacters",
+                                                                  "6",
+                                                                  "1",
+                                                                "EndLoop",
+                                                                "As you approach, it becomes apparent that the monster girls are more or less done with the assembly, and you notice a new, cleanly-made sign of smooth wood nearby that reads 'Harpy Landing Pad' in stylishly carved writing. While you observe the construction, most of the slimes and harpies scatter after cheery goodbyes, leaving one bird woman happily perched on one of the pad's stands, chatting with a slime.",
+                                                                "ChangeImageLayer", "Expression", "1", "Embarrassed", "ChangeImageLayer", "Expression", "2", "Smile",
+                                                                "They both curiously look to you as you continue to thoughtfully investigate the site, and the slime, whom you realize must be Silver, greets you while the harpy lets out a mildly startled chirp, suddenly looking embarrassed.",
+                                                                "Speak", "Silver",
+                                                                "Ohhi[ThePlayerName]! Landing pad all dun. Newitemsinstockatshoppe. Buynowwhilestockslast!",
+                                                                "ChangeImageLayer", "Expression", "2", "Happy",
+                                                                "While she proudly thrusts out her chest, the winged monster girl gives you a meek feathery wave.",
+                                                                "ChangeImageLayer", "Expression", "1", "Excited Blush",
+                                                                "Speak", "Harpy",
+                                                                "Uhhh- Hi! ...You're the guy we almost hit with a box before, huh... Well-! That's a thing of the past now that we have a proper place to drop stuff off and rest!",
+                                                                "Speak", "Silver",
+                                                                "Ye. Much improved trade route, manynewgoods. Veryveryexciting.",
+                                                                "ChangeImageLayer", "Expression", "1", "Base",
+                                                                "Speak", "Harpy",
+                                                                "Yup! ...Though for an adventurer, I guess there won't be much to do here. It's just a goods drop-off point, really.",
+                                                                "ChangeImageLayer", "Expression", "2", "Excited",
+                                                                "Speak", "Silver",
+                                                                "Maybegoodfororders. But more important, basicinfrastructureforimprovingSleimVllgeisready!",
+                                                                "ChangeImageLayer", "Expression", "1", "Clueless",
+                                                                "You're having a bit of a hard time parsing Silver's fast-paced excited chatter, and the harpy seems to be getting lost herself, her eyes glazing over a bit while the slime keeps going on unconcernedly, counting on her fingers.",
+                                                                "ChangeImageLayer", "Expression", "2", "Smile",
+                                                                "Speak", "Silver",
+                                                                "Now, for proper houses, all that's needed is... 150 Planks of Wood, 50 Bricks, 50 Blue Slime Blobs, 20 Red Slime Blobs, 25 Bundles of Blueberries, 25 Cotton Fluffs, 100 Alraune Nectars, 35 Arachne Webbings, 10 Harpy Feathers, and either a Dragon Trout or Dream Eel. Be big quest...",
+                                                                "ChangeImageLayer", "Expression", "2", "Smug", "ChangeImageLayer", "Expression", "1", "Embarrassed",
+                                                                "Speak", "Silver",
+                                                                "...So it a good thing we already have all of that.",
+                                                                "ChangeImageLayer", "Expression", "2", "Happy",
+                                                                "Speak", "Silver",
+                                                                "Now just need 15000 more Eros, and at least one new slime moved in...",
+                                                                "ChangeImageLayer", "Expression", "1", "Base",
+                                                                "Seeming to have decided that she's out of her depth, the harpy has mostly tuned out, but still cheerfully chimes in in the middle of preening herself.",
+                                                                "Speak", "Harpy",
+                                                                "Well, good luck with that! The Harpy Village Trade Network will be here to help as best we can.",
+                                                                "ChangeImageLayer", "Expression", "2", "Base",
+                                                                "Speak", "Silver",
+                                                                "Ye. Expensive, but needed. Fish big help in negotiations, too!",
+                                                                "ChangeImageLayer", "Expression", "1", "Excited",
+                                                                "Speak", "Harpy",
+                                                                "Oh yeah, totally! We've never had this much fish variety before! It's great!♪",
+                                                                "ChangeImageLayer", "Expression", "2", "Happy",
+                                                                "Silver nods contently at that, then glances at the sky, seeming to note the time and taking a very important look as she addresses you.",
+                                                                "ChangeImageLayer", "Expression", "1", "Base",
+                                                                "ChangeImageLayer", "Expression", "2", "Smug",
+                                                                "Speak", "Silver",
+                                                                "Well, I need to get back to shoppe. Makesureinventoryisinorder. Lots new. Be sure to come see, [ThePlayerName]! Alwayspleasuredoingbusinesswithyou.",
+                                                                "DisplayCharacters",
+                                                                  "6",
+                                                                "EndLoop",
+                                                                "And with that, Silver scoots away, leaving you and the harpy alone.",
+                                                                "ChangeImageLayer", "Expression", "1", "Excited",
+                                                                "You spend some more time chatting with her and asking her about the Harpy Landing Pad, then head back to the village proper once your curiosity has been sated, exchanging a cheerful goodbye wave with the delivery monster girl.",
+                                                                "DisplayCharacters",
+                                                                "EndLoop",
+                                                                "JumpToScene", "PostSign"
+                                                            ]
+                                              },
+
+
+
+                          {
+                              "NameOfScene": "NormalSign",
+                              "theScene": [
+                                            "Exiting the pathway to approach the pool, you pass by a crude wooden sign 'painted' in blue slime, messily reading 'Sleim Vllge', and enter into the secret town of slimes, where you can see many blue slimes going about their day, happily splashing around or lazing at the edge of the water, stuffing themselves with blueberries, fixing up stone-and-wood structures, proudly manning the 'Sleim Shoppe', and more...",
+                                            "JumpToScene", "PostSign"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "MessySign",
+                              "theScene": [
+                                            "Exiting the pathway to approach the pool, you pass by a crude wooden sign 'painted' in blue slime, sloppily reading 'Slome Vilg', and enter into the secret town of slimes, where you can see many blue slimes going about their day, happily splashing around or lazing at the edge of the water, stuffing themselves with blueberries, fixing up stone-and-wood structures, proudly manning the 'Sleim Shoppe', and more...",
+                                            "JumpToScene", "PostSign"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "SliemSliemTown",
+                              "theScene": [
+                                            "Exiting the pathway to approach the pool, you pass by a crude wooden sign 'painted' in blue slime, eloquently reading 'Sleim Sliem Tonw', and enter into the secret town of slimes, where you can see many blue slimes going about their day, happily splashing around or lazing at the edge of the water, stuffing themselves with blueberries, fixing up stone-and-wood structures, proudly manning the 'Sleim Shoppe', and more...",
+                                            "JumpToScene", "PostSign"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "LazySlimeSign",
+                              "theScene": [
+                                            "Exiting the pathway to approach the pool, you pass by a crude wooden sign 'painted' in blue slime, with a {i}very{/i} lazily written 'Slem Tov' on it, and enter into the secret town of slimes, where you can see many blue slimes going about their day, happily splashing around or lazing at the edge of the water, stuffing themselves with blueberries, fixing up stone-and-wood structures, proudly manning the 'Sleim Shoppe', and more...",
+                                            "JumpToScene", "PostSign"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "BlueSign",
+                              "theScene": [
+                                            "Exiting the pathway to approach the pool, you pass by a crude wooden sign 'painted' in blue slime, reading 'Bleu Berri Beach' along with a number of messy berry stains, and enter into the secret town of slimes, where you can see many blue slimes going about their day, happily splashing around or lazing at the edge of the water, stuffing themselves with blueberries, proudly manning the 'Sleim Shoppe', and more...",
+                                            "JumpToScene", "PostSign"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "SleimopolisSign",
+                              "theScene": [
+                                            "Exiting the pathway to approach the pool, you pass by a crude wooden sign 'painted' in blue slime, cleanly reading '{i}Sleimopolis{/i}', and enter into the secret town of slimes, where you can see many blue slimes going about their day, happily splashing around or lazing at the edge of the water, stuffing themselves with blueberries, fixing up stone-and-wood structures, proudly manning the 'Sleim Shoppe', and more...",
+                                            "JumpToScene", "PostSign"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "PerpetuaSign",
+                              "theScene": [
+                                            "Exiting the pathway to approach the pool, you pass by a crude wooden sign 'painted' in red slime, spelling '{i}Sleim Vllge{/i}' in splashy cursive, and enter into the secret town of slimes, where you can see many blue slimes going about their day, happily splashing around or lazing at the edge of the water, stuffing themselves with blueberries, fixing up stone-and-wood structures, proudly manning the 'Sleim Shoppe', and more...",
+                                            "JumpToScene", "PostSign"
+                                        ]
+                          },
+                          {
+                                "NameOfScene": "FishySign",
+                                "theScene": [
+                                              "Exiting the pathway to approach the pool, you pass by a crude wooden sign 'painted' in rather flowery blue slime, spelling '{i}Sleim Vllge - Slime Fishing Capital{/i}', complete with a small doodle of a fishing rod and fish.|n|Then you enter into the secret town of slimes, where you can see many blue slimes going about their day, happily splashing around or lazing at the edge of the water, stuffing themselves with blueberries, fixing up stone-and-wood structures, proudly manning the 'Sleim Shoppe', and more...",
+                                              "JumpToScene", "PostSign"
+                                          ]
+                          },
+                          {
+                                "NameOfScene": "GreenSign",
+                                "theScene": [
+                                              "Exiting the pathway to approach the pool, you pass by a crude wooden sign sloppily 'painted' in  green goo, spelling '{i}Sleim Vll{/i}'... It looks like some of the goo has turned into bubbles and drifted off...|n|Moving on, you enter into the secret town of slimes, where you can see many blue slimes going about their day, happily splashing around or lazing at the edge of the water, stuffing themselves with blueberries, fixing up stone-and-wood structures, proudly manning the 'Sleim Shoppe', and more...",
+                                              "JumpToScene", "PostSign"
+                                          ]
+                          },
+                    {
+                        "NameOfScene": "PostSign",
+                        "theScene": [
+                                      "The gooey women give smiles and waves when they notice you, but you're fully left to go wherever you want.",
+                                      "JumpToEventThenScene", "SleimVllge", "SlomeExploreMenu"
+                                  ]
+                    },
+
+                    {
+                        "NameOfScene": "SlomeExploreMenu",
+                        "theScene": [
+                                        "Menu",
+                                          "RequiresChoice", "4", "", 
+                                          "Go to the 'Sleim Shoppe'.",
+                                          "RequiresChoice", "4", "NoticePerpoAndSilver", 
+                                          "Go to the 'Sleim Shoppe'... Perpetua's there?",
+                                          "Check out the beach.",
+                                          "Check out some of the houses.",
+                                          "RequiresChoiceFromEvent", "BubbleSlimeAdventure", "1", "",
+                                          "Go to Perpetua's house.",
+                                          "RequiresChoiceFromEvent", "BubbleSlimeAdventure", "1", "BubbleGet",
+                                          "Visit someone.",
+                                          "Eat some blueberries.",
+                                          "Leave the slime village.",
+                                        "EndLoop"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "Visit someone.",
+                                "theScene": [
+                                                "Menu",
+                                                  "Go to Perpetua's house.",
+                                                  "RequiresChoiceFromEvent", "BubbleSlimeAdventure", "1", "BubbleGet",
+                                                  "Go to Ambrosia's Orchard.",
+                                                  "RequiresChoiceFromEvent", "GhostSlimeAdventure", "3", "GhostsGet",
+                                                  "Go to the ghosts' house.",
+                                                  "Nevermind. ",
+                                                "EndLoop"
+                                          ]
+                            },
+
+
+                                  {
+                                      "NameOfScene": "Nevermind. ",
+                                      "theScene": [
+                                                      "JumpToScene", "SlomeExploreMenu"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Go to Perpetua's house.",
+                                      "theScene": [
+                                                      "JumpToEvent", "PerpetuaHouse"
+                                                ]
+                                  },
+                                  {
+                                      "NameOfScene": "Go to Ambrosia's Orchard.",
+                                      "theScene": [
+                                                      "JumpToEvent", "AmbrosiaOrchard"
+                                                ]
+                                  },
+
+                                  {
+                                    	"NameOfScene": "Go to the ghosts' house.",
+                                    	"theScene": [
+                                                    	"JumpToEvent", "GhostHouse"
+                                              	]
+                                	},
+
+                    {
+                        "NameOfScene": "Leave the slime village.",
+                        "theScene": [
+                                        "Deciding that your business at Sleim Vllge is done, you let your grimoire guide you back home, the landscape around you shifting and blurring as you move away from the picturesque lakeside clearing."
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Eat some blueberries.",
+                        "theScene": [
+                                        "ChangeEnergyQuietly", "25",
+                                        "You walk over to one of the many blueberry bushes and help yourself to a handful of juicy fruits, the delicious snack restoring 25 Energy to you! Nearby slimes come and go to enjoy a similar meal, the plentiful berry bushes providing a seemingly endless bounty.",
+                                        "Several of the slime girls idly chat in-between or even in the middle of scarfing down berries, and they are not shy about addressing you as well, providing unremarkable but restful conversation, making you feel all the more refreshed when you return to the village proper, ready to proceed with your visit.",
+                                        "JumpToScene", "SlomeExploreMenu"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Check out some of the houses.",
+                        "theScene": [
+                                        "Having a look at the ramshackle wooden huts surrounding the lake beach, you see a number of slimes using a mix of hammers, nails, and slime to bolster some of the unnervingly wobbly structures, taking note that for doorways, the simple structures seem to use cloth curtains, shell-lined veils, or other loose makeshift covers.",
+                                        "Taking a peek into one, you see that the inside isn't much better, dug down about a foot and filled with leaves and other assorted nesting material. The soft surface serves as both a floor and a common bed, each hut occupied by a varying number of slimes curled up and packed inside the hut, enjoying the darkened cooled space and the close company of their peers.",
+                                        "However, your intrusion is quickly noticed and the occupants shoo you away with exclamations of 'Occupied!', a flurry of gooey hands huffily pushing you away from the entrance amid a concerto of grumbles and complaints. You suppose it {b}was{/b} rude to barge into someone's home, even if you're not exactly sure how they decide and manage who lives where and how privacy works here...",
+                                        "JumpToScene", "SlomeExploreMenu"
+                                  ]
+                    },
+
+                    {
+                        "NameOfScene": "Check out the beach.",
+                        "theScene": ["IfTimeIs", "NightTrue", "CheckOutNight",
+                                      "SwapLineIf", "Choice",
+                                        "2", "SandCastle", "You make your way down to the beach where blankets, towels, and umbrellas dot the sands. Slimes rest either under the sun or beneath the cozy shade of umbrellas, with a few spots still vacant, some further in making castles in the sand.",
+                                        "2", "", "You make your way down to the beach where blankets, towels, and umbrellas dot the sands. Slimes rest either under the sun or beneath the cozy shade of umbrellas, with a few spots still vacant.",
+                                      "EndLoop",
+                                      "SwapLineIf", "Choice",
+                                        "6", "FishingGear", "Past this easygoing rest area, a number of slimes can be seen playing in the tranquil lake water, their activities ranging from games to simply splashing each other to lazily fishing with their hands, while a few sit over on the rocky outcropping fishing, one slime seeming to have an old fishing rod and speaking to the other attentive fisher slimes.",
+                                        "6", "", "Past this easygoing rest area, a number of slimes can be seen playing in the tranquil lake water, their activities ranging from games to simply splashing each other to lazily fishing with their hands, only one slime seeming to have an actual fishing rod.",
+                                      "EndLoop",
+                                      "JumpToScene", "BeachMenu"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "CheckOutNight",
+                                "theScene": [
+                                            "ChangeBGM", "music/Forest/Starry sky.mp3",
+                                            "SwapLineIf", "Choice",
+                                              "6", "FishingGear", "You make your way down to the moonlit, vacant beach where unoccupied blankets, towels, and umbrellas dot the darkened sands. The serene, quiet lake reflects the moon and stars back up at the sky, the unobstructed night lighting letting you spot a few curious Slimes eerily silhouetted against the water as they look at the picturesque view in almost solemn silence. You also notice a few persistent fisher Slimes on the central island.",
+                                              "6", "", "You make your way down to the moonlit, vacant beach where unoccupied blankets, towels, and umbrellas dot the darkened sands. The serene, quiet lake reflects the moon and stars back up at the sky, the unobstructed night lighting letting you spot a few curious Slimes eerily silhouetted against the water as they look at the picturesque view in almost solemn silence.",
+                                            "EndLoop",
+                                            "JumpToScene", "BeachMenuNight"
+                                          ]
+                            },
+                    {
+                        "NameOfScene": "BeachMenu",
+                        "theScene": [
+                                      "IfTimeIs", "NightTrue", "DayToNight",
+                                      "Menu",
+                                        "Go fishing.",
+                                        "Relax under an umbrella.",
+                                        "Go play in the water.",
+                                        "Make a sand castle.",
+                                        "Step away from the slime beach.",
+                                      "EndLoop"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "BeachMenuNight",
+                        "theScene": [
+                                      "IfTimeIs", "DayTrue", "NightToDay",
+                                      "Menu",
+                                        "RequiresChoice", "6", "FishingGear",
+                                        "Go fishing.",
+                                        "Take a nap on a beach blanket.",
+                                        "Sit down and do some stargazing.",
+                                        "Step away from the slime beach.",
+                                      "EndLoop"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Step away from the slime beach.",
+                              "theScene": ["ChangeBGM", "music/Forest/Are-you-kidding.mp3",
+                                            "SwapLineIf", "IfTimeIs",
+                                              "DayTrue", "Deciding you've had enough fun at the lakeside beach, you make your way back up to Sleim Vllge proper, away from the sand and shore. You're seen off by more than one slime who cheerfully wave you off to the sounds of 'Thank you for wobbling by!', 'Come back anytime!', and 'Did someone see my beach ball?'.",
+                                              "NightTrue","With the starlit sky now hanging overhead, you make your way back up to Sleim Vllge proper, away from the now almost entirely vacant sand and shore, leaving behind you a scant few idly stargazing slimes.",
+                                            "EndLoop",
+                                            "JumpToScene", "SlomeExploreMenu"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Make a sand castle.",
+                              "theScene": [
+                                            "SetChoice", "2", "SandCastle",
+                                            "SwapLineIf", "Choice",
+                                              "2", "SandCastle", "Your mind set, you make your way down to a nice open spot in the sand and start your work, scooping and sculpting sand with your hands to slowly shape it into a rough form as you carefully compact the damp material together, your efforts slowly drawing the attention of a few nearby slimes who scoot in closer to watch, while others are drawn to the works of other slimes, ranging from surprisingly intricate to amateurishly crude.",
+                                              "2", "", "Your mind set, you make your way down to a nice open spot in the sand and start your work, scooping and sculpting sand with your hands to slowly shape it into a rough form as you carefully compact the damp material together, your actions slowly drawing the attention of the nearby slimes who scoot in closer to watch.",
+                                            "EndLoop",
+                                            "SwapLineIf", "Choice",
+                                              "2", "SandCastle", "Eventually, there's a small crowd of slime women cheerfully and quietly watching you build your small sand structure up. Once you finish forming the last tower on your castle, they let out a myriad of 'Oohs.', 'Aahs.', 'Yays.', and other jubilant noises, while similar congratulatory sounds can be heard about the beach as more onlookers watch other sculptors finish their own works.",
+                                              "2", "", "Soon there's a small crowd of slime women cheerfully and quietly watching you build your small sand structure up, and they cheer with a myriad of 'Oohs.', 'Aahs.', 'Yays.', and other jubilant noises once you finish forming the last tower on your castle.",
+                                            "EndLoop",
+                                            "SwapLineIf", "Choice",
+                                              "2", "SandCastle",   "But you only get a few moments to bask in the joyful attention and the satisfaction of a job well done before a large wave suddenly crashes out from the lake and washes away the sand castles and sand sculptures!|n|After a moment of slight confusion, the slimes across the beach let out a collective 'Aw.' before slowly dispersing to go rest under umbrellas or play in the water, while some restart their work or launch similar sand-building projects.",
+                                              "2", "",   "But you only get a few moments to bask in the joyful attention and the satisfaction of a job well done before a large wave suddenly crashes out from the lake and washes away your sand castle!|n|Apparently now used to this, the slimes offer some words and pats of comfort before slowly dispersing to go rest under umbrellas or play in the water. A few of them curiously get started on their own sand castles with mixed results, some using their own bodies' slimy goo to put together rather impressive structures, some actually rising as high as statues or small houses, to the giddy enjoyment of their sculptors and enthusiastic onlookers.",
+                                            "EndLoop",
+                                            "AdvanceTime", "1",
+                                            "As for you, with your efforts washed away and time passing on, you're left back to consider what to do next as you sit on the warm sands and watch the peaceful sight of the slimy population milling about.",
+                                            "JumpToScene", "BeachMenu"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Go fishing.",
+                              "theScene": [
+                                            "IfChoice", "6", "FishingGear", "FishingChoice",
+                                            "JumpToScene", "Go hand fishing."
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "FishingChoice",
+                                      "theScene": [
+                                                    "IfTimeIs", "NightTrue", "Go rod Fishing.",
+                                                    "Looking at the present Blue Slimes, you see that despite the availability of fishing equipment, some are still trying to catch fish with their hands, though clearly more for their own entertainment than for the sake of actual results. Meanwhile, a more serious-looking bunch is diligently clinging to their fishing rods and staring at their bobbers, one of them occasionally reeling in a catch with a giddy cry of triumph.",
+                                                    "You contemplate whether you should join the Slimes lazily hand-fishing minnows for fun, or the group using fishing rods...",
+                                                    "Menu",
+                                                      "Go rod Fishing.",
+                                                      "Go hand fishing.",
+                                                    "EndLoop"
+                                                ]
+                                  },
+
+                                  {
+                                      "NameOfScene": "Go hand fishing.",
+                                      "theScene": [ "IfChoice", "6", "FishingGear", "Go hand fishing.FishingStuff",
+                                                    "You decide to go fishing, and after discarding and tucking away your equipment, you wade into the water where the other fisher slimes are. As you previously saw, they only have one fishing rod between all of them and its owner refuses to part with it, giving you no choice but to attempt to catch the passing sealife with your bare hands like the cheery goo women around you.",
+                                                    "This leads to you {i}almost{/i} managing to grab ahold of a fish before it slips through your hands and splashes back into the water, the tantalizing near-success repeating quite a few times, to your mounting frustration. Curiously, you look about the slimes to see how they're faring, and notice that most have similar issues with large fish, the carefree monster girls giggling and splashing about excitedly when their catch eludes them.",
+                                                    "However, you also spot a few using their viscous body to catch and entrap minnows with a darting hand, then watching the fish flit about inside them for a tittering moment before it eventually swims out, leaving them to continue their efforts, this time aiming for an even bigger catch. It seems like they're doing this for sport and fun rather than for feeding, being apparently quite content with the abundant berries around.",
+                                                    "As you stretch in place and idle a bit to rest from your unsuccessful attempts, you watch the slime with a fishing rod reel in a fairly large fish which she pulls out with a resounding splash under the cheers, encouragement, and gooey clapping of her brethren. Proudly, she unhooks her catch with practiced ease and a bit of showiness, then puts the wriggling fish in a bucket next to her before casting her line out again.",
+                                                    "AdvanceTime", "1",
+                                                    "With that, you decide you're done fishing for now and make your way back to the beach to pick up your things and relax, a look at the sky showing you that you have spent quite a few hours messing around in the water. Time flies when you're having fun.",
+                                                    "JumpToScene", "BeachMenu"
+                                                ]
+                                  },
+                                  {
+                                        "NameOfScene": "Go hand fishing.FishingStuff",
+                                        "theScene": [
+                                                      "You decide to go hand fishing, and after discarding and tucking away your adventuring equipment, you wade into the water to join the playful Slimes who welcome you as enthusiastically as ever, eagerly inviting you to join in on their fun and helpfully pointing you to an opportune wriggling minnow right between your feet.",
+                                                      "This leads to you {i}almost{/i} managing to grab ahold of the fish before it slips through your hands and splashes back into the water, the tantalizing near-success repeating quite a few times, to your mounting frustration. Curiously, you look about the Slimes to see how they're faring, and notice that most have similar issues with large fish, the carefree monster girls giggling and splashing about excitedly when their catch eludes them.",
+                                                      "However, you also spot a few using their viscous body to catch and entrap minnows with a darting hand, then watching the fish flit about inside them for a tittering moment before it eventually swims out, leaving them to continue their efforts, this time aiming for an even bigger catch. It seems like they're doing this for sport and fun rather than for feeding, being apparently quite content with the abundant berries around.",
+                                                      "As you stretch in place and idle a bit to rest from your unsuccessful attempts, you watch the rod-equipped Slimes go about their business, excitedly pulling out catch after catch under the guidance of Seafoam who appears a bit miffed to no longer have fishing exclusivity, but seems to make up for it with the satisfaction of superior experience and respectability, her frankly adorable pride getting a smile out of you.",
+                                                      "AdvanceTime", "1",
+                                                      "With that, you decide you're done fishing for now and make your way back to the beach to pick up your things and relax, a look at the sky showing you that you have spent quite a few hours messing around in the water. Time flies when you're having fun.",
+                                                      "JumpToScene", "BeachMenu"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go rod Fishing.",
+                                        "theScene": [
+                                                      "JumpToEvent", "BigLakeFishing"
+                                                  ]
+                                    },
+                          {
+                              "NameOfScene": "Relax under an umbrella.",
+                              "theScene": [
+                                            "Looking about the beach, you spot a vacant towel with an umbrella planted into the ground next to it, offering an inviting patch of cozy warm shade. Settling in for a relaxing nap, you stretch out languidly before letting yourself go slack and closing your eyes, listening to the soothing waves and the idle banter, chatter, and playing of the slime women until you drift off to sleep.",
+                                            "RestPlayer",
+                                            "...",
+                                            "When you eventually stir, you feel... damp. All around. With a slight jolt, you sit up to check your surroundings, concerned that you got caught by a wave, only to jostle three slimes who decided to cuddlepile on you in your slumber!",
+                                            "Lazily rousing, the trio lets out sleepy out-of-sync yawns, and before you can open your mouth, they're already scattering into the surrounding lake beach in search of something else to do...",
+                                            "Shrugging, you stretch and get up at your own pace, still feeling a bit wet from the warm gooey cuddling, though thankfully, none of your surprise bedfellows' slime has gunked up your clothes.",
+                                            "Once you're ready to get a move on, you politely put the towel back in position then walk away from your napping spot, thinking about what to do next.",
+                                            "JumpToScene", "BeachMenu"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Go play in the water.",
+                              "theScene": [
+                                            "Enticed by the carefree fun enjoyed by the slimy locals, you decide to head into the water and mess around as well. Adjusting your clothes for swimming, you trek out into the gentle waves where you are promptly welcomed by the gooey women and soon dragged into a game of volleyball by a particularly enthusiastic group.",
+                                            "...At least, you {i}think{/i} it's volleyball. They don't exactly explain the rules of what they're doing, which amounts to both sides hitting the ball back and forth for points following no logic that you can discern. In fact, players are sometimes awarded points even when they miss the ball... But ultimately, you're all having fun and that's what matters.",
+                                            "AdvanceTime", "1",
+                                            "The game proceeds until you eventually find yourself growing winded, while the slimy gals still seem full of exuberant energy, eager to continue to splash around and play their game. They do note you're probably getting too much exercise and sun, however, and promptly drag you back to the beach to sit you under one of the beach umbrellas before rushing back into the water to keep playing, leaving you alone with your thoughts.",
+                                            "JumpToScene", "BeachMenu"
+                                        ]
+                          },
+
+
+                          {
+                              "NameOfScene": "DayToNight",
+                              "theScene": [   "ChangeBGM", "music/Forest/Are-you-kidding.mp3",
+                                              "As the sun dips below the horizon and the moon rises up into the twinkling starry sky, the slimes still splashing around in the water and idling on the beach bouncily scatter out towards the huts surrounding the lake, cheerfully wishing each other good night before huddling inside for sleep.",
+                                              "A scant few still mill about the area to have a leisurely nighttime walk or look at the moonlit lake, with only one or two lingering in the water, casting eerie opaque silhouettes across the vista as even they eventually scoot to the shore to join the others.",
+                                              "JumpToScene", "BeachMenuNight"
+                                        ]
+                          },
+
+
+                          {
+                              "NameOfScene": "Take a nap on a beach blanket.",
+                              "theScene": [
+                                            "With the beach practically deserted, you have no issue finding a free beach towel to lie back on with a contented sigh. Losing yourself in the contemplation of the star-and-moon-lit sky above, you slowly let your eyes close themselves as you listen to the soothing sound of the lake waves gently ebbing and flowing, the chilly night air not proving cold enough to stop the enticing feeling of sleepiness from claiming you entirely.",
+                                            "RestPlayer",
+                                            "...",
+                                            "With a dazed, rested yawn, you slowly rouse from your slumber and sit up, blinking with confusion as a beach towel slips off of you, some unknown slime having apparently tucked you in at some point in your sleep, even gifting you a few blueberries on a leaf nearby... as well as headpats judging from the very slight dampness on your forehead.",
+                                            "Standing up and fixing your clothing, you shiver from the now much colder night air, glad for the impromptu blanket. Munching on the provided berries, you take a crisp lakeside breath and walk a few steps to put some life and heat back into your freshly roused body, thinking about what to do next.",
+                                            "JumpToScene", "BeachMenuNight"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Sit down and do some stargazing.",
+                              "theScene": [
+                                            "You find a nice open spot in the sand and plop yourself down at the edge of the lake, ready to enjoy the tranquil nighttime atmosphere, so different from the day's slimy hustle and bustle. The gentle rolling waves add to the relaxing mood as you look over the luminous reflection in the water up to the full moon and glimmering stars above you, the twinkling firmament beautifully lighting up the cloudless night sky.",
+                                            "As restful minutes pass by unnoticed, you nearly jump out of your skin at the sudden sensation of something gooey leaning against you in the dark, but quickly calm down when you find yourself staring into the harmless smiling face of a slime. Squishing herself against you, the jelly-like woman simply sighs in content and utters the word 'Warm.' as an explanation for her intrusion.",
+                                            "In a serene, wordless calm, you both look up at the glittering star-filled sky in peace, the warm gooey feeling against the side of your body making your eyes flutter as you let yourself be lulled by the rolling waves and immerse yourself in the dreamlike scenery, eventually resting your head onto the squishy presence next to you and drifting off to sleep.",
+                                            "RestPlayer",
+                                            "...",
+                                            "When you awake, you find yourself laid under a beach umbrella, sprawled on a cozy towel with a few blankets tossed on top of you for good measure. The mysterious stargazing slime is nowhere to be seen, leaving you to slowly rouse from your cozy nap with a pleasant lingering feeling of restfulness and tranquility.",
+                                            "JumpToScene", "BeachMenuNight"
+                                        ]
+                          },
+
+
+                          {
+                              "NameOfScene": "NightToDay",
+                              "theScene": [   "ChangeBGM", "music/Forest/Starry sky.mp3",
+                                              "As the sun crests over the edge of the horizon with a blinding glimmering rosy flare and the moon dips out of sight, the shining heat from above draws out the slimes from their slumber huts.",
+                                              "With enthusiastic cries, the carefree monster girls eagerly scatter about the town, venture off to eat blueberries, or in many cases congregate to the beach to reignite the usual bustling activity of playing and relaxation, the lone fisher slime retaking her spot at the furthest edge of the village.",
+                                              "JumpToScene", "BeachMenu"
+                                        ]
+                          },
+
+
+
+
+
+                          {
+                            "NameOfScene": "Go to the 'Sleim Shoppe'... Perpetua's there?",
+                            "theScene": [
+                                    "JumpToScene", "Go to the 'Sleim Shoppe'."
+                            ]
+                          },
+                          {
+                              "NameOfScene": "Go to the 'Sleim Shoppe'.",
+                              "theScene": [
+                                              "SetFlexibleSpeaker", "3",
+                                              "IfChoice", "4", "NoticePerpoAndSilver", "PerpoSilverEvent",
+                                              "CallNextSceneJumpThenReturn", "IfChoice", "5", "PerpoSilverTalkDun", "SetToSilver",
+                                              "CallNextSceneJumpThenReturn", "IfChoice", "3", "SlomeShopOutburst", "SetToSilver",
+
+                                              "IfChoice", "1", "SleimShoppeIntro", "SleimShoppeRevisit",
+                                              "SetChoice", "1", "SleimShoppeIntro",
+                                              "DisplayCharacters",
+                                                "1",
+                                              "EndLoop",
+                                              "ChangeImageLayer", "Expression", "1", "Excited",
+                                              "You walk over to the ramshackle wooden stall with its crudely carved sign above it that reads 'Sleim Shoppe'. The counter is loaded with an assortment of herbs, bundles of berries, and slime blobs offered for sale by a cheerful-looking blue slime that waves to you jubilantly as you approach.",
+                                              "ChangeImageLayer", "Expression", "1", "Happy",
+                                              "FlexibleSpeaks",
+                                              "Hi!♪ Welcome to the Sleim Shoppe. I'm the Sleim Shoppe Slime.♪",
+                                              "ChangeImageLayer", "Expression", "1", "ItsFine",
+                                              "FlexibleSpeaks",
+                                              "AllPurchasesAreFinal.♪",
+                                              "Compared to the usual, easygoing slime speech, she fired off those words so quickly that you need a moment to catch up while she carries on happily.",
+                                              "ChangeImageLayer", "Expression", "1", "Base",
+                                              "FlexibleSpeaks",
+                                              "How can help?♪",
+                                              "JumpToScene", "SleimShoppeMenu"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "SetToSilver",
+                                      "theScene": ["SetFlexibleSpeaker", "4"
+                                                ]
+                                  },
+
+                                  {
+                                      "NameOfScene": "PerpoSilverEvent",
+                                      "theScene": [ "SetChoice", "5", "PerpoSilverTalkDun",
+                                                    "SetChoice", "4", "",
+                                                      "DisplayCharacters",
+                                                        "1",
+                                                        "2",
+                                                      "EndLoop",
+                                                      "ChangeImageLayer", "Expression", "1", "Excited", "ChangeImageLayer", "Expression", "2", "Joy",
+                                                      "As you approach the now familiar stall of the Sleim Shoppe, you see its proprietoress and Perpetua animatedly talking about something. Noticing you, the two of them pause their conversation and turn towards you, letting you notice a small bundle of leaf-wrapped cherries sitting on the ramshackle wooden stall.",
+                                                      "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "Expression", "2", "Base",
+                                                      "Speak", "Perpetua",
+                                                      "Oh! Hi [ThePlayerName]! Have you met Silver yet?",
+                                                      "SwapLineIf", "Choice",
+                                                      "3", "SlomeShopOutburst", "|f|ChangeImageLayer|/|Expression|/|1|/|Shy|n|Recognizing the eerily fast-paced slime, you greet her with a nod which she responds to with a somewhat sheepish little wave, still seeming a bit embarrassed at her past outburst, though Perpetua herself is none the wiser, smiling at the two of you while Silver swiftly moves past her awkwardness to confirm your acquaintanceship with an affirmative nod of her own.|f|ChangeImageLayer|/|Expression|/|1|/|Base|n|",
+                                                      "3", "", "",
+                                                      "EndLoop",
+                                                      "SetFlexibleSpeaker", "4",
+                                                      "FlexibleSpeaks",
+                                                      "Ye!♪ Theybuystuff. Give profit nudge.",
+                                                      "ChangeImageLayer", "Expression", "2", "Joy",
+                                                      "Speak", "Perpetua",
+                                                      "Perfect!♪ Well, to bring you up to speed, [ThePlayerName], after chatting with you, I started thinking on some things...",
+                                                      "ChangeImageLayer", "Expression", "2", "Pride",
+                                                      "Perpetua puffs up with a small bit of pride as she continues talking.",
+                                                      "Speak", "Perpetua",
+                                                      "... And in my gracious evilness, I have decided to strike a deal with Silver in an effort to help improve Sleim Vllge's economy, by allowing her to sell {i}my{/i} cherries at her store.",
+                                                      "ChangeImageLayer", "Expression", "1", "Smug",
+                                                      "FlexibleSpeaks",
+                                                      "...Yes. Very generous. Onlytookyougreatadventuretolisten.",
+                                                      "Perpetua either doesn't hear or doesn't care about the jab, continuing to speak and gesture excitedly.",
+                                                      "ChangeImageLayer", "Expression", "2", "Joy",
+                                                      "Speak", "Perpetua",
+                                                      "... Which got the two of us talking about other little ways we could improve things around here...",
+                                                      "ChangeImageLayer", "Expression", "1", "Excited",
+                                                      "FlexibleSpeaks",
+                                                      "Andsome{i}big{/i}ones.",
+                                                      "Speak", "Perpetua",
+                                                      "Yeah! ...",
+                                                      "ChangeImageLayer", "Expression", "2", "Shy",
+                                                      "Speak", "Perpetua",
+                                                      "Thoughhhh... Even with those big plans in store, we... uh... kind of lack a... lot of people... and money...",
+                                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                                      "FlexibleSpeaks",
+                                                      "Maybe [ThePlayerName] help?",
+                                                      "ChangeImageLayer", "Expression", "2", "Pout",
+                                                      "Speak", "Perpetua",
+                                                      "I mean... I {i}guess{/i}? ... But he's like... my rival! And stuff...",
+                                                      "ChangeImageLayer", "Expression", "1", "Smug",
+                                                      "FlexibleSpeaks",
+                                                      "Is good goal to set aside differences? Forthesakeofgreatercause.",
+                                                      "ChangeImageLayer", "Expression", "2", "Panic",
+                                                      "Speak", "Perpetua",
+                                                      "Whgu- {i}D-Don't pull that one on me!{/i} I still need to best him and bring him low and go 'Ohoho!' while he...",
+                                                      "FlexibleSpeaks",
+                                                      "Heh.",
+                                                      "The blue slime chuckles with a discreet wobble at her red brethren who keeps ranting and rambling for a moment until she simmers down with a huff, crossing her arms petulantly.",
+                                                      "ChangeImageLayer", "Expression", "2", "Pout",
+                                                      "Speak", "Perpetua",
+                                                      "Mhgmh... {i}Fine...{/i} But... Well, only if he actually wants to...",
+                                                      "Menu",
+                                                      "{b}Take all of my money right now.{/b}",
+                                                      "Sure!",
+                                                      "I guess...?",
+                                                      "EndLoop"
+                                                ]
+                                  },
+
+                                          {
+                                              "NameOfScene": "{b}Take all of my money right now.{/b}",
+                                              "theScene": [
+                                                              "ChangeImageLayer", "Expression", "1", "Excited",
+                                                              "ChangeImageLayer", "Expression", "2", "Panic",
+                                                              "FlexibleSpeaks",
+                                                              "Yay!♪",
+                                                              "Silver actually starts packing everything she has in stock, cherry bundle and all, while Perpetua waves her arms in panic.",
+                                                              "Speak", "Perpetua",
+                                                              "{b}Waiwaiwaiwaiwait!{/b}",
+                                                              "ChangeImageLayer", "Expression", "1", "Smile",
+                                                              "The blue slime freezes in place with an armful of leaf packaging in her hands, looking innocently at her red sister who turns to you, firmly setting her hands on her hips with a huff.",
+                                                              "ChangeImageLayer", "Expression", "2", "Pout",
+                                                              "Speak", "Perpetua",
+                                                              "{i}[ThePlayerName]{/i}, while Silver and I {i}wholeheartedly{/i} appreciate your... generous patronage, I... uh... can't but encourage you to at least {i}think{/i} about it.",
+                                                              "ChangeImageLayer", "Expression", "2", "Shy",
+                                                              "Speak", "Perpetua",
+                                                              "Like... I'd feel bad if you suddenly ended up Eroless because you wanted to help us...",
+                                                              "ChangeImageLayer", "Expression", "1", "Base",
+                                                              "While she looks away bashfully, you can see Silver stare at her with fond amusement, and are ready for her to say something about 'Petua's boyfriend'... but in the end, the shopkeeper seems to actually think better of it, going instead for a sedate nod as she drops her bunch of wares.",
+                                                              "JumpToScene", "PerpoSilverEvent2"
+                                                        ]
+                                          },
+
+                                          {
+                                              "NameOfScene": "Sure!",
+                                              "theScene": [
+                                                              "ChangeImageLayer", "Expression", "1", "Excited",
+                                                              "ChangeImageLayer", "Expression", "2", "Joy",
+                                                              "Speak", "Perpetua",
+                                                              "Awesome!",
+                                                              "Cheered by your enthusiasm, Perpetua holds up her hand and, following her lead, you and Silver happily slap it, the three of you exchanging a gooey high-five that rings out with a wet slap, the two slime girls wobbling back in place as the smaller one adds sagely.",
+                                                              "ChangeImageLayer", "Expression", "1", "Base",
+                                                              "ChangeImageLayer", "Expression", "2", "Base",
+                                                              "Speak", "Perpetua",
+                                                              "Though... Don't feel that you {i}have{/i} to, [ThePlayerName]. It's on a... purely voluntary basis!",
+                                                              "JumpToScene", "PerpoSilverEvent2"
+                                                        ]
+                                          },
+
+                                          {
+                                              "NameOfScene": "I guess...?",
+                                              "theScene": [
+                                                              "ChangeImageLayer", "Expression", "1", "Shy",
+                                                              "ChangeImageLayer", "Expression", "2", "Shy",
+                                                              "Your lukewarm response brings even more of a damper than you expected, the two slime girls staring at you in mild surprise for a moment before looking away awkwardly.",
+                                                              "Despite them opening their mouth several times in an effort to get things back on track, they stall every time, and the atmosphere grows downright chilly... or at least, would if you weren't still surrounded by the serenely happy atmosphere of Sleim Villge.",
+                                                              "ChangeImageLayer", "Expression", "1", "Base",
+                                                              "Still, you're seriously wondering if you should actually add something, until Silver coughs and soldiers on.",
+                                                              "JumpToScene", "PerpoSilverEvent2"
+                                                        ]
+                                          },
+
+                                      {
+
+                                          "NameOfScene": "PerpoSilverEvent2",
+                                          "theScene": [
+                                                          "ChangeImageLayer", "Expression", "1", "Excited",
+                                                          "FlexibleSpeaks",
+                                                          "Well, if he do want support, we could really use money. Sobuylotsokay?",
+                                                          "ChangeImageLayer", "Expression", "2", "Base",
+                                                          "Speak", "Perpetua",
+                                                          "Yeah, having a starting fund will get us somewhere... I know you've been saving for that fishing gear stuff so we can get a better... uh...",
+                                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                                          "FlexibleSpeaks",
+                                                          "Goodsandincomestream.",
+                                                          "ChangeImageLayer", "Expression", "2", "Joy",
+                                                          "Speak", "Perpetua",
+                                                          "Yeah, that!♪",
+                                                          "ChangeImageLayer", "Expression", "1", "Smile",
+                                                          "FlexibleSpeaks",
+                                                          "Will take about 2500 Eros to get. And some time. Sobuylots[ThePlayerName].",
+                                                          "ChangeImageLayer", "Expression", "2", "Pout",
+                                                          "Speak", "Perpetua",
+                                                          "That's not all, though. Money is one thing, but we're gonna need more than just Eros to get everyone proper homes and stuff... We'll need more slimes to move in, if we want to bring value and a... more robust workforce to the town and stuff...",
+                                                          "ChangeImageLayer", "Expression", "2", "Pride",
+                                                          "Speak", "Perpetua",
+                                                          "Good thing I met a few during my travels.♪ I've just gotta cook up some plans on how to convince them to join us... and how to accommodate them, too!",
+                                                          "ChangeImageLayer", "Expression", "2", "Joy",
+                                                          "Speak", "Perpetua",
+                                                          "Speaking of-! I'm going to go hit the drawing board! You two have fun! [ThePlayerName], come talk to me if you wanna help! And remember to buy a bunch of junk from Silver! For a greater cauuuuuu...",
+                                                          "The cherry slime's voice trails off as she energetically scoots her merry way back towards her forested home, getting a few 'Petua' greetings and patting attempts from nearby blue slimes which cause her to huff, pout, and flail at them...",
+                                                          "DisplayCharacters",
+                                                            "1",
+                                                          "EndLoop",
+                                                          "ChangeImageLayer", "Expression", "1", "Shy",
+                                                          "FlexibleSpeaks",
+                                                          "Ah... We were not.. done talking...",
+                                                          "ChangeImageLayer", "Expression", "1", "Base",
+                                                          "Silver sighs heavily but keeps a smile on her face, hopefully looking back to you from behind her wooden stall.",
+                                                          "FlexibleSpeaks",
+                                                          "Well, do you want to buy anything? We now have cherry and red slime blobs. Verygoodpremiummerchandisebuynowbeforepricesgoup. Once enough money for the fishing stuff is had, you'll have to stop by Sleim Villge another day to see results... Otherwise, spendmoreokay?",
+                                                           "JumpToScene", "SleimShoppeMenu"
+                                                    ]
+                                      },
+
+                          {
+                              "NameOfScene": "SleimShoppeRevisit",
+                              "theScene": ["IfTimeIs", "NightTrue", "SleimShoppeRevisitNightOdds",
+                                      "JumpToRandomScene",
+                                          "Doorbell",
+                                          "Sleeping",
+                                          "Inventory",
+                                          "Replacement",
+                                          "Plans",
+                                          "Normal",
+                                          "Normal",
+                                          "Normal",
+                                          "Normal",
+                                      "EndLoop"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "SleimShoppeRevisitNightOdds",
+                              "theScene": [
+                                      "JumpToRandomScene",
+                                          "Doorbell",
+                                          "Doorbell",
+                                          "Inventory",
+                                          "Inventory",
+                                          "Sleeping",
+                                          "Sleeping",
+                                          "Sleeping",
+                                          "Sleeping",
+                                          "Sleeping",
+                                      "EndLoop"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Doorbell",
+                              "theScene": [
+                                      "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Excited",
+                                      "As you approach the now familiar stall of the Sleim Shoppe, the proprietoress notices you and makes a door-like creaking noise with her mouth while shaking a jingle bell in her hand, before pouting in disappointment at her own doorbell imitation.",
+                                      "ChangeImageLayer", "Expression", "1", "Shy",
+                                      "FlexibleSpeaks",
+                                      "Should get real door...",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "She mumbles wistfully as she puts the bell back down then primly puts her hands together, awaiting your order.",
+                                      "JumpToScene", "SleimShoppeMenu"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Sleeping",
+                              "theScene": [
+                                      "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "ItsFine",
+                                      "As you approach the store, you notice the Sleim Shoppe Slime is at her usual post, but slumped over the counter, happily napping, apparently having a very nice dream judging by the big smile on her face and her giddy mumbling.",
+                                      "ChangeImageLayer", "Expression", "1", "Happy",
+                                      "FlexibleSpeaks",
+                                      "He he... All my blueberries for a million eros? Yus, is great deal...",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "You wonder if you should leave her to her sleepy fantasies, but as if on cue, a sudden gust of wind shakes the rickety market stall, making it groan noisily and awakening the slime girl whose eyes open suddenly. Her stare landing on you, she takes you in with a surprisingly alert expression, apparently switching from asleep to awake in a fraction of a second.",
+                                      "ChangeImageLayer", "Expression", "1", "Excited",
+                                      "FlexibleSpeaks",
+                                      "{b}Customer!{/b}",
+                                      "She immediately springs into a standing position, staring at you in excited attention.",
+                                      "FlexibleSpeaks",
+                                      "[ThePlayerName]ComeToBuyYe?",
+                                      "JumpToScene", "SleimShoppeMenu"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Inventory",
+                              "theScene": [
+                                      "To your puzzlement, the business slime is nowhere to be seen at a glance, but you do hear noises behind the counter, prompting you to curiously rap on the wooden surface to catch the attention of whoever is there.",
+                                      "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "Instantly, the Sleim Shoppe Slime springs into view with her arms arcing up into the air like a jack-in-the-box, the bouncy blue blobby businesswoman happily taking you in.",
+                                      "ChangeImageLayer", "Expression", "1", "Happy",
+                                      "FlexibleSpeaks",
+                                      "HelloValuedCustomer!♪ Apologies for unavailableness, was doing inventory.",
+                                      "You can't help but notice that her face and hands are rather conspicuously stained with blueberry juice.",
+                                      "JumpToScene", "SleimShoppeMenu"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Replacement",
+                              "theScene": [
+                                      "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "The Sleim Shoppe Slime is at her usual post behind the goods-filled stall, staring off towards the lake with a somewhat vacant expression.",
+                                      "ChangeImageLayer", "Expression", "1", "Shy",
+                                      "Unexpectedly, when you come closer, she reacts with something like panic, looking all around and greeting you in an unfamiliar voice.",
+                                      "Speak", "Sleim Shoppe Slime(?)",
+                                      "H-Hi! S-Sorry, I don't actually work here, I'm just filling in while- Oh!",
+                                      "DisplayCharacters",
+                                        "1",
+                                        "1",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Happy",
+                                      "She sighs in relief when she sees the actual Sleim Shoppe Slime return, the gooey girls nodding at each other as the proprietoress returns to her spot to greet you cheerfully while her replacement sloshes away.",
+                                      "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Excited",
+                                      "FlexibleSpeaks",
+                                      "Hello and welcome, valued customer!♪ How can Sleim Shoppe serve you today?",
+                                      "JumpToScene", "SleimShoppeMenu"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Plans",
+                              "theScene": [
+                                      "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Angry",
+                                      "As you approach the Sleim Shoppe, you see that its owner is deep in thought over shapes that she has drawn on the counter with her slime, using the wooden surface like a drawing board.",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "However, her expression clears when she sees you coming, and she greets you animatedly.",
+                                      "FlexibleSpeaks",
+                                      "Hello, valued customer! Apologies, was working on business plans.",
+                                      "Taking a glance at the crude doodles, you see that said plans seem to essentially consist of a human-shaped stick figure handing a very large bag of eros to a slime-shaped stick figure.",
+                                      "JumpToScene", "SleimShoppeMenu"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Normal",
+                              "theScene": [
+                                      "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "The Sleim Shoppe Slime is at her usual post behind the goods-filled stall, staring off towards the lake with a somewhat vacant expression.",
+                                      "ChangeImageLayer", "Expression", "1", "Excited",
+                                      "However, when you come closer, she springs to life, greeting you with a sunny welcoming smile and a cheerful wave.",
+                                      "FlexibleSpeaks",
+                                      "Hello and welcome, valued customer!♪ How can Sleim Shoppe serve you today?",
+                                      "JumpToScene", "SleimShoppeMenu"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "SleimShoppeMenu",
+                              "theScene": [
+                                              "Menu",
+                                                "Do some shopping.",
+                                                "Talk.",
+                                                "'Blueberries?'",
+                                                "'Slime blobs?'",
+                                                "RequiresChoice", "5", "PerpoSilverTalkDun",
+                                                "What's the status of the Sleim Vllge Renovation Project?",
+                                                "Leave the Sleim Shoppe.",
+                                              "EndLoop"
+                                        ]
+                          },
+
+                                  {
+                                      "NameOfScene": "What's the status of the Sleim Vllge Renovation Project?",
+                                      "theScene": [
+                                                      "ChangeImageLayer", "Expression", "1", "Excited",
+                                                      "FlexibleSpeaks",
+                                                      "SwapLineIf", "Choice",
+                                                        "7", "LandingPad", "We got [ProgressDisplay] Eros right now for Vllge thank to you! Need 15000 and can finally upgrade slime housing! Also need one new slime girl... Dunno where, though... Go talk to Petua to help with that. And member that getting new people also will give more mone to work with, so don't break bank, ye? (This is currently as far as slime renovations go.)",
+                                                        "6", "FishingGear", "We got [ProgressDisplay] Eros right now for Vllge thank to you! Need 10000 for Harpy delivery pad... Member that getting new people also will give more mone to work with, so don't break bank, ye?",
+                                                        "6", "", "We got [ProgressDisplay] Eros right now for Vllge thank to you! Fishing stuff cost 2500, so once we have enough, stop by later, okey?",
+                                                      "EndLoop",
+                                                      "IfProgressEqualsOrGreater", "100000", "DasLotMun",
+                                                      "JumpToScene", "SleimShoppeMenu"
+                                                ]
+                                  },
+                                              {
+                                                  "NameOfScene": "DasLotMun",
+                                                  "theScene": [
+                                                                  "ChangeImageLayer", "Expression", "1", "Shy",
+                                                                  "FlexibleSpeaks",
+                                                                  "Actually... [ProgressDisplay] is a looooot of mone... shouldyoubespendingsomuch?",
+                                                                  "JumpToScene", "SleimShoppeMenu"
+                                                            ]
+                                              },
+
+                                {
+                                    "NameOfScene": "'Blueberries?'",
+                                    "theScene": [   "Redoubled cheery excitement shows on the face of the Sleim Shoppe Slime who literally puffs up with pride, her wobbly form growing an inch or two larger as she answers with starry-eyed confidence.",
+                                                    "ChangeImageLayer", "Expression", "1", "Excited",
+                                                    "FlexibleSpeaks",
+                                                    "Oh yes. All are fresh-picked and leaf-wrapped by local slimes. Very tasty. Observe.",
+                                                    "The slime shopkeeper pulls out a handful of blueberries from behind the counter and promptly stuffs them into her mouth, gooily chewing on them as they dissolve inside her slimy blue body, humming happily as she enjoys the snack before giving you an oddly dazzling thumbs up, her semi-transparent body almost glowing in gluttonous glee from the yummy sugary intake.",
+                                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                                    "FlexibleSpeaks",
+                                                    "Mmm♪ mmm♪, good.♪",
+                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                    "FlexibleSpeaks",
+                                                    "Lots grow here, so you can buy lots. Very nutritious.",
+                                                    "She nods at you sagely after her sales pitch and grabs one more berry to toss into her mouth, the fruit quickly melting away into her just like the previous ones. Pausing, she looks to you, then to the bundles for sale, then back to you with a hopeful expression.",
+                                                    "ChangeImageLayer", "Expression", "1", "Excited Blush",
+                                                    "FlexibleSpeaks",
+                                                    "YouWantDemonstrationAgain?",
+                                                    "JumpToScene", "SleimShoppeMenu"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "'Slime blobs?'",
+                                    "theScene": [   "ChangeImageLayer", "Expression", "1", "Base",
+                                                    "FlexibleSpeaks",
+                                                    "Ye. Is blobs from slimes. We also drop 'em when we lose in lewds because we get all wobbly and blgblbbg from pleasure.",
+                                                    "ChangeImageLayer", "Expression", "1", "ItsFine",
+                                                    "She gets a pensive expression as she puts a finger to her chin in a thinker's pose, the digit half-sinking into her gooey body.",
+                                                    "ChangeImageLayer", "Expression", "1", "Happy",
+                                                    "FlexibleSpeaks",
+                                                    "Dunno why people want, but dun really care. Just buy them. Easier than lots of lewds. Lewds tiring, buy easy, ye? Tasty, probably. Very sticky so gud for building. We do that.",
+                                                    "She nods affirmatively and pats the stack of jiggly slime orbs on the counter, making them wobble idly while the stall itself shifts slightly, the shoddy construction shaking back and forth in a rather slime-like manner, making you fear a disaster, though the shopkeeper herself hardly seems concerned.",
+                                                    "ChangeImageLayer", "Expression", "1", "ItsFine",
+                                                    "FlexibleSpeaks",
+                                                    "Very sturdy.",
+                                                    "JumpToScene", "SleimShoppeMenu"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "Do some shopping.",
+                                    "theScene": ["ChangeImageLayer", "Expression", "1", "Happy",
+                                                "FlexibleSpeaks",
+                                                "Yay!♪ NoRefunds.♪ NoSellingUsYourStuff.♪ BuyLots.♪",
+                                                "IfChoice", "5", "PerpoSilverTalkDun", "Shopping2",
+                                                "ShoppingMenu",
+                                                  "PurchasesToProgress", "NoSelling",
+                                                  "Blueberry Bundle", "Blue Slime Blob", "Ugli Herb", "Anaph Herb", "Imp Juice",
+                                                "EndLoop",
+                                                "ChangeImageLayer", "Expression", "1", "Excited",
+                                                "FlexibleSpeaks",
+                                                "Mebbe buy more?♪",
+                                                "JumpToScene", "SleimShoppeMenu"
+                                              ]
+                                },
+                                        {
+                                            "NameOfScene": "Shopping2",
+                                            "theScene": ["IfChoice", "7", "LandingPad", "Shopping3",
+                                                        "ShoppingMenu",
+                                                          "PurchasesToProgress", "NoSelling",
+                                                          "Blueberry Bundle", "Cherry Bundle", "Fresh Appel", "Spectral Marshmallow Bundle", "Matango Mushroom", "Toxic Matango Mushroom", "Blue Slime Blob", "Red Slime Blob", "Fizzy Green Slime Bubble", "Ectoplasm", "Berri Cherri Jelly", "Relaxi Appel Jelly", "Mushmallow Jelly", "Spectra Jelly", "Ugli Herb", "Anaph Herb", "Imp Juice", "Deep Fish",
+                                                          "Puzzling Rune",
+                                                        "EndLoop",
+                                                        "ChangeImageLayer", "Expression", "1", "Excited",
+                                                        "FlexibleSpeaks",
+                                                        "Mebbe buy more?♪",
+                                                        "JumpToScene", "SleimShoppeMenu"
+                                                      ]
+                                        },
+                                              {
+                                                  "NameOfScene": "Shopping3",
+                                                  "theScene": [
+                                                              "ShoppingMenu",
+                                                                "PurchasesToProgress", "NoSelling",
+                                                                "Blueberry Bundle", "Cherry Bundle", "Fresh Appel", "Spectral Marshmallow Bundle", "Matango Mushroom", "Toxic Matango Mushroom",  "Blue Slime Blob", "Red Slime Blob", "Fizzy Green Slime Bubble", "Ectoplasm", "Berri Cherri Jelly", "Relaxi Appel Jelly", "Mushmallow Jelly", "Veloci Jelly", "Spectra Jelly", "Harpy Feather", "Harpy Egg", "Arachne Webbing", "Manticore Spike", "Tengu Feather", "Oni Sake", "Ugli Herb", "Anaph Herb", "Imp Juice", "Deep Fish",
+                                                                "Puzzling Rune",
+                                                              "EndLoop",
+                                                              "ChangeImageLayer", "Expression", "1", "Excited",
+                                                              "FlexibleSpeaks",
+                                                              "Mebbe buy more?♪",
+                                                              "JumpToScene", "SleimShoppeMenu"
+                                                            ]
+                                              },
+
+
+                                {
+                                    "NameOfScene": "Talk.",
+                                    "theScene": [
+                                                "IfProgressEqualsOrGreater", "1", "TalkWithSleimShoppe",
+                                                "ChangeImageLayer", "Expression", "1", "ItsFine",
+                                                "FlexibleSpeaks",
+                                                "Talk is not buy.♪",
+                                                "ChangeImageLayer", "Expression", "1", "Shy",
+                                                "FlexibleSpeaks",
+                                                "MebbeBuyNowThenTalkYe?",
+                                                "JumpToScene", "SleimShoppeMenu"
+                                              ]
+                                },
+                                      {
+                                          "NameOfScene": "TalkWithSleimShoppe",
+                                          "theScene": [   "ChangeImageLayer", "Expression", "1", "Base",
+                                                          "FlexibleSpeaks",
+                                                          "What it be, loyal customer? Question about wares? IsBerriesAndSlime.♪",
+                                                          "JumpToScene", "ShoppeAndTalkMenu"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "ShoppeAndTalkMenu",
+                                          "theScene": [
+                                                          "Menu",
+                                                            "'Where do you get the imp juice?'",
+                                                            "'Do you have more inventory?'",
+                                                            "'Why can't I sell things here?'",
+                                                            "RequiresChoice", "3", "",
+                                                            "'Why do you talk like that?'",
+                                                            "Done talking.",
+                                                          "EndLoop"
+                                                    ]
+                                      },
+                                              {
+                                                  "NameOfScene": "'Where do you get the imp juice?'",
+                                                  "theScene": [   "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                  "FlexibleSpeaks",
+                                                                  "He He.",
+                                                                  "The slime woman lets out a simple yet smug chuckle as she pulls out a juice-filled vial from behind the counter.",
+                                                                  "FlexibleSpeaks",
+                                                                  "Slimes sneak into dungeon and ambush imps all sneaky-like. Get imp juice. Bring back to sell. Very daring. Special slime imp juice. Added value, ye? Very unique.",
+                                                                  "She nods assertively as she taps the bottle, though you're pretty sure that besides the sticky blue residue on it, it's nothing more than ordinary Imp Juice the likes of which you got plenty of in the Forest Dungeon. It seems like the wobbly vendor has already moved past the topic, however, a dreamy expression showing on her face as she idly toys with the glass recipient.",
+                                                                  "ChangeImageLayer", "Expression", "1", "Excited",
+                                                                  "FlexibleSpeaks",
+                                                                  "Also it's cozy there. GoodForLazyTimeUntilTheSheepLadyGetsMad. Then is time to leave and we come back with stuff... Also mushrooms tasty. Good change of food.",
+                                                                  "ChangeImageLayer", "Expression", "1", "Smile",
+                                                                  "FlexibleSpeaks",
+                                                                  "But we're not sharing those. Too yummy. Too precious.",
+                                                                  "She puts the glimmering vial of Imp Juice back behind the counter and looks back to you with a jovial smile, restfully sloshing as she waits to see what other questions you might have.",
+                                                                  "JumpToScene", "ShoppeAndTalkMenu"
+                                                            ]
+                                              },
+                                              {
+                                                  "NameOfScene": "'Do you have more inventory?'",
+                                                  "theScene": [   "ChangeImageLayer", "Expression", "1", "Shy",
+                                                                  "She wobbles flusteredly as she looks to her left, then to her right, tapping her fingers meekly.",
+                                                                  "FlexibleSpeaks",
+                                                                  "No...",
+                                                                  "ChangeImageLayer", "Expression", "1", "Smile",
+                                                                  "FlexibleSpeaks",
+                                                                  "Have very little money. No magical production sites. Fishing too much effort. And too far for trade routes.",
+                                                                  "ChangeImageLayer", "Expression", "1", "Angry",
+                                                                  "FlexibleSpeaks",
+                                                                  "{i}AsideFromStinkyCheapskateBirdLadies.{/i}",
+                                                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                                                  "The sudden, rapid, anger-tinged outburst has you do a double take, but the irate grimace fades from the gooey shopkeep as quickly as it appeared while she returns to her usual worry-free tone.",
+                                                                  "FlexibleSpeaks",
+                                                                  "Haha. We also don't produce enough berry or slime for bulk sale. Not worth it. And Elves no want anything we have. They dun know what's good...",
+                                                                  "ChangeImageLayer", "Expression", "1", "Shy",
+                                                                  "She leans forlornly on the wooden stall with a wistful sigh, her semi-solid shape half-spilling over the counter which creaks and groans precariously under her yet modest weight.",
+                                                                  "FlexibleSpeaks",
+                                                                  "So inventory stay small for now...",
+                                                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                                                  "Her gaze turns back to you with swelling glimmering excitement.",
+                                                                  "FlexibleSpeaks",
+                                                                  "Until we get more money.",
+                                                                  "ChangeImageLayer", "Expression", "1", "Excited",
+                                                                  "FlexibleSpeaks",
+                                                                  "So buy lots.♪",
+                                                                  "JumpToScene", "ShoppeAndTalkMenu"
+                                                            ]
+                                              },
+                                              {
+                                                  "NameOfScene": "'Why can't I sell things here?'",
+                                                  "theScene": [
+                                                                  "ChangeImageLayer", "Expression", "1", "Smile",
+                                                                  "FlexibleSpeaks",
+                                                                  "Can't afford. Too remote to guarantee resale. Only lose money.",
+                                                                  "ChangeImageLayer", "Expression", "1", "Shy",
+                                                                  "FlexibleSpeaks",
+                                                                  "If you want sale you can go to... other places? Places with money to buy.",
+                                                                  "ChangeImageLayer", "Expression", "1", "Excited",
+                                                                  "FlexibleSpeaks",
+                                                                  "ButHereOnlyBuyOkay?♪",
+                                                                  "JumpToScene", "ShoppeAndTalkMenu"
+                                                            ]
+                                              },
+                                              {
+                                                  "NameOfScene": "'Why do you talk like that?'",
+                                                  "theScene": [
+                                                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                                                  "FlexibleSpeaks",
+                                                                  "Like what? ThisNotAboutBuyOrShop.",
+                                                                  "There's a slight tense terseness in her tone as she speaks back to you, a blank businesslike smile plastered on her gooey face.",
+                                                                  "Menu",
+                                                                    "Like that?",
+                                                                    "Nevermind.",
+                                                                  "EndLoop"
+                                                            ]
+                                              },
+                                                    {
+                                                        "NameOfScene": "Nevermind.",
+                                                        "theScene": [
+                                                                        "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                        "FlexibleSpeaks",
+                                                                        "Gud.",
+                                                                        "JumpToScene", "ShoppeAndTalkMenu"
+                                                                  ]
+                                                    },
+                                                    {
+                                                        "NameOfScene": "Like that?",
+                                                        "theScene": [   "StopBGM",
+                                                                        "ChangeImageLayer", "Expression", "1", "Excited",
+                                                                        "FlexibleSpeaks",
+                                                                        "... Talk in Special Sleim Shoppe Slime ways because promote buy. So buy okay? Practice very hard.",
+                                                                        "Menu",
+                                                                          "Can't you just talk normally?",
+                                                                          "The fast rapid-fire is to promote buying?",
+                                                                          "Well alright then.",
+                                                                        "EndLoop"
+                                                                  ]
+                                                    },
+                                                        {
+                                                            "NameOfScene": "Well alright then.",
+                                                            "theScene": [   "ChangeBGM", "music/Forest/Are-you-kidding.mp3",
+                                                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                                                            "FlexibleSpeaks",
+                                                                            "GudNowBuy.",
+                                                                            "JumpToScene", "ShoppeAndTalkMenu"
+                                                                      ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "Can't you just talk normally?",
+                                                            "theScene": [
+                                                                            "ChangeImageLayer", "Expression", "1", "Angry",
+                                                                            "ChangeBGM", "music/Battle/Battel-LunaticDance.mp3",
+                                                                            "Your insistent questioning seems to set something off in the gooey woman, her happy-go-lucky chill behavior shattering like a pane of glass as she glares at you.",
+                                                                            "FlexibleSpeaks",
+                                                                            "Normal?!YouWantNormal?!FineI'llTalkNormal!DoYouHaveAnyIdeaHowMuchIHaveToConstrainMyselfWhenISpeak?!It'sSuchAPain!ButOtherwisePeopleGetLostConfusedBaffledAndThrownOff!They'reAllSoSlow!SlowSlowSlow!TalkingAsIDidPriorPromotesConversationAndAmicability!It'sBasicMarketing!BarelyAnyoneInTownCanUnderstandMeWhenITalkLikeThis.AreYouFaringAnyBetterHuh?!IBetYouWereJustBeingSuperJudgementalOrSomethingTooWeren'tYou?!Huh?Huh!?Huh!?!",
+                                                                            "JumpToScene", "ShopeTalkGrr"
+                                                                      ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "The fast rapid-fire is to promote buying?",
+                                                            "theScene": [
+                                                                            "ChangeImageLayer", "Expression", "1", "Angry",
+                                                                            "ChangeBGM", "music/Battle/Battel-LunaticDance.mp3",
+                                                                            "Your insistent questioning seems to set something off in the gooey woman, her happy-go-lucky chill behavior shattering like a pane of glass as she glares at you.",
+                                                                            "FlexibleSpeaks",
+                                                                            "No{b}That's{/b}HowINormallyTalkYouVapidHusk!DoYouHaveAnyIdeaHowMuchIHaveToConstrainMyselfWhenISpeak?!It'sSuchAPain!ButOtherwisePeopleGetLostConfusedBaffledAndThrownOff!They'reAllSoSlow!SlowSlowSlow!TalkingAsIDidPriorPromotesConversationAndAmicability!It'sBasicMarketing!BarelyAnyoneInTownCanUnderstandMeWhenITalkLikeThis.AreYouFaringAnyBetterHuh?!IBetYouWereJustBeingSuperJudgementalOrSomethingTooWeren'tYou?!Huh?Huh!?Huh!?!",
+                                                                            "JumpToScene", "ShopeTalkGrr"
+                                                                      ]
+                                                        },
+                                                              {
+                                                                  "NameOfScene": "ShopeTalkGrr",
+                                                                  "theScene": [
+                                                                                  "DisplayCharacters",
+                                                                                    "1",
+                                                                                    "1",
+                                                                                  "EndLoop",
+                                                                                  "StopBGM",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Angry", "ChangeImageLayer", "Expression", "2", "Smile",
+                                                                                  "The shopkeeper's unexpected fed up outburst leaves you reeling slightly, her rather loud tirade drawing the attention of another slime woman who scoots over and comfortingly pats the fuming gooey girl on the shoulder.",
+                                                                                  "ChangeBGM", "music/Forest/Are-you-kidding.mp3",
+                                                                                  "ChangeImageLayer", "Expression", "2", "Shy",
+                                                                                  "Speak", "Blue Slime",
+                                                                                  "Sliver, you're getting too angry at the human...",
+                                                                                  "ChangeImageLayer", "Expression", "2", "Smile",
+                                                                                  "The intervention gives the shopkeeper pause and she lets out a self-calming, literally deflating sigh before looking over to the other blue slime who hasn't stopped patting her.",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                                                                  "FlexibleSpeaks",
+                                                                                  "It's Silver.",
+                                                                                  "SetFlexibleSpeaker", "4",
+                                                                                  "ChangeImageLayer", "Expression", "2", "Shy",
+                                                                                  "Speak", "Blue Slime",
+                                                                                  "...I forgot...",
+                                                                                  "ChangeImageLayer", "Expression", "1", "ItsFine",
+                                                                                  "FlexibleSpeaks",
+                                                                                  "You would.",
+                                                                                  "ChangeImageLayer", "Expression", "2", "Base",
+                                                                                  "Letting out a slightly peeved but now anger-free huff, she grabs hold of the arm of her fellow slime who still hasn't stopped her patting, and gently but firmly pushes it away, the wobbly woman drawing back with some meekness.",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Excited",
+                                                                                  "FlexibleSpeaks",
+                                                                                  "But you're right. Too worked up.",
+                                                                                  "DisplayCharacters",
+                                                                                    "1",
+                                                                                  "EndLoop",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                                                                  "The other slime lets out an awkward laugh and nods to the shopkeep, then to you before scooting away, leaving you alone once more with the Sleim Shoppe Slime who gives you a cheerful look returned to its usual businesslike chillness.",
+                                                                                  "FlexibleSpeaks",
+                                                                                  "{i}Ahem.{/i} Am sorry for the outburst, valued customer. Please accept gift as humble token of apology and appreciation for your gud business... Er... WaitAMomentPlease.",
+                                                                                  "DisplayCharacters",
+                                                                                  "EndLoop",
+                                                                                  "She lets her slimy body drop down, disappearing behind the counter, and you hear her rummage for a minute or two before she springs back up triumphantly.",
+                                                                                  "DisplayCharacters",
+                                                                                    "1",
+                                                                                  "EndLoop",
+                                                                                  "ChangeBGM", "music/Forest Dungeon/New Step.mp3",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Excited",
+                                                                                  "FlexibleSpeaks",
+                                                                                  "{b}Tada!{/b} ComplimentsOfTheHouse!",
+                                                                                  "She hands you a packet made of several overlapping leaves hastily bundled together, held by an actually nice-looking ribbon, making you curious as to what this 'token of apology' is going to be as you tug the little parcel open under Silver's expectant gaze.",
+                                                                                  "GiveItem", "1", "Blueberry Bundle",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Shy",
+                                                                                  "ChangeBGM", "music/Forest/Are-you-kidding.mp3",
+                                                                                  "You can't help but give a flat look to the slime girl who fidgets awkwardly for a quiet pensive moment as she pauses to smoothly articulate her next words.",
+                                                                                  "FlexibleSpeaks",
+                                                                                  "Sorry, is not like I really have anything else to give...",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Base",
+                                                                                  "FlexibleSpeaks",
+                                                                                  "... But once Sleim Shoppe business take off, I have plenty neat things for sale!",
+                                                                                  "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                                  "FlexibleSpeaks",
+                                                                                  "SoHelpSupportYourLocalBusinessAndBuyLotsYe?",
+                                                                                  "SetChoice", "3", "SlomeShopOutburst",
+                                                                                  "JumpToScene", "ShoppeAndTalkMenu"
+                                                                            ]
+                                                              },
+                                      {
+                                          "NameOfScene": "Done talking.",
+                                          "theScene": [   "ChangeImageLayer", "Expression", "1", "Excited",
+                                                          "FlexibleSpeaks",
+                                                          "OkiNowBuyMore?",
+                                                          "JumpToScene", "SleimShoppeMenu"
+                                                    ]
+                                      },
+                                {
+                                    "NameOfScene": "Leave the Sleim Shoppe.",
+                                    "theScene": [
+                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                    "FlexibleSpeaks",
+                                                    "Thank. Please come back soon.♪",
+                                                    "ChangeImageLayer", "Expression", "1", "Excited",
+                                                    "Reaching below the counter, she excitedly grabs hold of a small jingle bell and waits for you to turn away before ringing it merrily, as if you'd just crossed the door of an actual shop complete with doorbell.",
+                                                    "DisplayCharacters",
+                                                    "EndLoop",
+                                                    "JumpToScene", "SlomeExploreMenu"
+                                              ]
+                                }
+
+
+
+
+                ]
+}

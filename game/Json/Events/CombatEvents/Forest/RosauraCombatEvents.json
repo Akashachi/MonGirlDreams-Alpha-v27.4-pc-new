@@ -1,0 +1,489 @@
+{
+    "name": "RosauraCombatEvent",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Rosaura",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+
+                    {
+                        "NameOfScene": "Rosaura's Invitation",
+                        "theScene": [  "HitPlayerWith", "Sexual Tempt",
+                                      "ChangeImageLayer", "Expression", "Seductive",
+                                      "SetPostName", " - Rosaura's Invitation",
+                                      "FocusedSpeaksSkill",
+                                      "Rosaura pivots to face away from you, looking back with a seductive smile as she teasingly shakes she wide, fertile hips in front of you, her honeypot drooling with excitement for you.[DamageToPlayer]",
+                                      "FocusedSpeaks",
+                                      "SwapLineIf", "Random",
+                                        "Come on sweetie, fuck me.♥",
+                                        "Don't think.♥ Just do.♥",
+                                        "Don't be shy handsome.♥ Fuck me.♥",
+                                        "Are my pheromones getting you all hot and bothered?♥ I know what will take care of that.♥",
+                                        "Don't be shy, lover.♥",
+                                      "EndLoop",
+                                      "SetPostName", "",
+                                      "IfFetishLevelEqualOrGreater", "Sex", "100", "CantResistSexOffer",
+                                      "Menu",
+                                        "Fuck her!",
+                                        "Ignore the offer.",
+                                      "EndLoop"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Fuck her!",
+                              "theScene": [
+                                            "ApplyStance", "Sex",
+                                            "HitPlayerWith", "Bounce",
+                                            "You rush forward and plunge your rigid length into her squeezing tight pussy, letting out a sigh of bliss as it massages your every inch, letting your hands take hold of her plush hips as she gives them a teasing wiggle.[DamageToPlayer]"
+                                        ]
+                          },
+                              {
+                                  "NameOfScene": "CantResistSexOffer",
+                                  "theScene": [
+                                                "ApplyStance", "Sex",
+                                                "HitPlayerWith", "Bounce",
+                                                "Without a second thought you rush forward to accept her seductive offer, your mind too focused on thoughts of sex to even think of resisting the temptation of her tight pussy, and you sigh blissfully as it lovingly squeezes your throbbing length. Rosaura meanwhile lets out an approving coo, giving her hips a teasing wiggle.[DamageToPlayer]"
+                                            ]
+                              },
+                          {
+                              "NameOfScene": "Ignore the offer.",
+                              "theScene": [
+                                            "You think of resisting the plant woman's offer for sex, but the cloying scent of her rose scented pheromones and the sight of her fuckable body is making it a little hard to think straight...",
+
+                                            "StatCheck",
+                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "2",
+                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "3",
+                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "5",
+                                            "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "9",
+                                            "Temptation", "10",   "IgnoredSex",
+                                            "Fail",
+                                            "CantResistSexOffer"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "IgnoredSex",
+                                    "theScene": [ "ChangeImageLayer", "Expression", "Frown",
+                                                  "Rosaura gives you an annoyed glare as you ignore her offer for sex."
+                                              ]
+                                },
+
+
+
+                {
+                    "NameOfScene": "Rosaura's Oral Invitation",
+                    "theScene": [  "HitPlayerWith", "Oral Temptation",
+                                  "ChangeImageLayer", "Expression", "Pleasured",
+                                  "SetPostName", " - Rosaura's Oral Invitation",
+                                  "FocusedSpeaksSkill",
+                                  "Rosaura leans forward, lewdly opening her mouth, showing off her tongue as she gazes up at you, her amber nectar gently drooling from her mouth.[DamageToPlayer]",
+                                  "FocusedSpeaks",
+                                  "SwapLineIf", "Random",
+                                    "Mmmm,♥ let me suck you dry?♥",
+                                    "Cutie,♥ shove your cock down my throat,♥ I'll milk you dry.♥",
+                                    "Can I have a taste of you?♥ Handsome.♥",
+                                    "Your dick must be so pent up.♥ Let me take care of that.♥",
+                                    "Let me coat your dick in nectar?♥ You'll love it.♥",
+                                  "EndLoop",
+                                  "SetPostName", "",
+                                  "IfFetishLevelEqualOrGreater", "Oral", "100", "CantResistOralOffer",
+                                  "Menu",
+                                    "Offer her your dick!",
+                                    "Ignore the blowjob offer.",
+                                  "EndLoop"
+                              ]
+                },
+                      {
+                          "NameOfScene": "Offer her your dick!",
+                          "theScene": [
+                                        "ApplyStance", "Blowjob",
+                                        "HitPlayerWith", "Nectar Soaking Deepthroat",
+                                        "ApplyStatusEffect", "Nectar Soaking Deepthroat",
+                                        "You step forward offer your twitching cock to Rosaura, who wastes no time in wrapping her soft lips around your shaft, and starts to bob her head up and down, drawing a blissful moan from you as she skillfully sucks and lick your length.[DamageToPlayer]"
+                                    ]
+                      },
+                          {
+                              "NameOfScene": "CantResistOralOffer",
+                              "theScene": [
+                                            "ApplyStance", "Blowjob",
+                                            "HitPlayerWith", "Nectar Soaking Deepthroat",
+                                            "ApplyStatusEffect", "Nectar Soaking Deepthroat",
+                                            "You thoughtlessly step forward offer your twitching cock to Rosaura, who wastes no time in wrapping her soft lips around your shaft, and starts to bob her head up and down, drawing a blissful moan from you as she skillfully sucks and lick your length, the tension draining from your body from the sheer pleasure.[DamageToPlayer]"
+                                        ]
+                          },
+                      {
+                          "NameOfScene": "Ignore the blowjob offer.",
+                          "theScene": [
+                                        "You think of resisting the plant woman's teasing offer to suck you off with her soft lips, but the cloying scent of her rose scented pheromones and the sight of her lewd open mouth is making it a little hard to think straight...",
+
+                                        "StatCheck",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Oral", "25", "2",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Oral", "50", "3",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Oral", "75", "5",
+                                        "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "9",
+                                        "Temptation", "10",   "IgnoredOral",
+                                        "Fail",
+                                        "CantResistOralOffer"
+                                    ]
+                      },
+                            {
+                                "NameOfScene": "IgnoredOral",
+                                "theScene": [ "ChangeImageLayer", "Expression", "Frown",
+                                              "Rosaura gives you an annoyed glare as you ignore her offer for a blowjob."
+                                          ]
+                            },
+
+
+
+                {
+                    "NameOfScene": "Rosaura's Titillating Temptation",
+                    "theScene": [  "HitPlayerWith", "Valley Of Fascination",
+                                  "ChangeImageLayer", "Expression", "LipLick",
+                                  "SetPostName", " - Rosaura's Titillating Temptation",
+                                  "FocusedSpeaksSkill",
+                                  "Rosaura leans forward slightly and starts to grope and massaging her heavy breasts, squeezing their soft flesh together in a tempting display that invites you to thrust your cock between them.[DamageToPlayer]",
+                                  "FocusedSpeaks",
+                                  "SwapLineIf", "Random",
+                                    "Come on cutie.♥ Fuck my tits all you want.♥",
+                                    "Let me smother your cock with love.♥",
+                                    "Don't be shy sweetie,♥ bury your lovely dick in my cleavage.♥",
+                                    "Don't hold back handsome,♥ come and fuck my tits.♥",
+                                    "Let me give you a titfuck, sweetie.♥ You'll never want it to stop.♥",
+                                  "EndLoop",
+                                  "SetPostName", "",
+                                  "IfFetishLevelEqualOrGreater", "Breasts", "100", "CantResistPaizuriOffer",
+                                  "Menu",
+                                    "Shove your cock into her cleavage!",
+                                    "Ignore the titfuck offer.",
+                                  "EndLoop"
+                              ]
+                },
+                      {
+                          "NameOfScene": "Shove your cock into her cleavage!",
+                          "theScene": ["ChangeImageLayer", "Expression", "Seductive",
+                                        "ApplyStance", "Titfuck",
+                                        "HitPlayerWith", "Pressure Titfuck",
+                                        "You step forward and grab her plush tits on either side, her own hands overlapping with yours as your bury your length between her bountiful valley with a moan, finding your hips thrusting more as she lovingly guides you to squeeze her tits tightly together, a seductive smile on her face as she gazes up at you.[DamageToPlayer]"
+                                    ]
+                      },
+                          {
+                              "NameOfScene": "CantResistPaizuriOffer",
+                              "theScene": ["ChangeImageLayer", "Expression", "Seductive",
+                                            "ApplyStance", "Titfuck",
+                                            "HitPlayerWith", "Pressure Titfuck",
+                                              "You eagerly step forward and grab her perfectly plush tits on either side, her own hands overlapping with yours as your bury your length between her bountiful valley with a blissful moan, finding your hips thrusting more as she lovingly guides you to squeeze her tits tightly together, a seductive smile on her face as she gazes up at you.[DamageToPlayer]"
+                                        ]
+                          },
+                      {
+                          "NameOfScene": "Ignore the titfuck offer.",
+                          "theScene": [
+                                        "You think of resisting the plant woman's alluring offer to let you fuck her large, soft breasts, but the cloying scent of her rose scented pheromones and the plentiful cleavage on display is making it a little hard to think straight...",
+
+                                        "StatCheck",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "25", "2",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "50", "3",
+                                        "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "75", "5",
+                                        "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "9",
+                                        "Temptation", "10",   "IgnoredPaizuri",
+                                        "Fail",
+                                        "CantResistPaizuriOffer"
+                                    ]
+                      },
+                            {
+                                "NameOfScene": "IgnoredPaizuri",
+                                "theScene": [ "ChangeImageLayer", "Expression", "Frown",
+                                              "Rosaura gives you an annoyed glare as you ignore her offer for a titfuck."
+                                          ]
+                            },
+
+
+
+                    {
+                        "NameOfScene": "Nothing",
+                        "theScene": [
+                                  ]
+                    },
+
+
+                    {
+                        "NameOfScene": "EdgedCheck",
+                        "theScene": [ "SetChoice", "2", "",
+                                      "IfProgressEqualsOrGreater", "4", "EdgedCheck5",
+                                      "IfProgressEqualsOrGreater", "3", "EdgedCheck4",
+                                      "IfProgressEqualsOrGreater", "2", "EdgedCheck3",
+                                      "IfProgressEqualsOrGreater", "1", "EdgedCheck2",
+                                      "ChangeProgress", "1",
+                                      "SetChoice", "2", "Go"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "EdgedCheck2",
+                                "theScene": [
+                                              "ChangeProgress", "1",
+                                              "IfPlayerArousalOverPercentOfMax", "150", "IsGo",
+                                              "ChangeProgress", "-1"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "EdgedCheck3",
+                                "theScene": [
+                                              "ChangeProgress", "1",
+                                              "IfPlayerArousalOverPercentOfMax", "200", "IsGo",
+                                              "ChangeProgress", "-1"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "EdgedCheck4",
+                                "theScene": [
+                                              "ChangeProgress", "1",
+                                              "IfPlayerArousalOverPercentOfMax", "250", "IsGo",
+                                              "ChangeProgress", "-1"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "EdgedCheck5",
+                                "theScene": [
+                                              "ChangeProgress", "1",
+                                              "IfPlayerArousalOverPercentOfMax", "300", "IsGo",
+                                              "ChangeProgress", "-1"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "IsGo",
+                                "theScene": [
+                                              "SetChoice", "2", "Go"
+                                          ]
+                            },
+
+                    {
+                        "NameOfScene": "Edged",
+                        "theScene": [
+                                      "CallSceneThenReturn", "EdgedCheck",
+                                      "IfChoice", "2", "Go", "EdgedLines",
+                                      "JumpToScene", "Nothing"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "EdgedLines",
+                              "theScene": [
+                                            "SwapLineIf", "Random",
+                                                "|f|ChangeImageLayer|/|Expression|/|Smug|n|You shiver and gasp on the brink of orgasm, and Rosaura merely trails a few fingers down your chest with a loving smile. This leaves you shuddering and gasping in pleasure and your cock flail excitedly while Venefica's magic prevents you from reaching climax and Rosaura giggles seductively.|f|JumpToScene|/|PostEdge|n|",
+                                                "|f|ChangeImageLayer|/|Expression|/|Seductive|n|You're left trembling on the brink of climax, and Rosaura simply leans in and gives you a chaste kiss, forcing your overstimulated body to shiver in near orgasmic euphoria as Venefica's magic prevents your release entirely, but the pleasure still hits you in constant mind-blanking waves.|f|JumpToScene|/|PostEdge|n|",
+                                            "EndLoop"
+                                        ]
+                          },
+                    {
+                        "NameOfScene": "EdgedBJ",
+                        "theScene": [
+                                      "CallSceneThenReturn", "EdgedCheck",
+                                      "IfChoice", "2", "Go", "EdgedBJLines",
+                                      "JumpToScene", "Nothing"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "EdgedBJLines",
+                              "theScene": [
+                                            "SwapLineIf", "Random",
+                                                "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|Rosaura excitedly bobs up and down your throbbing length, and your cock spasms with every stroke of her soft lips, pulsing with the need to cum, Venefica's magic preventing your release, leaving your tip leaking a constant stream of precum for Rosaura to lap up and your mind-blanking out more and more with bliss.|f|JumpToScene|/|PostEdge|n|",
+                                                "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|With a giggle Rosaura slowly slides her plush lips up and down your aching dick, intently sucking while her tongue rolls along the underside of your shaft, and your cock throbs with a pulsing need for release each time she hilts you down her throat or pulls back to firmly suckle your tip.|n|You're slowly losing yourself to the constant waves of pleasure, denial washing  through your waist as Venefica's magic prevents climax, and Rosaura purrs lovingly as she watches your body twitch and jerk in ecstasy.|f|JumpToScene|/|PostEdge|n|",
+                                                "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|Your aching balls tense and twitch, but no matter how much Rosaura services your manhood, sucking up and down your dick with expert skill, you can't reach climax, Venefica's magic preventing it regardless of what you want, making you unconsciously thrust into Rosaura's pillow lips in search of release, only to find more maddening euphoria.|f|JumpToScene|/|PostEdge|n|",
+                                                "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|You gasp and squirm with delight as you're kept on the brink of climax by Rosaura's soft lips and Venefica's magic, filling your lungs with more of the rose scented pheromones while your cock is coated with warm gooey nectar, slowly emptying your mind of everything but the quivering need for pleasure.|n|Rosaura's lewd upward gaze alone is enough to make your heart skip a beat as she bobs up and down your spasming erection, her tongue lapping at your drooling tip every chance it gets, leaving your balls aching for release.|f|JumpToScene|/|PostEdge|n|",
+                                                "|f|ChangeImageLayer|/|Expression|/|Pleasured|n|Your thoughts blank out as Rosaura hilts your cock down her tight throat, intently sucking at your base while you shiver in near climax, your dick spasming in denial from Venefica's magic, and you throw back your head with a cry of bliss as Rosaura slowly slides her plump lips back up your twitching erection in a long drawn out suck.|f|JumpToScene|/|PostEdge|n|",
+                                            "EndLoop"
+                                        ]
+                          },
+                    {
+                        "NameOfScene": "EdgedTitfuck",
+                        "theScene": [
+                                      "CallSceneThenReturn", "EdgedCheck",
+                                      "IfChoice", "2", "Go", "EdgedTitfuckLines",
+                                      "JumpToScene", "Nothing"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "EdgedTitfuckLines",
+                              "theScene": [
+                                            "SwapLineIf", "Random",
+                                                "|f|ChangeImageLayer|/|Expression|/|Assertive|n|Rosaura lets out an evil giggle as she presses her hands against yours, helping you squeeze her tits tighter as you instinctively thrust your hips, your cock twitching wildly as it tries to spurt, denied by Venefica's magic, leaving the pleasure to mount as you lose yourself to the cloying pressure of her cleavage with every swing of your hips.|f|JumpToScene|/|PostEdge|n|",
+                                                "|f|ChangeImageLayer|/|Expression|/|Seductive|n|You're frozen in near climax as Rosaura rolls her heavy tits in slow circles while your hands mindlessly squeeze them, your dick twitching in needy, magic enforced denial as it pokes out from her cleavage, every soft caress making you shiver.|f|ChangeImageLayer|/|Expression|/|Assertive|n|Then with a sadistic giggle Rosaura leans down and catches your drooling tip between her plump lips and starts to suck and lick it, making your hips jerk and buck in redoubled pleasured denial as she laps up your precum, giving her bountiful breasts a tight squeeze to make you leak as much as possible.|f|JumpToScene|/|PostEdge|n|",
+                                                "|f|ChangeImageLayer|/|Expression|/|Smug|n|Rosaura smiles up at you as the rose scented pheromone in the air and the mounting pleasure leave you excitedly thrusting into her intoxicatingly soft cleavage, your aching balls throbbing with need while hot desire pools in your waist, each jiggly impact to your waist blanking your mind out more and more as magic prevents you from reaching climax.|f|JumpToScene|/|PostEdge|n|",
+                                                "|f|ChangeImageLayer|/|Expression|/|Smug|n|You can't help yourself as your hand sink into the softness of Rosaura's huge tits, thrusting your hips wildly to fuck her soft bosom, and your cock spasms excitedly as it fails to reach climax again and again. With a soft laugh she tenderly guides your hands to squeeze her tits together more, and you can only moan with bliss while your spasming dick indulges in her pillowy cleavage.|f|JumpToScene|/|PostEdge|n|",
+                                                "|f|ChangeImageLayer|/|Expression|/|Seductive|n|Rosaura slowly pumps her heavy tits up and down along your shaft while you're frozen with shocks of pure bliss, so close to a climax you just can't reach, each upward and downward caress and squeeze of her tits forcing you to ride a constant wave of mind numbing pleasure, your thought melting away more and more with each stroke of her overflowing cleavage.|f|JumpToScene|/|PostEdge|n|",
+                                            "EndLoop"
+                                        ]
+                          },
+                    {
+                        "NameOfScene": "EdgedSex",
+                        "theScene": [
+                                      "CallSceneThenReturn", "EdgedCheck",
+                                      "IfChoice", "2", "Go", "EdgedSexLines",
+                                      "JumpToScene", "Nothing"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "EdgedSexLines",
+                              "theScene": [
+                                            "SwapLineIf", "Random",
+                                                "|f|ChangeImageLayer|/|Expression|/|Smug|n|Rosaura purrs seductively as you frantically plow her from behind, your throbbing dick controlling you as it spasms in denial, each wet impact of your hips meeting makes her plush ass jiggle temptingly while you squeeze it with your greedy fingers, her squeezing ass tempting you to keep going with your each and every thrust despite your inability to cum.|f|JumpToScene|/|PostEdge|n|",
+                                                "|f|ChangeImageLayer|/|Expression|/|Assertive|n|You try to slow your pace as you're driven to the brink of climax, only for Rosaura to give you a backwards, sly look before she starts to rapidly swing her wide hips, leaving you gasping and moaning with each pleasure inducing impact as your cock is worked senseless, and magic keeps you on the mind-blanking edge of release no matter how many times your dick is hilted inside.|f|JumpToScene|/|PostEdge|n|",
+                                                "|f|ChangeImageLayer|/|Expression|/|Smug|n|Your hands get lost in the soft, plush curves of Rosaura's wide, seductive hips while you slowly thrust into her, your cock twitching in denial every time, your balls aching with the need for release, but with the pheromones permeating the air all you can think about is fucking her more and more, even as your brain slowly melts from the waves of bliss cascading through your body.|f|JumpToScene|/|PostEdge|n|",
+                                                "|f|ChangeImageLayer|/|Expression|/|Seductive|n|You try to stop and catch your breath and let the pleasure ebb away, magic preventing your twitching cock from unloading, but with a seductive coo Rosaura gives her lush hips a tempting shake that scatters your focus while she grinds her soft rear against you, and on instinct you start to fuck her again at a rapid tempo, losing yourself in the pleasure high state of being constantly edged.|f|JumpToScene|/|PostEdge|n|",
+                                                "|f|ChangeImageLayer|/|Expression|/|Seductive|n|The two of you swing your hips in harmonious time with each other, each mind numbing impact driving you wild with need, your entire body shivering in euphoria as your dick throbs in near climax with every squeezing thrust, and with a giggle Rosaura leans back, letting you grope her heavy tits and kiss her while you slowly melt your mind as you lovingly fuck.|f|JumpToScene|/|PostEdge|n|",
+                                                "|f|ChangeImageLayer|/|Expression|/|Assertive|n|Rosaura shoots you as domineering smile as you desperately try to stop yourself from thrusting your hips, the spasming waves of near climactic bliss blanking out your mind as magic prevents your orgasm, her teasing whispers of reassurance egging you on to keep going, to lose yourself.|n|With every meeting of your hips you can feel yourself giving in more and more with a growing pleasure drunk smile, until you're eagerly fucking her without a care for a few moments, lost in an edged out pleasure high as you pound her from behind until you manage to snap back to rationality, but unable to stop fucking her, your cock throbbing with need.|f|JumpToScene|/|PostEdge|n|",
+                                            "EndLoop"
+                                        ]
+                          },
+                    {
+                        "NameOfScene": "EdgedAnal",
+                        "theScene": [
+                                      "CallSceneThenReturn", "EdgedCheck",
+                                      "IfChoice", "2", "Go", "EdgedAnalLines",
+                                      "JumpToScene", "Nothing"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "EdgedAnalLines",
+                              "theScene": [
+                                            "SwapLineIf", "Random",
+                                              "|f|ChangeImageLayer|/|Expression|/|Smug|n|Rosaura purrs seductively as you frantically plow her from behind, your throbbing dick controlling you as it spasms in denial, each wet impact of your hips meeting makes her plush ass jiggle temptingly while you squeeze it with your greedy fingers, her squeezing ass tempting you to keep going with your each and every thrust despite your inability to cum.|f|JumpToScene|/|PostEdge|n|",
+                                              "|f|ChangeImageLayer|/|Expression|/|Assertive|n|You try to slow your pace as you're driven to the brink of climax, only for Rosaura to give you a backwards, sly look before she starts to rapidly swing her wide hips, leaving you gasping and moaning with each pleasure inducing impact as your cock is worked senseless, and magic keeps you on the mind-blanking edge of release no matter how many times your dick is hilted inside.|f|JumpToScene|/|PostEdge|n|",
+                                              "|f|ChangeImageLayer|/|Expression|/|Smug|n|Your hands get lost in the soft, plush curves of Rosaura's wide, seductive hips while you slowly thrust into her, your cock twitching in denial every time, your balls aching with the need for release, but with the pheromones permeating the air all you can think about is fucking her more and more, even as your brain slowly melts from the waves of bliss cascading through your body.|f|JumpToScene|/|PostEdge|n|",
+                                              "|f|ChangeImageLayer|/|Expression|/|Seductive|n|You try to stop and catch your breath and let the pleasure ebb away, magic preventing your twitching cock from unloading, but with a seductive coo Rosaura gives her lush hips a tempting shake that scatters your focus while she grinds her soft rear against you, and on instinct you start to fuck her again at a rapid tempo, losing yourself in the pleasure high state of being constantly edged.|f|JumpToScene|/|PostEdge|n|",
+                                              "|f|ChangeImageLayer|/|Expression|/|Seductive|n|The two of you swing your hips in harmonious time with each other, each mind numbing impact driving you wild with need, your entire body shivering in euphoria as your dick throbs in near climax with every squeezing thrust, and with a giggle Rosaura leans back, letting you grope her heavy tits and kiss her while you slowly melt your mind as you lovingly fuck.|f|JumpToScene|/|PostEdge|n|",
+                                              "|f|ChangeImageLayer|/|Expression|/|Assertive|n|Rosaura shoots you as domineering smile as you desperately try to stop yourself from thrusting your hips, the spasming waves of near climactic bliss blanking out your mind as magic prevents your orgasm, her teasing whispers of reassurance egging you on to keep going, to lose yourself.|n|With every meeting of your hips you can feel yourself giving in more and more with a growing pleasure drunk smile, until you're eagerly fucking her without a care for a few moments, lost in an edged out pleasure high as you pound her from behind until you manage to snap back to rationality, but unable to stop fucking her, your cock throbbing with need.|f|JumpToScene|/|PostEdge|n|",
+                                            "EndLoop"
+                                        ]
+                          },
+
+
+
+
+
+                  {
+                      "NameOfScene": "PostEdge",
+                      "theScene": [
+                                    "IfProgressEqualsOrGreater", "5", "EdgedSillyLoss",
+                                    "IfProgressEqualsOrGreater", "4", "LastWarning",
+                                    "IfProgressEqualsOrGreater", "3", "EdgedHalf",
+                                    "IfProgressEqualsOrGreater", "2", "Nothing",
+                                    "ChangeImageLayer", "Expression", "Mocking",
+                                    "FocusedSpeaks",
+                                    "Oh my,♥ sweetie,♥ I hope you didn't forget Venefica put that spell on you.♥ Hehehe.♥",
+                                    "You can only gasp and shiver in response to her teasing words, if this keeps up for too long you won't be able to fight back even if you don't cum once!"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "EdgedHalf",
+                            "theScene": [
+                                          "As you're edged once more your brain feels like it's melting, every bit of your body aching for release yet only wanting more pleasure! You can't keep this up much longer!"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "LastWarning",
+                            "theScene": [
+                                          "Your entire body is trembling with need as you're edged again, a bit of drool trailing down your chin as you blank out for a few solid pleasure soaked moments, only wanting to relax and ride the waves of bliss! {i}If she edges you one more time, you're going to lose!{/i}"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "EdgedSillyLoss",
+                            "theScene": [ "ChangeImageLayer", "Expression", "Smug",
+                                          "Your entire body won't stop shivering and twitching in pleasure, your edged silly dick spasming wildly in search of release while your brain is stuck in a haze of bliss as wave after wave of euphoria washes through every part of you from bad you need to cum, and resisting Rosaura doesn't even register in your mind anymore.",
+                                          "FocusedSpeaks",
+                                          "Oh sweetie,♥ you're completely pleasure drunk now.♥",
+                                          "ChangeImageLayer", "Expression", "Mocking", "ChangeArousalByPercent", "10",
+                                          "She lets out a triumphant giggle as she pulls away from you for a moment, making you shudder as you finally get a break from her teasing attentions while she gently pulls you deeper into the flower, laying you back on one of the oversized rose petal, the scent of her pheromones wonderfully overwhelming your senses.",
+                                          "ChangeImageLayer", "Expression", "Seductive",
+                                          "FocusedSpeaks",
+                                          "But we're just getting started cutie,♥ lets get you riding those endless waves of bliss for as lonnngggg♥ as possible.♥",
+                                          "ChangeArousalByPercent", "10",
+                                          "You let out a mindless whimper as she settles herself between your legs, wrapping her soft fingers around your shaft, slowly stroking your overstimulated and twitching cock, sending pulses of ecstasy jolting through your hips as she keeps you right at the brink of climax with the aid of Venefica's magic.",
+                                          "ChangeArousalByPercent", "20",
+                                          "She leans down and gives your tip a gentle smooch, making your hips jerk up from the stimulation while you moan incoherently, your manhood spasming excitedly as it drools precum for her to lap up before she wetly pulls away with a smile.",
+                                          "ChangeImageLayer", "Expression", "Smug",
+                                          "FocusedSpeaks",
+                                          "Sweetie,♥ I bet you're going to get hooked on being edged after this.♥",
+                                          "ChangeArousalByPercent", "20",
+                                          "Without waiting for a response she dives back down and wraps her mouth around your cockhead, firmly sealing her plush lips around the crown as she starts to intensely suck on it, looping her tongue in melty circles while her hand slowly strokes up and down. The hot waves of edged out bliss leave your brain blanking out while you moan and twitch happily, throwing your head back in ecstasy.",
+                                          "ChangeImageLayer", "Expression", "Seductive", "ChangeArousalByPercent", "20",
+                                          "Rosaura then gently bobs up and down on the tip, teasing your sensitive flesh with her soft lips, her tongue slowly lapping at your tip to steal the beads of precum forming, and your waist feels like it's warmly melting away as your balls firmly twitch and tense with the need to spurt but you can't get over the edge, her teasingly stroking hand giving you a few rapid strokes to cement that fact.",
+                                          "FocusedSpeaks",
+                                          "Mphhh,♥ get ready.♥",
+                                          "ChangeArousalByPercent", "20", "ChangeImageLayer", "Expression", "Pleasured",
+                                          "Her pumping hand slides off your throbbing length to brace her self on the flower petal with both hands before she dives her mouth all the way down your length, sending your entire body into a sea of white hot ecstasy, your hips jerking up to meet her as she hilts you down her throat with an evil giggle, holding your spasming cock for a few floaty moments while her tongue tease her base.",
+                                          "ChangeArousalByPercent", "20",
+                                          "Then as she slowly pulls back with a long drawn out suck you start taking heavy breaths of air you didn't realize you needed, filling your brain up with even more of her rose scented pheromones amplifying the blissful infatuation pulsing inside you, a blissed out pleasure drunk grin plastered on your face as she sucks out a stream of precum from your twitching member.",
+                                          "ChangeArousalByPercent", "20",
+                                          "Rosaura finally reaches your tip and gives your tip a few bliss jolting licks, before diving back down your shaft again, forcing you to moan and quiver in euphoria pleasure, all the tension in your body pooling in your rigid manhood as the constant edging and her aphrodisiac nectar soak into your groin, driving up your need and arousal more and more, your mind a total mess of incoherent pleasure.",
+                                          "ChangeArousalByPercent", "20", "ChangeImageLayer", "Expression", "Assertive",
+                                          "She bobs up and down, slowly, teasingly as she coats your shaft in her nectar saliva, intensely sucking all the while, her tongue rolling along the underside of your aching dick while your hips jerk instinctively in search of release, every bit of you lost in a molten haze of desire and bliss, her amorous upward gaze draining away all your cares and worries whenever you manage to look down at her.",
+                                          "ChangeArousalByPercent", "20",
+                                          "The shivering pleasure is almost unbearable as you're left riding along the waves of pleasure in a mindless haze, only thinking of how good her mouth feels as she slides her plush O shaped lips up and down, milking out your pre-cum from your drooling, twitching tip, your cock only getting harder and more needy as her warm nectar soaks into your skin, the need to cum fading off as you lose yourself the loop of near climax.",
+                                          "ChangeArousalByPercent", "50", "ChangeImageLayer", "Expression", "Pleasured",
+                                          "Time seems to drift away on you as you lay there trembling while she services you into a blissed out, edged silly puddle, but eventually she pops her lips off of your tip with a wet smack and a lewd purr.",
+                                          "ChangeImageLayer", "Expression", "Seductive",
+                                          "FocusedSpeaks",
+                                          "Mmmm,♥ alright sweetie,♥ I think we should change it up.♥ Don't you?♥ So I can keep edging you into even more of a pleasure drunk mess?♥",
+                                          "ChangeArousalByPercent", "20",
+                                          "You shiver and nod along, not able to think straight anymore, only wanting more pleasure, and Rosaura giggles, hefting up her heavy, pillowy tits over your slick, throbbing cock, her fingers deeply sinking into her of soft skin.",
+                                          "ChangeImageLayer", "Expression", "Smug",
+                                          "FocusedSpeaks",
+                                          "Good boy.♥",
+                                          "ChangeArousalByPercent", "20",
+                                          "She squeezes her bountiful tits together before burying your rigid dick in them, pressing them down onto your waist in a single smooth motion that makes your brain go blank all over again as your hips jerk up to meet her warm cleavage, a sloppy grin on your face as tingling waves of bliss trail over your body endlessly as your denied climax again.",
+                                          "ChangeImageLayer", "Expression", "Seductive",
+                                          "FocusedSpeaks",
+                                          "Hmhmhm,♥ so adorable.♥ Now just relax.♥",
+                                          "ChangeArousalByPercent", "20",
+                                          "ChangeImageLayer", "Expression", "Caring",
+                                          "She starts to roll her luscious breasts in slow circles, massaging your spasming cock with softness from all directions, keeping you constantly on the brink of unattainable release, a blissful smile locked on your face as you lay back and twitch on occasion from a jolt of pleasure shooting through your hips, your mind spinning and dazed with intoxicating infatuation and pleasure, your senses filled with her pheromones.",
+                                          "FocusedSpeaks",
+                                          "Your wonderful dick just won't stop throbbing.♥ It's practically begging for more and more.♥",
+                                          "ChangeArousalByPercent", "20",   "ChangeImageLayer", "Expression", "Smug",
+                                          "Rosaura then begins to pump her huge tits up in down in slow, heavy movements, that jiggle delightfully with every impact to your hips, making you weakly thrust despite the mounting sexual exhaustion seeping into your muscles, but the mind melting, edging induced pleasure high keeps going, her pillowy cleavage stroking up and down in maddening ways as she squeezes it tighter.",
+                                          "FocusedSpeaks",
+                                          "Hehe, you look like you can barely take this.♥ But we're not stopping any time soon. So settle in sweetie.♥",
+                                          "ChangeArousalByPercent", "20", "ChangeImageLayer", "Expression", "Seductive",
+                                          "She gives your aching cock a few more teasing strokes before she leans down and catches your tip with her soft lips and starts to suck on it, lapping up your constantly leaking precum as she bounces her tits along your length at an increasingly rapid pace, happily purring as you moan in constant needy pleasure, losing yourself in the endless tides of bliss.",
+                                          "ChangeArousalByPercent", "20",
+                                          "You can't even see straight as she pumps your spasming cock with her divine cleavage, her plump lips helping to drain out what little sanity you had left as she milks you into an edged out stupor, and you gleefully ride the waves of pleasure that keep going higher as they tingle across your body, your world practically becoming just Rosaura's luscious tits, your cock, and her plush O shaped lips sucking on your tip.",
+                                          "ChangeArousalByPercent", "20",
+                                          "Even as time slips away from you again you can feel her switch things up to drain more precum from you, moving her huge tits in alternation while she only uses her skilled tongue on your tip, to practically making out with your cockhead while her soft tits merely cradle your spasming erection in a tight embrace, the pleasure going on and on until you finally black out with a sloppy pleasure drunk grin...",
+                                          "...",
+                                          "ChangeSensitivity", "Sex", "20",
+                                          "ChangeFetish", "Breasts", "10",
+                                          "ChangeFetish", "Oral", "15",
+                                          "GetEventAndIfChoice", "Rosaura's Edging Garden", "1", "InLaby", "GameOver",
+
+                                          "CallEventAndSceneThenReturn", "TimePassed", "EventStart", "CallEventAndSceneThenReturn", "TimePassed", "EventStart", "CallEventAndSceneThenReturn", "TimePassed", "EventStart", "CallEventAndSceneThenReturn", "TimePassed", "EventStart", "CallEventAndSceneThenReturn", "TimePassed", "EventStart",
+                                          "CallEventAndSceneThenReturn", "TimePassed", "EventStart", "CallEventAndSceneThenReturn", "TimePassed", "EventStart", "CallEventAndSceneThenReturn", "TimePassed", "EventStart", "CallEventAndSceneThenReturn", "TimePassed", "EventStart", "CallEventAndSceneThenReturn", "TimePassed", "EventStart",
+                                          "CallEventAndSceneThenReturn", "TimePassed", "EventStart", "CallEventAndSceneThenReturn", "TimePassed", "EventStart", "CallEventAndSceneThenReturn", "TimePassed", "EventStart", "CallEventAndSceneThenReturn", "TimePassed", "EventStart", "CallEventAndSceneThenReturn", "TimePassed", "EventStart",
+                                          "ClearNonPersistentStatusEffects",
+                                          "ClearFightForVictory",
+                                          "CallLossLevelUp",
+                                          "JumpToEventThenScene", "VeneficasHomeExplore", "LostFightWithRosaura"
+                                      ]
+                        },
+                                {
+                                    "NameOfScene": "GameOver",
+                                    "theScene": [ "GetEventAndSetChoice", "Rosaura's Edging Garden", "1", "",
+                                                  "GameOver"
+                                              ]
+                                },
+
+                        {
+                            "NameOfScene": "EventBroke",
+                            "theScene": [
+                                         "event shattered"
+                                      ]
+                        }
+
+
+
+                ]
+}

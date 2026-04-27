@@ -1,0 +1,1130 @@
+{
+    "name": "Pray to the Goddess Statue.",
+    "CardType": "Church",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ "Good Luck Charm"],
+    "Speakers": [
+                  {
+                    "name": "Venereae",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Lucille",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Lillian",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [
+                                    "JumpToScene", "PrayingMenuActual"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "PrayingMenu",
+                        "theScene": [
+                                        "IfChoice", "1", "", "CheckFirstBlessing",
+                                        "IfChoice", "2", "", "CheckSecondBlessing",
+                                        "IfChoice", "3", "","CheckThirdBlessing",
+                                        "IfChoice", "4", "","CheckFourthBlessing",
+                                        "IfChoice", "5", "","UnlockBlessingShop",
+                                        "JumpToScene", "PrayingMenuActual"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "CheckFirstBlessing",
+                                "theScene": [
+                                                "IfProgressEqualsOrGreater", "100", "GiveFirstBlessing",
+                                                "JumpToScene", "PrayingMenuActual"
+                                          ]
+                            },
+                                    {
+                                        "NameOfScene": "GiveFirstBlessing",
+                                        "theScene": [    "You suddenly feel a rush of holy euphoria... You have been blessed by the goddess!",
+                                                        "SetChoice", "1", "FirstBlessing",
+                                                        "ChangeProgress", "-100",
+                                                        "GivePerk", "Incredibly Minor Blessing Of Venereae",
+                                                        "JumpToScene", "PrayingMenu"
+                                                  ]
+                                    },
+                            {
+                                "NameOfScene": "CheckSecondBlessing",
+                                "theScene": [
+                                                "IfProgressEqualsOrGreater", "1000", "GiveSecondBlessing",
+                                                "JumpToScene", "PrayingMenuActual"
+                                          ]
+                            },
+                                    {
+                                        "NameOfScene": "GiveSecondBlessing",
+                                        "theScene": [    "You suddenly feel a rush of holy euphoria... You have been blessed by the goddess!",
+                                                        "SetChoice", "2", "SecondBlessing",
+                                                          "ChangeProgress", "-1000",
+                                                        "RemovePerkQuietly", "Incredibly Minor Blessing Of Venereae",
+                                                        "GivePerk", "Very Minor Blessing Of Venereae",
+                                                        "JumpToScene", "PrayingMenu"
+                                                  ]
+                                    },
+                            {
+                                "NameOfScene": "CheckThirdBlessing",
+                                "theScene": [
+                                                "IfProgressEqualsOrGreater", "5000", "GiveThirdBlessing",
+                                                "JumpToScene", "PrayingMenuActual"
+                                          ]
+                            },
+                                    {
+                                        "NameOfScene": "GiveThirdBlessing",
+                                        "theScene": [    "You suddenly feel a rush of holy euphoria... You have been blessed by the goddess!",
+                                                        "SetChoice", "3", "ThirdBlessing",
+                                                          "ChangeProgress", "-5000",
+                                                        "RemovePerkQuietly", "Very Minor Blessing Of Venereae",
+                                                        "GivePerk", "Minor Blessing Of Venereae",
+                                                        "JumpToScene", "PrayingMenu"
+                                                  ]
+                                    },
+                            {
+                                "NameOfScene": "CheckFourthBlessing",
+                                "theScene": [
+                                                "IfProgressEqualsOrGreater", "10000", "GiveFourthBlessing",
+                                                "JumpToScene", "PrayingMenuActual"
+                                          ]
+                            },
+                                    {
+                                        "NameOfScene": "GiveFourthBlessing",
+                                        "theScene": [    "You suddenly feel a rush of holy euphoria... You have been blessed by the goddess!",
+                                                        "ChangeProgress", "-10000",
+                                                        "SetChoice", "4", "FourthBlessing",
+                                                        "RemovePerkQuietly", "Minor Blessing Of Venereae",
+                                                        "GivePerk", "Blessing Of Venereae",
+                                                        "JumpToScene", "PrayingMenu"
+                                                  ]
+                                    },
+                            {
+                                "NameOfScene": "UnlockBlessingShop",
+                                "theScene": [    "You suddenly feel a rush of holy euphoria as a calm, serene voice rings in your mind.",
+                                                "Speaks2",
+                                                "Oh, chosen hero [ThePlayerName], I am the angel Lucille. I watch over this church in the name of the Goddess. With your charitable donations, you have become truly blessed, and as such, may now receive more direct aid from the Goddess and her agents.",
+                                                "Speaks2",
+                                                "If you wish to be bestowed with more blessings oh chosen hero, please do not hesitate to speak with me while you pray. Just know you must have the available 'holy power' to do so, acquired by donating eros to the Goddess.",
+                                                "SetChoice", "5", "ShopUnlocked",
+                                                "JumpToScene", "PrayingMenuActual"
+                                          ]
+                            },
+
+
+                    {
+                        "NameOfScene": "PrayingMenuActual",
+                        "theScene": [
+                                        "You pray before the Goddess' Statue.",
+                                        "Menu",
+                                          "Restore Sensitivity.",
+                                          "Purge unclean thoughts.",
+                                          "Donate.",
+                                          "RequiresChoice", "5", "ShopUnlocked",
+                                          "Contact Lucille.",
+                                          "Stop praying.",
+                                        "EndLoop"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Restore Sensitivity.",
+                              "theScene": [ "You pray at the statue of the Goddess Venereae to restore your body.",
+                                          "Her voice rings through your mind.",
+                                          "SensitivityRestore",
+                                          "AddTributeToProgress",
+                                          "JumpToScene", "PrayingMenu"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Purge unclean thoughts.",
+                              "theScene": [  "You pray at the statue of the Goddess Venereae to restore your mind.",
+                                            "Her voice rings through your head.",
+                                            "PurgeFetishes",
+                                            "AddTributeToProgress",
+                                            "JumpToScene", "PrayingMenu"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Donate.",
+                              "theScene": [ "DonateToGoddess",
+                                          "AddTributeToProgress",
+                                          "JumpToScene", "PrayingMenu"
+                                        ]
+                          },
+
+
+
+
+                          {
+                              "NameOfScene": "Contact Lucille.",
+                              "theScene": [ "A gentle feeling of warmth envelops your body like a soft, caring embrace.",
+                                          "IfChoice", "11", "", "CheckDungeonClear",
+                                          "IfChoice", "12", "", "CheckTempleClear",
+                                          "JumpToScene", "CheckRealSigilProgress"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "CheckDungeonClear",
+                                    "theScene": [ "IfHasItem", "Sigil Of Allure", "Beat the forest dungeon.",
+                                                "JumpToScene", "CheckRealSigilProgress"
+                                              ]
+                                },
+                                      {
+                                          "NameOfScene": "Beat the forest dungeon.",
+                                          "theScene": [ "SetChoice", "11", "ForestDungeonConvo",
+                                                      "Speaks2",
+                                                      "Oh, chosen hero, I sense you have acquired the Sigil of Allure. Good job for evading the seductions of Sofia and her demon horde, I believe in you to progress even further and defeat the Demon Queen.",
+                                                      "Speaks2",
+                                                      "Now, [ThePlayerName], what aid do you require?",
+                                                      "JumpToScene", "LucilleMenu"
+                                                    ]
+                                      },
+                                {
+                                    "NameOfScene": "CheckTempleClear",
+                                    "theScene": [ "IfHasItem", "Sigil Of Will-Power", "Beat the temple.",
+                                                "JumpToScene", "CheckRealSigilProgress"
+                                              ]
+                                },
+                                      {
+                                          "NameOfScene": "Beat the temple.",
+                                          "theScene": [ "SetChoice", "12", "clearedTemple",
+                                                      "Speaks2",
+                                                      "Oh, chosen hero, I sense you have acquired the Sigil of Will-Power. I am proud of you for overcoming such a difficult trial, I believe in you to move forward and get ever closer to defeating the Demon Queen.",
+                                                      "Speaks2",
+                                                      "Now, [ThePlayerName], what aid do you require?",
+                                                      "JumpToScene", "LucilleMenu"
+                                                    ]
+                                      },
+                        {
+                            "NameOfScene": "CheckRealSigilProgress",
+                            "theScene": [
+                                        "IfChoice", "13", "", "TruePowerSigil",
+                                        "JumpToScene", "NormalLucilleIntro"
+                                      ]
+                        },
+                                  {
+                                      "NameOfScene": "TruePowerSigil",
+                                      "theScene": [ "IfHasItem", "True Sigil Of Power", "haveTruePowerSigil",
+                                                  "JumpToScene", "NormalLucilleIntro"
+                                                ]
+                                  },
+                                        {
+                                            "NameOfScene": "haveTruePowerSigil",
+                                            "theScene": [ "SetChoice", "13", "ForestDungeonConvo",
+                                                        "Speaks2",
+                                                        "Oh, chosen hero, I sense you have acquired the Sigil of Po- W-Wait that's- oh- um... H-Hold on a second I uh... need to go talk to someone.",
+                                                        "Her voice disappears and is replaced with a calming harp melody, some soothing music to fill her absence while you sit there waiting, just as you start to wonder if she's going to come back the music cuts off and her calm voice returns.",
+                                                        "Speaks2",
+                                                        "Sorry about that [ThePlayerName]. Now, I see that you have successfully acquired the True Sigil of Power, the original template for the normal power sigil. Congratulations! While it is definitely not something you need to defeat the Demon Queen, it proves your worthiness, oh, chosen hero.",
+                                                        "Speaks2",
+                                                        "So do not worry about trying to find the True Willpower sigil or any other True Sigils. You will be able to progress without them. Remember the Goddess's light will shine with you always.",
+                                                        "Speaks2",
+                                                        "Now, [ThePlayerName], do you require any aid?",
+                                                        "JumpToScene", "LucilleMenu"
+                                                      ]
+                                        },
+
+
+
+
+
+
+
+                          {
+                              "NameOfScene": "NormalLucilleIntro",
+                              "theScene": [
+                                          "Speaks2",
+                                          "Oh, chosen hero [ThePlayerName], what aid do you require?",
+                                          "JumpToScene", "LucilleMenu"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "LucilleMenu",
+                                    "theScene": [
+                                                  "Menu",
+                                                    "Talk?",
+                                                    "Get Blessed with items?",
+                                                    "Permanent Blessings?",
+                                                    "Temporary Blessings?",
+                                                    "Go back to praying.",
+                                                  "EndLoop"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "Talk?",
+                                    "theScene": [
+                                                "Speaks2",
+                                                "If you have questions, I will do my best to answer them.",
+                                                "JumpToScene", "TalkMenu"
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "TalkMenu",
+                                    "theScene": [
+                                                  "Menu",
+                                                    "Talk about the Goddess, and your quest.",
+                                                    "Ask about Lillian.",
+                                                    "RequiresChoiceFromEvent", "Visit Lillian", "6", "GoodLuck",
+                                                    "Ask about Lillian's inability with holy magic.",
+                                                    "RequiresChoiceFromEvent", "EnteringChurch", "2", "DemonLayerGet",
+                                                    "Ask about Demon Layer.",
+                                                    "Done.",
+                                                  "EndLoop"
+                                              ]
+                                },
+                                              {
+                                                  "NameOfScene": "Talk about the Goddess, and your quest.",
+                                                  "theScene": [
+                                                                "Menu",
+                                                                  "Ask about Goddess Venereae.",
+                                                                  "Ask about the Sigils.",
+                                                                  "Ask about angels.",
+                                                                  "What does Venereae use all these donations for?",
+                                                                  "Talk about something else.",
+                                                                "EndLoop"
+                                                            ]
+                                              },
+                                                    {
+                                                        "NameOfScene": "Talk about something else.",
+                                                        "theScene": [
+                                                                    "JumpToScene", "TalkMenu"
+                                                                  ]
+                                                    },
+                                      {
+                                          "NameOfScene": "Ask about Goddess Venereae.",
+                                          "theScene": [  "Speaks2",
+                                                        "Oh, you wish to know more about the Goddess? Lillian's views on her are rather... Biased. So I will enlighten you.",
+                                                        "While Lucille's voice has no real source, you can feel a warm tingle surrounding you embrace you a little closer, wrapping you up in a cocoon of warmth as if she's settling in to tell you all about the Goddess.",
+                                                        "Speaks2",
+                                                        "Venereae is a Goddess of fertility, sex, and pleasure. She also holds many other titles such as the Goddess of Light.",
+                                                        "Speaks2",
+                                                        "She is the only {i}true{/i} Goddess, other worshiped deities are far lesser than her and are often actually very powerful monster girls being worshiped by the local populace. Try not to let them lead you astray oh chosen hero.",
+                                                        "The warmth around you seems to tighten and tense slightly.",
+                                                        "Speaks2",
+                                                        "U-Unless you were to wed such a monster girl, th-then it would be acceptable... F-For Venereae is the protector of all things, including monsters. Just be sure to continue to pray to Venereae.",
+                                                        "The warm ghostly embrace around you smooths out a little.",
+                                                        "Speaks2",
+                                                        "You may be surprised to know Venereae values monsters as well, but we are all her loved creations, angels included. But long, long ago one great and terrible monster betrayed Venereae, and plunged the world into an endless war, leaving her weak and nearly powerless to stop them.",
+                                                        "Speaks2",
+                                                        "In a last-ditch effort to try and save the world from destruction she gifted a human with the power to save humanity from the rampaging destruction of the first Demon Queen, and just barely everything was saved.",
+                                                        "Speaks2",
+                                                        "But ever since that fateful, terrible day a cycle of terrible war continued for tens of thousands of years, new Demon Queens took up the mantle over and over, and for so long Venereae was barely able to guide humanity towards peace, your prayers heard but almost never able to be responded to.",
+                                                        "Speaks2",
+                                                        "For a very long time, even angels were locked out of the Celestial Realm, unable to hear her voice, left only with the need to protect humanity and fend off the raging destruction from the rest of monsterkind. Slowly our numbers dwindled over the years, felled in battle and returned to the Goddess' side.",
+                                                        "The air around you chills noticeably as Lucille recites the past.",
+                                                        "Speaks2",
+                                                        "Things grew bleaker by the year, heretical cults, monsters denying her worship, and her Church slowly being twisted into something it should never have been... I-I am sure you may already know about the more {i}drastic{/i} side of the church.",
+                                                        "Speaks2",
+                                                        "Even Venereae's angels began to forget her teachings as time passed on, without guidance from the Goddess we did our best to help humanity strive onwards however we could. But even with that, some humans lost faith... Or blamed us...",
+                                                        "The faint warmth around you shifts uncomfortably, tightening around you just a little before loosening up and regaining strength.",
+                                                        "Speaks2",
+                                                        "But Venereae slowly but surely regained her powers, until her voice could finally be heard again! Giving us all guidance once more. But, um... it did cause quite a bit of internal problems given how long she had been unheard... and how many had forgotten who she really is...",
+                                                        "Speaks2",
+                                                        "I will be honest oh chosen hero... I actually was one of those angels who were around since the fall, as foggy as that memory is, and I had gotten very wrapped up in the purity and light ideology... It was very good for rallying humanity. I have still not quite adjusted to... Everything.",
+                                                        "Speaks2",
+                                                        "That is actually why I am stationed here, to help me adjust to the truth, and also to watch over Lillian.",
+                                                        "Speaks2",
+                                                        "Ah! My apologies oh chosen hero, I am getting off track. I'm not used to being able to talk so freely, Lillian usually does most of the talking in our conversations, she's rather... frenetic. She also absolutely refuses to talk about anything erotic. Not that I can really blame her, I would rather not speak of it either if I'm honest.",
+                                                        "She deeply sighs before continuing on.",
+                                                        "Speaks2",
+                                                        "Back on topic, even with Venereae able to be heard by those of faith, her angels, and other agents, she was still very weak, barely able to send angels back out of the Celestial Realm to help. It took hundreds of years for her to get back to her rightful power, and the efforts of her believers.",
+                                                        "Speaks2",
+                                                        "So now she hopes that Humans and Monsters can finally live in peace, but for that to happen, oh chosen hero [ThePlayerName], you must defeat the Demon Queen, and end this conflict once and for all.",
+                                                        "There's a dramatic pause and you feel the warm embrace drift away to a slight tingling feeling on your skin, but then Lucille's voice awkwardly pipes back in.",
+                                                        "Speaks2",
+                                                        "Well, I mean, things have already been fairly peaceful these last fifty years... So, um, don't worry too much. I don't think the current Demon Queen is planning anything truly evil...",
+                                                        "Speaks2",
+                                                        "Oh! And, if you are wondering why I am speaking to you and not the Goddess herself, she is {i}very{/i} busy taking care of things in the Celestial Realm.",
+                                                        "JumpToScene", "TalkMenu"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "Ask about the Sigils.",
+                                          "theScene": [
+                                                      "Speaks2",
+                                                      "Ah yes, the Sigils. They are old artifacts imbued with the Goddesses power, intended to be wielded by the chosen hero to break through to the Demon Queen's Castle's barrier and empower the hero.",
+                                                      "Speaks2",
+                                                      "Time and time again the monsters steal them away and hide them in terrible dungeons. Testing the hero's worthiness, whether they mean to or not. Even when they are not stolen, the church often set up intentional trials to test heroes worthiness instead.",
+                                                      "Speaks2",
+                                                      "Oh chosen hero, I wish you luck on your journey to collect them all.",
+                                                      "JumpToScene", "TalkMenu"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "Ask about Lillian.",
+                                          "theScene": [
+                                                      "Speaks2",
+                                                      "Oh isn't she just the sweetest little angel?♪ Er- I don't mean {i}literal{/i} angel.",
+                                                      "The warmth surrounding you tenses quickly before resuming its gentle embrace.",
+                                                      "Speaks2",
+                                                      "She has such a pure and kind soul. N-Not that I can literally see souls or anything! A-Ahem. One of my primary duties here is to watch over her, I believe Venereae appreciates her sheer dedication, even if her faith is a little off from the church proper. I was sent specifically as my disposition also matches well with hers... Most of the time.",
+                                                      "Speaks2",
+                                                      "Lillian is very stubborn, willful, and incredibly driven. It has been difficult trying to get her to come to terms with how Venereae really is, and to ease up trying to enforce a dress code on monsters... Whenever the conversation may turn to more erotic things, she generally starts ignoring me. I can't blame her though, I would prefer not to speak of it either, but she also tends to get splitting headaches from it.",
+                                                      "Speaks2",
+                                                      "Due to her incredible dedication to the church and helping others, I also have to ensure she takes proper breaks and eats healthy, balanced meals. She refuses to let anyone she doesn't see eye to eye with in ideals help maintain the Church, and works herself far too hard... she also donates far too much to the church and gives away {i}too much{/i} to those in need...",
+                                                      "Speaks2",
+                                                      "While I appreciate the kindness she shows, she needs to learn to take better care of herself. I practically need to make her meals and assist everywhere I can every day, which is rather difficult and exhausting without being allowed to use a physical body...",
+                                                      "Lucille lets out a happy if a little tired sigh before continuing.",
+                                                      "Speaks2",
+                                                      "But she's just so cheerful, pure, kind, and full of so much good I just can't get upset with her. Even when she's being... {i}difficult{/i}. Hehe, it probably doesn't help I taught her how to do grand speeches.",
+                                                      "Her voice's tone returns from sweetly caring to a bit more serious.",
+                                                      "Speaks2",
+                                                      "Ahem, my duty to watch over Lillian is a holy order given to me by Venereae herself, and I shall not fail her. Nor in my secondary duty to help adventurers who pray here. I won't lie [ThePlayerName], it is far more relaxing than what I'm used to doing, but, it's very... nice.",
+                                                      "The aura surrounding you seems to radiate cheerful warmth.",
+                                                      "JumpToScene", "TalkMenu"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "Ask about Lillian's inability with holy magic.",
+                                          "theScene": [
+                                                      "Speaks2",
+                                                      "Oh, so you've spoken to her about that? Or did she bring it up?- Ah- I don't like listening in on her conversations, it would be rude of me.",
+                                                      "Speaks2",
+                                                      "But, yes. Her capability with holy magic is quite feeble, far less than even the average person, which is... rather baffling for someone of her dedication and spirit.",
+                                                      "Speaks2",
+                                                      "I have tried to teach her, but it has been to no avail, and despite her failed efforts, she keeps trying, pressing onwards, and doing her best to provide what she can for the church. Such as holy water. Which while weak, is still holy water. Normal holy water too, not that- erm-",
+                                                      "The warm aura surrounding you squirms in discomfort for a moment before shifting the conversation's direction.",
+                                                      "Speaks2",
+                                                      "But yes, her incompatibility with holy arts is, strange to say the least. There's nothing abnormal with her, so it's just {i}baffling{/i} to me... I wish I could help her with it more.",
+                                                      "Lucille lets out a tired sigh before perking back up.",
+                                                      "Speaks2",
+                                                      "I do wish she would stop kicking out all the other priests and priestess' that actually show up, they could easily handle the blessings she can't... Though, I too would probably kick them out if I was in her position, we keep getting very... {i}weird{/i} people. Either far too against monster girls, or too into Venereae's true teachings... the occasional demon in disguise...",
+                                                      "Speaks2",
+                                                      "Oh that did {i}not{/i} help her opinion of demons in the slightest... Just when I thought I was making progress there too...",
+                                                      "Speaks2",
+                                                      "Ah! My apologies [ThePlayerName], I started rambling, is there anything else you wish to know about?",
+                                                      "JumpToScene", "TalkMenu"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "Ask about angels.",
+                                          "theScene": [ "The warmth surrounding you seems to gently tighten around you as it practically radiates soothing happiness.",
+                                                      "Speaks2",
+                                                      "Oh! You wish to know about angels? I would be happy to enlighten you.",
+                                                      "Speaks2",
+                                                      "We are the devoted agents of the Goddess, and we are divided into three distinct Echelons. The Valkyries, The Cherubim, and The Virtues.",
+                                                      "Speaks2",
+                                                      "The Valkyries are the sworn protectors of humanity, aiding them in battle where they can, rallying them to victory, and bringing evil humans to justice.",
+                                                      "Speaks2",
+                                                      "I myself am a Valkyrie, it is taking many of us... Time, to adjust to Venereae's return and the end of a constant violent battle between humans and monsters. But I believe a peaceful world is a much brighter one.",
+                                                      "Speaks2",
+                                                      "The Cherubim are bringers of love, joy, hope, and friendship, they are tasked with aiding humanity as best they can, often assisting in churches, doling out blessings, or helping console humans in need.",
+                                                      "Speaks2",
+                                                      "They also try to play matchmaker for humans with... Mixed results. Overall they are much happier now that the war has essentially ended.",
+                                                      "Speaks2",
+                                                      "The Virtues are Venereae's primary angel Echelon, and despite their name, bring her word of sex, fertility, and pleasure, wishing to help humans and monsters enjoy themselves and bless humans with increased um, sexual abilities.",
+                                                      "Speaks2",
+                                                      "For a long time the Virtues were misconstrued as Fallen Angels and evil harlots by some humans, but they usually just want everyone to feel good. Cherubim also had to fill their role for a time as Virtues when people believed they were supposed to be, well, pure and Virtuous.",
+                                                      "Speaks2",
+                                                      "Angels is also a bit of an odd term, while most of us hail from the Celestial Realm, having the standard soft feathered white wings and figures of women, some Angels are quite different, such as the Nymphs which are part of the Virtue Echelon.",
+                                                      "Speaks2",
+                                                      "There is actually one living in the forest, Nymphs are bound to holy locations and cannot leave them. But she is very... Passionate about her task... To be honest, we do not get along well.",
+                                                      "The warmth embracing you bristles with heat for a moment before settling back down to a soothing hug.",
+                                                      "Speaks2",
+                                                      "Moving on, as you probably noticed, I'm not in the Church physically as I talk to you, that is because I am in the Celestial Realm, speaking to you through the Goddess statue.",
+                                                      "Speaks2",
+                                                      "As I mentioned before, Venereae's Virtues were thought to be Fallen Angels by many, but that is most certainly not what a Fallen Angel is, as all Fallen Angels will have pitch-black feathered wings or something similar depending on the species. For they have forsaken the Goddess and Humanity.",
+                                                      "Speaks2",
+                                                      "In most cases, this is because they have become selfish or reject Venereae. It would be wrong to say they are {i}evil{/i} however, but I would not recommend trusting them, as they often care little for humans and only for themselves. Rogue Valkyries are the most dangerous of all...",
+                                                      "The warmth surrounding you starts to turn into a depressing chill before regaining it's soothing heat again.",
+                                                      "Speaks2",
+                                                      "Ahem! Fallen Virtues are often pleasure-seekers who no longer care about their partners, and Fallen Cherubim are... Depressed... If you see one please try to cheer her up.",
+                                                      "Speaks2",
+                                                      "Well [ThePlayerName], I hope this explains any questions you may have had about Venereae's angels. Someday you may meet more than just me. Churches usually have at least one angel assigned to them... Well, thinking on it, I suppose we haven't {i}quite{/i} met, but I think you get what I mean.",
+                                                      "JumpToScene", "TalkMenu"
+                                                    ]
+                                      },
+                                      {
+                                          "NameOfScene": "Ask about Demon Layer.",
+                                          "theScene": [
+                                                      "Speaks2",
+                                                      "Oh, chosen hero... The holy relic Demon Layer. That Lillian got from all of her donations... Th-The automated system gave it to her, n-not me. Oh I wish I could have over-ridden that...",
+                                                      "The warmth around you shifts uncomfortably.",
+                                                      "Speaks2",
+                                                      "I had to quite {i}thoroughly{/i} explain to her that it was not for her to actually use, given the weapons actual intention, as it is basically a very ornate sex toy...",
+                                                      "You think you hear Lucille's voice twinge with mild agitation.",
+                                                      "Speaks2",
+                                                      "Thankfully Lillian listened to me and held onto it for the chosen hero. Though she did try to use it herself in secret, thankfully she is very inept with weapons. But I did not think she would ever actually give it to anyone if I'm being honest.",
+                                                      "Speaks2",
+                                                      "Despite its erotic nature, it is still a holy relic. A powerful one too. Even used by heroes of the past on occasion. It has always been adept at subduing unruly monster girls.",
+                                                      "The embrace chills slightly.",
+                                                      "Speaks2",
+                                                      "As well as being a tool for destroying those who are beyond redemption. Specifically True-Succubi. It conveys holy energy with every strike, which sears them to their very core. Very rarely will it decide to spare one.",
+                                                      "The tingling feeling surrounding you warms up again, and you feel it tighten uncomfortably.",
+                                                      "Speaks2",
+                                                      "F-For everyone else it sends pleasure electrifying through them. Even without the enchantment surrounding Lucidia.",
+                                                      "Speaks2",
+                                                      "Of course beings resistant to magic or are aligned with holy energy already will feel less of an effect.",
+                                                      "Speaks2",
+                                                      "The 'weapon' itself was handcrafted by the Goddess, but I have no records of when it was created, unfortunately.",
+                                                      "Speaks2",
+                                                      "I hope this answered any questions you may have had about the holy relic you now possess [ThePlayerName]. Do try to be careful with it.",
+                                                      "JumpToScene", "LucilleMenu"
+                                                    ]
+                                      },
+
+
+                                      {
+                                          "NameOfScene": "What does Venereae use all these donations for?",
+                                          "theScene": [  "The warmth around you cools for a brief moment before warming back up.",
+                                                          "Speaks2",
+                                                          "O-Oh, well, she uses them to keep the Celestial Realm running, give angels supplies across the world, and provide help to those in need. Donations of eros and gold from believers are imbued with their prayers, that the Goddess converts into power for her miracles.",
+                                                          "Speaks2",
+                                                          "You even get to use some of the stored-up power that you donate to acquire all kinds of blessings.",
+                                                          "Speaks2",
+                                                          "So please rest assured that your donations do not just vanish into nothingness, every little bit helps the church. Including just spending some time in prayer.",
+                                                          "JumpToScene", "LucilleMenu"
+                                                    ]
+                                      },
+
+
+
+
+
+
+
+
+
+                                {
+                                    "NameOfScene": "Done.",
+                                    "theScene": [ "JumpToScene", "LucilleMenu"
+                                              ]
+                                },
+                                          {
+                                              "NameOfScene": "LackPower",
+                                              "theScene": [ "Speaks2",
+                                                          "I'm sorry [ThePlayerName], but you lack the holy power for this blessing...",
+                                                          "JumpToScene", "LucilleMenu"
+                                                        ]
+                                          },
+
+                                    {
+                                        "NameOfScene": "Get Blessed with items?",
+                                        "theScene": [ "Speaks2",
+                                                    "Of course [ThePlayerName], just let me know what aid you require.",
+                                                    "A list of the available blessings materializes in your mind.",
+                                                    "JumpToScene", "ItemMenu"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "ItemMenu",
+                                        "theScene": [ "Speaks2",
+                                                    "You have [ProgressDisplay] points of holy power to spend. Please, spend it wisely.",
+                                                    "Menu",
+                                                      "Panacea. (2500 Holy Power)",
+                                                      "Elixir. (2500 Holy Power)",
+                                                      "Vigor Rune. (2500 Holy Power)",
+                                                      "Pendant Of Protection. (5000 Holy Power)",
+                                                      "Blessed Rosary. (10000 Holy Power)",
+                                                      "Back.",
+                                                    "EndLoop"
+                                                  ]
+                                    },
+                                            {
+                                                "NameOfScene": "Different Item.",
+                                                "theScene": [
+                                                              "JumpToScene", "ItemMenu"
+                                                          ]
+                                            },
+                                            {
+                                                "NameOfScene": "Back.",
+                                                "theScene": [
+                                                              "JumpToScene", "LucilleMenu"
+                                                          ]
+                                            },
+                                            {
+                                                "NameOfScene": "Panacea. (2500 Holy Power)",
+                                                "theScene": [  "Speaks2",
+                                                              "Oh chosen hero, a Panacea will cleanse all status effects that afflict you when you consume it. Are you sure this is the item you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                              "Menu",
+                                                                "Get Panacea. (2500 Holy Power)",
+                                                                "Get 5 Panaceas. (12500 Holy Power)",
+                                                                "Get 10 Panaceas. (25000 Holy Power)",
+                                                                "Different Item.",
+                                                              "EndLoop"
+                                                          ]
+                                            },
+                                                    {
+                                                        "NameOfScene": "Get Panacea. (2500 Holy Power)",
+                                                        "theScene": [  "IfProgressEqualsOrLess", "2499", "LackPower",
+                                                                      "ChangeProgress", "-2500",
+                                                                      "GiveItem", "1", "Panacea",
+                                                                      "Speaks2",
+                                                                      "Is there anything else you need, oh chosen hero?",
+                                                                      "JumpToScene", "ItemMenu"
+                                                                  ]
+                                                    },
+                                                    {
+                                                        "NameOfScene": "Get 5 Panaceas. (12500 Holy Power)",
+                                                        "theScene": [  "IfProgressEqualsOrLess", "12499", "LackPower",
+                                                                      "ChangeProgress", "-12500",
+                                                                      "GiveItem", "5", "Panacea",
+                                                                      "Speaks2",
+                                                                      "Is there anything else you need, oh chosen hero?",
+                                                                      "JumpToScene", "ItemMenu"
+                                                                  ]
+                                                    },
+                                                    {
+                                                        "NameOfScene": "Get 10 Panaceas. (25000 Holy Power)",
+                                                        "theScene": [  "IfProgressEqualsOrLess", "24999", "LackPower",
+                                                                      "ChangeProgress", "-25000",
+                                                                      "GiveItem", "10", "Panacea",
+                                                                      "Speaks2",
+                                                                      "Is there anything else you need, oh chosen hero?",
+                                                                      "JumpToScene", "ItemMenu"
+                                                                  ]
+                                                    },
+                                            {
+                                                "NameOfScene": "Elixir. (2500 Holy Power)",
+                                                "theScene": [  "Speaks2",
+                                                              "Oh chosen hero, an Elixir will lower your arousal by 500 and recover 100 energy when you drink it. Are you sure this is the item you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                              "Menu",
+                                                                "Get Elixir. (2500 Holy Power)",
+                                                                "Get 5 Elixirs. (12500 Holy Power)",
+                                                                "Get 10 Elixirs. (25000 Holy Power)",
+                                                                "Different Item.",
+                                                              "EndLoop"
+                                                          ]
+                                            },
+                                                    {
+                                                        "NameOfScene": "Get Elixir. (2500 Holy Power)",
+                                                        "theScene": [  "IfProgressEqualsOrLess", "2499", "LackPower",
+                                                                      "ChangeProgress", "-2500",
+                                                                      "GiveItem", "1", "Elixir",
+                                                                      "Speaks2",
+                                                                      "Is there anything else you need, oh chosen hero?",
+                                                                      "JumpToScene", "ItemMenu"
+                                                                  ]
+                                                    },
+                                                    {
+                                                        "NameOfScene": "Get 5 Elixirs. (12500 Holy Power)",
+                                                        "theScene": [  "IfProgressEqualsOrLess", "12499", "LackPower",
+                                                                      "ChangeProgress", "-12500",
+                                                                      "GiveItem", "5", "Elixir",
+                                                                      "Speaks2",
+                                                                      "Is there anything else you need, oh chosen hero?",
+                                                                      "JumpToScene", "ItemMenu"
+                                                                  ]
+                                                    },
+                                                    {
+                                                        "NameOfScene": "Get 10 Elixirs. (25000 Holy Power)",
+                                                        "theScene": [  "IfProgressEqualsOrLess", "24999", "LackPower",
+                                                                      "ChangeProgress", "-25000",
+                                                                      "GiveItem", "10", "Elixir",
+                                                                      "Speaks2",
+                                                                      "Is there anything else you need, oh chosen hero?",
+                                                                      "JumpToScene", "ItemMenu"
+                                                                  ]
+                                                    },
+                                            {
+                                                "NameOfScene": "Vigor Rune. (2500 Holy Power)",
+                                                "theScene": [
+                                                              "Speaks2",
+                                                              "Oh chosen hero, a Vigor Rune will increase your maximum arousal by 25 and your energy by 10. Are you sure this is the item you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                              "Menu",
+                                                                "Get Vigor Rune. (2500 Holy Power)",
+                                                                "Get 3 Vigor Runes. (7500 Holy Power)",
+                                                                "Different Item.",
+                                                              "EndLoop"
+                                                          ]
+                                            },
+                                                      {
+                                                          "NameOfScene": "Get Vigor Rune. (2500 Holy Power)",
+                                                          "theScene": [  "IfProgressEqualsOrLess", "2499", "LackPower",
+                                                                        "ChangeProgress", "-2500",
+                                                                        "GiveItem", "1", "Vigor Rune",
+                                                                        "Speaks2",
+                                                                        "Is there anything else you need, oh chosen hero?",
+                                                                        "JumpToScene", "ItemMenu"
+                                                                    ]
+                                                      },
+                                                      {
+                                                          "NameOfScene": "Get 3 Vigor Runes. (7500 Holy Power)",
+                                                          "theScene": [  "IfProgressEqualsOrLess", "7499", "LackPower",
+                                                                        "ChangeProgress", "-7500",
+                                                                        "GiveItem", "3", "Vigor Rune",
+                                                                        "Speaks2",
+                                                                        "Is there anything else you need, oh chosen hero?",
+                                                                        "JumpToScene", "ItemMenu"
+                                                                    ]
+                                                      },
+                                            {
+                                                "NameOfScene": "Pendant Of Protection. (5000 Holy Power)",
+                                                "theScene": [
+                                                              "Speaks2",
+                                                              "Oh, chosen hero, a Pendant Of Protection will reduce all arousal you take by 10% and increase your resistance to all status effects by 10%. Are you sure this is the item you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                              "Menu",
+                                                                "Get a Pendant Of Protection. (5000 Holy Power)",
+                                                                "Different Item.",
+                                                              "EndLoop"
+                                                          ]
+                                            },
+                                                      {
+                                                          "NameOfScene": "Get a Pendant Of Protection. (5000 Holy Power)",
+                                                          "theScene": [  "IfProgressEqualsOrLess", "4999", "LackPower",
+                                                                        "ChangeProgress", "-5000",
+                                                                        "GiveItem", "1", "Pendant Of Protection",
+                                                                        "Speaks2",
+                                                                        "Is there anything else you need, oh chosen hero?",
+                                                                        "JumpToScene", "ItemMenu"
+                                                                    ]
+                                                      },
+                                            {
+                                                "NameOfScene": "Blessed Rosary. (10000 Holy Power)",
+                                                "theScene": [
+                                                              "Speaks2",
+                                                              "Oh chosen hero, a Blessed Rosary will imbue you with the Goddess' Favor, allowing you to avoid misfortune up to three times a rest. Are you sure this is the item you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                              "Menu",
+                                                                "Get a Blessed Rosary. (10000 Holy Power)",
+                                                                "Different Item.",
+                                                              "EndLoop"
+                                                          ]
+                                            },
+                                                      {
+                                                          "NameOfScene": "Get a Blessed Rosary. (10000 Holy Power)",
+                                                          "theScene": [  "IfProgressEqualsOrLess", "9999", "LackPower",
+                                                                        "ChangeProgress", "-10000",
+                                                                        "GiveItem", "1", "Blessed Rosary",
+                                                                        "Speaks2",
+                                                                        "Is there anything else you need, oh chosen hero?",
+                                                                        "JumpToScene", "ItemMenu"
+                                                                    ]
+                                                      },
+
+
+
+                                    {
+                                        "NameOfScene": "Permanent Blessings?",
+                                        "theScene": [ "Speaks2",
+                                                    "Of course [ThePlayerName], keep in mind you may only get these blessings a limited number of times.",
+                                                    "A list of the available blessings materializes in your mind.",
+                                                    "JumpToScene", "PermBlessingsMenu"
+                                                  ]
+                                    },
+                                    {
+                                        "NameOfScene": "PermBlessingsMenu",
+                                        "theScene": [ "Speaks2",
+                                                    "You have [ProgressDisplay] points of holy power to spend. Please, spend it wisely.",
+                                                    "Menu",
+                                                      "RequiresChoice", "7", "",
+                                                      "Minor Virility Blessing. (5000 Holy Power)",
+                                                      "RequiresChoice", "7", "MinorVirlityBlessing", "RequiresChoice", "8", "",
+                                                      "Upgrade Virility Blessing. (20000 Holy Power)",
+                                                      "RequiresChoice", "7", "MinorVirlityBlessing", "RequiresChoice", "8", "",
+                                                      "Remove Minor Virility Blessing. (500 Holy Power)",
+                                                      "RequiresChoice", "8", "VirlityBlessing",
+                                                      "Downgrade to Minor Virility Blessing. (500 Holy Power)",
+
+                                                      "RequiresChoice", "9", "",
+                                                      "Blessing of Rest. (10000 Holy Power)",
+                                                      "RequiresChoice", "6", "",
+                                                      "Passage to the Hidden Glade. (10000 Holy Power)",
+                                                      "RequiresChoice", "10", "",
+                                                      "Blessing of Insight. (50000 Holy Power)",
+                                                      "Back.",
+                                                    "EndLoop"
+                                                  ]
+                                    },
+                                            {
+                                                "NameOfScene": "Different Blessing.",
+                                                "theScene": [
+                                                              "JumpToScene", "PermBlessingsMenu"
+                                                          ]
+                                            },
+
+
+                                            {
+                                                "NameOfScene": "Passage to the Hidden Glade. (10000 Holy Power)",
+                                                "theScene": [
+                                                              "Speaks2",
+                                                              "Oh chosen hero, this Blessing will allow you to enter the Hidden Glade in the forest whenever you wish it... Just be aware that the woman who lives there is a servant of the goddess and... is rather... oh... how do I put this..?",
+                                                              "Speaks2",
+                                                              "She is very, {i}very{/i} passionate about certain... {i}specific{/i} parts of the Goddess's teachings... and um... will... eagerly train you in them... Is this the Blessing you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                              "Menu",
+                                                                "Get Passage to the Hidden Glade. (10000 Holy Power)",
+                                                                "Different Blessing.",
+                                                              "EndLoop"
+                                                          ]
+                                            },
+                                                    {
+                                                        "NameOfScene": "Get Passage to the Hidden Glade. (10000 Holy Power)",
+                                                        "theScene": [  "IfProgressEqualsOrLess", "9999", "LackPower",
+                                                                      "ChangeProgress", "-10000",
+                                                                      "SetChoice", "6", "GladeUnlocked",
+                                                                      "You shudder as you suddenly feel a rush of holy euphoria... And alongside with it, visions of a pristine glade in a forest appear before your eyes, filled with lush trees, soft-looking grass, and a small waterfall that pours into a crystal clear pond.",
+                                                                      "Speaks2",
+                                                                      "There... Now, is there anything else you need, oh chosen hero?",
+                                                                      "JumpToScene", "PermBlessingsMenu"
+                                                                  ]
+                                                    },
+                                            {
+                                                "NameOfScene": "Minor Virility Blessing. (5000 Holy Power)",
+                                                "theScene": [
+                                                              "Speaks2",
+                                                              "Oh chosen hero, a Minor Virility Blessing will increase your virility by 10%. Are you sure this is the Blessing you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                              "Menu",
+                                                                "Get Minor Virility Blessing. (5000 Holy Power)",
+                                                                "Different Blessing.",
+                                                              "EndLoop"
+                                                          ]
+                                            },
+                                                      {
+                                                          "NameOfScene": "Get Minor Virility Blessing. (5000 Holy Power)",
+                                                          "theScene": [  "IfProgressEqualsOrLess", "4999", "LackPower",
+                                                                        "ChangeProgress", "-5000",
+                                                                        "SetChoice", "7", "MinorVirlityBlessing",
+                                                                        "You shudder as you suddenly feel a rush of holy euphoria...",
+                                                                        "GivePerk", "Minor Virility Blessing",
+                                                                        "Speaks2",
+                                                                        "Is there anything else you need, oh chosen hero?",
+                                                                        "JumpToScene", "PermBlessingsMenu"
+                                                                    ]
+                                                      },
+                                            {
+                                                "NameOfScene": "Upgrade Virility Blessing. (20000 Holy Power)",
+                                                "theScene": [
+                                                              "Speaks2",
+                                                              "Oh chosen hero, upgrading your Minor Virility Blessing will increase it's virility bonus from 10% to 25%. Are you sure this is the Blessing you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                              "Menu",
+                                                                "Get Virility Blessing. (20000 Holy Power)",
+                                                                "Different Blessing.",
+                                                              "EndLoop"
+                                                          ]
+                                            },
+                                                      {
+                                                          "NameOfScene": "Get Virility Blessing. (20000 Holy Power)",
+                                                          "theScene": [  "IfProgressEqualsOrLess", "19999", "LackPower",
+                                                                        "ChangeProgress", "-20000",
+                                                                        "SetChoice", "8", "VirlityBlessing",
+                                                                        "You shudder as you suddenly feel a rush of holy euphoria...",
+                                                                        "RemovePerkQuietly", "Minor Virility Blessing",
+                                                                        "GivePerk", "Virility Blessing",
+                                                                        "Speaks2",
+                                                                        "Is there anything else you need, oh chosen hero?",
+                                                                        "JumpToScene", "PermBlessingsMenu"
+                                                                    ]
+                                                      },
+                                            {
+                                                "NameOfScene": "Remove Minor Virility Blessing. (500 Holy Power)",
+                                                "theScene": [
+                                                              "Speaks2",
+                                                              "Oh, chosen hero, removing the Minor Virility Blessing will decrease your virility by 10%. Are you sure this is what you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                              "Menu",
+                                                                "Get the Minor Virility Blessing removed. (500 Holy Power)",
+                                                                "Different Blessing.",
+                                                              "EndLoop"
+                                                          ]
+                                            },
+                                                  {
+                                                      "NameOfScene": "Get the Minor Virility Blessing removed. (500 Holy Power)",
+                                                      "theScene": [  "IfProgressEqualsOrLess", "499", "LackPower",
+                                                                    "ChangeProgress", "-500",
+                                                                    "SetChoice", "7", "",
+                                                                    "You shudder as you suddenly feel a rush of holy euphoria...",
+                                                                    "RemovePerk", "Minor Virility Blessing",
+                                                                    "Speaks2",
+                                                                    "Is there anything else you need, oh chosen hero?",
+                                                                    "JumpToScene", "PermBlessingsMenu"
+                                                                ]
+                                                  },
+                                          {
+                                              "NameOfScene": "Downgrade to Minor Virility Blessing. (500 Holy Power)",
+                                              "theScene": [
+                                                            "Speaks2",
+                                                            "Oh chosen hero, weakening the Virility Blessing will decrease its virility bonus from 25% to 10%. Are you sure this is what you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                            "Menu",
+                                                              "Get the Virility Blessing downgraded. (500 Holy Power)",
+                                                              "Different Blessing.",
+                                                            "EndLoop"
+                                                        ]
+                                          },
+                                                {
+                                                    "NameOfScene": "Get the Virility Blessing downgraded. (500 Holy Power)",
+                                                    "theScene": [  "IfProgressEqualsOrLess", "499", "LackPower",
+                                                                  "ChangeProgress", "-500",
+                                                                  "SetChoice", "8", "",
+                                                                  "You shudder as you suddenly feel a rush of holy euphoria...",
+                                                                  "RemovePerkQuietly", "Virility Blessing",
+                                                                  "GivePerk", "Minor Virility Blessing",
+                                                                  "Speaks2",
+                                                                  "Is there anything else you need, oh chosen hero?",
+                                                                  "JumpToScene", "PermBlessingsMenu"
+                                                              ]
+                                                },
+                                        {
+                                            "NameOfScene": "Blessing of Rest. (10000 Holy Power)",
+                                            "theScene": [
+                                                          "Speaks2",
+                                                          "Oh, chosen hero, a Blessing of Rest will increase spirit regained by 1, energy regained by 10%, and arousal removed by 10%, when resting during adventures. Are you sure this is the Blessing you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                          "Menu",
+                                                            "Get Blessing of Rest. (10000 Holy Power)",
+                                                            "Different Blessing.",
+                                                          "EndLoop"
+                                                      ]
+                                        },
+                                                  {
+                                                      "NameOfScene": "Get Blessing of Rest. (10000 Holy Power)",
+                                                      "theScene": [  "IfProgressEqualsOrLess", "9999", "LackPower",
+                                                                    "ChangeProgress", "-10000",
+                                                                    "SetChoice", "9", "restBlessing",
+                                                                    "You shudder as you suddenly feel a rush of holy euphoria...",
+                                                                    "GivePerk", "Blessing Of Rest",
+                                                                    "Speaks2",
+                                                                    "Is there anything else you need, oh chosen hero?",
+                                                                    "JumpToScene", "PermBlessingsMenu"
+                                                                ]
+                                                  },
+                                        {
+                                            "NameOfScene": "Blessing of Insight. (50000 Holy Power)",
+                                            "theScene": [
+                                                          "Speaks2",
+                                                          "Oh chosen hero, a Blessing of Insight will give you one perk point to spend. Are you sure this is the Blessing you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                          "Menu",
+                                                            "Get Blessing of Insight. (50000 Holy Power)",
+                                                            "Different Blessing.",
+                                                          "EndLoop"
+                                                      ]
+                                        },
+                                                  {
+                                                      "NameOfScene": "Get Blessing of Insight. (50000 Holy Power)",
+                                                      "theScene": [  "IfProgressEqualsOrLess", "49999", "LackPower",
+                                                                    "ChangeProgress", "-50000",
+                                                                    "SetChoice", "10", "insight",
+                                                                    "GivePerkPoint",
+                                                                    "You shudder as you suddenly feel a rush of holy euphoria... You've gained one perk point.",
+                                                                    "Speaks2",
+                                                                    "Is there anything else you need, oh chosen hero?",
+                                                                    "JumpToScene", "PermBlessingsMenu"
+                                                                ]
+                                                  },
+
+
+
+                                                  {
+                                                    "NameOfScene": "Temporary Blessings?",
+                                                    "theScene": ["IfHasPerk", "Blessing of Safe Travels", "YouHaveATempBlessing",
+                                                                "IfHasPerk", "Blessing of Wealth", "YouHaveATempBlessing",
+                                                                "IfHasPerk", "Blessing of Relaxation", "YouHaveATempBlessing",
+                                                                "IfHasPerk", "Blessing of Sexperience", "YouHaveATempBlessing",
+                                                                "IfHasPerk", "Blessing of Serendipity", "YouHaveATempBlessing",
+                                                                "IfHasPerk", "Honeymoon Blessing", "YouHaveATempBlessing",
+
+                                                                "Speaks2",
+                                                                "Of course [ThePlayerName], keep in mind these blessings only last a week, and you can only have one active at a time.",
+                                                                "A list of the available blessings materializes in your mind.",
+                                                                "JumpToScene", "TempBlessingsMenu"
+                                                              ]
+                                                  },
+                                                        {
+                                                            "NameOfScene": "YouHaveATempBlessing",
+                                                            "theScene": [
+                                                                        "Speaks2",
+                                                                        "I'm sorry [ThePlayerName], but you already have a temporary blessing, you will need to wait for it to wear off before you can get another, I'm very sorry for any inconvenience this may cause.",
+                                                                        "Speaks2",
+                                                                        "If you are wondering why you can't have more than one of these blessings, it is because their magic doesn't quite work well together, and would put too much strain on your body and soul. As well, only so many of these blessings can be sustained at any one time.",
+                                                                        "JumpToScene", "Back."
+                                                                      ]
+                                                        },
+
+
+                                                  {
+                                                      "NameOfScene": "TempBlessingsMenu",
+                                                      "theScene": [ "Speaks2",
+                                                                  "You have [ProgressDisplay] points of holy power to spend. Please, spend it wisely.",
+                                                                  "Menu",
+                                                                    "Blessing of Safe Travels (500 Holy Power)",
+                                                                    "Blessing of Relaxation (1000 Holy Power)",
+                                                                    "Blessing of Sexperience (5000 Holy Power)",
+                                                                    "Blessing of Wealth (5000 Holy Power)",
+                                                                    "Blessing of Serendipity (5000 Holy Power)",
+                                                                    "Back.",
+                                                                  "EndLoop"
+                                                                ]
+                                                  },
+                                                          {
+                                                              "NameOfScene": "Different Blessing. ",
+                                                              "theScene": [
+                                                                            "JumpToScene", "TempBlessingsMenu"
+                                                                        ]
+                                                          },
+                                                          {
+                                                              "NameOfScene": "Blessing of Safe Travels (500 Holy Power)",
+                                                              "theScene": [
+                                                                            "Speaks2",
+                                                                            "Oh chosen hero, a Blessing of Safe Travels will increases your run chance by 50%. I-It is not cowardice to keep away from the cloying grasp of monsters. Are you sure this is the Blessing you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                                            "Menu",
+                                                                              "Get Blessing of Safe Travels (500 Holy Power)",
+                                                                              "Different Blessing. ",
+                                                                            "EndLoop"
+                                                                        ]
+                                                          },
+                                                                    {
+                                                                        "NameOfScene": "Get Blessing of Safe Travels (500 Holy Power)",
+                                                                        "theScene": [ "IfProgressEqualsOrLess", "499", "LackPower",
+                                                                                      "ChangeProgress", "-500",
+                                                                                      "You shudder as you suddenly feel a rush of holy euphoria...",
+                                                                                      "GivePerk", "Blessing of Safe Travels",
+                                                                                      "Speaks2",
+                                                                                      "Is there anything else you need, oh chosen hero?",
+                                                                                      "JumpToScene", "Back."
+                                                                                  ]
+                                                                    },
+                                                          {
+                                                              "NameOfScene": "Blessing of Relaxation (1000 Holy Power)",
+                                                              "theScene": [
+                                                                            "Speaks2",
+                                                                            "Oh chosen hero, a Blessing of Relaxation will increase the arousal removed when you rest and the energy you regain by 25%. Are you sure this is the Blessing you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                                            "Menu",
+                                                                              "Get Blessing of Relaxation (1000 Holy Power)",
+                                                                              "Different Blessing. ",
+                                                                            "EndLoop"
+                                                                        ]
+                                                          },
+                                                                    {
+                                                                        "NameOfScene": "Get Blessing of Relaxation (1000 Holy Power)",
+                                                                        "theScene": [ "IfProgressEqualsOrLess", "999", "LackPower",
+                                                                                      "ChangeProgress", "-1000",
+                                                                                      "You shudder as you suddenly feel a rush of holy euphoria...",
+                                                                                      "GivePerk", "Blessing of Relaxation",
+                                                                                      "Speaks2",
+                                                                                      "Is there anything else you need, oh chosen hero?",
+                                                                                      "JumpToScene", "Back."
+                                                                                  ]
+                                                                    },
+                                                          {
+                                                              "NameOfScene": "Blessing of Sexperience (5000 Holy Power)",
+                                                              "theScene": [
+                                                                            "Speaks2",
+                                                                            "Oh, chosen hero, a Blessing of S-... Ahem, {i}Experience{/i}, will increase exp you gain by 20%, you also gain 10% of the exp you would have gained for winning on loss. Keep in mind it only lasts one week. Are you sure this is the Blessing you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                                            "Menu",
+                                                                              "Get Blessing of Sexperience (5000 Holy Power)",
+                                                                              "Different Blessing. ",
+                                                                            "EndLoop"
+                                                                        ]
+                                                          },
+                                                                    {
+                                                                        "NameOfScene": "Get Blessing of Sexperience (5000 Holy Power)",
+                                                                        "theScene": [  "IfProgressEqualsOrLess", "4999", "LackPower",
+                                                                                      "ChangeProgress", "-5000",
+                                                                                      "You shudder as you suddenly feel a rush of holy euphoria...",
+                                                                                      "GivePerk", "Blessing of Sexperience",
+                                                                                      "Speaks2",
+                                                                                      "Is there anything else you need, oh chosen hero?",
+                                                                                      "JumpToScene", "Back."
+                                                                                  ]
+                                                                    },
+
+
+
+
+
+                                                      {
+                                                          "NameOfScene": "Blessing of Wealth (5000 Holy Power)",
+                                                          "theScene": [
+                                                                        "Speaks2",
+                                                                        "Oh chosen hero, a Blessing of Wealth will increase your chance of finding treasure, increases rarity of treasure you find, increases the loot drop chance of monsters, and increases all eros you find by 25%. Keep in mind it only lasts one week. Are you sure this is the Blessing you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                                        "Menu",
+                                                                          "Get Blessing of Wealth (5000 Holy Power)",
+                                                                          "Different Blessing. ",
+                                                                        "EndLoop"
+                                                                    ]
+                                                      },
+                                                                {
+                                                                    "NameOfScene": "Get Blessing of Wealth (5000 Holy Power)",
+                                                                    "theScene": [  "IfProgressEqualsOrLess", "4999", "LackPower",
+                                                                                  "ChangeProgress", "-5000",
+                                                                                  "You shudder as you suddenly feel a rush of holy euphoria...",
+                                                                                  "GivePerk", "Blessing of Wealth",
+                                                                                  "Speaks2",
+                                                                                  "Is there anything else you need, oh chosen hero?",
+                                                                                  "JumpToScene", "Back."
+                                                                              ]
+                                                                },
+
+
+                                                    {
+                                                        "NameOfScene": "Blessing of Serendipity (5000 Holy Power)",
+                                                        "theScene": [
+                                                                      "Speaks2",
+                                                                      "Oh chosen hero, a Blessing of Serendipity gives you a favor from the Goddess herself. Keep in mind it only lasts one week. Are you sure this is the Blessing you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                                      "Menu",
+                                                                        "Get Blessing of Serendipity (5000 Holy Power)",
+                                                                        "Different Blessing. ",
+                                                                      "EndLoop"
+                                                                  ]
+                                                    },
+                                                              {
+                                                                  "NameOfScene": "Get Blessing of Serendipity (5000 Holy Power)",
+                                                                  "theScene": [  "IfProgressEqualsOrLess", "4999", "LackPower",
+                                                                                "ChangeProgress", "-5000",
+                                                                                "You shudder as you suddenly feel a rush of holy euphoria...",
+                                                                                "GivePerk", "Blessing of Serendipity",
+                                                                                "Speaks2",
+                                                                                "Is there anything else you need, oh chosen hero?",
+                                                                                "JumpToScene", "Back."
+                                                                            ]
+                                                              },
+
+
+
+
+                                                      {
+                                                          "NameOfScene": "_Honeymoon Blessing (25000 Holy Power)",
+                                                          "theScene": [
+                                                                        "Speaks2",
+                                                                        "Oh chosen hero, a Honeymoon Blessing will increase your virility by 50%, increases arousal you deal with penetration skills by 5%, but you'll have a hard time not thinking of sex, gaining 2 levels of sex fetish. It's um, {i}intended{/i} for blessing marriages... A-Anyways, keep in mind it only lasts one week. Are you sure this is the Blessing you want? You have [ProgressDisplay] points of holy power to spend.",
+                                                                        "Menu",
+                                                                          "Get Honeymoon Blessing (25000 Holy Power)",
+                                                                          "Different Blessing. ",
+                                                                        "EndLoop"
+                                                                    ]
+                                                      },
+                                                                {
+                                                                    "NameOfScene": "Get Honeymoon Blessing (25000 Holy Power)",
+                                                                    "theScene": [  "IfProgressEqualsOrLess", "24999", "LackPower",
+                                                                                  "ChangeProgress", "-25000",
+                                                                                  "You shudder as you suddenly feel a rush of holy euphoria...",
+                                                                                  "GivePerk", "Honeymoon Blessing",
+                                                                                  "Speaks2",
+                                                                                  "Is there anything else you need, oh chosen hero?",
+                                                                                  "JumpToScene", "Back."
+                                                                              ]
+                                                                },
+
+
+
+
+
+
+
+
+                                {
+                                    "NameOfScene": "Go back to praying.",
+                                    "theScene": [ "Speaks2",
+                                                "May the protection of the Goddess go with you [ThePlayerName].",
+                                                "The warm tingling feeling surrounding you lifts away.",
+                                                "JumpToScene", "PrayingMenuActual"
+                                              ]
+                                },
+
+
+
+
+
+
+
+                    {
+                        "NameOfScene": "Stop praying.",
+                        "theScene": [
+                                  ]
+                    }
+
+                ]
+}

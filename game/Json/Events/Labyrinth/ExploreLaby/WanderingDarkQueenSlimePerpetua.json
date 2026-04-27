@@ -1,0 +1,53 @@
+{
+    "name": "Wandering Dark Queen Slime Perpetua",
+    "CardType": "Event",
+    "CardLimit": "1",
+    "Description": "Your Grimoire shows a black page glowing with chillingly familiar, threatening demonic energy, like a lingering cherry-scented nightmare... It looks like you might encounter something familiar within the depths of this place... 'Dark Queen Slime Perpetua.'",
+    "requires": [ "Slime Badge"],
+    "requiresEvent": [
+                {
+                    "NameOfEvent": "Dark Queen Slime Perpetua",
+                    "Progress": "0",
+                    "ChoiceNumber": "1",
+                    "Choice": "DefeatedDarkPerpoRematch"
+                }
+            ],
+    "Speakers": [
+                  {
+                    "name": "Dark Perpetua",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Rematch",
+                        "theScene": [
+                                          "Progressing at random through the nonsensical architecture of this unreal place, you end up unfathomably deep within the halls of the Umbral Labyrinth, an almost choking miasmic darkness surrounding you, oozing out of the very walls. No matter how long you walk, it feels like there is no change to these abyssal pathways, and no end in sight...",
+                                          "DisplayCharacters",
+                                            "1",
+                                          "EndLoop",
+                                          "PlayVisualEffect", "ScreenFlash", "Void.png",
+                                          "PlayMotionEffect", "Explosion",
+                                          "ChangeBGM", "music/Unknown/Dungeon-Rlyeh.mp3",
+                                          "ChangeBG",  "combat.png",
+                                          "But the mind-numbing monotony of your travels is suddenly interrupted as the demonic energy rises and surges all around you with a crash, the air swirling and dripping with venomous desire while reality itself seems to fray at the seams, bringing you face to face with the nightmarish reappearance of the trio of luscious villainesses: Dark Perpetua!",
+                                          "ChangeImageLayer", "Expression", "1", "EvilGrin",
+                                          "Speaks",
+                                          "There you are, our {i}darling{/i} nemesis. You won't get so lucky this time!♥",
+                                          "ChangeImageLayer", "Expression", "1", "Laugh",
+                                          "Speaks",
+                                          "Ohohohoho! Prepare to drown in my perfection!♥",
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Dark Perpetua",
+                                          "StartCombat",
+                                          "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                            "ChangeBG",  "Labyrinth.png",
+                                          "As the nightmarish coalescence vanishes in climactic defeat, you're once more left alone in the darkened halls of the Labyrinth, the oozing feeling of darkness lifting as you press forward into your labyrinthine trials..."
+
+                                  ]
+                    }
+                ]
+}

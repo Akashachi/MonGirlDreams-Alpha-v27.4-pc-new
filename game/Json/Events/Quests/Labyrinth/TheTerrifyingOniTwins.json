@@ -1,0 +1,53 @@
+{
+    "name": "The Terrifying Oni Twins",
+    "CardType": "Quest",
+    "CardLimit": "0",
+    "Description": "The terrifying oni sisters! Combined, they proudly stand as one of the Demon Queen's Commanders, and await you at the end of this trek. Do you think you can handle them after a lengthy gauntlet?",
+    "requires": [ "True Sigil Of Power"],
+    "Speakers": [
+                  {
+                    "name": "Mizuko",
+                    "postName": "",
+                    "SpeakerType": ""
+                  },
+                  {
+                    "name": "Himika",
+                    "postName": "",
+                    "SpeakerType": ""
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Fight both!",
+                        "theScene": [   "GetEventAndSetChoice", "Will-Power Final Boss", "5", "",
+                                           "ChangeBG",  "templeMainHall.png",
+                                          "In an instant, from the featureless black corridors of the Umbral Labyrinth, you suddenly find yourself in the open arena-like depths of the Temple, the familiar ring adorned on either side with a telltale pair of large pillars, one red, one blue.",
+                                          "DisplayCharacters",
+                                                "1",
+                                                "2",
+                                              "EndLoop",
+
+                                          "ChangeImageLayer", "Expression", "Himika", "Cocky", "ChangeImageLayer", "Expression", "Mizuko", "Smug",
+                                          "Himika and Mizuko are imposingly standing in the center of the arena, having clearly been awaiting your arrival. Judging by their horny, hungry expressions, they definitely aren't interested in talking, and so you immediately prepare yourself for battle as the door slams shut behind you!",
+
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Mizuko",
+                                            "Himika",
+                                          "StartCombat",
+
+                                          "IfChoice", "1", "ClearedLabyMatch", "PostWin",
+                                          "SetChoice", "1", "ClearedLabyMatch",
+                                          "GetEventAndChangeProgress", "Labyrinth Depths", "1",
+                                          "JumpToScene", "PostWin"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "PostWin",
+                              "theScene": ["ChangeBG",  "Labyrinth.png",
+                                            "With Mizuko and Himika's climactic defeats, you're free to resume your adventure and make your way to the beckoning light signaling the end of your exploration!"
+                                        ]
+                          }
+                ]
+}

@@ -1,0 +1,331 @@
+{
+    "name": "Voltlin Security Check",
+    "CardType": "Event",
+    "CardLimit": "2",
+    "Description": "Within Ars Delusia's Adventure Apartments, magically trapped puzzle doors have been placed to ensnare hapless adventurers, leaving them easy prey for lusty security voltlins lying in wait.",
+    "requires": [ "Starlight District Stamp"],
+
+    "Speakers": [
+                  {
+                    "name": "Voltlin",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }  
+                ],
+    "EventText": [                    
+                            {
+                            "NameOfScene": "EventStart",
+                            "theScene": [  "StoreCurrentBG",
+                                            "ChangeBG", "Capital.png",
+                                           "IfInExploration", "ThinkingPuzzle",
+                                           "JumpToScene", "TrappedDoor"
+                                        ]
+                            },
+                                  {
+                                  "NameOfScene": "ThinkingPuzzle",
+                                  "theScene": [  
+                                                "Traveling through a seemingly endless corridor within an eerily familiar Ars Delusian building, you eventually come face to face with a simple door kept locked by an overly complex sliding picture puzzle... And with no apparent way to make it through this obstacle other than to solve the riddle, you set yourself to the task, doing your best to crack it without making mistakes.",
+                                                "StatCheck",
+                                                  "Intelligence",
+                                                  "25",
+                                                  "PassedPuzzle",
+                                                  "Fail",
+                                                  "FailedPuzzle"
+                                              ]
+                                  },
+                                        {
+                                          "NameOfScene": "PassedPuzzle",
+                                          "theScene": [  
+                                                        "After frustrating minutes of sliding tiles around, the abstract image finally clicks into place and you reach for the door...",
+                                                        "Whereupon it creaks open with a simple turn of the handle, leaving you free to proceed onwards without risk!",
+                                                        "JumpToScene", "EndEvent"
+                                                      ]
+                                          },
+                                          {
+                                          "NameOfScene": "FailedPuzzle",
+                                          "theScene": [  
+                                                        "After frustrating minutes of sliding tiles around, the abstract image finally clicks into place and you reach for the door...",
+                                                        "JumpToScene", "TrappedDoor"
+                                                      ]
+                                          },
+ 
+ 
+                            {
+                            "NameOfScene": "TrappedDoor",
+                            "theScene": [   
+                                            "As you turn the doorknob... a tingly, hair-raising buzz suddenly runs along your arm-!?",
+                                            "DamagePlayerFromMonster", "Voltlin Livewire", "Tagging Sparks",
+                                            "PlayMotionEffect", "CrashSmol",
+                                            "And before you even have the time to wonder what's happening, a heart-racing jolt of magically charged blue lightning then crackles through your connection to the handle, the surprisingly pleasurable impulse of lustful energy causing your muscles to tense tightly while your dick jumps with excitement from the rush of charged arcane arousal!",
+                                            "Gasping under the intense effect of the unexpected mechanism, you immediately let go of the trapped handle... or at least, you attempt to, but when you try to pull your hand away, you find it is now all but stuck to the knob by some unseen force, your fingers remaining clenched around the metal length like they're magnetically glued to it!?",
+                                            "DamagePlayerFromMonster", "Voltlin Livewire", "Tagging Sparks",
+                                            "PlayMotionEffect", "CrashSmol",
+                                            "All the while, electrifying shivers of ecstasy keep flowing into you with a steady galvanic buzz, drawing a confused moan from your mouth as you're promptly hit with another surge of arousal-building energy, further scrambling your senses with tingly stimulation. You need to do something to escape this predicament before you're rendered a helpless mess!",                                            
+                                            "PlayerStep",
+                                            "IfPlayerOrgasm", "CantResist",
+                                            "JumpToScene", "EscapeMenu"
+                                        ]
+                            },    
+                                {
+                                "NameOfScene": "CantResist",
+                                "theScene": [  
+                                              "But unfortunately, as horny and worked up as you are, you can't muster the will to pull yourself away from the lewd voltaic trap, and so can't do anything other than woozily stand there, dumbstruck with statically infused pleasure while your dick continues to twitch excitedly with each arcing jolt of electric magic coursing into your system, your constantly growing lust making you more and more wantonly desperate for release...",
+                                              "JumpToScene", "PunishmentTime"
+                                            ]
+                                },  
+
+ 
+                                {
+                                "NameOfScene": "EscapeMenu",
+                                "theScene": [  
+                                                 "Menu",    
+                                                    "Pull yourself off! (Power)",
+                                                    "Counteract the magic! (Intelligence)",
+                                                    "It can't last forever...",
+                                                "EndLoop"
+                                            ]
+                                },  
+                                        {
+                                            "NameOfScene": "Pull yourself off! (Power)",
+                                            "theScene": [
+                                                        "Despite the seemingly unshakable magnetism that keeps your hand stuck to the handle, you attempt to wrench yourself off with brute force, putting all your strength into pulling away from that pesky trapped doorknob!",                                              
+                                                        "StatCheck",
+                                                        "Power",
+                                                        "25",
+                                                        "PowerPass",
+                                                        "Fail",
+                                                        "YouFailPower"
+                                            ]
+                                        },
+                                             {
+                                              "NameOfScene": "PowerPass",
+                                              "theScene": [  
+                                                            "And with what feels like a gargantuan effort, you somehow manage to rip your hand away from the handle, prompting a cry of victory from you as you triumphantly stagger back-!\n\n... with such force that you nearly slam into the opposite wall under the momentum, but no matter: you're free!",
+                                                            "JumpToScene", "PostEventStuffs"
+                                                          ]
+                                              },
+                                             {
+                                              "NameOfScene": "YouFailPower",
+                                              "theScene": [  
+                                                            "But no matter how strongly you pull with your other hand or how much you leverage your legs in your efforts to free yourself, your straining attempts yield no fruit at all, leaving you hopelessly stuck in place!",
+                                                            "JumpToScene", "PunishmentTime"
+                                                          ]
+                                              },
+
+
+                                        {
+                                            "NameOfScene": "Counteract the magic! (Intelligence)",
+                                            "theScene": [
+                                                        "Quickly trying to understand the spell afflicting you and muster a counterspell, you focus on dispersing the crackling energy!",                                              
+                                                        "StatCheck",
+                                                        "Intelligence",
+                                                        "20",
+                                                        "IntPass",
+                                                        "Fail",
+                                                        "YouFailInt"
+                                            ]
+                                        },
+                                              {
+                                              "NameOfScene": "IntPass",
+                                              "theScene": [  
+                                                            "In a eureka moment, you realize that the trap's enchantment is twofold, one part being a rather standard defensive spell that gives your hand the properties of metal, while the other part makes the handle act like a supermagnet! Swiftly going for the most expedient remedy to your predicament, you dispel the magic on yourself, leaving you free to unclench your fist and stagger away with a sigh of relief!",
+                                                            "JumpToScene", "PostEventStuffs"
+                                                          ]
+                                              },
+                                              {
+                                              "NameOfScene": "YouFailInt",
+                                              "theScene": [  "But as the crackling buzz keeps relentlessly coursing through you, you feel your head blank out and your thoughts fizzle away, leaving you with no idea of what to do against the unstopping tingling pleasure...",
+                                                            "JumpToScene", "PunishmentTime"
+                                                          ]
+                                              },
+
+                                              {
+                                              "NameOfScene": "It can't last forever...",
+                                              "theScene": [  "Clueless of what you could do against your current predicament, you choose to try and wait out the trap... But as seconds keeps ticking away, it feels more and more like it was a bad idea, dizzying shivers continuing to rush across your entire body with no signs of stopping, leaving you more and more powerlessly aroused...",
+                                                            "JumpToScene", "PunishmentTime"
+                                                          ]
+                                              },
+
+                            {
+                                "NameOfScene": "PunishmentTime",
+                                "theScene": [
+                                            "ChangeBGM", "music/Loss/Falling Down.mp3",
+                                            "Then, suddenly, the hair-raising static feeling dancing across your skin intensifies, and before your befuddled eyes, your other hand is abruptly and irresistibly drawn to the doorknob as well, leaving it stuck in place alongside the first!",
+                                            "Realizing that another mechanism of the trap is triggering, and figuring that it heralds nothing good, you make another desperate attempt to pull away by leveraging your legs, but are immediately dismayed to find both your feet stuck to the floor and somehow spreading apart on their own, which leaves you in a rather awkward and compromising position, bent forward against the door with your hips pushed out and up!",
+                                            "Gasping from the surprise and the unrelenting voltaic pleasure, you clumsily continue to push and pull in your unfortunate state... but only manage to feebly wiggle your body without improving your situation in any way, leaving you asking yourself: 'What now?!'",
+                                            "DisplayCharacters",
+                                              "1",
+                                            "EndLoop",
+                                            "ChangeImageLayer", "Expression", "1", "Joy",
+                                            "But you're not left wondering alone for long amid the simmering pleasure jolting into your body, as you then hear the click of a door opening before a shortstacked security voltlin merrily skips down the hall, a beaming grin on her face as she calls out in a cheerful singsong.",
+                                            "Speak", "Security Voltlin",
+                                            "Oh-ho, what do we have here?♪ Dear adventurer, hasn't anybody ever told you that breaking and entering is a crime?♪",
+                                            "ChangeImageLayer", "Expression", "1", "Smug",
+                                            "Her tone certainly not sounding very stern for someone who is addressing a 'criminal', she gives you a cheeky and playful grin as she comes to a strutting stop at your side, her thick curves showily swaying back and forth in her tight-fitting black uniform as she sets a hand on her wide canted hips, her voice smoothly dropping from cheery gaiety to an erotic purr as she goes on.",
+                                            "Speak", "Security Voltlin",
+                                            "I'm afraid this calls for corrective measures... But don't worry, you're gonna enjoy this punishment.♥",
+                                            "ChangeImageLayer", "Clothing", "1", "",
+                                            "Before you can get a word in edgewise, you watch her pull on a few straps of her clothes and undo a few buttons, which swiftly lets her outfit drop to the floor in a heap, the quick disrobing putting her bare soft skin and erotic curves on full brazen display in an unabashed show that further stokes your urges and glues your stare to her voluptuous body, any idea of escape momentarily gone from your mind under the enticing view.",
+                                            "ChangeImageLayer", "Expression", "1", "LipLick",
+                                            "Instantly reacting to the raunchy sight, your dick twitches and strains against your pants in growing need, the constant buzz of stimulation from the trap's magic infusing you with unstoppably rising static energy, replacing your rationality with encroaching lusty want as you ogle the shameless voltlin and smell the alluring scent of her electric arousal, the shortstacked lady reacting to your gawking with a purring leer.",
+                                            "ChangeImageLayer", "Expression", "1", "Condescending",
+                                            "Speak", "Security Voltlin",
+                                            "My word, you're proving quite unrepenting, dear adventurer...♪ Good thing I'm here to set you back on the straight and narrow.♥",
+                                            "ChangeImageLayer", "Expression", "1", "JoyOpenEyes",
+                                            "Humming happily, she promptly steps behind your bent-over, vulnerable form, and briskly hooks her fingers onto the hem of your pants before pulling them down along with your undergarments in one smooth motion, making a blush of shame and excitement grow on your cheeks at your helpless position while the lecherous officer hums pensively behind you at the sight of your erection springing free.",
+                                            "ChangeImageLayer", "Expression", "1", "Condescending",
+                                            "Despite your stooping posture, her diminutive size still leaves her only at about crotch height, making it quite convenient for her to inspect your throbbing manhood and give it a tentative tug while her soft breasts briefly brush along your legs in a tantalizing caress, the teasing touches coaxing a moan of need from your increasingly fogged-up head while your dick drools a bit of precum underneath you, making the voltlin click her tongue.",
+                                            "ChangeImageLayer", "Expression", "1", "Grin",
+                                            "Speak", "Security Voltlin",
+                                            "Now, what kind of naughty things were you planning to do with such a {i}dangerous{/i} weapon, hm?♥ Fucking some unsuspecting succubi?♥ Bullying some innocent imps?♥ Relentlessly plowing some {i}powerless{/i} voltlins, perhaps?♥ Mercilessly pounding away at their sopping pussies, heedless of their cries of ecstasy, not stopping until you've thoroughly satisfied your urges and creampied them to your heart's content?♪ ",
+                                            "ChangeImageLayer", "Expression", "1", "Condescending",
+                                            "While she speaks in a playfully chiding tone, the vivid scenario further stoking your arousal, she hefts up her pillowy breasts and buries your entire length in them while she still stands primly straight behind you, the embrace of her tightly squeezing soft cleavage sending a warm shock through your lust-permeated system, intensifying the voltaic buzz running through you and turning it into a hot oozing thrum while she coos.",                                            
+                                            "ChangeImageLayer", "Expression", "1", "OralOffer",
+                                            "Speak", "Security Voltlin",
+                                            "Well, too bad, you naughty criminal.♪ Because now, as punishment for your pervertedly premeditated misdeeds, the only thing you'll be getting is milked by my tits.♥ {i}Mmmhwah~♪{/i}",
+                                            "She punctuates her reprimanding words with a loving smooch to your hanging testes, lavishing them with contrasting affection while she starts to slowly roll her pillowy bust in smooth circles, drawing out a long moan of melty pleasure from you as the tingly rush of electric bliss continues to keep you statically blissed out, ensuring you remain nicely docile while she diligently sets herself to the task of draining you dry.",
+                                            "ChangeImageLayer", "Expression", "1", "LipLick",
+                                            "Speak", "Security Voltlin",
+                                            "... But don't worry, I'm sure all you need is some doting, loving relief.♥ Then all those {i}nasty{/i} ideas simmering in you can be happily squeezed out, rehabilitating you into a proper, law-abiding citizen. {i}Mmwah~{/i}♥ Do you think you can do that for me?♥",
+                                            "ChangeImageLayer", "Expression", "1", "Smug",
+                                            "Your mind roiling under her barrage of coaxing words and mammary ministrations, you can only inarticulately huff in affirmation as she gives your entire length a luxurious clench of her luscious breasts, the feeling of her tits' tender vice all over your manhood making it ecstatically throb while she proudly giggles and carries on spoiling your sack with her skillful mouth, kissing and licking it into wanton readiness.",
+                                            "ChangeImageLayer", "Expression", "1", "LipLick",
+                                            "Feeling yourself sink deeper and deeper into an ocean of warm electric felicity, a tensing shiver runs across your entire body as the teasing voltlin keeps wordlessly smooching and sucking on your balls in turn while slowly squeezing and massaging her hefty bust around your rigid and twitching erection, the soft, pampering affection to your loins delightfully contrasting with the tingling static rushes relentlessly pulsing into you.",
+                                            "Speak", "Security Voltlin",
+                                            "Mhhhhmmm-♥ You're getting close already, aren't you-?♥ Go on, then: empty those pent-up balls.♥",
+                                            "ChangeImageLayer", "Expression", "1", "OralOffer",
+                                            "Pausing only a moment to say those enticing words while keeping your shaft snugly buried in her chest, she then lets out a hot sigh as she goes back to worshipping your tensing testes in earnest, now stroking her pillowy breasts up and down your length in a reversed milking titfuck, the pumping motions instilling more and more rising orgasmic need in your lower body while your head spaces out from the rapidly surging ecstasy...",
+                                            "PlayerOrgasm", "1",  "ChangeImageLayer", "Face", "1", "Blush",
+                                            "Until finally, as you feel a familiar scalding rush ooze through your loins, her horns send in a shock of her own to course along your bodies while she gives your sack a long kiss and tightly squeezes her prison of cleavage around your spasming manhood, leaving you messily moaning under the powerful influx of electrifying euphoria that immediately sends your dick trembling and spurting thick ropes of cum straight into her boobs.",
+                                            "ChangeImageLayer", "Expression", "1", "LipLick",
+                                            "Speak", "Security Voltlin",
+                                            "Mhhph-♥ Therhe you gho, mmmhhwah~♥",
+                                            "PlayerOrgasm", "1", 
+                                            "Her warmly cooing voice further melting down your resistance and luring you ever deeper into happy depravity, you thoughtlessly obey her urging and let yourself go completely, her luxurious titjob alongside the galvanizing sparks jolting through you leaving you emptying your seed in an abundant stream that pools obscenely into her chest, the outpour of semen dribbling down her soft skin and onto the floor in a dripping mess.",
+                                            "Yet, even as that intense climax abates, you can feel your dick somehow continue to throb needily and as hard as ever between her wonderful bosom as static energy keeps incitingly rampaging across your body, helplessly making you crave {i}more{/i}!",
+                                            "ChangeImageLayer", "Expression", "1", "Oh",
+                                            "With your mind being so lust-soaked and bliss-wracked, your reason can't possibly muster the restraint to stop at just that, and so with a gasping whine, you start thoughtlessly thrusting your hips against the voltlin officer's soft breasts in search of more pleasure, prompting a sound of surprise from her before she reacts with a mischievously doting titter and rewards your show of indulgence with another hot kiss to your aching balls.",
+                                            "ChangeImageLayer", "Expression", "1", "Smug",
+                                            "Speak", "Security Voltlin",
+                                            "Mmmmmm~♥ Still in need, huh? No wonder you were commiting crimes.♪",
+                                            "ChangeImageLayer", "Expression", "1", "Grin",
+                                            "She lets out a teasing giggle at her own words as she languidly rolls and pumps her plush boobs into your instinctive thrusts, accompanying your wanton movements while letting out a playful hum as she watches you plow her chest with a positively lecherous, downright entranced expression.",
+                                            "ChangeImageLayer", "Expression", "1", "OralOffer",
+                                            "Speak", "Security Voltlin",
+                                            "Don't worry, it's my duty as an officer to take care of {i}emergencies{/i} like this... So go ahead and {i}fuck{/i} my tits until you're {i}fully satisfied{/i}.♥",
+                                            "Spurred by her lascivious encouragement, you redouble your piston movement, your hips slapping again and again into her ample bust with audible lewd smacks, all the while her tongue traces along your balls every chance it gets, every passing moment feeling like it's utterly saturated with statically charged ecstasy tingling across your skin as you fully give in to the single-minded urge to fuck the cheeky shortstack's bosom.",
+                                            "ChangeImageLayer", "Expression", "1", "LipLick",
+                                            "Speak", "Security Voltlin",
+                                            "Hmmmm-♥ It's like you're trying to knock up my breasts...♥ Well, do go on, dear adventurer.♥ Don't hold back.♥ Let's milk out every drop we can until you're {i}thoroughly{/i} satisfied.♥",
+                                            "Your head is going blank as she keeps teasingly cooing out in-between messy kisses to your churning sack while you pound her cleavage with blind fervor, renewed crackling heat spreading out from your loins to the rest of your blissed-out frame with every pillowy impact, your testes eagerly tensing under the continued ministrations of the buxom monster girl as she eagerly works to make you cum again for all you're worth.",
+                                            "Keeping her mouth diligently active, she licks and sucks you while rhythmically pumping her obscenely large and springy chest, ensuring you can have the most luxurious, earth-shattering orgasm so far, electric rapture swiftly building up within you and intensifying with every vulgar, resounding meeting of your groin and her bust, bringing you closer and closer to a searingly rising high...",
+                                            "ChangeImageLayer", "Expression", "1", "OralOffer",
+                                            "PlayerOrgasm", "1",
+                                            "Until with one more mind-blanking surge of voltaic ecstasy, you fully hilt your length into her jiggly boobs as you start to unload again, the horny officer promptly reacting by pamperingly squeezing her plush bosom all over your throbbing shaft while taking advantage of your climactic stillness to lavish your churning balls with even more affection, keeping giddy, tingling pleasure racing all through your fried senses while you cum...",
+                                            "PlayerOrgasm", "1",
+                                            "... and cum, and cum, and cum, a seemingly unstoppable, endless stream of semen rushing out of your thoroughly spoiled gonads and leaking onto the floor in a positively debauched show while the lewd shortstack behind you watches in horny awe as she dutifully accompanies you into tit-loving felicity, leaving you blanking out as you get happily milked spurt by spurt...",
+                                            "ChangeImageLayer", "Expression", "1", "LipLick",
+                                            "Until finally, as your blissful rapture abates to leftover dribbles and twitching jolts, the lascivious voltlin parts her soft chest from your length, her lips giving your sack one last parting kiss along with a hot sigh, as if to praise you for your efforts, before she lets you slump forward into the door in panting, twitching exhaustion, feeling wonderfully relieved while she croons contently as she lustfully looks upon her handiwork.",
+                                            "ChangeImageLayer", "Expression", "1", "JoyOpenEyes",
+                                            "Speak", "Security Voltlin",
+                                            "Hahhhh...♥ That was... {i}amazing{/i}... So much so that I think I'll let you off with just a warning.♪",
+                                            "ChangeImageLayer", "Expression", "1", "Joy",
+                                            "Giggling at her own jest, she then focuses for a bit and quickly washes away your prodigally spilled seed with a blueish flash and an electric crackle of magic, shivering in delight as she absorbs the semen all over her breasts and the floor, before swiftly grabbing her discarded clothing and smoothly redressing while you pant and huff in woozy recovery, the naughty officer treating you to a chipper smile as she turns back to you.",
+                                            "ChangeImageLayer", "Clothing", "1", "Clothed",
+                                            "ChangeImageLayer", "Face", "1", "",
+                                            "ChangeImageLayer", "Expression", "1", "Grin",
+                                            "Speak", "Security Voltlin",
+                                            "Well, I hope you learned your lesson, dear adventurer.♥ Else, I'll have to take you into custody next time, hehehe.♥",
+                                            "Giggling, she gives your dazed head a playful ruffle, then starts walking off... but before she leaves for good, she turns to you and adds with a wink.",
+                                            "IfHasPerk", "Rut", "InRutPostTitfuck",
+                                            "ChangeFetish", "Rut", "20",
+                                            "IfFetishLevelEqualOrGreater", "Rut", "100", "RutGainedTitfuck",
+                                            "ChangeImageLayer", "Expression", "1", "JoyOpenEyes",
+                                            "Speak", "Security Voltlin", 
+                                            "... Though just between you and me, {i}do{/i} feel free to do that again. I'll gladly come back to 'punish' you all over again for your misdeeds, ehehe~♥",       
+                                            "JumpToScene", "TitfuckWrapup"
+                                  ]
+                              },
+
+                                  {
+                                    "NameOfScene": "TitfuckWrapup",
+                                    "theScene": [
+                                            "DisplayCharacters",
+                                            "EndLoop",
+                                            "Then she's gone, the sound of her skipping gait and breezy laughter echoing down the hallway as she leaves you to recover on your own.",
+                                            "IfPlayerSpiritGone", "PassOut",
+                                            "And as if on cue, the magnetizing pull of the doorknob finally ends and frees your limbs, letting you shake away the electric tingles sticking to your body, then languidly take your time to fix your clothing and refocus yourself... Although you can't help but still feel wonderfully achy and eager for the shortstacked woman's attentions, a part of you wantonly thirsting to seek the nearest voltlin for more sparky titfucking bliss...",
+                                            "ChangeFetish", "Oral", "5",
+                                            "ChangeFetish", "Breasts", "5",
+                                            "ChangeSensitivity", "Magic", "5",
+                                            "JumpToScene", "PostEventStuffs"
+                                            ]          
+                            },
+
+                                  {
+                                    "NameOfScene": "InRutPostTitfuck",
+                                    "theScene": [
+                                                 "ChangeImageLayer", "Expression", "1", "JoyOpenEyes",
+                                                 "Speak", "Security Voltlin",                                  
+                                                 "Though considering how much you've obviously already had a {i}taste{/i} for voltlin pleasures, I'm not even sure I'd be enough to {i}satisfy{/i} you... Maybe I should bring backup next time?♥",
+                                                 "ChangePerkDuration", "Rut", "7",
+                                                  "JumpToScene", "TitfuckWrapup"
+                                              ]
+                                  },
+
+                                  {
+                                    "NameOfScene": "RutGainedTitfuck",
+                                    "theScene": [
+                                                 "ChangeImageLayer", "Expression", "1", "Joy",
+                                                 "Speak", "Security Voltlin",                                  
+                                                 "... By the way, you should know that due to having had {i}lots{/i} of sex with voltins, you're now in rut... It means that you'll now be even hornier than usual, and that you'd better stay away from voltlins for a few days if you don't want it to get worse... Okay bye!",
+                                                 "While she waves cheerily at you like it's no big deal, you can indeed feel leftover buzzing lust still permeate your body and mind despite your multiple, intense orgasms, making you already crave to have sex with voluptuous shortstacked women all over again, even as you struggle to recover from your post-climactic exhaustion, your eyes lingering on the sexy monster girl's alluringly plush frame as she nonchalantly capers away.",
+                                                 "GivePerk", "Rut",
+                                                  "JumpToScene", "TitfuckWrapup"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "PassOut",
+                                    "theScene": [                                  
+                                                 "However, even as the magnetizing pull of the doorknob finally ends and frees your limbs, you can only slump to the ground and lie there with a blissed-out expression, the back-to-back titfucking orgasms having taken more out of you than you could take, leaving you happily closing your eyes as you fade away from exhaustion and your recall stone activates, whisking you away with a renewed appreciation for voltlin pleasures...",
+                                                  "...",
+                                                  "ChangeFetish", "Oral", "10",
+                                                  "ChangeFetish", "Breasts", "10",
+                                                  "ChangeSensitivity", "Magic", "10",
+                                                  "GameOver"
+                                              ]
+                                  },
+
+ 
+                                               
+
+                    {
+                      "NameOfScene": "PostEventStuffs",
+                      "theScene": [                                  
+                                    "IfInExploration", "EndEvent",
+                                    "ChangeBGM-List",
+                                   "music/Capital/STARLIGHT.mp3",
+                                   "music/Capital/Night_Floating.mp3",
+                                   "music/Capital/Nobody_City.mp3",  
+                                   "music/Forest/Starry sky.mp3",
+                                   "music/Loss/BGM03_Uncanny light.mp3",
+                                   "music/Relaxing/Purple Planet Music - Lanquidity (2 52) 110bpm.mp3",
+                                   "music/Emotional/Purple Planet Music - Emotional - Spiritual Moment (1_32) 90bpm (L).mp3",
+                                   "EndLoop",
+                                   "AllowInventory",
+                                   "GoBackToStoredEvent"
+                                ]
+                    },
+                        {
+                        "NameOfScene": "EndEvent",
+                        "theScene": [    "UseHeldBG"
+                                    ]
+                        },
+
+                    {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [   "event broke."
+                                ]
+                            }
+                ]
+}

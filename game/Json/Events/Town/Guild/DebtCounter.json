@@ -1,0 +1,127 @@
+{
+    "name": "DebtCounter",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Elena",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Elly",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "VisitMenu",
+                        "theScene": [  "IfChoice", "1", "DebtPaid", "WannaLeave?",
+                                      "IfProgressEqualsOrLess", "0", "PaidOffDebt",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "Speaks",
+                                      "Your debt? You still owe [ProgressDisplay] eros. How much would you like to pay? (You have [PlayerMoney] eros.)",
+                                      "InputProgress",
+                                      "IfInputEqualsOrLessThan", "0", "Dismiss",
+                                      "HasErosLessThanInput", "NotEnoughMoney",
+                                      "RemoveInputFromPlayerEros",
+                                      "RemoveInputFromProgress",
+                                      "ChangeImageLayer", "Expression", "1", "Smile",
+                                      "Speaks",
+                                      "Thank you very much! You now owe [ProgressDisplay] eros.",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "Speaks",
+                                      "I hope you have a wonderful day [ThePlayerName].",
+                                      "IfProgressEqualsOrLess", "0", "PaidOffDebt",
+                                      "JumpToScene", "Done."
+                                  ]
+                    },
+                        {
+                            "NameOfScene": "Dismiss",
+                            "theScene": [  "ChangeImageLayer", "Expression", "1", "Smile",
+                                          "Speaks",
+                                          "Oh, well have a pleasant day.",
+                                          "JumpToScene", "Done."
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "NotEnoughMoney",
+                            "theScene": [  "ChangeImageLayer", "Expression", "1", "Depressed",
+                                          "Speaks",
+                                          "Uhm. You don't have that many eros.",
+                                          "JumpToScene", "Done."
+                                      ]
+                        },
+
+
+
+                        {
+                            "NameOfScene": "PaidOffDebt",
+                            "theScene": [  "RemoveProgressFromEros",
+                                          "SetChoice", "1", "DebtPaid",
+                                          "ChangeImageLayer", "Expression", "1", "Smile",
+                                          "Speaks",
+                                          "Oh my! Y-You actually paid it all off?!",
+                                          "Speaks",
+                                          "Congratulations! I'm guessing you're planning on leaving Lucidia then?",
+                                          "Menu",
+                                            "Stay here.",
+                                            "Leave Lucidia.",
+                                          "EndLoop"
+                                      ]
+                        },
+                        {
+                            "NameOfScene": "WannaLeave?",
+                            "theScene": [  "ChangeImageLayer", "Expression", "1", "Smile",
+                                          "Speaks",
+                                          "You are completely debt free!",
+                                          "Speaks",
+                                          "Did you want to leave Lucidia?",
+                                          "Menu",
+                                            "Stay here.",
+                                            "Leave Lucidia.",
+                                          "EndLoop"
+                                      ]
+                        },
+                                {
+                                    "NameOfScene": "Stay here.",
+                                    "theScene": [  "ChangeImageLayer", "Expression", "1", "Smile",
+                                                  "Speaks",
+                                                  "Really? Well, I wish you luck in your future adventures! Be it defeating the Demon Queen or finding treasure.",
+                                                  "ChangeImageLayer", "Expression", "1", "Disgust",
+                                                  "Speaks",
+                                                  "You're not staying for the monster girls... right?",
+                                                  "JumpToScene", "Done."
+                                              ]
+                                },
+                                {
+                                    "NameOfScene": "Leave Lucidia.",
+                                    "theScene": [  "ChangeImageLayer", "Expression", "1", "Smile",
+                                                  "Speaks",
+                                                  "Alright! Elly, send him home please.",
+                                                  "DisplayCharacters",
+                                                    "1",
+                                                    "2",
+                                                  "EndLoop",
+                                                  "Elly walks over and adjusts her glasses.",
+                                                  "Speaks2",
+                                                  "Alright. Just stand in that circle over there and I can send you home.",
+                                                  "You step onto the circle Elly softly chants some magical verses. Suddenly, a great flash of light envelopes you, blinding you.",
+                                                  "When your vision clears, you find yourself standing back at the docks by Adventum with everything you acquired while at Lucidia.",
+                                                  "Now free from that crazy place, you can do what you want! Someone else can deal with whatever was going on there.",
+                                                  "Good End?",
+                                                  "TrueGameOver"
+                                              ]
+                                },
+
+                    {
+                        "NameOfScene": "Done.",
+                        "theScene": [ "JumpToNPCEventThenScene", "Go see Elena at the Guild counter.", "VisitMenu"
+                                  ]
+                    }
+
+                ]
+}

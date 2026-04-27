@@ -1,0 +1,502 @@
+{
+    "name": "Kunoichi Rope Trap",
+    "CardType": "Event",
+    "CardLimit": "2",
+    "Description": "Can you avoid the clever handywork and ambushes set up by the kunoichi of the temple?",
+    "requires": [ ""],
+    "Speakers": [
+                {
+                 "name": "Kunoichi Trainee",
+                 "postName": "",
+                 "SpeakerType": "Monster"
+         }
+    ],
+
+
+        "EventText": [
+        {
+                "NameOfScene": "EventStart",
+                "theScene": [
+                    "As you continue down the Temple's many hallways and corridors, you step through yet another doorway into a smaller segment. Unlike the others you've come across so far, it feels suspiciously empty, an eerie silence hanging in the air as you cautiously venture further.",
+                    "With no monster girls around that you can see or hear, you keep proceeding forward, watching out for whatever might be lurking around the corner. Vigilant to your surroundings, you could swear that you heard the idle creak of a floorboard, the subtle click of wood on stone, making you pause to consider your options...",
+                        "AllowInventory",
+                            "Menu",
+                                "Continue forward.",
+                                "RequiresEnergy", "50",
+                                "Return the way you came and find a different route. (Costs 50 Energy)",
+                            "EndLoop"
+
+            ]
+        },
+
+        {"NameOfScene": "Return the way you came and find a different route. (Costs 50 Energy)",
+            "theScene": [
+                "Another idle creak and thud within the walls of the Temple fully convinces you that something isn't quite right, so instead of treading forward, you decide to turn back and find another way through a different corridor.",
+                        "ChangeEnergy",
+                        "-50",
+                "As you reopen the door to exit the room you just entered, you feel like you can hear a feminine voice let out a muffled huff of frustration... but nothing else happens.",
+                "Shrugging and brushing it off, you withdraw and, after an hour or two of uneventful trekking, find another pathway to explore.",
+                "IfInExploration", "Nothing",
+                "JumpToScene", "RandomEncounterEnd"
+
+            ]
+    },
+
+        {"NameOfScene": "Continue forward.",
+            "theScene": [
+                    "DenyInventory",
+                "Confident that whatever lies ahead won't prove a problem, or perhaps simply curious to see what awaits you, you stride onward and around the shadowed corner to yet another segment of the corridor. As you do so, a high-pitched, eerie sound echoes through the walls, something like a muffled, feminine, teasing giggle... and yet, the hallway still appears empty.",
+                "Still wondering what this could be about, you take several more steps forward, and hear another noise: a series of small mechanical clicks this time. And as you look around, trying to discern the origin and nature of the clatter, one of the floor stones lining the tunnel suddenly sinks into the ground under your foot!",
+                "All at once, a mechanical commotion echoes through the tunnel before a cascade of sharp snaps rings from nearly every direction around you. You barely have the time to make out several red ropes springing free from the surrounding surfaces of the tunnel as they rapidly close in on you. It's a trap!",
+
+                    "Menu",
+                    "Rely on your reflexes! (Tech)",
+                    "Dodge at random and hope it works out! (Luck)",
+                    "Stand there and look dumb.",
+                        "EndLoop"
+
+            ]
+        },
+
+        {"NameOfScene": "Rely on your reflexes! (Tech)",
+            "theScene": [
+                    "StatCheck",
+                        "Technique",
+                        "20",
+                        "Dodge Trap Tech",
+                        "Fail",
+                        "CaughtByTrap"
+            ]
+         },
+
+        {"NameOfScene": "Dodge at random and hope it works out! (Luck)",
+            "theScene": [
+                "StatCheck",
+                    "Luck",
+                    "20",
+                    "DodgeTrapLuck",
+                    "Fail",
+                    "CaughtByTrap"
+        ]
+    },
+
+        {"NameOfScene": "Stand there and look dumb.",
+            "theScene": [
+                "JumpToScene",
+                    "CaughtByTrap",
+                            "EndLoop"
+                    ]
+    },
+
+                {"NameOfScene": "Dodge Trap Tech",
+                    "theScene": [
+                        "As the streaking red blurs cut through the air, you steady yourself and prepare to evade! Deftly springing into action, you manage to duck and weave your way through the swift, snapping ropes of the snare!",
+                        "However, even as you nimbly dodge past them, you realize that the contraptions are not stopping in the slightest. Whatever mechanism powers the trap seemingly keeps them in motion even without a target, the myriad coils searching for something to grab like so many questing appendages!",
+                            "JumpToScene",
+                            "TrapReversal"
+                    ]
+                },
+
+                {"NameOfScene": "DodgeTrapLuck",
+                    "theScene": [
+                        "Danger rushes all around you, and in a panic, you simply rely on doing your best not to get hit! A frantic leap backwards, a clumsy jump, a lucky dodge here and there... You can't believe you actually haven't been caught yet!",
+                        "In your uncoordinated efforts to avoid the trap, however, you find your back leg snagged by one of the ropes, tripping you. Miraculously, the blunder sends you tumbling back just out of the trap's effective range, but as you pick yourself up, you see that even then, the device doesn't seem to stop, its many red ropes still lashing around, trying to grab onto something.",
+                            "JumpToScene",
+                            "TrapReversal"
+                    ]
+                },
+
+                {"NameOfScene": "TrapReversal",
+                    "theScene": [
+                        "Even so, you appear to be out of danger, and having thus successfully avoided the trap but seeing no way to disarm it, you elect to wait in place for the wildly flailing ropes to stop moving so that you can pass. But as you idly stand there and watch, the creak of a metal hinge can be heard from above as a hatch opens up, a kunoichi trainee promptly and stylishly letting herself down from the ceiling with a victorious smirk.",
+                            "DisplayCharacters",
+                                        "1",
+                                            "EndLoop",
+                                    "ChangeImageLayer", "Base", "1", "Body",
+                                    "ChangeImageLayer", "Expression", "1", "Smug",
+                            "Speaks",
+                                "Haha, foolish human, you can't expect to wander around so carelessly an-",
+                        "As she drops, her eyes meet with yours, and she quickly realizes that you haven't actually been caught in her trap, which is currently still blindly whipping about and looking for a victim.",
+                                    "ChangeImageLayer", "Expression", "1", "Panic",
+                            "Speaks",
+                                "{i}I THOUGHT YOU SET IT OFF!{/i}",
+                        "The trainee's expression very quickly shifts from mocking triumph to panic as she flails her arms around in her fall, doing her best to avoid the frenzied grasp of the swirling mess of ropes. Unfortunately for her, the trap is as effective as it is merciless, and after snagging one of her limbs, it promptly drags her into its center, the succubus crying out in dismay at her predicament.",
+                        "Without hesitation, the trap mindlessly turns on its owner, one rope followed by another as they intricately weave around her body, the kunoichi's cries of alarm quickly turning into sultry aroused noises tinged with panic as she's trussed up, a tight, criss-crossing pattern enveloping her womanly figure.",
+                        "Her outfit is already not doing much to conceal her curves, and the red ropes squeeze down against her supple skin as if to purposefully emphasize them even more, while her arms are crossed and trapped behind her back, preventing any escape attempt.",
+                                    "ChangeImageLayer", "Expression", "1", "PleasureShocked",
+                        "Plump thighs spilling out of her fishnet stockings, her breasts almost bouncing out of the thin purple cloth, and a crotch rope neatly tucked between her legs, she can't keep herself from moaning out as she squirms into the grasp of the lewd restraining trap.",
+                            "Speaks",
+                                "Hnnng! D-Damn, this thing is too tight...! Nnnnm...~",
+                        "You can see the demoness bite her lip as she tries to struggle against the velvet bondage keeping her suspended in the middle of the hallway in front of you, but her attempts to break free are easily cut short by the crotch rope tightly pulled between her plump thighs, the ninja girl only managing to make it rub against her pussy and to unwittingly show off her scantily clad body.",
+                                    "ChangeImageLayer", "Expression", "1", "Disdain",
+                        "In getting caught within her own trap, the kunoichi has generously opened up the way for you to continue... if you so choose...",
+
+                             "Menu",
+                                    "Take pity on the careless trainee and help her out of her own trap.",
+                                    "Move on and ignore the bound trainee.",
+                                    "Take advantage of her mistake and punish her lewdly!",
+                                        "EndLoop"
+
+                    ]
+                },
+
+                {"NameOfScene": "Take pity on the careless trainee and help her out of her own trap.",
+                    "theScene": [
+                        "You briefly consider just moving on now that the way is clear, but as you look at the demonette still squirming and trying to free herself, you can't help but take pity on her, as arousing as the sight of her writhing and wriggling may be. Resolutely, you take a few steps closer, and she begins to flush and flounder even more at your approach, though the unyielding ropes ensure that she doesn't go anywhere as she squeaks out.",
+                                    "ChangeImageLayer", "Base", "1", "Blush",
+                                    "ChangeImageLayer", "Expression", "1", "HowDareYou",
+                            "Speaks",
+                                "H-Hey, stay back, you stupid human, I- Gnnn...~!",
+                                    "ChangeImageLayer", "Expression", "1", "PleasureShocked",
+                        "Despite her efforts, the struggling only puts her in an even worse position, making you pause for a moment to watch as she keeps squirming and ranting, only carrying on once it's clear that she's not going anywhere. A groan of part frustration and part reluctant arousal escapes the succubus as she stops her futile flailing, her body bouncing slightly as her weight drops into the embrace of the ropes, though she still glowers at you.",
+                                    "ChangeImageLayer", "Base", "1", "Evil",
+                                    "ChangeImageLayer", "Expression", "1", "Panic",
+                            "Speaks",
+                                "Stand back, I said! Or you'll regret it! You don't know what I'm capable of!",
+                        "With a sigh, you ignore the trainee's yammering and get to untangling her, loosening knots and pulling stray strands through the loops that open up. At first, she keeps complaining, but once she realizes that you're actually not taking advantage of the situation but instead working to free her, the demonette switches to silent sulking, willing to quietly endure the humiliation rather than remain stuck.",
+                                    "ChangeImageLayer", "Base", "1", "Blush",
+                                    "ChangeImageLayer", "Expression", "1", "Sleeping",
+                        "Eventually, the kunoichi's hands are freed, and she quietly waits for you to loosen her bonds enough that she suddenly comes loose, and would in fact have unceremoniously faceplanted had you not extended a hand to catch her. With an embarrassed noise, the succubus' cheeks flush red as she reflexively pushes you away then hurriedly straightens up, her wooden sandals clacking against the stone of the Temple halls.",
+                                    "ChangeImageLayer", "Expression", "1", "Cocky",
+                            "Speaks",
+                                "L-Listen up, human, just because you got lucky this time... er... doesn't mean you'll be so lucky the next time!",
+                        "She finishes lamely, fixing you with a fuming glare, criss-crossing rope marks plainly visible on her skin. Though her body language still hints at pent-up belligerence, her eyes glance this way and that nervously, as if trying to reorient herself. Before you can chime in or make a move, she blurts out under her breath.",
+                                    "ChangeImageLayer", "Expression", "1", "Condescending",
+                            "Speaks",
+                                "But thanks...",
+                                    "ChangeImageLayer", "Expression", "1", "Cocky",
+                        "Then, again without giving you a chance to respond, the kunoichi throws down a small packet that bursts with smoke, hiding her from your view, though it's quickly apparently that you're under no danger and she's simply covering her retreat, as indicated by the receding clattering of her heels as she proclaims through the obscuring haze.",
+                                "DisplayCharacters",
+                                    "EndLoop",
+                            "Speaks",
+                                "I'll get you next time, so keep your guard up, human!",
+                        "Swatting at the cloud of dust with your hand, you quickly scatter the foggy burst, finding the hallway just as you previously entered it, even the ropes seeming to have slithered back into their niches. With your path now clear, you quickly set out once again before the trap reactivates, proceeding deeper into the Temple's hallways.",
+                        "IfInExploration", "Nothing",
+                        "JumpToScene", "RandomEncounterEnd"
+                    ]
+                },
+
+                {"NameOfScene": "Move on and ignore the bound trainee.",
+                    "theScene": [
+                        "You briefly watch the trainee squirm, and while the sight is appealing, the ropes pressing in and drawing attention to her supple curves, you decide that you're better off just moving on.",
+                        "Now that the trap has latched on to something and stopped moving, it's easy enough to walk past her and step over and around the various ropes keeping her suspended in mid-air, the succubus squeaking out indignantly as you pass her by.",
+                                    "ChangeImageLayer", "Base", "1", "Blush",
+                                    "ChangeImageLayer", "Expression", "1", "HowDareYou",
+                            "Speaks",
+                                "H-Hey, where do you think you're going!? Hnng...!",
+                                    "ChangeImageLayer", "Expression", "1", "PleasureShocked",
+                        "In her attempts to escape, the demoness causes the shibari bindings to dig even deeper into her limbs and her crotch, making her bite her lip to stifle a yelp. It's clear that she isn't getting out anytime soon, but even in such a pitiful situation, her expression remains mostly defiant as she watches you walk away.",
+                                    "ChangeImageLayer", "Expression", "1", "FuckedSillyPost",
+                            "Speaks",
+                                "G-Get back here, you damn human! I'm not... Nnng...~",
+
+                        "The kunoichi's voice gets quieter and quieter as you leave her behind and continue on your way, exiting the area without further incidents. You're sure she'll be able to escape from the trap she accidentally got wrapped up in without help... Probably...",
+                        "DisplayCharacters",
+                            "EndLoop",
+                        "IfInExploration", "Nothing",
+                        "JumpToScene", "RandomEncounterEnd"
+                    ]
+                },
+
+                {"NameOfScene": "Take advantage of her mistake and punish her lewdly!",
+                    "theScene": [
+                            "ChangeBGM", "music/Forest Dungeon/night road.mp3",
+                        "Though you could just take your good fortune and go on your way, the delightfully erotic display of the kunoichi gives you another idea...",
+                        "Stepping forward, you walk past the kunoichi, but instead of then proceeding onward, you approach her from behind, getting right up next to her. Distracted by her own predicament, she doesn't immediately realize what you're doing... not until your hand comes to grope her well-framed ass in her suspended state.",
+                                    "ChangeImageLayer", "Base", "1", "Blush",
+                                    "ChangeImageLayer", "Expression", "1", "Panic",
+                            "Speaks",
+                                "Stupid ropes... If I can just {i}Hiie?!~{/i} Wh-What do you think you're doing, human!?",
+                        "A blush quickly floods the succubus' face as your fingers sink pleasantly into her smooth, pliant butt, her tail erratically flicking all around as you start to feel her up, shamelessly taking advantage of her being so completely at your mercy. Jerking her head back to try and defiantly glare at you even with the red tinge on her cheeks, she rants huffily.",
+                                    "ChangeImageLayer", "Expression", "1", "PleasureShocked",
+                            "Speaks",
+                                "Y-You think you're going to get your way? You'd better run while you still have the chance or I'll... Nnng...~!",
+                        "While she unwisely and fruitlessly threatens you with retribution, your hand moves from her plump and pert rear to the length of rope trailing up her back, giving her a quick squeeze between her thighs for good measure, the idle grope making her stifle a moan and a shiver. Tugging at the crotch rope, you gently rock her body back and forth as the red coil is wedged tighter against her fundoshi-clad pussy, watching her reactions.",
+                            "Speaks",
+                                "D-Don't underestimate... a kunoichi... Mmmn...~!",
+                        "Despite being trussed up and suspended like a present in front of you, her spirit still manages to shine through, but you doubt she'll be able to keep up that attitude for long, especially as you position yourself to stare her down while keeping a tight grip on the crotch rope, your erection straining in your pants from her erotic moaning and inadvertently alluring display, no matter how proud and dignified she's trying to remain.",
+                                    "ChangeImageLayer", "Expression", "1", "LoveDrunk",
+                            "Speaks",
+                                "C-Coward! You won't be able to -hnf!- break me, you lame h-huma-mmnph~?!",
+                        "Grabbing hold of her chin, you tilt the kunoichi's blushing face to silence her needless bravado with a deep kiss. Predictably, she makes a show of trying to squirm and evade your grasp, but with her current bound state and your grip on the restraining strap pressing against her pussy, she only manages to moan into your lips instead, the sweet-smelling exhale tickling your senses and making your eager cock twitch.",
+                            "Speaks",
+                                "W-Wai-mmphn... J-Just h-mmhpp... H-Hah... Mphhhmn...~",
+                        "Caught off-guard by your assertiveness, the trainee is immediately put on the back foot and doesn't think about trying to apply her skills in oral pleasure or making use of her aphrodisiac breath. Yielding to the kiss with surprising speed as your tongues entangle with one another, her expression melts into one of submissive pleasure as you lean in and press against her from behind.",
+                                    "ChangeImageLayer", "Expression", "1", "FuckedSillyPost",
+                        "Within moments, her attempts to break free become much less spirited, the demoness slowly sinking into the ropes keeping her suspended above the ground. No longer needing to keep her under control with your grip on the crotch rope, you move on to releasing your aching length, a small yelp coming from the trainee as she feels it forcefully slap against her plump, rope-framed backside.",
+                        "Releasing her chin, your hand drifts down to grope at her breasts, easily pulling down the thin layer of cloth to free the plush mounds to sink your fingers into and knead, giving her stiffening nipples a few loving pinches. The kunoichi hotly gasps before her voice is quickly muffled again by your forceful kiss, the trainee panting dizzily when your lips part, mustering a rather unconvincing look of fierce anger.",
+                                    "ChangeImageLayer", "Expression", "1", "LoveDrunk",
+                            "Speaks",
+                                "Hah... Ah... y-you... nnng... w-won't get away with this!",
+                        "Though she still tries to put on a brave front, the blush on her cheeks gives everything away as you methodically keep massaging her bust, greedily enjoying her soft tits, promptly finding exactly how to grope and squeeze her to coax more lewd sounds out of her as you continue to tug and pull at her fundoshi, exposing her already drenched pussy, the feisty ninja having clearly been enjoying her predicament more than she claimed.",
+                        "Keeping one hand on her breast, your other palm comes to rest on her hip as you start to grind your throbbing erection between her buttcheeks, enjoying the cool, smooth feeling of her bouncy rear against your burning cock. Hot, breathy moans come from the trainee as you thrust between her thighs, making her straddle your hot, twitching manhood, her feverish aroused stare gluing itself to your engorged shaft.",
+                                    "ChangeImageLayer", "Expression", "1", "PleasureShocked",
+                            "Speaks",
+                                "W-Wait... th-that's... Ahh...~ It's so big...~ If you were to thrust it inside of me, I'd... {i}Ahnn~!{/i}",
+                        "Without giving her any time for more pretend-sneering, you gently lift her body, her legs naturally bowed in an M shape thanks to her velvet shibari harness. Realizing what you're doing, she tries to squirm once more with helpless stifled noises of powerless arousal, mustering one last-ditch effort to escape her bindings as the feeling of your cockhead pressing up against her plump pussy lips makes her eyes widen.",
+                                    "ChangeImageLayer", "Expression", "1", "FuckedSillyPost",
+                            "Speaks",
+                                "W-Wait, wait, {b}wai-!{/b} {i}Ahhh~!{/i}",
+                        "Cutting off her protests, you drop her down onto your aching erection, causing her to cry out in eye-rolling pleasure, her face twisting as she puts everything she has into keeping herself from orgasming on the spot from the assertive insertion. Mercilessly, you resume assaulting her bust with kneading motions, the trainee's exquisite pussy tightly squeezing down around you as the pleasure starts to break her resistance for good.",
+                                    "ChangeImageLayer", "Expression", "1", "LoveDrunk",
+                            "Speaks",
+                                "E-Even this much isn't... {b}Ahhh...~!{/b}",
+                        "You can tell she's completely pretending as you impactfully send your hips forward, the shibari harness making it all the easier to thrust with abandon: each time, the demoness swings a bit forward from the force of your push before coming back down to meet you, her moans becoming more earnest and unrestrained as bliss overtakes her.",
+                        "In her unconscious submission, her pussy tightens, doing its best to keep hold of your hot, thrusting manhood. As you roll your fingers over the erect tips of her breasts, you give them a teasing tug, causing the trainee to squeal.",
+                                    "ChangeImageLayer", "Expression", "1", "PleasureShocked",
+                             "Speaks",
+                                "Eiiiie~!? N-No... This is so humiliating... Ahhhn...~! Caught by a human... in my own trap... B-But... I can't...~",
+                        "With your free hand, you further tease the shinobi with a forceful spank down upon her plump rear, timing it with a deep thrust into her eagerly awaiting pussy, her body quivering in climax this time as she lets out a throaty cry, her tongue lolling out of her wantonly slobbery mouth.",
+                                    "ChangeImageLayer", "Expression", "1", "FuckedSillyPost",
+                            "Speaks",
+                                "Uoooouh~! I-I give up! Y-You win, M-Master!",
+                        "With the floodgates broken, the trainee's stubborn resistance has given way to slutty submissiveness, and instead of trying to escape, you can feel her shifting her body weight to assist the harness in unresistingly bringing her down upon your throbbing length.",
+                        "Gladly taking her up on the offer, your hips buck even harder into her from behind, causing her light rocking to turn into frenzied swaying, your hips hammering into her as you plunge deeper into her tight folds, each thrust causing her back to arch and her voice to raise in ecstasy as she shamelessly indulges in the pleasure.",
+                                    "ChangeImageLayer", "Expression", "1", "FuckedSilly",
+                            "Speaks",
+                                "{i}Yesyesyes{/i}, fuck me, Master~! {b}Ahnnn~!{/b}",
+                        "You interrupt her wanton pleas with another smack across her plump rear, which causes the demoness to grit her teeth and drool sloppily as the pleasurable, forceful sensation washes through her body, putting her through another quivering orgasm as she cries out unintelligibly. Returning her enthusiasm, your cock throbs, eager to release inside of the troublesome trainee now reduced to a pliable, greedy fuck toy.",
+                                    "ChangeImageLayer", "Expression", "1", "FuckedSillyPost",
+                            "Speaks",
+                                "Ahhh~! I can feel it! Your dick is twitching, Master! Do it inside me! Do it inside~!",
+                        "Mouth agape as her tongue hangs out of her mouth, the shinobi tries to throw her body back against yours, but the harness stops her from having too much say in the matter, keeping her nicely at your mercy... Though... Is it just your imagination, or are the bonds becoming looser than when she was 'trying' to escape?",
+                        "Shrugging off the thought, you instead devote yourself to giving the trainee what she wants, a fevered series of thrusts deep inside of her leaving her moans loudly echoing through the halls of the Temple with redoubled strength, certainly leaving no doubt to many of the denizens as to what kind of correction you're putting the feisty succubus through.",
+                                    "ChangeImageLayer", "Expression", "1", "FuckedSilly",
+                            "Speaks",
+                                "{i}Yesyesyesyes... Getting... ther-{/i} {b}Ahhnnoughn~!{/b}",
+                                    "PlayerOrgasmNoSpiritLoss",
+                        "Her lustful voice peaks as you flood her pussy with your cum, the ropes of white seed claiming her as you tightly cling to her body, your dominant grip ensuring that the pendulum of her harness doesn't lead her too far before you're finished. Another brain-frying climax wracks the shinobi's body as you pump a generous load inside of her, further scrambling her ability to think or do anything except ride the blissful high.",
+                        "After several moments of holding on to her and giving her a few more thrusts while she insensately moans in your grasp, you reluctantly pull back, letting your thick sperm flow out of her and onto the ground. Having now fully gotten her resistance fucked out of her, the demoness basks in the depraved afterglow, clearly no longer in any state to prove a problem now.",
+                        "Gathering yourself with a pleased glance at your handiwork, the kunoichi idly swaying in her cradle of ropes in a state of complete disheveled cock-drunk ecstasy, you deliver one final spank to her shapely ass before getting redressed, the slutty ninja letting out a mindless...",
+                                    "ChangeImageLayer", "Expression", "1", "FuckedSillyPost",
+                            "Speaks",
+                                "OooOh?!~ Th-Thank you, Master...!~",
+                                    "ChangeImageLayer", "Expression", "1", "LoveDrunk",
+                        "Satisfied with yourself and with the way forward clear of traps, you leave the trainee to her fate, your built-up libido now pleasantly satisfied thanks to the convenient incident.",
+                        "DisplayCharacters",
+                            "EndLoop",
+                            "ChangeBGM", "music/Temple/far-east-kingdom.mp3",
+                        "IfInExploration", "Nothing",
+                        "JumpToScene", "RandomEncounterEnd"
+                    ]
+                },
+
+                {"NameOfScene": "CaughtByTrap",
+                    "theScene": [
+                        "Whether because of your lack of agility, poor luck, or dearth of awareness, you fail to avoid the trap's whipping ropes. Showing no mercy for your mistake, the many red tendrils wrap and wind around your body with mechanical precision, dragging you into the center of their domain with unflinching strength, unyielding against your desperate struggle.",
+                        "Keeping an inescapable grip on your limbs, they speedily weave themselves around your entire body, and within seconds, you find yourself on your knees in the middle of the hallway, arms tightly bound behind your back and legs apart, at the mercy of whomever laid the trap to begin with. And on that note...",
+                            "DisplayCharacters",
+                                "1",
+                                    "EndLoop",
+                        "You can hear the noisy creak of a panel in the ceiling before it opens up only a few feet ahead of you, letting out one of the many kunoichi that patrol the hallways of the Temple. The lithe woman drops down with cocky flashiness, a smug grin on her plush lips as she readies herself to take advantage of your situation.",
+                            "Speaks",
+                                "What a shame, you fell for my trap~ Time to have some fun with you, human!",
+                            "JumpToScene", 
+                            "TrapMenu" 
+                    ]
+                },
+                {"NameOfScene": "TrapMenu", 
+                    "theScene": [
+                        "Menu", 
+                        "Struggle to break free!", 
+                        "Submissively give in to the trap without a fight.", 
+                        "EndLoop" 
+                    ]
+                },
+
+                {"NameOfScene": "Struggle to break free!", 
+                    "theScene": [
+                        "ApplyStatusEffect", "Ninja Rope Trap",
+                        "CombatEncounter",
+                          "RunningWontSkipEvent",
+                          "Kunoichi Trainee",
+                        "StartCombat",
+                        "IfRanAway", "Ran",
+                        "IfInExploration", "Nothing",
+                        "JumpToScene", "RandomEncounterEnd"
+                    ]
+                },
+
+                {"NameOfScene": "Submissively give in to the trap without a fight.", 
+                    "theScene": [
+                            "ChangeBGM", "music/Loss/BGM03_Uncanny light.mp3",
+                        "Finding yourself entirely at the mercy of the kunoichi causes a flicker of anticipation inside of your heart to flutter, the idea of being completely under her control and surrendering makes your mind race.", 
+                            "ChangeImageLayer", "Expression", "1", "Mocking", 
+                        "The smug demonette readies herself for combat, though she expects it to be easy since you've already fallen for her snare... However, as she notices the spaced out expression on your face and the tenting erection within your pants she simply smirks and giggles.",
+                                "Speaks",
+                                    "Oh~? I know I certainly have appeal, but are you sure it's really okay for a 'noble' adventurer to give in like this~?",
+                        "Getting closer to your bound form, she leans forward and places a hand firmly on her hips with a sassy flair before looking you in the eyes.",
+                            "ChangeImageLayer", "Expression", "1", "Base", 
+                                "Speaks",
+                                    "Or are you just a wandering pervert that got lost?",
+                        "You instinctively open your mouth to try and defend yourself, but the words get stuck in your throat. Deep down, you know that her words are true. Rather than struggling against the bonds that keep you at her mercy, you're indulging in the thoughts of being used by her instead, meekly squirming from anticipation rather than concern.",
+                            "ChangeImageLayer", "Expression", "1", "Condescending", 
+                                "Speaks",
+                                    "Not like I wasn't just going to play with you anyways, you were always meant to fall for my charms and talented skills as a kunoichi~",
+                            "ChangeImageLayer", "Expression", "1", "Smug", 
+                        "With a cocky smirk plastered onto her face, she stares into your eyes as your face reddens, as if seeing through all your faults and weaknesses like it was a pane of glass. All the while her devilishly spaded tail swings about behind her in anticipation, thinking about all the things she can do to torment you in your hapless state.",
+                        "Your thoughts remain scattered, drifting about as you try to imagine what's in store for you, the idle tug and pull against your bindings only reaffirms that without a serious struggle you have no hope of escaping... But for some reason, your mind only feels drawn in by the idea, your libido starting to grow and run higher.",
+                            "ChangeImageLayer", "Expression", "1", "SmugEvil", 
+                                "Speaks",
+                                    "{i}Oh~?{/i} Are you fantasizing down there, pervert~?",
+                        "Without any hesitation the kunoichi trainee brings her sandal down upon your crotch, sending a masochistic pang of pleasure through your body. Her grin spreads wider as she watches you squirm, not in discomfort, but with a hot groan of indulgence, your body accepting whatever she has in store as your arousal rises under her attentiveness.",
+                        "The initial wave of trepidation of fully surrendering yourself gives way to a sense of contentment as the demonette giggles, removing her foot briefly in order to step out of her sandal, soon after pressing against the growing bulge in your trousers. Your erection strains against her surprisingly skilled toes, which individually press and grope at your length as it strains against the confines of your clothing.",
+                            "ChangeImageLayer", "Expression", "1", "Base", 
+                                "Speaks",
+                                    "Good. Even if you're not going to admit to being a degenerate, at least your body is being honest with me, human~",
+                        "Completely at her mercy, your thoughts begin to scatter as the idea of escaping becomes ever more distant underneath the derisive taunts of the lithe, but curvy ninja girl. Each practiced movement of her sole brings your body an ever increasing sense of pleasure and heat as she continues to toy with you at her leisure.",
+                            "ChangeImageLayer", "Expression", "1", "Amused", 
+                                "Speaks",
+                                    "Maybe I should keep you just like this and see if you spurt without much else... But I can also keep you busy in other ways once I fish that shameful cock of yours out...~",
+                        "As she speaks, her toes move and rub against your clothing clad erection before moving to tug your pants down with her skillful rays. It takes a few moments thanks to the impressive tent you've built up from her teasing, but soon enough it springs free into the open air, seemingly catching her off guard.",
+                            "ChangeImageLayer", "Expression", "1", "Panic", 
+                                "Speaks",
+                                    "W-wow... That's really big...", 
+                            "ChangeImageLayer", "Expression", "1", "LaughEvil", 
+                                "Speaks", 
+                                    "B-But that just means it's even more pathetic that you gave up, huh~?",
+                        "Quickly trying to recover from her moment of cock shock, the trainee's foot once again presses against your length. Her sole rubs against the underside of your shaft to provoke you into giving in to the pleasure with each assertive stroke of her heel pressing into your crotch and her toes gently dragging across your length, ensuring that you remain at her mercy as the blissful sensations keep you pacified.",
+                            "ChangeImageLayer", "Expression", "1", "LoveDrunk", 
+                        "Your body reflexively tugs and pulls against the bindings, but without the proper resolve to try and escape, you're stuck as her plaything. You can only listen to her slowly warming giggles and breathing as she plays with your cock and presses it up against your stomach with a huffy grunt of authority.",
+                                "Speaks",
+                                    "I'll have to make sure you don't cause any problems for the others with this shameless cock... Hmmph...!",
+                            "ChangeImageLayer", "Base", "1", "Blush", 
+                            "ChangeImageLayer", "Expression", "1", "Amused", 
+                        "Reasserting herself, the kunoichi's face flushes slightly while resuming her rubbing with the sole of her foot, each movement causing your thoughts to become disoriented as she attacks your ever more sensitive erection. A teasing push of her heel into the base causes you to squirm as pressure is placed so close to your balls, eliciting a teasing giggle from her as the ninja woman's confidence returns.",
+                            "ChangeImageLayer", "Expression", "1", "Mocking",
+                                "Speaks",
+                                    "Thinking about it... I was pretty cramped up in that space I was hiding inside. So I have a good idea: you should make it up to me for making me wait so long~",
+                        "Licking her lips the trainee gets a bit closer, keeping the pressure of her foot on you as she does so until she's practically looming over you. A glint of mischief dances across her eyes as she considers what you can do to compensate her for the trouble.",
+                        "If she expects some excuse or pleading from you, only the groaning sounds of submission escape your lips as you feel the tempting pressure of her foot continuing to apply itself to your length, your hips gently jerking against them in hopes to feel even more intense pleasure.",
+                            "ChangeImageLayer", "Expression", "1", "Smug", 
+                                "Speaks",
+                                    "{i}Pervert{/i}, maybe I shouldn't do anything that'll get you off... You're already trying to hump my foot~",
+                        "Though the girl's snide, teasing insults should make you feel ashamed, the longer you remain underneath her heel the better the cruel bite of her words seems to feel as your face runs flush with embarrassment and more blood only causes your length to throb eagerly.",
+                            "ChangeImageLayer", "Expression", "1", "SmugEvil", 
+                        "With a smug grin, the kunoichi pulls her foot away, leaving you with a sensation of longing as your length remains twitchingly erect and at attention for her. But before you protest or any attempt to rouse yourself from the submissive confines of the ropes, you hear a jingle as the demonette's body twirls back around.",
+                        "Your vision is promptly blacked out by the smothering embrace of her rear, just enough light sneaking through to give you a glimpse of the flashing red color before a sweet and alluring scent filling your nostrils. Both sides of her plump and pleasant rear comfortably smothering around your face.",
+                            "ChangeImageLayer", "Expression", "1", "Adoration", 
+                                "Speaks",
+                                    "Now then, this should make up for {i}some{/i} of it. I needed a place to sit and stretch~",
+                        "Steadily, the trainee puts ounce after ounce of her weight onto you, completely taking over as your body is made to arch backwards in its bindings to accommodate for her lithe,curvaceous body. This causes her to giggle from her new perch as she looks down towards your waist, to notice that your length has only grown more stiff from your new punishment, eagerly throbbing and leaking under her attentive gaze.",
+                            "ChangeImageLayer", "Expression", "1", "Amused", 
+                                "Speaks",
+                                    "Oh? It's not like I really expected anything different but the least you could do is {i}pretend{/i} to be ashamed of yourself~",
+                        "Her other foot, still fitted within her sandal is pressed down against you, straining your stiff erection as she slowly applies pressure. The mixture of her soft rear and the hard platform of her footwear leaves your senses unable to process the juxtaposed sensations. Muffled by her ass, you groan as she exploits your vulnerable position but it doesn't seem to bother her in the slightest.",
+                            "ChangeImageLayer", "Expression", "1", "Condescending", 
+                                "Speaks",
+                                    "Silence, human, you don't get to complain~ Especially not when your cock is {i}this{/i} hard! What a shameless masochist you are~",
+                        "Wiggling her rear as her words hammer into you, nothing you could say at this point would be able to refute her. The heat of desire pulsing through your twitching length and your senses getting smothered by the feminine charms of the trainee slowly instill a sense of obedience... Happy to be a chair.",
+                            "ChangeImageLayer", "Expression", "1", "Mocking",
+                                "Speaks",
+                                    "Though you can still make yourself useful: while I rest my feet, you should get to work~",
+                        "Kicking off her remaining sandal, the demonette brings both of her stocking-clad feet to rest on your rock hard cock. Shaking her ass back and forth as her scent inscribes itself in your senses, your tongue obediently does as she suggests without having to think about it at all.",
+                        "Eagerly licking her slightly damp fundoshi, her sweet taste kindles your desire to obey as she uses you as her seat, rewarded by the stroking of her soles on either side of your throbbing dick gently massaging your length.",
+                            "ChangeImageLayer", "Expression", "1", "Smug", 
+                                "Speaks",
+                                    "Hmmph! So unsightly... Maybe if you do a good enough job I'll actually let you stain my feet~",
+                        "Her remarks send pangs of submissive satisfaction through your body, your tongue only starting to move along the single piece of fabric between you and the demonette's pussy. You're rewarded with the peaking sounds of her satisfied groaning and the sensation of her skilled feet applying pressure onto your aroused rod.",
+                        "Doing what you can to please her as your body goes completely limp in its bindings, you have no intention of attempting to escape as your mind is stuck in a lurid haze of pleasure, finding a sense of fulfillment in doing as the kunoichi encourages. Between the pressure of her soles and the tantalizing squeeze of her toes onto the crown of your length, your thoughts remain scattered.",
+                            "ChangeImageLayer", "Expression", "1", "Condescending", 
+                                "Speaks",
+                                    "Good, but I feel like there's something that can be done to make this better...",
+                            "ChangeImageLayer", "Expression", "1", "Smug", 
+                                "Speaks", 
+                                    "For me, anyways~",
+                        "Seemingly lost in thought, the kunoichi's feet seem to move with a sense of unfocused idleness, as if toying with your length is merely a side show to her enjoyment of the situation. A notion that brings a pang of masochistic joy and desperation to prove yourself so that she doesn't abandon you to your desires entirely.",
+                        "Trying to ensure that doesn't happen, your tongue laps ever more fervently at her crotch, trying to pleasure her as your hips gently jerk and thrust in the vague direction of the trainee's feet. Your erect length bobs and shakes shamelessly into the air as she messes with you.",
+                            "ChangeImageLayer", "Expression", "1", "Fear",
+                                "Speaks",
+                                    "Wh-hey, you human..!", 
+                            "ChangeImageLayer", "Expression", "1", "Mocking", 
+                                "Speaks", 
+                                    "{i}Actually{/i}, that's a good idea~",
+                        "Your increasing sense of desperation seemingly inspiring her, the demonette's rear gently lifts away from you, leaving you to gently whine as the first thing that comes to mind is that you have left her unsatisfied.",
+                            "ChangeImageLayer", "Expression", "1", "SmugEvil", 
+                                "Speaks",
+                                    "Oh, quiet down, or I really {i}will{/i} leave you like this~",
+                        "Grinning as she finds a chance to push and tease you further, you have no choice but to comply as your mind is too far last in the sensations of being her chair cloud your mind. The kunoichi's lingering scent sticks to your nose as your vision is partially restored.",
+                        "However, in a flash of skill, the red sash of fabric serving as the young woman's undergarment is quickly removed, leaving her bare sex for you to glimpse for only a second before her rear replaces itself with a small splash of her juices soaking your face.",
+                            "ChangeImageLayer", "Expression", "1", "Smug", 
+                                "Speaks",
+                                    "And one more touch...",
+                        "With a simple flourish of her hand, the length of crimson silk is soon wrapped tightly around your neck, nearly causing you to choke as your senses are smothered in the unadulterated scent of the trainee's crotch. One of her hands wraps the remaining end around her palm so that she can keep her grip on it.",
+                            "ChangeImageLayer", "Expression", "1", "SmugEvil", 
+                                "Speaks",
+                                    "There we are... Go ahead, my cute little chair, eat up now that I've gotten comfortable~",
+                        "The soft fabric now around your neck like a collar, the kunoichi gives an encouraging tug that gives you permission to begin lapping and licking her exposed pussy. Though you're unable to see, your sense of taste and nose lead you right to the exposed and leaking folds that you dutifully begin to service.",
+                        "Happily licking away as the demonette lets out satisfied moans, the sounds she makes only feed into your desire to do better. Unable to control yourself and your growing arousal, your lower half begins to jerk and tug against the bindings keeping you crouched down beneath her, humping the air in hopes that she will reward your service by paying mind to your aching length, desperate for attention.",
+                            "ChangeImageLayer", "Expression", "1", "Mocking", 
+                                "Speaks",
+                                    "Mmmmn~ Keep it up, human. This feels.. mhhhh- {i}great~{/i}! Maybe I'll bring you back to Sensei to get more formal chair training~",
+                        "Stepping on your cock and squeezing it between her feet to reward you, the kunoichi giggles as you realize it's far too late to escape the pleasurable loop you've found yourself in. Dutifully licking and servicing her pussy leads to a sense of fulfillment, which is in turn reinforced by her skillful soles and toes sliding across your eager cock, encouraging you to please her more.",
+                        "Despite knowing you can no longer run away, you can't hold yourself back as she reinforces your service with an occasional tug of your leash, attached to your impromptu collar. Each happy thrust against her and into the air brings you a masochistic and shameless sense of satisfaction.",
+                        "The demonette's other hand comes down to brush through your hair as she grinds and presses against you more and more, riding your tongue as her own sex begins to quiver. Knowing that she's receiving pleasure thanks to your lapping servitude brings you ever closer to the edge yourself.",
+                            "ChangeImageLayer", "Expression", "1", "LoveDrunk", 
+                                "Speaks",
+                                    "Yeah, keep going human, that's goooood~",
+                        "Her voice continues to rise and peak, as she rewards you with tantalizing strokes of her feet, and as the two of you feed into each other's lust, your climaxes approach even more quickly. Your throbbing length eagerly twitches underneath her heel as you pleasure your mistress, happy to feel her soft feet on your cock as you service her.",
+                            "ChangeImageLayer", "Expression", "1", "FuckedSilly", 
+                                "Speaks",
+                                    "Mmmmnhhhhh, yeah~!",
+                        "The kunoichi's voice cries out as her body tenses, lightly squishing your cheeks in the process as her pussy lets out an eager rush of fluids, drenching your face in her arousal as the sweet taste runs across your tongue like honeyed nectar.",
+                            "PlayerOrgasm", "1",
+                        "As she tugs upon your leash instinctively, her muscles tense and her body rides through its climax, your masochistic sense of glee overwhelms your senses as you eagerly thrust between the waiting soles of her feet. Your body is overcome with pleasure as you reach your peak, your cock erupting with ropes of white seed all over both her legs and onto the floor of the temple corridor.",
+                            "ChangeImageLayer", "Expression", "1", "LoveDrunk", 
+                                "Speaks",
+                                    "Hmmm, ahhhn... That felt really good...~",
+                        "Blissed out from the powerful orgasm, the kunoichi seems to nearly lose her balance and fall off her perch. Your tongue still happily laps up the sweet syrup of her juices as they splash onto her thighs, helping to extend the afterglow of her orgasm.",
+                            "ChangeImageLayer", "Expression", "1", "Panic", 
+                        "But soon enough, the trainee snaps to attention before she quickly removes herself from your face, leaving you with a sense of emptiness as your purpose as a chair is taken away. As you readjust yourself to the light, no longer eclipsed by her plump ass, you see the flushed expression on her smug face as she turns to you.",
+                            "ChangeImageLayer", "Expression", "1", "Cocky", 
+                                "Speaks",
+                                    "Rest assured that this won't be the last time you serve as my chair, human! I'll be sure you never want to do {i}anything{/i} else!",
+                            "DisplayCharacters", 
+                            "1", 
+                            "EndLoop", 
+                        "With that somewhat childish declaration, the demonette retreats from your encounter, leaving you to remain trapped within the confines of the device as your arousal slowly subsides and you recover from your own orgasm.",
+                        "An extraordinarily loud {i}CLICK{/i} sounds out from within the walls of the Temple, soon followed by the eerie tone of winding cords before the crimson ropes holding you in place drop. Releasing you from its grasp, the trap seemingly on either a time limit... Or the kunoichi who tormented you pressed the release as she left.",
+                        "For whatever reason, you are now free to gather yourself and adjust your clothing, only just realizing that the young woman's fundoshi sash is still around your neck. With a flush in your cheeks, you brush off the idea of keeping it and remove it from your person, leaving it in the hallway.",
+                        "Perhaps the trainee will realize sooner or later that she's not wearing anything.",
+                        "ChangeFetish",
+                        "Feet", 
+                        "10",
+                        "ChangeFetish", 
+                        "Ass",
+                        "5",
+                        "ChangeSensitivity",
+                        "Sex",
+                        "5",
+                        "ChangeBGM", "music/Temple/far-east-kingdom.mp3"
+
+                    ]
+                },
+
+                {"NameOfScene": "Nothing",
+                    "theScene": [
+                    ]
+                },
+                      {"NameOfScene": "Ran",
+                          "theScene": ["IfInExploration", "Nothing",
+                                         "JumpToScene", "RandomEncounterEnd"
+                          ]
+                      },
+                {"NameOfScene": "RandomEncounterEnd",
+                    "theScene": [ 
+                      "AllowInventory",
+                      "GoBackToStoredEvent"
+                    ]
+                },
+
+                {"NameOfScene": "EventBroke",
+                    "theScene": [
+                              "Event borkered"
+                    ]
+                }
+
+
+
+    ]
+
+
+}

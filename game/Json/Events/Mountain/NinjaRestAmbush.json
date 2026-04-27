@@ -1,0 +1,265 @@
+{
+    "name": "Ninja Rest Ambush",
+    "CardType": "Event",
+    "CardLimit": "2",
+    "Description": "A kunoichi has descended from the temple to ambush adventurers when they are planning to rest!",
+    "requires": [ "Temple Checkpoint Gem"],
+    "Speakers": [
+                  {
+                    "name": "Kunoichi",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Shizu",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [  "GetEventAndSetChoice", "KunoichiCombatEvents", "3", "AmbushFight",
+
+                                      "GetAnEventsProgressThenIfEqualsOrGreater", "Kunoichi's Hallway Dojo", "1", "SetToShizu",
+                                      "SetChoice", "1", "The Kunoichi",
+                                        "GetEventAndSetChoice", "KunoichiCombatEvents", "4", "The Kunoichi",
+                                      "SetFlexibleSpeaker", "1",
+                                      "ChoiceToDisplayMonster", "1",
+                                      "JumpToScene", "RunEvent"
+                                  ]
+                    },
+                        {
+                            "NameOfScene": "SetToShizu",
+                            "theScene": [
+                                          "SetChoice", "1", "Shizu",
+                                            "GetEventAndSetChoice", "KunoichiCombatEvents", "4", "Shizu",
+                                          "ChoiceToDisplayMonster", "1",
+                                            "SetFlexibleSpeaker", "2",
+                                          "JumpToScene", "RunEvent"
+                                      ]
+                        },
+
+
+                    {
+                        "NameOfScene": "RunEvent",
+                        "theScene": [  "AllowInventory",
+                                      "You find a place to rest!\nDon't forget to use your inventory while you can!",
+                                      "Menu",
+                                        "Continue onwards!",
+                                        "Rest. (Advances Time 1)",
+                                        "Return to town.",
+                                      "EndLoop"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Continue onwards!",
+                        "theScene": [  "You press forward, but suddenly an exotically clothed woman lands in front of you!",
+                                      "IfChoice", "1", "Shizu", "Continue onwards!2",
+                                      "DisplayCharacters",
+                                        "1",
+                                        "EndLoop",
+                                      "Speaks",
+                                      "Hmph, you must have sensed my presence. Most impressive. But don't expect me to show mercy!",
+                                      "CombatEncounter",
+                                          "Kunoichi",
+                                      "StartCombat",
+                                      "ChangeProgress", "1",
+                                      "Having defeated the ninja woman, you carry on your way."
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Continue onwards!2",
+                              "theScene": [
+                                            "DisplayCharacters",
+                                              "2",
+                                              "EndLoop",
+                                              "ChangeImageLayer", "Expression", "1", "Caring",
+                                            "Speaks2",
+                                            "Hmph, you must have sensed my presence. Most impressive [ThePlayerName]. Hmhmhm, don't expect me to show mercy!",
+                                            "CombatEncounter",
+                                                "Shizu",
+                                            "StartCombat",
+                                            "ChangeProgress", "1",
+                                            "Having defeated Shizu, you carry on your way."
+                                        ]
+                          },
+                    {
+                        "NameOfScene": "Return to town.",
+                        "theScene": [ "You return to town. Strangely, you feel like someone is glaring at you as you leave...",
+                                      "GoToTown"
+                                      ]
+                    },
+                    {
+                        "NameOfScene": "Rest. (Advances Time 1)",
+                        "theScene": [ "RestPlayer",
+                                      "You take a moment to rest and find yourself dozing off...",
+                                      "ChangeBGM", "music/Loss/Falling Down.mp3",
+                                      "As you awaken, you feel rather pleasant sensations running through you.",
+                                        "IfChoice", "1", "Shizu", "Rest2",
+                                      "You moan softly as your eyes open, and you see a rather attractive woman riding your manhood.",
+                                      "DisplayCharacters",
+                                        "1",
+                                        "EndLoop",
+                                      "ChangeImageLayer", "ImageSetDontCarryOver", "1", "SexCG",  "ChangeImageLayer", "GuyDick", "1", "DickIn",
+                                       "ChangeImageLayer", "Expression", "1", "Sinister", "ChangeImageLayer", "Semen", "1", "Semen",
+                                      "PlayerOrgasm", "1", "PlayMotionEffect", "CrashSmol", 
+                                      "ChangeArousalQuietly", "50",
+                                      "Groaning, you cum inside her finely muscled orifice as she continues to ride your cock.",
+                                      "ChangeImageLayer", "Expression", "1", "Caring",
+                                      "Speaks",
+                                      "Shhhh, go back to sleep. It will all be over soon.",
+                                      "ChangeImageLayer", "Semen", "1", "",
+                                      "IfPlayerSpiritGone", "CantResist",
+                                      "Menu",
+                                        "Resist!",
+                                        "This feels so good...",
+                                        "Sleep...",
+                                      "EndLoop"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Rest2",
+                              "theScene": [  "You moan softly as your eyes open, and you see a rather attractive woman riding your manhood.",
+                                            "DisplayCharacters",
+                                              "2",
+                                              "EndLoop",
+                                              "ChangeImageLayer", "ImageSetDontCarryOver", "1", "SexCG",  "ChangeImageLayer", "GuyDick", "1", "DickIn",
+                                              "ChangeImageLayer", "Expression", "1", "Sinister", "ChangeImageLayer", "Semen", "1", "Semen",
+                                            "PlayerOrgasm", "1", "PlayMotionEffect", "CrashSmol",
+                                            "ChangeArousalQuietly", "50",
+                                            "Groaning, you cum inside her finely muscled orifice as she continues to ride your cock.",
+                                            "ChangeImageLayer", "Expression", "1", "Caring",
+                                            "Speaks2",
+                                            "Shhhh, go back to sleep. It will all be over soon.",
+                                            "ChangeImageLayer", "Semen", "1", "",
+                                            "IfPlayerSpiritGone", "CantResist",
+                                            "Menu",
+                                              "Resist!",
+                                              "This feels so good...",
+                                              "Sleep...",
+                                            "EndLoop"
+                                        ]
+                          },
+                    {
+                        "NameOfScene": "CantResist",
+                        "theScene": [ "You faintly realize you're far too out of it to resist [DisplayMonsterChoice] bouncing on your manhood...",
+                                      "Menu",
+                                        "This feels so good...",
+                                        "Sleep...",
+                                      "EndLoop"
+                                      ]
+                    },
+                    {
+                        "NameOfScene": "Resist!",
+                        "theScene": [ "You snap to, realizing the danger you're in and get ready to fight!",
+                                        "IfChoice", "1", "Shizu", "Resist!2",
+                                      "CombatEncounter",
+                                          "Kunoichi",
+                                          "ApplyStance", "Sex", "SetAttack", "Insert",
+                                      "StartCombat",
+                                      "ChangeProgress", "1",
+                                      "Having defeated the ninja woman, you carry on your way, deciding this spot clearly wasn't as safe as you first thought."]
+                    },
+                        {
+                            "NameOfScene": "Resist!2",
+                            "theScene": [
+                                          "CombatEncounter",
+                                              "Shizu",
+                                              "ApplyStance", "Sex", "SetAttack", "Insert",
+                                          "StartCombat",
+                                          "ChangeProgress", "1",
+                                          "Having defeated Shizu, you carry on your way, deciding this spot clearly wasn't as safe as you first thought."]
+                        },
+                    {
+                        "NameOfScene": "Sleep...",
+                        "theScene": [ "ChangeBGM", "music/Relaxing/Purple Planet Music - Gentle - Eastern Karma (2_16).mp3",
+                                      "ChangeImageLayer", "Expression", "1", "Hunger", "PlayVisualEffect", "BlackOut", "darkHaze.png",
+                                      "You groan slightly as your eyes slowly close and [DisplayMonsterChoice] continues to skillfully ride your shaft...",
+                                      "You have such wonderful sexual dreams, filled with monster girls fucking you senseless, and you fucking them senseless in turn.",
+                                      "ChangeImageLayer", "Expression", "1", "Sinister",
+                                      "A harem of sexy monstrous women tease, suck, titfuck, and ride your cock, as well as what ever else their anatomy might allow.",
+                                      "Through the endless sex, you dominate and are dominated, and the women try everything in their might to please you.",
+                                      "The succubus kunoichi in the harem constantly urges you to indulge in pleasure and fuck as many of the monster girls as you can.",
+                                      "And indulge you do, enjoying countless breasts, mouths, pussies, and asses, but despite the numerous different kinds of women, you find yourself always returning to the kunoichi.",
+                                      "ChangeImageLayer", "Aura", "1", "Aura",
+                                      "The way she bounces on your cock feels almost hypnotic as she pulses magical energy into your groin with her pussy, and drains your cum out, feeding on your energy.",
+                                      "All the while other monster girls vie for your attention, kissing and caressing you every chance they get.",
+                                      "You see the ninja girl smile at you through her mask as she rides your shaft, happy to see you give into pleasure.",
+                                      "ChangeImageLayer", "Semen", "1", "Semen",
+                                      "She grinds on your shaft slowly and sensually as an orgasm flows over you, she makes it last as long as she can, letting you revel in the ecstasy while she slowly absorbs your energy.",
+                                      "ChangeImageLayer", "Expression", "1", "Caring",
+                                      "You smile as she caresses you while she dismounts you, not wanting to hog you, as another girl quickly takes her place...",
+                                      "Constantly showered with love and affection through the dream, you can't help but yearn for this dream to never end...",
+                                      "ChangeFetish", "Breasts", "5",
+                                      "ChangeFetish",  "Ass",  "5",
+                                      "ChangeFetish", "Oral",  "5",
+                                      "ChangeFetish",  "Sex", "5",
+                                      "ChangeSensitivity", "Sex",  "5",
+                                      "ChangeSensitivity",  "Breasts",  "5",
+                                      "ChangeSensitivity",  "Mouth",  "5",
+                                      "ChangeSensitivity",  "Seduction",  "5",
+                                      "ChangeSensitivity",  "Magic",  "5",
+                                      "ChangeProgress", "1",
+                                      "GameOver"
+                                    ]
+                    },
+                    {
+                        "NameOfScene": "This feels so good...",
+                        "theScene": [ "You groan and grab a hold of her shapely hips, and she looks down at you with a small grin showing through her mask.",
+                                      "ChangeImageLayer", "Expression", "1", "Caring",
+                                      "FlexibleSpeaks",
+                                      "Oh? Perhaps you would rather indulge yourself.",
+                                      "ChangeImageLayer", "Expression", "1", "Hunger",
+                                      "[DisplayMonsterChoice] gives her hips a small seductive wiggle, making you moan before you start to thrust up into her as she rides you.",
+                                      "Her tight pussy feels incredibly inviting, and you can't help but enjoy how it clenches around your shaft with each thrust.",
+                                      "ChangeImageLayer", "Expression", "1", "Sinister",
+                                      "You find yourself in a sexual daze as [DisplayMonsterChoice] leans forward, placing her hands on your chest as she slowly increases the pace of her hips.",
+                                      "ChangeImageLayer", "Fire", "1", "Fire",
+                                      "Her pussy gradually starts getting hotter in a very pleasant way, until it starts to feel like your cock is melting from the pleasure.",
+                                      "Faintly, as pulses of arousal start to seep into your manhood, you realize she's using magic to enhance her lovemaking.",
+                                      "ChangeImageLayer", "Semen", "1", "Semen",  "PlayMotionEffect", "CrashSmol", "PlayVisualEffect", "OrgasmPulse", "white.png",
+                                      "You moan as your thoughts are washed away from waves of orgasmic pleasure as you blow a thick load into [DisplayMonsterChoice].",
+                                      "ChangeImageLayer", "Semen", "1", "",  
+                                      "Her pussy hungrily absorbs your cum, and she continues to ride you, sending even more magically induced ripples of pleasure through you.",
+                                      "ChangeImageLayer", "Expression", "1", "Caring",
+                                      "She looks down at you almost lovingly and you find your hands wandering her body, groping her, eliciting a soft moan from her.",
+                                      "You redouble your efforts at thrusting up into her, and she continues to bounce and grind on your shaft, much to your delight.",
+                                      "ChangeImageLayer", "Semen", "1", "Semen", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect", "OrgasmPulse", "white.png",
+                                      "Combined with her magic infused pussy it doesn't take long for you to cum inside her again, but you're starting to feel rather drained from all the stimulation...",
+                                      "FlexibleSpeaks",
+                                      "Mmmmm...♥",
+                                      "ChangeImageLayer", "Expression", "1", "Sinister",  "PlayMotionEffect", "CrashSmol",
+                                      "But this seems to spur [DisplayMonsterChoice] on, making her send cascading waves of ecstasy through you with every bounce of her hips.",
+                                      "Her hot pussy almost feels like it's molding to perfectly fit your cock, while at the same time you shudder as it feels like her magic is also making your cock harder and more sensitive.",
+                                      "PlayMotionEffect", "CrashSmol",
+                                      "You thrust into her as hard as you can, sending cascades of pleasure through both of you, shaping both of you for the other.",
+                                      "ChangeImageLayer", "Expression", "1", "FuckedSilly",
+                                      "FlexibleSpeaks",
+                                      "Yes! Make me yours!♥",
+                                      "ChangeImageLayer", "Expression", "1", "Orgasm", "ChangeImageLayer", "Fire", "1", "", "PlayMotionEffect", "CrashSmol", "PlayVisualEffect", "OrgasmPulse", "white.png",
+                                      "Soon both of you tense with orgasmic pleasure at the same time, and she lets out a ecstatic cry as you fill her with your hot seed.",
+                                      "ChangeImageLayer", "Expression", "1", "Sinister", "ChangeImageLayer", "Aura", "1", "Aura", "ChangeImageLayer", "Semen", "1", "",  
+                                      "She collapses on you, seemingly exhausted from her efforts, and cuddles up next to you for a brief moment as she glows purple, absorbing your cum...",
+                                      "FlexibleSpeaks",
+                                      "We're not quite done yet.",
+                                      "ChangeImageLayer", "Expression", "1", "Hunger", "ChangeImageLayer", "Aura", "1", "",
+                                      "After a brief rest she's back to riding your cock and you feel your energy start to pool in your groin with every wondrous motion of [DisplayMonsterChoice]'s hips.",
+                                      "ChangeImageLayer", "Expression", "1", "Kissing", "ChangeImageLayer", "Mask", "1", "DeactivateOverlay",
+                                      "The waves of magical pleasure rolling through you are almost strong enough to make you black out as she leans forward, pulling down her face mask to kiss you deeply.",
+                                      "ChangeImageLayer", "Expression", "1", "SinisterGlow",
+                                      "You groan softly into her mouth as you start to spurt an unnatural amount of cum into her hungry pussy.",
+                                      "ChangeImageLayer", "Semen", "1", "Semen",  "ChangeImageLayer", "Aura", "1", "Aura", "PlayVisualEffect", "OrgasmPulse", "white.png",
+                                      "Each shot of cum she absorbs makes you feel more and more drained and exhausted, and soon even your groping hands lay slack at your sides while you relish in the inhuman pleasure.",
+                                      "ChangeImageLayer", "Expression", "1", "Caring", "ChangeImageLayer", "Aura", "1", "",
+                                      "PlayBlackOut",
+                                      "Your body twitches and trembles in pleasured exhaustion as your orgasm finally dies down, and the last thing you see before you drift asleep is [DisplayMonsterChoice] cuddling next to you, sighing contentedly...",
+                                      "ChangeFetish",  "Sex", "5",
+                                      "ChangeSensitivity", "Sex",  "3",
+                                      "ChangeSensitivity",  "Seduction",  "3",
+                                      "ChangeSensitivity",  "Magic",  "3",
+                                      "ChangeProgress", "1",
+                                      "GameOver"]
+                    }
+                ]
+}

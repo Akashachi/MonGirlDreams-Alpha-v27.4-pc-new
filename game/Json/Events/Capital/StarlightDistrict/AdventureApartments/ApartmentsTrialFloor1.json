@@ -1,0 +1,705 @@
+{
+    "name": "ApartmentsTrialFloor1",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Imp",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }  
+                ],
+    "EventText": [
+                   
+                     {
+                      "NameOfScene": "StartEvent",
+                      "theScene": [ "AllowInventory",
+                                    "ChangeBGM-List",
+                                              "music/Capital/STARLIGHT.mp3",
+                                              "music/Capital/Night_Floating.mp3",
+                                              "music/Capital/Nobody_City.mp3",  
+                                              "music/Forest/Starry sky.mp3",
+                                              "music/Loss/BGM03_Uncanny light.mp3",
+                                              "music/Relaxing/Purple Planet Music - Lanquidity (2 52) 110bpm.mp3",
+                                              "music/Emotional/Purple Planet Music - Emotional - Spiritual Moment (1_32) 90bpm (L).mp3",
+                                            "EndLoop",
+                                    "ChangeBG", "Capital.png",
+                                    "Heading in the direction indicated by the conspicuously labeled and highlighted string of signs reading 'Adventurers this way!', you soon step into the lobby and first floor of Adventure Apartments.",
+                                    "At a scanning glance, you see that the somewhat cramped entry area features an array of small numbered lockers built into a nearby wall, probably one for each of the complex's many homes. On the opposite wall is a poster that reads 'Adventurers Read This!'. And finally, down the hallway, a set of doors line the walls, ending in a staircase that goes up to the next floor.",
+                                    "JumpToScene", "EntryWayMenu"
+                                ]
+                    },
+                            {
+                            "NameOfScene": "EnterFromOtherFloor",
+                            "theScene": [  
+                                            "Returning back down to the first floor, you see that the somewhat cramped entry area features an array of small numbered lockers built into a nearby wall, probably one for each of the complex's many homes. On the opposite wall is a poster that reads 'Adventurers Read This!'. And finally, down the hallway, a set of doors line the walls, ending in a staircase that goes up to the next floor.",
+                                            "JumpToScene", "EntryWayMenu"
+                                        ]
+                            },
+                    {
+                      "NameOfScene": "EntryWayMenu",
+                      "theScene": [   "AllowInventory",
+                                        "Menu",                                          
+                                          "Check one of the doors.",
+                                          "Inspect the mailbox.",
+                                          "Check the Adventurer poster.",
+                                          "Stop and think...",
+                                          "Go to another floor.",
+                                          "Leave the building.",
+                                        "EndLoop"
+                                ]
+                    },
+                            {
+                                "NameOfScene": "Leave the building.",
+                                "theScene": [  "PlayerStep",
+                                              "IfTimeIs", "Night", "LeaveNight",
+                                              "ChangeBGM", "music/Capital/Smooth_City.mp3",  
+                                              "You step out of the apartments and back into the large plaza with its rows of straight streets and towering metallic buildings, broken up by a few flower gardens in-between the starkly paved areas, the islands of verdure giving an almost a serene atmosphere to the otherwise intimidatingly utilitarian place.",
+                                              "JumpToEventThenScene", "StarlightDistrict", "DistrictMenu"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "LeaveNight",
+                                        "theScene": [    
+                                                    "ChangeBGM", "music/Capital/03 illegal invasion.mp3",
+                                                    "You step out of the apartments and back into the large and unnaturally silent, vacant plaza, with its rows of straight streets and towering lit-up metallic buildings that break up the darkness alongside the distant moon and stars. Even with the scattered flower gardens brightening up the area, the late night feels rife with potential dangers and debauchery, filling you with eerie tension...",
+                                                    "JumpToEventThenScene", "StarlightDistrict", "DistrictMenu"
+                                                ]
+                                    },
+                            {
+                                "NameOfScene": "Check the Adventurer poster.",
+                                "theScene": [  
+                                              "Stepping closer to the flashy poster, you find brightly colored text stating: {i}Solve the riddles of the apartments to earn your Starlight Stamp and get a step closer to your Intelligence Sigil! To this effect, you will need to decipher the following clue, so heed it well:{/i}",
+                                              "{i}Across the starlit skies, the constellations shine, waiting to be arranged in guiding harmony: 2 bolts of crossing lightning, 6 glinting succubus stars, 4 deep sea denizens, 1 dragon gazing at them all, and 10 harpies flitting even higher still. Where missives lie, you will find your way by the fifth times the third, followed by the others combined.{/i}",
+                                              "You do your best to commit the riddle to memory, but note that you can always refer back to the poster if you need a refresher.",
+                                              "GetEventAndSetChoice", "ApartmentsTrialThinking", "2", "PosterChecked",
+                                              "JumpToScene", "EntryWayMenu"
+                                        ]
+                            },    
+                            {
+                            "NameOfScene": "Stop and think...",
+                            "theScene": [    
+                                            "JumpToEventThenScene", "ApartmentsTrialThinking", "Floor1Think"
+                                        ]
+                            },                                
+                            {
+                            "NameOfScene": "Go to another floor.",
+                            "theScene": [    
+                                            "Menu",                                          
+                                                "Go to the second floor.",
+                                                "Go to the third floor.",
+                                                "Go to the fourth floor.",
+                                                "Go to the fifth floor.",
+                                                "Go to the sixth floor.",
+                                                "Stay here.",
+                                            "EndLoop"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "Stay here.",
+                                        "theScene": [  
+                                                   "JumpToScene", "EntryWayMenu"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the second floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor2"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the third floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor3"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the fourth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor4"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the fifth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor5"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the sixth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor6"
+                                                ]
+                                    },
+                            {
+                            "NameOfScene": "Check one of the doors.",
+                            "theScene": [    
+                                            "Menu",                                          
+                                                "Check door 101",
+                                                "Check door 102",
+                                                "Check door 103",
+                                                "Check door 104",
+                                                "Check door 105",
+                                                "Nevermind.",
+                                            "EndLoop"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "Nevermind.",
+                                        "theScene": [  
+                                                   "JumpToScene", "EntryWayMenu"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check another door.",
+                                        "theScene": [  
+                                                     "JumpToScene", "Check one of the doors."
+                                        ]
+                                    },                                    
+                                    {
+                                        "NameOfScene": "Check door 101",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 101.",
+                                                        "Knock on door 101.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    }, 
+                                            {
+                                                "NameOfScene": "Knock on door 101.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 101"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 101.",
+                                                "theScene": [  
+                                                            "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                            "JumpToScene", "Check door 101"
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Check door 102",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 102.",
+                                                        "Knock on door 102.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    }, 
+                                            {
+                                                "NameOfScene": "Knock on door 102.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 102"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 102.",
+                                                "theScene": [                                                              
+                                                            "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                            "JumpToScene", "Check door 102"
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Check door 103",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 103.",
+                                                        "Knock on door 103.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    }, 
+                                            {
+                                                "NameOfScene": "Knock on door 103.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 103"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 103.",
+                                                "theScene": [                                                              
+                                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "Aphrodisiac Pitfall Trap", "EventStart",
+                                                            "JumpToScene", "Check one of the doors."
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Check door 104",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 104.",
+                                                        "Knock on door 104.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    }, 
+                                            {
+                                                "NameOfScene": "Knock on door 104.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 104"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 104.",
+                                                "theScene": [                                                              
+                                                            "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                            "JumpToScene", "Check door 104"
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Check door 105",
+                                        "theScene": [  
+                                                    "Menu",                                          
+                                                        "Open door 105.",
+                                                        "Knock on door 105.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    }, 
+                                            {
+                                                "NameOfScene": "Knock on door 105.",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 105"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 105.",
+                                                "theScene": [                                                              
+                                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "Heather's Sweet Temptation", "EventStart",
+                                                            "JumpToScene", "Check one of the doors."
+                                                ]
+                                            },
+ 
+
+
+
+                            {
+                                "NameOfScene": "Inspect the mailbox.",
+                                "theScene": [  
+                                              "Stepping over to the mailbox built into the lobby wall and its many mini-locker-like compartments, you notice they're all blank save for numbers ranging from 101 to 605, giving you no indication of who the corresponding residents might be...",
+                                              "JumpToScene", "MailBoxMenu"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "MailBoxMenu",
+                                "theScene": [  
+                                              "Menu",          
+                                                "FinalOption",  "Nevermind.",                              
+                                                "Open mailbox 101",
+                                                "Open mailbox 102",
+                                                "Open mailbox 103",
+                                                "Open mailbox 104",
+                                                "Open mailbox 105",
+
+                                                "Open mailbox 201",
+                                                "Open mailbox 202",
+                                                "Open mailbox 203",
+                                                "Open mailbox 204",
+                                                "Open mailbox 205",
+
+                                                "Open mailbox 301",
+                                                "Open mailbox 302",
+                                                "Open mailbox 303",
+                                                "Open mailbox 304",
+                                                "Open mailbox 305",
+
+                                                "Open mailbox 306",
+                                                "Open mailbox 307",
+                                                "Open mailbox 308",
+                                                "Open mailbox 309",
+                                                "Open mailbox 310",
+
+                                                "Open mailbox 401",
+                                                "Open mailbox 402",
+                                                "Open mailbox 403",
+                                                "Open mailbox 404",
+                                                "Open mailbox 405",
+
+                                                "Open mailbox 406",
+                                                "Open mailbox 407",
+                                                "Open mailbox 408",
+                                                "Open mailbox 409",
+                                                "Open mailbox 410",
+
+                                                "Open mailbox 501",
+                                                "Open mailbox 502",
+                                                "Open mailbox 503",
+                                                "Open mailbox 504",
+                                                "Open mailbox 505",
+
+                                                "Open mailbox 601",
+                                                "Open mailbox 602",
+                                                "Open mailbox 603",
+                                                "Open mailbox 604",
+                                                "Open mailbox 605",
+                                            "EndLoop"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "Open mailbox 409",
+                                        "theScene": [ "IfChoice", "1", "LetterGet", "EmptyMailbox",
+                                                    "Tentatively opening the mailbox and peeking into it, you find a face-up letter within, the crisp white surface bearing a neatly written {i}'For [ThePlayerName]'s eyes only.'{/i} in elegant cursive.",
+                                                    "After taking a moment to look the envelope over and make sure it features no hidden clues or traps, you tear it open to inspect its contents, and find that it only holds a smoothly folded piece of parchment paper with the following written on it:",
+                                                    "SetChoice", "1", "LetterGet",
+                                                    "{i}Amid the collected constellations, you must seek your prize. Your quest will take you to harpy heights where they play games in the boundless starry skies... but only one holds the answers you seek. One wrong move and you'll be whisked away! Find she who is flying distantly over forest, above mountain, and between clouds, soaring towards the moon.{/i}",
+                                                    "Looks like there's more steps to go through and more riddles for you to unravel yet...",
+                                                    "Stashing the message among your belongings, you note that you can always take a break in the course of your apartment-related investigations to peruse it again and review your progress, should you need to refresh your memory.",
+                                                    "JumpToScene", "EntryWayMenu"
+                                                ]
+                                    },  
+                                        {
+                                            "NameOfScene": "EmptyMailbox",
+                                            "theScene": [
+                                                        "Checking locker 409 again, you find it utterly empty, leaving you rather confident that there's no trick or method that will make more clues appear within it. Should you need to go over the previously obtained clue again and review your progress, you can always take a break in the course of your apartment-related investigations to do so.",
+                                                        "JumpToScene", "EntryWayMenu"
+                                                    ]
+                                        },  
+
+                            {
+                                "NameOfScene": "BreastMail",
+                                "theScene": [  
+                                            "DamagePlayerFromMonster", "Fashionable Succubus", "Valley Of Fascination",
+                                            "As you open the mailbox, it suddenly flares up with a stark, pink light, and you tense up in surprise as your mind is instantly flooded with visions of heavy bouncing breasts swaying and jiggling just for you in a constant eye-catching temptation, leaving you with nowhere to escape their jiggly display as they keep dancing before you even when you close your eyes, giving you no choice but to enjoy the show...",
+                                            "ChangeFetish", "Breasts", "3",
+                                            "Then, as quickly as it triggered, the magical trap fades, leaving you reeling, dazed, and a little horny...",
+                                            "JumpToScene", "MailBoxMenu"
+                                        ]
+                            },  
+                            {
+                                "NameOfScene": "AssMail",
+                                "theScene": ["DamagePlayerFromMonster", "Fashionable Succubus", "Swaying Ass",
+                                            "As you open the mailbox, it suddenly flares up with a stark, pink light, and you tense up in surprise as your mind is suddenly flooded with visions of round derrieres shaking side to side before your eyes, the occasional jiggle-inducing spank invisibly hitting them in order to better flaunt their plump softness as the obscene images play over and over in your head, helplessly filling you with gawking, ass-loving infatuation...",
+                                            "ChangeFetish", "Ass", "3",
+                                            "Then, as quickly as it triggered, the magical trap fades, leaving you reeling, dazed, and a little horny...",
+                                            "JumpToScene", "MailBoxMenu"
+                                        ]
+                            },    
+                            {
+                                "NameOfScene": "KissMail",
+                                "theScene": ["DamagePlayerFromMonster", "Fashionable Succubus", "BlowKissCharm",
+                                            "As you open the mailbox, it suddenly flares up with a stark, pink light, and you shiver as you're suddenly assailed with the sensation of countless women smooching your face all over with their plump, soft lips, leaving your cheeks, mouth, and ears covered with a parade of phantasmal kisses that send enticing shivers all through your senses, making you momentarily melt in pampered bliss...",
+                                            "ChangeFetish", "Kissing", "3",
+                                            "Then, as quickly as it triggered, the magical trap fades, leaving you reeling, dazed, and a little horny...",
+                                            "JumpToScene", "MailBoxMenu"
+                                        ]
+                            },    
+                            {
+                                "NameOfScene": "OralMail",
+                                "theScene": ["DamagePlayerFromMonster", "Fashionable Succubus", "Oral Temptation",
+                                            "As you open the mailbox, it suddenly flares up with a stark, pink light, and you shudder at the sudden sensation of phantasmal mouths somehow kissing and sucking along your still clothed cock, the plush lips slurping and smooching in seductive worship that leaves you shivering and twitching in place at the unexpected tease to your aching manhood, all the while your mind is soaked with magical pulses of oral-loving intoxication.",
+                                            "ChangeFetish", "Oral", "3",
+                                            "Then, as quickly as it triggered, the magical trap fades, leaving you reeling, dazed, and a little horny...",
+                                            "JumpToScene", "MailBoxMenu"
+                                        ]
+                            },    
+                            {
+                                "NameOfScene": "SexMail",
+                                "theScene": ["DamagePlayerFromMonster", "Fashionable Succubus", "Sexual Tempt",
+                                            "As you open the mailbox, it suddenly flares up with a stark, pink light, and you tense as you feel like you've suddenly been leg-locked by an unseen lover, your cock getting embraced by a softly wet, ethereal pussy despite your clothes being in the way, all the while your mind is flooded with an imperious urge to fuck that leaves you thoughtlessly swinging your hips with an increasingly messy expression of bliss from the illusionary sex.",
+                                            "ChangeFetish", "Sex", "3",
+                                            "Then, as quickly as it triggered, the magical trap fades, leaving you stumbling back and leaning against the wall with a dizzy pant to regain your wits after the unexpected phantasmal sex...",
+                                            "JumpToScene", "MailBoxMenu"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "AphroMail",
+                                "theScene": ["ApplyStatusEffect", "Cloying Mist","ApplyStatusEffect", "Cloying Mist", "ChangeArousalByPercent", "20",  
+                                            "But as your hand turns the handle, instead of opening the mailbox, your attempt sets off a trap that sprays a thick misty cloud of pink gas into the air around you, flooding your senses with a honeyed scent of aphrodisiac pheromones that makes you space out for a few long moments, just vacantly standing there and enjoying the sweet sensation while your dick idly twitches and throbs in needy excitement...",
+                                            "Belatedly, you regain your wits and hurriedly step away from the lewd haze that thankfully quickly dissipates, the vaporous cloud's lascivious influence nonetheless sticking to your senses and continuing to instill you with sneaky arousal even after it has vanished for good...",                                            
+                                            "JumpToScene", "MailBoxMenu"
+                                        ]
+                            },  
+                            {
+                                "NameOfScene": "SeductionMail",
+                                "theScene": [ "DamagePlayerFromMonster", "Fashionable Succubus", "Enamor",
+                                            "As you open the mailbox, it suddenly flares up with a stark, pink light, and you shudder as your head is suddenly filled with many feminine voices that let out lecherous moans, vulgar promises, and indulgent enticements, their breathy coos ticklishly flowing into your ears in a way that leaves you momentarily slack-jawed with a growing erection, each second spent enjoying the raunchy show encouraging you to keep listening...",
+                                            "ChangeSensitivity", "Seduction", "3",
+                                            "Then, as quickly as it triggered, the magical trap fades, leaving you reeling, dazed, and a little horny...",
+                                            "JumpToScene", "MailBoxMenu"
+                                        ]
+                            },    
+                            {
+                                "NameOfScene": "JustLocked",
+                                "theScene": [
+                                            "But the handle merely rattles against its lock at your attempt, leaving you at least reasonably certain that you were just on the wrong track.",                                            
+                                            "JumpToScene", "MailBoxMenu"
+                                        ]
+                            },                            
+ 
+
+                            {
+                                "NameOfScene": "Open mailbox 101",
+                                "theScene": [
+                                                "JumpToScene", "JustLocked"
+                                        ]
+                            },  
+                            {
+                                "NameOfScene": "Open mailbox 102",
+                                "theScene": [
+                                                "JumpToScene", "AphroMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 103",
+                                "theScene": [
+                                                "JumpToScene", "KissMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 104",
+                                "theScene": [
+                                                "JumpToScene", "BreastMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 105",
+                                "theScene": [
+                                                "JumpToScene", "AssMail"
+                                        ]
+                            },
+
+
+
+                            {
+                                "NameOfScene": "Open mailbox 201",
+                                "theScene": [
+                                                "JumpToScene", "OralMail"
+                                        ]
+                            },  
+                            {
+                                "NameOfScene": "Open mailbox 202",
+                                "theScene": [
+                                                "JumpToScene", "SeductionMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 203",
+                                "theScene": [
+                                                "JumpToScene", "BreastMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 204",
+                                "theScene": [
+                                                "JumpToScene", "JustLocked"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 205",
+                                "theScene": [
+                                                "JumpToScene", "AphroMail"
+                                        ]
+                            },
+
+
+                            {
+                                "NameOfScene": "Open mailbox 301",
+                                "theScene": [
+                                                "JumpToScene", "KissMail"
+                                        ]
+                            },  
+                            {
+                                "NameOfScene": "Open mailbox 302",
+                                "theScene": [
+                                                "JumpToScene", "AssMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 303",
+                                "theScene": [
+                                                "JumpToScene", "AphroMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 304",
+                                "theScene": [
+                                                "JumpToScene", "SexMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 305",
+                                "theScene": [
+                                                "JumpToScene", "JustLocked"
+                                        ]
+                            },
+
+
+
+                            {
+                                "NameOfScene": "Open mailbox 306",
+                                "theScene": [
+                                                "JumpToScene", "SeductionMail"
+                                        ]
+                            },  
+                            {
+                                "NameOfScene": "Open mailbox 307",
+                                "theScene": [
+                                                "JumpToScene", "AssMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 308",
+                                "theScene": [
+                                                "JumpToScene", "BreastMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 309",
+                                "theScene": [
+                                                "JumpToScene", "OralMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 310",
+                                "theScene": [
+                                                "JumpToScene", "KissMail"
+                                        ]
+                            },
+
+
+                            {
+                                "NameOfScene": "Open mailbox 401",
+                                "theScene": [
+                                                "JumpToScene", "KissMail"
+                                        ]
+                            },  
+                            {
+                                "NameOfScene": "Open mailbox 402",
+                                "theScene": [
+                                                "JumpToScene", "BreastMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 403",
+                                "theScene": [
+                                                "JumpToScene", "AphroMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 404",
+                                "theScene": [
+                                                "JumpToScene", "AssMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 405",
+                                "theScene": [
+                                                "JumpToScene", "SexMail"
+                                        ]
+                            },
+
+
+
+
+                            {
+                                "NameOfScene": "Open mailbox 406",
+                                "theScene": [
+                                                "JumpToScene", "SexMail"
+                                        ]
+                            },  
+                            {
+                                "NameOfScene": "Open mailbox 407",
+                                "theScene": [
+                                                "JumpToScene", "SeductionMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 408",
+                                "theScene": [
+                                                "JumpToScene", "OralMail"
+                                        ]
+                            }, 
+                            {
+                                "NameOfScene": "Open mailbox 410",
+                                "theScene": [
+                                                "JumpToScene", "BreastMail"
+                                        ]
+                            },
+
+
+
+                            {
+                                "NameOfScene": "Open mailbox 501",
+                                "theScene": [
+                                                "JumpToScene", "AphroMail"
+                                        ]
+                            },  
+                            {
+                                "NameOfScene": "Open mailbox 502",
+                                "theScene": [
+                                                "JumpToScene", "OralMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 503",
+                                "theScene": [
+                                                "JumpToScene", "KissMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 504",
+                                "theScene": [
+                                                "JumpToScene", "SeductionMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 505",
+                                "theScene": [
+                                                "JumpToScene", "SexMail"
+                                        ]
+                            },
+
+
+                            {
+                                "NameOfScene": "Open mailbox 601",
+                                "theScene": [
+                                                "JumpToScene", "AssMail"
+                                        ]
+                            },  
+                            {
+                                "NameOfScene": "Open mailbox 602",
+                                "theScene": [
+                                                "JumpToScene", "OralMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 603",
+                                "theScene": [
+                                                "JumpToScene", "SexMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 604",
+                                "theScene": [
+                                                "JumpToScene", "SeductionMail"
+                                        ]
+                            },
+                            {
+                                "NameOfScene": "Open mailbox 605",
+                                "theScene": [
+                                                "JumpToScene", "AphroMail"
+                                        ]
+                            },
+                   
+                   
+                   
+
+                    {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [   "event broke."
+                                ]
+                    }
+                ]
+}

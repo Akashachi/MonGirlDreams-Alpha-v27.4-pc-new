@@ -1,0 +1,203 @@
+{
+    "name": "AlrauneTestEvent",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Alraune",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+
+
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [
+                            "AllowInventory",
+                            "ClearPlayerStatusEffects",
+                            "MenuTest is untested. Inventory allowed, statuses cleared.",
+                            "Menu",
+                                "MenuTest",
+                                "Doesn't Have Status Effect - Player",
+                                "Has Status Effect - Player",
+                                "Status Effect - Monster And OtherMonster",
+                            "EndLoop"
+                        ]
+                    },
+
+                    {
+                        "NameOfScene": "Has Status Effect - Player",
+                        "theScene": [
+                            "Quick save here, remember to reload JSONs if you change the scene. Applying Status Effects.",
+                            "SwapLineIf", "Random",
+                              "|f|ApplyStatusEffect|/|Charm|n|",
+                              "|f|ApplyStatusEffect|/|Cloying Mist|n||f|ApplyStatusEffect|/|Charm|n|",
+                            "EndLoop",
+                            "Checking for if they have both Aphrodisiac or Charm",
+                            "IfPlayerHasStatusEffect", "RequireAll", "Aphrodisiac", "Charm", "Has Suceed",
+                            "Doesn't have both Aphrodisiac and Charm. Checking for either Aphrodisiac or Charm",
+                            "IfPlayerHasStatusEffect", "Aphrodisiac", "Charm", "Has Suceed",
+                            "All checks failed."
+                        ]
+                    },
+                    {
+                        "NameOfScene": "Has Suceed",
+                        "theScene": [
+                            "Has succeeded. Returning to EventStart.",
+                            "JumpToScene", "EventStart"
+                        ]
+                    },
+
+                    {
+                        "NameOfScene": "Doesn't Have Status Effect - Player",
+                        "theScene": [
+                            "Quick save here, remember to reload JSONs if you change the scene. Applying Status Effects.",
+                            "SwapLineIf", "Random",
+                              "|f|ApplyStatusEffect|/|Charm|n|",
+                              "|f|ApplyStatusEffect|/|Cloying Mist|n||f|ApplyStatusEffect|/|Charm|n|",
+                            "EndLoop",
+                            "Checking for if the player doesn't have any of the following: Stun or Charm",
+                            "IfPlayerDoesntHaveStatusEffect", "Stun", "Charm", "DoesntHave Succeed",
+                            "Failed. Checking for if the player doesn't have all the following: Checking for both Stun and Charm",
+                            "IfPlayerDoesntHaveStatusEffect", "RequireAll", "Stun", "Charm", "DoesntHave Succeed",
+                            "All checks failed."
+                        ]
+                    },
+                    {
+                        "NameOfScene": "DoesntHave Succeed",
+                        "theScene": [
+                            "Doesnt Have succeeded. Returning to EventStart.",
+                            "JumpToScene", "EventStart"
+                        ]
+                    },
+
+
+                    {
+                        "NameOfScene": "Status Effect - Monster And OtherMonster",
+                        "theScene": [
+                            "IfMonster = Test Imp | IfOtherMonster = Test Imp & Blue Slime",
+                            "Menu",
+                                "IfMonster Test",
+                                "IfOtherMonster Test",
+                            "EndLoop"
+                        ]
+                    },
+                    {
+                        "NameOfScene": "IfMonster Test",
+                        "theScene": [
+                            "CombatEncounter",
+                                "ImpTest",
+                            "StartCombat"
+                        ]
+                    },
+                    {
+                        "NameOfScene": "IfOtherMonster Test",
+                        "theScene": [
+                            "CombatEncounter",
+                                "ImpTest",
+                                "Blue Slime",
+                            "StartCombat"
+                        ]
+                    },
+
+                    {
+                        "NameOfScene": "IsImpingOut",
+                        "theScene": [
+                            "IfThisMonsterIsInEncounter", "Blue Slime", "IfOtherMonster Begin",
+                            "JumpToScene", "IfMonster Begin"
+                        ]
+                    },
+                    {
+                        "NameOfScene": "IfMonster Begin",
+                        "theScene": [
+                            "Checks for Aphro or Charm",
+                            "IfMonsterHasStatusEffect", "Charm", "Aphrodisiac", "IfMonster Pass",
+                            "Failed. Checks for just Charm",
+                            "IfMonsterHasStatusEffect", "Charm", "IfMonster Pass",
+                            "Imp has no charm."
+                        ]
+                    },
+                    {
+                        "NameOfScene": "IfOtherMonster Begin",
+                        "theScene": [
+                            "Testing Blue Slime for having both Aphrodisiac and Charm.",
+                            "IfOtherMonsterHasStatusEffect", "Blue Slime", "RequireAll", "Aphrodisiac", "Charm", "OtherMonster Pass",
+                            "Failed. Testing for either Aphrodisiac and Charm",
+                            "IfOtherMonsterHasStatusEffect", "Blue Slime", "Aphrodisiac", "Charm", "OtherMonster Pass",
+                            "Blue Slime has no Charm or Aphrodisiac."
+                        ]
+                    },
+                    {
+                        "NameOfScene": "IfMonster Pass",
+                        "theScene": [
+                            "IfMonster Passed"
+                        ]
+                    },
+                    {
+                        "NameOfScene": "OtherMonster Pass",
+                        "theScene": [
+                            "OtherMonster Passed"
+                        ]
+                    },
+
+                    {
+                        "NameOfScene": "MenuTest",
+                        "theScene": [  
+                                    "DamagePlayerFromMonster", "Imp", "Caress",
+                                    "FocusedSpeaks",
+                                        "Sup! I should be THE FOCUSED IMP! You took [FinalDamage] arousal, sucker!",
+                                    "GiveSkillToMonster", "Caress",
+                                    "IfMonsterHasSkill", "Caress", "Learned Caress",
+                                    "EncounterSizeGreaterOrEqualTo", "2", "More than one imp.",
+                                    "The single imp eyes you nervously."
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Learned Caress",
+                        "theScene": [  "Ha! I learned Caress! ...Wait... That will make me weaker..."
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "More than one imp.",
+                        "theScene": [  "SkipPlayerAttack",
+                                      "SetPostName", " - Counter <3",
+                                      "IfThisMonsterIsInEncounter", "Imp", "Giggling imps.",
+                                      "the function god damn failed."
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Giggling imps.",
+                        "theScene": [ 
+                                    "IfMonsterHasStatusEffect", "Charm", "NervousImps",
+                                    "ApplyStance", "Sex",
+                                    "FocusedSpeaks",
+                                        "The imps quickly tackle you to the ground giggling, and one of them mounts your dick.",
+                                    "IfMonsterHasStance", "Sex", "Riding Imp.",
+                                    "Did no detect other stance."
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "NervousImps",
+                        "theScene": [
+                                    "The other imps look nervously at their infatuated companion."
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Riding Imp.",
+                        "theScene": [
+                                    "the one imp rides you gleefully.",
+                                    "RefocusOnInitialMonster",
+                                    "ApplyStance", "Making Out",
+                                    "FocusOnRandomMonster",
+                                    "ApplyStance", "Anal"
+                                  ]
+                    }
+
+
+
+                ]
+}

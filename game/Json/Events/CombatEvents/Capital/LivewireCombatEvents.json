@@ -1,0 +1,270 @@
+{
+    "name": "LivewireCombatEvent",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Voltlin Livewire",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                {
+                  "NameOfScene": "Intro",
+                  "theScene": [  
+                                "FocusOnMonster", "1", "ChangeImageLayer", "Mask", "",  "ChangeImageLayer", "Expression", "LickLips",
+                                "EncounterSizeGreaterOrEqualTo", "2", "GroupIntro",                                  
+                                "As she approaches you menacingly, the Livewire pulls down her mask and licks her lips as she gives you a half-lidded gaze of desire."                      
+                            ]
+                },
+                      {
+                        "NameOfScene": "GroupIntro",
+                        "theScene": [  
+                                      "FocusOnMonster", "2", "ChangeImageLayer", "Mask", "", "ChangeImageLayer", "Expression", "Smug",
+                                      "FocusOnMonster", "3", "ChangeImageLayer", "Mask", "", "ChangeImageLayer", "Expression", "Base",
+                                      "The Livewires pull down their masks with a mixture of excited expressions as they approach you menacingly, clearly intent on milking you dry."                      
+                                  ]
+                      },
+
+                {
+                  "NameOfScene": "EndOfRound",
+                  "theScene": [  
+                                "IfHasPerk", "Rut", "DoNothing",
+                                "IfFetishLevelEqualOrGreater", "Rut", "100", "GainRutMidFite"                
+                              ]
+                },
+                      {
+                        "NameOfScene": "GainRutMidFite",
+                        "theScene": [  
+                                      "As the battle continues, you can feel an aching needy throbbing in your groin as a result of the Livewires' constant pulses of libido-amping electric energy imbuing your now restlessly horny body, your breathing getting heavier with lust while your gaze finds itself magnetized to the seductive voltlin curves in front of you.",
+                                      "GivePerk", "Rut",
+                                      "ChangeImageLayer", "Expression", "LickLips",
+                                      "FocusedSpeaksSkill",
+                                      "Oh wow, King, didn't think you'd go into rut in the middle of things... But all the better.♥ Feel free to indulge and fuck me senseless to relieve that {i}throbbing{/i} ache. I know you want to.♥"
+                                  ]
+                      },
+
+                
+                {
+                  "NameOfScene": "RutTick",
+                  "theScene": [  
+                              "IfHasPerk", "Rut", "DoNothing",
+                              "ChangeFetish", "Rut", "1"                              
+                            ]
+                },
+                {
+                  "NameOfScene": "RutTick5",
+                  "theScene": [  
+                              "IfHasPerk", "Rut", "DoNothing",
+                              "ChangeFetish", "Rut", "5"                              
+                            ]
+                },
+                {
+                  "NameOfScene": "RebellionCircuit",
+                  "theScene": [  
+                                "EncounterSizeGreaterOrEqualTo", "2", "TeamCharge",    
+                                "SetPostName", " - Rebellion Circuit",
+                                "ChangeImageLayer", "Expression", "Smug",
+                                "FocusedSpeaksSkill",
+                                "SwapLineIf", "Random",
+                                  "'Time to get amped up!' Electric jolts arc along the Livewire's curves as she charges herself up with glowing galvanizing potential...", 
+                                  "'I'm just getting started!' Electric jolts arc along the Livewire's curves as she charges herself up with glowing galvanizing potential...",  
+                                  "'How about some higher voltage?♥' Electric jolts arc along the Livewire's curves as she charges herself up with glowing galvanizing potential...",
+                                  "'King, you better watch out.♥' Electric jolts arc along the Livewire's curves as she charges herself up with glowing galvanizing potential...",
+                                "EndLoop",
+                                "ApplyStatusEffectToMonster", "Rebellion Charge",    
+                                "SetPostName", ""                                        
+                            ]
+                },
+                      {
+                        "NameOfScene": "TeamCharge",
+                        "theScene": [ "SetPostName", " - Rebellion Circuit",
+                                      "ChangeImageLayer", "Expression", "Smug",
+                                      "FocusedSpeaksSkill",
+                                      "SwapLineIf", "Random",
+                                        "'Time to get amped up!' Electric jolts arc from one Livewire to another as their horns conduct each other's voltaic power, the dancing lightning alluringly trailing along their curves as they charge each other up with glowing galvanizing potential...",
+                                        "'We're just getting started!' Electric jolts arc from one Livewire to another as their horns conduct each other's voltaic power, the dancing lightning alluringly trailing along their curves as they charge each other up with glowing galvanizing potential...",
+                                        "'How about some higher voltage?♥' Electric jolts arc from one Livewire to another as their horns conduct each other's voltaic power, the dancing lightning alluringly trailing along their curves as they charge each other up with glowing galvanizing potential...",
+                                        "'King, you better watch out.♥' Electric jolts arc from one Livewire to another as their horns conduct each other's voltaic power, the dancing lightning alluringly trailing along their curves as they charge each other up with glowing galvanizing potential...",
+                                        "'Really think you can handle all of us?♥' Electric jolts arc from one Livewire to another as their horns conduct each other's voltaic power, the dancing lightning alluringly trailing along their curves as they charge each other up with glowing galvanizing potential...",
+                                      "EndLoop",
+                                      "FocusOnMonster", "1", "ApplyStatusEffectToMonster", "Rebellion Charge",    
+                                      "FocusOnMonster", "2", "ApplyStatusEffectToMonster", "Rebellion Charge",  
+                                      "FocusOnMonster", "3", "ApplyStatusEffectToMonster", "Rebellion Charge", 
+                                      "SetPostName", ""          
+                                  ]
+                      },
+
+
+                      {
+                        "NameOfScene": "CharmTriggerSway",
+                        "theScene": [    
+                                      "[TargetName]'s dick twitches achingly at every shameless wobble of [AttackerName]'s thick rear, a charmed, slack-jawed expression glued to [TargetHisOrHer] face before the tempting display.",
+                                      "IfPlayerHasStance", "Penetration", "DoNothing",
+                                      "IfPlayerHasStance", "Titfuck", "DoNothing",
+                                      "IfHasPerk", "Rut", "ElectrifyingSwayTemptationRutIntro"                                    
+                                  ]
+                      },
+                            {
+                              "NameOfScene": "ElectrifyingSwayTemptationRutIntro",
+                              "theScene": [    
+                                            "With your aching needy rut compounding the enthralling infatuation, your throbbing dick starts to do all the thinking, keeping you wholly focused on the shortstacked woman's alluring provocations and tempting you to retaliate with a good fucking!",
+                                            "Menu",
+                                              "Fuck her!",
+                                              "Suppress your charmed libido.",
+                                            "EndLoop"                            
+                                        ]
+                            },
+                      {
+                        "NameOfScene": "ElectrifyingSwayTemptation",
+                        "theScene": [    
+                                      "IfPlayerHasStance", "Penetration", "CharmTriggerSway",
+                                      "IfPlayerHasStance", "Titfuck", "CharmTriggerSway",
+                                     
+                                      "IfFetishLevelEqualOrGreater", "Sex", "100", "CantResistOffer",
+                                      "SetPostName", " - Electrifying Sway",  
+                                      "FocusedSpeaksSkill",
+                                      "Charmed as you are, the Livewire's sultry flaunting display tugs wantonly at your heated libido, urging you to grab the sultry shortstack and fuck her senseless...",
+                                      "SetPostName", "",
+                                      "Menu",
+                                        "Fuck her!",
+                                        "Suppress your charmed libido.",
+                                      "EndLoop"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Fuck her!",
+                              "theScene": [
+                                            "ApplyStance", "Sex",
+                                            "HitPlayerWith", "Tighten", "ChangeImageLayer", "Expression", "OralOffer",
+                                            "Eagerly embracing the lusty temptation, you grab the Livewire's wide hips as she shakes them and thrust greedily into her offered pussy, coaxing a moan of delight out of both of you as her wet folds welcomingly squeeze your throbbing cock.[DamageToPlayer]"
+                                        ]
+                          },
+                              {
+                                  "NameOfScene": "CantResistOffer",
+                                  "theScene": [
+                                                "ApplyStance", "Sex",
+                                                "HitPlayerWith", "Tighten",  "ChangeImageLayer", "Expression", "OralOffer",
+                                                "As her wide hips keep shaking alluringly in front of your sex-loving mind, fucking the Livewire is the only possibility that permeates your libidinous thoughts, prompting you to greedily grab her waist and thrust wantonly into her clenching pussy, letting out a groan of pleasure in unison with the shortstacked woman at the blissfully indulgent mating.[DamageToPlayer]"
+                                            ]
+                              },
+                          {
+                              "NameOfScene": "Suppress your charmed libido.",
+                              "theScene": [
+                                            "StatCheck",
+                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "2",
+                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "3",
+                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "5",
+                                            "ChangeStatCheckDifficulty", "IfHasPerk", "Rut", "4",
+                                            "Temptation", "19",   "IgnoredSex",
+                                            "Fail",
+                                            "CantResistOffer"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "IgnoredSex",
+                                    "theScene": [ "ChangeImageLayer", "Expression", "LickLips",
+                                                  "You manage to steel yourself against the aching want to fuck the Livewire, though the monster girl merely giggles lustily before your show of resistance as you continue to struggle with your rampaging arousal."
+                                              ]
+                                },
+
+
+
+
+                        {
+                          "NameOfScene": "CharmTriggerHeft",
+                          "theScene": [    
+                                        "[TargetName] feels like there's a static charge hanging in the air between [TargetHimOrHer] and the teasing voltlin, a magnetic infatuation irresistibly melting through [TargetHisOrHer] senses...",
+                                        "IfPlayerHasStance", "Penetration", "DoNothing",
+                                        "IfPlayerHasStance", "Titfuck", "DoNothing",
+                                        "IfHasPerk", "Rut", "MagneticHeftTemptationRutIntro"                                    
+                                    ]
+                        },
+                              {
+                                "NameOfScene": "MagneticHeftTemptationRutIntro",
+                                "theScene": [    
+                                              "Stuck in a needy rut as you are, something about the voltlin's teasing hits all the right spots in your sex-driven brain, making it hard to think about anything else but fucking her plush, inviting cleavage...",
+                                              "Menu",
+                                                "Fuck her tits!",
+                                                "Deny your charmed libido.",
+                                              "EndLoop"                            
+                                          ]
+                              },
+                        {
+                          "NameOfScene": "MagneticHeftTemptation",
+                          "theScene": [    
+                                        "IfPlayerHasStance", "Penetration", "CharmTriggerHeft",
+                                        "IfPlayerHasStance", "Titfuck", "CharmTriggerHeft",
+                                        
+                                        "IfFetishLevelEqualOrGreater", "Breasts", "100", "CantResistTitOffer",
+                                        "SetPostName", " - Magnetic Heft",  
+                                        "FocusedSpeaksSkill",
+                                        "Charmed and drunk with lust as you are, the tempting show of the Livewire's plush tits enthrallingly fills you with the urge to fuck her enticing cleavage with no restraint, every flaunting jiggle gnawing away at your rationality.",
+                                        "SetPostName", "",
+                                        "Menu",
+                                          "Fuck her tits!",
+                                          "Deny your charmed libido.",
+                                        "EndLoop"
+                                    ]
+                      },
+                            {
+                                "NameOfScene": "Fuck her tits!",
+                                "theScene": [
+                                              "ApplyStance", "Titfuck",
+                                              "HitPlayerWith", "Titfuck", "ChangeImageLayer", "Expression", "LickLips",
+                                              "Giving up on resisting, you grab her heavy tits and pull her closer to thrust your rock-hard length deep into her soft pillowy bosom, the sweetly enwrapping stimulation coaxing an an indulgent sigh out of you while she excitedly licks her lips at your show of needy boob-loving indulgence.[DamageToPlayer]"
+                                          ]
+                            },
+                                {
+                                    "NameOfScene": "CantResistTitOffer",
+                                    "theScene": [
+                                                  "ApplyStance", "Titfuck",
+                                                  "HitPlayerWith", "Titfuck",  "ChangeImageLayer", "Expression", "LickLips",
+                                                  "Far too obsessed with tits to consider denying her, you grab her plush breasts without a second thought and bury your length into her cleavage with a happy sigh, the shortstacked woman purring sultrily at your wanton display.[DamageToPlayer]"
+                                              ]
+                                },
+                            {
+                                "NameOfScene": "Deny your charmed libido.",
+                                "theScene": [
+                                              "StatCheck",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "25", "2",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "50", "3",
+                                              "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Breasts", "75", "5",
+                                              "ChangeStatCheckDifficulty", "IfHasPerk", "Rut", "4",
+                                              "Temptation", "19",   "IgnoredTitfuck",
+                                              "Fail",
+                                              "CantResistTitOffer"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "IgnoredTitfuck",
+                                      "theScene": [ "ChangeImageLayer", "Expression", "Base",
+                                                    "You manage to keep in check your infatuated urge to fuck the Livewire's alluring breasts, the horny minx just giggling in amusement before the visible effort you have to put into holding yourself back."
+                                                ]
+                                  },
+                
+      
+
+
+                
+                {
+                  "NameOfScene": "DoNothing",
+                  "theScene": [  
+                              
+                            ]
+                },
+                {
+                  "NameOfScene": "EventBroke",
+                  "theScene": [  
+                                "Oopsie woopsie the event broke!"                              
+                            ]
+                }             
+
+
+
+
+                ]
+}

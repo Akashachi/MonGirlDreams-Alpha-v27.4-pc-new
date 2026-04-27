@@ -1,0 +1,140 @@
+{
+  "name": "ShadowsTile",
+  "CardType": "Event",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [ ""],
+  "Speakers": [
+                {
+                  "name": "Ceris",
+                  "postName": "",
+                  "SpeakerType": "Monster"
+                }
+              ],
+  "EventText": [
+                  {
+                      "NameOfScene": "ShadowsTile",
+                      "theScene": [
+                                      "As you step forward, the dim light around you suddenly twists and churns, the shadows themselves lunging out at you in long coiling ribbons!",
+                                     "JumpToScene", "PostIntro"
+                                ]
+                  },
+                        {
+                            "NameOfScene": "ShadowsTileAlt",
+                            "theScene": [
+                                            "The dim light around you suddenly twists and churns as the shadows themselves lunge out at you in long coiling ribbons!",
+                                           "JumpToScene", "PostIntro"
+                                      ]
+                        },
+                  {
+                      "NameOfScene": "PostIntro",
+                      "theScene": [ "SetChoice", "1", "",
+                                      "Menu",
+                                        "Shake them off! (Power)",
+                                        "Try to dodge! (Technique)",
+                                        "Drive the darkness back with magic! (Intelligence)",
+                                        "Wait and see what happens.",
+                                      "EndLoop"
+                                  ]
+                  },
+                          {
+                              "NameOfScene": "Shake them off! (Power)",
+                              "theScene": [  "StatCheck",
+                                              "Power",
+                                              "20",
+                                              "PowPass",
+                                              "Fail",
+                                              "StatFail"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "PowPass",
+                                    "theScene": [
+                                                    "And you manage to rip away from the binding darkness, leaving your way clear!"
+                                              ]
+                                },
+                          {
+                              "NameOfScene": "Try to dodge! (Technique)",
+                              "theScene": [  "StatCheck",
+                                              "Technique",
+                                              "20",
+                                              "TechPass",
+                                              "Fail",
+                                              "StatFail"
+                                        ]
+                          },
+                                  {
+                                      "NameOfScene": "TechPass",
+                                      "theScene": [
+                                                      "And you manage to dive and dodge the living darkness attempting to bind you, nimbly moving past the shadowy obstacle!"
+                                                ]
+                                  },
+                          {
+                              "NameOfScene": "Drive the darkness back with magic! (Intelligence)",
+                              "theScene": [  "StatCheck",
+                                              "Intelligence",
+                                              "20",
+                                              "IntPass",
+                                              "Fail",
+                                              "StatFail"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "IntPass",
+                                    "theScene": [
+                                                    "And you manage to conjure a shining barrier to keep the living darkness at bay while you keep moving!"
+                                              ]
+                                },
+                          {
+                              "NameOfScene": "Wait and see what happens.",
+                              "theScene": [   "You don't resist in the slightest as the dark tethers snatch you up-!",
+                                              "JumpToScene", "StatFailPost"
+                                        ]
+                          },
+
+                          {
+                              "NameOfScene": "StatFail",
+                              "theScene": [
+                                            "But despite your best efforts, you can't keep the dark tethers from snatching you up-!",
+                                            "JumpToScene", "StatFailPost"
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "StatFailPost",
+                              "theScene": [
+                                            "StunGridPlayer", "4",
+                                            "SetChoice", "1", "RibbonRestrained",
+                                            "And soon, they have your limbs and body bound up and carry you up in the air, keeping you tightly restrained in place while you futilely keep struggling against the magic ribbons, leaving you helpless prey for the hellhounds roaming the labyrinth!"
+                                        ]
+                          },
+
+
+                          {
+                            "NameOfScene": "ShadowRibbonCheck",
+                            "theScene": [
+                                          "IfGridPlayerStunned", "ShadowRibbonStun",
+                                          "SetChoice",  "1", ""
+                                      ]
+                          },
+                                  {
+                                    "NameOfScene": "ShadowRibbonStun",
+                                    "theScene": [
+                                                  "IfChoice", "1", "RibbonRestrained", "RestrainShadows"
+                                              ]
+                                  },
+                                          {
+                                            "NameOfScene": "RestrainShadows",
+                                            "theScene": [
+                                                          "ApplyStatusEffect", "Ensnaring Shadows",
+                                                          "Still bound up in the binding dark ribbons, you're left in a tight spot as one of the hellhounds draws near..."
+                                                      ]
+                                          },
+
+                  {
+                      "NameOfScene": "EventBreak",
+                      "theScene": [
+                                      "Evento broko"
+                                ]
+                  }
+              ]
+}

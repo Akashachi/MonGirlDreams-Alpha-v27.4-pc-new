@@ -1,0 +1,157 @@
+{
+    "name": "Dynamic Dancing Duo",
+    "CardType": "Event",
+    "CardLimit": "2",
+    "Description": "A duo of dancing succubi prowl the Aphrodesia District in search of adventurer prey, the playful performers eager to apply their sensual aural talents on {i}you{/i} in perfect tandem.",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Melody",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Cadence",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+      {
+        "NameOfScene": "EventStart",
+        "theScene": [
+                    "StoreCurrentBG",
+                    "ChangeBG", "Capital.png",
+                    "ChangeBGM", "music/Capital/Night_Wave.mp3",
+                    "DenyInventory",
+                    "DisplayCharacters",
+                      "2",
+                      "1",
+                    "EndLoop",  
+                    "SetChoice", "1", "AttackedByMelCa",
+                    "GetEventAndIfChoice", "AphrodesiaDistrict",  "1", "MetMelodyCadence", "ShopKnownIntro",
+                    "JumpToScene", "DefaultIntro"
+                  ]
+      },
+                {
+                  "NameOfScene": "ShopKnownIntro",
+                  "theScene": [
+                                "JumpToRandomScene",
+                                    "XDIntro",
+                                    "DrainShopAdvertIntro",
+                                    "DefaultIntro",
+                                "EndLoop"
+                            ]
+                },
+                        {
+                          "NameOfScene": "DefaultIntro",
+                          "theScene": [  
+                                        "ChangeImageLayer", "Expression", "Melody", "Wink", "ChangeImageLayer", "Expression", "Cadence", "Wink",                  
+                                          "Suddenly, from within the bustling crowds of the Aphrodesia District, two matching succubi strut out with bouncy steps, their fervid gazes locking onto you as soon as you come into view, and their voices somehow echoingly phasing through the din of the surrounding urban hustle to parade straight into your hearing in a catchy, lively cheer.",
+                                          "Speak", "Both",
+                                          "Helllll-ooo, adventurer!♪",
+                                          "ChangeImageLayer", "Expression", "Melody", "Cheerful",
+                                          "Speak", "Melody",
+                                          "I'm Melody!♪",
+                                          "ChangeImageLayer", "Expression", "Cadence", "Cheerful",
+                                          "Speak", "Cadence",
+                                          "And I'm Cadence!♪",
+                                          "ChangeImageLayer", "Expression", "Melody", "Seductive", "ChangeImageLayer", "Expression", "Cadence", "Seductive",
+                                          "Speak", "Both",
+                                          "And we're going to show you a {i}great time{/i}!♪♥♪♥",
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "Cadence",
+                                            "Melody",
+                                          "StartCombat",
+                                          "JumpToScene", "PostEventStuffs"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "DrainShopAdvertIntro",
+                          "theScene": [  
+                                        "ChangeImageLayer", "Expression", "Melody", "Wink", "ChangeImageLayer", "Expression", "Cadence", "Wink",                  
+                                          "Suddenly, from within the bustling crowds of the Aphrodesia District, two matching succubi strut out with bouncy steps, their fervid gazes locking onto you as soon as you come into view, and their voices somehow echoingly phasing through the din of the surrounding urban hustle to parade straight into your hearing in a catchy, lively cheer.",
+                                          "ChangeImageLayer", "Expression", "Melody", "Smile",
+                                          "Speak", "Melody",
+                                          "Helllll-ooo there, dear customer!.♪",  
+                                          "ChangeImageLayer", "Expression", "Cadence", "Smile",
+                                          "Speak", "Cadence",
+                                          "We were just thinking we'd {i}love{/i} to show you the full breadth of our auditory delights.♪", 
+                                          "ChangeImageLayer", "Expression", "Melody", "LipLick",
+                                          "Speak", "Melody",
+                                          "And after we've drained you silly...♥",  
+                                          "ChangeImageLayer", "Expression", "Cadence", "LipLick",
+                                          "Speak", "Cadence",
+                                          "... make sure to stop by our shop to get hydration.♥",                              
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "Cadence",
+                                            "Melody",
+                                          "StartCombat",
+                                          "JumpToScene", "PostEventStuffs"
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "XDIntro",
+                          "theScene": [  
+                                        "ChangeImageLayer", "Expression", "Melody", "XD", "ChangeImageLayer", "Expression", "Cadence", "XD",                  
+                                          "Suddenly, from within the bustling crowds of the Aphrodesia District, two matching succubi rush out with bouncy steps, their excited gazes locked onto you while their voices echoingly pierce through the din and bustle of the surrounding urban hustle to lasso eagerly onto your senses.",
+                                          "Speak", "Both",
+                                          "There he is! {b}Get him!♪♥{/b}",                                  
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "Cadence",
+                                            "Melody",
+                                          "StartCombat",
+                                          "JumpToScene", "PostEventStuffs"
+                                    ]
+                        },
+
+                {
+                  "NameOfScene": "PostEventStuffs",
+                  "theScene": [ "DisplayCharacters",
+                                  "EndLoop",
+                                "IfRanAway", "Escaped!",
+                                "With the lustily energetic succubus duo dealt with, you gasp for a moment to get your bearings, the downright enchanting sounds of the lewd performers' demonstrative orgasms ringing obsessively through your ears, requiring you to take a moment to chase them from your head and reacclimate yourself to your surroundings.",
+                                "Looking around, you hope that the impromptu battle didn't attract any more unwelcome attention, but find that nary a soul has paid any mind to the sudden, rambunctious street fuck, as though such an occurrence was a mundane everyday event, both visible monster girls and translucent hazy silhouettes going about their business with barely a glance in your direction, allowing you to enjoy a break in peace before moving on.",
+                                "JumpToScene", "PostPostEventStuffs"
+                            ]
+                },
+                            {
+                              "NameOfScene": "Escaped!",
+                              "theScene": [
+                                            "Having successfully fled the succubus duo despite their unified noises of indignation and ineffective attempts to catch you, you lose them amid the Aphrodesia District's shifting sea of people and twisting alleys, your not very glorious but salutary flight leaving you safe and free to return to figuring out what to do next! ... After a brief pause to catch your breath.",
+                                            "JumpToScene", "PostPostEventStuffs"
+                                        ]
+                            },
+
+                   {
+                  "NameOfScene": "PostPostEventStuffs",
+                  "theScene": [  
+                                "IfInExploration", "EndEvent",
+                                "GoBackToStoredEvent"
+                            ]
+                },
+
+
+
+
+
+                {
+                  "NameOfScene": "EndEvent",
+                  "theScene": [    "UseHeldBG"
+                            ]
+                },
+ 
+
+
+
+                     {
+                       "NameOfScene": "EventBroke",
+                       "theScene": [   "event broke."
+                                 ]
+                     }
+                ]
+}

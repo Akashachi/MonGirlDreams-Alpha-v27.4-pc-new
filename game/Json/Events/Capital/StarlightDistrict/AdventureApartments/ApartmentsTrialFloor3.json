@@ -1,0 +1,383 @@
+{
+    "name": "ApartmentsTrialFloor3",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Imp",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }  
+                ],
+    "EventText": [
+                   
+                     {
+                      "NameOfScene": "StartEvent",
+                      "theScene": [ "AllowInventory",    
+                                     "SwapLineIf", "IfTimeIs",                                                
+                                        "Day",  "Stepping into the third floor of Adventure Apartments, you are faced with a long hallway with doors on one side, and impressively sized windows on the other that let in the bright sunlight. The glassy panes offer a panoramic view of the plaza, where you can see people milling about and a variety of billboards displaying six advertisements for all kinds of succubus beauty products.",
+                                        "Night",  "Stepping into the third floor of Adventure Apartments, you are faced with a long hallway with doors on one side, and impressively sized windows on the other that yawn eye-catchingly onto the nighttime urban vista beyond. The glassy panes offer a panoramic view of the empty plaza, where you can see a variety of dazzling billboards displaying no less than seven advertisements for all kinds of succubus beauty products.",
+                                    "EndLoop",                                                                    
+                                    "JumpToScene", "EntryWayMenu"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "EntryWayMenu",
+                      "theScene": [   "AllowInventory",
+                                        "Menu",                                                                                  
+                                          "Check one of the doors.",  
+                                          "Look out of the panoramic windows.",
+                                          "Stop and think...",
+                                          "Go to another floor.",
+                                        "EndLoop"
+                                ]
+                    },    
+                           {
+                            "NameOfScene": "Stop and think...",
+                            "theScene": [    
+                                            "JumpToEventThenScene", "ApartmentsTrialThinking", "Floor3Think"
+                                        ]
+                            },
+                            {
+                            "NameOfScene": "Go to another floor.",
+                            "theScene": [    
+                                            "Menu",    
+                                                "Go to the first floor.",                                    
+                                                "Go to the second floor.",
+                                                "Go to the fourth floor.",
+                                                "Go to the fifth floor.",
+                                                "Go to the sixth floor.",                                                
+                                                "Stay here.",
+                                            "EndLoop"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "Stay here.",
+                                        "theScene": [  
+                                                   "JumpToScene", "EntryWayMenu"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the first floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEventThenScene", "ApartmentsTrialFloor1", "EnterFromOtherFloor"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the second floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor2"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the fourth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor4"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the fifth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor5"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the sixth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor6"
+                                                ]
+                                    },
+                            {
+                                "NameOfScene": "Look out of the panoramic windows.",
+                                "theScene": [  
+                                            "SwapLineIf", "IfTimeIs",                                                
+                                                "Day", "You can see six advertisements for all kinds of succubus beauty products and assorted paraphernalia hanging from some of the distant buildings, their garish colors and attention-grabbing graphics standing out even in the middle of the colorful Capital.",
+                                                "Night", "You can see seven advertisements for all kinds of succubus beauty products and assorted paraphernalia hanging from some of the distant buildings, the sparkling bright glow of their backlit surfaces standing out starkly in the dark of the night.",
+                                            "EndLoop",
+                                            "SwapLineIf", "IfTimeIs",
+                                                "Day", "The offers on display feature the following deals: 'Fresh Succubus Milk at 306 St! Order now!' 'Impeccable Makeup for only 999 Eros!', 'Buy 69 packs of lipstick and get the 70th free!', 'Night Bane: 100% energy, 0% natural ingredients!', 'Your ad here for 605 Eros!',  and '310 different flavors of ice cream!'",
+                                                "Night", "The offers on display feature the following deals: '10th anniversary celebratory sale!', 'Go {i}Badatata!{/i} with {i}777{/i}, the Midnight Bunny Casino-brand golden lipstick!', 'Deals so good they might as well be five-finger discounts!', 'Always remember to knock thrice!', '8% discount on three brands of sunglasses!', '9 out of 10 dentists recommend Mintclear toothpaste!', and 'Enjoy the luxury of our four-star makeup.'",
+                                            "EndLoop",
+                                            "SwapLineIf", "IfTimeIs",                                                
+                                                "Day", "Aside from this show of aggressive marketing, you can also make out silhouetted figures walking to and fro across the plaza, the diminutive shapes minding their own business as they go about their day. Lastly, the occasional decorative tree breaks up the utilitarian monotony of stone pathways and the omnipresent dark-and-neon Ars Delusian color scheme, giving some rather welcome rest to your eyes.",
+                                                "Night", "Aside from this show of aggressive marketing, the city is strangely still and the plaza below is utterly vacant of people, giving a surreal feeling to the urban vista.",
+                                            "EndLoop",
+                                            "JumpToScene", "EntryWayMenu"
+                                ]
+                            },
+                            {
+                            "NameOfScene": "Check one of the doors.",
+                            "theScene": [    "SetChoice", "1", "",
+                                            "Menu",                                          
+                                                "Check door 306",
+                                                "Check door 307",
+                                                "Check door 308",
+                                                "Check door 309",
+                                                "Check door 310",
+                                                "Nevermind.",
+                                            "EndLoop"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "Nevermind.",
+                                        "theScene": [  
+                                                   "JumpToScene", "EntryWayMenu"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Check another door.",
+                                        "theScene": [  
+                                                     "JumpToScene", "Check one of the doors."
+                                        ]
+                                    },
+ 
+                            {
+                                "NameOfScene": "Check door 306",
+                                "theScene": [  
+                                            "Menu",                                          
+                                                "Open door 306.",
+                                                "Knock on door 306.",
+                                                "Check another door.",
+                                            "EndLoop"
+                                ]
+                            }, 
+                                    {
+                                        "NameOfScene": "Knock on door 306.",
+                                        "theScene": [  
+                                                    "You knock on the wooden door, then wait... But nothing happens.",
+                                                    "JumpToScene", "Check door 306"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Open door 306.",
+                                        "theScene": [  
+                                                    "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                    "JumpToScene", "Check door 306"
+                                        ]
+                                    }, 
+                            {
+                                "NameOfScene": "Check door 307",
+                                "theScene": [  
+                                            "Menu",                                          
+                                                "Open door 307.",
+                                                "Knock on door 307.",
+                                                "Check another door.",
+                                            "EndLoop"
+                                ]
+                            },
+                                    {
+                                        "NameOfScene": "Check another door.",
+                                        "theScene": [  
+                                                     "JumpToScene", "Check one of the doors."
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Knock on door 307.",
+                                        "theScene": ["GetEventAndIfChoice", "ApartmentsTrialFloor2", "2", "", "NoResponse",
+                                                     "IfChoice", "1", "KnockedThree", "WhyAreYouKnocking",
+                                                     "IfChoice", "1", "KnockedTwice", "KnockTracker3",
+                                                     "IfChoice", "1", "KnockedOnce", "KnockTracker2",
+                                                     "SetChoice", "1", "KnockedOnce",
+                                                     "You knock on the wooden door, then wait... But nothing happens.",
+                                                     "JumpToScene", "Check door 307"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "KnockTracker2",
+                                                "theScene": [  
+                                                            "SetChoice", "1", "KnockedTwice",
+                                                            "You knock on the wooden door again, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 307"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "NoResponse",
+                                                "theScene": [  
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 307"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "KnockTracker3",
+                                                "theScene": [  
+                                                            "SetChoice", "1", "KnockedThree",
+                                                            "You knock on the wooden door for a third time... and you hear a metallic click!",
+                                                            "JumpToScene", "Check door 307"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "WhyAreYouKnocking",
+                                                "theScene": [  
+                                                            "SetChoice", "1", "",
+                                                             "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "DoorKnockTraps", "ComfyDrainKnockPunishment",
+                                                            "JumpToScene", "Check one of the doors." 
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Open door 307.",
+                                        "theScene": [  
+                                                    "IfChoice", "1", "KnockedThree", "OpenDoor307",
+                                                    "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                     "JumpToScene", "Check door 307"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "OpenDoor307",
+                                                "theScene": [ "SetChoice", "1", "", "IfChoice", "2", "GotLetterClue", "OpenDoor307Again", 
+                                                            "You try to turn the handle, and the latch unlocks with satisfying smoothness, letting you push the door open and step into the apartment without resistance, bringing you into an uncannily vacant house interior. Indeed, the single-room habitation is almost entirely bare, the only piece of furniture consisting of a conspicuous, regal-looking pillar with a letter prominently resting on it.",
+                                                            "Cautiously approaching, you move to the imposing piece of marble stonework while staying on the lookout for traps and ambushes... but as nothing happens and you're pretty confident you've been as vigilant as one could be, you deftly snag the letter and unseal it to find that it contains yet another clue written in a now familiar elegant cursive:",
+                                                            "{i}From a duel of competing thunders, you have found your way to this place among the stars,\nNow, plunge from the skies, and dive into the winding, crashing seas,\nTurn over the seabed to find its secrets, but beware the alluring merfolks' siren song, for three will lead you astray with both truth and lies,\nOnly one will tell no lies at all, guiding you to the stamp that is your goal.{/i}",
+                                                            "Pocketing the note so you can check it later in case you forget its contents, you leave the barren room, finding nothing else of note in the eerily empty premises.",
+                                                            "SetChoice", "2", "GotLetterClue",
+                                                            "JumpToScene", "EntryWayMenu"
+                                                ]
+                                            },
+                                                    {
+                                                        "NameOfScene": "OpenDoor307Again",
+                                                        "theScene": [ 
+                                                                    "You try to open the door, and the latch unlocks, revealing the same vacant house interior where the only furniture consists of a regal-looking pillar that sits in the center of the single-room habitation, just as before. The only difference compared to your initial visit is that the pillar is now bare, the letter that it used to hold sitting snugly among your possessions.",
+                                                                    "Just to make sure, you double-check the place, but after a rather thorough search of the room, you're positive that there's absolutely nothing else to be found here. With your mind at ease, you leave back into the hallway, half-wondering why you even bothered going through that process again...",
+                                                                    "JumpToScene", "EntryWayMenu"
+                                                        ]
+                                                    },
+
+                            {
+                                "NameOfScene": "Check door 308",
+                                "theScene": [  
+                                            "Menu",                                          
+                                                "Open door 308.",
+                                                "Knock on door 308.",
+                                                "Check another door.",
+                                            "EndLoop"
+                                ]
+                            }, 
+                                    {
+                                        "NameOfScene": "Knock on door 308.",
+                                        "theScene": [ "IfChoice", "1", "KnockedTwice", "Room308TrapKnocked",
+                                                    "IfChoice", "1", "KnockedOnce", "Room308TwiceKnocked",
+                                                    "SetChoice", "1", "KnockedOnce",
+                                                    "You knock on the wooden door, then wait... But nothing happens.",
+                                                    "JumpToScene", "Check door 308"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "Room308TwiceKnocked",
+                                                "theScene": [  
+                                                            "SetChoice", "1", "KnockedTwice",
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 308"
+                                                ]
+                                            },
+                                                {
+                                                    "NameOfScene": "Room308TrapKnocked",
+                                                    "theScene": [  
+                                                                "SetChoice", "1", "",
+                                                                 "StoreCurrentEventSpotSkippingLines", "3",
+                                                                "JumpToEventThenScene", "DoorKnockTraps", "AphroKnockPunishment",
+                                                                "JumpToScene", "Check one of the doors."
+                                                    ]
+                                                },
+                                    {
+                                        "NameOfScene": "Open door 308.",
+                                        "theScene": [  
+                                                    "StoreCurrentEventSpotSkippingLines", "3",
+                                                    "JumpToEventThenScene", "Crest of Temptation Trap", "EventStart",
+                                                    "JumpToScene", "Check one of the doors."
+                                        ]
+                                    }, 
+                            {
+                                "NameOfScene": "Check door 309",
+                                "theScene": [  
+                                            "Menu",                                          
+                                                "Open door 309.",
+                                                "Knock on door 309.",
+                                                "Check another door.",
+                                            "EndLoop"
+                                ]
+                            }, 
+                                    {
+                                        "NameOfScene": "Knock on door 309.",
+                                        "theScene": [  
+                                                    "IfChoice", "1", "KnockedTwice", "Room309TrapKnocked",
+                                                    "IfChoice", "1", "KnockedOnce", "Room309TwiceKnocked",
+                                                    "SetChoice", "1", "KnockedOnce",
+                                                    "You knock on the wooden door, then wait... But nothing happens.",
+                                                    "JumpToScene", "Check door 309"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "Room309TwiceKnocked",
+                                                "theScene": [  
+                                                            "SetChoice", "1", "KnockedTwice",
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 309"
+                                                ]
+                                            },
+                                                {
+                                                    "NameOfScene": "Room309TrapKnocked",
+                                                    "theScene": [  
+                                                                "SetChoice", "1", "",
+                                                                 "StoreCurrentEventSpotSkippingLines", "3",
+                                                                "JumpToEventThenScene", "DoorKnockTraps", "MagicKnockPunishment",
+                                                                "JumpToScene", "Check one of the doors."
+                                                    ]
+                                                },
+                                    {
+                                        "NameOfScene": "Open door 309.",
+                                        "theScene": [  
+                                                    "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                    "JumpToScene", "Check one of the doors."
+                                        ]
+                                    }, 
+                            {
+                                "NameOfScene": "Check door 310",
+                                "theScene": [  
+                                            "Menu",                                          
+                                                "Open door 310.",
+                                                "Knock on door 310.",
+                                                "Check another door.",
+                                            "EndLoop"
+                                ]
+                            }, 
+                                    {
+                                        "NameOfScene": "Knock on door 310.",
+                                        "theScene": [   
+                                                    "IfChoice", "1", "KnockedOnce", "Room310TwiceKnocked",
+                                                    "SetChoice", "1", "KnockedOnce",
+                                                    "You knock on the wooden door, then wait... But nothing happens.",
+                                                    "JumpToScene", "Check door 310"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "Room310TwiceKnocked",
+                                                "theScene": [  
+                                                            "SetChoice", "1", "",
+                                                             "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "DoorKnockTraps", "LeggyKnockPunishment",
+                                                            "JumpToScene", "Check door 310"
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Open door 310.",
+                                        "theScene": [  
+                                                    "StoreCurrentEventSpotSkippingLines", "3",
+                                                    "JumpToEventThenScene", "Crest of Temptation Trap", "EventStart",
+                                                    "JumpToScene", "Check one of the doors."
+                                        ]
+                                    }, 
+
+
+ 
+                   
+
+                    {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [   "event broke."
+                                ]
+                    }
+                ]
+}

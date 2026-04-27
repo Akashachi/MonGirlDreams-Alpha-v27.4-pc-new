@@ -1,0 +1,46 @@
+{
+    "name": "Rosaura's Edging Garden",
+    "CardType": "Event",
+    "CardLimit": "2",
+    "Description": "Rosaura awaits in a flowery garden, waiting idly to toy and tease with you.♥ Though it seems to be hexed to only let you get edged by her...",
+    "requires": [ ""],
+    "requiresEvent": [
+                  {
+                      "NameOfEvent": "VeneficasHomeExplore",
+                      "Progress": "0",
+                      "ChoiceNumber": "14",
+                      "Choice": "MetRosaura"
+                  }
+                ],
+    "Speakers": [
+                  {
+                    "name": "Rosaura",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Fight",
+                        "theScene": [
+                                        "DisplayCharacters",
+                                            "1",
+                                          "EndLoop",
+                                          "ChangeBG",  "forest.png",
+                                          "SetChoice", "1", "InLaby",
+                                          "ChangeImageLayer", "Expression", "Rosaura", "DominantLipLick",
+                                          "As you traverse the dark pathways of the labyrinth you suddenly find yourself stepping into a serene, honey scented glade, the crimson alraune Rosaura purring in delight and licking her lush lips at your appearance, while a tightness fills your loins as you can feel yourself suddenly rendered unable to climax by some unseen force!",
+                                          "Speaks",
+                                          "Come here sweetie.♥ Let me toy with you.♥ Ufufu.♥",
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Rosaura",
+                                          "StartCombat",
+                                          "SetChoice", "1", "",
+                                          "ChangeBG",  "Labyrinth.png",
+                                          "With Rosaura defeated you let out a steady exhale as the edging curse fades from your body and you're free to proceed..."
+                                  ]
+                    }
+                ]
+}

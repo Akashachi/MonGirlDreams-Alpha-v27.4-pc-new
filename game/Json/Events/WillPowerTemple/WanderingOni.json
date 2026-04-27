@@ -1,0 +1,78 @@
+{
+    "name": "Wandering Oni",
+    "CardType": "Event",
+    "CardLimit": "2",
+    "Description": "The dreaded oni sisters Himika and Mizuko, the pair who share the role of one of the Demon Queen's commanders, patrol the hallways of this place from time to time. Thankfully, they don't patrol together...",
+    "requires": [ "Sigil Of Will-Power"],
+    "Speakers": [
+                  {
+                    "name": "Mizuko",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Himika",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                  {
+                        "NameOfScene": "Oni Encounter",
+                        "theScene": ["GetEventAndSetChoice", "Will-Power Final Boss", "5", "",
+                                    "StoreCurrentBG",
+                                    "ChangeBG", "templeMainHall.png",
+                                    "IfProgressEqualsOrGreater", "2", "Fight Himika.",
+                                    "IfProgressEqualsOrGreater", "1", "Fight Mizuko.",
+                                    "JumpToScene", "Fight Mizuko."
+                                  ]
+                    },
+
+                    {
+                        "NameOfScene": "Fight Himika.",
+                        "theScene": [     "SetProgress", "1",
+                                        "DisplayCharacters",
+                                            "2",
+                                          "EndLoop",
+                                          "ChangeImageLayer", "Expression", "Himika", "Base",
+                                          "As you travel through the winding halls of the temple, you turn a corner and suddenly stumble into the towering form of Himika the red oni!",
+                                          "ChangeImageLayer", "Expression", "Himika", "Flustered",
+                                          "You immediately jump backwards as the two of you let out identical yelps of surprise, and as your back hits a wall that wasn't there before! Your escape has been blocked off! Himika looks slightly baffled for a moment before flashing you a domineering grin while she settles into a combat stance.",
+                                          "ChangeImageLayer", "Expression", "Himika", "Cocky",
+                                          "Speaks2",
+                                          "Haha! Found you! You better pray that your pelvis can endure me!",
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Himika",
+                                          "StartCombat",
+                                            "With Himika defeated, you can continue your adventure, and you give a nervous look at blockade that suddenly dropped down behind you before the fight while idly wondering where the other oni sister is...",
+                                            "UseHeldBG"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Fight Mizuko.",
+                        "theScene": [     "SetProgress", "2",
+                                        "DisplayCharacters",
+                                            "1",
+                                          "EndLoop",
+                                          "ChangeImageLayer", "Expression", "Mizuko", "Base",
+                                           "As you travel through the winding halls of the temple, you turn a corner and suddenly stumble into the towering form of Mizuko the blue oni!",
+                                             "ChangeImageLayer", "Expression", "Mizuko", "Calm",
+                                           "You immediately jump backwards with a yelp of surprise as Mizuko gives you a startled look, and as your back hits a wall that wasn't there before! Your escape has been blocked off! Mizuko doesn't even look away from you, giving you a smug grin as she slowly assumes a combat stance.",
+                                           "ChangeImageLayer", "Expression", "Mizuko", "Smug",
+                                           "Speaks",
+                                          "I knew I had a good feeling about this hallway. How long do you think your mind can hold out for against my rear?",
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Mizuko",
+                                          "StartCombat",
+                                          "With Mizuko defeated, you can continue your adventure, and you give a nervous look at blockade that suddenly dropped down behind you before the fight while idly wondering where the other oni sister is...",
+                                          "UseHeldBG"
+                                  ]
+                    }
+
+
+                ]
+}

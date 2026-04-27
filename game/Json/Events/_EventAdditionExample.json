@@ -1,0 +1,59 @@
+{
+  "name": "Elven Ambush",
+  "Addition": "Yes",
+  "Speakers": [
+      {
+          "name": "Blue Slime",
+          "postName": "",
+          "SpeakerType": "Monster"
+      }
+  ],
+  "EventText": [
+      {
+          "NameOfScene": "EventStart",
+          "theScene": [
+          "While peacefully walking through the forest, you can't help but feel you're being watched... apart from the Blue Slime attempting to hide in the bush behind you.",
+          "Menu",
+            "Keep your wits about you. (Int)",
+            "Trust in your reflexes. (Tech)",
+            "Walk forward without a care in the world.",
+          "EndLoop"
+          ]
+      },
+      {
+          "NameOfScene": "Step over it.",
+          "theScene": [
+          "You carefully step over the wire and continue on your way, only to hear some elves yelling at you not long after.",
+          "DisplayCharacters",
+            "1",
+            "2",
+          "EndLoop",
+          "ChangeImageLayer", "Expression", "1", "Shock",
+          "ChangeImageLayer", "Expression", "2", "Shock",
+          "You turn, ready to fight, only to watch as two elves, who presumably set the trap in the first place, trigger the tripwire and get hoisted into the air.",
+          "ChangeImageLayer", "Expression", "1", "Flustered",
+          "ChangeImageLayer", "Expression", "2", "Tsun",
+          "They seem rather embarrassed by being caught by their own trap. They stare at you awkwardly as they gently dangle in the air.",
+          "Speaks",
+            "Uhm... Y-You wouldn't happen to be willing to get us down from here, would you? M-Merciful hero?",
+          "Speaks2",
+            "We know there's a slime hiding in that bush over there, please don't leave us to its whims...",
+          "Speaks3",
+            "{i}Sneaking..!{/i}~",
+          "Menu",
+            "Get them down.",
+            "Leave them there.",
+          "EndLoop"
+          ]
+    },
+    {
+          "NameOfScene": "Leave them there.",
+          "theScene": [
+          "ChangeImageLayer", "Expression", "1", "Tsun",
+          "ChangeImageLayer", "Expression", "2", "Tsun",
+          "You decide to continue on your way, ignoring the elves' pleas. They tried to catch you in that trap, after all. They deserve a taste of their own medicine, don't they?",
+          "As you walk away, you are pretty sure you hear the sound of gelatinous noises behind you, the lewd moans of the elves echoing through the forest..."
+          ]
+    }
+  ]
+}

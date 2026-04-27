@@ -1,0 +1,169 @@
+{
+    "name": "Go to your room.",
+    "CardType": "Inn",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Vivian",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Enter",
+                        "theScene": [ "ChangeBG", "InnPlayerRoom.png",
+                                      "You head upstairs and enter into your cozy, sparsely decorated room.",
+                                      "JumpToScene", "RoomMenu"
+                                  ]
+                    },
+
+
+                    {
+                        "NameOfScene": "RoomMenu",
+                        "theScene": [ "SetChoice", "1", "", "AllowInventory",
+                                      "Menu",
+                                        "Rest. (Advances Time 1)",
+                                        "Sleep till morning.",
+                                        "Rest till dusk.",
+                                        "HideOptionOnRequirementFail",
+                                        "RequiresItem", "Stella's Bag",
+                                        "Open Stella's bag.",
+                                        "Leave",
+                                        "Go to Town Square.",
+                                      "EndLoop"
+                                  ]
+                    },
+
+                    {
+                        "NameOfScene": "Rest. (Advances Time 1)",
+                        "theScene": ["RestPlayer",
+                                    "JumpToScene", "RoomMenu"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Sleep till morning.",
+                        "theScene": [ "You lay back in your soft bed and drift off to sleep...",
+
+                                      "IfHasItem", "Stella's Bag", "StellaSleepInvitationChance",
+
+                                      "JumpToScene", "Sleeping"
+                                  ]
+                    },
+                                {
+                                    "NameOfScene": "StellaSleepInvitationChance",
+                                    "theScene": [
+                                                    "JumpToRandomScene",
+                                                        "Sleeping",
+                                                        "Sleeping",
+                                                        "StellaSleepInvitation",
+                                                    "EndLoop"
+                                              ]
+                                },
+                                          {
+                                              "NameOfScene": "StellaSleepInvitation",
+                                              "theScene": [
+                                                            "JumpToNPCEventThenScene", "Bag Mimic", "StellaSleepInvitation"
+                                                        ]
+                                          },
+
+
+
+
+
+                          {
+                              "NameOfScene": "Sleeping",
+                              "theScene": [
+                                            "...",
+                                            "SetChoice", "1", "SleepingInRoom",
+                                            "SleepPlayer",
+                                            "SetChoice", "1", "",
+                                            "Later you get out of bed with a lazy stretch, and start preparing for the day.",
+                                            "JumpToScene", "RoomMenu"
+                                        ]
+                          },
+
+                    {
+                        "NameOfScene": "Rest till dusk.",
+                        "theScene": [ "You lay back in your soft bed and drift off as you rest until night...",
+                                      "...",
+                                      "JumpToScene", "SleepingNight"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "SleepingNight",
+                              "theScene": [
+                                            "RestPlayer",
+                                            "IfTimeIs", "Day", "SleepingNight",
+                                            "Later you get out of bed with a lazy stretch, and start preparing for the evening.",
+                                            "JumpToScene", "RoomMenu"
+                                        ]
+                          },
+
+                          {
+                              "NameOfScene": "Open Stella's bag.",
+                              "theScene": [ "DenyInventory",
+                                            "JumpToNPCEventThenScene", "Bag Mimic", "BagInRoom"
+                                        ]
+                          },
+
+
+
+
+
+                    {
+                        "NameOfScene": "Nothing",
+                        "theScene": [
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Go to Town Square.",
+                        "theScene": [ "BumpToTown"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Leave",
+                        "theScene": [ "ChangeBG", "Inn.png",
+                                      "IfTimeIs", "NightTrue", "VivCheck2"
+                                  ]
+                    },
+                            {
+                                "NameOfScene": "VivCheck2",
+                                "theScene": ["GetAnEventsProgressThenIfEqualsOrGreater", "Head over to Vivian.", "11", "VivCheck3"
+                                          ]
+                            },
+                                    {
+                                        "NameOfScene": "VivCheck3",
+                                        "theScene": [
+                                                      "IfHasFetish", "Ass", "VivCheck4"
+                                                  ]
+                                    },
+                                              {
+                                                  "NameOfScene": "VivCheck4",
+                                                  "theScene": [
+                                                                  "JumpToRandomScene",
+                                                                      "Nothing",
+                                                                      "Nothing",
+                                                                      "Nothing",
+                                                                      "Nothing",
+                                                                      "VivianAssTemptTrainingScene",
+                                                                  "EndLoop"
+                                                            ]
+                                              },
+                                              {
+                                                  "NameOfScene": "VivianAssTemptTrainingScene",
+                                                  "theScene": [
+                                                                  "JumpToNPCEvent", "VivianAssWorshipTraining"
+                                                            ]
+                                              },
+
+
+              {
+                  "NameOfScene": "EventBroke",
+                  "theScene": [ "aaaaa event broked."
+                            ]
+              }
+            ]
+}

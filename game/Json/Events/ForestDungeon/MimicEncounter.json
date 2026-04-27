@@ -1,0 +1,76 @@
+{
+    "name": "Mimics",
+    "CardType": "Event",
+    "CardLimit": "2",
+    "Description": "There are monsters masquerading as treasure chests! All adventurers, beware!",
+    "requires": [ "Sigil Of Allure"],
+    "Speakers": [
+                    {
+                      "name": "Mimic",
+                      "postName": "",
+                      "SpeakerType": "Monster"
+                    },
+                    {
+                      "name": "Treasure Chest",
+                      "postName": "",
+                      "SpeakerType": "Monster"
+                    }
+
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [   "DisplayCharacters",
+                                          "2",
+                                        "EndLoop",
+                                      "You find a wooden treasure chest!",
+                                      "Menu",
+                                        "Open the chest.",
+                                        "Leave it be.",
+                                      "EndLoop"
+
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Leave it be.",
+                        "theScene": [   "DisplayCharacters",
+                                        "EndLoop",
+                                        "You move on."
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Open the chest.",
+                        "theScene": [
+                                      "ApplyStatusEffect", "MimicKissingHold",
+                                      "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "SetChoice", "1", "Opened",
+                                      "ChangeImageLayer", "Expression", "1", "", "ChangeImageLayer", "Face", "1", "", "ChangeImageLayer", "Fancy", "1", "", "ChangeImageLayer", "Girl", "1", "",
+                                        "ChangeBGM", "music/Caverns/Purple Planet Music - Tense - Melancholia (1_24) 96bpm.mp3",
+                                      "As you swing open the chest, it reveals a haunting pitch-black interior like a yawning abyss that soon becomes dotted with predatory spectral eyes along the back of the hatch, while a myriad of slender pale hands lunge out from the stark darkness below, caressing across your skin before firmly gripping your stunned form.",
+                                      "DisplayCharacters",
+                                        "1",
+                                      "EndLoop",
+                                      "ChangeImageLayer", "Expression", "1", "Creepy",
+                                      "While your primal instincts scream inside your head to {i}run{/i}, the countless womanly arms tug and pull you towards the bottomless pit of the chest's opening, a rather cute girl flows upwards from the darkened depth and drapes her own arms around the back of your neck with a purring giggle, her sinfully sweet voice ringing eerily amidst the swirling eldritch darkness creeping in.",
+                                      "Speaks",
+                                      "Oooh♪♥ I caught someone {i}handsome!♥{/i} Kuhuhu~♪",
+                                      "ChangeImageLayer", "Expression", "1", "LongTongue",
+                                      "Speaks",
+                                      "Time to dig in.♪♥ Hahhh-♥",
+                                      "ChangeBGM-OverrideCombatMusic", "music/Battle/sakka.mp3",
+                                      "With you still reeling in shock from the mimic's sudden otherworldly appearance, the slender woman pulls you into a deep, passionate kiss as her many arms squeeze you possessively, slowly dragging you deeper towards the chest's looming abyss while her obscene, long tongue rolls aggressively around your mouth!",
+                                      "CombatEncounter",
+                                        "Mimic",
+                                        "ApplyStance", "Making Out", "SetAttack", "Possessive Makeout",
+                                        "Restrainer",
+                                      "StartCombat",
+                                      "As the mimic vanishes, a pile of treasure attuned to the area appears in her place in a flash of magic!",
+                                      "GiveTreasure", "Common",
+                                      "GiveTreasure", "Uncommon",
+                                      "GiveTreasure", "Rare"
+                                  ]
+                    }
+                ]
+}

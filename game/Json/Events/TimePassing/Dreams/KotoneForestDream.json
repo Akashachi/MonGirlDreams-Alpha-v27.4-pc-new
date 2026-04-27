@@ -1,0 +1,136 @@
+{
+    "name": "Kotone Forest Dream",
+    "CardType": "Dream",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Kotone",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": ["GetAnEventsProgressThenIfEqualsOrGreater", "KitsunesMentalHelp", "1", "Wandering"
+                                  ]
+                    },
+                    {
+                        "NameOfScene": "Wandering",
+                        "theScene": [ "StoreCurrentBG","ChangeBG", "forestNight.png",  "StoreCurrentBGM",
+                                      "DisplayCharacters",
+                                      "EndLoop",
+                                      "ChangeBGM", "music/Relaxing/Purple Planet Music - Gentle - Eastern Karma (2_16).mp3",
+                                      "You find yourself walking through a dark forest, its shaded greenery only lit by faint moonlight as you walk forward aimlessly, unsure where you're going, only that it's {i}deeper.{/i}",
+                                      "Despite the chilling dark and almost eerie forest, you feel perfectly calm as you trek further in, faint flickering lights seem to just dance in the corner of your eyes, vanishing when you look at them, but still you go {i}deeper{/i}, searching for something you can't quite place in your mind...",
+                                      "GetAnEventsProgressThenIfEqualsOrGreater", "KitsunesMentalHelp", "2", "Wandering2",
+                                      "PlayStoredBGM",
+                                      "UseHeldBG"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Wandering2",
+                              "theScene": [
+                                            "The {i}deeper{/i} you trek into the forest, the more tired you feel, the faint echo of a feminine giggle briefly catching your attention as you change directions, your sleepy thoughts fumbling to recall why you're here.",
+                                            "Small motes of flickering blue fire slowly start to float amidst the forest air, giving a faint glow amidst the trees as you follow their trail {i}deeper{/i}, your eyes occasionally catching the glimpse of someone, someone you're here to see...",
+                                            "GetAnEventsProgressThenIfEqualsOrGreater", "KitsunesMentalHelp", "3", "Wandering3",
+                                            "PlayStoredBGM",
+                                            "UseHeldBG"
+                                        ]
+                          },
+                              {
+                                  "NameOfScene": "Wandering3",
+                                  "theScene": [
+                                                "Her sweet voice filters through the trees, the occasional giggle leading your way as you go even deeper into the forest, so tired from your long journey, knowing rest is just around the corner you keep going, the motes of light getting brighter the closer you get to your unknown destination.",
+                                                "Then you finally breach the tree line into a large clearing, the motes of light all winking away, the sweet scent of lavender tickling your nose as you look around the moonlit meadow, a small, humble house sitting on a small hill in the middle, delicate rivers trailing across the well kept clearing, intertwining with the rocks and gardens.",
+                                                "ChangeBG", "templeKotoneRoom.png",
+                                                "But despite how tired you are, you're not there yet, so you head just a bit {i}deeper{/i}, the clear starry night shining down on you as you move towards the cozy looking house, your thoughts just slipping away the closer you get. But finally you reach the entrance, staring with a moments hesitation before opening the door and walking inside.",
+                                                "DisplayCharacters",
+                                                   "1",
+                                                 "EndLoop",
+                                                 "ChangeImageLayer", "Expression", "1", "Caring",
+                                                "Then you hear her sweet giggle behind you and turn around, her seductive silhouette framed in the doorway, highlighted by the moon and stars as she smiles at you. She then asks if you would be kind enough to invite her inside, which confuses you, isn't this her home? Yet she only continues to smile sweetly, waiting for you to invite her inside, her shadow temptingly looming over you.",
+                                                "GetAnEventsProgressThenIfEqualsOrGreater", "KitsunesMentalHelp", "4", "Wandering4",
+                                                "DisplayCharacters",
+                                              "EndLoop",
+                                              "PlayStoredBGM",
+                                              "UseHeldBG"
+                                            ]
+                              },
+                                      {
+                                          "NameOfScene": "Wandering4",
+                                          "theScene": ["ChangeImageLayer", "Expression", "1", "Loving",
+                                                        "Your chest flutters a little as you gaze upon her moonlit beauty and almost shyly you invite her into your home. She gives you a heart melting smile and steps through the threshold, linking one of her arms with yours as she starts to guide you into your home, her tail flicking the door closed as she nuzzles up to your side, pressing her bountiful chest against you.",
+                                                        "ChangeImageLayer", "Expression", "1", "CaringSeductive",
+                                                        "Soon the two of you are walking through a hallway, heading {i}deeper{/i} into your dimly lit home, and she lovingly cuddles up to your side, as you walk, guiding you even {i}deeper{/i} down the hallway.",
+                                                        "ChangeImageLayer", "Expression", "1", "Caring",
+                                                        "Briefly you mutter out your confusion, the house isn't this big, but she whispers so sweetly in your ear, that you can {i}always{/i} go {i}deeper{/i}, and you nod in agreement with her, blinking your tired eyes as you walk down the darkening hall with her, going {i}deeper{/i} and {i}deeper{/i}...",
+                                                        "Then you finally stop at a door, with her still cuddled up to your side, whispering seductively in your ear, and you can barely understand how {i}deep{/i} you are right now, so far away from everything else, and you thoughtlessly reach forward to open the door for her, ready to let her in even {i}deeper{/i}.",
+                                                        "GetAnEventsProgressThenIfEqualsOrGreater", "KitsunesMentalHelp", "5", "Wandering5",
+                                                        "DisplayCharacters",
+                                                          "EndLoop",
+                                                          "PlayStoredBGM",
+                                                          "UseHeldBG"
+                                                    ]
+                                      },
+                                            {
+                                                "NameOfScene": "Wandering5",
+                                                "theScene": [ "ChangeBGM", "music/Unknown/The Dark Eternal Night.mp3",
+                                                              "ChangeImageLayer", "Expression", "1", "Kiss",
+                                                                "She gives you a light peck on the cheek and asks you to open the door for her, and the feeling of her soft lips against your skin still tingles delightfully, your thoughts so completely lost in how {i}deep{/i} you've gone that you mindlessly reach forward and open the door with a dreamy sigh.",
+                                                                "ChangeBG", "templeKotoneDark.png",
+                                                                 "The small room past the threshold is almost pitch black, but it just looks so strangely inviting. The foxy woman with you gently urges you forward, and as the two of you enter the small chamber the air becomes thick with the scent of lavender, making you shudder with bliss as her tail closes the door behind you, leaving you in pitch darkness with her, her intoxicating lips grazing your neck.",
+                                                                 "ChangeImageLayer", "Expression", "1", "Caring",
+                                                                 "Her fluffy, soft tail massaging the opposite side of her, it's touch heavenly on your bare skin, your nude form left brimming with arousal from her touch and sensual whispers. At this moment as she slowly teases and tempts your body into eager, submissive bliss, you realize now this is her home you've wandered into, you let her take you {i}deeper{/i} and {i}deeper{/i} until you couldn't even fathom escape.",
+                                                                 "Or perhaps it {i}was{/i} your home once, before you let her inside, now you're hers to play with, but her honeyed words affirm that you can still go {i}deeper{/i}, and it feels so good to go {i}deeper{/i}, so she asks if you want to go {i}deeper{/i}, and you nod and moan, your thoughts a scattered, lavender stained mess as her control seeps {i}deeper{/i} into you with her every caress.",
+                                                                 "ChangeImageLayer", "Expression", "1", "Deceptive",
+                                                                 "Slowly she starts to circle around your body, gliding her hands over wherever they decide to touch, her soft tail sending shivers through you as it drags across your skin, her bountiful breasts teasingly massaged across your body, and her plump lips kissing and whispering seductive intelligible words all around you, over and over she slowly circles around you, gently spinning your mind, drawing you ever {i}deeper{/i}.",
+                                                                 "ChangeImageLayer", "Expression", "1", "BaseDeceptive",
+                                                                 "You feel completely surrounded by her, the dark only giving you glimpses of her wonderful body and sensually smug eyes as she overtakes your mind and body, and you can tell this isn't the first time she's done this to you, but it feels even better than last time, falling so {i}deep{/i} for her.",
+                                                                 "Her silvery voice echos in your mind, cloyingly sticking to your brain like intoxicating honey, guiding you down as you feel the room practically start to sink as she whispers how {i}deep{/i} you're falling for her, how good it feels to become hers, how the touch of her body delights your senses, and you can always go even {i}deeper{/i}.",
+                                                                 "ChangeImageLayer", "Expression", "1", "KissDominant",
+                                                                 "Your body shivers and twitches in pleasure as she continues to circle around you, her teasing massage breaking you down with gentle care, her voluptuous curves driving you mad with desire as they press against you. While her soft fluffy tail eases your excitement back down, her whispery kisses striking right into your defenseless mind as she goes around and around, leaving a blissful smile stuck on your face.",
+                                                                 "ChangeImageLayer", "Expression", "1", "Cooing",
+                                                                 "She temptingly coos how much you must love feeling like this, and you whimper out an agreement, your mind spinning in delight as she teasingly giggles, so she whispers for you to visit her often and melt for her again and again, going {i}deeper{/i} every single time. So she can leave you a moaning mess, empty except for her and the brain blanking pleasure she's giving you, again and again.",
+                                                                 "ChangeImageLayer", "Expression", "1", "BaseDeceptive",
+                                                                 "Then she stops circling right behind you, pressing her soft breasts against your back, her hands and tail teasing your bare chest while she kisses your ear between insidiously seductive whispers that leave you gasping in bliss, and one of her hands slides down until it's firmly wrapped around your aching manhood, gently stroking it, sending waves of intense ecstasy surging through you, burning her words and touch into your mind.",
+                                                                 "You want to go even {i}deeper{/i}, you want to visit her again, you want her to tease and tempt you into melted bliss, you love the pleasure she's giving you, you can't stop the orgasm washing over you, you can't stop from going even {i}deeper{/i} as you cum for her! Instantly you're mewling and moaning from her, your body alight in wonderful hypnotic pleasure, unable to even try to hold back the tide of ecstasy.",
+                                                                 "The white-hot euphoria shocks through your body like constant pulses of lightning, her lavender-scented presence all around you as you spurt for her nimble hand and intoxicating voice, dropping {i}deeper{/i} than ever before for her, and the pleasure just won't stop! Even as your cock is left twitching and leaking from her slightest touch, her whispers keep dragging you even {i}deeper{/i} into pleasure stained bliss...",
+                                                                 "GetEventAndIfChoice", "KotonesRoom", "30", "tail therapy complete", "WanderingCozyEnd",
+                                                                 "DisplayCharacters",
+                                                                "EndLoop",
+                                                                "PlayStoredBGM",
+                                                                "UseHeldBG",
+                                                                "GetEventAndIfChoice", "Go to your room.", "1", "SleepingInRoom", "RoomWakeUp"
+                                                          ]
+                                            },
+                                                  {
+                                                      "NameOfScene": "WanderingCozyEnd",
+                                                      "theScene": [ "ChangeBGM", "music/Relaxing/Purple Planet Music - Gentle - Eastern Karma (2_16).mp3",
+
+                                                                     "Slowly you wake up in bed, completely exhausted and spent from how deep she sent you last night, sighing blissfully at the feeling of her voluptuous curves softly pressing against your back while she quietly slumbers, her large fluffy tail coiled around your front, letting you tightly hold onto its downy fur like a large pillow.",
+                                                                     "With a content sigh you cuddle back into her, and indulge in the softness of her tail, letting yourself drift back to sleep, smiling happily at the mind spinning games of pleasure she likes to play with you...",
+                                                                     "...",
+                                                                     "DisplayCharacters",
+                                                                     "EndLoop",
+                                                                     "UseHeldBG",
+                                                                     "You slowly, and groggily awaken in your bed, your actual bed, still a little dazed from the hypnotic bliss that you dreamed of, the intimate closeness of your bodies as you rested, barely able to remember any solid details of it, other than how {i}good{/i} it all felt.",
+                                                                     "After a few more moments of laying in dreamy euphoria, quivering mental pleasure still trailing through you in aftershocks, you manage to stagger out of your sweat drenched bed, and take a moment to catch your breath. Then you change your damp bedding entirely before taking a moment to flop back down on it and recover some more, silently hoping for another dream.",
+                                                                       "DisplayCharacters",
+                                                                      "EndLoop",
+                                                                      "PlayStoredBGM"
+                                                                ]
+                                                  },
+
+                    {
+                        "NameOfScene": "RoomWakeUp",
+                        "theScene": [
+                                      "You slowly, groggily awaken in your bed, gasping and panting in bliss, your entire body shivering from that hazy, hypnotic dream, barely able to remember any details of it, other than how {i}good{/i} it felt.",
+                                      "After a few more moments of shivering in dreamy euphoria, quivering mental pleasure still shocking your body, you manage to stagger out of your sweat drenched bed, and take a moment to catch your breath. Then you change your damp bedding entirely before taking a moment to flop back down on it and recover some more, silently hoping for another dream."
+                                  ]
+                    }
+                ]
+}

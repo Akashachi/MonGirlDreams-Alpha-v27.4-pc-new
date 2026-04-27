@@ -1,0 +1,102 @@
+{
+    "name": "Slumbering Wanderer Sofia",
+    "CardType": "Event",
+    "CardLimit": "1",
+    "Description": "Somewhere within the darkened halls of the Labyrinth, the luxurious lair of Sofia the Arch-Succubus stands in your way... Did you expect her to be wandering around herself?",
+    "requires": [ ""],
+    "requiresEvent": [
+                {
+                    "NameOfEvent": "Slumbering Terror Sofia",
+                    "Progress": "0",
+                    "ChoiceNumber": "1",
+                    "Choice": "ClearedLabyMatch"
+                }
+            ],
+    "Speakers": [
+                  {
+                    "name": "Sofia",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "SceneStart",
+                        "theScene": [
+
+                                          "DisplayCharacters",
+                                                "1",
+                                              "EndLoop",
+                                          "ChangeBG", "SofiasRoom.png",
+                                          "ChangeImageLayer", "Expression", "Sofia", "Sleeping",
+                                          "Continuing your foray into the Labyrinth, you suddenly find yourself stepping into Sofia's bedchambers, their almost garishly colorful appearance standing in stark contrast to the abyssal depths of the Labyrinth. The succubus herself is snoozing on her luxurious heart-shaped bed, but drowsily perks up at your arrival.",
+                                          "ChangeImageLayer", "Expression", "1", "Sleepy",
+                                          "Speaks",
+                                          "Mnnghwa-? ...",
+                                          "Taking in your irruption, she looks at you in slight confusion, then around her in puzzlement... then her gaze returns to you, her beautiful face scrunched up into an annoyed frown.",
+                                          "ChangeImageLayer", "Expression", "1", "Annoyed",
+                                          "Speaks",
+                                          "Did you {i}seriously{/i} just pull me into some kind of... dream battle gauntlet thing-? I was {i}sleeping!{/i}",
+                                          "ChangeImageLayer", "Expression", "1", "Sleepy",
+                                          "Speaks",
+                                          "Ah, whatever... Maybe this will be entertaining... {i}Yaaawn-{/i}... How hard should I try-? I'll be nice and let you pick... Mnnhph...",
+                                          "Menu",
+                                            "RequiresChoiceFromEvent", "Visiting Sofia", "37", "BeatSofia3",
+                                            "Hypnotic Charms. (Third Fight)",
+                                            "RequiresChoiceFromEvent", "Visiting Sofia", "20", "BeatSofia2",
+                                            "Lazy Seduction. (Second Fight)",
+                                            "Kisses only. (First Fight)",
+                                          "EndLoop"
+                                  ]
+                    },
+                              {
+                                "NameOfScene": "Kisses only. (First Fight)",
+                                "theScene": [ "GetEventAndSetChoice", "Visiting Sofia", "3", "",
+                                            "ChangeArousalQuietly", "50",
+                                            "ChangeImageLayer", "Expression", "1", "Seductive",
+                                            "The vision of Sofia's luscious lips pressing into an alluring smile hits you with a sudden wave of tingling lust, a nervous yet arousing anticipation blossoming in your core as she floats off the bed still lying partially on her side, the powerful arch-succubus giving a lazy sleepy stretch that puts her womanly curves on full display.",
+                                            "Speaks",
+                                            "Then get ready to be kissed silly.♥ Don't expect any mercy.♥",
+                                            "JumpToScene", "Fight"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "Lazy Seduction. (Second Fight)",
+                                "theScene": [ "GetEventAndSetChoice", "Visiting Sofia", "3", "SecondFight",
+                                            "ChangeArousalQuietly", "75",
+                                            "ChangeImageLayer", "Expression", "1", "KissWinking",
+                                            "The vision of Sofia's luscious lips curling up into an alluring smile hits you with a sudden wave of warm tingling lust, a nervous yet arousing anticipation blossoming in your core as she floats off the bed still lying partially on her side, her womanly curves on full display.",
+                                            "Speaks",
+                                            "Alright, I suppose trying a little harder to seduce you should be fun... but I'm still not going to do too much directly to you. Just the occasional spell and temptation.♥ Either way, I'll make you regret waking me up.♪",
+                                            "JumpToScene", "Fight"
+                                          ]
+                              },
+                              {
+                                "NameOfScene": "Hypnotic Charms. (Third Fight)",
+                                "theScene": [ "GetEventAndSetChoice", "Visiting Sofia", "3", "ThirdFight",
+                                            "ChangeArousalQuietly", "100",
+                                            "ChangeImageLayer", "Expression", "1", "KissWinking",
+                                            "The vision of Sofia's luscious lips curling up into an alluring smile hits you with a sudden wave of warm tingling lust, a nervous yet arousing anticipation blossoming in your core as she floats off the bed still lying partially on her side, her womanly curves on full display.",
+                                            "Speaks",
+                                            "Well, trying to hypnotize you senseless was pretty fun last time...♥ So sure, I'll melt away {i}all{/i} your resistance with my temptations.♥",
+                                            "JumpToScene", "Fight"
+                                          ]
+                              },
+
+                    {
+                        "NameOfScene": "Fight",
+                        "theScene": [
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Sofia",
+                                          "StartCombat",
+                                              "Speaks",
+                                              "Mmnghh... Nap time again... Hmm... Maybe next time you bother me like that, I should just cut loose to punish you... Maybe take your cock and gnmhnm...",
+                                              "ChangeBG", "Labyrinth.png",
+                                            "Sofia sleepily trails off, returning to her uncaring slumber as the dreamy mirage swirls away, slowly bringing you back to the Labyrinth where you can continue your exploration..."
+
+                                  ]
+                    }
+                ]
+}

@@ -1,0 +1,56 @@
+{
+    "name": "Dark Queen Slime Perpetua",
+    "CardType": "Quest",
+    "CardLimit": "0",
+    "Description": "Your Grimoire shows a black page glowing with chillingly familiar, threatening demonic energy, like a lingering cherry-scented nightmare... It looks like you might encounter something familiar within the depths of this place... 'Dark Queen Slime Perpetua.'",
+    "requires": [ "Slime Badge"],
+    "Speakers": [
+                  {
+                    "name": "Dark Perpetua",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Rematch",
+                        "theScene": [
+                                          "As the dreamy reality of Lucidia twists and churns around you, you find yourself once more within the halls of the Umbral Labyrinth... or perhaps you never really left. Now far into this place's depths, much, {i}much{/i} deeper than the hellhounds' trials, you are surrounded by an almost choking miasmic darkness which seems to be oozing out of the very walls... Ahead, in the distance, a light signals your exit.",
+                                          "DisplayCharacters",
+                                            "1",
+                                          "EndLoop",
+                                          "PlayVisualEffect", "ScreenFlash", "Void.png",
+                                          "PlayMotionEffect", "Explosion",
+                                          "ChangeBG",  "combat.png",
+                                          "ChangeBGM", "music/Unknown/Dungeon-Rlyeh.mp3",
+                                          "But before you can move onward, the surrounding demonic energy rises and surges all around you with a crash, the air roiling and dripping with venomous desire while reality itself seems to fray at the seams! Phasing into existence like she has always been there, you come face to face with the nightmarish reappearance of the trio of lusciously villainesses: {b}Dark Perpetua{/b}!",
+                                          "ChangeImageLayer", "Expression", "1", "EvilGrin",
+                                          "Fixing you with an evil-looking, foreboding, perverted grin, the three slime women look you up and down with a ravenous expression, a feeling of rampant lust filling the area like tangible hunger, sending a chill of apprehension and arousal down your spine while the trio speak in eerie unison!",
+                                          "Speaks",
+                                          "There you are, our {i}darling{/i} nemesis. You won't get so lucky this time!♥",
+                                          "ChangeImageLayer", "Expression", "1", "Laugh",
+                                          "Speaks",
+                                          "Ohohohoho! Prepare to drown in my perfection!♥",
+                                          "CombatEncounter",
+                                            "RunningWontSkipEvent",
+                                            "NoRunning",
+                                            "Dark Perpetua",
+                                          "StartCombat",
+                                            "ChangeBG",  "Labyrinth.png",
+                                          "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                          "IfChoice", "1", "DefeatedDarkPerpoRematch", "EndRepeat",
+                                          "SetChoice", "1", "DefeatedDarkPerpoRematch",
+                                          "GetEventAndChangeProgress", "Labyrinth Depths", "1",
+                                          "As the nightmarish coalescence vanishes in climactic defeat, a regal crown of some kind clatters onto the ground, thrumming with ominous powers...",
+                                          "GiveItem", "1", "Calamity Crown",
+                                          "Tentatively, you take the treasure and hastily make your way to the end of your labyrinthine trials before other dangers appear..."
+                                  ]
+                    },
+                        {
+                            "NameOfScene": "EndRepeat",
+                            "theScene": [
+                                          "As the nightmarish coalescence vanishes in climactic defeat, you once more find yourself alone in the darkened halls of the Labyrinth, letting out a breath you didn't realize you were holding as the oozing feeling of darkness lifts. Collecting yourself, you press forward, reaching the light at the end of your labyrinthine trials without further incidents."
+                                      ]
+                        }
+                ]
+}

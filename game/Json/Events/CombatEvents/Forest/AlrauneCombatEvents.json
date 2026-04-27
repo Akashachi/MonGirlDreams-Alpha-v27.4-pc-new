@@ -1,0 +1,249 @@
+{
+    "name": "AlrauneCombatEvent",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Alraune",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+
+                    {
+                        "NameOfScene": "Alraune's Invitation",
+                        "theScene": [  "HitPlayerWith", "Seduce",
+                                      "ChangeImageLayer", "Expression", "Seductive",
+                                      "SetPostName", " - Alraune's Invitation",
+                                      "FocusedSpeaksSkill",
+                                      "The Alraune spreads her drooling honeypot before enticingly swaying her wide hips back and forth in a tempting display.[DamageToPlayer]",
+                                      "FocusedSpeaks",
+                                      "SwapLineIf", "Random",
+                                        "Go on cutie, put it in.♥",
+                                        "Don't you want to fuck me?",
+                                        "Come here cutie.♥",
+                                        "I bet my pheromones have gotten you all horny.♥ Well come on, cutie,♥ I'm waiting.♥",
+                                        "Hmhmhm,♥ don't be shy.♥",
+                                      "EndLoop",
+                                      "SetPostName", "",
+                                      "IfFetishLevelEqualOrGreater", "Sex", "100", "CantResistOffer",
+                                      "Menu",
+                                        "Fuck her!",
+                                        "Ignore the offer.",
+                                      "EndLoop"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Fuck her!",
+                              "theScene": [
+                                            "ApplyStance", "Sex",
+                                            "HitPlayerWith", "Tighten",
+                                             "ChangeImageLayer", "ImageSetRoleStart", "CloseUp",
+                                            "You rush forward and plunge your rigid length into her squeezing tight pussy, letting out a sigh of bliss as it massages your every inch.[DamageToPlayer]"
+                                        ]
+                          },
+                              {
+                                  "NameOfScene": "CantResistOffer",
+                                  "theScene": [
+                                                "ApplyStance", "Sex",
+                                                "HitPlayerWith", "Tighten",
+                                                 "ChangeImageLayer", "ImageSetRoleStart","CloseUp",
+                                                "Without a second thought you rush forward to accept her seductive offer, your mind too focused on thoughts of sex to even think of resisting the temptation of her tight pussy, and you sigh blissfully as it lovingly squeezes your throbbing length.[DamageToPlayer]"
+                                            ]
+                              },
+                          {
+                              "NameOfScene": "Ignore the offer.",
+                              "theScene": [
+                                            "You think of resisting the plant woman's offer for sex, but the cloying scent of her pheromones is making it a little hard to think straight...",
+
+                                            "StatCheck",
+                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "25", "2",
+                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "50", "3",
+                                            "ChangeStatCheckDifficulty", "IfFetishLevelEqualOrGreater", "Sex", "75", "5",
+                                            "ChangeStatCheckDifficulty", "IfPlayerHasStatusEffect", "Charm", "4",
+                                            "Temptation", "5",   "IgnoredSex",
+                                            "Fail",
+                                            "CantResistOffer"
+                                        ]
+                          },
+                                {
+                                    "NameOfScene": "IgnoredSex",
+                                    "theScene": [ "ChangeImageLayer", "Expression", "Anger",
+                                                  "The Alraune frowns in annoyance as you ignore her offer for sex."
+                                              ]
+                                },
+
+
+                  {
+                      "NameOfScene": "StanceCheckCGOff",
+                      "theScene": [
+                                    "IfMonsterHasStance",   "Sex",   "Nothing",
+                                    "IfMonsterHasStance",   "Anal",   "Nothing",
+                                    "IfMonsterHasStance",   "Making Out",   "Nothing",
+                                    "RoledCGEnd"
+                                ]
+                  },
+                          {
+                              "NameOfScene": "Nothing",
+                              "theScene": [
+                                        ]
+                          },
+
+
+
+
+                  {
+                    "NameOfScene": "TemptationVictory",
+                    "theScene": [  "DisplayCharacters",
+                                  "1",
+                                  "EndLoop",
+                                  "StopBGM",
+                                  "ChangeImageLayer", "Expression","1", "Pleasured", "ChangeImageLayer", "Base", "1", "Blush",
+                                   "Soon after her defeat the Alraune reappears nearby with a pleasured sigh, laying in her flower before getting up and leaning against the petals edges.",
+                                   "ChangeImageLayer", "Expression","1", "Caring",
+
+                                   "Speaks",
+                                   "Oh my, cutie... that was wonderful.♥ A big strong adventurer like you must want some relief after that, right?♥",
+                                   "ChangeBGM", "music/Casino/BGM sweet smell.mp3",
+                                   "ChangeImageLayer", "Expression","1", "Seductive",
+                                  "She turns around with a seductive backwards glance at you, holding onto the rim of her flower while keeping her wide voluptuous hips raised in the air at you gently swaying them back and forth, and the sweet fragrance of her pheromones hangs delightfully in the air, accenting the dangers of her tempting offer...",
+                                  "Menu",
+                                    "Take her offer and fuck her!",
+                                    "Ignore her and get moving.",
+                                  "EndLoop"
+                              ]
+                  },
+                        {
+                          "NameOfScene": "Ignore her and get moving.",
+                          "theScene": [   "The Alraune lets out a pouty sigh as you go on your way, and closes the petals of her flower tightly."
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "Take her offer and fuck her!",
+                          "theScene": [
+                                          "You move forward and stepping into her flower you take her luscious hips in your hands, reveling in the softness of her skin as you line up your hips, your rigid cock twitching in anticipation.",
+                                          "ChangeArousalByPercent", "10",
+                                          "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                          "She moans sweetly as you penetrate her drooling pussy, and you gasp as it gives you a welcoming squeeze, its tight interior already eagerly working to milk you.",
+                                          "ChangeArousalByPercent", "15",
+                                          "You can hardly contain yourself as you start to thrust in a steady tempo, your hands feel lost in the softness of her curvy hips, and the seductive fragrance gently fills your senses, leaving you lusting more and more for her voluptuous body.",
+                                          "ChangeArousalByPercent", "15",
+                                          "Jolts of pleasure strike through your hips with every meeting of your hips, her plump ass jiggling teasingly with each impact, her lovely moans joining with yours, and her pussy desperately clings to your every inch, practically sucking you back in when you thrust.",
+                                          "ChangeArousalByPercent", "30",
+                                          "You can't help but smile as pleasure fills your groin in warm waves, your cock throbbing in delight with every blissful strike into her squeezing depths, and your mind feels so hazy and focused on the singular task of fucking her, the sweet flowery pheromones melting away your cares and worries with desire.",
+                                          "ChangeArousalByPercent", "30",
+                                          "ChangeImageLayer", "Expression","1", "Seductive",
+                                          "The Alraune gives you a seductive backward glance as you eagerly pound her from behind, sweetly moaning as you indulge in the pleasure of her body, your thoughts drifting away in a cloud of loving passion as you grip her hips tighter and bubbling ecstasy fills your hips.",
+                                          "Speaks",
+                                          "Mnnn-♥ Don't hold back cutie-♥ Ohh-♥ Give me every last drop-♥",
+                                            "PlayerOrgasm", "1", "ChangeImageLayer", "Expression","1", "Pleasured",
+                                          "With a final intense thrust you moan loudly as you erupt inside her, pouring thick ropes into her greedy honeypot while your body is lost in a cascade of climactic ecstasy, leaving you with a dopey smile as you start to come down from your intense orgasm, your manhood still hard inside her squeezing orifice.",
+                                          "ChangeImageLayer", "Expression","1", "Seductive",
+                                          "While you gasp in mild delirium, her cloying pheromones filling your head, she stands up straight with a lick of her lips, and she presses her body back into yours, gently gyrating her luscious hips against your groin while she nuzzles her face close to yours.",
+                                          "Speaks",
+                                          "I'm sure a big strong adventurer like you wants to keep going.♥ Don't you cutie?♥",
+                                            "IfPlayerSpiritGone", "CantStopFucking1",
+                                          "Menu",
+                                            "Fuck her more!",
+                                            "That's enough sex.",
+                                          "EndLoop"
+
+                                    ]
+                        },
+                        {
+                          "NameOfScene": "That's enough sex.",
+                          "theScene": [   "ChangeImageLayer", "Expression","1", "Base",
+                                        "You pull away from the curvaceous plant woman with a little regret, but after letting out a disappointed sigh she gives you a caring smile as you start to head on your way.",
+                                        "Speaks",
+                                        "Hehe,♥ well, have fun out there, just don't forget to stop and smell the flowers, cutie.♥"
+                                    ]
+                        },
+                            {
+                              "NameOfScene": "CantStopFucking1",
+                              "theScene": [  "You feel so drained yet so horny, your mind spinning with her scent and the pleasure of sex, you can't even contemplate stopping now...",
+                                            "JumpToScene", "Fuck her more!"
+                                        ]
+                            },
+                        {
+                          "NameOfScene": "Fuck her more!",
+                          "theScene": [    "ChangeArousalByPercent", "10",
+                                          "You eagerly start thrusting into her again, and she gingerly glides her hands over yours as you hold her shapely waist, slowly guiding your hands to her huge breasts, coaxing you to squeeze and play with them, making her moan in delight before she locks you in a deep kiss.",
+                                           "ChangeArousalByPercent", "15",
+                                           "ChangeImageLayer", "Expression","1", "Pleasured",
+                                          "Her sweet nectar fills your mouth as you entangle tongues, its wonderful taste is making you shiver as your body pulses with need, and you let your hands get lost in the feeling of her bountiful tits, reveling in their softness as you knead and massage them while you slowly thrust into her.",
+                                          "ChangeArousalByPercent", "15",
+                                          "With every meeting of your hips a warm wave washes through your hips, blanking out your thoughts with sex, the cloying pheromones and aphrodisiac nectar only compounding on it as you indulge in her wonderful body like a passionate lover.",
+                                          "ChangeArousalByPercent", "30",
+                                          "Her nimble hands gently wander over your skin, sending tingling pleasure wherever she touches, only adding to the mix of blissful sensations you're experiencing with her, and her seductive moans as you play with her breasts slowly driving you to fuck her harder and faster.",
+                                          "ChangeArousalByPercent", "30",
+                                          "All the pleasure inside your body feels like it's pooling in your hips, bubbling as her sweet taste and delightful pheromones lead you on to sexual ecstasy, each pounding thrust sending a jolt of euphoria shooting through your body, slowly overwhelming your throbbing manhood with melty bliss.",
+                                          "PlayerOrgasm", "1",
+                                          "The two of you moan in unison as you firmly squeeze her heavy tits and slam your hips together, your mind-blanking out completely with sweet ecstasy as you pour load after load into her tight pussy, her gyrating hips milking you for all you're worth.",
+                                          "PlayerOrgasm", "1",
+                                          "ChangeImageLayer", "Expression","1", "Seductive",
+                                          "She softly giggles while she continues to kiss you, and your orgasm just keeps going, your spasming cock still filling her while you're lost in the throes of bliss, her seductively sweet pheromones and nectar keeping you locked in wonderful climax, her voluptuous body gently teasing you all the while.",
+                                          "ChangeImageLayer", "Expression","1", "Caring",
+                                          "You break the kiss gasping for air as your orgasm finally ebbs away, your mind spinning deliriously in pleasure, a drunken smile on your face as she continues to lovingly grind herself up against you with a loving smile.",
+                                          "Speaks",
+                                          "You want more still,♥ don't you cutie?♥ We can just keep going.♥",
+                                          "IfPlayerSpiritGone", "CantStopFucking2",
+                                          "Menu",
+                                            "Don't stop fucking her.",
+                                            "That's enough sex.",
+                                          "EndLoop"
+                                    ]
+                        },
+                              {
+                                "NameOfScene": "CantStopFucking2",
+                                "theScene": [    "With her nectar and pheromones filling your brain up to the brim, and sexual bliss radiating through you in constant waves, you can't even think of a single reason to stop.",
+                                        "JumpToScene", "Don't stop fucking her."  ]
+                              },
+                        {
+                          "NameOfScene": "Don't stop fucking her.",
+                          "theScene": [    "ChangeArousalByPercent", "10",
+                                          "ChangeImageLayer", "Expression","1", "Pleasured",
+                                          "ChangeBGM", "music/Loss/reason.mp3",
+                                          "She gasps in delight as you start to play with her bountiful chest again, teasing her nipples as you begin to thrust again, making her coo sweetly as she invites you to kiss again, and you eagerly accept the sweet, nectar laced makeout session.",
+                                          "ChangeArousalByPercent", "15",
+                                          "You pound her lovingly from behind while your tongues entangle, melty pleasure filling your body all over again while you indulge in the softness of her luscious body, each meeting of your hips filling you with all new bliss as it tightly squeezes and clings to your manhood.",
+                                          "ChangeArousalByPercent", "15",
+                                          "Her pheromones seem even more potent now from all the constant sex, filling your dazed, horny senses with even more horny need as you plow her, jolting waves of ecstasy washing through your hips with every thrust.",
+                                          "ChangeArousalByPercent", "30",
+                                          "She moans and coos as you makeout with her, lovingly feeding you more of her sweet intoxicating nectar, and you greedily drink it down, loving the cloying flavor more and more with every passing moment as your body radiates lustful heat.",
+                                          "ChangeArousalByPercent", "30",
+                                          "The pleasure racing through you is delightfully overwhelming, every thrust you make leaving dazed and eager for more, the bubbling orgasmic bliss already starting to fill you again, her aphrodisiac kiss and wonderful pheromones push you to even higher heights of bliss.",
+                                          "PlayerOrgasm", "1", "ChangeArousalByPercent", "100",
+                                          "You moan into her mouth as you start to pour a thick load into her, your hips still thrusting all the while, she moans and giggles in delight, your hands still playing with her bountiful breasts, their softness only adding to your orgasmic cascade.",
+                                          "PlayerOrgasm", "1", "ChangeArousalByPercent", "100",
+                                          "All through your intense orgasm you keep fucking her, your mind-blanking out in pleasure as you kiss and fuck and feel her body, her potent pheromones and sweet nectar keeping you hard, horny, and eager for more as you fill her.",
+                                          "PlayerOrgasm", "1", "ChangeArousalByPercent", "100",
+                                          "Her squeezing tight pussy milks load after load out of you while you ride that constant orgasmic high while you pound her, the constant tempo of your thrusts not under your control as your cock spasms in euphoric bliss, your dazed mind falling even deeper into horny, needy lust.",
+                                          "But the kiss finally breaks again once your orgasm ebbs away, your hips still eagerly thrusting, your hands still playing with her heavy tits, and you gasp and moan in delight, lost in the pleasure, and the needy desire rampaging from her nectar and pheromones that just won't go away.",
+                                          "ChangeImageLayer", "Expression","1", "Seductive",
+                                          "Speaks",
+                                          "Mmmm-♥ Well cutie,♥ you don't look like you want to stop anytime soon.♥",
+                                          "In response you kiss her passionately, making her gasp in surprise as you continue to pound her drooling slit, its clinging, squeezing inside eagerly working to milk another load out of you, and you're completely lost to the haze of lust that's filled up your brain.",
+                                          "PlayVisualEffect", "BlackOut", "darkHaze.png",
+                                          "You barely even notice her flower's petals closing around the two of you, and can't even bring yourself to care that they are, locking the two of you in to a private chamber for the two of you to fuck, the sealed flower quickly filling up with her potent pheromones as they concentrate inside, making you shiver and moan as you fuck her, your mind lost in a mixture of love and lust.",
+                                          "She moans happily whenever you squeeze her breasts or unload your seed into her, your aching balls feeling like they'll never run dry as you fuck her constantly, letting go of everything but this moment of sexual passion with her, filling her over and over.",
+                                          "You can't get enough of her sweet nectar as you fuck, and greedily drink down mouthfuls of it, the intoxicating flavor filling you with warm need and energy as you lose yourself in sexual euphoria.",
+                                            "SetSpirit", "0",
+                                          "But even with her aphrodisiacs and pheromones you can't keep going forever, and eventually you pass out with a final intense orgasm, erupting inside her once more as your eyes roll up in ecstasy before blacking out, her passionate kiss finally breaking as she turns to gently hold you while you drift off.",
+                                          "Speaks",
+                                          "Thanks for the meal, cutie.♥",
+                                          "...",
+                                          "ChangeFetish", "Sex", "5",
+                                          "ChangeFetish", "Kissing", "5",
+                                          "ChangeSensitivity",   "Sex",   "5",
+                                          "ChangeSensitivity",   "Seduction",   "5",
+                                          "GameOver"
+                                    ]
+                        }
+
+
+
+                ]
+}

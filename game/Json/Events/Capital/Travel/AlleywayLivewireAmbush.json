@@ -1,0 +1,804 @@
+{
+    "name": "Livewire Alleyway Ambush",
+    "CardType": "Event",
+    "CardLimit": "2",
+    "Description": "Twisting alleyways coil in maze-like patterns through the Ars Delusian streets. There, shady Voltlins lie in wait to extort adventurers for their 'spirit'.",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Voltlin Livewire",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  } 
+
+                ],
+    "EventText": [
+      {
+        "NameOfScene": "EventStart",
+        "theScene": [ 
+                    "StoreCurrentBG",
+                    "ChangeBG", "Capital.png",
+                    "DenyInventory",
+                    "Entering the alleyways connecting the Eros and Aphrodesia Districts, the sounds of Ars Delusia's bustling street traffic grow muffled as you venture deeper through the darkened urban sprawl...",
+                    "DisplayCharacters",
+                          "1",
+                          "1",
+                          "EndLoop",
+                    "And soon, rounding a corner, you happen upon two showily dressed voltlins idly chatting, one of them lazily leaning against a wall while the other inspects the already copiously graffitied stone canvas while shaking a spray can. You can't help but feel that this encounter is spelling trouble...",
+                    "ChangeImageLayer", "Expression", "1", "Smug", "ChangeImageLayer", "Expression", "2", "Smug",
+                    "That impression promptly gets confirmed when they notice you and whatever they were scheming comes to a halt, their faces leeringly stretching into unambiguously ill-boding grins as they lay eyes on you.",
+
+                    "IfHasItemEquipped", "Tags", "Livewire", "EndLoop", "LivewireFren",
+
+                    "DisplayCharacters",
+                          "1",
+                          "1",
+                          "1",
+                          "EndLoop",
+                    "ChangeImageLayer", "Expression", "1", "OralOffer", "ChangeImageLayer", "Expression", "2", "LickLips", "ChangeImageLayer", "Expression", "3", "Smug",
+                    "One leaving her restfully slouching posture while the other stashes away her spray can, they close in with lustful expressions, and before you can think about what you should do, as if on cue, the sound of a kicked can behind you announces the arrival of a third voltlin, her presence leaving you entrapped between the trio in the tight alleyway, the three of them stopping only a few feet away from you with greedily gleaming eyes.",
+                    "Speak", "Livewire 1",
+                    "Well well... Look what we have here.",
+                    "Speak", "Livewire 2",
+                    "A handsome adventurer, all on his lonesome.♪",
+                    "ChangeImageLayer", "Expression", "3", "LickLips",
+                    "Speak", "Livewire 3",
+                    "And trespassing smack dab into Livewire turf, too. We can't have that, you know, stud?~",
+                    "ChangeImageLayer", "Expression", "1", "Base",
+                    "Speak", "Livewire 1",
+                    "Unless you're willing to give us a {i}little{/i} tribute. The {i}fun{/i} kind.~ You know, just to show {i}proper respect{/i}.",
+                    "A shared, menacing crackle of electricity runs jointly along their horns as the shortstacked women eye you over with a lascivious unified giggle, the slightest movement of their curvy forms making their plush busts and wide hips jiggle temptingly as the trio shamelessly flaunt their barely covered erotic bodies, leaving you with little doubt as to their intentions...",
+                    "JumpToScene", "AmbushMenu"
+                  ]
+      },
+              {
+                "NameOfScene": "AmbushMenu",
+                "theScene": [  
+                            "Menu",
+                                "Pay with Eros?",
+                                "Pay their toll...",
+                                "Can't we talk about this-?",
+                                "Fight!",
+                                "Run?!",
+                            "EndLoop"
+                          ]
+              },
+                      {
+                        "NameOfScene": "Fight!",
+                        "theScene": [   "ChangeImageLayer", "Expression", "2", "Smug",
+                                      "The gang members look undaunted by your resolve, their excitement only seeming to grow before your resistance.",
+                                      "Speak", "Livewire 2",
+                                      "Oooh, spunky... The hard way it is, then.~",
+                                      "ChangeImageLayer", "Expression", "3", "OralOffer",
+                                      "Speak", "Livewire 3",
+                                      "We're going to milk you for all you're worth.~",
+                                      "ChangeImageLayer", "Expression", "1", "LickLips",
+                                      "Speak", "Livewire 1",
+                                      "And you're gonna {i}love{/i} it.",
+                                      "CombatEncounter",
+                                        "RunningWontSkipEvent",
+                                        "Voltlin Livewire",
+                                        "Voltlin Livewire",
+                                        "Voltlin Livewire",
+                                      "StartCombat",
+                                      "IfInExploration", "EndEvent",
+                                      "GoBackToStoredEvent"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Run?!",
+                        "theScene": [   
+                                      "Seeing you ready to bolt, the Livewires pounce!",
+                                      "ChangeImageLayer", "Expression", "2", "Smug",
+                                      "Speak", "Livewire 2",
+                                      "Oh no you don't.~",
+                                      "ChangeImageLayer", "Expression", "3", "LickLips",
+                                      "Speak", "Livewire 3",
+                                      "You're not going anywhere, cumpump.~",
+                                      "With your avenues of escape already blocked off, there's no way you can avoid a direct confrontation! But you can probably take advantage of your imminent combat's confusion to escape still!",
+                                      "CombatEncounter",
+                                        "RunningWontSkipEvent",
+                                        "Voltlin Livewire",
+                                        "Voltlin Livewire",
+                                        "Voltlin Livewire",
+                                      "StartCombat",
+                                      "IfInExploration", "EndEvent",
+                                      "GoBackToStoredEvent"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Pay with Eros?",
+                        "theScene": [   "ChangeImageLayer", "Expression", "1", "Base",  "ChangeImageLayer", "Expression", "2", "Sparkling", "ChangeImageLayer", "Expression", "3", "Smug",
+                                      "The neon-clothed women burst out in a mixture of cheerful and snickering laughs at your innocent proposition, before answering with alluring coos.",
+                                      "ChangeImageLayer", "Expression", "3", "LickLips",
+                                      "Speak", "Livewire 1",
+                                      "Oh {i}no{/i}, stud.",
+                                      "ChangeImageLayer", "Expression", "2", "OralOffering",
+                                      "Speak", "Livewire 2",
+                                      "We don't want your money, we want {i}sex...{/i} Don't worry, just a few loads of cum and you can be on your merry way.",
+                                      "ChangeImageLayer", "Expression", "3", "AvertingGaze",
+                                      "Speak", "Livewire 3",
+                                      "{size=-5}'sides, the boss would be real pissed if we tried to {i}actually{/i} rob you-{/size}",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "Speak", "Livewire 1",
+                                      "So yeah, King: do we need to get your semen out of you the easy way or the hard way?",
+                                      "JumpToScene", "AmbushMenu"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Pay their toll...",
+                        "theScene": [  
+                                      "ChangeImageLayer", "Expression", "3", "Base",
+                                      "Speak", "Livewire 3",
+                                      "Atta boy.",
+                                      "ChangeImageLayer", "Expression", "1", "LickLips",
+                                      "Speak", "Livewire 1",
+                                      "You better have enough for all three of us.~",
+
+                                      "JumpToScene", "TollPayingScene"
+                                  ]
+                      },
+                      {
+                        "NameOfScene": "Can't we talk about this-?",
+                        "theScene": [   "ChangeImageLayer", "Expression", "1", "AvertingGaze",
+                                      "The voltlins actually look confused by your words.",
+                                      "Speak", "Livewire 1",
+                                      "Uuuuh, talk? What's there to talk about?",
+                                      "ChangeImageLayer", "Expression", "3", "LickLips", "ChangeImageLayer", "Expression", "1", "Base",
+                                      "Speak", "Livewire 3",
+                                      "Maybe about how {i}big{/i} and {b}heavy{/b} our tits are?~",
+                                      "DamagePlayerFromMonster", "Voltlin Livewire", "Valley Of Fascination",
+                                      "To emphasize her words, the voltlin behind you presses her plush tits against your lower back and gives them an alluring shake, the luscious heft and plushness of her warm boobs imprinting against your skin through your clothes, as if trying to tempt you into turning around to immediately plunge your cock between her barely covered, easily accessible cleavage.",
+                                      "ChangeImageLayer", "Expression", "2", "Base",
+                                      "Speak", "Livewire 2",
+                                      "Or maybe how {i}sexily wide{/i} our hips are?~",
+                                      "DamagePlayerFromMonster", "Voltlin Livewire", "Swaying Ass",
+                                      "ChangeImageLayer", "Expression", "2", "OralOffer","ChangeImageLayer", "Expression", "1", "OralOffer", "ChangeImageLayer", "Mask", "1", "", "ChangeImageLayer", "Mask", "2", "",
+                                      "Without missing a beat, the two voltlins in front of you lazily gyrate their waists to make their shortstacked curves sway and bounce alluringly in their scantily clad confines, all the while each pulls down her mask to loll out her tongue while using her hand to mimic lurid oral motions.",
+                                      "DamagePlayerFromMonster", "Voltlin Livewire", "Oral Temptation",
+                                      "Speak", "Livewire 1",
+                                      "Or perhaps how {i}badly{/i} he wants to get a blowjob?~ From all three of us at once, licking and sucking his needy erection, lapping his shaft and smooching his balls to make him come again and again until he can't take any more?",
+                                      "DamagePlayerFromMonster", "Voltlin Livewire", "Tagging Sparks",
+                                      "ChangeImageLayer", "Expression", "1", "LickLips", "ChangeImageLayer", "Expression", "2", "LickLips", "ChangeImageLayer", "Expression", "3", "OralOffer",
+                                      "They giggle perversely while your heart races from the vulgarly tempting show and explicit offers, a tangible spark of electrifying arousal dancing between their horns and tingling across your skin as you're entrapped between them like a conductor for their desires, a sneaking buzz of lust sneakily persisting in the back of your mind...",
+                                     
+                                      "IfPlayerOrgasm", "TooHornyToThink",
+
+                                      "ChangeImageLayer", "Mask", "1", "Mask", "ChangeImageLayer", "Mask", "2", "Mask",
+                                      "Then the unmasked duo pull their face masks back up with a conclusive huff while taking a step back, all three members of the posse then staring at you impatiently.",
+                                      "ChangeImageLayer", "Expression", "2", "Base",
+                                      "Speak", "Livewire 2",
+                                      "So yeah, no negotiations of any kind. {i}Soooooo,{/i} what do you say, stud?",
+                                     "JumpToScene", "AmbushMenu"
+                                  ]
+                      },
+                              {
+                                "NameOfScene": "TooHornyToThink",
+                                  "theScene": [  
+                                                "Swooning with overwhelming, dizzy lust as you are, the only things you can focus on are the alluring curves, nearly bare tits, and lasciviously thirsty lips of the shortstacked trio who easily notice your uncontrollable arousal and shamelessly exploit it, temptingly coaxing you closer with lewd gestures and seductive flaunting movements.",
+                                                "ChangeImageLayer", "Expression", "2", "LickLips",
+                                                "Speak", "Livewire 2",
+                                                "Ehe, looks like you {i}want{/i} to pay the toll.♥",
+                                                "ChangeImageLayer", "Expression", "3", "Smug",
+                                                "Speak", "Livewire 3",
+                                                "That's a good adventurer.♥ Falling all hot and ready into mommas' laps.♥",
+                                                "ChangeImageLayer", "Expression", "1", "OralOffer",
+                                                "Speak", "Livewire 1",
+                                                "You said it.♥ And the nice thing is: good boys get treats.♥ So c'mere, King, We'll get you nice and unbacked up.♥",
+                                                "ChangeImageLayer", "Mask", "1", "Mask", "ChangeImageLayer", "Mask", "2", "Mask",
+                                                "Giggling at your intoxicated state, they pull their masks back up as they prepare for the fun, your helpless hard-on pointing you straight into their beckoning arms and lecherous grins...",
+                                                "JumpToScene", "TollPayingScene"                                              
+                                            ]
+                                },
+                                {
+                                  "NameOfScene": "TollPayingScene",
+                                  "theScene": [  
+                                                "ChangeImageLayer", "Expression", "1", "Smug", "ChangeImageLayer", "Expression", "2", "OralOffer", "ChangeImageLayer", "Expression", "3", "Base",
+                                                "Without resistance, you step forward with arousal already starting to pound in your chest from the shame-laced excitement of your willing surrender while the trio strut up to you, the one behind you enticingly squishing her huge tits against the small of your back while the other two press their own barely constrained busts against your readily tenting erection, gazing up at you lustfully.",
+                                                "Speak", "Livewire 3",
+                                                "Now, what to do...♥",
+                                                "ChangeImageLayer", "Expression", "1", "Sparkling",
+                                                "While two of the Livewires take their time leering and snickering at you, the one who initially accosted you flashes a bright smile, a mischievous idea clearly having come to her and swiftly coming to fruition as she exclaims.",
+                                                "Speak", "Livewire 1",
+                                                "{i}Dibs!♪{/i}",
+                                                "ChangeBGM", "music/Loss/Falling Down.mp3",
+                                                "ChangeImageLayer", "Expression", "2", "PanicComical", "ChangeImageLayer", "Expression", "3", "PanicComical",
+                                                "The formerly gloating duo gawk in surprise as their peer deftly hops up into your arms with surprising speed, your hands reflexively wrapping around her to hold her up as she pushes her thick shortstacked curves against your chest while bringing her masked face right up to yours, all the while her barely covered and already wet pussy rubs tantalizingly against your straining erection.",
+                                                "Speak", "Livewire 2",
+                                                "Whu- No fair-!",
+                                                "ChangeImageLayer", "Expression", "3", "Annoyed",
+                                                "Speak", "Livewire 3",
+                                                "Yeah, what gives!?",
+                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                "Speak", "Livewire 1",
+                                                "Heh, you snooze, you lose, girls.♥ 'sides, you'll get your turns, too. Now someone stop griping and unwrap him so we can get started.♥ After all, the faster I'm done with him, the sooner you can enjoy him too, right?♪",
+                                                "ChangeImageLayer", "Expression", "3", "Base", "ChangeImageLayer", "Expression", "2", "LickLips",
+                                                "Huffing poutily but choosing not to argue, the other two matter-of-factly yank down your pants, letting your now full erection spring free and slap against the Livewire's pussy, the masked shortstack wiggling in your embrace as she uses a hand to push her underwear aside, an eager smile easily guessable behind the black neon-stained piece of fabric covering her face.",
+                                                "Meanwhile, you can feel your testes getting opportunistically lavished with a few smooches and licks by the other voltlins who make sure you're nice and ready for their comrade, clearly looking forward to having their turn as they reluctantly draw back to give the early bird free rein, struggling to contain their lust as they shamelessly ogle the two of you.",
+                                                "As if on cue, the diminutive monster girl in your arms doesn't disappoint and promptly gets to the main course, assertively lifting her wide hips before slamming them down to expertly engulf your entire dick in one fell swoop, not giving you a moment to adjust before she carries on by greedily swinging her hips, purring before your pleasure-slack face while your hands unthinkingly gravitate to her plump, jiggly ass.",
+                                                "ChangeImageLayer", "Expression", "1", "OralOffer",
+                                                "Speak", "Livewire 1",
+                                                "Don't be shy, King. You chose to pay the toll, so you might as well enjoy it to the fullest and {i}fuck me{/i} like you mean it.♥",
+                                                "ChangeImageLayer", "Expression", "3", "Smug",
+                                                "Static energy arcs over the masked woman's horns as she gazes at you lustfully, the currently idle duo watching and giggling as they sneakily send their own jolts of energy dancing across both of you in an alluring supercharge that suddenly brings your brain alight with the need to {i}fuck{/i}!",
+                                                "Immediately, you feel any other preoccupation in your mind get eclipsed by the crackling rush of libido that suffuses your body, the electric impulse getting your hips frantically thrusting against your aloft partner on instinct to her moaning content, obscene wet clapping sounds of sex now echoing in the alleyway from your energetic swinging.",
+                                                "ChangeImageLayer", "Expression", "1", "LickLips",
+                                                "Gasping and reeling under the helpless surge of voltaic lust, you give your lover's thick ass a squeeze while she purrs and rubs her plump tits against your chest, steamy breaths escaping from her facemask as you now unrestrainedly carry-fuck her, every ramming impact deep into her sending a resonating jolt through your manhood, the raw euphoria intoxicatingly coaxing you into fucking her even harder and faster.",
+                                                "ChangeImageLayer", "Expression", "3", "Base",
+                                                "Speak", "Livewire 3",
+                                                "Heh, look at him go. This guy's a natural.♥",
+                                                "ChangeImageLayer", "Expression", "2", "OralOffer",
+                                                "Speak", "Livewire 2",
+                                                "He really is... Keep it up, King.♥ And don't forget: you gotta give us all a load.♥",
+                                                "ChangeImageLayer", "Expression", "3", "Smug",
+                                                "Speak", "Livewire 3",
+                                                "So just go wild and {i}spurt spurt spurt{/i}.♥",
+                                                "Their teasing cheers intermix with your partner's depraved moans as you relentlessly pound her while the electric energy circuiting between the Livewires only builds up in intensity, amping up the heart-racing euphoria more and more, so that despite the rutting sex just starting, you already feel your dick throb and your balls tense with need, the left-out duo clearly working to accelerate things so they quickly get a turn.",
+                                                "ChangeImageLayer", "Expression", "1", "Pleasured",
+                                                "Speak", "Livewire 1",
+                                                "Mhhhffff-♥ Ooohn-♥ So frantic-♥ Hahhh-♥ Fill me up, stud-♥",
+                                                "PlayerOrgasm", "1", "ChangeImageLayer", "Expression", "1", "Orgasm",
+                                                "Her hot breathy moans and perverted panting whispers snap the last wire of resistance in your senses, making you yelp in pleasure as the two of you slam your hips together in mating union while a staticky burst rushes across your bodies, leaving you spasming in mind-blanking delight as you pour rope after rope of seed deep into the slutty shortstack's greedy womb.",
+                                                "Speak", "Livewire 1",
+                                                "Aaaaahh...♥ Sho good...♥\n\n...Say, you wouldn't mind going again, right?-",
+                                                "ChangeImageLayer", "Expression", "1", "PanicComical", "ChangeImageLayer", "Expression", "2", "Base",  "ChangeImageLayer", "Expression", "3", "Base",
+                                                "Reeling in swooning orgasmic ecstasy, you're only given a moment to indulge in your afterglow and consider the sneaky Livewire's cheeky offer before the other two authoritatively yank her off of you and set her down, leaving her sputtering in indignation while one of her comrades grabs your hips and orients your dizzy frame towards the nearby wall...",
+                                                "ChangeImageLayer", "Expression", "2", "OralOffer",
+                                                "... where the third ganger is already whorishly bent over and temptingly shaking her wide hips to shamelessly entice you, punctuating her brazen show by giving her thick ass a playful spank that makes her curves obscenely wobble before your eyes.",
+                                                "Speak", "Livewire 2",
+                                                "Don't keep me waiting, King.♥",
+                                                "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "Expression", "2", "LickLips",
+                                                "While you vapidly stare at her lasciviously swaying rear and woozily take a tottering step forward, one of the other voltlins suddenly gives you a push that bumps you ahead and leaves your still erect manhood twitchingly rubbing against the diminutive woman's ass, the plush contact sending a staticky shiver through your entire body that leaves you panting hotly as you wantonly grab and grope her plump butt.",
+                                                "ChangeImageLayer", "Expression", "2", "Pleasured",
+                                                "A lewd titter echoes between the trio, including one promptly stifled into a moan as you draw back and thrust into your temptress' drooling pussy on autopilot, your rampaging lust doing all the thinking as you powerfully swing your hips into hers, every womb-kissing impact making her ample pillowy butt wobble eye-catchingly from your frantic pounding.",
+                                                "Speak", "Livewire 2",
+                                                "Ohhhn-♥ Yes-!♥ Come on, King-♥ Give it to me-♥",
+                                                "ChangeImageLayer", "Expression", "2", "OralOffer",
+                                                "She gasps out in excitement while letting you completely dominate her fuckable shortstacked frame, the static energy conjured by your sexy ambushers still excitedly jumping across their horns and into you, leaving your throbbing erection a leaky, needy mess, every deep-striking thrust flooding you ever more imperiously with the urge to cum, leaving your tongue lolling out as you pant and huff amid the sloppy animalistic mating.",
+                                                "ChangeImageLayer", "Expression", "1", "LickLips",
+                                                "Speak", "Livewire 1",
+                                                "Oh wow,♥ he's really getting into it.♥ Poor Mister Adventurer must have been {i}really{/i} pent-up.♥",
+                                                "ChangeImageLayer", "Expression", "3", "Sparkling",
+                                                "Speak", "Livewire 3",
+                                                "Hurry, hurry, King~♥ Cum in her so you can give me a load, too.♥",
+                                                "ChangeImageLayer", "Expression", "3", "Smug",
+                                                "You gasp as the electrifying arcs suddenly amp up under the eager voltlin's excited impulse, leaving you and your current sex partner moaning obscenely as you redouble your swings and fuck her senseless against the wall in a rutting frenzy, greedily and indulgently groping at her jiggly curves as you crash your hips against hers over and over, tensing ecstasy rapidly welling up in your loins.",
+                                                "PlayerOrgasm", "1", "ChangeImageLayer", "Expression", "2", "Orgasm",
+                                               
+                                                "Soon enough, after one more mind-blanking impact, you hilt yourself deep inside your slutty lover's spastically clenching pussy, letting the electrifying heat overtake you as you unload your hot semen into her, both of you loudly moaning in delight as you shudder in climactic unison.",
+                                                "ChangeImageLayer", "Expression", "1", "Base",
+                                                "ChangeImageLayer", "Expression", "2", "LickLips",  "ChangeImageLayer", "Mask", "3", "", "ChangeImageLayer", "Expression", "3", "OralOffer",
+                                                "Unthinkingly, you keep quiveringly shaking your hips to make sure that you've blown your full load deep into the cum-hungry shortstack, but as soon as you start drawing back, you're grabbed by static-laced, tingle-inducing hands and turned towards the third Livewire who's squatting in place with her mask pulled down, making vulgar, unambiguously tempting oral gestures with her fingers.",
+                                                "Speak", "Livewire 3",
+                                                "C'mon, stud, you're not done yet.♪ I want mine down my throat.♥",
+                                                "Stumbling forward under another helpful nudge, you stagger towards the finger-pumping monster girl and reflexively grab onto her horns for support, the contact making you yelp as raw arousal suddenly jolts straight into your body, your eyes going wide as your sputtering, buzzing libido is inflamed all over again!",
+                                                "Without a second thought, you thrust into the voltlin's warm and inviting mouth, the gluttonous gang member effortlessly swallowing your whole shaft and immediately getting to work lovingly licking and sucking on your trembling, overworked erection, clearly eager to get a nice, hot load to feast on as well.",
+                                                "ChangeImageLayer", "Expression", "3", "LickLips",
+                                                "Initially, you feel your muscles uncontrollably seize under the electrifying contact and powerful assault of oral pleasure, then you sigh as the static energy simmers down and your fellating partner sets her hands on your hips for support, helpfully guiding you into giving her steady thrusts rather than frantic pounding, her soft lips and lusty upward gaze making your heart race as her tongue runs along the underside of your shaft.",
+                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                "Speak", "Livewire 1",
+                                                "Isn't she nice for letting you calm down and pace yourself, hehe.~",
+                                                "ChangeImageLayer", "Expression", "2", "OralOffer",
+                                                "Speak", "Livewire 2",
+                                                "Mhhh...♥ Would be more fun if we could just keep him at it all day and take our time molding him into the {i}perfect{/i} boy toy King... But a toll is a toll.♥",
+                                                "ChangeImageLayer", "Expression", "3", "OralOffer",
+                                                "The third adds something to their lecherous banter, but it's muffled by your dick as she slurps and sucks along it in time with your rhythmic thrusts, slight oozing volts of energy coursing through her horns and right into you the whole time, leaving your shaft excitedly throbbing and leaking precum which the Livewire thirstily gulps down, every poured drop getting swiftly lapped up by her swishing tongue.",
+                                                "Having now nicely eased you into a consistent pace, she slips one hand down from your waist to lovingly massage and graze your tensing balls with her long-nailed fingers, her delicate attentions sending tingly jolts of affectionate pleasure straight into your loins, amping up every greedy suck and kiss she gives to your manhood and submerging your lust-soaked mind in rising euphoria.",
+                                               
+                                                "PlayerOrgasm", "1", "ChangeImageLayer", "Expression", "3", "Pleasured",
+                                                "Enthrallingly guided by her vacuuming smooches, doting licks, and groping caresses, you let the fellating ecstasy grow hotter and hotter in your waist, until with one more hilting thrust, you go over the edge, stuffing her throat with your dick and trembling as you pour rope after rope into her which she happily gulps down with muffled moans, lazily toying with her pussy all the while with a blissful expression.",
+                                                "ChangeImageLayer", "Expression", "3", "LickLips",
+                                                "Your vision blurring under the third consecutive rush of pleasure, you feel like you're going to lose your balance and crumple as she keeps suckling your manhood and gulping down your cum, until she frees your dick from her tempting lips with a wet pop, giving your tip a parting smooch before straightening out and striding back over to the other two Livewires, leaving you woozily swaying as you recover from your 'payment'.",
+                                                "IfPlayerSpiritGone", "NoMoreSpirit",
+                                                "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "Expression", "2", "Base", "ChangeImageLayer", "Expression", "3", "Base",
+                                                "Shakily, you take deep breaths to steady yourself while turning towards the trio, a treacherously tempting shiver of trepidant lust electrically coursing through you as you wonder if they're going to renege on their agreement and take advantage of your weakness, though their now relaxed expressions lead you to believe you're out of trouble, making relief wash down your body... along with perhaps a tinge of disappointment?",
+                                                "ChangeBGM", "music/Capital/Nobody_City.mp3",
+                                                "ChangeImageLayer", "Expression", "3", "Sparkling",
+                                                "Speak", "Livewire 3",
+                                                "Hahhhhh~♥ That was fun!♥",
+                                                "ChangeImageLayer", "Expression", "1", "Smug",
+                                                "Speak", "Livewire 1",
+                                                "Sure was. Be sure to stop by again whenever you want, King.♥",
+                                                "ChangeImageLayer", "Expression", "2", "LickLips",
+                                                "Speak", "Livewire 2",
+                                                "Especially if you're looking to get wrung dry.♥",
+                                                "DisplayCharacters",
+                                                "EndLoop",
+                                                "The three of them then happily walk off, leisurely chatting amongst themselves about this or that as they go their own way, occasionally mentioning you with horny giggles while you finally get to redress yourself and recover, leaving you free to proceed with your peregrinations as you want, though with a persistent, electric ache lingering in your still helplessly half-erect dick.",
+                                               
+                                                "DisplayCharacters",
+                                                "EndLoop",
+                                                "ChangeFetish", "Breasts", "3",
+                                                "ChangeFetish", "Oral", "3",
+                                                "ChangeFetish", "Sex", "3",
+                                                "ChangeSensitivity", "Magic", "5",
+                                                "ChangeSensitivity", "Sex", "5",
+                                                "IfHasPerk", "Rut", "MoreRut",
+                                                "ChangeFetish", "Rut", "20",
+                                                "GetEventAndSetChoice", "AlleywayErosAphrodesia", "3", "Frenly",
+                                                "IfFetishLevelEqualOrGreater", "Rut", "100", "GainRut",  
+
+                                                "JumpToScene", "PostEventStuffs"
+                                            ]
+                                },
+
+                                          {
+                                            "NameOfScene": "NoMoreSpirit",
+                                            "theScene": [
+                                                          "ChangeImageLayer", "Expression", "1", "PanicComical", "ChangeImageLayer", "Expression", "2", "PanicComical", "ChangeImageLayer", "Expression", "3", "AvertingGaze",
+                                                          "However, now that you're finally given a moment to catch your breath, you realize that you've underestimated how draining the back-to-back frantic sex with the thirsty shortstacks would be your reserves being now completely spent as you immediately find out when you actually {i}do{/i} collapse under the eyes of the flabbergasted trio.",
+                                                          "Speak", "Livewire 1",
+                                                          "Yo, he's {i}not{/i} okay!",
+                                                          "Speak", "Livewire 3",
+                                                          "Catch him!!!",
+                                                          "PlayBlackOut",     
+                                                          "Scrambling into action, the gobsmacked voltlins rush forward to break your fall, but before you hit the ground or their arms, you feel your recall stone activate and promptly whisk you away, your ambushers vanishing from your sight but sticking to your defeated, blissed-out mind, a part of you already raring to return to them as soon as you can in order to experience their electrifying techniques all over again...",
+                                                          "ChangeFetish", "Breasts", "3",
+                                                          "ChangeFetish", "Oral", "3",
+                                                          "ChangeFetish", "Sex", "3",
+                                                          "ChangeSensitivity", "Magic", "5",
+                                                          "ChangeSensitivity", "Sex", "5",
+                                                          "IfHasPerk", "Rut", "MoreRutGameOver",
+                                                          "ChangeFetish", "Rut", "20",
+                                                          "IfFetishLevelEqualOrGreater", "Rut", "100", "GainRutGameOver",  
+                                                          "EndBlackOut",     
+                                                          "GameOver"
+                                                      ]
+                                        },
+                                          {
+                                            "NameOfScene": "MoreRut",
+                                            "theScene": [
+                                                          "ChangePerkDuration", "Rut", "8",
+                                                          "JumpToScene", "PostEventStuffs"
+                                                      ]
+                                        },
+
+                                          {
+                                            "NameOfScene": "MoreRutGameOver",
+                                            "theScene": [
+                                                          "ChangePerkDuration", "Rut", "8",
+                                                          "EndBlackOut",    
+                                                          "GameOver"
+                                                      ]
+                                        },
+
+                                          {
+                                            "NameOfScene": "GainRutGameOver",
+                                            "theScene": [
+                                                          "GivePerk", "Rut",
+                                                          "EndBlackOut",    
+                                                          "GameOver"
+                                                      ]
+                                        },
+                                        {
+                                          "NameOfScene": "GainRut",
+                                          "theScene": [
+                                                        "In fact, despite your best efforts to calm yourself and focus on something else than the fresh memory of the greedy shortstacks' delightfully squeezing pussies and slurping mouth, your lewd daydreaming infatuation and twitching erection only seem to get worse, forcing you to ultimately settle on stuffing it back into your pants even as it needily twinges with lust, all the while you overhear enlightening idle whispers from the trio.",
+                                                        "Speak", "Livewire 3",
+                                                        "{size=-8}Uh- I don't know if you noticed, girls, but I think we sent him into rut-?{/size}",
+                                                        "Speak", "Livewire 1",
+                                                        "{size=-8}It's fine, that just means the next time we see him, he'll be all the more into pounding us over and over.♥{/size}",
+                                                        "Speak", "Livewire 2",
+                                                        "{size=-8}Also, rut doesn't just happen like that. If he caught it, it means that in the first place, he had already been indulging {i}quiiiite{/i} a bit in voltlin-fucking... And hey, it's not dangerous or permanent or nothing. He can always just go home, take a break, and let it wear off.{/size}",
+                                                        "GivePerk", "Rut",
+                                                        "Their chatting fades away for good as they turn a corner into the Ars Delusian maze of alleyways, leaving you with a bit more information about your current condition, and at liberty to decide what to do next...\n\nMaybe look for more Livewires to fuck?",
+                                                        "JumpToScene", "PostEventStuffs"
+                                                    ]
+                                        },
+
+
+
+
+                              {
+                                "NameOfScene": "LivewireFren",
+                                "theScene": [
+                                              "DisplayCharacters",
+                                                    "1",
+                                                    "1",
+                                                    "1",
+                                              "EndLoop",
+                                              "ChangeImageLayer", "Expression", "2", "LickLips", "ChangeImageLayer", "Expression", "3", "Smug",
+                                              "One leaving her restfully slouching posture while the other stashes away her spray can, they close in with lustful expressions, and before you can think about what you should do, as if on cue, the sound of a kicked can behind you announces the arrival of a third voltlin, her presence leaving you entrapped between the trio in the tight alleyway, the three of them stopping only a few feet away from you with greedily gleaming eyes.",
+                                              "ChangeImageLayer", "Expression", "1", "Sparkling", "ChangeImageLayer", "Expression", "2", "Sparkling", "ChangeImageLayer", "Expression", "3", "Sparkling",
+                                              "But just as you think things are about to get heated, the masked posse light up all at once with sparkling eyes and cheers of approval, the diminutive women suddenly all smiles and the previous tension completely gone as they give you praising back pats and friendly nudges, as if greeting a treasured comrade.",
+                                              "Speak", "Livewire 3",
+                                              "Yo, nice clothes, King!♪",
+                                              "Speak", "Livewire 2",
+                                              "Even adventurers can know true {i}style{/i}, huh?♪",
+                                              "Speak", "Livewire 1",
+                                              "Yeah, you clearly get what fashion is about.♪",
+                                              "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "Expression", "2", "Base", "ChangeImageLayer", "Expression", "3", "Base",
+                                              "The Livewires sagely nod at their own words, the thoughtful break letting the trio come down from their celebratory excitement and switch to more serious expressions as one of them carries on.",
+  
+                                              "IfChoice", "1", "Warning", "LivewireFrenIntroEnd",
+                                              "SetChoice", "1", "Warning",
+  
+                                              "ChangeImageLayer", "Expression", "1", "AvertingGaze",
+                                              "Speak", "Livewire 1",
+                                              "So, huh... Just to get that out of the way, you're aware that as an adventurer, it's, like, {i}not safe{/i} to just waltz down alleyways, right?",
+                                              "ChangeImageLayer", "Expression", "3", "LickLips",
+                                              "Speak", "Livewire 3",
+                                              "Yeah, a cute lone guy like you is just crying out for attention. Anybody lurking around could take their chance at gobbling you up when you least expect it, stud.",
+                                              "ChangeImageLayer", "Expression", "2", "Sparkling",
+                                              "Speak", "Livewire 2",
+                                              "Good thing you ran into us, huh?♪",
+                                              "ChangeImageLayer", "Expression", "2", "Base",
+                                              "They go through a round of half-friendly, half-lecherous chuckles, followed by silence as they don't seem to have much else to say on the subject, one of them eventually volunteering before the pause becomes awkward.",
+                                              "JumpToScene", "LivewireFrenIntroEnd"
+                                          ]
+                              },
+                                      {
+                                        "NameOfScene": "LivewireFrenIntroEnd",
+                                        "theScene": ["ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "Expression", "2", "Base", "ChangeImageLayer", "Expression", "3", "Base",
+                                                      "Speak", "Livewire 1",
+                                                      "{i}Anyways{/i}, what's up, King? Anything the Livewires can help you with?",
+                                                      "JumpToScene", "FrenMenu"
+                                                  ]
+                                      },
+                              {
+                                "NameOfScene": "FrenMenu",
+                                "theScene": [
+                                              "Menu",
+                                                "Chat.",
+                                                "Sex?",
+                                                "RequiresChoice", "2", "Segs",
+                                                "'Pay' a Toll.",
+                                                "RequiresChoice", "2", "Segs",
+                                                "Battlefuck!",
+                                                "I'll be on my way!",
+                                            "EndLoop"
+                                          ]
+                              },
+                                    {
+                                      "NameOfScene": "I'll be on my way!",
+                                      "theScene": [ "ChangeImageLayer", "Expression", "1", "Sparkling",
+                                                    "Speak", "Livewire 1",
+                                                    "A'ight, see ya later!",
+                                                    "ChangeImageLayer", "Expression", "2", "AvertingGaze",
+                                                    "Speak", "Livewire 2",
+                                                    "{size=-8}So, huh, we're {i}not{/i} shaking him down?{/size}",
+                                                    "ChangeImageLayer", "Expression", "3", "Base",
+                                                    "Speak", "Livewire 3",
+                                                    "{size=-8}Eh, the mood's kinda not right for that anymore.{/size}",
+                                                    "ChangeImageLayer", "Expression", "2", "Sparkling",
+                                                    "Amid their hushed exchanges, all three of them treat you to a mixture of excited and lazy waves as you depart while they return to happily chatting and gazing at the wall in front of them in search of inspiration, one of them opening what looks to be a bag of snacks while you're left to go back to your own business in peace.",
+                                                    "GetEventAndSetChoice", "AlleywayErosAphrodesia", "3", "Frenly",
+                                                    "JumpToScene", "PostEventStuffs"
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "Sex?",
+                                      "theScene": [ "ChangeImageLayer", "Expression", "1", "LickLips", "ChangeImageLayer", "Expression", "2", "OralOffer", "ChangeImageLayer", "Expression", "3", "Sparkling",
+                                                    "At your offer, the trio's stares brighten up with lewd enthusiasm, and they all look like they're going to jump you right then and there, until one of them catches herself and stops the others.",
+                                                    "ChangeImageLayer", "Expression", "1", "AvertingGaze", "ChangeImageLayer", "Expression", "3", "Annoyed",
+                                                    "Speak", "Livewire 1",
+                                                    "Oh! Huh- Wait, girls, we're on patrol duty. We can't just, like, have a hook-up...",
+                                                    "ChangeImageLayer", "Expression", "2", "AvertingGaze",
+                                                    "Speak", "Livewire 2",
+                                                    "Oh. Right. Shit.",
+                                                    "ChangeImageLayer", "Expression", "3", "AvertingGaze",
+                                                    "Speak", "Livewire 3",
+                                                    "I mean... If King here {i}wants{/i} to, he can, like, pay the toll anyway, or just fight us no-holds-barred style, but mind that we won't be going easy on you. We'll have to take it seriously and {i}really{/i} milk you dry.",
+                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                    "Speak", "Livewire 1",
+                                                    "Yeah. If you're good with that, just say the word and we can get right on it, but keep in mind that The Boss' rules are the rules: you'll either end up three loads lighter or we'll do our best to fuck you silly without mercy.",
+                                                    "ChangeImageLayer", "Expression", "2", "OralOffer",
+                                                    "Speak", "Livewire 2",
+                                                    "Sounds fun, right?",
+                                                    "ChangeImageLayer", "Expression", "3", "Smug",
+                                                    "The other two definitely seem to think so as well, looking like they wouldn't mind either the 'donation' or the challenge, but also proving unambiguously and perhaps surprisingly unwilling to budge on their responsibilities.",
+                                                    "SetChoice", "2", "Segs",
+                                                    "JumpToScene", "FrenMenu"
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "'Pay' a Toll.",
+                                      "theScene": [
+                                                    "ChangeImageLayer", "Expression", "3", "Base",
+                                                    "Speak", "Livewire 3",
+                                                    "That's something I like to hear.♪",
+                                                    "ChangeImageLayer", "Expression", "1", "LickLips",
+                                                    "Speak", "Livewire 1",
+                                                    "I hope you can still walk afterward, stud.",
+                                                    "ChangeImageLayer", "Expression", "2", "LickLips",
+                                                    "Giggling lecherously, the three of them surround you with overt arousal, your offer seeming to have immediately flipped their switches as they beckon you with lustful grins and sleazy poses.",
+                                                    "JumpToScene", "TollPayingScene"
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "Battlefuck!",
+                                      "theScene": [  
+                                                    "ChangeImageLayer", "Expression", "1", "Base",
+                                                    "Speak", "Livewire 1",
+                                                    "Oooh, {i}someone{/i} is feeling daring.♪",
+                                                    "ChangeImageLayer", "Expression", "2", "Smug",
+                                                    "Speak", "Livewire 2",
+                                                    "Heh, if you're sure, you kinky boy.♥",
+                                                    "ChangeImageLayer", "Expression", "3", "LickLips",
+                                                    "Speak", "Livewire 3",
+                                                    "Just don't expect us to take it easy on you.",
+                                                    "CombatEncounter",
+                                                      "RunningWontSkipEvent",
+                                                      "Voltlin Livewire",
+                                                      "Voltlin Livewire",
+                                                      "Voltlin Livewire",
+                                                    "StartCombat",
+                                                    "IfInExploration", "EndEvent",
+                                                    "GoBackToStoredEvent"
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "Chat.",
+                                      "theScene": [ "ChangeImageLayer", "Expression", "1", "Base",
+                                                    "Speak", "Livewire 1",
+                                                    "Oh, sure, why not.",
+                                                    "ChangeImageLayer", "Expression", "2", "OralOffer",
+                                                    "Speak", "Livewire 2",
+                                                    "Any {i}burning{/i} questions?",
+                                                    "ChangeImageLayer", "Expression", "3", "Sparkling",
+                                                    "Speak", "Livewire 3",
+                                                    "If you're lost, we can probably give you directions too.♪",
+                                                    "JumpToScene", "ChatMenu"
+                                                ]
+                                    },
+                                    {
+                                      "NameOfScene": "ChatMenu",
+                                      "theScene": [
+                                                    "Menu",
+                                                      "Livewires?",                                                    
+                                                      "What were you doing with that wall?",
+                                                      "I just bought this accessory for the stats, though...",
+                                                      "RequiresChoice", "3", "Adventurer",
+                                                      "You know {i}I'm{/i} an adventurer, right?",
+                                                      "Directions?",
+                                                      "Done chatting.",
+                                                  "EndLoop"
+                                                ]
+                                    },
+                                          {
+                                            "NameOfScene": "Done chatting.",
+                                            "theScene": [
+                                                        "JumpToScene", "FrenMenu"
+                                                      ]
+                                          },
+                                          {
+                                            "NameOfScene": "Livewires?",
+                                            "theScene": [
+                                                        "ChangeImageLayer", "Expression", "1", "Sparkling", "ChangeImageLayer", "Expression", "2", "AvertingGaze",
+                                                        "One of them immediately responds with gusto, while another scratches her head with a frown.",
+                                                        "Speak", "Livewire 1",
+                                                        "We're a group of streetwise, counterculture, graffiti-loving, no-fucks-given voltlins who follow The Boss!",
+                                                        "Speak", "Livewire 2",
+                                                        "... Shouldn't you have asked about this back at Graffiti Queen, though?",
+                                                        "ChangeImageLayer", "Expression", "3", "Base",
+                                                        "Speak", "Livewire 3",
+                                                        "Yeah, we're not the Ars Delusian Tourism Agency, you know.",
+                                                        "ChangeImageLayer", "Expression", "1", "AvertingGaze",
+                                                        "Speak", "Livewire 1",
+                                                        "Sheesh, you guys don't gotta get mean about it.",
+                                                        "ChangeImageLayer", "Expression", "2", "PanicComical", "ChangeImageLayer", "Expression", "3", "PanicComical",
+                                                        "Speak", "Livewire 3",
+                                                        "I-I didn't mean it like that, okay-?!",
+                                                        "ChangeImageLayer", "Expression", "2", "Annoyed", 
+                                                        "Speak", "Livewire 2",
+                                                        "And {i}come on{/i}, it gets {i}really{/i} exhausting having to give the whole spiel to every bumpkin who bumps into you!",
+                                                        "ChangeImageLayer", "Expression", "3", "Annoyed", 
+                                                        "Speak", "Livewire 3",
+                                                        "Y-Yeah! Our job's to patrol and stuff, not be a welcoming committee... That's what those 'Greetings and salutations' girls at ArsDe's entrance are for.",
+                                                        "The two grumbling Livewires are clearly carrying a chip on their shoulder on the subject, the third one sighing wearily at their irritation, but not pressing the issue, instead turning back to you to wrap things up.",
+                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                        "Speak", "Livewire 1",
+                                                        "{i}Anyways.{/i} To keep it brief, we prey on adventurers and help run the city. Think of us as the other half of the coin to the security voltlins.",
+                                                        "Seems like that's all the information you're going to get from them.",
+                                                        "SetChoice", "3", "Adventurer",  
+                                                        "JumpToScene", "ChatMenu"
+                                                      ]
+                                          },
+                                          {
+                                            "NameOfScene": "What were you doing with that wall?",
+                                            "theScene": [
+                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                        "Speak", "Livewire 1",
+                                                        "Oh, we're gonna paint it while we watch the area.",
+                                                        "ChangeImageLayer", "Expression", "2", "Base",
+                                                        "Speak", "Livewire 2",
+                                                        "Yeah, gotta find something to do to kill time while waiting for adventurers to shake down, y'know. And graffitiing's something of a tradition among Livewires, so we practice whenever we get the opportunity, in order to keep our skills sharp, express ourselves, and put our mark on the city.",
+                                                        "As if to exemplify, the second voltlin takes one of the cans at her sides and shakes it with a practiced motion before spraying a puff of its colored contents across a bare spot of the wall, covering it in a splattering spray of paint with a distinctive hiss.",
+                                                        "ChangeImageLayer", "Expression", "3", "AvertingGaze",
+                                                        "Speak", "Livewire 3",
+                                                        "... Don't expect us to pull off some masterpiece at the drop of a hat, though. This deep into the alleys, most of the tags you'll see are practice material, and we don't typically use stencils or coordinate with each other or anything, so it's honestly kind of a mess.",
+                                                        "ChangeImageLayer", "Expression", "1", "Sparkling",
+                                                        "Speak", "Livewire 1",
+                                                        "I think it's got charm too, though! The Boss got such a great deal letting us get away with legal vandalism just for doin' our job.♪",
+                                                        "ChangeImageLayer", "Expression", "2", "Smug",
+                                                        "Speak", "Livewire 2",
+                                                        "Yeah, some dusty traditionalists at the City Council weren't too keen on the idea, but she managed to make it pass with some muscling, and also by convincing them that it's part of the future of Lucidian culture.",
+                                                        "ChangeImageLayer", "Expression", "3", "Base",
+                                                        "All three nod in approval and dreamily sigh in appreciation, their deep respect and reverence for The Boss plain to see. And with that, it seems like it's all they're going to say on the subject, but as the spray-painting one returns her can back to its holster, she looks to you and adds as an afterthought.",
+                                                        "ChangeImageLayer", "Expression", "2", "Base",
+                                                        "Speak", "Livewire 2",
+                                                        "Oh, and also, in case you're concerned, don't worry about any of us spraying you in the face or something with paint. That'd just be rude, unsexy, and, like, {i}unartistic{/i}. No Livewire would stoop to that..",    
+                                                        "SetChoice", "3", "Adventurer",                                              
+                                                        "JumpToScene", "ChatMenu"
+                                                      ]
+                                          },
+                                          {
+                                            "NameOfScene": "I just bought this accessory for the stats, though...",
+                                            "theScene": [
+                                                        "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "Expression", "2", "Smug", "ChangeImageLayer", "Expression", "3", "Base",
+                                                        "The trio don't seem bothered by the idea, your confession getting a collective nonchalant shrug out of them while one of them responds.",
+                                                        "Speak", "Livewire 2",
+                                                        "Nothing wrong with that. Shows that it's quality stuff, and it might just be your first step into {i}getting it{/i}, ya know? And at worst, it's still good extra advertisement for the Livewires, heh.",
+                                                        "Speak", "Livewire 1",
+                                                        "Yeah, don't sweat it, dude. Sometimes, you gotta fake it till you make it, or something.",
+                                                        "ChangeImageLayer", "Expression", "3", "AvertingGaze",
+                                                        "Speak", "Livewire 3",
+                                                        "{size=-8}Part of why I joined the Livewires, to be honest.{/size}",
+                                                        "ChangeImageLayer", "Expression", "1", "Sparkling", "ChangeImageLayer", "Expression", "2", "Sparkling",
+                                                        "The third one's quiet murmuring doesn't seem to be heard by the others as they look at you with benevolent smiles, like you're a flower yet to bloom.",                                                    
+                                                        "JumpToScene", "ChatMenu"
+                                                      ]
+                                          },
+                                          {
+                                            "NameOfScene": "You know {i}I'm{/i} an adventurer, right?",
+                                            "theScene": [
+                                                        "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "Expression", "2", "PanicComical", "ChangeImageLayer", "Expression", "3", "PanicComical",
+                                                        "Speak", "Livewire 1",
+                                                        "I mean, du-",
+                                                        "Speak", "Livewire 2",
+                                                        "Y-You {i}are?!{/i} Shouldn't we, like, get him!?",
+                                                        "Speak", "Livewire 3",
+                                                        "H-Hell, I didn't even realize!",
+                                                        "ChangeImageLayer", "Expression", "1", "Annoyed", "ChangeImageLayer", "Expression", "2", "Smug", "ChangeImageLayer", "Expression", "3", "Smug",
+                                                        "The first Livewire demonstratively facepalms before staring at the other two with a mix of consternation and annoyance as they assume 'battle' stances, looking ready to pounce you until she stops them with deadpan flatness.",
+                                                        "ChangeImageLayer", "Expression", "2", "AvertingGaze", "ChangeImageLayer", "Expression", "3", "AvertingGaze",
+                                                        "Speak", "Livewire 1",
+                                                        "Guys... {i}Really?{/i} Bit late to suddenly jump his bones, don't you think?",
+                                                        "ChangeImageLayer", "Expression", "1", "Sparkling",
+                                                        "Speak", "Livewire 1",
+                                                        "'sides, who cares. He shops at GQ, he's cool. I'm sure The Boss would agree.",
+                                                        "ChangeImageLayer", "Expression", "2", "Base",
+                                                        "Speak", "Livewire 2",
+                                                        "Well, I guess...",
+                                                        "ChangeImageLayer", "Expression", "3", "Base",
+                                                        "Speak", "Livewire 3",
+                                                        "Yeah, and I'm sure he'll stumble into someone else who'll take care of him anyway. Especially if he tries strolling into HQ.",
+                                                        "ChangeImageLayer", "Expression", "1", "Sparkling",
+                                                        "Speak", "Livewire 1",
+                                                        "{i}Exactly{/i}. So we can just relax, chat, have some snacks, paint, and not think too hard about it.",
+                                                        "They share a content collective nod as they unanimously decide not minding it is the optimal plan for everyone involved. Seems like laziness played no small part in your current peaceful arrangement...",
+                                                        "JumpToScene", "ChatMenu"
+                                                      ]
+                                          },
+                                          {
+                                            "NameOfScene": "Directions?",
+                                            "theScene": [
+                                                        "ChangeImageLayer", "Expression", "3", "Sparkling",
+                                                        "Speak", "Livewire 3",
+                                                        "Sure! If you're trying to get to the Starlight District, you just need to make your way back to the Eros District and go from there. And from the Starlight District, you can go through the alleyways to the Industrial District, and from either of those districts, you can make your way to the Aphrodisia District, from which you can-",
+                                                        "ChangeImageLayer", "Expression", "2", "AvertingGaze", "ChangeImageLayer", "Expression", "1", "AvertingGaze",
+                                                        "The more you're listening, the more lost you feel, the dizzying avalanche of confusing information getting mercifully stopped by one of the other two Livewires who seem to realize that their comrade's help is doing more harm than good.",
+                                                        "Speak", "Livewire 2",
+                                                        "Uh, I don't think these are very practical directions...",
+                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                        "Speak", "Livewire 1",
+                                                        "Yeah, you gotta give, like, street names and stuff. He's not from around here, remember?",
+                                                        "ChangeImageLayer", "Expression", "3", "Annoyed",
+                                                        "Speak", "Livewire 3",
+                                                        "Huh, really? I don't bother remembering any of that stuff. I just know my way around, y'know? But let me try again...",
+                                                        "ChangeImageLayer", "Expression", "1", "AvertingGaze", "ChangeImageLayer", "Expression", "2", "AvertingGaze", "ChangeImageLayer", "Expression", "3", "Base",
+                                                        "The Livewire hums pensively as she seems to be focusing on a mental map of the area while the other two are wincing next to her, clearly expecting the worst.",
+                                                        "ChangeImageLayer", "Expression", "3", "Sparkling",
+                                                        "Speak", "Livewire 3",
+                                                        "Okay! So the best way to get your bearings is to go back to Starlight, which you can do by taking a right, then go straight ahead until you see the Yuki-Soba shop, then take to the rooftops, then skip ahead until you get to Fizzle's Lamppost, and there you are! ... Or if you're in a hurry, you can try and get in touch with Piper, but if you haven't gotten on her good side yet, you'll have to-",
+                                                        "ChangeImageLayer", "Expression", "2", "AvertingGaze", "ChangeImageLayer", "Expression", "3", "Annoyed",
+                                                        "Speak", "Livewire 2",
+                                                        "Yeah, no, stop. That's not any better. Like, at all.",
+                                                        "ChangeImageLayer", "Expression", "1", "AvertingGaze",
+                                                        "Speak", "Livewire 1",
+                                                        "Also, the city's layout keeps changing, like, all the time... Didn't Yuki-Soba close a week ago?",
+                                                        "ChangeImageLayer", "Expression", "3", "PanicComical",
+                                                        "Speak", "Livewire 3",
+                                                        "{b}Whu-at!?{/b} No way, it's my favorite noodle place!",
+                                                        "While the Bad Directions Voltlin seems to be going through an existential crisis, one of her comrades sighs and turns back to you with a shrug.",
+                                                        "ChangeImageLayer", "Expression", "2", "Base",
+                                                        "Speak", "Livewire 2",
+                                                        "Well... Looks like your best bet will be to stick to the main streets for now. But don't worry about it, King, you'll get your bearings eventually.",
+                                                        "JumpToScene", "ChatMenu"
+                                                      ]
+                                          },
+
+
+
+                                        {
+                                          "NameOfScene": "Approach",
+                                          "theScene": [                                                        
+                                                      "IfHasItemEquipped", "Tags", "Livewire", "EndLoop", "LivewireFrenApproach",
+                                 
+                                                      "DisplayCharacters",
+                                                        "1",
+                                                        "1",
+                                                        "1",
+                                                      "EndLoop",
+                                                      "ChangeImageLayer", "Expression", "1", "Smug", "ChangeImageLayer", "Expression", "2", "LickLips",
+                                                      "Speak", "Livewire 1",
+                                                      "Oh, it's you again, huh? What's up? You looking to get shaken down again, just for fun?",
+                                                      "ChangeImageLayer", "Expression", "3", "OralOffer",
+                                                      "Speak", "Livewire 3",
+                                                      "Or maybe he wants to try and get 'revenge' on the evil Livewires who robbed him of his cum?♥",
+                                                      "ChangeImageLayer", "Expression", "2", "Base",
+                                                      "Speak", "Livewire 2",
+                                                      "If you're not here for either of those things, stud, then you're barking up the wrong tree. We don't exactly got time to chat with adventurers.",
+                                                      "Menu",
+                                                          "Pay their toll...",
+                                                          "Fight!",
+                                                          "Actually, I'm just leaving-",
+                                                      "EndLoop"
+                                                    ]
+                                        },
+                                                  {
+                                                    "NameOfScene": "Actually, I'm just leaving-",
+                                                    "theScene": [                            
+                                                                 
+                                                                "ChangeImageLayer", "Expression", "1", "AvertingGaze", "ChangeImageLayer", "Expression", "2", "PanicComical", "ChangeImageLayer", "Expression", "3", "PanicComical",
+                                                                "Speak", "Livewire 1",
+                                                                "I... Uh, well, alright, then?",
+                                                                "Speak", "Livewire 2",
+                                                                "Y-Yeah, you already paid, dude, so don't worry and just... be on your way?",
+                                                                "Your back-and-forth seems to have left the trio quite confused, the Livewires continuing to chatter in puzzlement as you turn around and leave them once more.",
+                                                                "ChangeImageLayer", "Expression", "3", "AvertingGaze",
+                                                                "Speak", "Livewire 3",
+                                                                "{size=-5}Wh-What if he's lonely and just wanted company? Bullying someone who's got no friends isn't cool-{/size}",
+                                                                "ChangeImageLayer", "Expression", "2", "AvertingGaze",
+                                                                "Speak", "Livewire 2",
+                                                                "{size=-5}I-I mean, maybe he's into it? Maybe it's a weird kind of kinky play for him?{/size}",
+                                                                "They keep murmuring curiously to each other as you depart, giving them space to go about their painting, snacking, chatting, and whatever else it is that Livewires do.",
+                                                                "GetEventAndSetChoice", "AlleywayErosAphrodesia", "3", "Frenly",
+                                                                "JumpToScene", "PostEventStuffs"
+                                                              ]
+                                                  },  
+                                        {
+                                          "NameOfScene": "LivewireFrenApproach",
+                                          "theScene": [
+                                                        "DisplayCharacters",
+                                                              "1",
+                                                              "1",
+                                                              "1",
+                                                        "EndLoop",
+                                                        "ChangeImageLayer", "Expression", "1", "Base", "ChangeImageLayer", "Expression", "2", "LickLips", "ChangeImageLayer", "Expression", "3", "Sparkling",
+                                                        "As you approach the trio of Livewires once more, they show a variety of curious but welcoming expressions from behind their masked faces.",
+
+                                                        "Speak", "Livewire 1",
+                                                        "You forget something, King?",
+           
+                                                        "JumpToScene", "FrenMenu"
+                                                    ]
+                                        },
+          
+                    {
+                      "NameOfScene": "PostEventStuffs",
+                      "theScene": [ "DisplayCharacters",
+                                      "EndLoop",  
+                                   "IfInExploration", "EndEvent",
+                                   "GoBackToStoredEvent"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "EndEvent",
+                      "theScene": [    "UseHeldBG"
+                                ]
+                    },
+                    
+                    
+
+
+                    
+
+                     {
+                       "NameOfScene": "EventBroke",
+                       "theScene": [   "event broke."
+                                 ]
+                     }
+                ]
+}

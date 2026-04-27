@@ -1,0 +1,844 @@
+{
+    "name": "Feng",
+    "IDname": "StiffFeng",
+    "species": "Undead",
+    "gender": "female",
+    "description": "A woman with pale grey skin and wild silver hair. A small, quite cute hat with a pompom is nestled on the top of her head between her two fluffy wolf ears, but any levity it might bring to her face is overshadowed by her unnervingly pale red eyes and her somewhat menacing toothy grin that reveals a set of dainty, but incredibly dangerous looking fangs.\n\nA red bordered talisman is stuck to the front of her hat and droops over her forehead with several characters written in a language you don't recognize on it.\n\nHer clothing is exotic, consisting of red and gold skin tight silken robes around her B cup breasts, loose and baggy sleeves that show off her slender arms and long, sharp, purple tinted fingernails, and completely bare around her waist, showing off her curvy hips.\n\nA bushy silver wolf's tail pokes out from just above her firm rear, and her long legs are covered with black stockings that clearly emphasize her incredibly muscular and attractive thighs, ending just before her feet which are wearing a pair of red, slipper-like shoes.",
+    "encyclopedia": "",
+    "tags": "none",
+    "generic": "False",
+    "requires": [ "Sigil Of Will-Power"],
+    "skillList": [ "Stiff Hopping", "Grasping Claws", "Stiff Ride", "Chilling Kiss"],
+    "perks": [ "Pacing", "Sex Expert"],
+    "stats": { "lvl": "15",
+              "Exp": "0",
+              "max_hp": "150",
+              "max_ep": "10",
+              "max_sp": "2",
+              "Power": "10",
+              "Technique": "1",
+              "Intelligence": "5",
+              "Allure": "15",
+              "Willpower": "1",
+              "Luck": "10"
+    },
+    "Fetishes": [ "Sex|/|50"],
+    "BodySensitivity": { "Sex": "100",
+              "Ass": "100",
+              "Breasts": "100",
+              "Mouth": "150",
+              "Seduction": "50",
+              "Magic": "100",
+              "Pain": "1",
+              "Holy": "150",
+              "Unholy": "50"
+    },
+    "resistancesStatusEffects": {
+              "Stun": "10000000",
+              "Charm": "0",
+              "Aphrodisiac": "10000000",
+              "Restraints": "100",
+              "Sleep": "100",
+              "Trance": "100",
+              "Paralysis": "0",
+              "Debuff": "10"
+    },
+    "moneyDropped": "500",
+    "ItemDropList": [
+                      {
+                        "name": "Mini Elixir",
+                        "dropChance": "10"
+                      },
+                      {
+                        "name": "Cold Rune",
+                        "dropChance": "20"
+                      },
+                      {
+                        "name": "Indomitable Rune",
+                        "dropChance": "20"
+                      },
+                      {
+                        "name": "Silver Rune",
+                        "dropChance": "5"
+                      }
+                    ],
+    "lossScenes": [
+                    {
+                        "NameOfScene": "Loss",
+                        "move": "",
+                        "stance": "",
+                        "includes": [ ""],
+                        "theScene": [
+                                    "ChangeImageLayer", "Expression","1", "StiffAngry",
+                                    "Feng glares down at your exhausted and panting form.",
+                                    "Speaks",
+                                    "Seriously? ...I'm not... Even... Warmed... Up yet... You... Just... Gave up... Didn't you?",
+                                    "Speaks",
+                                    "I can't... Even... Really do... Anything... To you... Well... Maybe I can...",
+                                    "ChangeImageLayer", "Expression","1", "StiffBase",
+                                    "She tries to lean over, but merely ends up falling over, landing next to you with her arms still outstretched, now pointing up into the air.",
+                                    "Speaks",
+                                    "...Maybe not... Then...",
+                                    "ChangeImageLayer", "Expression","1", "StiffShy",
+                                    "She shivers a little.",
+                                    "Speaks",
+                                    "S-So cold... Next time... At least... Warm me up... Before you... Lose... Please...",
+                                    "You eventually pass out from your loss while Feng lays on the ground next to you, glaring at you angrily as she feebly tries to stand back up..."
+                                  ],
+                        "picture": ""
+                    }
+                  ],
+    "combatDialogue": [
+                        {
+                            "lineTrigger": "SetMusicTo",
+                            "move": "",
+                            "theText": [ "music/Caverns/Purple Planet Music - Tense - Melancholia (1_24) 96bpm.mp3"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Spank",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'You... Can't.. Hurt... Me...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Pain... Won't... Work...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'I... Have... More... Than just... A nice... Ass...'"
+                                        ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Whip",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'You... Can't.. Hurt... Me...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Pain... Won't... Work...'"
+                                        ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Demon Layer",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'Felt... Weird...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|Her stiff body twitches sporadically from the holy magic.",
+                                    "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Going... Blank...♥'",
+                                    "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Haaaa...♥'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Holy Headpat",
+                          "theText": [ "|f|CallCombatEventAndScene|/|FengCombatEvent|/|HolyPat|n|"  ]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Arouse", "Arousara", "Arousero"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Haaa... Actually, touch... me'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Feels... Weird...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|Her stiff body twitches sporadically."]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Electrify",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Haaa... I... Almost... Felt... That...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Feels... Weird...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|Her stiff body twitches sporadically."]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Kiss",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Kiss... Me... Deeper...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Your mouth... Is... So... Warm...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|She gazes at you with longing..."]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Deep Kiss", "Lovingly Rough Kiss", "Skillfully Passionate Kiss", "Misty Kiss", "Sensually Seductive Kiss"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Kiss... Me... More...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'So... Warm...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Going... Blank...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|She gazes into your eyes with longing..."]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Make Out",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Mnnn...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Warm...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|She gazes into your eyes with longing..."]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Penetrate",
+                            "theText": [ "'Yes!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So... Hot... Inside...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Don't... Hold... Back...♥'" ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Thrust", "Channeling Thrust"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So... Warm!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So... Hot...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'More!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Hahhhh...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Starting... To... Loosen... Up...'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Pound", "Multi Thrust", "Empowered Thrust", "Carrying Fuck"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So!♥ Warm!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So!♥ Hot!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So!♥ Good!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Can't... Think!♥",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'H-Harder!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Ohhh!♥'"
+                                    ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Tantric Thrust", "Passionate Lovemaking"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So... Warm!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So... Hot...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'More!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Hahhhh...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Starting... To... Loosen... Up...'"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Anal Penetration",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Yes!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So... Hot... Inside...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Don't... Hold... Back...♥'"]
+                        },
+                        {
+                          "lineTrigger": "HitWithA",
+                          "move": ["Thrust", "Channeling Thrust"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So... Warm!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So... Hot...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'More!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Hahhhh...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Starting... To... Loosen... Up...'"]
+                        },
+                        {
+                          "lineTrigger": "HitWithA",
+                          "move": ["Pound", "Multi Thrust", "Empowered Thrust", "Carrying Fuck", "Anal Piston"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So!♥ Warm!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So!♥ Hot!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So!♥ Good!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Can't... Think!♥",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'H-Harder!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Ohhh!♥'"]
+                        },
+                        {
+                          "lineTrigger": "HitWithA",
+                          "move": ["Tantric Thrust", "Passionate Lovemaking"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So... Warm!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So... Hot...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'More!♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Hahhhh...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Starting... To... Loosen... Up...'"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Breast Caress",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Warming.. Up... My... Chest...?'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Your hands... Are so... Warm...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Hahhhh...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Not... Bad...'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Breast Knead", "Breast Massage", "Breast Fondle"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Warming.. Up... My... Chest...?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Your hands... Are so... Warm...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Hahhhh...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Not... Bad...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'My chest... Is... Tingling...♥'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Suckle",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'Licking... My... Nipples...?'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'Your tongue... Is so... Warm...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'Hahhhh...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'Not... Bad...♥'",
+                                    "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'My chest... Is... Tingling...♥'"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Pinch Nipples",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Mnn... I... Almost... Felt... That...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'Gentler... Please...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'My chest... Is... Tingling...'"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": ["Grope Ass", "Squeeze Ass", "Massage Ass", "Fondle Ass"],
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Your... Hand is... So... Warm...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Hurry up... And... Fuck me...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Hahhhh...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Not... Bad...'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Finger",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Warm... But... Your cock... Would... Be... Warmer...♥",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Hahhhh...♥'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": "Dildo",
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Hahhhh...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Please... Fuck me... Instead...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'It's not... Very... Warm...'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Seduce", "Enamor", "Smoldering Seduction", "Smoldering Flaunt", "Massaging Seduction", "Mass Seduction"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'I... Wish... Your... Words... Could... Warm me... As much... As my... Heart...'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|She shyly flushes at your words.",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'You're... Such... A... Tease...'"]
+                        },
+                        {
+                            "lineTrigger": "HitWith",
+                            "move": "Ear Tease",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'You're... Such... A... Tease...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Hahhhh...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|She shivers from the sensation as you lightly blow air into her ear.",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Your tongue... Is so... Warm...'"]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Charm", "Charm Wave"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Mnn... Hurry up... And Touch... Me.'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Stop... Teasing... Me...'" ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Enfeeble", "Sensitize"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'This... Isn't... Needed...",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Mnn... Hurry up... And Touch... Me.'" ]
+                        },
+                        {
+                          "lineTrigger": "HitWith",
+                          "move": ["Disarming Appeal"],
+                          "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'We... Could... Cuddle?'" ]
+                        },
+
+
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Stiff Hopping",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Going... To... Get you...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Just... Need to... Get warm...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Don't... Laugh...",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'Going... To... Win...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Stop... Moving... So... Much!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'So... Cold...'"]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Grasping Claws",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Got... You!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'This... Feels good... Trust me...",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Hurry up... And... Fuck... Me!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Dodge... This!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'My... Poison... Will get... You...'"]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Stiff Ride",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So... Warm!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So... Hot...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'More!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Hahhhh...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Give me... Your... Hot... Cum!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Starting... To... Loosen... Up...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Can feel... Your cock... Throbbing...♥'"]
+                        },
+                        {
+                            "lineTrigger": "UsesMove",
+                            "move": "Chilling Kiss",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Mnnnn...♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Hmmm...♥ Warm...♪'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'Hahhhh...♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'More...♥'"]
+                        },
+                        {
+                            "lineTrigger": "LowHealth",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n||f|ChangeImageLayer|/|Face|/|Blush|n|'Body... Feeling... So... Hot...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n||f|ChangeImageLayer|/|Face|/|Blush|n|'Just... A bit... More...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n||f|ChangeImageLayer|/|Face|/|Blush|n|'Almost... Done... Warming up...♥'"]
+                        },
+                        {
+                            "lineTrigger": "PlayerLowHealth",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Are... You... Going to... Cum? ...Put it... Inside me!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|'You're... Already... Losing? ...You... Might not... Be ready... For me...",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Give me... Your... Hot... Cum!♥"]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "Sex",
+                            "theText": [ "|f|CallCombatEventAndScene|/|FengCombatEvent|/|Player cums in stiff Feng|n|"
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "Anal",
+                            "theText": [ "|f|CallCombatEventAndScene|/|FengCombatEvent|/|Player cums in stiff Feng's ass|n|"
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "Chilling Kiss",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|Your head goes numb with pleasure as Feng rigidly kisses you, occasionally nibbling on your tongue with her aphrodisiac laden teeth until you finally can resist no more, moaning into her mouth as your cock throbs and unloads your semen into the air.",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|You moan into Feng's mouth as you feel your body's warmth leaving you, making your head blissfully numb as she deeply kisses you while gently nibbling on your tongue, and you thrust mindlessly into her firm thighs as you cum, coating her leg with your hot seed."
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnPlayerOrgasm",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|You find yourself panting and at the edge of orgasm, then Feng suddenly lunges forward, digging her aphrodisiac laced fingernails into your skin, and you cry out in ecstasy as your shaft twitches and throbs, spurting ropes of cum into the air.",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffBase|n|Feng lunges at your pleasure wracked body, and she gently digs her aphrodisiac laced fingernails into your shoulders, forcing you to cry out in orgasmic bliss, spurting semen into the air."
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnOrgasm",
+                            "move": "",
+                            "theText": [ "|f|CallCombatEventAndScene|/|FengCombatEvent|/|Stiff Feng Cums|n||c|"
+                                      ]
+                        },
+                        {
+                            "lineTrigger": "OnSurrender",
+                            "move": "",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'You're... Giving... Up?! ...I'm... Barely... Even... Warm!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Damn... It... Still... Cold... Come on... Try... To... Win!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'You're... Going... To... Regret... Giving up..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggle",
+                            "move": "Sex",
+                            "theText": [ "[ThePlayerName] tries to pull out of [AttackerName]'s tight pussy..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFail",
+                            "move": "Sex",
+                            "theText": [ "But [AttackerName] refuses to be dislodged from your cock as she abruptly forces all of her body weight against you, forcing you to support her weight or risk falling over!",
+                                        "But with surprising force, [AttackerName] stiffly slams her hips back into yours, and you instinctively grab her hips instead of pushing her away!",
+                                        "But as you grab her hips to pull out, she musters enough energy to tightly wrap a long leg around your waist, preventing you from pulling away from her!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleComment",
+                            "move": "Sex",
+                            "theText": [ "",
+                              "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So... Warm!♥'",
+                                          "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'No... Getting... Away!'",
+                                          "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'More!♥'",
+                                          "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Don't... You... Dare... Stop...'"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFree",
+                            "move": "Sex",
+                            "theText": [ "And manage to pull your cock out of her tight slit!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFreeComment",
+                            "move": "Sex",
+                            "theText": [
+                              "|f|ChangeImageLayer|/|Expression|/|StiffShy|n||f|ChangeImageLayer|/|Ears|/|Droop|n|'Wait... Put it... Back... In...' Her stiff ears manage to flatten against her skull in sadness.|f|ChangeImageLayer|/|Ears|/|Base|n|",
+                                          "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Get... Back... Here...'",
+                                          "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'But... I... Come on...'",
+                                          "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Why... Did you... Stop..?'",
+                                      ""]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggle",
+                            "move": "Anal",
+                            "theText": [ "[ThePlayerName] tries to pull out of [AttackerName]'s tight ass..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFail",
+                            "move": "Anal",
+                            "theText": [ "But [AttackerName] refuses to be dislodged from your cock as she abruptly forces all of her body weight against you, forcing you to support her weight or risk falling over!",
+                                        "But with surprising force, [AttackerName] stiffly slams her hips back into yours, and you instinctively grab her hips instead of pushing her away!",
+                                        "But as you grab her hips to pull out, she musters enough energy to tightly wrap a long leg around your waist, preventing you from pulling away from her!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleComment",
+                            "move": "Anal",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'So... Warm!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'No... Getting... Away!'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffPleasured|n|'More!♥'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Don't... You... Dare... Stop...'"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFree",
+                            "move": "Anal",
+                            "theText": [ "And manage to pull your cock out of her tight rear!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFreeComment",
+                            "move": "Anal",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffShy|n||f|ChangeImageLayer|/|Ears|/|Droop|n|'Wait... Put it... Back... In...' Her stiff ears manage to flatten against her skull in sadness.|f|ChangeImageLayer|/|Ears|/|Base|n|",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Get... Back... Here...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'But... I... Come on...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Why... Did you... Stop..?'",
+                                        ""]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggle",
+                            "move": "Making Out",
+                            "theText": [ "[ThePlayerName] tries to break the deep kiss with [AttackerName]..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFail",
+                            "move": "Making Out",
+                            "theText": [ "But she manages to keep her body pressed against [ThePlayerName], keeping him locked in a deep kiss as she gazes into his eyes!",
+                                        "But as you start to push her away, she suddenly hops forward, almost knocking you both onto the ground! As you correct you balance, you're forced to stay in the deep kiss with Feng!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleComment",
+                            "move": "Making Out",
+                            "theText": [ "",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'So... Warm...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|'Stay...♥'",
+                                      "|f|ChangeImageLayer|/|Expression|/|StiffHappy|n|She gazes into your eyes with longing..."]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFree",
+                            "move": "Making Out",
+                            "theText": [ "And free your mouth from [AttackerName]'s soft lips!"]
+                        },
+                        {
+                            "lineTrigger": "StanceStruggleFreeComment",
+                            "move": "Making Out",
+                            "theText": [ "|f|ChangeImageLayer|/|Expression|/|StiffShy|n||f|ChangeImageLayer|/|Ears|/|Droop|n|'Come... Back...' Her stiff ears manage to droop with sadness...|f|ChangeImageLayer|/|Ears|/|Base|n|",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffShy|n|'But... I... Come on...'",
+                                        "|f|ChangeImageLayer|/|Expression|/|StiffAngry|n|'Why... Did you... Stop...?'"]
+                        }
+                      ],
+  "victoryScenes": [
+            {
+                "NameOfScene": "",
+                "move": "",
+                "stance": "",
+                "includes": [ ""],
+                "theScene": [ ""
+                          ],
+                "picture": ""
+            }
+        ],
+        "pictures": [
+                      {
+                          "Name": "Tail",
+                          "StartOn": "1",
+                          "AlwaysOn": "1",
+                          "IsScene": "0",
+                          "TheBody": "0",
+                          "Overlay": "No",
+                          "setXalign": "0.0",
+                          "setYalign": "0.0",
+                          "Images": [
+                            {
+                                "Name": "Droop",
+                                "File": "Monsters/Feng/tail_Feng_Droop.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Base",
+                                "File": "Monsters/Feng/tail_Feng_Limber.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Wag",
+                                "File": "Monsters/Feng/tail_Feng_Wag.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            }
+                        ]
+                      },
+                      {
+                          "Name": "BackEar",
+                          "StartOn": "1",
+                          "AlwaysOn": "1",
+                          "IsScene": "0",
+                          "TheBody": "0",
+                          "Overlay": "Ears",
+                          "setXalign": "0.0",
+                          "setYalign": "0.0",
+                          "Images": [
+                            {
+                                "Name": "Base",
+                                "File": "Monsters/Feng/ear_Feng_BackPerk.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Droop",
+                                "File": "Monsters/Feng/ear_Feng_BackDroop.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            }
+                        ]
+                      },
+                      {
+                          "Name": "Body",
+                          "StartOn": "1",
+                          "AlwaysOn": "1",
+                          "IsScene": "0",
+                          "TheBody": "1",
+                          "Overlay": "No",
+                          "setXalign": "0.0",
+                          "setYalign": "0.135",
+                          "Images": [
+                            {
+                                "Name": "StiffClothed",
+                                "File": "Monsters/Feng/body_Feng_ClothedStiff.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "StiffNude",
+                                "File": "Monsters/Feng/body_Feng_NudeStiff.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Clothed",
+                                "File": "Monsters/Feng/body_Feng_ActiveClothed.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Nude",
+                                "File": "Monsters/Feng/body_Feng_NudeActive.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            }
+                        ]
+                      },
+                      {
+                          "Name": "Face",
+                          "StartOn": "1",
+                          "AlwaysOn": "1",
+                          "IsScene": "0",
+                          "TheBody": "0",
+                          "Overlay": "No",
+                          "setXalign": "0.0",
+                          "setYalign": "0.0",
+                          "Images": [
+                            {
+                                "Name": "Base",
+                                "File": "Monsters/Feng/face_Feng_Base.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Blush",
+                                "File": "Monsters/Feng/face_Feng_Blush.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            }
+                        ]
+                      },
+                      {
+                          "Name": "Ears",
+                          "StartOn": "1",
+                          "AlwaysOn": "1",
+                          "IsScene": "0",
+                          "TheBody": "0",
+                          "Overlay": "No",
+                          "setXalign": "0.0",
+                          "setYalign": "0.0",
+                          "Images": [
+                            {
+                                "Name": "Base",
+                                "File": "Monsters/Feng/ear_Feng_FrontPerk.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Droop",
+                                "File": "Monsters/Feng/ear_Feng_FrontDroop.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            }
+                        ]
+                      },
+                      {
+                          "Name": "Expression",
+                          "StartOn": "1",
+                          "AlwaysOn": "1",
+                          "IsScene": "0",
+                          "TheBody": "0",
+                          "Overlay": "No",
+                          "setXalign": "0.0",
+                          "setYalign": "0.0",
+                          "Images": [
+                            {
+                                "Name": "StiffBase",
+                                "File": "Monsters/Feng/expression_Feng_StiffBase.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Base",
+                                "File": "Monsters/Feng/expression_Feng_Base.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Annoyed",
+                                "File": "Monsters/Feng/expression_Feng_Annoyed.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Awoo",
+                                "File": "Monsters/Feng/expression_Feng_Awoo.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Growl",
+                                "File": "Monsters/Feng/expression_Feng_Growling.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "HappyOpenMouth",
+                                "File": "Monsters/Feng/expression_Feng_HappyOpen.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Horny",
+                                "File": "Monsters/Feng/expression_Feng_Horny.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Loving",
+                                "File": "Monsters/Feng/expression_Feng_Loving.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Orgasm",
+                                "File": "Monsters/Feng/expression_Feng_Orgasm.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Panic",
+                                "File": "Monsters/Feng/expression_Feng_Panic.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "PanicBlush",
+                                "File": "Monsters/Feng/expression_Feng_PanicBlush.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Pleasured",
+                                "File": "Monsters/Feng/expression_Feng_Pleasured.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "PleasureStruck",
+                                "File": "Monsters/Feng/expression_Feng_PleasureStruck.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Shy",
+                                "File": "Monsters/Feng/expression_Feng_Shy.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Sleepy",
+                                "File": "Monsters/Feng/expression_Feng_Sleepy.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Smile",
+                                "File": "Monsters/Feng/expression_Feng_Smile.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "SmileEyeClosed",
+                                "File": "Monsters/Feng/expression_Feng_SmileEyeClosed.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Smug",
+                                "File": "Monsters/Feng/expression_Feng_SmugSeductive.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "StiffAngry",
+                                "File": "Monsters/Feng/expression_Feng_StiffAngry.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "StiffPleasured",
+                                "File": "Monsters/Feng/expression_Feng_StiffGasp.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "StiffHappy",
+                                "File": "Monsters/Feng/expression_Feng_StiffHappy.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "StiffShy",
+                                "File": "Monsters/Feng/expression_Feng_StiffShy.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Thinking",
+                                "File": "Monsters/Feng/expression_Feng_Thinking.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "WildGrin",
+                                "File": "Monsters/Feng/expression_Feng_WildGrin.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            }
+                        ]
+                      },
+                      {
+                          "Name": "Talisman",
+                          "StartOn": "1",
+                          "AlwaysOn": "0",
+                          "IsScene": "0",
+                          "TheBody": "0",
+                          "Overlay": "No",
+                          "setXalign": "0.0",
+                          "setYalign": "0.0",
+                          "Images": [
+                            {
+                                "Name": "Stiff",
+                                "File": "Monsters/Feng/talisman_Feng_Stiff.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            },
+                            {
+                                "Name": "Base",
+                                "File": "Monsters/Feng/talisman_Feng_LimberFront.png",
+                                "setXalign": "0.0",
+                                "setYalign": "0.0"
+                            }
+                        ]
+                      }
+                    ]
+}

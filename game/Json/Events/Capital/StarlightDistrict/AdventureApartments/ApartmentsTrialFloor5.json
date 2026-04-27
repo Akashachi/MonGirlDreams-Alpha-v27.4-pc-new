@@ -1,0 +1,528 @@
+{
+    "name": "ApartmentsTrialFloor5",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Elizabeth",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Dragon Statue",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+
+                     {
+                      "NameOfScene": "StartEvent",
+                      "theScene": [ "AllowInventory",
+
+                                    "Stepping into the fifth floor of Adventure Apartments takes you into a crossing of several corridors with the usual numbered doors. In the center of it all stands an immaculate stone statue of a tall, mature dragon woman wearing a regal dress, primly posed with a warm smile on her finely chiseled lips as she stares ahead with serene eyes.",
+                                    "JumpToScene", "EntryWayMenu"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "EntryWayMenu",
+                      "theScene": [   "AllowInventory",
+                                        "Menu",
+                                          "Check one of the doors.",
+                                          "Inspect the statue.",
+                                          "Stop and think...",
+                                          "Go to another floor.",
+                                        "EndLoop"
+                                ]
+                    },
+                            {
+                            "NameOfScene": "Stop and think...",
+                            "theScene": [
+                                            "JumpToEventThenScene", "ApartmentsTrialThinking", "Floor5Think"
+                                        ]
+                            },
+                            {
+                            "NameOfScene": "Go to another floor.",
+                            "theScene": [
+                                            "Menu",
+                                                "Go to the first floor.",
+                                                "Go to the second floor.",
+                                                "Go to the third floor.",
+                                                "Go to the fourth floor.",
+                                                "Go to the sixth floor.",
+                                                "Stay here.",
+                                            "EndLoop"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "Stay here.",
+                                        "theScene": [
+                                                   "JumpToScene", "EntryWayMenu"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the first floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEventThenScene", "ApartmentsTrialFloor1", "EnterFromOtherFloor"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the second floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor2"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the third floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor3"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the fourth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor4"
+                                                ]
+                                    },
+                                    {
+                                        "NameOfScene": "Go to the sixth floor.",
+                                        "theScene": [  "PlayerStep",
+                                                   "JumpToEvent", "ApartmentsTrialFloor6"
+                                                ]
+                                    },
+                            {
+                            "NameOfScene": "Check one of the doors.",
+                            "theScene": [
+                                            "Menu",
+                                                "Check door 501",
+                                                "Check door 502",
+                                                "Check door 503",
+                                                "Check door 504",
+                                                "Check door 505",
+                                                "Nevermind.",
+                                            "EndLoop"
+                                        ]
+                            },
+                                    {
+                                        "NameOfScene": "Nevermind.",
+                                        "theScene": [
+                                                   "JumpToScene", "EntryWayMenu"
+                                                ]
+                                    },
+                                     {
+                                        "NameOfScene": "Check another door.",
+                                        "theScene": [
+                                                     "JumpToScene", "Check one of the doors."
+                                        ]
+                                    },
+
+                                    {
+                                        "NameOfScene": "Check door 501",
+                                        "theScene": [
+                                                    "Menu",
+                                                        "Open door 501.",
+                                                        "Knock on door 501.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "Knock on door 501.",
+                                                "theScene": [
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 501"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 501.",
+                                                "theScene": [
+                                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "Heather's Sweet Temptation", "EventStart",
+                                                            "JumpToScene", "Check one of the doors."
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Check door 502",
+                                        "theScene": [
+                                                    "Menu",
+                                                        "Open door 502.",
+                                                        "Knock on door 502.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    },
+
+                                    {
+                                        "NameOfScene": "Knock on door 502.",
+                                        "theScene": [
+                                                     "You knock on the wooden door, then wait... But nothing happens.",
+                                                     "JumpToScene", "Check door 502"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "Open door 502.",
+                                        "theScene": [
+                                                     "IfChoice", "2", "FinishedPuzzle", "502Locked",
+                                                     "GetEventAndIfChoice", "ApartmentsTrialFloor4", "2", "FinalLetterGet", "FinaleStampTime",
+                                                     "JumpToScene", "502Locked"
+                                        ]
+                                    },
+                                    {
+                                        "NameOfScene": "502Locked",
+                                        "theScene": [
+                                                    "You try to open the door, but the handle only rattles defiantly. It seems to be locked, as could be expected.",
+                                                     "JumpToScene", "Check door 502"
+                                        ]
+                                    },
+
+
+                                            {
+                                                "NameOfScene": "FinaleStampTime",
+                                                "theScene": [
+
+                                                            "You try the key on the door the statue is gazing at, and hear a triumphant click as it unlocks!",
+                                                            "Pushing the door open, you're unexpectedly met with the opulent sight of a heavily decorated apartment, the room being richly dressed in red silks, crimson carpets, and golden trimmings, though with very little actual furniture...",
+                                                            "Somewhat perplexed by this development, you blink in bemusement, the view of the veritable jungle of luxurious fabrics giving you pause and leaving you standing on the strange place's threshold for a moment...",
+                                                         "ChangeBGM", "music/Forest Dungeon/New Step.mp3",
+                                                            "But not for very long, as your entrance is promptly met with the loud popping of confetti flying into the air from many directions while a cascade of balloons is let loose from hidden boxes, all the while sounds of ethereal cheering simultaneously play from several points in the room!",
+                                                            "Startled by so much fanfare all at once, you jump in surprise, momentarily wondering if this isn't all some kind of final trap... But with nothing else happening and the exuberant sounds and sights abating on their own, you decide to face the music and cautiously step into the room, which you curiously scan as you progress through the now confetti-strewn gallery of lavishness.",
+                                                            "To your continued puzzlement, you find no one in there, and neither can you see a pedestal or anything else of the sort where your prize might lay... but before you can dwell on it for long, there's a sudden crimson swirl of crackling magic at the other end of the room-!",
+                                                         "ChangeBGM", "music/Battle/Purple_Planet_Music_-_Imminent_Danger.mp3",
+                                                            "DisplayCharacters",
+                                                                "1",
+                                                            "EndLoop",
+                                                            "ChangeImageLayer", "Expression", "1", "SmugRavenous",
+                                                            "And with a static burst of scarlet energy, a tall, regal woman steps out of the veritable typhoon of magic, magical whirls visibly flitting about as she strides forward with clicking heels like she owns the place, her expression set in a toothy leer of interest and her generous hips pendulously swaying in an overt display of mature sensuality as she slowly struts towards you while looking you up and down with undisguised hungry curiosity.",
+                                                            "Unsure of what is happening as the teleportation portal that brought the lady here disappears in a brief flash, you hesitantly stand there as she continues to confidently approach you, her amber eyes gleaming with something like possessive greed as she carries on inspecting you in a way that can't help but make you feel exposed, leaving you wondering if you should go ahead and prepare for a confrontation...",
+                                                         "ChangeBGM", "music/Capital/Smooth_City.mp3",
+                                                            "ChangeImageLayer", "Expression", "1", "Smug",
+                                                            "But once she's a scant ten feet away from you, close enough that you can smell the inviting perfume of spiced honey and sandalwood that emanates from her, she suddenly pauses, and her predatory-looking grin smooths down into a more restful half-smile as she takes a relaxed posture, setting one hand on her hip while giving you a little nod of acknowledgment as she speaks up in a warm, vibrant voice clearly used to public speaking.",
+                                                            "Speak", "Elizabeth",
+                                                            "Well, hello there, strapping adventurer.~ [ThePlayerName], right? As you may or may not know, I'm Elizabeth Regalia, sponsor of the Starlight District's Intelligence Sigil Hunt, Dragon Matriarch, Councilwoman of Ars Delusia... And more that I shan't get into lest I just talk your cute ear off.",
+                                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                                            "Letting out a little giggle at the quip, she nevertheless doesn't give you much of an opportunity to respond, carrying on with easy fluency as she straightens back up.",
+                                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                                            "Speak", "Elizabeth",
+                                                            "But regardless of whether you've heard of me or not, it does not matter, as I'm just here to...",
+                                                         "StopBGM",
+                                                            "With a pause full of gravitas, she starts to make grand upwards gestures with both of her arms as she continues to talk, her gracefully long fingers letting out crimson trails of energy as she unambiguously casts a spell, making you instinctively brace yourself for whatever is about to happen-",
+                                                            "ChangeImageLayer", "Expression", "1", "Sparkle",
+                                                         "ChangeBGM", "music/Forest Dungeon/New Step.mp3",
+                                                            "Only for that tension to immediately dissolve as Ms. Regalia's spellcasting conjures more gilded confetti that merrily shoot up into the air, further heightening the luxurious room's strangely festive atmosphere and accenting her next statement as she goes on to cheer with warmly sparkling eyes.",
+                                                            "Speak", "Elizabeth",
+                                                            "... congratulate you on solving Adventure Apartments' cryptic puzzles and earning your Starlight District stamp!♪",
+                                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                                            "Without skipping a beat, she takes a few more steps closer as she speaks, closing the remaining distance between the two of you and making you all the more keenly aware of how {i}tall{/i} she is as she proffers a star-marked stamper from one of her sleeves with a prestidigitator's grace, twirling the little object between two fingers while offering with a warm smile.",
+                                                            "ChangeImageLayer", "Expression", "1", "WarmSmile",
+                                                            "Speak", "Elizabeth",
+                                                            "Go ahead, treasure. Pull it out for me.~",
+                                                            "ChangeImageLayer", "Expression", "1", "Smug",
+                                                            "Speak", "Elizabeth",
+                                                            "... Your stamp card, that is.",
+                                                            "ChangeImageLayer", "Expression", "1", "Horny",
+                                                            "While she again giggles with a naughty smile on her face at the raunchy joke, you jolt back to life, only now realizing how you've been left feeling strangely captivated by the draconic woman's presence alone, unable to keep yourself from just staring at her while she spoke, unconsciously enjoying the enchanting contralto cadence of her melodious voice while basking in the rich scent of her warm perfume...",
+                                                            "ChangeImageLayer", "Expression", "1", "WarmSmile",
+                                                            "If she's noticed your half-stupor, however, she doesn't remark on it, instead patiently letting you 'pull it out', then gently taking your hand in hers as you present your stamp card, the soft touch of her fingers against yours helplessly sending a twinge of shivery excitement through your body as she carefully plants the stamper onto a blank spot on your grid, leaving a sparkly golden mark on it that signifies your Starlit victory!",
+                                                            "GiveItem", "1", "Starlight District Stamp",
+                                                            "SetChoice", "2", "FinishedPuzzle",
+                                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                                            "ChangeBGM", "music/Capital/Smooth_City.mp3",
+                                                            "Elizabeth then does another twirl of the stamper between her fingers, and in a blink-and-you-miss-it moment, it's gone like magic, leaving you to stash your card back among your belongings while she smiles widely at you and offers an elegant little clap for good measure.",
+                                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                                            "Speak", "Elizabeth",
+                                                            "With my congratulations again~ ... And now, my darling up-and-coming adventurer, anything that you might want to say or ask before I get back to my busy schedule?",
+                                                            "ChangeImageLayer", "Expression", "1", "Glare",
+                                                            "Speak", "Elizabeth",
+                                                            "... I'm afraid I only have time for {i}one{/i} question, though, then I must get going. I would genuinely love to stay and chat, but alas, the obligations of an entrepreneur...",
+                                                            "ChangeImageLayer", "Expression", "1", "Pout",
+                                                            "Letting out a moody sigh at that, she nevertheless dismisses her gripe with a shrug, and adds with a peppy grin.",
+                                                            "ChangeImageLayer", "Expression", "1", "Happy",
+                                                            "Speak", "Elizabeth",
+                                                            "I hope that you enjoyed this little celebration, though, and that you had fun with the puzzles.♪",
+                                                            "Menu",
+                                                                "What just happened?",
+                                                                "Who are you???",
+                                                                "I never want to do another puzzle again.",
+                                                                "That was really fun!",
+                                                                "Sex?",
+                                                                "I'm good.",
+                                                            "EndLoop"
+                                                ]
+                                            },
+                                                        {
+                                                            "NameOfScene": "I'm good.",
+                                                            "theScene": [
+                                                                        "ChangeImageLayer", "Expression", "1", "WarmSmile",
+                                                                        "If she's put off by your curt response, she's certainly not showing it, the matronly woman taking it with a gentle, doting smile and cheerily answering.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                        "Speak", "Elizabeth",
+                                                                        "Alright~ Then I'm off, darling.♪",
+                                                                        "JumpToScene", "ElizabethLeaves"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "ElizabethLeaves",
+                                                            "theScene": [
+                                                                        "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                        "She says merrily with a playful wave as she pivots and starts strutting away, leaving your eyes irresistibly drifting towards her generous rear as it sways alluringly as a result of her energetic stride, meanwhile a mere hand gesture on her part conjures another swirl of crackling crimson winds that twist in place before embracing the curvaceous woman like a whirlwind, the enveloping gusts starting to sweep her away into seeming nothingness.",
+                                                                        "ChangeImageLayer", "Expression", "1", "SmugRavenous",
+                                                                        "Before she's gone for good, however, she turns back to you, giving you a wolfish smile as she adds with purring sensuality.",
+                                                                        "Speak", "Elizabeth",
+                                                                        "I'm sure I'll see you around, [ThePlayerName].♥︎",
+                                                                        "DisplayCharacters",
+                                                                            "EndLoop",
+                                                                        "StopBGM",
+                                                                        "Then she's gone with the crackling twister as it dissipates in a split second, leaving behind some pieces of lingering confetti that continue to idly fly and float in its wake, as well as an oddly striking silence now that the animated dragon woman is gone from the room.",
+                                                                        "ChangeBGM-List",
+                                                                        "music/Capital/STARLIGHT.mp3",
+                                                                        "music/Capital/Night_Floating.mp3",
+                                                                        "music/Capital/Nobody_City.mp3",
+                                                                        "music/Forest/Starry sky.mp3",
+                                                                        "music/Loss/BGM03_Uncanny light.mp3",
+                                                                        "music/Relaxing/Purple Planet Music - Lanquidity (2 52) 110bpm.mp3",
+                                                                        "music/Emotional/Purple Planet Music - Emotional - Spiritual Moment (1_32) 90bpm (L).mp3",
+                                                                        "EndLoop",
+                                                                        "As for you, after taking a moment to let your mind catch up with what just happened, and duly bask in your victory over Adventure Apartments' challenges, you leave the celebration room in turn, and close the door behind you.",
+                                                                        "As you do so, you wonder if you should lock it back as well, but as you go to fish out the key you reflexively put in one of your pockets, you find that it's gone, and a tentative tug at the door reveals that it is now locked again anyway...",
+                                                                        "Well. That's certainly not your problem. But this all leaves you wondering... what now?",
+                                                                        "JumpToScene", "EntryWayMenu"
+
+                                                            ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "What just happened?",
+                                                            "theScene": [
+                                                                        "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                        "She reacts to your bemused query with a happy laugh, a little blush showing on her elegant face as she coyly answers like she's been caught doing something naughty.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Horny",
+                                                                        "Speak", "Elizabeth",
+                                                                        "Just a bit of a dramatic entrance from a woman who loves to personally congratulate adventurers, darling.♥︎",
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Speak", "Elizabeth",
+                                                                        "I know it's a bit {i}extra{/i}, but I hope you didn't mind. I {i}do{/i} so love my theatrics, hu hu.♪",
+                                                                        "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                        "Speak", "Elizabeth",
+                                                                        "Though... I suppose me being here is not {i}entirely{/i} just for fun. There's an element of sizing up promising adventurers, as well... And between you and me, [ThePlayerName], you can consider yourself to have drawn my attention.♥︎",
+                                                                        "ChangeImageLayer", "Expression", "1", "WarmSmile",
+                                                                        "She looks at you with a crooning giggle, and for a moment, you can't help but feel like she's going to do {i}something{/i} else, the tall lady's presence suddenly radiating regal possessiveness in a way that fills you with awe, excitement, and trepidation in equal measure...",
+                                                                        "ChangeImageLayer", "Expression", "1", "Sparkle",
+                                                                        "But then she discards the look all at once, suddenly returning to being all smiles as she cheerfully segues.",
+                                                                        "Speak", "Elizabeth",
+                                                                        "But don't worry and relax.~ This is your victory, and you're now out of the proverbial woods. There's no surprise final trial here, promise.♪",
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Speak", "Elizabeth",
+                                                                        "And in fact, even though I cannot but admit that I would {i}love{/i} to have more {i}personal{/i} fun with you, I must really get going now... so have a nice one, and treat yourself to something nice to congratulate yourself on a job well done, hm?",
+                                                                        "SetChoice", "3", "Baffle",
+                                                                        "JumpToScene", "ElizabethLeaves"
+
+                                                            ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "Who are you???",
+                                                            "theScene": [
+                                                                        "ChangeImageLayer", "Expression", "1", "SmugRavenous",
+                                                                        "The tall woman takes your befuddled question with a smirking titter, raising an index in a teasingly chiding gesture as she answers.",
+                                                                        "Speak", "Elizabeth",
+                                                                        "My, my, my~ To think I went through the trouble of introducing myself, only for it to apparently have gone in one ear and out of the other... Was I {i}so{/i} captivating that you couldn't pay attention to anything else but my grandiose beauty?♪",
+                                                                        "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                        "You can't help but feel a {i}bit{/i} self-conscious at the scolding, as playful as it is, though the imposing monster woman doesn't push it further, her expression instead shifting into an indulgent smile as she repeats.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Speak", "Elizabeth",
+                                                                        "Like I said, I'm Elizabeth Regalia, sponsor of the Starlight District's Intelligence Sigil Hunt, Dragon Matriarch, and Councilwoman of Ars Delusia.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Glare",
+                                                                        "Pausing as if to let that sink in, she seems to think a bit on it herself, and idly smooths back a lock of soft hair as she adds with an expression of what looks like mild displeasure.",
+                                                                        "Speak", "Elizabeth",
+                                                                        "Though... to be honest, there's more than just that. {i}Much{/i} more... But I'm giving you the short version for the sake of brevity and relevance. Most of it is frankly just hot hair or dusty titles and distinctions that only long-lived people would care for or even remember anyway...",
+                                                                        "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                        "Speak", "Elizabeth",
+                                                                        "But if you're not in the know yet as to the ins and outs of Ars Delusian politics, just think of me as a very wealthy, famous, and powerful woman with a hand in managing the Capital and its policies.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Confused",
+                                                                        "Speak", "Elizabeth",
+                                                                        "... A {i}busy{/i} hand, I must say, so I'm afraid I must now cut this short and move on.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                        "Speak", "Elizabeth",
+                                                                        "But it's been genuinely nice meeting you, [ThePlayerName], so... Take care, and ta-ta.♪",
+                                                                        "SetChoice", "3", "Baffle",
+                                                                        "JumpToScene", "ElizabethLeaves"
+
+                                                            ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "I never want to do another puzzle again.",
+                                                            "theScene": [
+                                                                        "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                        "Far from taking offense at your sour answer, she bursts out laughing, the musical sound of her resonant display of hilarity echoing through the room as she takes things in stride and responds.",
+                                                                        "Speak", "Elizabeth",
+                                                                        "Ahahaha.♪ Well, that's a shame, isn't it? ... But that's alright, I know it takes all kinds. And frankly, I appreciate the candor.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Base",
+                                                                        "Speak", "Elizabeth",
+                                                                        "And hey, for what it's worth, you still managed to figure them all out and prove yourself worthy of the Sigil Hunt challenge, so there's quite a bit of merit to your accomplishment, especially for someone who's not into puzzles.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                        "Extending an arm with an elegant rustle of her luxurious clothing, she rests a hand on your shoulder, comfortingly patting it as she goes on.",
+                                                                        "Speak", "Elizabeth",
+                                                                        "Even if you didn't have that much fun, it's at least a sign that you're good adventurer material, so there's that... That should encourage you to keep striding forward, shouldn't it?",
+                                                                        "ChangeImageLayer", "Expression", "1", "WarmSmile",
+                                                                        "As she speaks, however, her expression gradually grows softer and more... sensual? Her eyes narrow into an air of confiding coyness while her refined painted lips curl into a mischievous smile, her voice abating to a low croon as she adds.",
+                                                                        "Speak", "Elizabeth",
+                                                                        "And if it can be any extra incentive, mind that plenty of women love men who are willing to push themselves further, both mentally and physically... and also to risk being hopelessly trapped and fucked silly for the sake of their aspirations.♥︎",
+                                                                        "ChangeImageLayer", "Expression", "1", "Horny",
+                                                                        "There's a definite 'wink wink, nudge nudge' feeling to her words as she retracts her hand with a parting caress against your cheek, the delicate touch of her graceful fingers leaving a feeling of gentle warmth against your skin while she seamlessly moves on from the playful innuendo, concluding with a bright smile.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                        "Speak", "Elizabeth",
+                                                                        "So keep that in mind, and while I return to my {i}dreary{/i} obligations, keep striving to be a stellar hero, won't you?♪",
+                                                                        "SetChoice", "3", "NoPuzzle",
+                                                                        "JumpToScene", "ElizabethLeaves"
+
+                                                            ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "That was really fun!",
+                                                            "theScene": [
+                                                                        "ChangeImageLayer", "Expression", "1", "Sparkle",
+                                                                        "Her sinuous tail sways a bit more energetically behind her at your excitement while she laughs sweetly, looking to be tickled pink by your unmitigated enthusiasm.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Happy",
+                                                                        "Speak", "Elizabeth",
+                                                                        "That's good to hear!♪",
+                                                                        "ChangeImageLayer", "Expression", "1", "Pout",
+                                                                        "Speak", "Elizabeth",
+                                                                        "It's not easy coming up with the right balance of flavor, difficulty, and fun, and we went through {i}many{/i} iterations before settling on that one... And many criticisms, too... especially from Mali who wanted to make it a whole {i}affair{/i}, with a veritable gauntlet of hints and puzzles that you frankly would have no idea how to approach unless you're somehow an expert in ancient Lucidian history...",
+                                                                        "ChangeImageLayer", "Expression", "1", "Confused",
+                                                                        "Realizing that she's started rambling, the matronly dragoness stops herself with a little 'Oh!' and a demure blush, letting out a little cough as she smoothly carries on.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                        "Speak", "Elizabeth",
+                                                                        "But I digress. Suffice to say that such a glowing endorsement makes me truly happy... and while I fear I cannot tarry any longer and indulge in more conversation between puzzle lovers, I thank you for participating in the Adventurers Apartments challenges, and I hope that you enjoy all your upcoming trials in Ars Delusia and in life with similar energy.♪",
+                                                                        "SetChoice", "3", "Fun",
+                                                                        "JumpToScene", "ElizabethLeaves"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "NameOfScene": "Sex?",
+                                                            "theScene": [
+                                                                        "ChangeImageLayer", "Expression", "1", "Pout",
+                                                                        "Crossing her arms under her heavy bust, she sighs poutily, and for a moment, you fear that your brazen approach was a bit too {i}cavalier{/i}, though it quickly appears that she's not actually displeased, an air of overt longing instead showing on her face as she replies.",
+                                                                        "Speak", "Elizabeth",
+                                                                        "Oh, believe me, treasure, I {i}wish{/i} I had the time for a proper dragon laying right now, but my schedule is oh-so busy...",
+                                                                        "ChangeImageLayer", "Expression", "1", "Smug",
+                                                                        "Swing and a miss, it seems, but she does nevertheless give you a smoldering, lustful downward gaze with a thoughtful hum as she again studies your body with undressing eyes, uncrossing her arms as she lasciviously croons.",
+                                                                        "ChangeImageLayer", "Expression", "1", "SmugRavenous",
+                                                                        "Speak", "Elizabeth",
+                                                                        "But perhaps another time, we might be able to {i}fuck{/i} like animals, and blow off all our steam in one long, {i}wild{/i} sex session...",
+                                                                        "ChangeImageLayer", "Expression", "1", "LipLick",
+                                                                        "DamagePlayerFromMonster", "Fashionable Succubus", "BlowKissCharm",
+                                                                        "Leaning down with surprising speed, she takes you by surprise as she catches your mouth in a passionate kiss, her lips pressing against yours greedily while she lets out a low hum against you, filling your senses with the heat and intoxication of her sweet warm breath and refined perfume, her tongue briefly playing with yours before she pulls back just as swiftly, leaving you slightly dazed as she licks her chops with a content purr.",
+                                                                        "ChangeImageLayer", "Expression", "1", "Horny",
+                                                                        "Speak", "Elizabeth",
+                                                                        "In the meantime, you can consider this an IOU, cutie.♥︎ Until next time.♪",
+                                                                        "SetChoice", "3", "Sex",
+                                                                        "JumpToScene", "ElizabethLeaves"
+                                                            ]
+                                                        },
+
+                                    {
+                                        "NameOfScene": "Check door 503",
+                                        "theScene": [
+                                                    "Menu",
+                                                        "Open door 503.",
+                                                        "Knock on door 503.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "Knock on door 503.",
+                                                "theScene": [
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 503"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 503.",
+                                                "theScene": [
+                                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "Crest of Temptation Trap", "EventStart",
+                                                            "JumpToScene", "Check one of the doors."
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Check door 504",
+                                        "theScene": [
+                                                    "Menu",
+                                                        "Open door 504.",
+                                                        "Knock on door 504.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "Knock on door 504.",
+                                                "theScene": [
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 504"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 504.",
+                                                "theScene": [
+                                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "Heather's Bed Temptation", "EventStart",
+                                                            "JumpToScene", "Check one of the doors."
+                                                ]
+                                            },
+                                    {
+                                        "NameOfScene": "Check door 505",
+                                        "theScene": [
+                                                    "Menu",
+                                                        "Open door 505.",
+                                                        "Knock on door 505.",
+                                                        "Check another door.",
+                                                    "EndLoop"
+                                        ]
+                                    },
+                                            {
+                                                "NameOfScene": "Knock on door 505.",
+                                                "theScene": [
+                                                            "You knock on the wooden door, then wait... But nothing happens.",
+                                                            "JumpToScene", "Check door 505"
+                                                ]
+                                            },
+                                            {
+                                                "NameOfScene": "Open door 505.",
+                                                "theScene": [
+                                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                                            "JumpToEventThenScene", "Voltlin Security Check", "EventStart",
+                                                            "JumpToScene", "Check one of the doors."
+                                                ]
+                                            },
+
+
+                             {
+                                "NameOfScene": "Inspect the statue.",
+                                "theScene": [
+                                            "DisplayCharacters",
+                                                    "2",
+                                            "EndLoop",
+                                            "An immaculate stone statue of a tall, mature dragon woman wearing a regal dress that flaunts her deep cleavage, the garment additionally featuring a side slit that shows off a bit of a scale-covered leg. There are four curved horns jutting from her head, and a tuft of carved fluff bristles at the end of her tail. She is primly posed with a warm smile on her chiseled lips, staring ahead in the direction of room 502 with serene eyes.",
+                                            "On the pedestal that supports the statue, you find a plaque that reads as follows:\n\n{i}From an anonymous admirer to Elizabeth Regalia, our generous benefactor.{/i}",
+                                            "While you're at it, you examine the sculpture more closely, but don't find any concealed messages, switches, or compartments, leaving you reasonably confident that there's nothing hidden here that you might be expected to find. You do observe that the craftsmanship is {i}quite{/i} exquisite, however, which speaks highly of both the artist's skill and the model's beauty.",
+                                            "DisplayCharacters",
+                                            "EndLoop",
+                                            "JumpToScene", "EntryWayMenu"
+
+                                ]
+                            },
+
+
+
+
+
+
+                    {
+                      "NameOfScene": "EventBroke",
+                      "theScene": [   "event broke."
+                                ]
+                    }
+                ]
+}

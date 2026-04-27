@@ -1,0 +1,142 @@
+{
+    "name": "AlleywayErosAphrodesia",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+
+    "Speakers": [
+                  {
+                    "name": "Voltlin Livewire",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  } 
+
+                ],
+    "EventText": [
+                    {
+                      "NameOfScene": "EventStartEros",
+                      "theScene": [   "SetChoice", "1", "Eros",
+                                    "JumpToScene", "RNG"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "EventStartAphrodesia",
+                      "theScene": [  
+                                    "SetChoice", "1", "Aphrodesia",
+                                    "JumpToScene", "RNG"
+                                ]
+                    },
+                    {
+                      "NameOfScene": "RNG",
+                      "theScene": [   "SetChoice", "3", "",
+                                        "ChangeBG",  "Capital.png",
+                                        "ChangeBGM", "music/Capital/Nobody_City.mp3",
+                                       "JumpToRandomScene",
+                                            "No Event", 
+                                            "LivewireGaggle",
+                                            "LivewireGaggle",
+                                            "LivewireGaggle",
+                                        "EndLoop"
+                                ]
+                    },                    
+                        {
+                          "NameOfScene": "LivewireGaggle",
+                          "theScene": [    "SetChoice", "2", "Livewires",
+                                          "StoreCurrentEventSpotSkippingLines", "3",
+                                          "JumpToEventThenScene", "Livewire Alleyway Ambush", "EventStart",
+                                          "IfRanAway", "Escape!",
+                                          "IfChoice", "3", "Frenly", "AlleywayMenu",
+                                          "SetChoice", "2", "",                                          
+                                          "With your curvaceously shortstacked assailants fading away back home as pleasure-soaked messes, you're left alone in the alleyway where the hustle and bustle of Ars Delusia is muffled and distant, free to proceed as you wish.",
+                                          "JumpToScene", "AlleywayMenu"
+                                    ]
+                        },
+                                    {
+                                      "NameOfScene": "Escape!",
+                                      "theScene": [   "SetChoice", "2", "",
+                                                      "IfChoice", "1", "Eros", "ErosEscape",
+                                                      "IfChoice", "1", "Aphrodesia", "AphrodesiaEscape"
+                                                ]
+                                    },
+                                            {
+                                              "NameOfScene": "ErosEscape",
+                                              "theScene": [   "ChangeBG",  "CapitalPeople.png",
+                                                              "ChangeBGM", "music/Capital/night vision radio.mp3",
+                                                              "You manage to deftly flee from the twisting Alleyways back into the hustle and bustle of the Eros district! You may not be any closer to where you wanted to go, but you {i}are{/i} safe.",
+                                                              "JumpToEventThenScene", "Eros District", "DistrictMenu"
+                                                        ]
+                                            },
+                                            {
+                                              "NameOfScene": "AphrodesiaEscape",
+                                              "theScene": [
+                                                              "You manage to deftly run from the twisting alleyways back into the obscenely scented air of the Aphrodesia District, where a myriad of lustful monster girls wander in search of company...\nThis might not be much safer than the alleyways, and you fear your winded state may draw attention...",
+                                                              "JumpToEventThenScene", "AphrodesiaDistrict", "EventCheck"
+                                                        ]
+                                            },
+                          {
+                            "NameOfScene": "No Event",
+                            "theScene": [  "SetChoice", "2", "",
+                                          "Entering into the alleyways connecting the Eros District and Aphrodesia Districts, you find yourself alone in the darkend urban hallway, the sounds of the hustle and bustle of street traffic idly muffled.",
+                                          "JumpToScene", "AlleywayMenu"
+                                      ]
+                          },
+
+                          {
+                            "NameOfScene": "Approach the Livewires.",
+                            "theScene": [   "SetChoice", "3", "", "SetChoice", "2", "Livewires",
+                                            "StoreCurrentEventSpotSkippingLines", "3",
+                                            "JumpToEventThenScene", "Livewire Alleyway Ambush", "Approach",
+                                            "IfRanAway", "Escape!",
+                                            "IfChoice", "3", "Frenly", "AlleywayMenu",
+                                            "SetChoice", "2", "",
+                                            "With your curvaceously shortstacked assailants fading away back home as pleasure-soaked messes, you're left alone in the alleyway where the hustle and bustle of Ars Delusia is muffled and distant, free to proceed as you wish.",
+                                            "JumpToScene", "AlleywayMenu"
+                                      ]
+                          },
+
+                          {
+                            "NameOfScene": "AlleywayMenu",
+                            "theScene": [ "AllowInventory",
+                                          "Menu", 
+                                              "RequiresChoice", "2", "Livewires", 
+                                              "Approach the Livewires.",
+                                              "Go to the Aphrodesia District.",
+                                              "Go to the Eros District.",
+                                          "EndLoop"
+                                      ]
+                          }, 
+                          {
+                            "NameOfScene": "Go to the Eros District.",
+                            "theScene": [  "CallEventAndSceneThenReturn", "CapitalTimePassTracker", "TimeHalfAdvance",
+                                           "GetEventAndIfChoice", "CapitalTimePassTracker", "2", "MidnightOil", "AltErosDistrictIntro",
+                                           "ChangeBGM", "music/Capital/night vision radio.mp3",
+                                           "ChangeBG",  "CapitalPeople.png",
+                                           "Stepping out of the winding alleyways you make your way into the hustle and bustle of the Eros district.",
+                                            "JumpToEventThenScene", "Eros District", "DistrictMenu"
+                                      ]
+                          },
+                                  {
+                                    "NameOfScene": "AltErosDistrictIntro",
+                                    "theScene": [
+                                                  "ChangeBG",  "Capital.png",
+                                                  "ChangeBGM", "music/Capital/03 illegal invasion.mp3",
+                                                  "Stepping out of the winding alleyways, you make your way into the Eros District, only to find the normally busy commercial crossing filled with eerie silence at this time of night...",
+                                                  "JumpToEventThenScene", "Eros District", "DistrictMenu"
+                                              ]
+                                  },
+                          {
+                            "NameOfScene": "Go to the Aphrodesia District.",
+                            "theScene": [  "CallEventAndSceneThenReturn", "CapitalTimePassTracker", "TimeHalfAdvance",
+                                           "ChangeBGM", "music/Capital/Night_Wave.mp3",
+                                           "ChangeBG",  "CapitalPeople.png",
+                                           "JumpToEventThenScene", "AphrodesiaDistrict", "EventCheck"
+                                      ]
+                          },
+                     {
+                       "NameOfScene": "EventBroke",
+                       "theScene": [   "event broke."
+                                 ]
+                     }
+                ]
+}

@@ -1,0 +1,161 @@
+{
+    "name": "AphroGridTimers",
+    "CardType": "Event",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Ceris",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+
+                            {
+                                "NameOfScene": "AphroTimer",
+                                "theScene": [
+                                            "IfChoice", "1", "", "DormantGridTimer",
+                                            "IfChoice", "1", "Warning", "WarningGridTimer",
+                                            "IfChoice", "1", "Active", "ActiveGridTimer",
+                                            "IfChoice", "1", "Calming", "CalmingGridTimer"
+                                ]
+                            },
+                            {
+                                "NameOfScene": "DormantGridTimer",
+                                "theScene": [
+                                              "ChangeProgress", "1",
+                                              "IfProgressEqualsOrGreater", "5", "DormantGridTimeUp"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "DormantGridTimeUp",
+                                      "theScene": [
+                                                      "SetProgress", "0",
+                                                      "SetChoice", "1", "Warning"
+                                                ]
+                                  },
+                                          {
+                                              "NameOfScene": "SwapToWarning",
+                                              "theScene": [
+                                                              "SpawnGridNPC", "AphroGridWarning", "Here",
+                                                              "RemoveGridNPC", "Current"
+                                                        ]
+                                          },
+                            {
+                                "NameOfScene": "WarningGridTimer",
+                                "theScene": [
+                                              "ChangeProgress", "1",
+                                              "IfProgressEqualsOrGreater", "2", "WarningTimerUp"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "WarningTimerUp",
+                                      "theScene": [
+                                                      "SetProgress", "0",
+                                                      "SetChoice", "1", "Active"
+                                                ]
+                                  },
+                                          {
+                                              "NameOfScene": "SwapToActive",
+                                              "theScene": [
+                                                              "SpawnGridNPC", "AphroGridActive", "Here",
+                                                              "RemoveGridNPC", "Current"
+                                                        ]
+                                          },
+                            {
+                                "NameOfScene": "ActiveGridTimer",
+                                "theScene": [
+                                              "ChangeProgress", "1",
+                                              "IfProgressEqualsOrGreater", "8", "ActiveTimerUp"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "ActiveTimerUp",
+                                      "theScene": [
+                                                      "SetProgress", "0",
+                                                      "SetChoice", "1", "Calming"
+                                                ]
+                                  },
+                                          {
+                                              "NameOfScene": "SwapToCalm",
+                                              "theScene": [
+                                                              "SpawnGridNPC", "AphroGridCalming", "Here",
+                                                              "RemoveGridNPC", "Current"
+                                                        ]
+                                          },
+
+                            {
+                                "NameOfScene": "CalmingGridTimer",
+                                "theScene": [
+                                              "ChangeProgress", "1",
+                                              "IfProgressEqualsOrGreater", "3", "CalmTimerUp"
+                                          ]
+                            },
+                                  {
+                                      "NameOfScene": "CalmTimerUp",
+                                      "theScene": [
+                                                      "SetProgress", "0",
+                                                      "SetChoice", "1", ""
+                                                ]
+                                  },
+                                          {
+                                              "NameOfScene": "SwapToDormant",
+                                              "theScene": [
+                                                              "SpawnGridNPC", "AphroGridDormant", "Here",
+                                                              "RemoveGridNPC", "Current"
+                                                        ]
+                                          },
+
+                            {
+                                "NameOfScene": "StepOnAphroGrid",
+                                "theScene": [
+                                                "IfGridPlayerStunned", "Nothing",
+                                                "PlaySoundEffect", "sfx/Magic/steam01.mp3",
+                                                "ApplyStatusEffect", "AhproGridTrigger",
+                                                "IfPlayerOrgasm", "Too much aphrodisiac",
+                                                "IfPlayerHasStatusEffectWithPotencyEqualOrGreater", "Aphrodisiac", "100", "Too much aphrodisiac"
+                                          ]
+                            },
+                                    {
+                                        "NameOfScene": "Too much aphrodisiac",
+                                        "theScene": [
+                                                        "As the flowing haze of aphrodisiacs fills your overstimulated senses, you let out a low, dazed moan, your legs trembling for a moment as you ride a dizzying pleasure high, your cock twitching and throbbing with excitement.",
+                                                        "Unable to hold yourself back any longer, you pull your rigid shaft free and stroke it rapidly while taking heavy breaths of the purple-tinged air, uncaring of who or what may be around you. Desperately, you pump your needy erection in search of release, every bit of reason eroded away with lust.",
+                                                        "PlayerOrgasm", "1", "StunGridPlayer", "1", "GetEventAndSetChoice", "BlackHeartTile", "1", "",
+                                                        "CallSceneThenReturn", "CheckSpirit",
+                                                        "Single-mindedly, you keep stroking yourself and bucking your hips until you reach a shivering climax, spurting out long ropes of seed all over the labyrinth's floor, your trembling legs almost giving out from the cascade of orgasmic bliss rushing through you, leaving you gasping in more of the aphrodisiac haze before you recollect yourself fully, dazed but relieved by your drug-induced fapping session."
+                                                  ]
+                                    },
+                                            {
+                                                "NameOfScene": "CheckSpirit",
+                                                "theScene": [
+                                                                "IfPlayerSpiritGone", "RestoreOneSpirit"
+                                                            ]
+                                            },
+                                            {
+                                                "NameOfScene": "RestoreOneSpirit",
+                                                "theScene": [
+                                                                "SetSpirit", "1"
+                                                            ]
+                                            },
+
+                                            {
+                                                "NameOfScene": "Nothing",
+                                                "theScene": [
+                                                            ]
+                                            },
+
+
+
+
+
+                    {
+                        "NameOfScene": "EventBreak",
+                        "theScene": [
+                                        "Evento broko"
+                                  ]
+                    }
+                ]
+}

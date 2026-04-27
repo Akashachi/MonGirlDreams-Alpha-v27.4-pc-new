@@ -1,0 +1,180 @@
+
+
+{
+	"name": "Trisha Lovey-Dovey Domestic Dream",
+	"CardType": "Dream",
+	"CardLimit": "0",
+	"Description": "",
+	"requires": [ ""],
+	"Speakers": [
+              	{
+                	"name": "Trisha",
+                	"postName": "",
+                	"SpeakerType": ""
+              	}
+
+            	],
+	"EventText": [
+
+                	{
+                    	"NameOfScene": "EventStart",
+                    	"theScene": ["GetEventAndIfChoice", "Mysterious Inn", "3", "FriendsWithBenifits", "SecondCheck"
+                              	]
+                	},
+
+                	{
+                    	"NameOfScene": "SecondCheck",
+                    	"theScene": ["GetAnEventsProgressThenIfEqualsOrGreater", "Mysterious Inn", "34", "TheDream"
+                              	]
+                	},
+
+{
+                                "NameOfScene": "TheDream",
+                                "theScene": [
+                                            "StoreCurrentBGM",
+                                            "StopBGM",
+                                	        "StoreCurrentBG",
+                                	        "ChangeBG", "forestNight.png",
+                                            "Walking through a familiar forest, you find yourself in front of an equally familiar inn...",
+                                            "Knocking without hesitation on the door, you hear a sweet, cheerful feminine voice promptly answer 'Coming!' from within, followed by the sound of light footsteps then by the clicking of the door as it opens to reveal...",
+                                            "ChangeBGM", "music/Town/Walk with two people.mp3",
+                                    	  "DisplayCharacters",
+                                      	   "1",
+                                      	  "EndLoop",
+                                            "ChangeImageLayer", "Base", "1", "SuccubusOutfit",
+                                            "ChangeImageLayer", "Expression", "1", "LovingSmile",
+                                            "A beautifully smiling Trisha clad in her succubus regalia, the revealing outfit putting her seductive curves on a rather daring display that she yet doesn't seem to mind as she greets you happily.",
+                                            "ChangeImageLayer", "Expression", "1", "LovingJoy",
+                                            "Speaks",
+                                            "Welcome home, honey!♥",
+                                            "ChangeImageLayer", "Expression", "1", "BJGlow",
+                                            "Before you can even react, she jumps at you and wraps her arms around your neck, pulling you into a thirsty kiss that makes her eyes glow with succubus relish, showing how much she must have been looking forward to your return as she aggressively entangles your tongue with hers, the sudden makeout making you slightly dizzy as her enchanting magic seeps into you alongside a lustful, loving moan of pleasure from her.",
+                                            "ChangeImageLayer", "Expression", "1", "Lustful",
+                                            "ChangeImageLayer", "FaceEffect", "1", "Blush",
+                                            "Nevertheless, after lewd, long seconds of heated smooching, she carefully pulls away, leaving you a bit woozy and kiss-drunk under the charming welcome, the culprit of which draws back with a slightly apologetic look, a tizzy of timid excitement over her flushing face as she gets a grip on herself and lets out an awkward little cough before carrying on swiftly, as if to avoid lingering on that rather needy move of hers.",
+                                            "ChangeImageLayer", "Expression", "1", "Loving",
+                                            "Speaks",
+                                            "{i}Ahem...{/i} S-Sorry about that, you know I can't help but get excited whenever I see you... Did you have a good day? Come and get comfortable, dinner will soon be ready. I've made your favorite!♪",
+                                            "ChangeImageLayer", "FaceEffect", "1", "Base",
+                                            "Menu",
+                                            "'Gladly!'",
+                                            "'Why the succubus outfit?'",
+                                            "'Am I dreaming?'",
+                                            "EndLoop"
+                                      ]
+                          },
+
+{
+                                "NameOfScene": "'Gladly!'",
+                                "theScene": [
+                                            "ChangeImageLayer", "Expression", "1", "Wink",
+                                            "Speaks",
+                                            "That's what I like to hear!",
+                                            "ChangeImageLayer", "Expression", "1", "LovingJoy",
+                                            "Laughing merrily at your approving reaction, she takes you by the hand and pulls you inside, her contagious enthusiasm prompting you to readily follow her.",
+                                            "JumpToScene", "DreamCont"
+                                      ]
+                          },
+
+{
+                                "NameOfScene": "'Why the succubus outfit?'",
+                                "theScene": [
+                                            "ChangeImageLayer", "FaceEffect", "1", "Blush",
+                                            "ChangeImageLayer", "Expression", "1", "Shy",
+                                            "Trisha's blush treacherously returns as she shyly looks away, but nevertheless doesn't seem actually embarrassed by your attention, demurely fiddling with a lock of hair as she replies.",
+                                            "ChangeImageLayer", "Expression", "1", "Loving",
+                                            "Speaks",
+                                            "Ah, I thought I'd wear it as a surprise for you... I know I haven't put it on in a while, but I stumbled upon it while I was doing some cleaning, and I thought it'd make for a nice reminder of when we first met. It still fits me, too! ... Do you like it?",
+                                            "ChangeImageLayer", "FaceEffect", "1", "Base",
+                                            "ChangeImageLayer", "Expression", "1", "Seductive",
+                                            "She twirls gracefully in place with an elegant flap of her wings for both flair and balance, the movement showing off her body in a way that brings an unquestionable 'Yes.' to your mind in response to her question, your appreciative gaze making her giggle with a proud smile at the effect she has on you.",
+                                            "Speaks",
+                                            "Looks like you do.♥",
+                                            "ChangeImageLayer", "Expression", "1", "LovingJoy",
+                                            "Speaks",
+                                            "... But don't just stay in the doorway, [ThePlayerName]! Come in!",
+                                            "JumpToScene", "DreamCont"
+                                      ]
+                          },
+
+{
+                                "NameOfScene": "'Am I dreaming?'",
+                                "theScene": [
+                                            "ChangeImageLayer", "Expression", "1", "Smug",
+                                            "Rather than be perplexed by your question, Trisha bursts out in a brief giggle which gives way to a knowing smirk.",
+                                            "Speaks",
+                                            "Oh, you... I bet you've been sitting on that line all day.♥",
+                                            "ChangeImageLayer", "Expression", "1", "LovingSmile",
+                                            "The amused expression giving way to a sincere beaming smile at your unwitting compliment, she leans forward to give you an extra peck on the lips before playfully stepping back, beckoning you inside.",
+                                            "JumpToScene", "DreamCont"
+                                      ]
+                          },
+
+{
+                                "NameOfScene": "DreamCont",
+                                "theScene": [
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "Guided by the joyful innkeeper, you walk into the homey building that you've gotten so used to, immediately finding yourself relaxing as the domestic warmth, scent, and sights envelop you like a comforting embrace, leaving you lingering on the threshold for a moment to bask in the lovely ambiance.",
+                                            "Meanwhile, leaving you to 'get comfortable', as she enjoined you to, Trisha steps over to the inn's cooking corner, her uncontested domain where she goes back to tending to her pots and pans with a cheerful hum, the sound of her brisk activity leaving your gaze wandering over back to her.",
+                                            "ChangeBGM", "music/Casino/BGM06_sink.mp3",
+                                            "... Only for your stare to freeze as it stops on the demonic chef who is casually bent over her countertop as she carefully watches over a boiling dish, her posture leaving her hips raised and blithely exposing her barely covered butt as a result, the view stirring up your libido that was just starting to abate after the succubus' lascivious kissy welcome.",
+                                            "ChangeImageLayer", "Expression", "1", "Smug",
+                                            "While you initially question if the sultry position might just be incidental, any doubt in your mind evaporates as Trisha playfully shakes her butt while coyly continuing to sing-song, letting out a not-so-inconspicuous titter as she does so, making it easy to imagine the kind of expression she must currently be sporting at her breezy maneuver.",
+                                            "And as if she wasn't being obvious enough, her tail wags animatedly once she can be sure that she's caught your attention, the appendage both waving you over and spreading its owner's alluring scent in your direction, the arousal-charged perfume quickly getting to you and fogging up your mind with added lust, making it harder and harder to think about anything but the pendulously moving ass before you...",
+                                            "ChangeImageLayer", "Expression", "1", "Lewd",
+                                            "Seeing no reason not to answer the invitation, you readily stride towards Trisha who no doubt is hearing you approaching, her humming becoming purr-like as she goes from shaking her supple rear to wiggling it in front of you while her tail moves aside, giving you unrestrained access to her shapely behind.",
+                                            "Assertively, you grab her curvy ass, your fingers sinking pleasantly into the pert, smooth flesh, a subtle shiver across the innkeeper's frame clearly showing off her expectant arousal, even as she lets out a rather unconvincing shocked cry at your lewd initiative.",
+                                            "ChangeImageLayer", "Expression", "1", "Smug",
+                                            "Speaks",
+                                            "{i}Oh my{/i}, darling, what are you doing?♥",
+                                            "ChangeImageLayer", "Expression", "1", "SeductiveGlow",
+                                            "Her knowing tone and a trickling drop of arousal leaking out of her racy undergarments blatantly betray her mock surprise, as do her motions as she gladly pushes her body against you, letting you further relish the touch of her firm rear, prompting you to not waste any time and drop your pants, the sight of your cock stiffened in anticipation for Trisha's waiting sex greeted by a lascivious moan of approval from the succubus.",
+                                            "As you push aside her underwear, revealing her drooling lower lips, she spreads her legs slightly, eagerly bracing herself for your manhood. Determined to give her what she's looking forward to, you take a moment to position yourself behind her, then enter her without hesitation, spearing her in one powerful stroke, your hardened length smoothly entering her well-lubricated confines.",
+                                            "ChangeImageLayer", "Expression", "1", "Ecstasy",
+                                            "ChangeImageLayer", "FaceEffect", "1", "Blush",
+                                            "Immediately, her limbs momentarily seize in pleasure and her eyes widen in surprise from your dominant insertion while her wanting folds instantly close upon your dick, the positively succubus-worthy hunger of her greedily squeezing pussy lavishing you with sweet stimulation, letting you bask with an indulgent groan in the wonderfully oozing sensation that flows through your groin.",
+                                            "ChangeImageLayer", "Expression", "1", "BJGlow",
+                                            "Meanwhile, Trisha trades her surprised expression for a look of unbridled thirst while her golden eyes fill with a reddened glow, clearly showing that her switch has been flipped as she bumps her butt against your waist with a panting exhale of arousal, silently signaling you to continue with a downright imploring stare.",
+                                            "Without hesitation, you readily move on to grabbing her supple hips and thrusting into her energetically, promptly settling into a steady, intense tempo that immerses both you and the sultry innkeeper in delightful bliss as your bodies meet and part again and again in familiar sexual intimacy, the scene of domestic coziness having quickly given way to a shamelessly wanton one as you take your lewd lover over her kitchen's counter.",
+                                            "ChangeImageLayer", "Expression", "1", "Ecstasy",
+                                            "Quivering under your assertive swings, your demonic partner is clearly enjoying the impromptu lovemaking to the fullest, her cries of pleasure accompanying the vulgar slapping sounds echoing in the isolated building while her pussy keeps gluttonously clenching and wriggling over your length, as if in a hurry to milk it of a warm, plentiful cumshot.",
+                                            "ChangeImageLayer", "Expression", "1", "Orgasm",
+                                            "Her head already swimming in lust while she seems to struggle to keep her ecstatically trembling body upright, Trisha turns her head to you, her gaze mired in mating euphoria as she intones in a hot, breathy voice, her mouth desirefully open in front of you.",
+                                            "Speaks",
+                                            "[ThePlayerName]...♥",
+                                            "ChangeImageLayer", "Expression", "1", "BJGlow",
+                                            "Answering her unspoken request without a second thought, you catch her mouth with yours in a steamy makeout, as if in a continuation of her naughty welcome, more wet sloppy sounds ringing wantonly in your love nest while you wrap your arms around her waist to support her, all without stopping the steady hammering of your hips against hers.",
+                                            "Between the heat of your passionate lover, the unrestrained pace of your sexual romp, and the enthralling charm of her body, scent, and kisses, you already feel your orgasm fast approaching, and judging by how messily she quivers in your embrace and smooches you back, Trisha is not far either, looking like she has {i}really{/i} been looking forward to your return in more ways than one...",
+                                            "Feverishly, the thirsty succubus lets her upper body rest fully on the countertop as well as in your grasp while possessively hooking her legs and tail around your waist, grabbing your face and cradling it lovingly in the throes of your reciprocally approaching high, only parting her lips from yours for a brief moment to whisper with an intoxicated stare.",
+                                            "ChangeImageLayer", "Expression", "1", "Orgasm",
+                                            "Speaks",
+                                            "[ThePlayerName]...!♥",
+                                            "Letting the blaze of your mutual passion and the pleasure rising in your loins claim you fully, you simply resume kissing her in response while continuing to thrust your hips for as long as you can, your piston movements paced by Trisha's delightful moans and cries... until you can't hold on for a moment longer and decisively slam your pelvis against her ass with climactic finality, hilting yourself deep into her drenched pussy.",
+                                            "ChangeImageLayer", "Expression", "1", "Ecstasy",
+                                            "A burst of raw ecstasy surges from your groin as you blissfully go over the edge, and the succubus herself goes rigid in your embrace as she demonstratively cums as well. Through your shared orgasm, the two of you remain glued together in lip-locked rapture, your joined bodies unmoving while your cock jumps and trembles in a powerful ejaculation, spraying rope after rope into the folds of your lover's squeezing and churning pussy.",
+                                            "Time luxuriously passes as you stay together like this, as if frozen in a tantric peak of sexual felicity, your dick continuing to fill the succubus' insides with all it has to give, keeping you awash in cumming euphoria until, gradually, the two of you gently come down from your cloud nine, eventually parting and regaining your breathing with long, panting heaves.",
+                                            "ChangeImageLayer", "Expression", "1", "SeductiveGlow",
+                                            "Speaks",
+                                            "Aaaah... [ThePlayerName].♥",
+                                            "ChangeBGM", "music/Forest/Starry sky.mp3",
+                                            "Drawing back from her messy half-sprawled position over the countertop and letting her legs and tail slip away from you, Trisha lets herself rest against you instead, her back pressed against your chest while she nuzzles her face into your neck with a dreamy sigh, a thoroughly content smile on her face.",
+                                            "ChangeImageLayer", "Expression", "1", "Shy",
+                                            "Speaks",
+                                            "Darling...♥",
+                                            "As the loving word hangs over the two of you, you feel your senses suddenly grow hazy, the scene quickly disappearing as you awaken from what {i}does{/i} turn out to have been a dream...",
+                                	        "DisplayCharacters",
+                                 	        "EndLoop",
+                                	        "PlayStoredBGM",
+                                	        "UseHeldBG",
+                                            "GetEventAndIfChoice", "Go to your room.", "1", "SleepingInRoom", "RoomWakeUp"
+                                      ]
+                          },
+
+                                {
+                                  "NameOfScene": "RoomWakeUp",
+                                  "theScene": [   "You feel your eyes gently open as you rouse in the comfort of your bed... but sadly without Trisha at your side, as you quickly realize when you look around, the dream having felt so vivid that you actually expected to wake up back at her inn with her still nestled against you...",
+                                                  "Nonetheless, with a new day starting and your body now rested, there's nothing for it but to get up, which you do after basking a bit longer in the coziness of the covers and of your nighttime fantasy's fresh memory, ready for more adventuring!"
+                                            ]
+                                }
+                              ]
+              }

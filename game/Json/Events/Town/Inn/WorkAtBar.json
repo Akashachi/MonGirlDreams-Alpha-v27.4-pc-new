@@ -1,0 +1,219 @@
+{
+    "name": "Work at Vivian's Bar and Brothel.",
+    "CardType": "Inn",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ "Brothel Employee Pass"],
+    "Speakers": [
+                  {
+                    "name": "Vivian",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  },
+                  {
+                    "name": "Belle",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "Intro",
+                        "theScene": [ "GetEventAndSetChoice", "Enter the Bar.", "2", "",
+                                      "IfProgressEqualsOrGreater",   "1", "Repeat",
+                                      "ChangeProgress",   "1",
+                                      "DisplayCharacters",
+                                          "2",
+                                        "EndLoop",
+                                      "You make your way over to the tall, gruff minotaur bartender not exactly sure what to do yet, and as you walk towards the bar a few lecherous stares are thrown in your direction.",
+                                      "Speaks2",
+                                      "SwapLineIf", "OtherEventsChoice", "Enter the Bar.",
+                                        "1", "MetBelle","Hey [ThePlayerName]... Wish the Boss told me you were going to start working here, someone could have grabbed you and I wouldn't have even known you were here in the first place.",
+                                        "1", "", "You're new... I'm Belle. Wish the Boss told me we were getting someone new, someone could have grabbed you and I wouldn't have even known you were here.",
+                                      "EndLoop",
+                                      "Belle cleans a glass while she talks to you and briefly looks you over.",
+                                      "Speaks2",
+                                      "...You sure you want to work here?",
+                                      "You nod and Belle shakes her head dismissively before continuing.",
+                                      "ChangeImageLayer", "Expression", "1", "Sigh",
+                                      "Speaks2",
+                                      "Whatever. Here's the deal, you pick one of the jobs, and I'll help you out as best I can, or you can just do whatever job I want you to.",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "Speaks2",
+                                      "Of course, if someone personally hires you, you'll be up in a room with them doing whatever they tell you to do instead of your shift.",
+                                      "Speaks2",
+                                      "If anyone gets too rough with you, yell for help. This is a respectable establishment, and we don't want troublemakers.",
+                                      "ChangeImageLayer", "Expression", "1", "Scoff",
+                                      "Speaks2",
+                                      "So yeah, if anyone gives you trouble I'll bail you out. If I know you're working and uh... if I actually hear you, that is...",
+                                      "You nod a bit nervously. That wasn't very reassuring.",
+                                      "ChangeImageLayer", "Expression", "1", "Base",
+                                      "She clears her throat.",
+                                      "Speaks2",
+                                      "SwapLineIf", "IfTimeIs",
+                                        "Night", "Alright, so where do you want to work first? Behind the bar with me? As a waiter? Or acting as a tap in the glory holes?",
+                                        "Day", "Alright, normally I'd let you pick where to work between the bar, as a waiter or as a tap in the glory holes, but the glory holes are closed during the day, and it's not too busy, so I'll just send you where I need you to be right now.",
+                                      "EndLoop",
+                                      "IfTimeIs", "Day", "Day Random.",
+                                      "JumpToScene",
+                                      "PickMenu"
+                                  ]
+                    },
+                      {
+                          "NameOfScene": "Repeat",
+                          "theScene": [ "ChangeBG", "Bar.png",
+                                      "You make your way over to Belle to figure out what you will be doing for your shift, and as you walk towards the bar a few lecherous stares are thrown in your direction.",
+                                      "DisplayCharacters",
+                                        "2",
+                                      "EndLoop",
+                                      "Speaks2",
+                                      "SwapLineIf", "IfTimeIs",
+                                        "Night", "Oh, back for another shift huh [ThePlayerName]? Any preference for where you want to work today?",
+                                        "Day", "Oh, back for another shift huh [ThePlayerName]? Should be pretty calm until the night rolls around, so it won't really matter where you work... let's see...",
+                                      "EndLoop",
+                                      "IfTimeIs", "Day", "Day Random.",
+                                      "JumpToScene",
+                                      "PickMenu"
+                                    ]
+                      },
+                            {
+                                "NameOfScene": "PickMenu",
+                                "theScene": [
+                                            "Menu",
+                                              "Work as a waiter.",
+                                              "Work behind the bar with Belle.",
+                                              "RequiresTime", "Night",
+                                              "Work at the glory holes.",
+                                              "Belle Picks",
+                                              "I've changed my mind actually.",
+                                            "EndLoop"
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Work as a waiter.",
+                                "theScene": [ "Belle nods and tells you you'll be taking orders from customers before handing you a large platter of food and drinks.",
+                                            "She jokingly tells you to try and not get groped before sending you off.",
+                                            "JumpToScene",
+                                              "Waiter Random."
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Work behind the bar with Belle.",
+                                "theScene": [ "Belle nods and gets you started on helping her behind the bar, cleaning glasses and making drinks for anyone who orders one.",
+                                              "SwapLineIf", "IfTimeIs",
+                                                "Night", "She also reminds you that working behind the bar doesn't mean you can't be hired by any patrons who desire your company...",
+                                                "Day", "She comments on it being pretty slow during the day, so you might get bored.",
+                                              "EndLoop",
+                                            "JumpToScene",
+                                              "Bar Random."
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "Work at the glory holes.",
+                                "theScene": ["ChangeImageLayer", "Expression", "1", "Sigh",
+                                            "Belle gives you a bit of an odd look before sending you to the back room to work as a semen tap for the monster girls who feed on cum and prefer it directly from the source.",
+                                            "ChangeImageLayer", "Expression", "1", "Base",
+                                            "She straps you into a small cushioned box in the back, and the only features you can see while restrained are handles to grip onto and the hole to the bar your cock's just been put through.",
+                                            "Belle tells you that you are only going to be in here for an hour and then closes the door behind you.",
+                                            "JumpToScene",
+                                              "Glory Holes Random."
+                                          ]
+                            },
+                            {
+                                "NameOfScene": "I've changed my mind actually.",
+                                "theScene": ["ChangeImageLayer", "Expression", "1", "Sigh",
+                                              "Belle rolls her eyes at your words, but doesn't object, letting you consider what you want to do next.",
+                                              "DisplayCharacters",
+                                                "EndLoop",
+                                              "ChangeBG", "Inn.png"
+                                          ]
+                            },
+                    {
+                        "NameOfScene": "Belle Picks",
+                        "theScene": [ "DisplayCharacters",
+                                      "EndLoop",
+                                      "JumpToRandomScene",
+                                        "Belle sends you to work as waiter.",
+                                        "Belle gets you to work behind the bar with her.",
+                                        "Belle sends you to work at a glory hole.",
+                                      "EndLoop"
+                                  ]
+                    },
+                          {
+                              "NameOfScene": "Belle sends you to work as waiter.",
+                              "theScene": [ "Belle decides to have you work as a waiter and tells you you'll be taking orders from customers before handing you a large platter of food and drinks.",
+                                          "She jokingly tell you to try and not get groped before sending you off.",
+                                          "JumpToScene",
+                                            "Waiter Random."
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Belle gets you to work behind the bar with her.",
+                              "theScene": [ "Belle decides to have you help her behind the bar, and you quickly start to help her by cleaning glasses and making drinks for anyone who orders one.",
+                                        "SwapLineIf", "IfTimeIs",
+                                          "Night", "She also reminds you that working behind the bar doesn't mean you can't be hired by any patrons who desire your company...",
+                                          "Day", "She comments on it being pretty slow during the day, so you might get bored.",
+                                        "EndLoop",
+                                          "JumpToScene",
+                                          "Bar Random."
+                                        ]
+                          },
+                          {
+                              "NameOfScene": "Belle sends you to work at a glory hole.",
+                              "theScene": ["IfTimeIs", "Day", "Belle Picks",
+                                          "Belle pulls you into a back room and bluntly explains that you are going to be working at a glory hole for your shift as a semen tap for the monster girl who feed on cum and prefer it directly from the source.",
+                                          "She straps you into a small cushioned box in the back, and the only features you can see while restrained are handles to grip onto and the hole to the bar your cock's just been put through.",
+                                          "Belle tells you that you are only going to be in here an hour and then closes the door behind you.",
+                                          "JumpToScene",
+                                            "Glory Holes Random."
+                                        ]
+                          },
+
+              {
+                  "NameOfScene": "Waiter Random.",
+                  "theScene": [ "DisplayCharacters",
+                                "EndLoop",
+                                "IfTimeIs", "Day", "BoringShiftWaiter",
+                                "GoToRandomBrothelWaiterScene"
+                            ]
+              },
+                    {
+                        "NameOfScene": "BoringShiftWaiter",
+                        "theScene": ["JumpToNPCEvent", "EasyShiftWaiter"
+                                  ]
+                    },
+
+              {
+                  "NameOfScene": "Bar Random.",
+                  "theScene": [ "DisplayCharacters",
+                                "EndLoop",
+                                "IfTimeIs", "Day", "BoringShiftBar",
+                                "GoToRandomBrothelBarScene"
+                            ]
+              },
+                    {
+                        "NameOfScene": "BoringShiftBar",
+                        "theScene": ["JumpToNPCEvent", "EasyShiftBar"
+                                  ]
+                    },
+              {
+                  "NameOfScene": "Glory Holes Random.",
+                  "theScene": [ "DisplayCharacters",
+                                "EndLoop",
+                                "GoToRandomBrothelHoleScene"
+                            ]
+              },
+              {
+                  "NameOfScene": "Day Random.",
+                  "theScene": [ "DisplayCharacters",
+                                "EndLoop",
+                                "GoToRandomBrothelDayScene"
+                            ]
+              }
+
+
+
+
+                ]
+}

@@ -1,0 +1,37 @@
+{
+    "name": "Maid on Duty",
+    "CardType": "Event",
+    "CardLimit": "1",
+    "Description": "Ancilla the maid of the forest dungeon is patrolling its halls, cleaning up any mess she finds.",
+    "requires": [ "Sigil Of Allure"],
+    "Speakers": [
+                  {
+                    "name": "Ancilla",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+
+                ],
+    "EventText": [
+                    {
+                        "NameOfScene": "EventStart",
+                        "theScene": [ "StoreCurrentBG",
+                                    "ChangeBG", "DungeonForest.png",
+                                     "As you walk through the twisting paths of the dungeon, a chill goes up your spine as you register a second set of foot steps behind you.",
+                                      "You turn around only to see... a mattress flying at you!",
+                                      "You twist, narrowly avoiding the cushiony attack out of sheer, confused panic. Gasping from exertion, you turn to see your assailant.",
+                                      "DisplayCharacters",
+                                        "1",
+                                        "EndLoop",
+                                      "Ancilla's demeanor is calm and collected, and as she starts to wordlessly approach, you realize you won't be talking your way out of this fight!",
+                                      "CombatEncounter",
+                                        "NoRunning",
+                                        "Ancilla",
+                                        "StartCombat",
+                                        "With Ancilla defeated you're free to continue...",
+                                        "UseHeldBG"
+
+                                  ]
+                    }
+                ]
+}

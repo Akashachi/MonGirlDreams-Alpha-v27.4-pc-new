@@ -1,0 +1,646 @@
+{
+    "name": "MimicCombatEvents",
+    "CardType": "",
+    "CardLimit": "0",
+    "Description": "",
+    "requires": [ ""],
+    "Speakers": [
+                  {
+                    "name": "Mimic",
+                    "postName": "",
+                    "SpeakerType": "Monster"
+                  }
+                ],
+    "EventText": [
+                  {
+                      "NameOfScene": "Intro",
+                      "theScene": [  "ChangeImageLayer", "Expression", "LongTongue",
+                                    "IfPlayerLevelGreaterThan", "15", "RampUpFight",
+                                    "RemoveStatusEffect", "Restrain",
+                                    "ApplyStatusEffect", "MimicKissingHold",
+                                    "The mimic merely giggles into your mouth with excitement as you struggle against her!"
+                                ]
+                  },
+                      {
+                          "NameOfScene": "RampUpFight",
+                          "theScene": [
+                                        "LevelUpMonster", "MatchPlayer",
+                                        "RecalculateMonsterExpDrop", "AlterByPercent", "70",
+                                        "As the mimic giggles into your mouth while her long tongue plays with yours, the dark otherworldly energy radiating off of her darkly looms like an ever-growing shadow, her strength growing to match yours through some accursed power of mimicry!",
+                                        "CallNextSceneJumpThenReturn", "IfMonsterLevelGreaterThan", "20", "Perks20",
+                                        "CallNextSceneJumpThenReturn", "IfMonsterLevelGreaterThan", "25", "Perks25",
+                                        "CallNextSceneJumpThenReturn", "IfMonsterLevelGreaterThan", "30", "Perks30",
+                                        "CallNextSceneJumpThenReturn", "IfMonsterLevelGreaterThan", "35", "Perks35",
+                                        "CallNextSceneJumpThenReturn", "IfMonsterLevelGreaterThan", "40", "Perks40",
+                                        "CallNextSceneJumpThenReturn", "IfMonsterLevelGreaterThan", "45", "Perks45",
+                                        "CallNextSceneJumpThenReturn", "IfMonsterLevelGreaterThan", "50", "Perks50"
+                                    ]
+                      },
+                            {
+                              "NameOfScene": "Perks20",
+                              "theScene": [
+                                            "GivePerkToMonster", "Steady Pacing",
+                                            "GivePerkToMonster", "Skilled Tongue",
+                                            "GivePerkToMonster", "Arcane Expert",
+                                            "ChangeMonsterSensitivity", "Ass", "-5",
+                                            "ChangeMonsterSensitivity", "Sex", "-5",
+                                            "RemoveSkillFromMonster", "Deep Kiss",
+                                            "GiveSkillToMonster", "Occultic Curse Kiss"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Perks25",
+                              "theScene": [
+                                            "GivePerkToMonster", "Lovers Passion",
+                                            "GivePerkToMonster", "Intimate Lover",
+                                            "GivePerkToMonster", "Energy Drainer",
+                                            "GivePerkToMonster",  "Grappler",
+                                            "ChangeMonsterStatusEffectResistances", "Stun", "10",
+                                            "ChangeMonsterEnergy", "50",
+                                            "RemoveSkillFromMonster", "Occultic Caress",
+                                            "GiveSkillToMonster", "Accursed Caress"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Perks30",
+                              "theScene": [
+                                            "GivePerkToMonster", "Sex Expert",
+                                            "GivePerkToMonster", "Restraining Expert",
+                                            "GivePerkToMonster", "Skilled Tongue",
+                                            "ChangeMonsterSensitivity", "Mouth", "-10",
+                                            "ChangeMonsterSensitivity", "Magic", "-10",
+                                            "RemoveSkillFromMonster", "Tighten",
+                                            "RemoveSkillFromMonster", "Grind",
+                                            "GiveSkillToMonster", "Possessively Draining Sex"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Perks35",
+                              "theScene": [
+                                            "GivePerkToMonster", "Seductive Touch",
+                                            "GivePerkToMonster", "Sensual Lover",
+                                            "GivePerkToMonster", "Grappler",
+                                            "ChangeMonsterSensitivity", "Ass", "-5",
+                                            "ChangeMonsterSensitivity", "Sex", "-5",
+                                            "RemoveSkillFromMonster", "Bounce",
+                                            "GiveSkillToMonster", "Occultic Mating Curse"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Perks40",
+                              "theScene": [
+                                            "GivePerkToMonster", "Alluring",
+                                            "GivePerkToMonster", "Sex Master",
+                                            "GivePerkToMonster", "Expert Pacing",
+                                            "GivePerkToMonster", "Energy Drainer",
+                                            "ChangeMonsterStatusEffectResistances", "Stun", "10",
+                                            "ChangeMonsterEnergy", "50",
+                                            "GiveSkillToMonster", "Enfeebling Abyssal Mating"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Perks45",
+                              "theScene": [
+                                            "GivePerkToMonster", "Sensual Pace",
+                                            "GivePerkToMonster", "Unbridled Passion",
+                                            "GivePerkToMonster", "Semen Eater",
+                                            "GivePerkToMonster",  "Grappler",
+                                            "ChangeMonsterSensitivity", "Mouth", "-10",
+                                            "ChangeMonsterSensitivity", "Magic", "-10"
+                                        ]
+                            },
+                            {
+                              "NameOfScene": "Perks50",
+                              "theScene": [
+                                            "GivePerkToMonster", "Arcane Master",
+                                            "GivePerkToMonster", "Unbridled Passion",
+                                            "GivePerkToMonster", "Seductive Touch",
+                                            "GivePerkToMonster", "Skilled Tongue",
+                                            "ChangeMonsterStatusEffectResistances", "Stun", "10",
+                                            "ChangeMonsterEnergy", "50"
+                                        ]
+                            },
+
+
+
+                  {
+                    "NameOfScene": "BoxedTeleportCheck",
+                    "theScene": [
+                                  "IfPlayerHasStance", "Entrapping", "BoxedTeleport"
+                              ]
+                  },
+                        {
+                           "NameOfScene": "BoxedTeleport",
+                           "theScene": [
+                                         "SkipPlayerAttack",
+                                         "You make use of your magic to teleport free of the mimic's abyssal hold!",
+                                         "ChangeImageLayer", "Expression", "Smug",
+                                         "...But the spell fizzles out immediately, apparently unable to operate within the strange physics-defying space of the gothic beauty's lair, your fruitless attempt eliciting an eerily teasing giggle from your entrancing jailer..."
+                                     ]
+                         },
+
+
+                   {
+                     "NameOfScene": "AccursedDrainingAbyss",
+                     "theScene": [
+                                   "IfMonsterLevelGreaterThan", "50", "AccursedDrain50",
+                                   "IfMonsterLevelGreaterThan", "30", "AccursedDrain30",
+                                   "IfMonsterLevelGreaterThan", "10", "AccursedDrain10"
+                               ]
+                   },
+                         {
+                           "NameOfScene": "AccursedDrain10",
+                           "theScene": [
+                                         "ChangeEnergyQuietly", "-20",
+                                         "[TargetName] can't resist the obscene magic slowly sapping [TargetHisOrHer] stamina, losing 20 energy while [AttackerName] swings her waist in a continued, possessive rhythm, closing her eyes as she enjoys the feeling of [TargetName]'s power flowing into her..."
+                                     ]
+                         },
+                         {
+                           "NameOfScene": "AccursedDrain30",
+                           "theScene": [
+                                         "ChangeEnergyQuietly", "-30",
+                                         "[TargetName] can't resist the obscene magic slowly sapping [TargetHisOrHer] stamina, losing 30 energy while [AttackerName] swings her waist in a continued, possessive rhythm, closing her eyes as she enjoys the feeling of [TargetName]'s power flowing into her..."
+                                     ]
+                         },
+                         {
+                           "NameOfScene": "AccursedDrain50",
+                           "theScene": [
+                                         "ChangeEnergyQuietly", "-50",
+                                         "[TargetName] can't resist the obscene magic slowly sapping [TargetHisOrHer] stamina, losing 50 energy while [AttackerName] swings her waist in a continued, possessive rhythm, closing her eyes as she enjoys the feeling of [TargetName]'s power flowing into her..."
+                                     ]
+                         },
+
+
+                 {
+                   "NameOfScene": "PossessivelyDrainingSex",
+                   "theScene": [
+                                 "IfMonsterLevelGreaterThan", "30", "PossessivelyDrain30",
+                                 "IfMonsterLevelGreaterThan", "50", "PossessivelyDrain50"
+                             ]
+                 },
+                       {
+                         "NameOfScene": "PossessivelyDrain30",
+                         "theScene": [
+                                       "ChangeEnergyQuietly", "-10",
+                                       "[TargetName] can't resist the sapping magic slowly absorbing [TargetHisOrHer] stamina, losing 10 Energy as [AttackerName] swings her waist in a continued, passionate rhythm, closing her eyes to enjoy the feeling of [TargetName]'s power flowing into her..."
+                                   ]
+                       },
+                       {
+                         "NameOfScene": "PossessivelyDrain50",
+                         "theScene": [
+                                       "ChangeEnergyQuietly", "-20",
+                                       "[TargetName] can't resist the sapping magic slowly absorbing [TargetHisOrHer] stamina, losing 20 Energy as [AttackerName] swings her waist in a continued, passionate rhythm, closing her eyes to enjoy the feeling of [TargetName]'s power flowing into her..."
+                                   ]
+                       },
+
+
+
+
+
+                  {
+                    "NameOfScene": "EndOfRound",
+                    "theScene": [
+                                  "CallNextSceneJumpThenReturn", "IfMonsterLevelGreaterThan", "50", "BonusAttack",
+                                  "IfPlayerHasStance", "Entrapping", "Nothing",
+                                  "IfPlayerHasStatusEffect", "Restrain", "CountDownEntrapment",
+                                  "SetProgress", "0"
+                              ]
+                  },
+                          {
+                            "NameOfScene": "Nothing",
+                            "theScene": [
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "BonusAttack",
+                            "theScene": [
+                                            "IfMonsterHasStatusEffect", "Restrain", "Nothing",
+                                            "IfMonsterHasStatusEffect", "Sleep", "Nothing",
+                                            "IfMonsterHasStatusEffect", "Stun", "Nothing",
+                                            "CallMonsterAttack", "SpecificAttack", "Occultic Caress "
+                                      ]
+                          },
+                          {
+                            "NameOfScene": "CountDownEntrapment",
+                            "theScene": [
+                                          "IfPlayerHasStance", "Making Out", "CountDown",
+                                          "IfPlayerHasStance", "Sex", "CountDown",
+                                          "IfPlayerHasStance", "Anal", "CountDown"
+                                      ]
+                          },
+                              {
+                                "NameOfScene": "CountDown",
+                                "theScene": [
+                                              "IfProgressEqualsOrGreater", "3", "AbyssalPull",
+                                              "ChangeProgress", "1",
+                                              "IfMonsterLevelGreaterThan", "45", "CountDownAgain"
+                                          ]
+                              },
+                                    {
+                                      "NameOfScene": "CountDownAgain",
+                                      "theScene": [
+                                                    "ChangeProgress", "1"
+                                                ]
+                                    },
+                          {
+                            "NameOfScene": "AbyssalPull",
+                            "theScene": [
+                                          "SetProgress", "0",
+                                          "SetPostName", " - Abyssal Pull",
+                                          "ChangeImageLayer", "Expression", "Creepy",
+                                          "FocusedSpeaksSkill",
+                                          "The mimic's myriad of tightly gripping unearthly hands slowly pull you into treasure chest, threatening to drag you down into the seemingly endless abyssal darkness within, the eerie woman letting out an ominous giggle as she nuzzles into you.",
+                                          "FocusedSpeaks",
+                                          "SwapLineIf", "Random",
+                                            "Let's go somewhere more... {i}intimate.♥{/i} My private secluded love nest.♥",
+                                            "Don't resist and I'll curse you with an {i}eternity{/i} of loving pleasure.♥",
+                                            "You're {i}allllll{/i} {b}mine!{/b}",
+                                            "Time to dig in,♥ kuhuhu.♥ I'll milk you {i}dry.♥{/i}",
+                                            "No more struggling.♥",
+                                            "Come here, handsome. Let me add you to my treasures.♥",
+                                          "EndLoop",
+                                          "SetPostName", "",
+                                          "Menu",
+                                            "Struggle against the pull! (Power)",
+                                            "Just relax...",
+                                          "EndLoop"
+                                      ]
+                          },
+                                  {
+                                    "NameOfScene": "Just relax...",
+                                    "theScene": ["Coaxed by the caressing, groping touch of the eldritch fingers and the woman's giggling enticement, you relax in the firm hold of the countless pale hands...",
+                                                "JumpToScene", "AbyssalPullFailedScene"
+                                              ]
+                                  },
+                                  {
+                                    "NameOfScene": "Struggle against the pull! (Power)",
+                                    "theScene": [ "You thrash against the firm hold of the eerie hands, kicking and squirming to escape being dragged down into the mimic's treasure chest!",
+                                                  "StatCheck",
+                                                  "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "30", "5",
+                                                  "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "50", "5",
+                                                  "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "75", "5",
+                                                  "Power",
+                                                  "20",
+                                                  "AbyssalPullFailedPass",
+                                                  "Fail",
+                                                  "AbyssalPullFailedFail"
+                                              ]
+                                  },
+                                      {
+                                        "NameOfScene": "AbyssalPullFailedPass",
+                                        "theScene": ["ChangeImageLayer", "Expression", "Flustered",
+                                                    "...And you manage to keep yourself away from the chest's yawning confides, thwarting the mimic's attempt to imprison you... at least for now. Huffing poutily with a hint of flusteredness, the dainty girl mumbles peevishly.",
+                                                    "FocusedSpeaks",
+                                                    "SwapLineIf", "Random",
+                                                      "Aww...",
+                                                      "But I was going to make you feel so good...",
+                                                      "Hrrmph... I'm sure you just need a few more curses...",
+                                                      "You can't resist forever...",
+                                                    "EndLoop"
+                                                  ]
+                                      },
+                                      {
+                                        "NameOfScene": "AbyssalPullFailedFail",
+                                        "theScene": ["But you're helpless against the ghastly pull of her unearthly fingers, finding it impossible to resist them all at once-!",
+                                                    "JumpToScene", "AbyssalPullFailedScene"
+                                                  ]
+                                      },
+                                  {
+                                    "NameOfScene": "AbyssalPullFailedScene",
+                                    "theScene": [
+                                                    "StoreCurrentBG",
+                                                    "ChangeBG", "Void.png",
+                                                    "RemoveStatusEffect", "Restrain",
+                                                    "ApplyStatusEffect", "Mimic Abyss Hold",
+                                                    "ClearStances", "ApplyStance", "Entrapping",
+                                                    "ChangeImageLayer", "Expression", "LipLick",
+                                                    "In one fell tug, you're yanked into the dark insides of the treasure chest, the lid slamming close the instant you're inside. However, instead of being stuck in tight, claustrophobic confines, you find yourself surrounded on all sides by an inky abyss... and countless teasing, touching hands, the mimic herself cooing with excitement when you gasp with pleasure at the inescapable stroking and groping.",
+                                                    "ApplyStance", "Sex",
+                                                    "PlayMotionEffect", "Crash",
+                                                    "ChangeImageLayer", "ImageSetDontCarryOver", "SexPose1",
+                                                    "ChangeImageLayer", "Expression", "LongTongue",
+                                                    "UseHeldBG",
+                                                    "Within her pitch-black domain, you're powerless to stop her many slender hands as they gently shift your position like a precious doll, laying you on a bed of soft palms and leaving the gothic beauty free to eagerly ride you with a moan of triumphant pleasure.",
+                                                    "ChangeImageLayer", "ImageSetDontCarryOver", "SexPose2",
+                                                    "ApplyStance", "Making Out",
+                                                    "ChangeImageLayer", "Expression", "LongTongueSwirl",
+                                                    "Giggling maniacally, she gives her hair a little twirl before leaning in to give you a passionate kiss, using her unnaturally long tongue to the fullest to assault your mouth while her ravenous pussy squeezes around your helplessly erect cock.",
+                                                    "ChangeImageLayer", "Expression", "Creepy",
+                                                    "FocusedSpeaks",
+                                                    "SwapLineIf", "Random",
+                                                      "Just relax and drown in me.♥",
+                                                      "Mmmmm,♥ {i}no escape.♥{/i} Kuhuhu-♥",
+                                                      "I {i}curse{/i} you to an eternity with me...♥ But is that really so bad, handsome?♥",
+                                                      "So {i}helpless{/i} now.♥",
+                                                      "Let me treasure you.♥ {i}Forever.♥{/i}",
+                                                    "EndLoop"
+                                              ]
+                                  },
+
+
+
+                  {
+                   "NameOfScene": "Grabbyhands",
+                   "theScene": ["SetProgress", "0",
+                                 "SetPostName", " - Occultic Grasp",
+                                 "ChangeImageLayer", "Expression", "Creepy",
+                               "FocusedSpeaksSkill",
+                               "The mimic lets out a sweet, eerie laugh as the countless feminine arms twist about in the air for a moment before lunging out towards you in unison like a hungry grasping wave trying to force you into their embrace.",
+                               "FocusedSpeaks",
+                               "SwapLineIf", "Random",
+                                 "Come here, {i}handsome.♥{/i}",
+                                 "Kuhuhu.♥ You're {i}mine.{/i}",
+                                 "Don't run, we'll have so much {i}fun!♥{/i}",
+                                 "Don't be {i}scared.♥{/i} I just want {i}all{/i} of your semen.♥",
+                                 "Let me hold you.♥",
+                               "EndLoop",
+                               "SetPostName", "",
+                               "Menu",
+                                 "Shake them off! (Power)",
+                                 "Evade them! (Technique)",
+                                 "Ward them off! (Intelligence)",
+                                 "Panic!",
+                               "EndLoop"
+                             ]
+                 },
+                       {
+                         "NameOfScene": "Panic!",
+                         "theScene": ["You freeze in panic, and flailingly resist to no avail...",
+                                     "JumpToScene", "GrabbyhandsFailedScene"
+                                   ]
+                       },
+                       {
+                         "NameOfScene": "Shake them off! (Power)",
+                         "theScene": [ "You thrash and push back against the eerie onslaught of pale hands trying to grab and drag you down...",
+                                       "StatCheck",
+                                       "ChangeStatCheckDifficulty", "IfHasPerk", "Restraint Immune", "-10",
+                                       "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "30", "5",
+                                       "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "50", "5",
+                                       "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "75", "5",
+                                       "Power",
+                                       "15",
+                                       "GrabbyhandsPowFailedPass",
+                                       "Fail",
+                                       "GrabbyhandsPowFailedFail"
+                                   ]
+                       },
+                           {
+                             "NameOfScene": "GrabbyhandsPowFailedPass",
+                             "theScene": ["ChangeImageLayer", "Expression", "Flustered",
+                                         "...And manage to break free of the grasping long-nailed fingers trying to hold you in place, giving you some distance from the gothy woman.",
+                                         "FocusedSpeaks",
+                                         "SwapLineIf", "Random",
+                                           "{i}E-Eh???{/i}",
+                                           "B-But how-?",
+                                           "N-No way-?",
+                                           "O-Oh- Wait-",
+                                           "H-Huh??? Come back...",
+                                         "EndLoop"
+                                       ]
+                           },
+                           {
+                             "NameOfScene": "GrabbyhandsPowFailedFail",
+                             "theScene": ["But your efforts are in vain and they overwhelm you-!",
+                                         "JumpToScene", "GrabbyhandsFailedScene"
+                                       ]
+                           },
+                     {
+                       "NameOfScene": "Evade them! (Technique)",
+                       "theScene": [ "You try to slip away and dodge the grasping hands and fingers trying to pin you down and reel you in...",
+                                     "StatCheck",
+                                     "ChangeStatCheckDifficulty", "IfHasPerk", "Restraint Immune", "-10",
+                                     "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "30", "5",
+                                     "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "50", "5",
+                                     "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "75", "5",
+                                     "Technique",
+                                     "15",
+                                     "GrabbyhandsTechPass",
+                                     "Fail",
+                                     "GrabbyhandsTechFail"
+                                 ]
+                     },
+                           {
+                             "NameOfScene": "GrabbyhandsTechPass",
+                             "theScene": ["ChangeImageLayer", "Expression", "Flustered",
+                                         "...And manage to completely evade the ghastly hold of the mimic's myriad of arms, letting you gain a bit of distance from the eerie lady!",
+                                         "FocusedSpeaks",
+                                         "SwapLineIf", "Random",
+                                           "{i}E-Eh???{/i}",
+                                           "B-But how-?",
+                                           "N-No way-?",
+                                           "O-Oh- Wait-",
+                                           "H-Huh??? Come back...",
+                                         "EndLoop"
+                                       ]
+                           },
+                           {
+                             "NameOfScene": "GrabbyhandsTechFail",
+                             "theScene": ["But your smooth evasive movements get cut off and you can't escape-!",
+                                         "JumpToScene", "GrabbyhandsFailedScene"
+                                       ]
+                           },
+                   {
+                     "NameOfScene": "Ward them off! (Intelligence)",
+                     "theScene": [ "You erect a warding barrier to try and push away the grasping hands eager to drag you down into the mimic's ominous embrace...",
+                                   "StatCheck",
+                                   "ChangeStatCheckDifficulty", "IfHasPerk", "Restraint Immune", "-10",
+                                   "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "30", "5",
+                                   "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "50", "5",
+                                   "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "75", "5",
+                                   "Intelligence",
+                                   "15",
+                                   "GrabbyhandsIntPass",
+                                   "Fail",
+                                   "GrabbyhandsIntFail"
+                               ]
+                   },
+                         {
+                           "NameOfScene": "GrabbyhandsIntPass",
+                           "theScene": ["ChangeImageLayer", "Expression", "Flustered",
+                                       "...And the magic wall buys you enough time to get some distance from the clingy woman and her pale hands!",
+                                       "FocusedSpeaks",
+                                       "SwapLineIf", "Random",
+                                         "{i}E-Eh???{/i}",
+                                         "B-But how-?",
+                                         "N-No way-?",
+                                         "O-Oh- Wait-",
+                                         "H-Huh??? Come back...",
+                                       "EndLoop"
+                                     ]
+                         },
+                         {
+                           "NameOfScene": "GrabbyhandsIntFail",
+                           "theScene": ["But the magical wall cracks and shatters, and the mimic's embrace overwhelms you in seconds-!",
+                                       "JumpToScene", "GrabbyhandsFailedScene"
+                                     ]
+                         },
+               {
+                 "NameOfScene": "GrabbyhandsFailedScene",
+                 "theScene": [   "ApplyStatusEffect", "Mimic Hold",  "ChangeImageLayer", "Expression", "Smug",
+                                 "The sea of slender arms tightly grab you all over: ankles, wrists, waist, whatever they can get ahold of, and pull you close to the gothic beauty who idly twirls her hair while appreciatively looking you over with an excited purr.",
+                                 "FocusedSpeaks",
+                                 "SwapLineIf", "Random",
+                                   "Mmmmnn, now how to {i}drain{/i} you.♥",
+                                   "Kuhuhu~♥ {i}Caught you.♥{/i} Now there's {i}no{/i} escape.♥",
+                                   "This embrace is fate.♥ So let's make love.♥",
+                                   "Hmmmhmhmhm-♥ I love how you feel in my grasp.♥ At my {i}mercy.♥{/i}",
+                                 "EndLoop"
+                           ]
+               },
+
+
+
+               {
+                 "NameOfScene": "Encroachinghands",
+                 "theScene": ["SetProgress", "0",
+                               "SetPostName", " - Occultic Embrace",
+                               "ChangeImageLayer", "Expression", "Creepy",
+                             "FocusedSpeaksSkill",
+                             "With you nice and intimate with the gothy woman, she lets out a purring, eerie laugh, and in the corners of your vision, you can see her many slender, pale arms slowly slip closer to you, sneakily grabbing and clutching you possessively in an increasingly restrictive embrace...",
+                             "FocusedSpeaks",
+                             "SwapLineIf", "Random",
+                               "Kuhuhu.♥ You're {i}mine.{/i}",
+                               "Don't struggle, I'll give you so much {i}pleasure.♥{/i}",
+                               "Don't be {i}scared,♥{/i} I just want {i}all{/i} of your semen.♥",
+                               "Let me hold you.♥",
+                             "EndLoop",
+                             "SetPostName", "",
+                             "Menu",
+                               "Push them off! (Power)",
+                               "Distract her! (Allure)",
+                               "Ignore them, it's probably fine...",
+                             "EndLoop"
+
+                           ]
+               },
+                     {
+                       "NameOfScene": "Ignore them, it's probably fine...",
+                       "theScene": ["Indulgently yielding to the surprisingly gentle, caressing embrace of the countless pale hands, you relax in the increasingly clingy hold...",
+                                   "JumpToScene", "EncroachinghandsFailedScene"
+                                 ]
+                     },
+                     {
+                       "NameOfScene": "Push them off! (Power)",
+                       "theScene": [ "You thrash and struggle against the overwhelming onslaught of pale slender hands trying to restrain you and drag you down...",
+                                     "StatCheck",
+                                     "ChangeStatCheckDifficulty", "IfHasPerk", "Restraint Immune", "-10",
+                                     "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "30", "5",
+                                     "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "50", "5",
+                                     "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "75", "5",
+                                     "Power",
+                                     "15",
+                                     "EncroachinghandsPowFailedPass",
+                                     "Fail",
+                                     "EncroachinghandsPowFailedFail"
+                                 ]
+                     },
+                         {
+                           "NameOfScene": "EncroachinghandsPowFailedPass",
+                           "theScene": ["ChangeImageLayer", "Expression", "LipLick",
+                                       "...And manage to fend off the grasping long-nailed fingers, thwarting their attempt at leaving you pinned and helpless!",
+                                       "FocusedSpeaks",
+                                       "SwapLineIf", "Random",
+                                         "Hmph... Well, I'll just have to try again.♥",
+                                         "Don't think you can escape.♥",
+                                         "You're still mine.♥",
+                                         "Why so reluctant? Maybe I should curse you some more?♥",
+                                         "I just want to hold you.♥",
+                                       "EndLoop"
+                                     ]
+                         },
+                         {
+                           "NameOfScene": "EncroachinghandsPowFailedFail",
+                           "theScene": ["But your efforts are in vain and they overwhelm you-!",
+                                       "JumpToScene", "EncroachinghandsFailedScene"
+                                     ]
+                         },
+                 {
+                   "NameOfScene": "Distract her! (Allure)",
+                   "theScene": [ "Sensing an opportunity to take advantage of the situation, you attempt to tease and kiss the gothy mimic into loosening her tight greedy hold...",
+                                 "StatCheck",
+                                 "ChangeStatCheckDifficulty", "IfHasPerk", "Restraint Immune", "-10",
+                                 "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "30", "5",
+                                 "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "50", "5",
+                                 "ChangeStatCheckDifficulty", "IfMonsterLevelGreaterThan", "75", "5",
+                                 "Allure",
+                                 "15",
+                                 "EncroachinghandsAllurePass",
+                                 "Fail",
+                                 "EncroachinghandsAllureFail"
+                             ]
+                 },
+                       {
+                         "NameOfScene": "EncroachinghandsAllurePass",
+                         "theScene": ["ChangeImageLayer", "Expression", "Flustered",
+                                     "...And she lets out flustered murmurs as she romantically leans into you with a bashful smile, her relaxed state prompting her myriad of arms to momentarily stay back!",
+                                     "FocusedSpeaks",
+                                     "SwapLineIf", "Random",
+                                       "Kuhuhu...♥",
+                                       "Heh-Ehehe-♥",
+                                       "I'll definitely make you all mine.♥",
+                                       "I'll curse you plenty.♥",
+                                     "EndLoop"
+                                   ]
+                       },
+                       {
+                         "NameOfScene": "EncroachinghandsAllureFail",
+                         "theScene": ["ChangeImageLayer", "Expression", "Creepy",
+                                     "But your efforts only seem to make her even more possessively clingy and excited-!",
+                                     "JumpToScene", "EncroachinghandsFailedScene"
+                                   ]
+                       },
+             {
+               "NameOfScene": "EncroachinghandsFailedScene",
+               "theScene": [
+                               "CallSceneThenReturn", "StanceBasedRestraint",
+                               "ChangeImageLayer", "Expression", "Smug",
+                               "The slithering barrage of slender arms affectionately wrap around you and tightly secure their hold on you all over: ankles, wrists, waist... whatever they can get ahold of, and firmly lock you in place, leaving you easy prey for the gothic beauty who coos with excitement while nuzzling into you with a horny purr.",
+                               "FocusedSpeaks",
+                               "SwapLineIf", "Random",
+                                 "Mmmmnn, mine.♥ Alllll {i}mine.♥{/i}",
+                                 "Kuhuhu~♥ Don't squirm, there's {i}no{/i} escape.♥",
+                                 "Just stay still and let me shower you in my loving curses.♥",
+                                 "Hmmmhmhmhm-♥ I love how you feel in my grasp.♥ At my {i}mercy.♥{/i}",
+                               "EndLoop"
+                         ]
+             },
+                       {
+                         "NameOfScene": "StanceBasedRestraint",
+                         "theScene": [
+                                         "IfPlayerHasStances", "Kissing", "Penetration", "EndLoop", "SexKissHoldApply",
+                                         "IfPlayerHasStance", "Penetration", "SexHoldApply",
+                                         "IfPlayerHasStance", "Kissing", "KissHoldApply",
+                                         "ApplyStatusEffect", "MimicKissingHold"
+                                   ]
+                       },
+                             {
+                               "NameOfScene": "KissHoldApply",
+                               "theScene": [
+                                               "ApplyStatusEffect", "MimicKissingHold"
+                                         ]
+                             },
+                             {
+                               "NameOfScene": "SexHoldApply",
+                               "theScene": [
+                                               "ApplyStatusEffect", "MimicSexHold"
+                                         ]
+                             },
+                             {
+                               "NameOfScene": "SexKissHoldApply",
+                               "theScene": [
+                                               "ApplyStatusEffect", "MimicSexKissHold"
+                                         ]
+                             },
+
+
+
+
+                  {
+                    "NameOfScene": "eventbreak",
+                    "theScene": [
+                                  "event broke"
+
+                                ]
+                  }
+                ]
+}

@@ -1,0 +1,571 @@
+{
+	"name": "AmyAndPerpetua",
+	"CardType": "Event",
+	"CardLimit": "0",
+	"Description": "",
+	"requires": [ ""],
+	"Speakers": [
+              	{
+                	"name": "Perpetua",
+                	"postName": "",
+                	"SpeakerType": "Monster"
+              	},
+              	{
+                	"name": "Amy",
+                	"postName": "",
+                	"SpeakerType": "Monster"
+              	}
+            	],
+	"EventText": [
+                	{
+                    	"NameOfScene": "EventStart",
+                    	"theScene": [  "ChangeBG", "CavernsDark.png",
+                                    	"As you keep traveling deeper and deeper into the Caverns, the rocky walls around you gradually appear less natural, instead looking to be carved and worn away by age, leaving you pondering whose handiwork this stonecutting can be attributed to... but all the more so wondering which way you should now go, the web of tunnels around you looking no less labyrinthine than the galleries you have been traversing so far...",
+                                          "However, before you can decide on which of the many available paths to take, you hear something approach very quickly and rather... squelchily? Then, a moment later, faster than you can react, a red blur speeds out of the darkness and bounces off you with a gooey thud that makes you stagger backwards!",
+                                    	"Speak", "Familiar High-Pitched Voice",
+                                    	"{b}{i}Gah!-{/i}{/b}",
+                                    	"DisplayCharacters",
+                                      	"1",
+                                      	"EndLoop",
+                                    	"ChangeImageLayer", "Expression", "1", "Panic",
+                                    	"Quickly recovering from the abrupt impact, you stare at the unexpected encounter, and quickly identify your 'ambusher' as a panicking, fearful, shaking Perpetua!",
+                                    	"Speaks",
+                                    	"{b}Aaaaah!!! Pleasedon'teatmeIdon'ttastegoodIswearI'mpoisonous-{/b}",
+                                    	"ChangeImageLayer", "Expression", "1", "Neutral",
+                                    	"She snaps out of her rambling tizzy as she recognizes you, freezing in stupefaction while her widened eyes narrow in focus.",
+                                    	"Speaks",
+                                    	"E-Eh? [ThePlayerName]?",
+                                    	"There's a dramatic pause as she stares up at you from her rather diminutive height, as if trying to process that you're actually in front of her.",
+                                    	"ChangeBGM", "music/Forest/nandesuto.mp3",
+                                    	"ChangeImageLayer", "Expression", "1", "CryingComical",
+                                    	"Then she suddenly gives you a glomping pounce, tightly wrapping her arms around you as she lets her emotions spill out of her quivering jiggly frame all at once!",
+                                    	"Speaks",
+                                    	"Uwaaaaaaaaa!!! F-Finally someone I know! I-I-I d-don't even know {i}how long{/i} I-I've been lost down here! This place doesn't make any sense and it's full of scary things and matango bullies! And it's dark and damp and cave water is so {i}gross{/i}! You-",
+                                    	"ChangeImageLayer", "Expression", "1", "Shy",
+                                    	"Belatedly, she realizes that she's been clinging to you and having quite the demonstrative emotional moment, prompting her to leap away from you as quickly as her frantic outburst started, the prideful slime girl embarrassedly doing her best to recompose herself and salvage some dignity.",
+                                    	"ChangeImageLayer", "Expression", "1", "Panic",
+                                    	"Speaks",
+                                    	"I-I... Uh- I mean-",
+                                    	"ChangeImageLayer", "Expression", "1", "Laugh",
+                                    	"Her thoughts visibly racing, she hurriedly fishes for what to say next, her flustered expression then switching to an all-too-familiar gloating one with lightning-fast speed as she exclaims.",
+                                    	"Speaks",
+                                    	"I mean- Mwahaha! {i}FOOL!{/i} You fell {i}hook, line, and sinker{/i} for my clever ruse! To- uh, {i}lower your guard!{/i}",
+                                    	"ChangeImageLayer", "Expression", "1", "Base",
+                                    	"She dramatically points at you with a smug grin, silence following her boastful 'reveal', until you can't help but deadpan back.",
+                                    	"PlayerSpeaks",
+                                    	"...Then your next step was to reveal that plan?",
+                                    	"ChangeImageLayer", "Expression", "1", "Panic",
+                                    	"Speaks",
+                                    	"I- Uh- That- Sh-Shut up! You can't pretend to understand my- uh- my {i}masterful scheming{/i}, and- I've had a long day, okay!? Days? Whatever!",
+                                    	"ChangeImageLayer", "Expression", "1", "Base",
+                                    	"ChangeBGM", "music/Battle/bgm_maoudamashii_orchestra12.mp3",
+                                    	"In a heartbeat, her face then splits into a confident, mischievous grin as she raises her arms in an aggressive posture, the atmosphere suddenly shifting in a way that unambiguously conveys that your nemesis wants a rematch {i}here and now{/i}!",
+                                    	"Speaks",
+                                    	"But nevermind that! With you here, {i}mwahahaha{/i}, I can finally enact my {i}devious revenge{/i}! Prepare now to face your gooey doom, {i}hero{/i}!",
+                                    	"Perpetua approaches!",
+                                    	"ChangeImageLayer", "Expression", "1", "CryingComical",
+                                    	"ChangeBGM", "music/Forest/nandesuto.mp3",
+                                    	"...Then she abruptly stops mid-rush and starts freaking out all over again, frantically waving her arms.",
+                                    	"Speaks",
+                                    	"{i}A-Actually,{/i} I just remembered: this is not the time or place for this! {i}W-We gotta run!{/i}",
+                                    	"Menu",
+                                      	"'What? Why?'",
+                                      	"'But our epic rematch...'",
+                                      	"'What's wrong? Scared of the ghosts?'",
+                                      	"'Do you want another hug first?'",
+                                    	"EndLoop"
+                              	]
+                	},
+                        	{
+                            	"NameOfScene": "'What? Why?'",
+                            	"theScene": [  "Speaks",
+                                          	"{i}Because {b}Amy{/b} keeps chasing after me and will be here any moment!{/i}",
+                                          	"JumpToScene", "WhoAmy"
+                                      	]
+                        	},
+                        	{
+                            	"NameOfScene": "'But our epic rematch...'",
+                            	"theScene": [  "ChangeImageLayer", "Expression", "1", "Pout",
+                                          	"Nodding in understanding, Perpetua crosses her arms under her small chest with a huff of frustration.",
+                                          	"Speaks",
+                                          	"Yeah, I {i}know!{/i} B-But this is more urgent! We can have our fated climactic battle that will shatter this stupid mountain {i}after{/i} we get the {i}heck{/i} out of here! Preferably {i}before{/i} Amy finds us!",
+                                          	"GetEventAndChangeProgress", "PerpetuaHouse", "1",
+                                          	"JumpToScene", "WhoAmy"
+                                      	]
+                        	},
+                        	{
+                            	"NameOfScene": "'What's wrong? Scared of the ghosts?'",
+                            	"theScene": [  "ChangeImageLayer", "Expression", "1", "Joy",
+                                          	"Perpetua blinks in surprise before erupting in laughter at your question.",
+                                          	"Speaks",
+                                          	"Pffffthahaha! What? No! What kind of future Demon Queen would be afraid of {i}ghosts?!{/i}",
+                                          	"Her laughter dies off, echoing dramatically through the tunnels around while she gives you a confident, smug smile.",
+                                          	"ChangeImageLayer", "Expression", "1", "Pride",
+                                          	"Speaks",
+                                          	"I mean, I'm not royalty or anything, but I'm gonna work my way to the {i}top{/i}, one epic feat of villainy at a time! And you're one of the stepping stones to this grand goal of mine! ...And also, for that matter, those 'ghosts' you mention are-",
+                                          	"ChangeImageLayer", "Expression", "1", "CryingComical",
+                                          	"Suddenly, she starts panicking again mid-ramble, recalling that there was something apparently dire going on.",
+                                          	"Speaks",
+                                          	"W-Wait, hold on- Now's not the time for this! W-We really gotta go before Amy gets here!",
+                                          	"JumpToScene", "WhoAmy"
+                                      	]
+                        	},
+                        	{
+                            	"NameOfScene": "'Do you want another hug first?'",
+                            	"theScene": [  "ChangeImageLayer", "Expression", "1", "Panic",
+                                          	"Speaks",
+                                          	"Ye- {b}NO!{/b} J-Just shut up, dummy! W-We're rivals! And we have more important things to deal with! Amy could be here {i}any second{/i}!",
+                                          	"GetEventAndChangeProgress", "PerpetuaHouse", "1",
+                                          	"JumpToScene", "WhoAmy"
+                                      	]
+                        	},
+                              	{
+                                  	"NameOfScene": "WhoAmy",
+                                  	"theScene": [   "PlayerSpeaks",
+                                                  	"...Who's Amy?",
+                                                  	"ChangeImageLayer", "Expression", "1", "Pout",
+                                                  	"Perpetua exhales a deep, frustrated breath, and looks like she's about to shoot back another cutting reply when, unexpectedly, she looks aside in puzzlement.",
+                                                  	"ChangeImageLayer", "Expression", "1", "Shy",
+                                                  	"Speaks",
+                                                  	"She's-! ...Actually, I'm not even sure {i}what{/i} she is or if Amy is really her name... It was just kind of a feeling, I guess? Huh...",
+                                                  	"JumpToScene", "AmyArrives"
+                                            	]
+                              	},
+                	{
+                    	"NameOfScene": "AmyArrives",
+                    	"theScene": [
+                                  	"ChangeBGM", "music/Caverns/Purple Planet Music - Tense - Melancholia (1_24) 96bpm.mp3",
+                                   	"ChangeImageLayer", "Expression", "1", "CryingComical",
+                                  	"As if on cue, the sound of claws clicking and scratching against stone then echoes down one of the nearby tunnels, making Perpetua freeze for a moment in refreshed panic before fearfully peering down each of the tunnels, fruitlessly trying to discern which one 'Amy' is coming from. With the darkness and echoes playing tricks on your senses, it feels like she could be {i}anywhere{/i}, the sensation redoubling your nemesis' agitation.",
+                                  	"Speaks",
+                                  	"HGK- {size=-5}{i}Oh {b}fudge{/b}, she's here!{/i}{/size}",
+                                  	"As if in response, an odd shrieking coo reverberates across the tunnels, making all the hairs on your body stand on end as a chill runs down your spine. Closer and closer, the shuffling, grating sound draws nearer, gradually slowing down to a methodical, predatory pace; a slow, almost hypnotic clicking rhythm... Until it suddenly stops, leaving a tense eerie silence hanging in the air.",
+                                  	"Both your minds racing, you and Perpetua look at each other in helpless puzzlement, wondering what you should do... when a gentle hiss emanates from right above you, making the two of you whip your gazes upwards just in time to see a white blur leap off the ceiling, the startling surprise feeling like it's going to make your heart burst straight out of your chest as Amy lands a mere few feet from you, leaving Perpetua squealing in terror.",
+                                  	"DisplayCharacters",
+                                    	"1",
+                                    	"2",
+                                    	"EndLoop",
+                                  	"ChangeImageLayer", "Expression", "1", "CryingComical", "ChangeImageLayer", "Expression", "Amy", "Curious", "ChangeImageLayer", "Tail", "Amy", "Wag",
+                                  	"Gracefully alighting on all fours, the monstrous woman stays perfectly still, her smooth mask-like face peering at you for a moment, slowly tilting while her tentacled hair writhes slowly. Set within her inhuman visage, two almost unnoticeable keen violet eyes widen with slight curiosity, a slight hiss emanating from the mouthless being while her long tail sways back and forth slowly, her sleek stark-white body reminiscent of porcelain.",
+                                  	"ChangeImageLayer", "Expression", "1", "Panic",
+                                  	"Perpetua looks between the two of you, slowly backing off until she's all but huddling behind your legs, her panic slightly de-escalating as she notices that Amy's focus seems to be remaining exclusively on you for now. On that note, despite her unnerving appearance, you can't quite shake off the feeling that the... creature's name is definitely 'Amy', despite her not having said a single word...",
+                                  	"ChangeImageLayer", "Expression", "Amy", "Smug", "ChangeImageLayer", "Tail", "Amy", "Base",
+                                  	"As Amy sits up on her hind legs with a bird-like chirp, her long tail coiling loosely on the floor, Perpetua recoils further in your shadow, oozing herself even smaller while the strange monster girl merely continues staring at you intensely, her narrow eyes curving like a crescent moon while her mouthless expression remains impossible to interpret. Is she being friendly? Toying with you? Waiting to see what you'll do? Or-",
+                                  	"ChangeImageLayer", "Expression", "Amy", "OpenMouth",
+                                  	"Suddenly, with a resounding crack, the part of Amy's face where a person's mouth would normally be splits open horizontally across her mask-like visage, her jaw practically unhinging in the process. While you can't help but stare in silent awe, the lower part of her jaw then proceeds to part like porcelain mandibles, letting {i}five long squirming pale purple tongues{/i} slither out of her mouth, each drooling a toxic-looking violet saliva.",
+                                  	"ChangeImageLayer", "Expression", "Amy", "OpenInvitation",
+                                  	"Locked in place at the sight, you note that the long tongues are moving rather... invitingly? Amy lets out what seems to be a seductive purr, occasionally making tempting stroking motions in the air, her lingual appendages usually sticking to the gaps between her lower and upper jaws when they aren't wrapping around each other as they undulate. All the while, Perpetua stays frozen behind you, anxiously waiting for you to act...",
+                                  	"Menu",
+                                    	"'Nope.' (Run!)",
+                                    	"'Nope.' (Grab Perpetua and run!)",
+                                    	"Offer your cock to Amy's writhing tongues.",
+                                    	"'Oh, sweet goddess, what the {i}FUCK{/i} is that thing?!'",
+                                    	"Attack!",
+                                  	"EndLoop"
+                              	]
+                	},
+                      	{
+                          	"NameOfScene": "'Nope.' (Run!)",
+                          	"theScene": [ "ChangeImageLayer", "Expression", "Amy", "Predatory",
+                                          "ChangeBGM", "music/Battle/sakka.mp3",
+                                        	"You turn tail and immediately dash down one of the tunnels in an attempt to make a break for it, Amy letting out a hiss of surprise behind you as her mouth seals back shut while Perpetua finds herself once more looking around in aimless panic.",
+                                        	"ChangeImageLayer", "Expression", "1", "CryingComical",
+                                        	"Speaks",
+                                        	"Wh-Wha-? Hey, you {i}jerk{/i}, y-you can't abandon me here alone! You're supposed to be the {i}hero{/i}!",
+                                        	"ChangeImageLayer", "Expression", "Amy", "Angry",
+                                        	"...Is it just you, or is her voice getting closer? Turning back, you see Perpetua chasing after you as fast as her blobby lower body allows her to while the quadruped monster girl trails right behind her with a droning, ominous shriek! Looks like the hunt is on!",
+                                        	"ChangeImageLayer", "Expression", "Amy", "Happy",
+                                        	"Eager to put as much distance between you and Amy as you can, you look back ahead and pick up the pace, but to your surprise, Perpetua manages to fling herself onto your back, firmly latching onto you like a gooey backpack! In the process, her squelchy weight almost knocks you to the floor, nearly stopping you both dead in your tracks, though you manage to make a stumbling recovery and keep running while she smugly snickers.",
+                                        	"ChangeImageLayer", "Expression", "1", "Pride",
+                                        	"Speaks",
+                                        	"It's the villain's job to slow the hero down.♪",
+                                        	"ChangeImageLayer", "Expression", "1", "CryingComical",
+                                        	"Speaks",
+                                        	"{i}Now run faster, she's gaining on us!{/i}",
+                                        	"ChangeImageLayer", "Expression", "Amy", "Predatory",
+                                        	"Looks like you'll have no choice but to bear with your intrusive nemesis: with Amy catching up fast, you definitely don't have time to try and throw her sticky body off, giving you no other option but to grit your teeth and keep running!",
+                                        	"GetEventAndChangeProgress", "PerpetuaHouse", "-1",
+                                        	"JumpToScene", "RunAWAY"
+                                    	]
+                      	},
+                      	{
+                          	"NameOfScene": "'Nope.' (Grab Perpetua and run!)",
+                          	"theScene": [ "ChangeImageLayer", "Expression", "Amy", "Predatory",
+                                          "ChangeBGM", "music/Battle/sakka.mp3",
+                                        	"You turn tail and immediately pick Perpetua up in your arms as you dash down one of the tunnels in an attempt to make a break for it, Amy letting out a hiss of surprise behind you as her mouth seals back shut while your squishy rival sputters.",
+                                        	"ChangeImageLayer", "Expression", "1", "Pout",
+                                        	"Speaks",
+                                        	"Wh-What the heck do you think you're doing!? I'm your nemesis, you can't just {i}pick me up{/i} like this-!",
+                                        	"ChangeImageLayer", "Expression", "Amy", "Angry",
+                                        	"ChangeImageLayer", "Expression", "1", "Panic",
+                                        	"However, with Amy trailing right behind the two of you and letting out a droning, ominous predatory shriek, Perpetua is quick to completely drop any attempt at an argument.",
+                                        	"Speaks",
+                                        	"HGCK- {i}Okay, run faster, she's gaining on us!{/i} {size=-10}Also thanks.{/size}",
+                                        	"ChangeImageLayer", "Expression", "Amy", "Happy",
+                                        	"Oozing around your body, Perpetua firmly latches onto you like a gooey backpack, leaving your arms free as you keep running as fast as you can, the sound of Amy rapidly catching up behind you leaving your heart racing!",
+                                        	"GetEventAndChangeProgress", "PerpetuaHouse", "1",
+                                        	"JumpToScene", "RunAWAY"
+                                    	]
+                      	},
+                              	{
+                                  	"NameOfScene": "RunAWAY",
+                                  	"theScene": [ "ChangeImageLayer", "Expression", "1", "CryingComical", "ChangeImageLayer", "Expression", "Amy", "Predatory",
+                                                	"Speeding down the cavern tunnels, you frantically try to get away from the chasing Amy while Perpetua is practically screaming straight into your ear in panic, your confused headlong dash leaving you little time to think about where exactly you should be running to, especially as you can hear Amy rushing {i}right behind you{/i}, ready to pounce! Time to dodge!",
+                                                	"StatCheck",
+                                                	"Technique",
+                                                	"15",
+                                                	"DodgePounce",
+                                                	"Fail",
+                                                	"KnockedDown"
+                                            	]
+                              	},
+                                    	{
+                                        	"NameOfScene": "KnockedDown",
+                                        	"theScene": [ "ChangeImageLayer", "Expression", "Amy", "Excited",
+                                                      	"Despite a spirited feinting attempt, Amy slams squarely into you and Perpetua, sending you both sprawling to the floor while the ivory huntress makes a nimble recovery and prowls forward with what sounds like a chirruping giggle, your slime baggage meanwhile managing to get up first and immediately bolting down a tunnel.",
+                                                      	"Speaks",
+                                                      	"Go get her, [ThePlayerName], i-it's your duty as the hero! Try and buy me time to escape! M-Maybe I'll find help!",
+                                                        "DisplayCharacters",
+                                                          "2",
+                                                        "EndLoop",
+                                                        "ChangeImageLayer", "Expression", "Amy", "Excited",
+                                                      	"When you stand up, Perpetua is already long gone and Amy is drawing near, fully aware you won't be able to run from her anymore. Looks like there is no longer any choice but to face her head-on...",
+                                                     	"JumpToScene", "FightAmy"
+                                                  	]
+                                    	},
+                                            	{
+                                                	"NameOfScene": "DodgePounce",
+                                                	"theScene": [ "ChangeImageLayer", "Expression", "Amy", "Happy",
+                                                              	"Amy sails past you with a playful chirp as you leap to the side, dodging her jumping form then sprinting down another nearby tunnel in your scrambling effort to get away, Perpetua meanwhile clinging tightly to you as she continues to wail while Amy quickly reorients herself and resumes her chase.",
+                                                              	"ChangeImageLayer", "Expression", "Amy", "Predatory",
+                                                              	"You're not even sure where you're going, but any direction away from your pursuer can only be good! With a branching path up ahead, you must quickly decide which one to go down!",
+                                                              	"JumpToScene", "MazeStart"
+                                                          	]
+                                            	},
+                                                        	{
+                                                            	"NameOfScene": "FailedChoice",
+                                                            	"theScene": [ "Every hair on your body stands on edge as you hear Amy right behind you, ready to pounce once more!",
+                                                                          	"StatCheck",
+                                                                          	"Technique",
+                                                                          	"15",
+                                                                          	"DodgePounceRepeat",
+                                                                          	"Fail",
+                                                                          	"KnockedDown"
+                                                                      	]
+                                                        	},
+                                                                	{
+                                                                    	"NameOfScene": "DodgePounceRepeat",
+                                                                    	"theScene": ["ChangeImageLayer", "Expression", "Amy", "Happy",
+                                                                                  	"Once again, you manage to dodge out of the way of Amy's tackle, buying you a few precious moments to keep running while the still panicking Perpetua frantically pats your back in moral support.",
+                                                      	                        "Speaks",
+                                                      	                        "Good job! Now {i}go go go go!{/i}",
+                                                                                  	"ChangeImageLayer", "Expression", "Amy", "Predatory",
+                                                      	                        "You find yourself back at the same branching path as before. Where to go now!?",
+                                                                                  	"JumpToScene", "MazeStart"
+                                                                              	]
+                                                                	},
+                                            	{
+                                                	"NameOfScene": "MazeStart",
+                                                	"theScene": [
+                                                              	"Menu",
+                                                                	"Left!",
+                                                                	"Straight!",
+                                                                	"Right!",
+                                                              	"EndLoop"
+                                                          	]
+                                            	},
+                                                      	{
+                                                          	"NameOfScene": "Straight!",
+                                                          	"theScene": [ "You careen down the center path, stumbling up and down across the uneven ground, your heart thrumming in your chest as Amy stays close behind... And as you exit through another tunnel, you realize with a sinking feeling that you're back where you started, the winding path seeming to have just pointlessly looped around, giving your pursuer the time to catch up with you!",
+                                                                        	"JumpToScene", "FailedChoice"
+                                                                    	]
+                                                      	},
+                                                      	{
+                                                          	"NameOfScene": "Left!",
+                                                          	"theScene": [
+                                                                        	"You hurry down the left tunnel, and follow its winding path with Amy in hot pursuit, your heart pounding in your chest as you desperately look around for any glimmer of daylight showing a way out of the Caverns, the fast-moving Amy gaining ground on you every second while you again find yourself at a split, once more requiring you to take a gamble on which of the upcoming paths to take!",
+                                                                         	"Menu",
+                                                                          	"Left!!",
+                                                                          	"Right!!",
+                                                                        	"EndLoop"
+                                                                    	]
+                                                      	},
+                                                              	{
+                                                                  	"NameOfScene": "Left!!",
+                                                                  	"theScene": [ "You run through the left passageway, but as you exit through another tunnel, you realize that the confusingly maze-like galleries have brought you back right where you started!",
+                                                                                	"JumpToScene", "FailedChoice"
+                                                                            	]
+                                                              	},
+                                                              	{
+                                                                  	"NameOfScene": "Right!!",
+                                                                  	"theScene": [
+                                                                                       "DisplayCharacters",
+                                    	                                               "1",
+                                    	                                             "EndLoop",
+                                        	                                            "ChangeImageLayer", "Expression", "1", "Neutral",
+                                                                                      "You run through the right passageway and find yourself in a large chamber with more paths to take, at which point you realize that Amy somehow isn't chasing you anymore!",
+                                        	                                            "ChangeImageLayer", "Expression", "1", "Joy",
+                                                      	                          "Speaks",
+                                                      	                          "Amy isn't chasing us anymore!!!",
+                                                      	                          "... as Perpetua is kind enough to point out.",
+                                                                                	"JumpToScene", "ChamberPuzzle"
+                                                                            	]
+                                                              	},
+                                                      	{
+                                                          	"NameOfScene": "Right!",
+                                                          	"theScene": [
+                                                                        	"You hurry down the right tunnel and follow its twisting passageways with Amy hot on your trail, your heart hammering in your chest as you frantically try to find your way out of the Caverns, rushing down another tunnel in search of an exit... But where to go exactly!?",
+                                                                         	"Menu",
+                                                                          	"Left!! ",
+                                                                          	"Right!! ",
+                                                                        	"EndLoop"
+                                                                    	]
+                                                      	},
+                                                              	{
+                                                                  	"NameOfScene": "Right!! ",
+                                                                  	"theScene": [ "You run through the right passageway, but as you barrel down another tunnel, you find out to your dismay that you've just been running around in circles, going back right where you started!",
+                                                                                	"JumpToScene", "FailedChoice"
+                                                                            	]
+                                                              	},
+                                                              	{
+                                                                  	"NameOfScene": "Left!! ",
+                                                                  	"theScene": [
+                                                                                       "DisplayCharacters",
+                                    	                                               "1",
+                                    	                                             "EndLoop",
+                                        	                                            "ChangeImageLayer", "Expression", "1", "Neutral",
+                                                                                      "You run through the left passageway, and find yourself in a large chamber with more paths to take, at which point you realize that Amy somehow isn't chasing you anymore!",
+                                        	                                            "ChangeImageLayer", "Expression", "1", "Joy",
+                                                      	                          "Speaks",
+                                                      	                          "Amy isn't chasing us anymore!!!",
+                                                      	                          "... as Perpetua is kind enough to point out.",
+                                                                                	"JumpToScene", "ChamberPuzzle"
+                                                                            	]
+                                                              	},
+
+
+                                                              	{
+                                                                  	"NameOfScene": "ChamberPuzzle",
+                                                                  	"theScene": [
+                                        	                                          "ChangeImageLayer", "Expression", "1", "Panic",
+                                                                                	"You both let out sighs of relief and start studying the paths in front of you, but your peace is short-lived as Amy's playful chirp echoes disquietingly down the left tunnel, sending a shiver of renewed alarm through your spine... Then, somehow, another, similar trilling coo floats down the center path, after which everything becomes eerily quiet, your pursuer seeming to be letting you make your choice now...",
+                                                                               	"ChangeImageLayer", "Expression", "1", "Neutral",
+                                                                                	"Speaks",
+                                                                                	"Th-The right tunnel! Sh-She didn't make any noise there, so that's {i}definitely{/i} the right way.",
+                                                                                	"Menu",
+                                                                                  	"Left!!!",
+                                                                                  	"Center!!!",
+                                                                                  	"Right!!!",
+                                                                                	"EndLoop"
+                                                                            	]
+                                                              	},
+                                                                    	{
+                                                                        	"NameOfScene": "Right!!!",
+                                                                        	"theScene": [
+                                                                                       "DisplayCharacters",
+                                    	                                               "1",
+                                    	                                               "2",
+                                    	                                             "EndLoop",
+                                        	                                                "ChangeImageLayer", "Expression", "1", "Panic",
+                                                                                          "ChangeImageLayer", "Expression", "Amy", "Excited",
+                                                                                      	"As you hurry down the right passage, Amy immediately ambushes you and slams into you and Perpetua, sending you both sprawling to the floor! While she prowls forward with what sounds like a giggle, Perpetua manages to get up first and immediately bolts down a tunnel!",
+                                                                                      	"Speaks",
+                                                                                      	"Go get her, [ThePlayerName], i-it's your duty as the hero! Try and buy me time to escape! M-Maybe I'll find help!",
+                                                                                        "DisplayCharacters",
+                                                                                          "2",
+                                                                                        "EndLoop",
+                                                                                        "ChangeImageLayer", "Expression", "Amy", "Excited",
+                                                                                      	"When you stand up, Perpetua is already long gone and Amy is drawing near, fully aware you won't be able to run from her anymore. Looks like there is no longer any choice but to face her head-on...",
+                                                                                     	"JumpToScene", "FightAmy"
+                                                                                  	]
+                                                                    	},
+                                                                    	{
+                                                                        	"NameOfScene": "Left!!!",
+                                                                        	"theScene": [ "ChangeImageLayer", "Expression", "1", "Panic",
+                                                                                            "You run through the left passageway, but end up immediately tumbling down a hole and sliding right back where you started, unhurt but dizzy, though Perpetua hurriedly shakes you out of your confusion as she screams.",
+                                                                                      	"Speaks",
+                                                                                      	"She's right behind you! {b}Dodge!{/b}",
+                                                                                       "DisplayCharacters",
+                                    	                                               "1",
+                                    	                                               "2",
+                                    	                                             "EndLoop",
+                                        	                                                "ChangeImageLayer", "Expression", "1", "Panic",
+                                                                                          "ChangeImageLayer", "Expression", "Amy", "Predatory",
+                                                                                      	"JumpToScene", "FailedChoice"
+                                                                                  	]
+                                                                    	},
+                                                                    	{
+                                                                        	"NameOfScene": "Center!!!",
+                                                                        	"theScene": [ "DisplayCharacters",
+                                    	                                               "1",
+                                    	                                               "2",
+                                    	                                             "EndLoop",
+                                                                                          "ChangeImageLayer", "Expression", "1", "Panic",
+                                                                                          "ChangeImageLayer", "Expression", "Amy", "Base",
+                                                                                      	"You run through the center tunnel, and hear Amy hiss with disappointment as she emerges from the right passageway behind you, resuming her chase!",
+                                                                                      	"Speaks",
+                                                                                      	"Ahhhhh! She's gaining on us! {i}Run faster!{/i}",
+                                                                                      	"ChangeImageLayer", "Expression", "1", "Excited",
+                                                                                      	"You proceed to do so, and though your path discouragingly leads to a large antechamber with {i}more{/i} tunnels branching out of it, your heart soars as you spot an archway bearing an inscription that reads 'To the Capital'! Promptly, Perpetua leaps off of you and hurries down the marked passageway, her previous fear vanishing as she lets out a celebratory echoing laugh.",
+                                                                                      	"ChangeImageLayer", "Expression", "1", "Laugh",
+                                                                                      	"Speaks",
+                                                                                      	"Mwahaha! Finally, I can see the exit! [ThePlayerName], you fool, you'll never stop me!",
+                                                                                      	"ChangeImageLayer", "Expression", "Amy", "Happy",
+                                                                                        "ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                                                                      	"While she seems to have conveniently forgotten all about the mad scramble you just went through, you cautiously glance back and see Amy calmly sitting at the tunnel exit, the strange monster girl chirping in somehow happy acknowledgement of her defeat before bounding back into the Caverns, letting you follow after Perpetua's laughing trail as she travels towards the exit, looking quite keen to get out of this place."
+                                                                                  	]
+                                                                    	},
+                      	{
+                          	"NameOfScene": "Offer your cock to Amy's writhing tongues.",
+                          	"theScene": [  "ChangeBGM", "music/Loss/Falling Down.mp3",
+                                        	"Feeling too excited by Amy's alluring proposal to turn her down, you pull down your pants and offer your already semi-erect manhood to her while Perpetua gawks at you in bafflement.",
+                                        	"Speaks",
+                                        	"{i}S-Seriously?!{/i} I knew you were a perverted hero, but... really?!",
+                                        	"ChangeImageLayer", "Expression", "Amy", "OpenInvitation",
+                                        	"Amy, meanwhile, lets out a happy trill and lunges forward, coiling her many tongues around your balls and stiffening cock, the nimble appendages teasingly massaging your entire groin to soak it with her clearly aphrodisiac saliva, their mere touch making your body go flush with need while your hard-on quickly grows to full length under the voracious monster girl's slathering ministrations.",
+                                        	"ChangeImageLayer", "Expression", "1", "Joy",
+                                        	"Speaks",
+                                        	"W-Wait, that means she's busy! I can just leave and find a way out of here! Lucky me- Er, I mean, uh-",
+                                        	"ChangeImageLayer", "Expression", "1", "Laugh",
+                                        	"Speaks",
+                                        	"Bwahaha! Foolish hero! You fell right into my clever trap! Good job, Amy!♪",
+                                        	"DisplayCharacters",
+                                          	"2",
+                                          	"EndLoop",
+                                        	"Not pushing her luck any more than that, Perpetua quickly oozes her way down a tunnel, Amy glancing over at her for a moment with a confused chirp before redirecting her focus back on you. Closing her mouth around both your dick and balls, she traps them within her maw while her 'lips' perfectly seal around them, returning her face to its previous, seemingly mouthless appearance aside from where your length seamlessly fits in.",
+                                          "ChangeImageLayer", "Expression", "Amy", "Excited",
+                                          "Gazing up at you with joyful eyes, she lets out a happy and seductive purr as she gets to work on milking your achingly rigid manhood, the strange monster girl seeming to be very much enjoying the taste and feeling of your cock in her maw.",
+                                        	"JumpToScene", "SealedTightBlowjob"
+                                    	]
+                      	},
+                            	{
+                                	"NameOfScene": "SealedTightBlowjob",
+                                	"theScene": [ "ChangeImageLayer", "Expression", "Amy", "OpenInvitation",
+                                              	"Her five long and dexterous tongues are already hard at work massaging your every inch, two of them firmly wrapped around your aching balls, gently massaging them in rolling circles, while two of her other tongues are twined around your shaft, coiling around it as they occasional stroke it, and her fifth tongue laps and loops around your sensitive tip.",
+                                              	"You can feel her aphrodisiac saliva seeping into your loins, rapidly flooding you with twitching need amid the intense all directional oral induced pleasure.",
+                                              	"Your knees are already getting weak and shaky from the otherworldly stimulation, leaving you moaning blissfully, your body shuddering with pleasure as she gives you a loving suck, the two tongues massaging your aching balls gently pulling on them, leaving them churning with need as she gazes up at you with hunger, you feel like you could unload into her at a moments notice and she's only just started!",
+                                              	"You try to brace yourself on her head with an arm, and she barely notices, but one of the long tentacles on her head affectionately wraps around your arm as she continues to overwhelm your spasming cock with pleasure, her three long tongues milking your shaft working in perfect unison as they alternate between licking and stroking your aching manhood, constantly teasing your twitching cockhead, leaving your thoughts blanking out.",
+                                              	"Her saliva leaves your hips flooded with needy warmth, your dick rigid like a throbbing pillar and your balls churning with seed for her, your entire body quivers with desperation from the pleasure of her five tongues stroking, pumping, and squeezing your manhood and twitching balls, and you can hardly stand from the electric waves of ecstasy.",
+												"PlayerOrgasmNoSpiritLoss",
+                                              	"Amy's five tongues suddenly wrap around your spasming cock, forming what feels like a wet and squirming orifice around your aching dick, and she starts to roughly pump your twitching length with it while intensely and lewdly sucking while gazing up at you, leaving you moaning incoherently as an unstoppable climax overtakes your entire body, leaving you unloading thick ropes of cum into her mouth that she greedily drinks down.",
+                                              	"The twitching orgasm seems to drag on for eternity as she keeps sucking and pumping your throbbing cock, milking every drop she can from your intense climax, leaving your mind blanking out with ecstasy from her otherworldly blowjob, your aching balls twitching from the loving suction.",
+                                              	"Your legs finally give out as the pleasure ebbs away, every part of you feeling exhausted and as heavy as lead. Amy keeps her mouth firmly sealed around your groin, wrapping her tentacles and arms around your waist and arms to keep you from collapsing instantly, easing you onto the ground while she gently teases your still rigid cock, licking it up and down with her five tongues, occasionally massaging your aching balls.",
+                                              	"As you finally set down on the ground, sat gingerly against a cave wall, your arms loosely laying by your sides, Amy wetly unseals her mouth, her lower jaw splitting in half again as she shows off her saliva-dripping mouth, lewdly displaying her long tongues for you, just above your stiff, twitching erection, swollen a little larger than normal, and a bright purple color, your balls feel so achingly full despite the huge load you let out.",
+                                              	"After giving your aching cock a few moments to twitch in the open air while showing off her erotic and unnatural mouth again, she purrs happily wraps her long tongues around your throbbing dick, and seals her lips around your swollen dick and twitching balls again, making you softly moan as she gently massages you with her sinuous tongues.",
+                                              	"You let out a blissful, dazed sigh as you lean back against the stone wall, Amy's clearly just getting started in her efforts to milk your churning balls dry, her aphrodisiac saliva continues to seep into you, keeping your cock so eager to cum and your twitching balls aching to be drained.",
+                                              	"All five of her tongues are coiling around your rigid manhood, pumping it, licking it, circling it, and milking it with perfect grace, leaving you floating in a cloud of euphoria, smiling blissfully, and Amy coos happily as she looks up at you from your groin.",
+												"PlayerOrgasmNoSpiritLoss",
+                                              	"One of them slides back along the underside of your twitching shaft and starts to lap at your tip while the rest continue to squeeze and stroke your rigid length, leaving you gasping with incoherent bliss, your body tenses with bubbling climactic ecstasy, and Amy seductively purrs, practically coaxing your seed out of your twitching balls to feed her.",
+                                              	"You moan with a loose pleasure-drunk smile as you pour load after load into her hungry mouth, and she lewdly gulps down every drop you give her while keeping your aching manhood hard with constant loving stimulation from her long tongues massaging its every inch.",
+                                              	"Her tongues suddenly pull away, but she keeps her lips firmly sealed around your groin, giving you a moment to recover from your ecstasy-induced daze, before her five long tongues slither around your aching balls, focusing completely on them as they squeeze and massage them, leaving you moaning from the strangely overwhelming stimulation.",
+                                              	"They lick and tease your churning sack, gently pulling and massaging them, leaving your cock spasming from your balls getting so wonderfully caressed, two of her tongues constantly focused on each of your balls while the fifth switches back and forth, keeping the squeezing stimulation chaotic but calculated, making the massaging bliss impossible to resist.",
+												"PlayerOrgasmNoSpiritLoss",
+                                              	"You gasp and twitch from the strange pleasure, and cry out with ecstasy as she tightly squeezes your aching sack with all of her tongues, literally wringing your cum out of your balls as your sensitive cock throbs and spurts load after load into her mouth to get ravenously gulped down, leaving you shivering with pleasure as her tongues unrelentingly tease you.",
+                                              	"As her tongues slip away you're left dazed, with a loose expression on your face as you stare into space, completely lost in blissful orgasmic ecstasy, and Amy purrs as she starts to milk your still rigid manhood, wrapping three of her tongues around it while the other two massage and squeeze your churning balls, leaving you crying out with pleasure.",
+												"PlayerOrgasmNoSpiritLoss",
+                                              	"The aphrodisiac saliva that's seeped into you must be keeping you hard, and making every orgasm feel even better, keeping your balls so full of semen to feed her. You sigh blissfully and twitch as the next orgasm is already washing over you, letting your tongue loll out as you unload into her mouth, the maddening pleasure overtaking your sense of reason.",
+                                              	"You feel like you're going to go mad from this ecstasy as she pumps, squeezes, licks and massages your throbbing cock and twitching balls almost non-stop, wringing out load after load of cum from you, leaving you shivering and twitching with delirium from the haze of euphoria filling your brain.",
+                                              	"Every seductive pump of your cock leaves you unloading into her mouth, every squeeze of your overstimulated balls drives you crazy with bliss as you spurt a rope of cum, each lick coaxing out a maddening shiver of pleasure as her tongue runs along the bottom of your shaft and you feed her another load of cum, and you stay achingly hard as she massages your dick all over with her writhing tongues, keeping you cumming over and over.",
+                                              	"The pleasure peaks in climax repeatedly as she keeps you spurting over and over sending you to the brink of ecstasy-stained madness from her loving, slithering tongues wringing you dry, leaving you moaning incomprehensibly as you cum, and cum, {i}and cum{/i}.",
+                                              	"ChangeImageLayer", "Expression", "Amy", "Content",
+                                              	"Just as you think every shred of your sanity is going to be sucked dry from the otherworldly pleasure of her unnatural mouth, she finally frees your shaft from her sealed lips, wetly displaying her tongues and your spasming dick. Amy closes her mouth, retracting her tongues, leaving your cock be, and you whimper with need, practically craving another mind-blanking orgasm as you shiver with delirium.",
+                                              	"ChangeImageLayer", "Expression", "Amy", "Happy",
+                                              	"She instead wraps her arms around your back and lays you down on your side with a playful chirp, nuzzling her smooth mask-like face into you shoulder, and instinctively you wrap your arms around her, and you're suddenly flooded with a peaceful afterglow that simply washes away the melting, maddening ecstasy, leaving you sighing, nuzzling back into her as you drift away to sleep, completely exhausted, and Amy's gently purr soothes you to sleep...",
+                                              	"...",
+                                              	"ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                              	"ChangeFetish", "Oral", "25",
+                                              	"ChangeFetish", "Monstrous", "25",
+                                              	"ChangeSensitivity",   "Sex", "10",
+                                              	"IfChoice", "2", "OfferedCock", "ReturnToMeeting",
+                                              	"SetChoice", "2", "OfferedCock",
+                                              	"GetEventAndChangeProgress", "Voracious Huntress", "5",
+                                              	"IfHasItem", "Labyrinth Checkpoint Gem", "ReturnToMeeting",
+                                              	"DisplayCharacters",
+                                              	"EndLoop",
+
+                                              	"You wake up in a daze, vividly recalling every moment of Amy draining you dry... And as you blearily blink, you notice that although she's no longer cuddled up to you, you can still feel her warmth on your body, hinting that she must have left recently.",
+                                              	"A bit shakily, you stand up, a little surprised not to be back at the Church after so much... {i}exertion{/i}. Nevertheless, you stagger forward and, after a spell of progressing down the tunnels somewhat at random, you home in on a familiar gooey noise, the squelching patters sounding very much like Perpetua wetly moving through the Caverns.",
+                                               	"DisplayCharacters",
+                                                	"1",
+                                              	"EndLoop",
+                                              	"You proceed to follow the squishy sounds and, eventually, after some catching up, you come across the triumphant slime girl at a branching path, your nemesis pointing ahead while glancing back at you with a smug grin.",
+                                              	"JumpToScene", "ChaseAfterPerpetua"
+                                          	]
+                            	},
+                                    	{
+                                        	"NameOfScene": "ReturnToMeeting",
+                                        	"theScene": [
+                                                        	"JumpToEventThenScene", "Voracious Huntress", "PostSexWakeup"
+                                                  	]
+                                    	},
+
+
+
+                      	{
+                          	"NameOfScene": "'Oh, sweet goddess, what the {i}FUCK{/i} is that thing?!'",
+                          	"theScene": [  "SetChoice", "1", "MeanToAmy", "StopBGM",
+                                        	"ChangeImageLayer", "Expression", "Amy", "BigEyes",
+                                        	"Amy recoils with a shocked yelp, rapidly retracting her long tongues and closing her mouth before scampering down a tunnel with a long depressed whine.",
+                                        	"DisplayCharacters",
+                                          	"1",
+                                        	"EndLoop",
+                                        	"ChangeImageLayer", "Expression", "1", "Depressed",
+                                        	"Before you can even process what happened, her fast-moving stark-white form is gone, leaving you blinking in puzzlement and Perpetua sighing in disappointment.",
+                                        	"GetEventAndChangeProgress", "PerpetuaHouse", "-1",
+                                        	"Speaks",
+                                        	"Wow... That was... That was harsh, [ThePlayerName]...",
+                                        	"ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                        	"ChangeImageLayer", "Expression", "1", "Base",
+                                        	"There's a long, awkward pause between the two of you as you contemplate what you just did, though you are quickly knocked out of your thoughts by Perpetua jostling you.",
+                                          "ChangeImageLayer", "Expression", "1", "Joy",
+                                        	"Speaks",
+                                        	"Ah, well, don't worry, tactless nemesis of mine! I'm sure you can go back and sort things out later!",
+                                        	"ChangeImageLayer", "Expression", "1", "Laugh",
+                                        	"Speaks",
+                                        	"For now, the last one out is a moldy blueberry!",
+                                          "She immediately bounces down a tunnel with a maniacal laugh, prompting you to follow after her... And though you can't help but have reservations concerning her pathfinding abilities, you are pleasantly surprised to find that she seems to be going the right way, as she is keen to confirm with a gloating titter.",
+                                        	"JumpToScene", "ChaseAfterPerpetua"
+                                    	]
+                      	},
+                      	{
+                          	"NameOfScene": "Attack!",
+                          	"theScene": [   "ChangeImageLayer", "Expression", "Amy", "Excited",
+                                          	"You resolutely step towards Amy and she closes her mouth with a rather playful hiss, clearly sensing your intent to battlefuck her into submission and looking more than ready to respond in kind!",
+                                          	"Speaks",
+                                          	"E-Eh-?! You're going to {i}fight{/i} her?! Are you {i}crazy?!{/i}",
+                                          	"ChangeImageLayer", "Expression", "1", "Joy",
+                                          	"Speaks",
+                                          	"...Wait, that means she's distracted! I can find a way out of here while you deal with her! Good job, [ThePlayerName]! Your sacrifice to my greatness will not be forgotten!",
+                                          	"ChangeImageLayer", "Expression", "Amy", "Curious",
+                                          	"Perpetua quickly oozes her way down a tunnel, Amy glancing over at her with a confused chirp for a moment before returning her attention back to you!",
+                                          	"JumpToScene", "FightAmy"
+                                    	]
+                      	},
+                            	{
+                                	"NameOfScene": "FightAmy",
+                                	"theScene": [   "GetEventAndSetProgress", "AmyCombatEvents", "0",
+                                                	"CombatEncounter",
+                                                  	"RunningWontSkipEvent",
+                                                  	"NoRunning",
+                                                  	"Amy",
+                                                	"StartCombat",
+                                                	"ChangeBGM", "music/Caverns/Stalwick_-_Dreaming.mp3",
+                                                	"With Amy defeated, you let out a sigh of relief and resume your progress. Though you initially trek down the tunnels somewhat at random, you soon home in on a familiar gooey noise, the squelching patters sounding very much like Perpetua wetly moving through the Caverns!",
+                                                	"DisplayCharacters",
+                                                  	"1",
+                                                	"EndLoop",
+                                                      "You proceed to follow the squishy sounds and, eventually, after some catching up, you come across the triumphant slime girl at a branching path, your nemesis pointing ahead while glancing back at you with a smug grin.",
+                                                	"JumpToScene", "ChaseAfterPerpetua"
+                                          	]
+                            	},
+                            	{
+                                	"NameOfScene": "ChaseAfterPerpetua",
+                                	"theScene": [  "ChangeImageLayer", "Expression", "1", "Laugh",
+                                              	"Speaks",
+                                                	"Bwahaha! I can see the exit! [ThePlayerName], you fool, you'll never stop me!",
+                                                	"Without waiting for an answer, she zips ahead and you chase after her, equally intent on getting out of the Caverns. You can't help but wonder how a slime can move so fast as you watch her swiftly ooze her way forward, still laughing...",
+                                                	"Up ahead, you see an archway with a carving above it that encouragingly reads 'To the Capital', and which leads into a dark but more solid-looking tunnel. The path ahead echoes with Perpetua's laugh as she hurries down its depths, and you follow after her..."
+                                          	]
+                            	}
+            	]
+}
