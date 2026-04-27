@@ -1,36 +1,37 @@
-2026-04-27 04:25:45 UTC
+2026-04-27 04:29:13 UTC
 Windows-11-10.0.26200-SP0
 Ren'Py 8.5.2.26010301
 
 Early init took 57 ms
-Loading error handling took 31 ms
-Loading script took 373 ms
-Loading save slot metadata took 13 ms
-Loading persistent took 9 ms
+Loading error handling took 28 ms
+Loading script took 399 ms
+Loading save slot metadata took 14 ms
+Loading persistent took 0 ms
 Set script version to: (8, 5, 2)
 orjson not found, using fallback.
- - Init at game/script.rpy:441 took 647 ms.
-Running init code took 869 ms
-Loading analysis data took 23 ms
-Analyze and compile ATL took 4 ms
-Reloading save slot metadata took 5 ms
-Dump and make backups took 1 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 55 ms
+ - Init at game/script.rpy:441 took 657 ms.
+
+Full traceback:
+  File "game/tl/japanese/common.rpy", line 212, in script
+    old "Attack"
+  File "renpy/ast.py", line 3046, in execute
+    renpy.translation.add_string_translation(self.language, self.old, self.new, newloc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/translation/__init__.py", line 593, in add_string_translation
+    stl.add(old, new, newloc)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "renpy/translation/__init__.py", line 539, in add
+    raise Exception('A translation for "{}" already exists at {}:{}.'.format(quote_unicode(old), fn, line))
+Exception: A translation for "Attack" already exists at game/tl/japanese/common.rpy:116.
+
+While running game code:
+  File "game/tl/japanese/common.rpy", line 212, in script
+    old "Attack"
+Exception: A translation for "Attack" already exists at game/tl/japanese/common.rpy:116.
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 152 ms
-Init translation took 10 ms
-Cleaning stores took 0 ms
-Load screen analysis took 1 ms
-Analyze screens took 25 ms
-Save screen analysis took 21 ms
-Save pyanalysis took 10 ms
-Save bytecode took 0 ms
-Running _start took 1 ms
-Interface start took 347 ms
+Interface start took 1150 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
