@@ -1,0 +1,26 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/tl/japanese/screens.rpy", line 445, in script
+    old "Rename"
+Exception: A translation for "Rename" already exists at game/tl/japanese/common.rpy:169.
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/tl/japanese/screens.rpy", line 445, in script
+    old "Rename"
+  File "renpy/ast.py", line 3046, in execute
+    renpy.translation.add_string_translation(self.language, self.old, self.new, newloc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/translation/__init__.py", line 593, in add_string_translation
+    stl.add(old, new, newloc)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "renpy/translation/__init__.py", line 539, in add
+    raise Exception('A translation for "{}" already exists at {}:{}.'.format(quote_unicode(old), fn, line))
+Exception: A translation for "Rename" already exists at game/tl/japanese/common.rpy:169.
+
+Windows-11-10.0.26200-SP0 AMD64
+Ren'Py 8.5.2.26010301
+Monster Girl Dreams Alpha-v27.4
+Mon Apr 27 13:17:17 2026
