@@ -1,37 +1,36 @@
-2026-04-27 04:32:02 UTC
+2026-04-27 04:39:23 UTC
 Windows-11-10.0.26200-SP0
 Ren'Py 8.5.2.26010301
 
-Early init took 58 ms
-Loading error handling took 28 ms
-Loading script took 407 ms
-Loading save slot metadata took 15 ms
-Loading persistent took 0 ms
+Early init took 57 ms
+Loading error handling took 30 ms
+Loading script took 366 ms
+Loading save slot metadata took 13 ms
+Loading persistent took 9 ms
 Set script version to: (8, 5, 2)
 orjson not found, using fallback.
- - Init at game/script.rpy:441 took 681 ms.
-
-Full traceback:
-  File "game/tl/japanese/common.rpy", line 289, in script
-    old "Heal"
-  File "renpy/ast.py", line 3046, in execute
-    renpy.translation.add_string_translation(self.language, self.old, self.new, newloc)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/translation/__init__.py", line 593, in add_string_translation
-    stl.add(old, new, newloc)
-    ~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "renpy/translation/__init__.py", line 539, in add
-    raise Exception('A translation for "{}" already exists at {}:{}.'.format(quote_unicode(old), fn, line))
-Exception: A translation for "Heal" already exists at game/tl/japanese/common.rpy:265.
-
-While running game code:
-  File "game/tl/japanese/common.rpy", line 289, in script
-    old "Heal"
-Exception: A translation for "Heal" already exists at game/tl/japanese/common.rpy:265.
+ - Init at game/script.rpy:441 took 639 ms.
+Running init code took 861 ms
+Loading analysis data took 24 ms
+Analyze and compile ATL took 5 ms
+Reloading save slot metadata took 5 ms
+Dump and make backups took 0 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 53 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Interface start took 1148 ms
+Creating interface object took 145 ms
+Init translation took 10 ms
+Cleaning stores took 0 ms
+Load screen analysis took 53 ms
+Analyze screens took 9 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 352 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)

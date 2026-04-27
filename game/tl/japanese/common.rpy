@@ -276,7 +276,6 @@ translate japanese strings:
     old "Block"
     new "ブロック"
 
-
     old "Fireball"
     new "ファイアボール"
 
@@ -285,9 +284,6 @@ translate japanese strings:
 
     old "Thunderbolt"
     new "サンダーボルト"
-
-    old "Heal"
-    new "ヒール"
 
     old "Cure"
     new "キュア"
@@ -309,9 +305,6 @@ translate japanese strings:
 
     old "Confuse"
     new "コンフューズ"
-
-    old "Charm"
-    new "チャーム"
 
     old "Petrify"
     new "ペトリファイ"
@@ -403,7 +396,6 @@ translate japanese strings:
     old "Zombie"
     new "ゾンビ"
 
-
     old "Affection Up"
     new "好感度アップ"
 
@@ -482,18 +474,6 @@ translate japanese strings:
     old "Sleep together"
     new "一緒に寝る"
 
-    old "Morning"
-    new "朝"
-
-    old "Afternoon"
-    new "昼"
-
-    old "Evening"
-    new "夕方"
-
-    old "Night"
-    new "夜"
-
     old "Good morning"
     new "おはよう"
 
@@ -517,177 +497,6 @@ translate japanese strings:
 
     old "No, thank you"
     new "いいえ、結構です"
-
-
-    old "Goddess"
-    new "女神"
-
-    old "Elf Princess"
-    new "エルフの姫"
-
-    old "Dark Elf"
-    new "ダークエルフ"
-
-    old "Succubus Queen"
-    new "サキュバスクイーン"
-
-    old "Dragon Girl"
-    new "ドラゴン娘"
-
-    old "Harpy Queen"
-    new "ハーピークイーン"
-
-    old "Lamia Empress"
-    new "ラミアの女帝"
-
-    old "Centaur Chieftain"
-    new "ケンタウロスの族長"
-
-    old "Mermaid Princess"
-    new "マーメイドの姫"
-
-    old "Fairy Queen"
-    new "妖精の女王"
-
-    old "Goblin Chief"
-    new "ゴブリン族長"
-
-    old "Orc Warlord"
-    new "オークの戦士長"
-
-    old "Minotaur King"
-    new "ミノタウロスの王"
-
-    old "Werewolf Alpha"
-    new "ウェアウルフのアルファ"
-
-    old "Vampire Countess"
-    new "ヴァンパイア伯爵夫人"
-
-    old "Slime Queen"
-    new "スライムクイーン"
-
-    old "Angel"
-    new "天使"
-
-    old "Demon Lord"
-    new "魔王"
-
-    old "Hero"
-    new "勇者"
-
-    old "Adventurer"
-    new "冒険者"
-
-    old "Monster Girl"
-    new "モンスター娘"
-
-    old "Human"
-    new "人間"
-
-    old "Beastkin"
-    new "獣人"
-
-    old "Spirit"
-    new "精霊"
-
-    old "Undead"
-    new "アンデッド"
-
-
-    old "Sweet Scent"
-    new "甘い香り"
-
-    old "Hypnotic Gaze"
-    new "催眠の視線"
-
-    old "Tentacle Bind"
-    new "触手拘束"
-
-    old "Pleasure Wave"
-    new "快楽の波"
-
-    old "Drain Kiss"
-    new "吸精のキス"
-
-    old "Charming Song"
-    new "魅惑の歌"
-
-    old "Paralyzing Touch"
-    new "麻痺の触手"
-
-    old "Aphrodisiac Mist"
-    new "媚薬の霧"
-
-    old "Lustful Embrace"
-    new "欲情の抱擁"
-
-    old "Corrupting Touch"
-    new "堕落の触れ合い"
-
-    old "Mind Break"
-    new "精神崩壊"
-
-    old "Ecstasy"
-    new "恍惚"
-
-    old "Submission"
-    new "服従"
-
-    old "Domination"
-    new "支配"
-
-    old "Love Confession"
-    new "愛の告白"
-
-    old "First Kiss"
-    new "初めてのキス"
-
-    old "First Time"
-    new "初めて"
-
-    old "Night of Passion"
-    new "情熱の夜"
-
-    old "Sweet Dream"
-    new "甘い夢"
-
-    old "Forbidden Fruit"
-    new "禁断の果実"
-
-    old "Eternal Bond"
-    new "永遠の絆"
-
-    old "Heart's Desire"
-    new "心の望み"
-
-    old "Body and Soul"
-    new "体と魂"
-
-    old "Lost in Pleasure"
-    new "快楽に溺れる"
-
-    old "Surrender"
-    new "降伏"
-
-    old "Resistance"
-    new "抵抗"
-
-    old "Willpower"
-    new "意志力"
-
-    old "Temptation"
-    new "誘惑"
-
-    old "Corruption Level"
-    new "堕落度"
-
-    old "Affection Level"
-    new "好感度"
-
-    old "Lust Level"
-    new "欲情度"
-
 
     old "I can't resist anymore"
     new "もう我慢できない"
@@ -772,3 +581,414 @@ translate japanese strings:
 
     old "Completely yours"
     new "完全にあなたのもの"
+
+    old "Sweet Scent"
+    new "甘い香り"
+
+    old "Hypnotic Gaze"
+    new "催眠の視線"
+
+    old "Tentacle Bind"
+    new "触手拘束"
+
+    old "Pleasure Wave"
+    new "快楽の波"
+
+    old "Drain Kiss"
+    new "吸精のキス"
+
+    old "Charming Song"
+    new "魅惑の歌"
+
+    old "Paralyzing Touch"
+    new "麻痺の触手"
+
+    old "Aphrodisiac Mist"
+    new "媚薬の霧"
+
+    old "Lustful Embrace"
+    new "欲情の抱擁"
+
+    old "Corrupting Touch"
+    new "堕落の触れ合い"
+
+    old "Mind Break"
+    new "精神崩壊"
+
+    old "Ecstasy"
+    new "恍惚"
+
+    old "Submission"
+    new "服従"
+
+    old "Domination"
+    new "支配"
+
+    old "Love Confession"
+    new "愛の告白"
+
+    old "First Kiss"
+    new "初めてのキス"
+
+    old "First Time"
+    new "初めて"
+
+    old "Night of Passion"
+    new "情熱の夜"
+
+    old "Sweet Dream"
+    new "甘い夢"
+
+    old "Forbidden Fruit"
+    new "禁断の果実"
+
+    old "Eternal Bond"
+    new "永遠の絆"
+
+    old "Heart's Desire"
+    new "心の望み"
+
+    old "Goddess"
+    new "女神"
+
+    old "Elf Princess"
+    new "エルフの姫"
+
+    old "Succubus Queen"
+    new "サキュバスクイーン"
+
+    old "Dragon Girl"
+    new "ドラゴン娘"
+
+    old "Harpy Queen"
+    new "ハーピークイーン"
+
+    old "Lamia Empress"
+    new "ラミアの女帝"
+
+    old "Centaur Chieftain"
+    new "ケンタウロスの族長"
+
+    old "Mermaid Princess"
+    new "マーメイドの姫"
+
+    old "Fairy Queen"
+    new "妖精の女王"
+
+    old "Goblin Chief"
+    new "ゴブリン族長"
+
+    old "Orc Warlord"
+    new "オークの戦士長"
+
+    old "Minotaur King"
+    new "ミノタウロスの王"
+
+    old "Werewolf Alpha"
+    new "ウェアウルフのアルファ"
+
+    old "Vampire Countess"
+    new "ヴァンパイア伯爵夫人"
+
+    old "Slime Queen"
+    new "スライムクイーン"
+
+    old "Angel"
+    new "天使"
+
+    old "Demon Lord"
+    new "魔王"
+
+    old "Hero"
+    new "勇者"
+
+    old "Adventurer"
+    new "冒険者"
+
+    old "Monster Girl"
+    new "モンスター娘"
+
+    old "Human"
+    new "人間"
+
+    old "Beastkin"
+    new "獣人"
+
+    old "Spirit"
+    new "精霊"
+
+    old "Undead"
+    new "アンデッド"
+
+
+    old "Tentacle Pleasure"
+    new "触手の快楽"
+
+    old "Hypnotic Kiss"
+    new "催眠のキス"
+
+    old "Pleasure Bind"
+    new "快楽の拘束"
+
+    old "Corrupting Embrace"
+    new "堕落の抱擁"
+
+    old "Lustful Gaze"
+    new "欲情の視線"
+
+    old "Ecstatic Touch"
+    new "恍惚の触れ合い"
+
+    old "Mind Melting"
+    new "精神溶解"
+
+    old "Body Betrayal"
+    new "体が裏切る"
+
+    old "Overwhelming Pleasure"
+    new "圧倒的な快楽"
+
+    old "Irresistible Desire"
+    new "抗えない欲望"
+
+    old "Sweet Corruption"
+    new "甘い堕落"
+
+    old "Pleasure Overload"
+    new "快楽過多"
+
+    old "Lost Control"
+    new "制御不能"
+
+    old "Complete Surrender"
+    new "完全降伏"
+
+    old "Eternal Pleasure"
+    new "永遠の快楽"
+
+    old "Divine Ecstasy"
+    new "神聖な恍惚"
+
+    old "Forbidden Pleasure"
+    new "禁断の快楽"
+
+    old "Intense Desire"
+    new "激しい欲望"
+
+    old "Overwhelming Lust"
+    new "圧倒的な欲情"
+
+    old "Mind and Body"
+    new "心と体"
+
+    old "Soul Binding"
+    new "魂の絆"
+
+    old "Heart Stealing"
+    new "心を奪う"
+
+    old "Passionate Night"
+    new "情熱の夜"
+
+    old "Sweet Surrender"
+    new "甘い降伏"
+
+    old "Ultimate Pleasure"
+    new "究極の快楽"
+
+    old "Endless Desire"
+    new "果てしない欲望"
+
+    old "Blissful Corruption"
+    new "至福の堕落"
+
+    old "Euphoric Touch"
+    new "陶酔の触れ合い"
+
+    old "Irresistible Temptation"
+    new "抗えない誘惑"
+
+    old "Complete Submission"
+    new "完全服従"
+
+
+    old "I want to feel you inside me"
+    new "私の中にあなたを感じたい"
+
+    old "Please fill me up"
+    new "私を満たしてほしい"
+
+    old "I can't hold back anymore"
+    new "もう我慢できない"
+
+    old "Make me yours completely"
+    new "私を完全にあなたのものにして"
+
+    old "I want to be corrupted by you"
+    new "あなたに堕落させられたい"
+
+    old "Break my mind with pleasure"
+    new "快楽で私の心を壊して"
+
+    old "I surrender my body and soul"
+    new "体も魂もあなたに捧げる"
+
+    old "Please dominate me"
+    new "私を支配して"
+
+    old "I want to lose myself in you"
+    new "あなたの中で自分を失いたい"
+
+    old "This feeling is addictive"
+    new "この感覚は中毒になる"
+
+    old "I can't live without your touch"
+    new "あなたの触れ合いなしでは生きられない"
+
+    old "You're the only one who can satisfy me"
+    new "あなただけが私を満足させられる"
+
+    old "I belong to you now"
+    new "私はもうあなたのもの"
+
+    old "My body craves you"
+    new "私の体はあなたを求めている"
+
+    old "I want to be your plaything"
+    new "私はあなたの玩具になりたい"
+
+    old "Use me as you wish"
+    new "好きなように使って"
+
+    old "I'm your willing slave"
+    new "私は喜んであなたの奴隷"
+
+    old "Please train me"
+    new "私を調教して"
+
+    old "I want to be broken by pleasure"
+    new "快楽で壊されたい"
+
+    old "My mind is melting"
+    new "私の心が溶けている"
+
+    old "I can't think of anything but you"
+    new "あなたのことしか考えられない"
+
+    old "This is pure bliss"
+    new "これは純粋な至福"
+
+    old "I want to stay like this forever"
+    new "このまま永遠にいたい"
+
+    old "You're my everything now"
+    new "あなたは今私の全て"
+
+    old "I love being yours"
+    new "あなたのものになるのが好き"
+
+    old "Please never let me go"
+    new "二度と離さないで"
+
+    old "I want to be marked by you"
+    new "あなたに刻まれたい"
+
+    old "My body is yours to command"
+    new "私の体はあなたの命令に従う"
+
+    old "I exist only for your pleasure"
+    new "私はあなたの快楽のために存在する"
+
+    old "Thank you for corrupting me"
+    new "私を堕落させてくれてありがとう"
+
+
+    old "I want to feel your love"
+    new "あなたの愛を感じたい"
+
+    old "Please hold me tight"
+    new "強く抱きしめて"
+
+    old "I want to be one with you"
+    new "あなたと一つになりたい"
+
+    old "This is true happiness"
+    new "これが本当の幸せ"
+
+    old "I want to stay in your arms forever"
+    new "あなたの腕の中で永遠にいたい"
+
+    old "You're my reason to live"
+    new "あなたは私の生きる理由"
+
+    old "I love everything about you"
+    new "あなたの全てが好き"
+
+    old "Please never change"
+    new "どうか変わらないで"
+
+    old "I want to make you happy"
+    new "あなたを幸せにしたい"
+
+    old "You're the best thing that ever happened to me"
+    new "あなたは私に起こった最高の出来事"
+
+    old "I can't imagine life without you"
+    new "あなたなしの人生は想像できない"
+
+    old "You complete me"
+    new "あなたが私を完成させてくれる"
+
+    old "I want to grow old with you"
+    new "あなたと一緒に年老いたい"
+
+    old "You're my soulmate"
+    new "あなたは私のソウルメイト"
+
+    old "I love you more than anything"
+    new "何よりもあなたが好き"
+
+    old "Please stay with me forever"
+    new "永遠に一緒にいて"
+
+    old "I want to be your everything"
+    new "私はあなたの全てになりたい"
+
+    old "You make me feel alive"
+    new "あなたは私を生きていると感じさせてくれる"
+
+    old "I want to spend eternity with you"
+    new "永遠にあなたと過ごしたい"
+
+    old "You're my light in the darkness"
+    new "あなたは闇の中の光"
+
+    old "I want to protect you"
+    new "あなたを守りたい"
+
+    old "You're my hero"
+    new "あなたは私のヒーロー"
+
+    old "I want to make you proud"
+    new "あなたを誇りに思わせたい"
+
+    old "Thank you for loving me"
+    new "私を愛してくれてありがとう"
+
+    old "I will always love you"
+    new "私はいつもあなたを愛している"
+
+    old "You're the love of my life"
+    new "あなたは私の人生の愛"
+
+    old "I can't wait to see you again"
+    new "また会えるのを楽しみにしている"
+
+    old "You make every day special"
+    new "あなたは毎日を特別なものにしてくれる"
+
+    old "I want to create beautiful memories with you"
+    new "あなたと美しい思い出を作りたい"
+
+    old "You're my greatest treasure"
+    new "あなたは私の最大の宝物"
