@@ -1,538 +1,763 @@
 {
-    "name": "BigLakeFishing",
-    "CardType": "Event",
-    "CardLimit": "0",
-    "Description": "",
-    "requires": [ ""],
-    "Speakers": [
-                  {
-                    "name": "Blue Slime",
-                    "postName": "",
-                    "SpeakerType": "Monster"
-                  },
-                  {
-                    "name": "Perpetua",
-                    "postName": "",
-                    "SpeakerType": "Monster"
-                  },
-                  {
-                    "name": "???",
-                    "postName": "",
-                    "SpeakerType": "?"
-                  }
-                ],
-    "EventText": [
-                      {
-                          "NameOfScene": "EventStart",
-                          "theScene": ["ChangeBGM-List",
-                                            "music/Relaxing/Purple Planet Music - Gentle - Eastern Karma (2_16).mp3",
-                                            "music/Relaxing/umi.mp3",
-                                            "music/Relaxing/Purple Planet Music - Lanquidity (2 52) 110bpm.mp3",
-                                            "music/Forest/Starry sky.mp3",
-                                            "music/Forest Dungeon/Stalwick-_Forest_Dungeon-Lurking.mp3",
-                                            "music/Capital/STARLIGHT.mp3",
-                                          "EndLoop",
-                                          "IfChoice", "1", "", "Tutorial",
-                                          "SwapLineIf", "IfTimeIs",
-                                            "DayTrue", "Wading through the lake, you approach the central lake island where the fishing Slimes have gathered, the ever industrious Seafoam giving you a small wave before pointing you to a free rod, letting you pick up your equipment and find a spot to set up amid the Slimes and their buckets of caught fish.",
-                                            "NightTrue","Wading through the lake, you approach the central lake island where a handful of hardcore fisher Slimes are still at it under the tutelage of the ever industrious Seafoam who gives you a small wave before pointing you to a free rod, letting you pick up your equipment and easily find a spot to set up, most of the Slimes having gone home for the evening along with their many buckets of caught fish, leaving you plenty of space.",
-                                          "EndLoop",
-                                          "JumpToScene", "FishingMenu"
-                                    ]
-                      },
-                            {
-                                "NameOfScene": "Tutorial",
-                                "theScene": [
-                                              "SetChoice", "1", "FishingTutDone",
-                                              "DisplayCharacters",
-                                                "1",
-                                              "EndLoop",
-                                              "Noticing that most of the fishing Slimes seem to have gathered on the island at the center of Sleim Vllge's lake, you curiously wade through the shallow water to join them, and are welcomed by a particularly industrious-looking one holding an aged-looking rod, the Slime Girl waving over to you with a smile.",
-                                              "Speak", "???",
-                                              "Hehe, very busy today, isn't it?",
-                                                "ChangeImageLayer", "Expression", "1", "Excited",
-                                              "Her line gets a slight tug, giving her a small start before she starts to reel it in while the other Slimes watch excitedly, the fisher Slime still idly chatting to you while she expertly brings up her catch.",
-                                              "Speak", "Seafoam",
-                                              "I'm Seafoam. You must be [ThePlayerName]. I'll teach you how to fish, too.",
-                                              "ChangeImageLayer", "Expression", "1", "Smug",
-                                              "She says with businesslike authority, then with a flourishing pull of her rod and a resounding splash, she takes out a large fish that she deftly catches in one hand to proudly show off to you and the other Slimes, the assembled apprentice fishers oooing and ahhing and clapping admiratively.",
-                                              "Speak", "Seafoam, Fishing Master of Sleim Vllge",
-                                              "For I am Seafoam, Fishing Master of Sleim Vllge.",
-                                              "She takes a moment to strike a smug pose, then unhooks the fish and tosses it back into the lake waters casually, prompting the other Slimes to focus back on their bobbers with redoubled attention, determined to get a catch to rival Seafoam's, the 'Fishing Master of Sleim Vllge' nodding contently at their eagerness before turning back to you with a more easygoing smile.",
-                                              "ChangeImageLayer", "Expression", "1", "Base",
-                                              "Speak", "Seafoam",
-                                              "But you can just call me Seafoam. Here, take a rod.",
-                                              "You wonder what kind you should choose, but before you know it, some of the nearby Slimes usher you forward, push a fishing rod into your hands, and seat you next to Seafoam, sparing you any indecision and leaving you a bit dizzy as the expert fisher Slime takes on an inspired air to explain.",
-                                              "ChangeImageLayer", "Expression", "1", "Smile",
-                                              "Speak", "Seafoam",
-                                              "Fishing is actually very easy, and relaxing... You just need to wait for the right moment, and visuzalize... visulaize... {i}picture{/i} the fish in your mind's eye, tugging it out of the water as soon as it bites your hook, like plucking a helpless blueberry! ... Just don't go swinging randomly or the line will break.",
-                                              "ChangeImageLayer", "Expression", "1", "ItsFine",
-                                              "You're... not sure exactly what she means, but she just giggles nonchalantly at your nonplussed expression, and pats your shoulder reassuringly.",
-                                              "Speak", "Seafoam",
-                                              "I know it's kinda abstract and all, but don't worry: just give it a try and you'll get the hang of it in no time.",
-                                              "ChangeImageLayer", "Expression", "1", "Excited",
-                                              "Speak", "Seafoam",
-                                              "So go on now, try it out!",
-                                              "DisplayCharacters",
-                                              "EndLoop",
-                                              "Taking her word for it, you attach some bait to your hook and throw it into the lake's waters. You watch it sink... Then you wait.",
-                                              "FishingMiniGame",
-                                                "AppearTimerRange", "200", "500",
-                                                "FailTimerRange", "400", "600",
-                                                "ReelsNeeded", "1",
-                                                "FishingPassJump", "FishCatchTut",
-                                                "FishingFailJump", "FishCatchFailTut",
-                                              "EndLoop"
-                                          ]
-                            },
-                                  {
-                                      "NameOfScene": "FishCatchTut",
-                                      "theScene": [
-                                                      "DisplayCharacters",
-                                                        "1",
-                                                      "EndLoop",
-                                                      "ChangeImageLayer", "Expression", "1", "Excited",
-                                                      "GetEventAndChangeProgress", "SleimVllge", "150",
-                                                      "With a resounding splash, you pull a flopping fish from the depths of the lake, making the Slimes around you ooo and ahhh.",
-                                                      "Speak", "Fisher Slimes",
-                                                      "It's a Laek Fesh!",
-                                                      "You're... not sure that's its actual name, but don't want to deflate their enthusiasm as they happily take your flopping catch off of your hook to place it into a nearby bucket while Seafoam gives you a cheerful nod of approval.",
-                                                      "Speak", "Seafoam",
-                                                      "Good job! I told you it was easy. Laek Fesh is very common and honestly nothing special, though, so an adventurer like you wouldn't really have any use for it... But it's still worth 150 Eros to the Vllg!",
-                                                      "ChangeImageLayer", "Expression", "1", "Base",
-                                                      "Speak", "Seafoam",
-                                                      "But not all fish will be so simple... Sometimes, you will need to tug many times in a row... Or they'll get away faster... It allll depends on the fish you hook! So stay vigilant!",
-                                                      "ChangeImageLayer", "Expression", "1", "Excited",
-                                                      "Speak", "Seafoam",
-                                                      "Every fish you catch will help the others learn and get better at fishing, too, so it'll help bring value to the village... So whenever you're in the mood, don't hesitate to come have a go!",
-                                                      "ChangeImageLayer", "Expression", "1", "Smile",
-                                                      "Speak", "Seafoam",
-                                                      "That should cover the basics, so you have fun now. I'll be here if you need help.",
-                                                      "Seafoam gives you a parting pat, then goes on to help one of the Slimes who managed to tangle herself in her fishing line somehow, leaving you to your own fishy devices...",
-                                                      "JumpToScene", "FishingMenu"
-                                                ]
-                                  },
-                                  {
-                                      "NameOfScene": "FishCatchFailTut",
-                                      "theScene": [
-                                                      "DisplayCharacters",
-                                                        "1",
-                                                      "EndLoop",
-                                                      "Despite your efforts, you fumble and feel the wriggling weight at the end of your line drop, then swiftly splash away into the safety of the lake's depths, eliciting compassionate awwws and pats from the assembled Slime Girls, including Seafoam.",
-                                                      "Speak", "Seafoam",
-                                                      "Ah... that's not good. But try again! I'm sure you'll get it this time...",
-                                                      "DisplayCharacters",
-                                                      "EndLoop",
-                                                      "FishingMiniGame",
-                                                        "AppearTimerRange", "50", "200",
-                                                        "FailTimerRange", "500", "700",
-                                                        "ReelsNeeded", "1",
-                                                        "FishingPassJump", "FishCatchTut",
-                                                        "FishingFailJump", "FishCatchFailTut",
-                                                      "EndLoop"
-                                                ]
-                                  },
-                    {
-                        "NameOfScene": "FishingMenu",
-                        "theScene": ["DisplayCharacters",
-                                      "EndLoop",
-                                        "Menu",
-                                          "Fish!",
-                                          "Trade in fish to Seafoam.",
-                                          "How many fish have I caught?",
-                                          "Done fishing.",
-                                        "EndLoop"
-                                  ]
-                    },
-                    {
-                        "NameOfScene": "Done fishing.",
-                        "theScene": [ "ChangeBGM", "music/Forest/Are-you-kidding.mp3",
-                                      "IfTimeIs", "NightTrue", "goBackNight",
-                                      "JumpToEventThenScene", "SleimVllge", "BeachMenu"
-                                  ]
-                    },
-                          {
-                              "NameOfScene": "goBackNight",
-                              "theScene": [
-                                            "JumpToEventThenScene", "SleimVllge", "BeachMenuNight"
-                                        ]
-                          },
-                          {
-                              "NameOfScene": "How many fish have I caught?",
-                              "theScene": [
-                                              "DisplayCharacters",
-                                                "1",
-                                              "EndLoop",
-                                              "Seafoam perks up cheerfully at your inquiry, and looks from her rod to you, as if the aged fishing implement somehow held the answer.",
-                                              "ChangeImageLayer", "Expression", "1", "Excited",
-                                              "Speak", "Seafoam",
-                                              "You've caught [ProgressDisplay] fish so far!",
-                                              "Speak", "Seafoam",
-                                              "SwapLineIf", "Progress",
-                                                "500",  "|f|ChangeImageLayer|/|Expression|/|1|/|Shy|n|Ah... Maybe I set you down the road to total fishing addiction... |f|ChangeImageLayer|/|Expression|/|1|/|Excited|n|Well, as long as you're having fun, it's fine... Just remember to take breaks! Even I do.",
-                                                "250",  "|f|ChangeImageLayer|/|Expression|/|1|/|ItsFine|n|Hmmm... That's a ton of fish... You're not doing it just to impress me, are you? Hehe, you already have with how passionate you are about fishing! The village greatly appreciates your help, too, and so do I.",
-                                                "100",  "|f|ChangeImageLayer|/|Expression|/|1|/|Excited Blush|n|Eh? That's... a lot... Are you sure you don't have adventurer stuff you should be doing? ... |f|ChangeImageLayer|/|Expression|/|1|/|Happy|n|Well, thank you very much for all your help regardless! I hope you're having lots of fun.♪",
-                                                "50",  "|f|ChangeImageLayer|/|Expression|/|1|/|Smile|n|Oh, you've actually caught quite a lot now, huh? You must really enjoy doing this... Or maybe you want to help the village that much? ... Well, either way, we all appreciate you helping.",
-                                                "25",  "|f|ChangeImageLayer|/|Expression|/|1|/|Happy|n|You're doing great! [ThePlayerName], the Greatest Novice Fisher...♪ |f|ChangeImageLayer|/|Expression|/|1|/|Smug|n|Let's see if you can catch at least 50! Then I'll stop calling you a novice, hehe.♪",
-                                                "10",  "|f|ChangeImageLayer|/|Expression|/|1|/|Smug|n|That's enough to fill a few of the small buckets, huh? Most of the slimes around here can manage this much, but I know that's not the limits to your potential, novice... |f|ChangeImageLayer|/|Expression|/|1|/|Happy|n|So go ahead and make me proud!",
-                                                "5",  "|f|ChangeImageLayer|/|Expression|/|1|/|Smile|n|Hmm... I think I can officially call you a {i}proper{/i} novice, now... But the road to fishing is long and arduous, so keep going... |f|ChangeImageLayer|/|Expression|/|1|/|ItsFine|n|...At least until you get bored. The fish aren't going anywhere, so don't be afraid to take a break and get back to it whenever you feel like it.",
-                                                "2",  "|f|ChangeImageLayer|/|Expression|/|1|/|Happy|n|Oh, you didn't stop, huh? Hehe, you're already better than most of the slimes around here! Keep going and help out Sleim Vllge more while honing your fishing skills, beginner!",
-                                                "1",  "|f|ChangeImageLayer|/|Expression|/|1|/|Smug|n|On your first fish still... The start of your fishing adventure. I'm sure you can catch plenty more... But for now, you're still a beginner. Show me your skills and you'll graduate to novice, hehe!",
-                                              "EndLoop",
-                                              "She then goes back to her own fishing, though you also notice her eyes zipping from one fisher to the next while her mouth occasionally silently moves in thought... Is she actually keeping a count of {i}all{/i} the fish people have caught?",
-                                              "DisplayCharacters",
-                                              "EndLoop",
-                                              "JumpToScene", "FishingMenu"
-                                        ]
-                          },
-
-                          {
-                              "NameOfScene": "Trade in fish to Seafoam.",
-                              "theScene": ["JumpToEvent", "FishingCalculator"
-                                        ]
-                          },
-
-
-
-                    {
-                        "NameOfScene": "FishCatchFail",
-                        "theScene": [
-                                        "That fish got away... but you could always try again!",
-                                        "JumpToScene", "FishingMenu"
-                                  ]
-                    },
-                    {
-                        "NameOfScene": "PostCatch",
-                        "theScene": [
-                                        "ChangeProgress", "1",
-                                        "JumpToScene", "FishingMenu"
-                                  ]
-                    },
-                    {
-                        "NameOfScene": "Fish!",
-                        "theScene": [   "IfTimeIs", "NightTrue", "NightFishing",
-                                        "JumpToRandomScene",
-                                            "Lakeweed",
-                                            "LaekFesh",
-                                            "LaekFesh",
-                                            "LaekFesh",
-                                            "LaekFesh",
-                                            "LaekFesh",
-                                            "LaekFesh",
-                                            "LucidianSnapper",
-                                            "LucidianSnapper",
-                                            "LucidianSnapper",
-                                            "LucidianSnapper",
-                                            "LucidianSnapper",
-                                            "HealersSkipper",
-                                            "HealersSkipper",
-                                            "HealersSkipper",
-                                            "LucidianScreamingFish",
-                                            "LucidianScreamingFish",
-                                            "Foolsgoldfish",
-                                            "Foolsgoldfish",
-                                            "FairyShark",
-                                            "FairyShark",
-                                            "DragonTrout",
-                                        "EndLoop"
-                                  ]
-                    },
-                            {
-                                "NameOfScene": "LaekFesh",
-                                "theScene": [
-                                                "FishingMiniGame",
-                                                  "AppearTimerRange", "100", "400",
-                                                  "FailTimerRange", "400", "600",
-                                                  "ReelsNeeded", "1",
-                                                  "FishingPassJump", "LaekFeshCatch",
-                                                  "FishingFailJump", "FishCatchFail",
-                                                "EndLoop"
-                                          ]
-                            },
-                                    {
-                                        "NameOfScene": "LaekFeshCatch",
-                                        "theScene": [
-                                                        "GetEventAndChangeProgress", "SleimVllge", "150",
-                                                        "With a resounding splash, you pull a flopping Laek Fesh from the depths of the laek- you mean the lake! The rather average catch gets a few cheers from the Slimes as you put the fish into a bucket... You're pretty sure it's just some kind of weird meaty trout. +150 Sleim Vllge value.",
-                                                        "JumpToScene", "PostCatch"
-                                                  ]
-                                    },
-
-                            {
-                                "NameOfScene": "Lakeweed",
-                                "theScene": [
-                                                "FishingMiniGame",
-                                                  "AppearTimerRange", "25", "100",
-                                                  "FailTimerRange", "500", "750",
-                                                  "ReelsNeeded", "1",
-                                                  "FishingPassJump", "LakeweedCatch",
-                                                  "FishingFailJump", "FishCatchFail",
-                                                "EndLoop"
-                                          ]
-                            },
-                                    {
-                                        "NameOfScene": "LakeweedCatch",
-                                        "theScene": [
-                                                        "GetEventAndChangeProgress", "SleimVllge", "75",
-                                                        "You tug out your line and find that instead of a fish, it got tangled up in a bunch of Lakeweed. It's like seaweed, but in a lake! A few Slimes help you disentangle it from your line and then toss it into a bucket, which means it must have {i}some{/i} value... +75 Sleim Vllge value.",
-                                                        "JumpToScene", "PostCatch"
-                                                  ]
-                                    },
-                            {
-                                "NameOfScene": "LucidianSnapper",
-                                "theScene": [
-                                                "FishingMiniGame",
-                                                  "AppearTimerRange", "100", "200",
-                                                  "FailTimerRange", "200", "300",
-                                                  "ReelsNeeded", "2",
-                                                  "FishingPassJump", "LucidianSnapperCatch",
-                                                  "FishingFailJump", "FishCatchFail",
-                                                "EndLoop"
-                                          ]
-                            },
-                                    {
-                                        "NameOfScene": "LucidianSnapperCatch",
-                                        "theScene": [
-                                                        "GetEventAndChangeProgress", "SleimVllge", "300",
-                                                        "Alerted by the abrupt tug on your rod, you firmly pull your line out of the water, and are met with the sight of a Lucidian Snapper clinging to your hook! This common crystalline crustacean can be found all over Lucidia, and is prized for its robust meat. You drop it into the crab bucket with the others, noting that one Slime is just watching the shimmering creatures, as if entranced. +300 Sleim Vllge value.",
-                                                        "JumpToScene", "PostCatch"
-                                                  ]
-                                    },
-                            {
-                                "NameOfScene": "HealersSkipper",
-                                "theScene": [
-                                                "FishingMiniGame",
-                                                  "AppearTimerRange", "200", "400",
-                                                  "FailTimerRange", "150", "200",
-                                                  "ReelsNeeded", "3",
-                                                  "FishingPassJump", "HealersSkipperCatch",
-                                                  "FishingFailJump", "FishCatchFail",
-                                                "EndLoop"
-                                          ]
-                            },
-                                    {
-                                        "NameOfScene": "HealersSkipperCatch",
-                                        "theScene": [
-                                                        "GetEventAndChangeProgress", "SleimVllge", "500",
-                                                        "With a hearty splash, you pull free a green moss-covered fish. It's a Healer's Skipper! This common fish eats all manner of herbs, making it full of medicinal goodness. The perfect food for ailing patients! You gently slip it in the bucket with the other catches while the Slimes giggle about the 'fuzzy fish', poking it with carefree amusement. +500 Sleim Vllge value.",
-                                                        "JumpToScene", "PostCatch"
-                                                  ]
-                                    },
-                            {
-                                "NameOfScene": "LucidianScreamingFish",
-                                "theScene": [
-                                                "FishingMiniGame",
-                                                  "AppearTimerRange", "300", "300",
-                                                  "FailTimerRange", "100", "100",
-                                                  "ReelsNeeded", "5",
-                                                  "FishingPassJump", "LucidianScreamingFishCatch",
-                                                  "FishingFailJump", "FishCatchFail",
-                                                "EndLoop"
-                                          ]
-                            },
-                                  {
-                                      "NameOfScene": "LucidianScreamingFishCatch",
-                                      "theScene": [
-                                                      "GetEventAndChangeProgress", "SleimVllge", "750",
-                                                      "As you pull the straining line, you hear a muffled hissing shriek that sends a chill through you and all the Slimes nearby who watch you take the ornery fish out of the water, its unnerving howl ringing out unpleasantly as you hold it up with a wince. It's a Lucidian Screaming Fish! The Slimes don't seem happy to see it, and nearly toss it back into the lake instead of a bucket... +750 Sleim Vllge value.",
-                                                      "JumpToScene", "PostCatch"
-                                                ]
-                                  },
-                            {
-                                "NameOfScene": "Foolsgoldfish",
-                                "theScene": [
-                                                "FishingMiniGame",
-                                                  "AppearTimerRange", "500", "750",
-                                                  "FailTimerRange", "200", "200",
-                                                  "ReelsNeeded", "5",
-                                                  "FishingPassJump", "FoolsgoldfishCatch",
-                                                  "FishingFailJump", "FishCatchFail",
-                                                "EndLoop"
-                                          ]
-                            },
-                                  {
-                                      "NameOfScene": "FoolsgoldfishCatch",
-                                      "theScene": [
-                                                      "GetEventAndChangeProgress", "SleimVllge", "1000",
-                                                      "Struggling with the line, you can tell this thing is heavy even before it splashes out of the lake with one final heave, revealing a small, glimmering golden fish!!! ... Which both you and Seafoam quickly realize is actually a Pyrition, aka Fool's Goldfish, leaving the other Slimes a bit disappointed at the deceptive rock-coated fish... But it's still pretty rare and valuable! +1000 Sleim Vllge value.",
-                                                      "JumpToScene", "PostCatch"
-                                                ]
-                                  },
-                            {
-                                "NameOfScene": "FairyShark",
-                                "theScene": [
-                                                "FishingMiniGame",
-                                                  "AppearTimerRange", "500", "750",
-                                                  "FailTimerRange", "100", "100",
-                                                  "ReelsNeeded", "10",
-                                                  "FishingPassJump", "FairySharkCatch",
-                                                  "FishingFailJump", "FishCatchFail",
-                                                "EndLoop"
-                                          ]
-                            },
-                                  {
-                                      "NameOfScene": "FairySharkCatch",
-                                      "theScene": [
-                                                      "GetEventAndChangeProgress", "SleimVllge", "1500",
-                                                      "Though your line strains worryingly against the feisty fish, you eventually best it and pull it out of the lake, revealing... a tiny shark? Seafoam squees at the 'Fairy Shark', and hurriedly puts it into its own bucket with a doting pat, commenting that it's apparently a prized pet for many! +1500 Sleim Vllge value.",
-                                                      "JumpToScene", "PostCatch"
-                                                ]
-                                  },
-                            {
-                                "NameOfScene": "DragonTrout",
-                                "theScene": [
-                                                "FishingMiniGame",
-                                                  "AppearTimerRange", "50", "150",
-                                                  "FailTimerRange", "60", "60",
-                                                  "ReelsNeeded", "10",
-                                                  "FishingPassJump", "DragonTroutCatch",
-                                                  "FishingFailJump", "FishCatchFail",
-                                                "EndLoop"
-                                          ]
-                            },
-                                    {
-                                        "NameOfScene": "DragonTroutCatch",
-                                        "theScene": [
-                                                        "GiveItemQuietly", "1", "Dragon Trout",
-                                                        "After a vicious back-and-forth tug of war with the unexpectedly powerful fish on your line, you pull it free, surprising you and the Slimes around with a gout of fire that shoots into the air! Amid the flailing panic, you and Seafoam wrestle and incapacitate the large bulky red Dragon Trout!",
-                                                        "But instead of ending up in one of the buckets, you find the rare, angry creature foisted upon you, both out of worry and due to its apparently high value, leaving you to decide whether you want to keep it or cash it in with Seafoam for its full value.",
-                                                        "JumpToScene", "PostCatch"
-                                                  ]
-                                    },
-
-                        {
-                            "NameOfScene": "NightFishing",
-                            "theScene": [
-                                            "JumpToRandomScene",
-                                                "Lakeweed",
-                                                "LaekFesh",
-                                                "LaekFesh",
-                                                "LaekFesh",
-                                                "LaekFesh",
-                                                "LaekFesh",
-                                                "DeepFish",
-                                                "DeepFish",
-                                                "DeepFish",
-                                                "DeepFish",
-                                                "DeepFish",
-                                                "LunarTrout",
-                                                "LunarTrout",
-                                                "LunarTrout",
-                                                "LunarTrout",
-                                                "HealersSkipper",
-                                                "HealersSkipper",
-                                                "SquishyFishie",
-                                                "SquishyFishie",
-                                                "Foolsgoldfish",
-                                                "UmbralAngler",
-                                                "UmbralAngler",
-                                                "DreamEel",
-                                            "EndLoop"
-                                      ]
-                        },
-                              {
-                                  "NameOfScene": "DeepFish",
-                                  "theScene": [
-                                                  "FishingMiniGame",
-                                                    "AppearTimerRange", "100", "200",
-                                                    "FailTimerRange", "200", "300",
-                                                    "ReelsNeeded", "2",
-                                                    "FishingPassJump", "DeepFishCatch",
-                                                    "FishingFailJump", "FishCatchFail",
-                                                  "EndLoop"
-                                            ]
-                              },
-                                      {
-                                          "NameOfScene": "DeepFishCatch",
-                                          "theScene": [
-                                                          "GiveItemQuietly", "1",  "Deep Fish",
-                                                          "With a few skillful tugs, you pull out a rather small and sleek blind purple fish that shines ominously in the moonlight... A Deep Fish? The lake must be connected to the Caverns somehow... The few surrounding Blue Slimes look rather grossed out, leaving you holding onto the strange fish for future use or sale while Seafoam giggles at the sight of you gingerly handling the wet, sticky thing.",
-                                                          "JumpToScene", "PostCatch"
-                                                    ]
-                                      },
-                              {
-                                  "NameOfScene": "LunarTrout",
-                                  "theScene": [
-                                                  "FishingMiniGame",
-                                                    "AppearTimerRange", "300", "300",
-                                                    "FailTimerRange", "100", "100",
-                                                    "ReelsNeeded", "5",
-                                                    "FishingPassJump", "LunarTroutCatch",
-                                                    "FishingFailJump", "FishCatchFail",
-                                                  "EndLoop"
-                                            ]
-                              },
-                                    {
-                                        "NameOfScene": "LunarTroutCatch",
-                                        "theScene": [
-                                                        "GetEventAndChangeProgress", "SleimVllge", "750",
-                                                        "With an almost theatrical final tug, you pull free a silvery pale fish that glimmers in the starry light, the eye-catching sight making the Slimes ooo and ahhh at the Lunar Trout you just caught. Sadly, despite their beauty, they aren't exactly rare, but they are tasty! Into the bucket it goes. +750 Sleim Vllge value.",
-                                                        "JumpToScene", "PostCatch"
-                                                  ]
-                                    },
-                              {
-                                  "NameOfScene": "SquishyFishie",
-                                  "theScene": [
-                                                  "FishingMiniGame",
-                                                    "AppearTimerRange", "500", "750",
-                                                    "FailTimerRange", "200", "200",
-                                                    "ReelsNeeded", "5",
-                                                    "FishingPassJump", "SquishyFishieCatch",
-                                                    "FishingFailJump", "FishCatchFail",
-                                                  "EndLoop"
-                                            ]
-                              },
-                                    {
-                                        "NameOfScene": "SquishyFishieCatch",
-                                        "theScene": [
-                                                        "GetEventAndChangeProgress", "SleimVllge", "1000",
-                                                        "For a while, you actually didn't realize something was on your line, but after some skilled reeling, you pull free an etheric-looking fish-shaped jellyfish! Whatever it may be actually named, it is authoritatively and cheerfully called 'Squishy Fishie' by the enthusiastic Slimes... +1000 Sleim Vllge value.",
-                                                        "JumpToScene", "PostCatch"
-                                                  ]
-                                    },
-
-                              {
-                                  "NameOfScene": "UmbralAngler",
-                                  "theScene": [
-                                                  "FishingMiniGame",
-                                                    "AppearTimerRange", "500", "750",
-                                                    "FailTimerRange", "100", "100",
-                                                    "ReelsNeeded", "10",
-                                                    "FishingPassJump", "UmbralAnglerCatch",
-                                                    "FishingFailJump", "FishCatchFail",
-                                                  "EndLoop"
-                                            ]
-                              },
-                                    {
-                                        "NameOfScene": "UmbralAnglerCatch",
-                                        "theScene": [
-                                                        "GetEventAndChangeProgress", "SleimVllge", "1500",
-                                                        "In the dark of the night, you long strain against your fishy opponent, until you finally pull it free with a resounding splash... that soon plunges the entire area into obfuscating magical darkness! After a few flailing moments and some bumping into each other, you and the Slimes manage to grab and deposit the Umbral Angler into a bucket where its magic is confined to the recipient, making its water look inky dark. +1500 Sleim Vllge value.",
-                                                        "JumpToScene", "PostCatch"
-                                                  ]
-                                    },
-                              {
-                                  "NameOfScene": "DreamEel",
-                                  "theScene": [
-                                                  "FishingMiniGame",
-                                                    "AppearTimerRange", "50", "150",
-                                                    "FailTimerRange", "60", "60",
-                                                    "ReelsNeeded", "10",
-                                                    "FishingPassJump", "DreamEelCatch",
-                                                    "FishingFailJump", "FishCatchFail",
-                                                  "EndLoop"
-                                            ]
-                              },
-                                      {
-                                          "NameOfScene": "DreamEelCatch",
-                                          "theScene": [
-                                                          "GiveItemQuietly", "1",  "Dream Eel",
-                                                          "Your struggle with the nightlit fish feels like it goes on for far longer than it actually does, many Slimes watching with curious excitement when you finally pull free the long serpentine form of a polychromatic Dream Eel! A rarity even in Lucidia! The Slimes insist you keep the valuable semi-etheric fish, letting you decide what to do with it.",
-                                                          "JumpToScene", "PostCatch"
-                                                    ]
-                                      }
-
-
-
-                ]
+  "name": "BigLakeFishing",
+  "CardType": "Event",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [
+    ""
+  ],
+  "Speakers": [
+    {
+      "name": "Blue Slime",
+      "postName": "",
+      "SpeakerType": "Monster"
+    },
+    {
+      "name": "Perpetua",
+      "postName": "",
+      "SpeakerType": "Monster"
+    },
+    {
+      "name": "???",
+      "postName": "",
+      "SpeakerType": "?"
+    }
+  ],
+  "EventText": [
+    {
+      "NameOfScene": "EventStart",
+      "theScene": [
+        "ChangeBGM-List",
+        "music/Relaxing/Purple Planet Music - Gentle - Eastern Karma (2_16).mp3",
+        "music/Relaxing/umi.mp3",
+        "music/Relaxing/Purple Planet Music - Lanquidity (2 52) 110bpm.mp3",
+        "music/Forest/Starry sky.mp3",
+        "music/Forest Dungeon/Stalwick-_Forest_Dungeon-Lurking.mp3",
+        "music/Capital/STARLIGHT.mp3",
+        "EndLoop",
+        "IfChoice",
+        "1",
+        "",
+        "Tutorial",
+        "SwapLineIf",
+        "IfTimeIs",
+        "DayTrue",
+        "湖を浅く渡り、釣りをしているスライムたちが集まる中央の湖島に近づく。いつも忙しげなシーフォームが小さく手を振り、使っていない釣り竿を指差してくれる。道具を手に取り、スライムたちと魚のバケツの間に場所を見つけて釣りを始める。",
+        "NightTrue",
+        "湖を浅く渡り、中央の湖島に近づくと、少数の本格派スライム釣り師たちがまだ夜の闇の中で釣りを続けている。いつも忙しげなシーフォームが小さく手を振り、使っていない釣り竿を指差してくれる。道具を手に取り、場所を見つけるのは簡単だった。ほとんどのスライムはすでに帰宅し、大量の釣果とともに去っていったため、十分なスペースが空いている。",
+        "EndLoop",
+        "JumpToScene",
+        "FishingMenu"
+      ]
+    },
+    {
+      "NameOfScene": "Tutorial",
+      "theScene": [
+        "SetChoice",
+        "1",
+        "FishingTutDone",
+        "DisplayCharacters",
+        "1",
+        "EndLoop",
+        "ほとんどの釣りスライムがスライム村の湖の中央にある島に集まっているのに気づき、好奇心から浅い水を渡って合流する。年代物の釣り竿を持った特に勤勉そうなスライムガールに歓迎され、彼女は笑顔で手を振る。",
+        "Speak",
+        "???",
+        "へへ、今日は本当に忙しいわね？",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Excited",
+        "彼女のラインに軽い引きがあり、少し驚いた様子でリールを巻き始める。他のスライムたちが興奮して見守る中、釣りスライムはあなたに話しかけながら器用に釣果を引き上げる。",
+        "Speak",
+        "シーフォーム",
+        "私はシーフォームよ。あなたが[ThePlayerName]ね。私も釣り方を教えてあげるわ。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Smug",
+        "彼女は事務的な権威をもって言い、竿を華麗に振り上げて大きな水しぶきを上げると、大きな魚を器用に片手でキャッチして自慢げにあなたと他のスライムたちに見せる。集まった見習い釣り師たちは「わあ」「すごい」と声を上げ、拍手する。",
+        "Speak",
+        "シーフォーム、スライム村の釣りマスター",
+        "なぜなら私はスライム村の釣りマスター、シーフォームだからよ。",
+        "彼女は少し自慢げなポーズを決めた後、魚の針を外して湖に軽く投げ返す。他のスライムたちは再び釣り糸に集中し、シーフォームに負けない釣果を目指す。『スライム村の釣りマスター』は彼らの熱意に満足げに頷き、あなたに向かってより気さくな笑顔を向ける。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speak",
+        "シーフォーム",
+        "でもシーフォームと呼んでくれていいわ。ほら、釣り竿を持ちなさい。",
+        "どの竿を選ぶか迷っていると、近くのスライムたちがあなたを前に押し出し、釣り竿を手に渡してシーフォームの隣に座らせる。迷う暇もなく、専門家の釣りスライムが熱心に説明を始める。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Smile",
+        "Speak",
+        "シーフォーム",
+        "釣りは実はとても簡単で、リラックスできるのよ……ただ正しいタイミングを待って、視覚化……視覚化……頭の中で魚を{ i}イメージ{/i}して、針にかかったらすぐに水から引き上げるの。まるで無防備なブルーベリーを摘むように！……ただし無闇に振り回さないで。ラインが切れちゃうから。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "ItsFine",
+        "あなたは彼女の言っていることがよくわからないが、彼女はあなたの戸惑った表情を見て気楽にくすくす笑い、肩を優しく叩く。",
+        "Speak",
+        "シーフォーム",
+        "ちょっと抽象的かもしれないけど、心配しないで。一度やってみればすぐにコツを掴めるわよ。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Excited",
+        "Speak",
+        "シーフォーム",
+        "さあ、やってみて！",
+        "DisplayCharacters",
+        "EndLoop",
+        "彼女の言葉を信じて、針に餌をつけて湖に投げ入れる。沈むのを見て……そして待つ。",
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "200",
+        "500",
+        "FailTimerRange",
+        "400",
+        "600",
+        "ReelsNeeded",
+        "1",
+        "FishingPassJump",
+        "FishCatchTut",
+        "FishingFailJump",
+        "FishCatchFailTut",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "FishCatchTut",
+      "theScene": [
+        "DisplayCharacters",
+        "1",
+        "EndLoop",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Excited",
+        "GetEventAndChangeProgress",
+        "SleimVllge",
+        "150",
+        "大きな水しぶきを上げて、湖の底からピチピチ跳ねる魚を引き上げる。周りのスライムたちが「わあ」「すごい」と声を上げる。",
+        "Speak",
+        "釣りスライムたち",
+        "レークフェッシュだよ！",
+        "実際の名前かどうかはわからないが、彼女たちの熱意をくじきたくないので、ピチピチ跳ねる釣果を針から外して近くのバケツに入れる。シーフォームが嬉しそうに頷く。",
+        "Speak",
+        "シーフォーム",
+        "よくやった！言った通り簡単でしょう？レークフェッシュはとても一般的で正直特別なものじゃないけど、冒険者であるあなたにはあまり使い道がないわね……でもスライム村にとっては150エロス分の価値があるのよ！",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speak",
+        "シーフォーム",
+        "でもすべての魚がこんなに簡単なわけじゃないわ……時には何度も引き続ける必要があるし……逃げが早い魚もいるわ。すべては釣った魚によるのよ！だから油断しないで！",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Excited",
+        "Speak",
+        "シーフォーム",
+        "あなたが釣った魚は他のスライムたちの学習にも役立つわ。だから村のためにもなるの……釣り気分になったら、いつでも来てね！",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Smile",
+        "Speak",
+        "シーフォーム",
+        "基礎はこれで終わりよ。楽しんでね。何かあったら私がここにいるわ。",
+        "シーフォームは最後に肩を軽く叩き、ラインに絡まってしまったスライムを助けに行く。あなたは自分の釣りに集中する……",
+        "JumpToScene",
+        "FishingMenu"
+      ]
+    },
+    {
+      "NameOfScene": "FishCatchFailTut",
+      "theScene": [
+        "DisplayCharacters",
+        "1",
+        "EndLoop",
+        "努力したにもかかわらず、ラインの先端の重みが抜け落ち、素早く湖の安全な深みに逃げてしまう。周りのスライムガールたち（シーフォームも含めて）が同情の「うわあ」と肩を叩く。",
+        "Speak",
+        "シーフォーム",
+        "あっ……残念。でもまた挑戦して！今度はきっとできるわよ……",
+        "DisplayCharacters",
+        "EndLoop",
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "50",
+        "200",
+        "FailTimerRange",
+        "500",
+        "700",
+        "ReelsNeeded",
+        "1",
+        "FishingPassJump",
+        "FishCatchTut",
+        "FishingFailJump",
+        "FishCatchFailTut",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "FishingMenu",
+      "theScene": [
+        "DisplayCharacters",
+        "EndLoop",
+        "Menu",
+        "釣りをする！",
+        "シーフォームに魚を売る。",
+        "今まで何匹釣った？",
+        "釣りをやめる。",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "Done fishing.",
+      "theScene": [
+        "ChangeBGM",
+        "music/Forest/Are-you-kidding.mp3",
+        "IfTimeIs",
+        "NightTrue",
+        "goBackNight",
+        "JumpToEventThenScene",
+        "SleimVllge",
+        "BeachMenu"
+      ]
+    },
+    {
+      "NameOfScene": "goBackNight",
+      "theScene": [
+        "JumpToEventThenScene",
+        "SleimVllge",
+        "BeachMenuNight"
+      ]
+    },
+    {
+      "NameOfScene": "How many fish have I caught?",
+      "theScene": [
+        "DisplayCharacters",
+        "1",
+        "EndLoop",
+        "シーフォームはあなたの質問に嬉しそうに顔を上げ、釣り竿からあなたを見て、まるで古い釣り道具が答えを知っているかのように言う。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Excited",
+        "Speak",
+        "シーフォーム",
+        "今まで[ProgressDisplay]匹釣ったわよ！",
+        "Speak",
+        "シーフォーム",
+        "SwapLineIf",
+        "Progress",
+        "500",
+        "|f|ChangeImageLayer|/|Expression|/|1|/|Shy|n|あっ……もしかして私があなたを釣り中毒の道に導いてしまったかも…… |f|ChangeImageLayer|/|Expression|/|1|/|Excited|n|まあ、楽しんでるならいいわ……でも休憩も忘れずにね！私もしてるんだから。",
+        "250",
+        "|f|ChangeImageLayer|/|Expression|/|1|/|ItsFine|n|ふむ……すごい量ね……私を impress するためだけにやってるわけじゃないわよね？ふふ、あなたの情熱にはもう十分 impress されてるわ！村も本当に感謝してるし、私もよ。",
+        "100",
+        "|f|ChangeImageLayer|/|Expression|/|1|/|Excited Blush|n|えっ？それは……すごいわ……本当に冒険者の仕事はないの？…… |f|ChangeImageLayer|/|Expression|/|1|/|Happy|n|まあ、とにかく本当にありがとう！たくさん楽しんでるといいわね。♪",
+        "50",
+        "|f|ChangeImageLayer|/|Expression|/|1|/|Smile|n|あら、かなりたくさん釣ったわね。本当にこの作業が好きなんだ……それとも村を助けたい気持ちが強いのかしら？……まあ、どちらにせよ、私たちはみんな感謝してるわ。",
+        "25",
+        "|f|ChangeImageLayer|/|Expression|/|1|/|Happy|n|調子いいわね！[ThePlayerName]、最高の初心者釣り師……♪ |f|ChangeImageLayer|/|Expression|/|1|/|Smug|n|あと50匹釣れたら「初心者」って呼ばないようにするわね、ふふ。♪",
+        "10",
+        "|f|ChangeImageLayer|/|Expression|/|1|/|Smug|n|小さなバケツをいくつか満たすくらいの量ね。周りのスライムたちはこのくらいなら普通にできるけど、あなたの潜在能力はそれだけじゃないわよ、初心者さん…… |f|ChangeImageLayer|/|Expression|/|1|/|Happy|n|さあ、私を自慢させて！",
+        "5",
+        "|f|ChangeImageLayer|/|Expression|/|1|/|Smile|n|ふむ……これで正式に{ i}ちゃんとした{/i}初心者って呼べるわね……でも釣りの道は長くて大変よ、だから続けて…… |f|ChangeImageLayer|/|Expression|/|1|/|ItsFine|n|……飽きるまでね。魚はどこにも行かないから、疲れたら休憩して、気が向いたらまた来てね。",
+        "2",
+        "|f|ChangeImageLayer|/|Expression|/|1|/|Happy|n|おや、止めなかったのね？ふふ、あなたはもう周りのスライムたちより上手よ！続けてスライム村をもっと助けながら、釣りスキルを磨いて、初心者さん！",
+        "1",
+        "|f|ChangeImageLayer|/|Expression|/|1|/|Smug|n|まだ1匹目ね……あなたの釣り冒険の始まりよ。きっともっとたくさん釣れるわ……でも今はまだ初心者。スキルを私に見せて、初心者に卒業しなさい、ふふ！",
+        "EndLoop",
+        "それから彼女は自分の釣りに戻るが、彼女の目が次の釣り師から次の釣り師へと素早く動き、口が時々無言で動いていることに気づく……彼女は本当に{ i}全員{/i}の釣果を数えているのだろうか？",
+        "DisplayCharacters",
+        "EndLoop",
+        "JumpToScene",
+        "FishingMenu"
+      ]
+    },
+    {
+      "NameOfScene": "Trade in fish to Seafoam.",
+      "theScene": [
+        "JumpToEvent",
+        "FishingCalculator"
+      ]
+    },
+    {
+      "NameOfScene": "FishCatchFail",
+      "theScene": [
+        "魚が逃げてしまった……でもまた挑戦できるよ！",
+        "JumpToScene",
+        "FishingMenu"
+      ]
+    },
+    {
+      "NameOfScene": "PostCatch",
+      "theScene": [
+        "ChangeProgress",
+        "1",
+        "JumpToScene",
+        "FishingMenu"
+      ]
+    },
+    {
+      "NameOfScene": "Fish!",
+      "theScene": [
+        "IfTimeIs",
+        "NightTrue",
+        "NightFishing",
+        "JumpToRandomScene",
+        "Lakeweed",
+        "LaekFesh",
+        "LaekFesh",
+        "LaekFesh",
+        "LaekFesh",
+        "LaekFesh",
+        "LaekFesh",
+        "LucidianSnapper",
+        "LucidianSnapper",
+        "LucidianSnapper",
+        "LucidianSnapper",
+        "LucidianSnapper",
+        "HealersSkipper",
+        "HealersSkipper",
+        "HealersSkipper",
+        "LucidianScreamingFish",
+        "LucidianScreamingFish",
+        "Foolsgoldfish",
+        "Foolsgoldfish",
+        "FairyShark",
+        "FairyShark",
+        "DragonTrout",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "LaekFesh",
+      "theScene": [
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "100",
+        "400",
+        "FailTimerRange",
+        "400",
+        "600",
+        "ReelsNeeded",
+        "1",
+        "FishingPassJump",
+        "LaekFeshCatch",
+        "FishingFailJump",
+        "FishCatchFail",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "LaekFeshCatch",
+      "theScene": [
+        "GetEventAndChangeProgress",
+        "SleimVllge",
+        "150",
+        "大きな水しぶきを上げて、湖の底からピチピチ跳ねるレークフェッシュを引き上げる。かなり平均的な釣果にスライムたちが少し歓声を上げる。バケツに入れる……どうやら変な肉質のマスらしい。+150 スライム村価値。",
+        "JumpToScene",
+        "PostCatch"
+      ]
+    },
+    {
+      "NameOfScene": "Lakeweed",
+      "theScene": [
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "25",
+        "100",
+        "FailTimerRange",
+        "500",
+        "750",
+        "ReelsNeeded",
+        "1",
+        "FishingPassJump",
+        "LakeweedCatch",
+        "FishingFailJump",
+        "FishCatchFail",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "LakeweedCatch",
+      "theScene": [
+        "GetEventAndChangeProgress",
+        "SleimVllge",
+        "75",
+        "ラインを引くと、魚ではなく大量のレイクウィード（湖藻）が絡まっていた。海藻のようなものだが湖バージョン！何人かのスライムがラインからほどいてバケツに入れる。{ i}何か{/i}価値があるらしい……+75 スライム村価値。",
+        "JumpToScene",
+        "PostCatch"
+      ]
+    },
+    {
+      "NameOfScene": "LucidianSnapper",
+      "theScene": [
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "100",
+        "200",
+        "FailTimerRange",
+        "200",
+        "300",
+        "ReelsNeeded",
+        "2",
+        "FishingPassJump",
+        "LucidianSnapperCatch",
+        "FishingFailJump",
+        "FishCatchFail",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "LucidianSnapperCatch",
+      "theScene": [
+        "GetEventAndChangeProgress",
+        "SleimVllge",
+        "300",
+        "竿の急な引きに気づき、ラインを強く引き上げると、ルシディアンスナッパーが針にかかっている！この一般的な結晶質の甲殻類はルシディア全域で見られ、その丈夫な肉で珍重されている。他のスライムの一人が輝く生物に魅入ったように見つめている。+300 スライム村価値。",
+        "JumpToScene",
+        "PostCatch"
+      ]
+    },
+    {
+      "NameOfScene": "HealersSkipper",
+      "theScene": [
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "200",
+        "400",
+        "FailTimerRange",
+        "150",
+        "200",
+        "ReelsNeeded",
+        "3",
+        "FishingPassJump",
+        "HealersSkipperCatch",
+        "FishingFailJump",
+        "FishCatchFail",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "HealersSkipperCatch",
+      "theScene": [
+        "GetEventAndChangeProgress",
+        "SleimVllge",
+        "500",
+        "元気な水しぶきを上げて、緑の苔に覆われた魚を引き上げる。ヒーラーズスキッパーだ！この一般的な魚は様々なハーブを食べており、薬効成分が豊富。病人のための完璧な食べ物！優しく他の釣果と一緒にバケツに入れる。スライムたちは「ふわふわの魚」と言いながら無邪気に突ついている。+500 スライム村価値。",
+        "JumpToScene",
+        "PostCatch"
+      ]
+    },
+    {
+      "NameOfScene": "LucidianScreamingFish",
+      "theScene": [
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "300",
+        "300",
+        "FailTimerRange",
+        "100",
+        "100",
+        "ReelsNeeded",
+        "5",
+        "FishingPassJump",
+        "LucidianScreamingFishCatch",
+        "FishingFailJump",
+        "FishCatchFail",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "LucidianScreamingFishCatch",
+      "theScene": [
+        "GetEventAndChangeProgress",
+        "SleimVllge",
+        "750",
+        "ラインを引いていると、くぐもった甲高い悲鳴が聞こえ、近くのスライムたちと一緒に寒気を感じる。不機嫌な魚を水から引き上げると、不快な叫び声が響く。ルシディアンスクリーミングフィッシュだ！スライムたちは喜ばず、バケツではなく湖に投げ返しそうになる……+750 スライム村価値。",
+        "JumpToScene",
+        "PostCatch"
+      ]
+    },
+    {
+      "NameOfScene": "Foolsgoldfish",
+      "theScene": [
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "500",
+        "750",
+        "FailTimerRange",
+        "200",
+        "200",
+        "ReelsNeeded",
+        "5",
+        "FishingPassJump",
+        "FoolsgoldfishCatch",
+        "FishingFailJump",
+        "FishCatchFail",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "FoolsgoldfishCatch",
+      "theScene": [
+        "GetEventAndChangeProgress",
+        "SleimVllge",
+        "1000",
+        "ラインと格闘していると、かなり重いことがわかる。最後の引きで湖から飛び出すと、小さく輝く金色の魚が現れた！！！……しかしあなたとシーフォームはすぐにそれが実はパイリチオン、別名フールズゴールドフィッシュだと気づき、他のスライムたちはがっかりする。でもかなり希少で価値がある！+1000 スライム村価値。",
+        "JumpToScene",
+        "PostCatch"
+      ]
+    },
+    {
+      "NameOfScene": "FairyShark",
+      "theScene": [
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "500",
+        "750",
+        "FailTimerRange",
+        "100",
+        "100",
+        "ReelsNeeded",
+        "10",
+        "FishingPassJump",
+        "FairySharkCatch",
+        "FishingFailJump",
+        "FishCatchFail",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "FairySharkCatch",
+      "theScene": [
+        "GetEventAndChangeProgress",
+        "SleimVllge",
+        "1500",
+        "元気な魚とラインが心配になるほど張りつめながらも、ついに勝ち抜いて湖から引き上げると……小さなサメ？シーフォームは「フェアリーシャーク」と喜び、愛情たっぷりに自分のバケツに入れ、多くの人の愛玩魚として珍重されているとコメントする。+1500 スライム村価値。",
+        "JumpToScene",
+        "PostCatch"
+      ]
+    },
+    {
+      "NameOfScene": "DragonTrout",
+      "theScene": [
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "50",
+        "150",
+        "FailTimerRange",
+        "60",
+        "60",
+        "ReelsNeeded",
+        "10",
+        "FishingPassJump",
+        "DragonTroutCatch",
+        "FishingFailJump",
+        "FishCatchFail",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "DragonTroutCatch",
+      "theScene": [
+        "GiveItemQuietly",
+        "1",
+        "Dragon Trout",
+        "予想外に強力な魚との激しい引き合いを終え、引き上げると、炎が空に噴き出す！慌てふためく中、あなたとシーフォームは大型の赤いドラゴントラウトを押さえ込む！",
+        "しかしバケツの一つに入れるのではなく、心配と高価値のためあなたに押し付けられる。自分で持つか、シーフォームに売るか決めることになる。",
+        "JumpToScene",
+        "PostCatch"
+      ]
+    },
+    {
+      "NameOfScene": "NightFishing",
+      "theScene": [
+        "JumpToRandomScene",
+        "Lakeweed",
+        "LaekFesh",
+        "LaekFesh",
+        "LaekFesh",
+        "LaekFesh",
+        "LaekFesh",
+        "DeepFish",
+        "DeepFish",
+        "DeepFish",
+        "DeepFish",
+        "DeepFish",
+        "LunarTrout",
+        "LunarTrout",
+        "LunarTrout",
+        "LunarTrout",
+        "HealersSkipper",
+        "HealersSkipper",
+        "SquishyFishie",
+        "SquishyFishie",
+        "Foolsgoldfish",
+        "UmbralAngler",
+        "UmbralAngler",
+        "DreamEel",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "DeepFish",
+      "theScene": [
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "100",
+        "200",
+        "FailTimerRange",
+        "200",
+        "300",
+        "ReelsNeeded",
+        "2",
+        "FishingPassJump",
+        "DeepFishCatch",
+        "FishingFailJump",
+        "FishCatchFail",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "DeepFishCatch",
+      "theScene": [
+        "GiveItemQuietly",
+        "1",
+        "Deep Fish",
+        "巧みな引きで、かなり小さく滑らかな盲目紫色の魚を引き上げる。月明かりに不気味に輝く……ディープフィッシュ？この湖は洞窟と繋がっているのかもしれない……周りのブルースライムたちはかなり嫌悪感を示し、シーフォームがあなたがぎこちなく扱う姿を見てくすくす笑う。",
+        "JumpToScene",
+        "PostCatch"
+      ]
+    },
+    {
+      "NameOfScene": "LunarTrout",
+      "theScene": [
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "300",
+        "300",
+        "FailTimerRange",
+        "100",
+        "100",
+        "ReelsNeeded",
+        "5",
+        "FishingPassJump",
+        "LunarTroutCatch",
+        "FishingFailJump",
+        "FishCatchFail",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "LunarTroutCatch",
+      "theScene": [
+        "GetEventAndChangeProgress",
+        "SleimVllge",
+        "750",
+        "劇的な最後の引きで、星明かりに輝く銀白色の魚を引き上げる。ルナートラウトだ！スライムたちは「わあ」「すごい」と声を上げる。残念ながら美しくはあるが珍しくはなく、でも美味しい！バケツに入れる。+750 スライム村価値。",
+        "JumpToScene",
+        "PostCatch"
+      ]
+    },
+    {
+      "NameOfScene": "SquishyFishie",
+      "theScene": [
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "500",
+        "750",
+        "FailTimerRange",
+        "200",
+        "200",
+        "ReelsNeeded",
+        "5",
+        "FishingPassJump",
+        "SquishyFishieCatch",
+        "FishingFailJump",
+        "FishCatchFail",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "SquishyFishieCatch",
+      "theScene": [
+        "GetEventAndChangeProgress",
+        "SleimVllge",
+        "1000",
+        "しばらくの間、ラインに何かがかかっていることに気づかなかったが、巧みなリーリングの後、エーテルっぽい魚型のクラゲを引き上げる！実際の名前が何であれ、スライムたちは熱狂的に「スクイッシュィフィッシュィ」と呼ぶ……+1000 スライム村価値。",
+        "JumpToScene",
+        "PostCatch"
+      ]
+    },
+    {
+      "NameOfScene": "UmbralAngler",
+      "theScene": [
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "500",
+        "750",
+        "FailTimerRange",
+        "100",
+        "100",
+        "ReelsNeeded",
+        "10",
+        "FishingPassJump",
+        "UmbralAnglerCatch",
+        "FishingFailJump",
+        "FishCatchFail",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "UmbralAnglerCatch",
+      "theScene": [
+        "GetEventAndChangeProgress",
+        "SleimVllge",
+        "1500",
+        "夜の闇の中で長い間格闘した後、ついに大きな水しぶきを上げて引き上げる……しかしすぐに周囲全体を魔法の闇で覆い隠す！数瞬の慌てふためきとぶつかり合いの後、あなたとスライムたちはウンブラルアングラーをバケツに入れることに成功し、その魔法は受け手に限定され、水が墨のように黒くなる。+1500 スライム村価値。",
+        "JumpToScene",
+        "PostCatch"
+      ]
+    },
+    {
+      "NameOfScene": "DreamEel",
+      "theScene": [
+        "FishingMiniGame",
+        "AppearTimerRange",
+        "50",
+        "150",
+        "FailTimerRange",
+        "60",
+        "60",
+        "ReelsNeeded",
+        "10",
+        "FishingPassJump",
+        "DreamEelCatch",
+        "FishingFailJump",
+        "FishCatchFail",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "DreamEelCatch",
+      "theScene": [
+        "GiveItemQuietly",
+        "1",
+        "Dream Eel",
+        "夜光る魚との格闘が実際よりずっと長く感じられる。多くのスライムが好奇心と興奮で見守る中、ついに多色のドリームイール（虹色のウナギ）の長く蛇のような姿を引き上げる！ルシディアでも希少な存在！スライムたちは価値のある半エーテル魚をあなたに譲り、どのように扱うか決めることになる。",
+        "JumpToScene",
+        "PostCatch"
+      ]
+    }
+  ]
 }

@@ -1,388 +1,504 @@
 {
-    "name": "Elena Tutorial",
-    "CardType": "Event",
-    "CardLimit": "0",
-    "Description": "",
-    "requires": [ ""],
-    "Speakers": [
-                  {
-                    "name": "Elena",
-                    "postName": "",
-                    "SpeakerType": "NPC"
-                  }
-
-                ],
-    "EventText": [
-                    {
-                        "NameOfScene": "Ask questions about adventuring.",
-                        "theScene": [     "ChangeImageLayer", "Expression", "1", "Base",
-                                    "Speaks",
-                                    "What did you need to know?",
-                                    "Menu",
-                                      "'Tell me about combat information.'",
-                                      "'Can you explain adventuring?'",
-                                      "'How do quests work?'",
-                                      "'I have no more questions.'",
-                                    "EndLoop"
-                                  ]
-                    },
-                    {
-                        "NameOfScene": "'Tell me about combat information.'",
-                        "theScene": [   "ChangeImageLayer", "Expression", "1", "Base",
-                                      "Speaks",
-                                    "Sure, what did you want to know?",
-                                    "JumpToScene",
-                                      "CombatInfoMenu"
-                                  ]
-                    },
-                          {
-                              "NameOfScene": "'Something else about combat.'",
-                              "theScene": [   "ChangeImageLayer", "Expression", "1", "Base",
-                                          "Speaks",
-                                          "Was there anything more you wanted to know about combat?",
-                                          "JumpToScene",
-                                            "CombatInfoMenu"
-                                        ]
-                          },
-                          {
-                              "NameOfScene": "CombatInfoMenu",
-                              "theScene": [
-                                          "Menu",
-                                            "'Tell me about leveling up.'",
-                                            "'Tell me about skills.'",
-                                            "'Tell me about status effects.'",
-                                            "'Tell me about fetishes.'",
-                                            "'I want to ask about something else.'",
-                                          "EndLoop"
-                                        ]
-                          },
-                    {
-                        "NameOfScene": "'Tell me about leveling up.'",
-                        "theScene": [  "ChangeImageLayer", "Expression", "1", "Smile",
-                                    "Speaks",
-                                    "Well, every time you level up you will get three stat points to spend.",
-                                    "Speaks",
-                                    "Every three levels you get a perk to help augment your abilities. As well as an extra point at level 5, and two extra at 10, and 20.",
-                                    "Speaks",
-                                    "And for every fifth level up, you get a point to reduce your sensitivity.",
-                                      "ChangeImageLayer", "Expression", "1", "Thinking",
-                                    "Speaks",
-                                    "Oh, and to level up, you need to get experience from defeating monsters, although I'm pretty sure you knew that.",
-                                    "JumpToScene",
-                                    "'Something else about combat.'"
-                                  ]
-                    },
-                    {
-                        "NameOfScene": "'Tell me about skills.'",
-                        "theScene": [ "Speaks",
-                                    "All skills that induce arousal get more powerful in two different ways.",
-                                    "Speaks",
-                                    "The first way is increase the stat the move is associated with, like spanking becoming more powerful if you have higher power.",
-                                    "Speaks",
-                                    "The second way is to increase your allure stat, which increases the base damage of all your moves.",
-                                    "ChangeImageLayer", "Expression", "1", "Smile",
-                                    "Speaks",
-                                    "So if the move scales with allure, that means the damage increases two different times! But don't let that dissuade you from increasing other stats, they're just as good!",
-                                    "Speaks",
-                                    "Most skills also target a specific thing, such as enjoyment of pain, different parts of the body, or even magically, if you want.",
-                                      "ChangeImageLayer", "Expression", "1", "AraAra",
-                                    "Speaks",
-                                    "All monsters are weak to different things, so be sure to have many different types of skills to capitalize on those weaknesses!",
-                                      "ChangeImageLayer", "Expression", "1", "Base",
-                                    "Speaks",
-                                    "Of course, you also have your own weaknesses that some monsters may try to exploit, so be careful.",
-                                    "Speaks",
-                                    "Some items might be able to help offset this, but just don't give into the monster's temptations and you'll be fine!",
-                                    "Speaks",
-                                    "Some skills also have a chance to apply status effects to the target alongside dealing damage, but most skills exclusively deal damage, apply buffs and debuffs, or status effects. Be sure to know what each move does before you use them!",
-                                    "JumpToScene",
-                                    "'Something else about combat.'"
-                                  ]
-                    },
-                    {
-                        "NameOfScene": "'Tell me about status effects.'",
-                        "theScene": [  "ChangeImageLayer", "Expression", "1", "Base",
-                                    "Speaks",
-                                    "Which one do you want to learn about?",
-                                    "JumpToScene",
-                                    "StatusEffectMenu"
-                                  ]
-                    },
-                        {
-                            "NameOfScene": "StatusEffectMenu",
-                            "theScene": [
-                                        "Menu",
-                                          "'Generally'",
-                                          "'Charm'",
-                                          "'Restrained'",
-                                          "'Aphrodisiacs'",
-                                          "More status effects",
-                                          "'Something else about combat.'",
-                                        "EndLoop"
-                                      ]
-                        },
-                            {
-                                "NameOfScene": "More status effects",
-                                "theScene": [
-                                            "Menu",
-                                              "'Stun'",
-                                              "'Sleep'",
-                                              "'Trance'",
-                                              "Even more status effects",
-                                              "Back",
-                                              "'I want to ask about something else.'",
-                                            "EndLoop"
-                                          ]
-                            },
-                                  {
-                                      "NameOfScene": "Even more status effects",
-                                      "theScene": [
-                                                  "Menu",
-                                                    "'Paralysis'",
-                                                    "'Buffs and Debuffs.'",
-                                                    "Back.",
-                                                    "'I want to ask about something else.'",
-                                                  "EndLoop"
-                                                ]
-                                  },
-                        {
-                            "NameOfScene": "Back",
-                            "theScene": [ "JumpToScene",
-                                      "StatusEffectMenu"
-                                      ]
-                        },
-                        {
-                            "NameOfScene": "Back.",
-                            "theScene": [ "JumpToScene",
-                                      "More status effects"
-                                      ]
-                        },
-                              {
-                                  "NameOfScene": "'Generally'",
-                                  "theScene": [ "Speaks",
-                                              "Generally speaking, status effects are bad things that monsters do to you, or you do to them.",
-                                              "Speaks",
-                                              "All status effects can be resisted if you have the proper equipment on or if you have the stat related with resisting the status effect.",
-                                              "Speaks",
-                                              "For example, if a monster tries to control your mind in some way, your willpower will help you resist it!",
-                                              "Speaks",
-                                              "If you do managed to get afflicted with a status effect, you can either wait it out or use items to remove them. The only exception is if you are being restrained, in which case you have to struggle free yourself. No item exists that causes them to simply let you go, you know!",
-                                              "JumpToScene",
-                                              "StatusEffectMenu"
-                                            ]
-                              },
-                              {
-                                  "NameOfScene": "'Charm'",
-                                  "theScene": [ "Speaks",
-                                              "Charm stops you from running away, properly struggling out of restraints, and makes it harder for skills that help you escape from stances or restraints to work at all. It even increases how much you will be aroused by your opponents.",
-                                              "Speaks",
-                                              "Overall you should really avoid getting charmed if you can.",
-                                              "JumpToScene",
-                                              "StatusEffectMenu"
-                                            ]
-                              },
-                              {
-                                  "NameOfScene": "'Restrained'",
-                                  "theScene": [ "Speaks",
-                                              "You won't be able to do much while restrained. Some restraints can be harder to get out of than others, so don't expect to get out of all of them in the same amount of time.",
-                                              "Speaks",
-                                              "The more power you have, the easier it will be for you to escape from being restrained, and if you have an enemy restrained, you can easily get out of stances with them or run away.",
-                                              "JumpToScene",
-                                              "StatusEffectMenu"
-                                            ]
-                              },
-                              {
-                                  "NameOfScene": "'Aphrodisiacs'",
-                                  "theScene": [ "Speaks",
-                                              "Aphrodisiacs are insidious things. They act like a poison, constantly building your arousal while they are in effect.",
-                                              "Speaks",
-                                              "Not only that, but aphrodisiacs build on each other, so if more than one gets used on you, their effect intensifies!",
-                                              "Speaks",
-                                              "It would be wise to carry around some anaph herbs to counteract them.",
-                                              "JumpToScene",
-                                              "StatusEffectMenu"
-                                            ]
-                              },
-                              {
-                                  "NameOfScene": "'Stun'",
-                                  "theScene": [ "Speaks",
-                                              "You can't do anything while stunned, but it usually doesn't last very long, and there are items you can buy to help prevent it.",
-                                              "Speaks",
-                                              "Be sure to equip yourself properly for the enemy if you're having trouble!",
-                                              "Speaks",
-                                              "Oh, and if you stun an enemy, getting out of a stance with them or running away becomes much easier.",
-                                              "JumpToScene",
-                                              "StatusEffectMenu"
-                                            ]
-                              },
-                              {
-                                  "NameOfScene": "'Sleep'",
-                                  "theScene": [  "ChangeImageLayer", "Expression", "1", "Shy",
-                                              "Speaks",
-                                              "If you fall asleep you won't be able to fight back or even know what's going on, and it can last quite a while. But you will wake up the moment you... release spirit, a lot more than normal. But you will be re-energized, though that's after you've lost all the energy to stay awake.",
-                                                "ChangeImageLayer", "Expression", "1", "Base",
-                                              "Speaks",
-                                              "But it also takes a little while to fall asleep from a monsters attack as it slowly drains your energy, so you should have time to do something about it, and if you do fall asleep, you will be immune to any new sleep effects after waking up for a while.",
-                                              "Speaks",
-                                              "Be sure to buy some insomnia potions or energy potions if you think you're going to have to deal with sleep inducing foes!",
-                                              "Speaks",
-                                              "But if you manage to make your opponent fall asleep, it becomes easy to get out of stances with them or run away. Keep in mind you can speed it up with repeated castings, some monsters have a lot more energy to burn than others. They also won't lose extra spirit from orgasming while asleep.",
-                                              "JumpToScene",
-                                              "StatusEffectMenu"
-                                            ]
-                              },
-                              {
-                                  "NameOfScene": "'Trance'",
-                                  "theScene": [  "ChangeImageLayer", "Expression", "1", "Depressed",
-                                              "Speaks",
-                                              "Trance is a rather... insidious status effect, while it first takes hold of you it usally has no effect on you, but once it's completely set in, things are probably not going to go well for you.",
-                                                "ChangeImageLayer", "Expression", "1", "Base",
-                                              "Speaks",
-                                              "Once trance has set in completely, every turn you'll have about a 30% chance to not be able to act, and while you can try to run, your body won't let you, similarly, monsters attacks will always hit you as your ability to dodge will disappear like your mind has by this point.",
-                                              "Speaks",
-                                              "That's not all though, the worst of it is that monsters that use this status effect generally use special attack related to how close to being in trance you are, or if you are fully in trance, but every monster that uses it could do something different, so I can't help you much.",
-                                              "Speaks",
-                                              "But I'll warn you, such attacks {i}can{/i} increase your fetishes mid combat, or potentially cause you to instantly lose combat, if you are fully entranced! So try to not go completely under.",
-                                              "Speaks",
-                                              "The good news is, if you manage to not lose a turn for three turns, you'll start to come back out of trance! But not completely, so it will still be pretty easy to send you back under...",
-                                              "Speaks",
-                                              "Trance also doesn't disappear at the end of combat, only gradually fading away as time passes, your best bet will be to carry items to remove it, but those items generally only partially remove trance. Except for panacea's, those will fix you right up! Shame they're so expensive...",
-                                              "Speaks",
-                                              "Don't forget to get items to help you resist the status effect if you're having problems dealing with it.",
-                                              "JumpToScene",
-                                              "StatusEffectMenu"
-                                            ]
-                              },
-                              {
-                                  "NameOfScene": "'Paralysis'",
-                                  "theScene": [  "ChangeImageLayer", "Expression", "1", "Shy",
-                                              "Speaks",
-                                              "Paralysis is frankly, rather terrifying, initally it won't do too much other than lower how fast you can act and make you a bit easier to hit, but as more and more of it is applied to you, the chance you can't even move increases.",
-                                              "Speaks",
-                                              "It doesn't help that your initiative and ability to dodge attacks both go down as the effects increase either, maybe worst of all though is that the effect won't go away on it's own until you're out of combat, and even then it will only slowly go away.",
-                                              "ChangeImageLayer", "Expression", "1", "Base",
-                                              "Speaks",
-                                              "Some monster's paralytic attacks even continue to affect you after the initial hit, slowly removing your ability to move over the course of the fight...",
-                                                "ChangeImageLayer", "Expression", "1", "Base",
-                                            "Speaks",
-                                              "But other monsters need to constantly hit you with their paralyzing moves before it really starts to matter, and you can also completely cleanse yourself of the effect with a single item like most other status effects, but this one is a bit pricey so be careful when you use it.",
-
-                                              "JumpToScene",
-                                              "StatusEffectMenu"
-                                            ]
-                              },
-                              {
-                                  "NameOfScene": "'Buffs and Debuffs.'",
-                                  "theScene": [ "Speaks",
-                                              "There is a myriad of different buff and debuffs, from attack and defence, to your power, willpower and other core stats. They can get buffed or weakened by something.",
-                                              "Speaks",
-                                              "Debuffs are one of the few status effects that you can't easily prevent with equipment. But if you use your own buffing skill, you can counteract a debuff placed on you to some degree.",
-                                              "Speaks",
-                                              "Keep in mind a single skill's buff or debuff can only be applied once to someone until that instance of the buff or debuff wears off.",
-                                              "ChangeImageLayer", "Expression", "1", "Thinking",
-                                              "Speaks",
-                                              "Oh, and a panacea will clear all your debuffs in a pinch, but it's a bit pricy for just that.",
-                                              "ChangeImageLayer", "Expression", "1", "Smile",
-                                              "Speaks",
-                                              "But when you use your own buffing skills, they can be a great asset in any battle! So be sure to learn a few.",
-                                              "JumpToScene",
-                                              "StatusEffectMenu"
-                                            ]
-                              },
-                    {
-                        "NameOfScene": "'Tell me about fetishes.'",
-                        "theScene": [  "ChangeImageLayer", "Expression", "1", "Embarrassed",  "ChangeImageLayer", "Face", "1", "Blush",
-                                  "Elena's face turns red with embarrassment from your question.",
-                                  "Speaks",
-                                    "Eh?! W-Well, It's a sort of sex act that you like a lot. Humans usually have at least one.",
-                                      "ChangeImageLayer", "Expression", "1", "Base",
-                                    "Speaks",
-                                    "Having a fetish for something leaves you very vulnerable to attacks with that particular body part, and can leave you at the mercy of some kinds of enemies.",
-                                    "ChangeImageLayer", "Face", "1", "",
-                                    "Speaks",
-                                    "Generally fetishes are calculated in levels of intensity, starting at zero percent and going to up to one hundred percent. The one you probably had when you got here is considered twenty five percent, which is when it's actually considered a fetish, and not just a fixation.",
-                                    "Speaks",
-                                    "The percentage directly translates to how much extra damage you're going to be taking from skills with that fetish. But bonus arousal isn't all fetishes can do to you! During your adventures, some monsters may try to bypass fighting you altogether by exploiting your fetishes, effectively forcing you to give in to them, but you must resist the temptation!",
-                                    "Speaks",
-                                    "These temptations will generally get harder for you to deal with at these markers as your fetish grows: 25%, 50%, 75% and 100%. But many monsters will go about these in different ways, so not all of these benchmarks will actually apply all the time, but you should still keep it in mind.",
-                                    "Speaks",
-                                    "If you're having trouble with an enemy exploiting your fetish, there may be some items you can buy to help you out, and if all else fails, keep healing items handy!",
-                                    "Speaks",
-                                    "If the monster girls you encounter start to give you new fetishes you don't want, you can always go to the church to get them purged, provided you give them a donation first.",
-                                    "JumpToScene",
-                                    "Ask questions about adventuring."
-                                  ]
-                    },
-                    {
-                        "NameOfScene": "'Can you explain adventuring?'",
-                        "theScene": [ "Speaks",
-                                    "I'm guessing you mean using the grimoire to go out into the world, correct?",
-                                    "You nod.",
-                                    "ChangeImageLayer", "Expression", "1", "Smile",
-                                    "Speaks",
-                                    "Just fill up its pages with events you want to explore, and monsters that you think you can easily defeat.",
-                                      "ChangeImageLayer", "Expression", "1", "Disgust",
-                                    "Speaks",
-                                    "It's not like you would pick monsters just to lose to them, right?",
-                                    "Elena gives you an oddly piercing glare as an awkward silence fills the air for a brief moment before she continues talking.",
-                                      "ChangeImageLayer", "Expression", "1", "Smile",
-                                    "Speaks",
-                                    "*Ahem* Locations have a mimimum adventure length, meaning you must at least have that many pages selected before you can embark on adventures. This number is displayed at the top of the screen!",
-                                      "ChangeImageLayer", "Expression", "1", "Base",
-                                    "Speaks",
-                                    "Different locations have different page limits, so some may force you to have more monsters or more events, depending on where you are going. This limit is displayed to the left and slightly below the adventure length!",
-                                      "ChangeImageLayer", "Expression", "1", "Smile",
-                                    "Speaks",
-                                    "And events can also be limited to the number you can use, because of quantum magical physics.",
-                                    "PlayerSpeaks",
-                                    "What?",
-                                      "ChangeImageLayer", "Expression", "1", "Thinking",
-                                    "Speaks",
-                                    "Go ask Elly. She's the guild mage. If I tried to explain it we would both just end up with headaches.",
-                                    "ChangeImageLayer", "Expression", "1", "Smile",
-                                    "Speaks",
-                                    "Anyways, if you can't decide what to do, you can always select randomize!",
-                                    "ChangeImageLayer", "Expression", "1", "Base",
-                                    "Speaks",
-                                    "Then when you're ready, just select embark!",
-                                    "Speaks",
-                                    "But don't forget to take quests when you think you're prepared to beat them. Quests can have all different kinds of rewards, and some of them are the only way you can get closer to defeating the Demon Queen!",
-                                    "JumpToScene",
-                                    "Ask questions about adventuring."
-                                  ]
-                    },
-                    {
-                        "NameOfScene": "'How do quests work?'",
-                        "theScene": [ "Speaks",
-                                    "Whenever you take a quest, it will always be the final thing you encounter at the end of your adventure, after all the things you selected from the grimoire.",
-                                    "Speaks",
-                                    "And before you ask why, it is part of a very complex magical system that allows you to navigate Lucidia safely, and I don't understand it myself. If you want to know more, ask her.",
-                                    "Elena points over at a woman wearing sterotypical witch clothing and reading a book.",
-                                    "ChangeImageLayer", "Expression", "1", "Shy",
-                                    "Speaks",
-                                    "The last person who tried to bypass this ended up teleporting directly into a den of succubi... We, uhm... Haven't heard back from her.",
-                                    "ChangeImageLayer", "Expression", "1", "Base",
-                                    "Speaks",
-                                    "Ah, I'm getting off topic. When you complete quests, you will be rewarded. Rewards range from money, to gear, to even gaining access to new areas. They're definitely worth doing in my opinion.",
-                                    "JumpToScene",
-                                    "Ask questions about adventuring."
-                                  ]
-                    },
-
-                    {
-                        "NameOfScene": "'I have no more questions.'",
-                        "theScene": [
-                                    "JumpToNPCEventThenScene", "Go see Elena at the Guild counter.", "VisitMenu"
-                                  ]
-                    },
-                    {
-                        "NameOfScene": "'I want to ask about something else.'",
-                        "theScene": [ "JumpToScene",
-                                    "Ask questions about adventuring."
-                                  ]
-                    }
-
-
-
-                ]
+  "name": "エレナのチュートリアル",
+  "CardType": "Event",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [
+    ""
+  ],
+  "Speakers": [
+    {
+      "name": "エレナ",
+      "postName": "",
+      "SpeakerType": "NPC"
+    }
+  ],
+  "EventText": [
+    {
+      "NameOfScene": "Ask questions about adventuring.",
+      "theScene": [
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speaks",
+        "何を知りたいの？",
+        "Menu",
+        "「戦闘情報について教えて。」",
+        "「冒険について説明してくれる？」",
+        "「クエストはどういう仕組みなの？」",
+        "「もう質問はないよ。」",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "'Tell me about combat information.'",
+      "theScene": [
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speaks",
+        "もちろん。何を知りたい？",
+        "JumpToScene",
+        "CombatInfoMenu"
+      ]
+    },
+    {
+      "NameOfScene": "'Something else about combat.'",
+      "theScene": [
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speaks",
+        "戦闘について他に聞きたいことはある？",
+        "JumpToScene",
+        "CombatInfoMenu"
+      ]
+    },
+    {
+      "NameOfScene": "CombatInfoMenu",
+      "theScene": [
+        "Menu",
+        "「レベルアップについて教えて。」",
+        "「スキルについて教えて。」",
+        "「状態異常について教えて。」",
+        "「フェティシについて教えて。」",
+        "「他のことを聞きたい。」",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "'Tell me about leveling up.'",
+      "theScene": [
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Smile",
+        "Speaks",
+        "ええと、レベルアップするたびに3つのステータスポイントがもらえるよ。",
+        "Speaks",
+        "3レベルごとに能力を強化するためのパークが1つもらえるよ。レベル5で追加のポイントが1つ、レベル10と20でそれぞれ2つ追加されるよ。",
+        "Speaks",
+        "そして5レベルごとに、感度を下げるポイントが1つもらえるよ。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Thinking",
+        "Speaks",
+        "ああ、それとレベルアップするにはモンスターを倒して経験値を得る必要があるけど、それはもう知ってるよね。",
+        "JumpToScene",
+        "'Something else about combat.'"
+      ]
+    },
+    {
+      "NameOfScene": "'Tell me about skills.'",
+      "theScene": [
+        "Speaks",
+        "興奮を誘うすべてのスキルは、2つの異なる方法で強化されるよ。",
+        "Speaks",
+        "1つ目は、スキルに関連するステータスを上げる方法だよ。例えば、叩くスキルはパワーが高いほど強くなる。",
+        "Speaks",
+        "2つ目は魅了ステータスを上げる方法で、これによりすべてのスキルの基本ダメージが増加するよ。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Smile",
+        "Speaks",
+        "つまり、スキルが魅了でスケールする場合、ダメージは2回増加するってこと！ でも、他のステータスを上げるのをやめないでね、それらも同じくらい良いよ！",
+        "Speaks",
+        "ほとんどのスキルは特定のものを対象とするよ。例えば、痛みの快楽、体の特定の部位、または魔法など、好みでね。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "AraAra",
+        "Speaks",
+        "すべてのモンスターは異なるものに弱いから、さまざまな種類のスキルを揃えて弱点を突くようにしてね！",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speaks",
+        "もちろん、君自身にも弱点があるから、一部のモンスターはそれを突いてくるよ。気をつけて。",
+        "Speaks",
+        "アイテムでそれを軽減できるかもしれないけど、モンスターの誘惑に負けないでね！",
+        "Speaks",
+        "一部のスキルはダメージを与えるだけでなく、対象に状態異常を付与するチャンスもあるよ。でもほとんどのスキルはダメージを与えたり、バフ・デバフをかけたり、状態異常を付与したりするだけだよ。各スキルの効果をちゃんと確認してから使ってね！",
+        "JumpToScene",
+        "'Something else about combat.'"
+      ]
+    },
+    {
+      "NameOfScene": "'Tell me about status effects.'",
+      "theScene": [
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speaks",
+        "どれについて知りたい？",
+        "JumpToScene",
+        "StatusEffectMenu"
+      ]
+    },
+    {
+      "NameOfScene": "StatusEffectMenu",
+      "theScene": [
+        "Menu",
+        "「一般的に」",
+        "「魅了」",
+        "「拘束」",
+        "「媚薬」",
+        "もっと状態異常",
+        "「他のことを聞きたい。」",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "More status effects",
+      "theScene": [
+        "Menu",
+        "「スタン」",
+        "「睡眠」",
+        "「トランス」",
+        "さらに状態異常",
+        "戻る",
+        "「他のことを聞きたい。」",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "Even more status effects",
+      "theScene": [
+        "Menu",
+        "「麻痺」",
+        "「バフとデバフ。」",
+        "戻る。",
+        "「他のことを聞きたい。」",
+        "EndLoop"
+      ]
+    },
+    {
+      "NameOfScene": "Back",
+      "theScene": [
+        "JumpToScene",
+        "StatusEffectMenu"
+      ]
+    },
+    {
+      "NameOfScene": "Back.",
+      "theScene": [
+        "JumpToScene",
+        "More status effects"
+      ]
+    },
+    {
+      "NameOfScene": "'Generally'",
+      "theScene": [
+        "Speaks",
+        "一般的に言って、状態異常はモンスターが君に与えたり、君がモンスターに与えたりする悪い効果だよ。",
+        "Speaks",
+        "すべての状態異常は、適切な装備を着けていたり、その状態異常に対する耐性ステータスを持っていれば耐えられるよ。",
+        "Speaks",
+        "例えば、モンスターが君の心を何らかの方法で操ろうとした場合、意志力がそれを抵抗するのに役立つよ！",
+        "Speaks",
+        "もし状態異常にかかってしまったら、時間が経つのを待つか、アイテムを使って解除できるよ。ただし拘束されている場合は例外で、自分で必死に抜け出さないといけないよ。単に解放してくれるアイテムなんて存在しないからね！",
+        "JumpToScene",
+        "StatusEffectMenu"
+      ]
+    },
+    {
+      "NameOfScene": "'Charm'",
+      "theScene": [
+        "Speaks",
+        "魅了は逃げること、拘束から必死に抜け出すこと、スタンスや拘束から逃げるスキルの効果を大幅に低下させるよ。それどころか、相手から受ける興奮も増大させるよ。",
+        "Speaks",
+        "全体として、魅了にかかるのは絶対に避けた方がいいよ。",
+        "JumpToScene",
+        "StatusEffectMenu"
+      ]
+    },
+    {
+      "NameOfScene": "'Restrained'",
+      "theScene": [
+        "Speaks",
+        "拘束されている間はほとんど何もできないよ。一部の拘束は他のものより抜け出しにくいから、すべて同じ時間で抜け出せるとは思わないでね。",
+        "Speaks",
+        "パワーが高いほど拘束から抜け出しやすくなり、敵を拘束している場合はスタンスから抜け出したり逃げたりするのが簡単になるよ。",
+        "JumpToScene",
+        "StatusEffectMenu"
+      ]
+    },
+    {
+      "NameOfScene": "'Aphrodisiacs'",
+      "theScene": [
+        "Speaks",
+        "媚薬は厄介なものだよ。毒のように作用して、効果が続いている間ずっと興奮を蓄積させるよ。",
+        "Speaks",
+        "それだけでなく、媚薬は重ね掛けされるから、複数使われると効果が強化されるよ！",
+        "Speaks",
+        "それに対抗するためにアナフハーブを常備しておくのが賢明だよ。",
+        "JumpToScene",
+        "StatusEffectMenu"
+      ]
+    },
+    {
+      "NameOfScene": "'Stun'",
+      "theScene": [
+        "Speaks",
+        "スタンしている間は何もできないけど、通常は長続きしないし、それを防ぐのに役立つアイテムも買えるよ。",
+        "Speaks",
+        "困っているなら、敵に合わせてちゃんと装備を整えてね！",
+        "Speaks",
+        "ああ、それと敵をスタンさせたら、スタンスから抜け出したり逃げたりするのがずっと簡単になるよ。",
+        "JumpToScene",
+        "StatusEffectMenu"
+      ]
+    },
+    {
+      "NameOfScene": "'Sleep'",
+      "theScene": [
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Shy",
+        "Speaks",
+        "眠りに落ちると反撃もできず、何が起きているかもわからなくなるよ。そして結構長続きする。でも……精気を放出すると、普通よりずっと早く目が覚めるよ。でも目が覚めた後はリフレッシュされるよ。でもそれは、目を覚ましていられるエネルギーをすべて失った後だね。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speaks",
+        "でもモンスターの攻撃で眠りに落ちるまでは少し時間がかかるから、何か対処する時間はあるよ。そして眠りに落ちたら、目が覚めた後しばらくは新しい睡眠効果に免疫になるよ。",
+        "Speaks",
+        "睡眠を誘う敵と戦うことになりそうなら、睡眠薬やエナジーポーションを買っておくといいよ！",
+        "Speaks",
+        "でももし相手を眠りに落とせたら、スタンスから抜け出したり逃げたりするのが簡単になるよ。繰り返しキャストすることでスピードアップできるよ。一部のモンスターは他のものよりずっと多くのエネルギーを消費するからね。彼らは眠っている間は余分な精気を失わないよ。",
+        "JumpToScene",
+        "StatusEffectMenu"
+      ]
+    },
+    {
+      "NameOfScene": "'Trance'",
+      "theScene": [
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Depressed",
+        "Speaks",
+        "トランスはかなり……厄介な状態異常だよ。最初にかかっている間はほとんど効果がないけど、一度完全に浸透してしまうと、君にとって状況はかなり悪くなるよ。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speaks",
+        "トランスが完全に浸透すると、毎ターン約30%の確率で行動できなくなり、逃げようとしても体が動かないよ。同様に、モンスターの攻撃は必ず命中するようになり、回避能力は心が消えたかのように消失するよ。",
+        "Speaks",
+        "それだけじゃない。最も悪いのは、この状態異常を使うモンスターは、トランスにどれだけ近づいているか、または完全にトランス状態かによって特殊攻撃を使うことだよ。でもそれを使うモンスターはそれぞれ違うことをするから、私はあまり助けられないよ。",
+        "Speaks",
+        "でも警告しておくけど、そういう攻撃は{i}戦闘中にフェティシを増やしたり、完全にトランス状態なら即座に戦闘に負ける可能性がある{/i}よ！ だから完全に落ちないようにしてね。",
+        "Speaks",
+        "良いニュースは、3ターン連続でターンを失わなければ、トランスから抜け始められるよ！ でも完全に抜けるわけじゃないから、また簡単に戻ってしまうけど……",
+        "Speaks",
+        "トランスは戦闘終了時にも消えず、時間が経つにつれて徐々に薄れるだけだよ。ベストな方法はそれを解除するアイテムを常備することだけど、そういうアイテムは通常部分的にしか解除できないよ。パナセアだけは完全に治してくれる！ でも高いのが残念だね……",
+        "Speaks",
+        "問題があるなら、その状態異常に抵抗するアイテムを忘れずに持っていってね。",
+        "JumpToScene",
+        "StatusEffectMenu"
+      ]
+    },
+    {
+      "NameOfScene": "'Paralysis'",
+      "theScene": [
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Shy",
+        "Speaks",
+        "麻痺は正直、かなり恐ろしいよ。最初は行動速度が低下して少し当たりやすくなるだけだけど、どんどん蓄積されると動けなくなる確率が増えるよ。",
+        "Speaks",
+        "イニシアチブと回避能力も効果が増すにつれて低下するのも困るけど、恐らく最悪なのは、効果が戦闘から出るまで自然に消えないこと、そして消えてもゆっくりしか消えないことだよ。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speaks",
+        "一部のモンスターの麻痺攻撃は初撃後も君に影響し続け、戦闘中に徐々に移動能力を奪っていくよ……",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speaks",
+        "でも他のモンスターは本当に意味を持つようになるまで、麻痺させる技を何度も当て続ける必要があるよ。そして他のほとんどの状態異常と同じように、1つのアイテムで完全に浄化することもできるよ。でもこれは少し高いから、使うときは注意してね。",
+        "JumpToScene",
+        "StatusEffectMenu"
+      ]
+    },
+    {
+      "NameOfScene": "'Buffs and Debuffs.'",
+      "theScene": [
+        "Speaks",
+        "攻撃力や防御力から、パワー、意志力などのコアステータスまで、さまざまなバフとデバフがあるよ。それらは何かによって強化されたり弱体化されたりするよ。",
+        "Speaks",
+        "デバフは装備で簡単に防げない数少ない状態異常の1つだよ。でも自分のバフスキルを使えば、かけられたデバフをある程度打ち消すことができるよ。",
+        "Speaks",
+        "1つのスキルのバフやデバフは、そのインスタンスが消えるまで誰かに1回しか適用できないことを覚えておいてね。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Thinking",
+        "Speaks",
+        "ああ、それとパナセアはピンチの時にすべてのデバフを解除してくれるよ。でもそれだけのためには少し高いね。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Smile",
+        "Speaks",
+        "でも自分のバフスキルを使えば、どんな戦闘でも大きな助けになるよ！ だからいくつか習得しておくといいよ。",
+        "JumpToScene",
+        "StatusEffectMenu"
+      ]
+    },
+    {
+      "NameOfScene": "'Tell me about fetishes.'",
+      "theScene": [
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Embarrassed",
+        "ChangeImageLayer",
+        "Face",
+        "1",
+        "Blush",
+        "君の質問にエレナの顔が恥ずかしさで赤くなる。",
+        "Speaks",
+        "えっ！？ そ、それは……君がとても好きなある種の性行為のことだよ。人間はたいてい少なくとも1つ持ってる。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speaks",
+        "何かにフェティシを持っていると、その特定の部位を使った攻撃に対してとても脆弱になり、一部の種類の敵の言いなりになる可能性があるよ。",
+        "ChangeImageLayer",
+        "Face",
+        "1",
+        "",
+        "Speaks",
+        "一般的にフェティシは強度のレベルで計算され、0%から始まって100%まで上がるよ。君がここに来た時に持っていたものは25%とみなされ、それが実際にフェティシとみなされ、ただの執着ではない状態だよ。",
+        "Speaks",
+        "そのパーセンテージは、そのフェティシのスキルから受ける追加ダメージの量に直接変換されるよ。でもボーナスの興奮だけがフェティシが君にできることじゃないよ！ 冒険の途中で、一部のモンスターは戦闘を完全に回避して君のフェティシを突き、効果的にそれに屈服させるようにするかもしれない。でも誘惑に抵抗しなければならないよ！",
+        "Speaks",
+        "これらの誘惑は、フェティシが成長するにつれて25%、50%、75%、100%のマーカーで君にとってより困難になるよ。でも多くのモンスターは異なる方法でこれを行うから、これらのベンチマークが常にすべて適用されるわけではないけど、それでも頭に入れておくべきだよ。",
+        "Speaks",
+        "フェティシを突く敵に困っているなら、それを助けてくれるアイテムを買えるかもしれないし、うまくいかない場合は回復アイテムを常に持っておくといいよ！",
+        "Speaks",
+        "遭遇したモンスター娘が君に望まない新しいフェティシを与え始めたら、教会に行って浄化してもらうことができるよ。まず寄付をすればね。",
+        "JumpToScene",
+        "Ask questions about adventuring."
+      ]
+    },
+    {
+      "NameOfScene": "'Can you explain adventuring?'",
+      "theScene": [
+        "Speaks",
+        "おそらくグリモアを使って世界に出ることを意味してるんだよね？",
+        "君は頷く。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Smile",
+        "Speaks",
+        "グリモアのページを、探索したいイベントと、簡単に倒せそうだと考えるモンスターで埋めればいいよ。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Disgust",
+        "Speaks",
+        "君がただ負けるためにモンスターを選ぶわけじゃないよね？",
+        "エレナが奇妙に鋭い視線を向け、気まずい沈黙が一瞬空気を満たす。それから彼女は話し続ける。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Smile",
+        "Speaks",
+        "コホン。場所には最小冒険長があり、冒険に出る前に少なくともその数のページを選択しなければならないよ。この数字は画面の上部に表示されるよ！",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speaks",
+        "場所によってページ制限が異なるから、一部ではモンスターやイベントをより多く持たなければならない場合があるよ。この制限は冒険長の左側、少し下に表示されるよ！",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Smile",
+        "Speaks",
+        "そしてイベントも、使用できる数に制限があるよ。量子魔法物理学のためだね。",
+        "PlayerSpeaks",
+        "何？",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Thinking",
+        "Speaks",
+        "エリーに聞いて。彼女がギルドメイジだよ。私が説明しようとすると、二人とも頭痛がするだけだよ。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Smile",
+        "Speaks",
+        "とにかく、決められないなら、いつでもランダムを選択できるよ！",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speaks",
+        "それから準備ができたら、 embark を選択するだけだよ！",
+        "Speaks",
+        "でも準備ができたらクエストを受け取るのを忘れないでね。クエストにはさまざまな種類の報酬があり、中には魔王を倒すのに近づける唯一の方法のものもあるよ！",
+        "JumpToScene",
+        "Ask questions about adventuring."
+      ]
+    },
+    {
+      "NameOfScene": "'How do quests work?'",
+      "theScene": [
+        "Speaks",
+        "クエストを受けると、それは常にグリモアから選択したすべてのものの後、冒険の最後に遭遇する最後のものになるよ。",
+        "Speaks",
+        "そしてなぜそうなのかと聞く前に、それはルシディアを安全に航行できるようにする非常に複雑な魔法システムの一部で、私自身も理解していないよ。もっと知りたいなら、彼女に聞いて。",
+        "エレナは典型的な魔女の服装を着て本を読んでいる女性の方を指差す。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Shy",
+        "Speaks",
+        "これを回避しようとした最後の人は、直接サキュバスの巣にテレポートしてしまったの…… 私たちは、うーん…… 彼女から連絡をもらっていないよ。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speaks",
+        "あ、話題がそれたね。クエストを完了すると、報酬がもらえるよ。報酬は金から装備、さらには新しいエリアへのアクセスまでさまざまよ。私の意見では、絶対にやる価値があるよ。",
+        "JumpToScene",
+        "Ask questions about adventuring."
+      ]
+    },
+    {
+      "NameOfScene": "'I have no more questions.'",
+      "theScene": [
+        "JumpToNPCEventThenScene",
+        "Go see Elena at the Guild counter.",
+        "VisitMenu"
+      ]
+    },
+    {
+      "NameOfScene": "'I want to ask about something else.'",
+      "theScene": [
+        "JumpToScene",
+        "Ask questions about adventuring."
+      ]
+    }
+  ]
 }

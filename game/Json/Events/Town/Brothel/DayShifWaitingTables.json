@@ -1,31 +1,33 @@
 {
-    "name": "DayShiftWaiter",
-    "CardType": "DayShift",
-    "CardLimit": "0",
-    "Description": "",
-    "requires": [ ""],
-    "Speakers": [
-                  {
-                    "name": "Elf",
-                    "postName": "",
-                    "SpeakerType": "Monster"
-                  }
-
-                ],
-    "EventText": [
-                    {
-                        "NameOfScene": "EventStart",
-                        "theScene": [ "ChangeBG", "Bar.png",
-                                      "You end up serving food and drink to the patrons, and it goes rather smoothly.",
-                                      "ChangeBG", "Inn.png",
-                                      "By the end you're rather tired from all the running around and chatting, but you got paid.",
-                                      "ChangeEros",
-                                      "100",
-                                      "AdvanceTime", "1"
-                                  ]
-                    }
-
-
-
-                ]
+  "name": "昼のウェイターシフト",
+  "CardType": "DayShift",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [
+    ""
+  ],
+  "Speakers": [
+    {
+      "name": "エルフ",
+      "postName": "",
+      "SpeakerType": "Monster"
+    }
+  ],
+  "EventText": [
+    {
+      "NameOfScene": "EventStart",
+      "theScene": [
+        "ChangeBG",
+        "Bar.png",
+        "結局、客に飲み物や食べ物を運んでいたが、かなりスムーズに進んだ。",
+        "ChangeBG",
+        "Inn.png",
+        "終わる頃には走り回ったりおしゃべりしたりでかなり疲れていたが、報酬はもらえた。",
+        "ChangeEros",
+        "100",
+        "AdvanceTime",
+        "1"
+      ]
+    }
+  ]
 }

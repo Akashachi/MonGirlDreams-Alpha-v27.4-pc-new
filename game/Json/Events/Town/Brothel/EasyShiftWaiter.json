@@ -1,36 +1,46 @@
 {
-    "name": "EasyShiftWaiter",
-    "CardType": "WaiterShift",
-    "CardLimit": "0",
-    "Description": "",
-    "requires": [ ""],
-    "Speakers": [
-                  {
-                    "name": "Elf",
-                    "postName": "",
-                    "SpeakerType": "Monster"
-                  }
-
-                ],
-    "EventText": [
-                    {
-                        "NameOfScene": "EventStart",
-                        "theScene": [ "ChangeBG", "Bar.png",
-                                      "You work as serving food and drink to the patrons, and it goes rather smoothly.",
-                                      "Nothing strange happens and nobody hires you for {i}services{/i} despite the many lecherous stares.",
-                                      "ChangeBG", "Inn.png",
-                                      "Should you be insulted or happy? Oh well, at least you got paid.",
-                                      "ChangeEros", "100",
-                                      "IfTimeIs", "Midnight", "GoToBed",
-                                      "AdvanceTime", "1"
-                                  ]
-                    },
-                          {
-                              "NameOfScene": "GoToBed",
-                              "theScene": [
-                                            "Then, it being the end of the night, you head up to your room, and go to bed for the night...",
-                                            "JumpToNPCEventThenScene", "Go to your room.", "Sleeping"
-                                        ]
-                          }
-                ]
+  "name": "楽なウェイターシフト",
+  "CardType": "WaiterShift",
+  "CardLimit": "0",
+  "Description": "",
+  "requires": [
+    ""
+  ],
+  "Speakers": [
+    {
+      "name": "エルフ",
+      "postName": "",
+      "SpeakerType": "Monster"
+    }
+  ],
+  "EventText": [
+    {
+      "NameOfScene": "EventStart",
+      "theScene": [
+        "ChangeBG",
+        "Bar.png",
+        "客に飲み物や食べ物を運んでいたが、かなりスムーズに進んだ。",
+        "特に変なことはなく、多くの淫らな視線にもかかわらず、{i}サービス{/i}を頼まれることはなかった。",
+        "ChangeBG",
+        "Inn.png",
+        "侮辱されたと思うべきか、嬉しく思うべきか？　まあ、とにかく報酬はもらえた。",
+        "ChangeEros",
+        "100",
+        "IfTimeIs",
+        "Midnight",
+        "GoToBed",
+        "AdvanceTime",
+        "1"
+      ]
+    },
+    {
+      "NameOfScene": "GoToBed",
+      "theScene": [
+        "夜も更け、あなたは自分の部屋へ向かい、ベッドに入った……",
+        "JumpToNPCEventThenScene",
+        "Go to your room.",
+        "Sleeping"
+      ]
+    }
+  ]
 }

@@ -1,60 +1,95 @@
 {
-    "name": "EnteringInn",
-    "CardType": "Inn",
-    "CardLimit": "0",
-    "Description": "EnterArea",
-    "requires": [ ""],
-    "Speakers": [
-                  {
-                    "name": "Vivian",
-                    "postName": "",
-                    "SpeakerType": "Monster"
-                  }
-                ],
-    "EventText": [
-
-                    {
-                        "NameOfScene": "EnteringArea",
-                        "theScene": [ "IfChoice", "1", "", "VivianIntro"
-                                  ]
-                    },
-                            {
-                                "NameOfScene": "VivianIntro",
-                                "theScene": [ "DisplayCharacters",
-                                              "1",
-                                            "EndLoop",
-                                            "SetChoice", "1", "VivianIntro",
-                                            "ChangeImageLayer", "Expression", "1", "Seductive",
-                                            "Speaks",
-                                            "Hmmmm?♥ Oh, {i}hi [ThePlayerName].♥{/i} Welcome to my humble inn. Here to take me up on that job offer?",
-                                            "No longer trying to find your bearings, Vivian's voluptuous body doesn't seem to have quite the captivating effect on you it was earlier, but her huge breasts are still very eyecatching.",
-                                            "ChangeImageLayer", "Expression", "1", "Base",
-                                            "PlayerSpeaks",
-                                            "Uhm no, I was just seeing what the inn had to offer. Other than the job.",
-                                            "ChangeImageLayer", "Expression", "1", "Seductive",
-                                            "She gives you a sultry pout and sighs, leaning on her podium, making her heavy chest create a tempting valley that threatens to draw in your eyes' entire focus.",
-                                            "ChangeImageLayer", "Expression",  "1", "Base",
-                                            "Speaks",
-                                            "Well cutie, adventurers like you can sleep here free of charge thanks to the guild. Just be sure to lock your door if you don't want a monster girl to wander in and keep you company.♪",
-                                            "She laughs playfully, but you can't tell if she's actually joking...",
-                                            "ChangeImageLayer", "Expression",  "1", "Caring",
-                                            "Speaks",
-                                            "Basic food and drink is also provided free of charge as well, I promise it's still the best in town despite its simplicity. But if you want anything fancy, you're going to need to pay like everyone else.",
-                                            "Speaks",
-                                            "Of course, I'm fully capable of teaching you a skill or two that I'm sure will help you {i}enjoy{/i} yourself more while adventuring. Or at the very least make a monster girl fall for you.♥",
-                                            "ChangeImageLayer", "Expression",  "1", "Smug",
-                                            "Vivian stands straight again with a teasing smile, making her chest bounce slightly, drawing your eyes briefly to the glimmering pendant hovering just above her cleavage before you look her in the eyes again.",
-                                            "ChangeImageLayer", "Expression",  "1", "Caring",
-                                            "Speaks",
-                                            "Let me know if you have any questions {i}hero{/i}, I'd love to help you out in any way I can.♥",
-                                            "Her cheerful and seductive smile slips a little as she thinks of something else.",
-                                            "ChangeImageLayer", "Expression", "1", "Worried",
-                                            "Speaks",
-                                            "Oh, and just so you know, the tavern gets {i}very{/i} full at night, so don't expect amazing service or a quiet meal until the next morning. My monster girl clientele takes up a lot of service. Though we should always be able to get you a fresh meal before you head out on an adventure.",
-                                            "ChangeImageLayer", "Expression",  "1", "Caring",
-                                            "Speaks",
-                                            "So don't worry too much about missing dinner, we also have room service. Just not for anything extravagant."
-                                          ]
-                            }
-                ]
+  "name": "宿屋に入る",
+  "CardType": "Inn",
+  "CardLimit": "0",
+  "Description": "EnterArea",
+  "requires": [
+    ""
+  ],
+  "Speakers": [
+    {
+      "name": "ヴィヴィアン",
+      "postName": "",
+      "SpeakerType": "Monster"
+    }
+  ],
+  "EventText": [
+    {
+      "NameOfScene": "EnteringArea",
+      "theScene": [
+        "IfChoice",
+        "1",
+        "",
+        "VivianIntro"
+      ]
+    },
+    {
+      "NameOfScene": "VivianIntro",
+      "theScene": [
+        "DisplayCharacters",
+        "1",
+        "EndLoop",
+        "SetChoice",
+        "1",
+        "VivianIntro",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Seductive",
+        "Speaks",
+        "ふーん？♥ あら、{i}こんにちは [ThePlayerName]。♥{/i} 私の質素な宿屋へようこそ。あの仕事のオファーを受けに来てくれたの？",
+        "もう周りを見回す必要はない。ヴィヴィアンの豊満な体は以前ほど君を魅了する効果はないようだが、彼女の巨大な胸は依然として非常に目を引く。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "PlayerSpeaks",
+        "ええと、いいえ。ただ宿屋が何を提供しているか見てみたかっただけです。仕事以外で。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Seductive",
+        "彼女は妖艶に唇を尖らせてため息をつき、演壇にもたれかかる。重い胸が誘惑的な谷間を作り、君の視線のすべてを引き込もうとする。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Base",
+        "Speaks",
+        "まあ、可愛い子ちゃん。君みたいな冒険者はギルドのおかげでここに無料で泊まれるわ。ただ、モンスター娘が勝手に入ってきて一緒に過ごしたくなければ、ドアをちゃんとロックしておくことね。♪",
+        "彼女は遊び心たっぷりに笑うが、本気で冗談を言っているのかどうか判断がつかない……",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Caring",
+        "Speaks",
+        "基本の食事と飲み物も無料で提供しているわ。シンプルだけど、町で一番美味しいと約束するわよ。でも何か豪華なものが欲しければ、他のみんなと同じようにお金を払う必要があるわ。",
+        "Speaks",
+        "もちろん、私は君が冒険しながらもっと{i}楽しむ{/i}ためのスキルもいくつか教えられるわ。少なくとも、モンスター娘を君に夢中にさせるくらいにはね。♥",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Smug",
+        "ヴィヴィアンはからかうような笑みを浮かべて再び姿勢を正し、胸がわずかに跳ねる。君の視線は一瞬、彼女の谷間のすぐ上に浮かぶ輝くペンダントに引き寄せられるが、すぐに彼女の目を見る。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Caring",
+        "Speaks",
+        "何か質問があったら教えてね、{i}英雄{/i}さん。どんな方法でも君を助けたいわ。♥",
+        "彼女の陽気で誘惑的な笑みが少し曇る。何か別のことを思い浮かべたようだ。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Worried",
+        "Speaks",
+        "ああ、それと念のため言っておくわ。夜になると{i}とても{/i}混むから、翌朝まで素晴らしいサービスや静かな食事は期待しないでね。私のモンスター娘のお客様がサービスをたくさん取るの。でも冒険に出る前には、いつでも新鮮な食事を提供できるはずよ。",
+        "ChangeImageLayer",
+        "Expression",
+        "1",
+        "Caring",
+        "Speaks",
+        "だから夕食を逃すことをあまり心配しなくていいわ。ルームサービスもあるから。ただ、豪華なものは無理だけどね。"
+      ]
+    }
+  ]
 }
